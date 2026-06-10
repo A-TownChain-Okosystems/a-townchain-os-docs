@@ -111,16 +111,16 @@ curl http://localhost:4000/health
 
 ---
 
-## 📊 Status (2026-06-09)
+## 📊 Status (2026-06-10)
 
 | Metrik | Wert |
 |--------|------|
-| Repositories | 21 (11 Code + 10 Wiki) |
+| Repositories | 22 (11 Code + 10 Wiki + 1 Docs) |
 | ATX-Module | 186 |
 | KAI-OS Wiki | 31 Kapitel |
 | Tests | 19/19 ✅ |
 | Version | v2.0.0 |
-| Sprint | 2.1–2.2 |
+| Sprint | 2.2 |
 
 ---
 
