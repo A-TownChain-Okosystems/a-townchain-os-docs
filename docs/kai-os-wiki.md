@@ -684,6 +684,8 @@ on_chain = true               # Kritische Entscheidungen on-chain loggen
 
 # 8. API-Referenz
 
+> 🎫 **Verknüpfte Issues:** [🌐 #25](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/25)
+
 ## 8.1 Übersicht
 
 KAI-OS bietet zwei API-Schnittstellen:
@@ -1359,6 +1361,8 @@ await shared.set("shared_state", {"phase": "analysis"})
 
 # 11. Smart Contract Entwicklung
 
+> 🎫 **Verknüpfte Issues:** [⛓ #12](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/12)
+
 ## 11.1 Sprachen & Toolchain
 
 | Sprache | Framework | Einsatz |
@@ -1878,6 +1882,8 @@ journalctl -u kai-node -n 200 --no-pager
 
 # 14. Testing
 
+> 🎫 **Verknüpfte Issues:** [🧪 #26](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/26)
+
 ## 14.1 Test-Umgebungen
 
 | Umgebung | Befehl | Zweck | Kosten |
@@ -2077,6 +2083,8 @@ kai bench report bench_results.json
 ---
 
 # 15. Deployment & Betrieb
+
+> 🎫 **Verknüpfte Issues:** [📦 #7](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/7)
 
 ## 15.1 Node-Betrieb (Produktiv)
 
@@ -3218,6 +3226,8 @@ SECURITY-CHECK (erste 15 Minuten) — Kapitel 25.10:
 ---
 
 # 19. Governance & Community
+
+> 🎫 **Verknüpfte Issues:** [🏛 #9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9)
 
 ## 19.1 DAO-Struktur
 
@@ -6274,6 +6284,8 @@ Strukturelle L0-Änderung (sehr selten):
 
 # 26. DeFi-Layer — L11
 
+> 🎫 **Verknüpfte Issues:** [🛒 #13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13)
+
 > ⚡ **Grundprinzip:** Der DeFi-Layer ist eine vollständig eigenständige Schicht — **1 Ding = 1 Layer**. L11 enthält ausschließlich dezentrale Finanzprotokolle. Keine anderen Komponenten. Eigener Upgrade-Pfad, eigene Governance, eigenes NFT.
 
 **On-Chain-Identität:** `nft://kai-os/layer/11/defi`
@@ -8365,82 +8377,144 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 
 ---
 
-# 31. Live-Projektstatus — Echtdaten (Auto-generiert)
+# 31. Live-Projektstatus — Issues & Tickets
 
-> **Auto-generiert:** 2026-06-09 · Aurora (KAI-OS Agent)
-> **Quelle:** GitHub API + Notion + Chat-Verlauf
-> **Branch:** `feature/kai-os-integration` · HEAD: `7389941c23` (2026-06-09)
+> **Letzte Aktualisierung:** 2026-06-10 · KAI-OS Agent (Aurora)
+> **Quelle:** GitHub Issues · Repository `A-TownChain-Okosystems/a-townchain-os`
+> **Branch:** `main` · HEAD: `ea5175ea75a3` (2026-06-10)
+
+---
 
 ## 31.1 Repository-Snapshot
 
 | Metrik | Wert |
 |--------|------|
 | **Repo** | `A-TownChain-Okosystems/a-townchain-os` |
-| **HEAD** | `7389941c23` (2026-06-09) |
-| **Offene Issues** | 16 gesamt · 7 🔴 High · 8 🟡 Medium |
-| **Wiki lokal** | v1.3.3-beta (Live-Sync aktiv) |
-| **Wiki-Repo** | [ShivaCoreDev/kai-os-wiki](https://github.com/ShivaCoreDev/kai-os-wiki) |
+| **HEAD** | `ea5175ea75a3` (2026-06-10) |
+| **Issues gesamt** | 27 |
+| **Offen** | 12 🔴 |
+| **Geschlossen** | 15 ✅ |
+| **Wiki** | 52 Kapitel · 10.450 Zeilen |
+| **Solidity-Tests** | 92 Tests (6 Contracts) |
+| **Python-Tests** | 14 Test-Dateien |
+
+---
 
 ## 31.2 Letzte Commits
 
 | SHA | Datum | Message |
 |-----|-------|---------|
-| `7389941c23` | 2026-06-09 | 📖 docs(atclang): ATCLANG_SPEC.md auf v0.2.0 erweitert — vollständ |
-| `fbb95b227a` | 2026-06-09 | 🧪 test(atclang): vollständige Test-Suite — 53 Tests für Lexer, VM |
-| `f86720c8d8` | 2026-06-08 | Merge pull request #21 from A-TownChain-Okosystems/dependabot/pip |
-| `e2f7ec6a42` | 2026-06-08 | 🔄 sync: sync_report.html |
-| `3b42d32de9` | 2026-06-08 | 🔄 sync: ecdsa_impl.py |
-| `55a0864bda` | 2026-06-08 | 🔄 sync: ecdsa_final.py |
-| `1dfe8864c5` | 2026-06-08 | 🔄 sync: bootscreen_complete.py |
-| `bd9c49598c` | 2026-06-08 | 🔄 sync: atc_issues_summary.py |
-
-## 31.3 Offene Issues nach Layer
-
-| # | Titel | Layer | Priorität |
-|---|-------|-------|----------|
-| [#20](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/20) | 🧪 API-Gateway-Tests — Unit & Integrationstests für Port | L7 | 🔴 High |
-| [#19](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/19) | 📊 [Testnet] Node-Monitoring Dashboard | L5 | 🟡 Medium |
-| [#18](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/18) | 🐳 [Testnet] Docker Compose — 5-Node lokales Netzwerk | L5 | 🟡 Medium |
-| [#17](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/17) | ⛓ [Testnet] Longest-Chain-Rule — Fork-Auflösung | L5 | 🔴 High |
-| [#16](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/16) | 🔄 [Testnet] Initial Sync — Neue Nodes synchronisieren | L5 | 🔴 High |
-| [#15](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/15) | 📡 [Testnet] Block Propagation — P2P Block Broadcasting | L5 | 🔴 High |
-| [#14](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/14) | 🌐 [Testnet] Bootstrap Node — P2P Discovery Service | L5 | 🔴 High |
-| [#13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13) | 🛒 ATC Marketplace — Shivamon kaufen & verkaufen | L11 | 🟡 Medium |
-| [#12](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/12) | ⛓ Solidity Smart Contracts — On-Chain ATC Token | L3 | 🟡 Medium |
-| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Shivamon Breeding — Gen 2 NFT Züchtung | L12 | 🟡 Medium |
-| [#10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10) | 🌉 Cross-Chain Bridge — ATC ↔ EVM Interoperabilität | L3 | 🟢 Low |
-| [#9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9) | 🏛 Governance Contract (ATC-9900) — DAO Voting | L8 | 🟡 Medium |
-| [#8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) | 🌐 Multi-Node Testnet — P2P Netzwerk live schalten | L5 | 🔴 High |
-| [#7](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/7) | 📦 Build System — EXE / AppImage Installer | L1 | 🟡 Medium |
-| [#5](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/5) | 🌐 ATC Blockchain Explorer — Block & TX Browser | L3 | 🟡 Medium |
-| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Shivamon Battle UI — Animierte Kämpfe im Browser | L12 | 🔴 High |
-
-## 31.4 Sprint-Mapping (offene Issues → Sprints)
-
-| Sprint | Layer | Offene Issues |
-|--------|-------|-------------- |
-| Sprint 2.1 | L2, L4 | — |
-| Sprint 2.2 | L5 | #19, #18, #17, #16, #15, #14, #8 |
-| Sprint 2.3 | L3 | #12, #10, #5 |
-| Sprint 2.4 | L9 | — |
-| Sprint 2.5 | L4, L11 | #13 |
-| Sprint 2.6 | L6 | — |
-| Sprint 2.7 | L7 | #20 |
-| Sprint 2.8 | L0, L12 | #11, #3 |
-
-## 31.5 Notion-Sync
-
-| Datenbank | Einträge | URL |
-|-----------|---------|-----|
-| KAI-OS Wiki Kapitel | 31/31 | [Öffnen](https://app.notion.com/p/379b826db85c815ab865c6eee41815cb) |
-| PR #22 Tracking | 1 | [Öffnen](https://app.notion.com/p/373b826db85c8125ba83f04995191bf0) |
+| `ea5175ea` | 2026-06-10 | test(solidity): ATCToken.test.js — 22 Tests |
+| `8a3574e8` | 2026-06-10 | feat(core): ATCFS, Gateway, MultiSig hinzugefügt |
+| `25ed5c31` | 2026-06-10 | test(solidity): 4 neue Test-Suites — 70 Tests |
+| `0d6af139` | 2026-06-10 | feat(solidity): 5 Contracts — Shivamon, Governance, Marketplace, Bridge, Genesis |
+| `026bed2b` | 2026-06-10 | docs(wiki): Wiki-Audit — Code-Abgleich, 25/25 Checks OK |
 
 ---
-> *Nächster Auto-Sync: täglich 08:00 Uhr + alle 6h · Aurora (KAI-OS Agent)*
+
+## 31.3 Alle Issues — Vollständige Übersicht
+
+### ✅ Geschlossene Issues
+
+| # | Titel | Layer | Priorität | Kapitel |
+|---|-------|-------|-----------|---------|
+| [#1](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/1) | 🔗 Smart Contract Implementation — ATC Token Standards | L3 | 🔴 High | Kap. 11, 33 |
+| [#2](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/2) | 🤖 Gemini AI Integration — Live AI-Chat im Dashboard | L9 KI | 🔴 High | Kap. 3, 44 |
+| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Shivamon Battle UI — Animierte Kämpfe im Browser | L12 Game | 🔴 High | Kap. 27, 32 |
+| [#4](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/4) | 💾 NFT Persistenz — SQLite statt In-Memory Storage | L7 Backend | 🔴 High | Kap. 49 |
+| [#5](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/5) | 🌐 ATC Blockchain Explorer — Block & TX Browser | L3 Chain | 🟡 Medium | Kap. 4, 8 |
+| [#6](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/6) | 🔐 ECDSA Signatur — Sichere TX-Autorisierung | L4 Security | 🔴 High | Kap. 25, 38 |
+| [#9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9) | 🏛 Governance Contract (ATC-9900) — DAO Voting | L8 DAO | 🟡 Medium | Kap. 19, 47 |
+| [#14](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/14) | 🌐 [Testnet] Bootstrap Node — P2P Discovery Service | L5 Net | 🔴 High | Kap. 37, 49 |
+| [#15](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/15) | 📡 [Testnet] Block Propagation — P2P Block Broadcasting | L5 Net | 🔴 High | Kap. 37, 49 |
+| [#16](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/16) | 🔄 [Testnet] Initial Sync — Neue Nodes synchronisieren | L5 Net | 🔴 High | Kap. 37, 49 |
+| [#17](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/17) | ⛓ [Testnet] Longest-Chain-Rule — Fork-Auflösung | L5 Net | 🔴 High | Kap. 4, 41 |
+| [#20](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/20) | 🧪 API-Gateway-Tests — Unit & Integrationstests Port 4000 | L7 API | 🔴 High | Kap. 8, 14 |
+| [#21](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/21) | 🔧 Dependency: flask-cors 4.0.1 → 6.0.0 | DevOps | — | Kap. 23 |
+| [#22](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/22) | 🚀 KAI-OS v1.3.2-beta — Substrate + DevOps-Automatisierung | Release | — | Kap. 20, 30 |
+
+### 🔴 Offene Issues
+
+| # | Titel | Layer | Priorität | Kapitel | Sprint |
+|---|-------|-------|-----------|---------|--------|
+| [#7](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/7) | 📦 Build System — EXE / AppImage Installer | L1 OS | 🟡 Medium | Kap. 15 | Sprint 3.1 |
+| [#8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) | 🌐 Multi-Node Testnet — P2P Netzwerk live schalten | L5 Net | 🔴 High | Kap. 49 | Sprint 2.2 |
+| [#10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10) | 🌉 Cross-Chain Bridge — ATC ↔ EVM Interoperabilität | L3 Chain | 🟢 Low | Kap. 39 | Sprint 2.3 |
+| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Shivamon Breeding — Gen 2 NFT Züchtung | L12 Game | 🟡 Medium | Kap. 32 | Sprint 2.8 |
+| [#12](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/12) | ⛓ Solidity Smart Contracts — On-Chain ATC Token | L3 Chain | 🟡 Medium | Kap. 11, 33 | Sprint 2.3 |
+| [#13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13) | 🛒 ATC Marketplace — Shivamon kaufen & verkaufen | L11 DeFi | 🟡 Medium | Kap. 26, 48 | Sprint 2.5 |
+| [#18](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/18) | 🐳 [Testnet] Docker Compose — 5-Node lokales Netzwerk | DevOps | 🟡 Medium | Kap. 49 | Sprint 2.2 |
+| [#19](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/19) | 📊 [Testnet] Node-Monitoring Dashboard | L7 Frontend | 🟡 Medium | Kap. 49 | Sprint 2.2 |
+| [#23](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/23) | 🗂️ ATCFS — Integration in Kernel & ShivaOS | L6 Storage | 🟡 Medium | Kap. 45 | Sprint 2.6 |
+| [#24](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/24) | 🔐 MultiSig Wallet — Bridge & Franchise Vault | L4 Security | 🟡 Medium | Kap. 38 | Sprint 2.3 |
+| [#25](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/25) | 🌐 Gateway :4000 — Vollständige Middleware-Aktivierung | L7 API | 🟡 Medium | Kap. 8 | Sprint 2.7 |
+| [#26](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/26) | 🧪 Tests — ATCFS, MultiSig, ATCLang Integration | Testing | 🟡 Medium | Kap. 14 | Sprint 2.4 |
+| [#27](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/27) | 📦 atcpkg — Plugin & Modul-System implementieren | L1 OS | 🟢 Low | Kap. 43 | Sprint 3.2 |
+
+---
+
+## 31.4 Issues nach Schicht (Layer)
+
+| Layer | Name | Issues (offen) | Issues (geschlossen) |
+|-------|------|----------------|---------------------|
+| L0 | Security / Cross-Cutting | — | #6 |
+| L1 | OS / Build | #7, #27 | — |
+| L3 | Blockchain / Contracts | #10, #12 | #1, #5, #9 |
+| L4 | Wallet / Krypto | #24 | #6 |
+| L5 | P2P-Netzwerk / Testnet | #8, #18, #19 | #14, #15, #16, #17 |
+| L6 | Storage / ATCFS | #23 | — |
+| L7 | Backend / Gateway / API | #25 | #4, #20 |
+| L8 | DAO / Governance | — | #9 |
+| L9 | KI / AI | — | #2 |
+| L11 | DeFi / Marketplace | #13 | — |
+| L12 | Gamification / NFT | #11 | #3 |
+| DevOps | Build / CI/CD | — | #21, #22 |
+| Testing | Tests | #26 | #20 |
+
+---
+
+## 31.5 Sprint-Mapping (offene Issues)
+
+| Sprint | Ziel | Offene Issues |
+|--------|------|---------------|
+| **Sprint 2.2** | Testnet live | #8 Multi-Node, #18 Docker, #19 Monitoring |
+| **Sprint 2.3** | Solidity + Bridge | #10 Bridge, #12 Solidity, #24 MultiSig |
+| **Sprint 2.4** | Tests & Coverage | #26 ATCFS/MultiSig Tests |
+| **Sprint 2.5** | DeFi/Marketplace | #13 Marketplace |
+| **Sprint 2.6** | Storage | #23 ATCFS-Integration |
+| **Sprint 2.7** | Gateway | #25 Gateway :4000 |
+| **Sprint 2.8** | Gamification | #11 Breeding |
+| **Sprint 3.1** | Build / Distribution | #7 Build System |
+| **Sprint 3.2** | Plugin-System | #27 atcpkg |
+
+---
+
+## 31.6 Fortschritts-Übersicht
+
+```
+Gesamt:        27 Issues
+Geschlossen:   15 ✅  (55.6%)
+Offen:         12 🔴  (44.4%)
+
+Nach Priorität (offen):
+  🔴 High:    1  (#8)
+  🟡 Medium:  9  (#7, #11, #12, #13, #18, #19, #23, #24, #25, #26)
+  🟢 Low:     2  (#10, #27)
+
+Fortschrittsbalken:
+  ████████████░░░░░░░░░░  55.6% abgeschlossen
+```
+
+---
+
+> *Letzte Aktualisierung: 2026-06-10 · KAI-OS Agent (Aurora)*
+> *Nächster Sync: automatisch bei neuem Issue / Commit*
 
 ---
 
 # 32. Shivamon — Vollständige NFT-Spezifikation
+
+> 🎫 **Verknüpfte Issues:** [🥚 #11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11)
 
 > **Layer:** L12 — Gamification | **Standard:** ATC-9000 | **Status:** ✅ Deployed
 > **Dateien:** `modules/shivamon/` · `blockchain/contracts/shivamon/shivamon_contract.py`
@@ -9090,6 +9164,8 @@ def analyze(source_code: str) -> list[dict]:
 
 # 37. P2P-Netzwerk — Technische Details
 
+> 🎫 **Verknüpfte Issues:** [🌐 #8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8)
+
 > **Layer:** L5 — P2P | **Standard:** ATS-1006 | **Modul:** `modules/atcnet/`
 
 ## 37.1 Kademlia DHT
@@ -9212,6 +9288,8 @@ TURN-Server: turn.testnet.kai-os.io:3479
 
 # 38. Wallet, ECDSA & Key-Management
 
+> 🎫 **Verknüpfte Issues:** [🔐 #24](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/24) · [🔐 #6](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/6)
+
 > **Layer:** L0 Security | **Datei:** `blockchain/wallet/`
 
 ## 38.1 HD-Wallet-Derivation (BIP-32/44)
@@ -9317,6 +9395,8 @@ class MultiSigWallet:
 ---
 
 # 39. Cross-Chain Bridge — Technische Details
+
+> 🎫 **Verknüpfte Issues:** [🌉 #10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10)
 
 > **Layer:** L4 — Blockchain | **Datei:** `modules/contracts/bridge/bridge_contract.py` | **Issue:** #10
 
@@ -9667,6 +9747,8 @@ services:
 
 # 43. Plugin & Modul-System (atcpkg)
 
+> 🎫 **Verknüpfte Issues:** [📦 #27](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/27)
+
 > **Standard:** ATS-1001 | **Modul:** `modules/` | **Status:** 🔨 In Entwicklung
 
 ## 43.1 Modul-Spezifikation
@@ -9822,6 +9904,8 @@ ROUTER_CONFIG = {
 
 # 45. ATCFS — Dezentrales Dateisystem
 
+> 🎫 **Verknüpfte Issues:** [🗂️ #23](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/23)
+
 > **Layer:** L6 — Storage | **Standard:** ATS-1002 | **Datei:** `modules/kernel/docs/ATCFS.md`
 
 ## 45.1 Konzept
@@ -9943,6 +10027,8 @@ GET /v1/agents/{id}/audit?from_block=1000&limit=50
 
 # 47. Governance — Deep Dive
 
+> 🎫 **Verknüpfte Issues:** [🏛 #9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9)
+
 > **Layer:** L8 | **Standard:** ATC-9900 | **Datei:** `blockchain/contracts/governance/governance_contract.py`
 
 ## 47.1 Vollständiger Governance-Flow
@@ -10003,6 +10089,8 @@ GOVERNANCE_LIMITS = {
 ---
 
 # 48. Marketplace — Deep Dive
+
+> 🎫 **Verknüpfte Issues:** [🛒 #13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13)
 
 > **Layer:** L10 | **Datei:** `modules/contracts/marketplace/marketplace_contract.py`
 
@@ -10068,6 +10156,8 @@ def get_stats(self) -> dict:
 ---
 
 # 49. Testnet — Docker Compose & Monitoring
+
+> 🎫 **Verknüpfte Issues:** [🌐 #8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) · [🐳 #18](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/18) · [📊 #19](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/19)
 
 > **Issues:** #18 (Docker), #19 (Monitoring) | **Datei:** `docker-compose.yml`
 
