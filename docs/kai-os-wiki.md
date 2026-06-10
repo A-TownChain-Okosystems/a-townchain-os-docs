@@ -8393,8 +8393,8 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 |--------|------|
 | **Repo** | `A-TownChain-Okosystems/a-townchain-os` |
 | **HEAD** | `ea5175ea75a3` (2026-06-10) |
-| **Issues gesamt** | 27 |
-| **Offen** | 12 🔴 |
+| **Issues gesamt** | 30 |
+| **Offen** | 15 🔴 |
 | **Geschlossen** | 15 ✅ |
 | **Wiki** | 52 Kapitel · 10.450 Zeilen |
 | **Solidity-Tests** | 92 Tests (6 Contracts) |
@@ -8452,6 +8452,9 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | [#25](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/25) | 🌐 Gateway :4000 — Vollständige Middleware-Aktivierung | L7 API | 🟡 Medium | Kap. 8 | Sprint 2.7 |
 | [#26](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/26) | 🧪 Tests — ATCFS, MultiSig, ATCLang Integration | Testing | 🟡 Medium | Kap. 14 | Sprint 2.4 |
 | [#27](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/27) | 📦 atcpkg — Plugin & Modul-System implementieren | L1 OS | 🟢 Low | Kap. 43 | Sprint 3.2 |
+| [#28](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/28) | 📚 ShivaOS UI Renderer Code-Stub | L2 UI | 🟢 Low | Kap. 40 | Sprint 3.3 |
+| [#29](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/29) | 🤖 Federated Learning Code-Stub | L9 KI | 🟢 Low | Kap. 41 | Sprint 3.3 |
+| [#30](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/30) | 🔌 atcpkg Registry & Installer | L1 OS | 🟢 Low | Kap. 43 | Sprint 3.2 |
 
 ---
 
@@ -8487,16 +8490,17 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | **Sprint 2.7** | Gateway | #25 Gateway :4000 |
 | **Sprint 2.8** | Gamification | #11 Breeding |
 | **Sprint 3.1** | Build / Distribution | #7 Build System |
-| **Sprint 3.2** | Plugin-System | #27 atcpkg |
+| **Sprint 3.2** | Plugin-System | #27 atcpkg, #30 atcpkg-Registry |
+| **Sprint 3.3** | ShivaOS / KI  | #28 UI Renderer, #29 Federated Learning |
 
 ---
 
 ## 31.6 Fortschritts-Übersicht
 
 ```
-Gesamt:        27 Issues
-Geschlossen:   15 ✅  (55.6%)
-Offen:         12 🔴  (44.4%)
+Gesamt:        30 Issues
+Geschlossen:   15 ✅  (50.0%)
+Offen:         15 🔴  (50.0%)
 
 Nach Priorität (offen):
   🔴 High:    1  (#8)
@@ -8504,7 +8508,7 @@ Nach Priorität (offen):
   🟢 Low:     2  (#10, #27)
 
 Fortschrittsbalken:
-  ████████████░░░░░░░░░░  55.6% abgeschlossen
+  ███████████░░░░░░░░░░░  50.0% abgeschlossen
 ```
 
 ---
