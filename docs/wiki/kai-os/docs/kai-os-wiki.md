@@ -695,6 +695,8 @@ KAI-OS bietet zwei API-Schnittstellen:
 **Basis-URL (Testnet):** `https://rpc.testnet.kai-os.dev`
 **Basis-URL (lokal):** `http://localhost:5000` (Backend) / `http://localhost:4000` (Gateway)
 
+> `PORT = 5000` (backend/main.py) · `GATEWAY_PORT = 4000` (gateway/main.py)
+
 > **Hinweis:** Port 9933 = Substrate-RPC-Node (Phase 3+). Aktuell läuft der Backend-Server auf `:5000`, das Gateway auf `:4000`.
 
 **Authentifizierung:** Alle schreibenden Anfragen müssen mit einem Ed25519-Schlüssel signiert werden.
@@ -8516,6 +8518,34 @@ Fortschrittsbalken:
 
 > 🎫 **Verknüpfte Issues:** [🥚 #11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11)
 
+## 32.0 Python-Implementierung
+
+> **Datei:** `blockchain/contracts/shivamon/shivamon_contract.py`
+
+```python
+class ShivamonContract:
+    """Shivamon NFT-Contract — ATC-9000 Standard."""
+    MAX_SUPPLY = 9900   # ATC-9900 kompatibel
+
+    def mint(self, owner: str, element: str = None,
+             rarity: str = None, name: str = None) -> dict:
+        """Shivamon minten, DNA & Stats generieren."""
+
+    def battle(self, attacker_id: str,
+               defender_id: str) -> dict:
+        """Kampf berechnen, XP vergeben, Sieger zurückgeben."""
+
+    def breed(self, parent1_id: str, parent2_id: str,
+              owner: str) -> dict:
+        """Gen-2 Shivamon züchten (BREED_COOLDOWN = 48h)."""
+
+    def transfer(self, token_id: str,
+                 from_addr: str, to_addr: str) -> dict: ...
+    def get_token(self, token_id: str) -> dict: ...
+    def get_owner_tokens(self, owner: str) -> list: ...
+    def get_stats(self) -> dict: ...
+```
+
 > **Layer:** L12 — Gamification | **Standard:** ATC-9000 | **Status:** ✅ Deployed
 > **Dateien:** `modules/shivamon/` · `blockchain/contracts/shivamon/shivamon_contract.py`
 
@@ -8801,6 +8831,37 @@ class GenesisToken(BaseContract):
 ```
 
 ---
+
+## 33.7 Hybrid-Konsens — Technische Klasse
+
+> **Datei:** `blockchain/consensus/hybrid_consensus.py`
+
+```python
+class HybridConsensus:
+    """
+    Kombinierter Konsens: PoH → PoW → PoS
+      PoH: verifizierbarer Zeitstempel
+      PoW: SHA-256 Hash (difficulty-adjusting)
+      PoS: Validator bestätigt Block
+    """
+
+    def __init__(self, difficulty: int = 3):
+        self.pow    = ProofOfWork(difficulty)
+        self.pos    = ProofOfStake()
+        self.poh    = ProofOfHistory()
+        self.blocks = []
+        self.height = 0
+
+    def create_block(self, transactions: list, miner: str) -> dict:
+        """Erstellt Block: PoH-Tick → PoW-Hash → PoS-Signatur."""
+
+    def validate_block(self, block: dict) -> bool:
+        """Alle 3 Schichten validieren."""
+
+    def get_chain(self) -> list: ...
+    def get_stats(self) -> dict: ...
+```
+
 
 # 34. Franchise Factory
 
@@ -9352,6 +9413,24 @@ class DIDResolver:
 # Multi-Sig für Bridge + Franchise Vault
 # Implementiert in: modules/contracts/bridge/bridge_contract.py
 
+class TxStatus(Enum):
+    PENDING   = "pending"    # Warte auf Signaturen
+    READY     = "ready"      # Threshold erreicht
+    EXECUTED  = "executed"   # Ausgeführt
+    CANCELLED = "cancelled"  # Abgebrochen
+    EXPIRED   = "expired"    # Timeout (7 Tage TTL)
+
+class MultiSigTx:
+    """Eine vorgeschlagene Multi-Sig-Transaktion."""
+    tx_id:      str        # "MSIG-<hash16>"
+    proposer:   str        # ATC-Adresse
+    to:         str        # Empfänger
+    value:      float      # ATC-Betrag
+    status:     str        # TxStatus.*
+    signatures: dict       # {addr: sig_hex}
+    expires_at: int        # created_at + 7 * 24 * 3600
+    tx_hash:    str        # nach execute_tx()
+
 class MultiSigWallet:
     """M-of-N Multisig-Wallet."""
 
@@ -9394,6 +9473,51 @@ class MultiSigWallet:
 
 ---
 
+## 38.5 ECDSASigner & ATCKeyGenerator
+
+> **Dateien:** `blockchain/wallet/ecdsa.py` · `blockchain/wallet/keygen.py`
+
+```python
+# ── ECDSA Signatur (secp256k1) ────────────────────────────────
+
+class ECDSASigner:
+    """ECDSA Signatur auf Basis von secp256k1."""
+
+    @staticmethod
+    def generate_keypair() -> tuple:
+        """(private_key_hex, public_key_hex)"""
+
+    @staticmethod
+    def sign(tx_data: dict, private_key_hex: str) -> str:
+        """TX signieren, DER-kodierte Signatur zurückgeben."""
+
+    @staticmethod
+    def verify(tx_data: dict, signature_hex: str,
+               public_key_hex: str) -> bool:
+        """Signatur prüfen."""
+
+    @staticmethod
+    def build_tx(from_addr: str, to_addr: str,
+                 amount: float, private_key: str) -> dict:
+        """TX bauen + signieren in einem Schritt."""
+
+# ── Key-Generierung (BIP39) ───────────────────────────────────
+
+class ATCKeyGenerator:
+    """Wallet-Key-Generierung: Entropy → Mnemonic → Keys."""
+
+    def generate_wallet(self,
+            passphrase: str = "A-TownChain") -> dict:
+        """Vollständiges Wallet generieren:
+        entropy → seed_phrase(24) → private_key → public_key → address"""
+
+    def restore_from_mnemonic(self, mnemonic: list,
+            passphrase: str = "A-TownChain") -> dict: ...
+    def validate_address(self, address: str) -> bool: ...
+    def public_key_to_address(self, public_key: str) -> str: ...
+```
+
+> **Hinweis:** Prototyp nutzt secp256k1 (Python). Produktiv-System: sr25519 via Substrate.
 # 39. Cross-Chain Bridge — Technische Details
 
 > 🎫 **Verknüpfte Issues:** [🌉 #10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10)
@@ -9950,25 +10074,79 @@ INODE = {
 | `.atcd` | Daten | Strukturierte ATC-Daten |
 | `.atcp` | Prozess | Prozess-Image |
 
-## 45.4 API
+## 45.4 Klassen & API
+
+> **Datei:** `core/atcfs.py` — ATS-1002 Standard
 
 ```python
-# Kernel-API (ATS-1000)
+# ── Datenklassen ──────────────────────────────────────────────
 
-# Datei schreiben
-fh = kernel.open("atcfs://local/my_contract.atc", "w")
-kernel.write(fh, contract_source.encode())
-kernel.close(fh)
+class INode:
+    """INODE — Metadaten einer Datei oder eines Verzeichnisses."""
+    cid:          str      # SHA-256(content)
+    name:         str
+    size:         int
+    owner:        str      # ATC-Adresse
+    created:      int      # Unix-Timestamp
+    modified:     int
+    perms:        str      # "rw-r--r--"
+    type:         str      # FILE | DIR | SYMLINK | CONTRACT
+    replicas:     int
+    min_replicas: int = 3
+    encrypted:    bool
+    tags:         list
 
-# Datei lesen
-fh  = kernel.open("atcfs://ATC7F.../QmXyz.../contract.atc", "r")
-content = kernel.read(fh, 1024)
-kernel.close(fh)
+class FileHandle:
+    """Offener Datei-Handle (ähnlich POSIX fd)."""
+    fh_id:  int
+    cid:    str
+    mode:   str     # "r", "w", "a"
+    offset: int
+    dirty:  bool
 
-# HTTP API
-POST /v1/storage/upload   {"content": base64, "filename": "x.atc"}
-GET  /v1/storage/{cid}    → Datei-Download
-GET  /v1/storage/{cid}/info → INODE-Metadaten
+# ── ATCFS Hauptklasse ─────────────────────────────────────────
+
+class ATCFS:
+    """A-TownChain File System — ATS-1002."""
+
+    def write(self, data: bytes, name: str, owner: str,
+              ftype: FileType = FileType.FILE) -> str:
+        """Schreibt Datei, gibt CID zurück."""
+
+    def read(self, cid: str) -> bytes:
+        """Datei über CID lesen."""
+
+    def delete(self, cid: str, caller: str) -> bool:
+        """Löschen (nur Owner)."""
+
+    def open(self, atcfs_url: str, mode: str = "r") -> FileHandle:
+        """Öffnet atcfs://<node>/<cid> als File-Handle."""
+
+    def read_fh(self, fh: FileHandle, size: int = -1) -> bytes: ...
+    def write_fh(self, fh: FileHandle, data: bytes) -> int: ...
+    def close(self, fh: FileHandle): ...
+
+    def mkdir(self, name: str, owner: str, parent_cid: str = None) -> str: ...
+    def listdir(self, dir_cid: str) -> list[INode]: ...
+    def stat(self, cid: str) -> INode: ...
+    def find(self, owner: str = None, tags: list = None) -> list[INode]: ...
+    def get_stats(self) -> dict: ...
+    def build_url(self, cid: str) -> str:
+        """Gibt atcfs://<node_id>/<cid> zurück."""
+
+# ── Singleton ─────────────────────────────────────────────────
+
+def get_atcfs(root_dir: str = "data/atcfs") -> ATCFS:
+    """Globale ATCFS-Instanz."""
+```
+
+### HTTP-API (geplant via Backend :5000)
+
+```
+POST /api/storage/upload        {"content": base64, "filename": "x.atc"}
+GET  /api/storage/{cid}         → Datei-Download
+GET  /api/storage/{cid}/info    → INode-Metadaten
+DELETE /api/storage/{cid}       → Löschen (Auth required)
 ```
 
 ---
@@ -10028,6 +10206,36 @@ GET /v1/agents/{id}/audit?from_block=1000&limit=50
 # 47. Governance — Deep Dive
 
 > 🎫 **Verknüpfte Issues:** [🏛 #9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9)
+
+## 47.0 Python-Implementierung
+
+> **Datei:** `blockchain/contracts/governance/governance_contract.py`
+
+```python
+class GovernanceContract:
+    """DAO Governance — ATC-9900 Standard."""
+
+    def __init__(self, owner: str, total_supply: float = 1_000_000):
+        ...
+
+    def create_proposal(self, proposer: str, title: str,
+                        options: list, description: str = "") -> str:
+        """Vorschlag erstellen, gibt proposal_id zurück."""
+
+    def vote(self, proposal_id: str, voter: str,
+             choice: VoteChoice) -> bool:
+        """Abstimmen (1 Token = 1 Stimme)."""
+
+    def finalize(self, proposal_id: str) -> ProposalStatus:
+        """Abstimmung beenden, Ergebnis ermitteln."""
+
+    def execute(self, proposal_id: str, executor: str) -> dict:
+        """Ausgeführten Beschluss umsetzen."""
+
+    def list_proposals(self,
+        status: ProposalStatus = None) -> list: ...
+    def stats(self) -> dict: ...
+```
 
 > **Layer:** L8 | **Standard:** ATC-9900 | **Datei:** `blockchain/contracts/governance/governance_contract.py`
 
@@ -10091,6 +10299,30 @@ GOVERNANCE_LIMITS = {
 # 48. Marketplace — Deep Dive
 
 > 🎫 **Verknüpfte Issues:** [🛒 #13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13)
+
+## 48.0 Python-Implementierung
+
+> **Datei:** `modules/contracts/marketplace/marketplace_contract.py`
+
+```python
+class MarketplaceContract(BaseContract):
+    """ATC Marketplace — NFT kaufen & verkaufen."""
+    ROYALTY_RATE      = 0.025   # 2.5% Royalty
+    PLATFORM_FEE_RATE = 0.010   # 1.0% Platform-Fee
+
+    def list_for_sale(self, seller: str, token_id: str,
+                      price: float, currency: str = "ATC") -> str:
+        """NFT listen, gibt listing_id zurück."""
+
+    def buy(self, buyer: str, listing_id: str) -> dict:
+        """NFT kaufen, ATC transferieren, Fees abziehen."""
+
+    def cancel_listing(self, seller: str, listing_id: str) -> dict:
+        """Listing zurückziehen."""
+
+    def get_listings(self, status=None, seller=None) -> list: ...
+    def get_stats(self) -> dict: ...
+```
 
 > **Layer:** L10 | **Datei:** `modules/contracts/marketplace/marketplace_contract.py`
 
