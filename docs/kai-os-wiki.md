@@ -603,8 +603,9 @@ max_peers = 50
 [rpc]
 enabled = true
 host = "127.0.0.1"
-port = 9933
-cors_origins = ["http://localhost:3000"]
+port = 9933  # Substrate RPC Node (Phase 3+)
+# Aktuelle Flask-API läuft auf Port 5000 (backend/main.py)
+cors_origins = ["http://localhost:3000", "http://localhost:4000"]
 
 [websocket]
 enabled = true
@@ -690,7 +691,9 @@ KAI-OS bietet zwei API-Schnittstellen:
 - **WebSocket API** — für Echtzeit-Events und Subscriptions
 
 **Basis-URL (Testnet):** `https://rpc.testnet.kai-os.dev`
-**Basis-URL (lokal):** `http://localhost:9933`
+**Basis-URL (lokal):** `http://localhost:5000` (Backend) / `http://localhost:4000` (Gateway)
+
+> **Hinweis:** Port 9933 = Substrate-RPC-Node (Phase 3+). Aktuell läuft der Backend-Server auf `:5000`, das Gateway auf `:4000`.
 
 **Authentifizierung:** Alle schreibenden Anfragen müssen mit einem Ed25519-Schlüssel signiert werden.
 
@@ -1020,7 +1023,7 @@ import { KaiClient } from '@kai-os/sdk';
 
 const client = new KaiClient({
   network: 'testnet',               // 'dev' | 'testnet' | 'mainnet'
-  rpcUrl: 'http://localhost:9933',  // optional, überschreibt network-Default
+  rpcUrl: 'http://localhost:4000',  // Gateway (extern) oder :5000 (Backend direkt)
   wallet: {
     seedPhrase: process.env.KAI_SEED,
     // oder:
@@ -8526,6 +8529,7 @@ Quantum     1.0x  0.5x   1.0x  2.0x  0.5x  0.5x    —
 ```python
 # modules/shivamon/engine/battle_engine.py
 
+# Konzept-Klasse (vollständig implementiert in Shivamon.sol + blockchain/contracts/shivamon/shivamon_contract.py)
 class BattleEngine:
     """Turn-based Battle mit Typ-Schwächen und VRF-RNG."""
 
@@ -8567,7 +8571,7 @@ class BattleEngine:
 def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
     """
     Gen-2 Breeding — kombiniert DNA beider Eltern.
-    Schritt 1: Cooldown prüfen (48h zwischen Breeds)
+    Schritt 1: Cooldown prüfen (48 Stunden / BREED_COOLDOWN = 48 * 3600s)
     Schritt 2: Elternteil-Stats ermitteln
     Schritt 3: Element zufällig von einem Elternteil erben
     Schritt 4: Stats aus Durchschnitt + 10% Bonus
@@ -8839,7 +8843,7 @@ Gas:           jeder Agent zahlt Gas in ATC
 ```python
 # backend/api/orchestrator/orchestrator.py
 
-class Orchestrator:
+class APIOrchestrator:
     """
     ATS-1000 Orchestrator — Circuit-Breaker, Load-Balancing, Health-Check.
     Koordiniert alle KI-Agenten-Anfragen.
@@ -8850,18 +8854,19 @@ class Orchestrator:
         self.circuit  = {}      # Circuit-Breaker pro Agent
         self.lb_index = 0       # Round-Robin Load-Balancer
 
-    def dispatch(self, task: dict) -> dict:
+    def dispatch(self, task_type: TaskType, payload: dict,
+                 timeout: float = 30.0) -> Any:
         """
-        Schritt 1: Passenden Agenten auswählen (Capabilities-Match)
-        Schritt 2: Circuit-Breaker prüfen (offen/geschlossen)
-        Schritt 3: Task an Agenten senden
+        Schritt 1: Task in Queue einreihen
+        Schritt 2: Worker-Thread übernimmt Task
+        Schritt 3: Passenden Service via ServiceEndpoint aufrufen
         Schritt 4: Timeout-Handling (default: 30s)
-        Schritt 5: Ergebnis zurückgeben + Metrics aktualisieren
+        Schritt 5: Event 'task.completed' emittieren + zurückgeben
         """
 
-    def register_agent(self, agent_id: str, capabilities: list): ...
-    def health_check(self) -> dict: ...
-    def get_metrics(self) -> dict: ...
+    def register(self, service: ServiceEndpoint): ...
+    def health(self) -> dict: ...
+    def start(self, workers: int = 4): ...
 ```
 
 ## 35.3 ReAct-Loop
@@ -9111,7 +9116,7 @@ Lookup-Algorithmus (iterativ):
 ```python
 # blockchain/nodes/discovery.py
 
-class ATCDiscovery:
+class NodeDiscovery:
     BOOTSTRAP_NODES = [
         "boot1.testnet.kai-os.io:4001",
         "boot2.testnet.kai-os.io:4001",
@@ -9142,22 +9147,21 @@ class ATCDiscovery:
 ```python
 # blockchain/nodes/p2p_propagation.py
 
-class P2PPropagation:
+class P2PBroadcaster:
     GOSSIP_FAN_OUT = 8   # An 8 zufällige Peers weiterleiten
 
-    async def broadcast_block(self, block: dict):
+    def broadcast_block(self, block: dict) -> None:
         """
-        Gossip-Protokoll:
-        1. Block an 8 zufällige bekannte Peers senden
-        2. Jeder Peer prüft: schon gesehen? → ignorieren
-        3. Peer propagiert weiter an 8 eigene Peers
-        4. Exponentiell: 8 → 64 → 512 Nodes in 3 Hops
+        Flood-Fill Propagation (TCP):
+        1. Block-Hash berechnen → Duplikat-Filter (seen_hashes)
+        2. Block als P2PMessage(type="NEW_BLOCK") an alle Peers senden
+        3. Peers propagieren weiter → exponentielle Ausbreitung
         """
 
-    async def broadcast_tx(self, tx: dict):
-        """TX in Mempool + Gossip an Peers."""
+    def broadcast_tx(self, tx: dict) -> None:
+        """TX in Mempool + Flood an alle bekannten Peers."""
 
-    async def sync_from(self, peer: str, from_height: int):
+    def connect_to_peer(self, host: str, port: int) -> bool:
         """
         Initial Sync (Issue #16):
         1. Letzten Block des Peers anfragen
@@ -9268,6 +9272,7 @@ class DIDResolver:
 
 ```python
 # Multi-Sig für Bridge + Franchise Vault
+# Implementiert in: modules/contracts/bridge/bridge_contract.py
 
 class MultiSigWallet:
     """M-of-N Multisig-Wallet."""
@@ -10224,7 +10229,8 @@ await gov.vote(proposals[0].id, 0); // Option 0 = "Ja"
 ## 50.2 Python SDK
 
 ```python
-# pip install atcchain-sdk
+# pip install atcchain-sdk  (geplant, noch nicht veröffentlicht)
+# Direkte API-Nutzung: http://localhost:5000 (Backend) / http://localhost:4000 (Gateway)
 
 from atcchain import KAIClient, ShivamonContract, ATCToken
 
