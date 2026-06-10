@@ -8434,3 +8434,2011 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 
 ---
 > *Nächster Auto-Sync: täglich 08:00 Uhr + alle 6h · Aurora (KAI-OS Agent)*
+
+---
+
+# 32. Shivamon — Vollständige NFT-Spezifikation
+
+> **Layer:** L12 — Gamification | **Standard:** ATC-9000 | **Status:** ✅ Deployed
+> **Dateien:** `modules/shivamon/` · `blockchain/contracts/shivamon/shivamon_contract.py`
+
+## 32.1 Überblick
+
+Shivamon ist das native NFT-Battle-RPG des A-TownChain Ökosystems.
+
+| Eigenschaft | Wert |
+|-------------|------|
+| Max Supply | 9.900 NFTs |
+| Standard | ATC-9000 (ERC-721 analog) |
+| Elemente | 7 (Fire, Water, Earth, Air, Shadow, Neon, Quantum) |
+| Seltenheitsstufen | 6 (Common → Genesis) |
+| Generationen | 1–N (Breeding, Issue #11) |
+| Battle-System | Turn-based, Typ-Schwächen, VRF-RNG |
+
+## 32.2 DNA-System
+
+Jedes Shivamon erhält beim Mint einen einzigartigen DNA-Hash:
+
+```python
+import hashlib, time, random
+
+def generate_dna(owner: str, element: str, generation: int) -> str:
+    """SHA-256 basierter genetischer Fingerabdruck."""
+    seed = f"{owner}{element}{generation}{time.time()}{random.random()}"
+    return hashlib.sha256(seed.encode()).hexdigest()
+
+# Beispiel-DNA:
+# "a3f9b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0"
+```
+
+## 32.3 Elemente & Namen
+
+| Element | Emoji | Namen (Gen 1) |
+|---------|-------|---------------|
+| Fire | 🔥 | Flamrix, Pyronex, Embervex, Infernox, Blazex |
+| Water | 💧 | Aquarix, Tidalex, Hydrox, Wavrix, Frostix |
+| Earth | 🌍 | Terranox, Stonex, Mudrix, Quarzon, Geovex |
+| Air | 💨 | Windrix, Stormax, Gazeron, Cyclonix, Breezex |
+| Shadow | 🌑 | Shadowx, Voidrix, Darknex, Eclipsion, Umbravex |
+| Neon | ⚡ | Voltrix, Neonex, Arcvex, Plasmon, Thunderix |
+| Quantum | 🌀 | Quantrix, Phasex, Entanglex, Superion, Wavrix |
+
+## 32.4 Seltenheit & Stats-Multiplikatoren
+
+```python
+RARITY_CONFIG = {
+    "Common":    {"multiplier": 1.0,  "probability": 0.50, "base_hp": 100},
+    "Uncommon":  {"multiplier": 1.2,  "probability": 0.25, "base_hp": 120},
+    "Rare":      {"multiplier": 1.5,  "probability": 0.15, "base_hp": 150},
+    "Epic":      {"multiplier": 2.0,  "probability": 0.07, "base_hp": 200},
+    "Legendary": {"multiplier": 3.0,  "probability": 0.025,"base_hp": 300},
+    "Genesis":   {"multiplier": 5.0,  "probability": 0.005,"base_hp": 500},
+}
+
+def calculate_stats(element: str, rarity: str, level: int = 1) -> dict:
+    base = RARITY_CONFIG[rarity]
+    mult = base["multiplier"]
+    lvl  = 1 + (level - 1) * 0.1   # +10% pro Level
+    return {
+        "hp":      int(base["base_hp"] * mult * lvl),
+        "attack":  int(random.randint(20, 40) * mult * lvl),
+        "defense": int(random.randint(15, 35) * mult * lvl),
+        "speed":   int(random.randint(10, 30) * mult * lvl),
+        "special": int(random.randint(25, 50) * mult * lvl),
+    }
+```
+
+## 32.5 Typ-Schwächen-Matrix
+
+```
+           Fire  Water  Earth  Air  Shadow  Neon  Quantum
+Fire         —    0.5x   2.0x  1.0x  1.0x  1.5x   1.0x
+Water       2.0x   —     0.5x  1.0x  1.0x  0.5x   1.5x
+Earth       0.5x  2.0x    —    0.5x  1.5x  1.0x   1.0x
+Air         1.0x  1.0x   2.0x   —    1.5x  1.0x   0.5x
+Shadow      1.0x  1.0x   0.5x  0.5x   —    2.0x   2.0x
+Neon        0.5x  2.0x   1.0x  1.0x  0.5x   —     1.5x
+Quantum     1.0x  0.5x   1.0x  2.0x  0.5x  0.5x    —
+```
+
+## 32.6 Battle-Engine
+
+```python
+# modules/shivamon/engine/battle_engine.py
+
+class BattleEngine:
+    """Turn-based Battle mit Typ-Schwächen und VRF-RNG."""
+
+    def calculate_damage(self, attacker: dict, defender: dict,
+                         move: dict) -> int:
+        base    = move["power"]
+        atk     = attacker["stats"]["attack"]
+        def_    = defender["stats"]["defense"]
+        type_m  = self.TYPE_MATRIX[attacker["element"]][defender["element"]]
+        crit    = 1.5 if random.random() < 0.0625 else 1.0  # 6.25% Crit
+        random_ = random.uniform(0.85, 1.0)
+        damage  = int((base * atk / def_) * type_m * crit * random_)
+        return max(1, damage)
+
+    def run_battle(self, attacker_id: str, defender_id: str) -> dict:
+        att  = self._load_token(attacker_id)
+        dfd  = self._load_token(defender_id)
+        log  = []
+        turn = 0
+        while att["hp"] > 0 and dfd["hp"] > 0:
+            turn += 1
+            dmg  = self.calculate_damage(att, dfd, random.choice(att["moves"]))
+            dfd["hp"] = max(0, dfd["hp"] - dmg)
+            log.append({"turn": turn, "attacker": attacker_id, "damage": dmg})
+            if dfd["hp"] <= 0: break
+            # Defender schlägt zurück
+            dmg2 = self.calculate_damage(dfd, att, random.choice(dfd["moves"]))
+            att["hp"] = max(0, att["hp"] - dmg2)
+            log.append({"turn": turn, "attacker": defender_id, "damage": dmg2})
+
+        winner = attacker_id if att["hp"] > 0 else defender_id
+        xp_gain = 50 + turn * 5
+        return {"winner": winner, "turns": turn, "xp_gained": xp_gain, "log": log}
+```
+
+## 32.7 Breeding-System (Issue #11)
+
+```python
+def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
+    """
+    Gen-2 Breeding — kombiniert DNA beider Eltern.
+    Schritt 1: Cooldown prüfen (48h zwischen Breeds)
+    Schritt 2: Elternteil-Stats ermitteln
+    Schritt 3: Element zufällig von einem Elternteil erben
+    Schritt 4: Stats aus Durchschnitt + 10% Bonus
+    Schritt 5: Neue Generation = max(parent1.gen, parent2.gen) + 1
+    """
+    BREED_COOLDOWN = 48 * 3600  # 48 Stunden
+
+    p1 = self._tokens[parent1_id]
+    p2 = self._tokens[parent2_id]
+
+    # Eltern-Element vererben (50/50 + 5% Mutation)
+    if random.random() < 0.05:
+        element = random.choice(self.ELEMENTS)   # Mutation!
+    else:
+        element = random.choice([p1["element"], p2["element"]])
+
+    generation = max(p1["generation"], p2["generation"]) + 1
+    # Stats = Durchschnitt der Eltern × 1.1 (Hybrid-Bonus)
+    stats = {
+        k: int((p1["stats"][k] + p2["stats"][k]) / 2 * 1.1)
+        for k in p1["stats"]
+    }
+    return self.mint(owner=owner, element=element,
+                     rarity="Uncommon", generation=generation,
+                     parent1=parent1_id, parent2=parent2_id,
+                     stats_override=stats)
+```
+
+## 32.8 API-Endpunkte (Shivamon)
+
+| Methode | Pfad | Beschreibung |
+|---------|------|-------------|
+| `POST` | `/api/game/shivamon/mint` | Neues Shivamon minten |
+| `GET` | `/api/game/shivamon/{id}` | Token-Details |
+| `POST` | `/api/game/shivamon/battle` | Battle starten |
+| `POST` | `/api/game/shivamon/breed` | Breeding (Gen 2) |
+| `GET` | `/api/game/shivamon/owner/{address}` | Alle Token eines Wallets |
+| `GET` | `/api/game/shivamon/stats` | Gesamt-Statistiken |
+
+---
+
+# 33. Token-Ökonomie & Tokenomics
+
+> **Layer:** L4 — Blockchain | **Standard:** ATC-8300 | **Datei:** `blockchain/contracts/atc8300/atc8300_token.py`
+
+## 33.1 ATC-8300 Tokenomics
+
+```
+┌─────────────────────────────────────────────────────┐
+│              ATC-8300 TOKENOMICS                     │
+├─────────────────────────────────────────────────────┤
+│  Name:            A-Town Coin                        │
+│  Symbol:          ATC                                │
+│  Max Supply:      21.000.000 ATC                     │
+│  Initial Supply:   1.000.000 ATC (Genesis-Mint)      │
+│  Decimals:        8                                  │
+│  Chain ID:        9000                               │
+├─────────────────────────────────────────────────────┤
+│  MINING:                                             │
+│  Initial Reward:  50 ATC/Block                       │
+│  Halving:         alle 210.000 Blöcke                │
+│  Max Halvings:    64                                  │
+│  ~Mainnet-Start:  Block 0 (Genesis)                  │
+├─────────────────────────────────────────────────────┤
+│  VERTEILUNG (geplant):                               │
+│  40% Mining & Staking Rewards                        │
+│  20% Team & Entwicklung (3 Jahre Vesting)            │
+│  15% Ökosystem-Fonds (Grants, Bounties)              │
+│  15% Öffentlicher Verkauf (IDO)                      │
+│  10% Treasury / Reserve                              │
+└─────────────────────────────────────────────────────┘
+```
+
+## 33.2 Halving-Tabelle
+
+| Halving # | Block von | Block bis | Reward | Kumulativ |
+|-----------|-----------|-----------|--------|-----------|
+| Genesis | 0 | 209.999 | 50 ATC | 10.500.000 |
+| 1 | 210.000 | 419.999 | 25 ATC | 15.750.000 |
+| 2 | 420.000 | 629.999 | 12,5 ATC | 18.375.000 |
+| 3 | 630.000 | 839.999 | 6,25 ATC | 19.687.500 |
+| 4 | 840.000 | 1.049.999 | 3,125 ATC | 20.343.750 |
+| ... | ... | ... | ... | ... |
+| 64 | ∞ | ∞ | 0 ATC | 21.000.000 |
+
+## 33.3 Gebühren & Flows
+
+```
+TOKEN-FLOW ÜBERSICHT:
+
+User A ──TX-Fee: 0.001 ATC──→ Validator Pool
+      ──Transfer Amount──→ User B
+
+Shivamon Mint:
+  User ──0.1 ATC Mint-Fee──→ Treasury
+  Minter erhält: neues NFT
+
+Marketplace-Kauf (500 ATC):
+  Buyer  ──500 ATC──→ Contract (Escrow)
+  Seller ←──482.5 ATC─── Contract (500 × 96.5%)
+  Creator←── 12.5 ATC─── Contract (500 × 2.5% Royalty)
+  Treasury←── 5.0 ATC─── Contract (500 × 1.0% Fee)
+
+Governance Proposal:
+  Creator ──1.000 ATC Deposit──→ Contract
+  Nach Execution: 1.000 ATC ──→ Creator zurück
+  Bei Ablehnung: 1.000 ATC ──→ Treasury (Spam-Schutz)
+
+Staking (Validator):
+  Min: 10.000 ATC Stake
+  Reward: anteilig am Block-Reward
+  Slashing: 10% bei Fehlverhalten
+  Unstaking-Delay: 48h
+```
+
+## 33.4 Snapshot-System (für Governance)
+
+```python
+def snapshot(self, caller: str) -> dict:
+    """
+    Balance-Snapshot für Governance-Abstimmungen.
+    Verhindert Last-Minute-Manipulation durch Token-Transfers.
+    """
+    self.only_owner(caller)
+    snap_id = len(self._snapshots)
+    self._snapshots[snap_id] = {
+        "balances":    dict(self._balances),
+        "total_supply": self._total_supply,
+        "block":       self._current_block,
+        "timestamp":   time.time(),
+    }
+    return {"snapshot_id": snap_id, "total_supply": self._total_supply}
+```
+
+## 33.5 ATC-001 Genesis Token
+
+```python
+# blockchain/contracts/atc001/genesis_token.py
+# Einmaliger, nicht transferierbarer Ursprungs-Token
+
+class GenesisToken(BaseContract):
+    TOKEN_ID     = "ATC-001-GENESIS"
+    TOTAL_SUPPLY = 1
+    TRANSFERABLE = False
+    MINTED_AT    = "Genesis Block"
+
+    def lock(self):
+        """Einmalig sperren — kann nicht rückgängig gemacht werden."""
+    def verify(self) -> bool:
+        """Echtheit prüfen via Hash-Chain."""
+    def provenance(self) -> dict:
+        """Vollständige Herkunfts-Historie."""
+```
+
+---
+
+# 34. Franchise Factory
+
+> **Layer:** L8 — Governance | **Modul:** `modules/franchise/` | **Status:** 📋 Phase 4
+
+## 34.1 Konzept
+
+Die Franchise Factory ist ein autonomes Deployment-System für dezentrale Geschäftseinheiten:
+
+```
+┌───────────────────────────────────────────────────────┐
+│              FRANCHISE FACTORY — Konzept               │
+│                                                        │
+│  Jede Franchise = eigenständige DAO-Einheit mit:       │
+│  ├── eigenem Smart Contract Vault                      │
+│  ├── eigenem Token (Franchise-Token)                   │
+│  ├── eigener Governance-Instanz                        │
+│  ├── Revenue-Sharing mit ATC-Treasury                  │
+│  └── automatischem Deployment via Factory              │
+└───────────────────────────────────────────────────────┘
+```
+
+## 34.2 Franchise Contract
+
+```python
+# modules/franchise/factory.py
+
+class FranchiseFactory(BaseContract):
+    """
+    ATC-9900 Franchise Factory — autonomes Deployment.
+    Erstellt neue Franchise-DAOs auf Antrag.
+    """
+    CREATION_FEE  = 10_000.0   # ATC
+    ROYALTY_RATE  = 0.05       # 5% Revenue an Haupt-Treasury
+
+    def create_franchise(self, founder: str, name: str,
+                         token_symbol: str, initial_stake: float) -> dict:
+        """
+        Schritt 1: Creation-Fee prüfen (10.000 ATC)
+        Schritt 2: Franchise-Token deployen (ATC-8300 Instanz)
+        Schritt 3: Governance-Contract deployen (ATC-9900 Instanz)
+        Schritt 4: Vault-Contract deployen (Multi-Sig)
+        Schritt 5: Revenue-Sharing konfigurieren (5% → Treasury)
+        Schritt 6: Franchise in Registry eintragen
+        """
+
+    def list_franchises(self) -> list: ...
+    def get_franchise(self, franchise_id: str) -> dict: ...
+    def distribute_revenue(self, franchise_id: str, amount: float): ...
+```
+
+## 34.3 Vault-System
+
+```python
+# modules/franchise/docs/ARCHITECTURE.md (Auszug)
+
+VAULT = {
+    "id":          str,        # Franchise-ID
+    "owner":       str,        # Founder-Adresse
+    "balance":     float,      # ATC im Vault
+    "signers":     list,       # Multi-Sig Unterzeichner (min. 3)
+    "threshold":   int,        # Benötigte Signaturen (z.B. 2-of-3)
+    "auto_royalty": float,     # Automatische Royalty (5%)
+    "created_at":  int,        # Unix-Timestamp
+}
+```
+
+## 34.4 Token-Ökonomie (Franchise)
+
+```
+Franchise-Einnahmen (z.B. 10.000 ATC/Monat):
+  ├── 5% → A-TownChain Treasury (500 ATC)
+  ├── 50% → Franchise-Vault
+  ├── 30% → Token-Holders (Franchise-Token)
+  └── 15% → Founder/Team
+```
+
+## 34.5 Roadmap (Phase 4)
+
+| Feature | Sprint | Status |
+|---------|--------|--------|
+| Franchise Factory Contract | Sprint 4.1 | 📋 |
+| Vault Multi-Sig | Sprint 4.1 | 📋 |
+| Revenue-Sharing | Sprint 4.2 | 📋 |
+| Franchise UI (ShivaOS) | Sprint 4.3 | 📋 |
+| 1. Pilot-Franchise | Sprint 4.4 | 📋 |
+
+---
+
+# 35. Multi-Agenten-Orchestrierung
+
+> **Layer:** L9 — Agenten | **Standard:** ATS-1005 | **Datei:** `core/ai_kernel.py`
+
+## 35.1 Architektur
+
+```
+MULTI-AGENT SYSTEM (MAS):
+
+  Koordinator-Agent
+      │
+      ├── Worker-Agent 1 (KI-Task: Analyse)
+      ├── Worker-Agent 2 (KI-Task: Code-Gen)
+      ├── Worker-Agent 3 (Blockchain: TX)
+      └── Worker-Agent 4 (Storage: ATCFS)
+
+Kommunikation: BROADCAST-Kanal (ATS-1003)
+Koordination:  ReAct-Loop (Reason → Act → Observe)
+Sicherheit:    jede Nachricht ECDSA-signiert
+Gas:           jeder Agent zahlt Gas in ATC
+```
+
+## 35.2 Orchestrator-Service
+
+```python
+# backend/api/orchestrator/orchestrator.py
+
+class Orchestrator:
+    """
+    ATS-1000 Orchestrator — Circuit-Breaker, Load-Balancing, Health-Check.
+    Koordiniert alle KI-Agenten-Anfragen.
+    """
+
+    def __init__(self):
+        self.agents   = {}      # registrierte Agenten
+        self.circuit  = {}      # Circuit-Breaker pro Agent
+        self.lb_index = 0       # Round-Robin Load-Balancer
+
+    def dispatch(self, task: dict) -> dict:
+        """
+        Schritt 1: Passenden Agenten auswählen (Capabilities-Match)
+        Schritt 2: Circuit-Breaker prüfen (offen/geschlossen)
+        Schritt 3: Task an Agenten senden
+        Schritt 4: Timeout-Handling (default: 30s)
+        Schritt 5: Ergebnis zurückgeben + Metrics aktualisieren
+        """
+
+    def register_agent(self, agent_id: str, capabilities: list): ...
+    def health_check(self) -> dict: ...
+    def get_metrics(self) -> dict: ...
+```
+
+## 35.3 ReAct-Loop
+
+```
+ReAct (Reason → Act → Observe) je Agenten-Task:
+
+ITERATION 1:
+  Reason:   "Ich soll Shivamon-Statistiken analysieren."
+  Act:      GET /api/game/shivamon/stats
+  Observe:  {"total_minted": 42, "top_element": "Neon"}
+
+ITERATION 2:
+  Reason:   "Neon ist am häufigsten. Ich erstelle einen Report."
+  Act:      generate_report(data)
+  Observe:  report_text = "..."
+
+ITERATION 3:
+  Reason:   "Report fertig. Ich speichere ihn on-chain."
+  Act:      POST /api/storage/upload (ATCFS)
+  Observe:  {"cid": "QmXyz...", "stored": true}
+
+RESULT: {"report_cid": "QmXyz...", "iterations": 3}
+```
+
+## 35.4 Agent-Memory-Typen
+
+```python
+AgentMemory = {
+    "short_term": [           # Letzten N Nachrichten (RAM)
+        {"role": "user",    "content": "..."},
+        {"role": "agent",   "content": "..."},
+    ],
+    "long_term":  "atcfs://ATC7F.../agents/KAI-001/memory.atcd",
+    "embedding":  [0.23, -0.14, ...],   # 1536-dim Vektor (semantic search)
+    "working":    {},                    # temporäre Task-Daten
+}
+```
+
+## 35.5 Gas-System für Agenten
+
+```
+Gas-Kosten (ATC):
+  KI-Query (Gemini):    0.01 ATC/Anfrage
+  Storage Write:        0.001 ATC/KB
+  Blockchain TX:        0.001 ATC
+  Agent-Spawn:          0.1 ATC
+  Agent-Destroy:        0.0 ATC (kostenlos)
+
+Gas-Budget je Agent:
+  Default:  10.0 ATC
+  Max:     100.0 ATC
+  Top-Up:  POST /v1/agents/{id}/topup
+```
+
+---
+
+# 36. ATCLang — Vollständige Compiler-Spezifikation
+
+> **Layer:** L1 — ATCLang | **Modul:** `modules/atclang/` | **Version:** v0.3.0
+
+## 36.1 Compiler-Pipeline
+
+```
+Quellcode (.atc)
+    │
+  [Lexer]      272 Zeilen  → Token-Stream (51 Keywords, 22 Typen)
+    │
+  [Parser]     376 Zeilen  → AST (Abstract Syntax Tree)
+    │
+  [SemanticAnalyzer]       → Typ-Prüfung, Scope-Auflösung
+    │
+  [Optimizer]              → Constant Folding, Dead Code Elimination
+    │
+  [Compiler]   455 Zeilen  → Bytecode (Instruction-Liste)
+    │
+  [ATCVM]      330 Zeilen  → Stack-VM Ausführung
+```
+
+## 36.2 Vollständiges ATCLang-Beispiel (Governance Contract)
+
+```atc
+// governance.atc — ATC-9900 Governance in ATCLang
+
+import ATC::Token::ATC8300
+import ATC::Time
+
+contract Governance {
+
+    state proposals: Map<Hash256, Proposal>
+    state votes:     Map<Hash256, Map<Address, UInt8>>
+    state token:     ATC8300
+    const QUORUM:    UInt256 = 100_000   // 10% von 1M
+    const DURATION:  UInt64  = 604800    // 7 Tage in Sekunden
+
+    struct Proposal {
+        id:       Hash256
+        creator:  Address
+        title:    String
+        options:  List<String>
+        deadline: UInt64
+        status:   String   // "active" | "passed" | "failed"
+    }
+
+    event ProposalCreated(id: Hash256, creator: Address, title: String)
+    event Voted(proposal: Hash256, voter: Address, option: UInt8)
+    event ProposalFinalized(id: Hash256, winner: String, status: String)
+
+    pub fn create_proposal(title: String, options: List<String>) -> Hash256 {
+        require(options.len() >= 2, "Min 2 options")
+        require(token.balance_of(caller) >= 1000, "Need 1000 ATC deposit")
+
+        let id: Hash256 = ATC::Hash(title + block.timestamp.to_string())
+        let p: Proposal = Proposal {
+            id:       id,
+            creator:  caller,
+            title:    title,
+            options:  options,
+            deadline: block.timestamp + DURATION,
+            status:   "active"
+        }
+        proposals[id] = p
+        emit ProposalCreated(id, caller, title)
+        return id
+    }
+
+    pub fn vote(proposal_id: Hash256, option: UInt8) -> Bool {
+        let p: Proposal = proposals[proposal_id]
+        require(p.status == "active", "Not active")
+        require(block.timestamp < p.deadline, "Voting ended")
+        require(!votes[proposal_id].contains(caller), "Already voted")
+
+        let power: UInt256 = token.balance_of(caller)
+        require(power > 0, "No voting power")
+
+        votes[proposal_id][caller] = option
+        emit Voted(proposal_id, caller, option)
+        return true
+    }
+
+    pub fn finalize(proposal_id: Hash256) -> String {
+        let p: Proposal = proposals[proposal_id]
+        require(block.timestamp >= p.deadline, "Not ended yet")
+        require(p.status == "active", "Already finalized")
+
+        // Stimmen auszählen
+        let counts: Map<UInt8, UInt256> = {}
+        let total:  UInt256 = 0
+        for (voter, opt) in votes[proposal_id] {
+            let power: UInt256 = token.snapshot_balance(voter)
+            counts[opt] += power
+            total += power
+        }
+
+        if total < QUORUM {
+            proposals[proposal_id].status = "failed"
+            emit ProposalFinalized(proposal_id, "none", "failed")
+            return "failed"
+        }
+
+        // Gewinner ermitteln
+        let winner_opt: UInt8 = 0
+        let winner_votes: UInt256 = 0
+        for (opt, cnt) in counts {
+            if cnt > winner_votes {
+                winner_opt   = opt
+                winner_votes = cnt
+            }
+        }
+        let winner: String = p.options[winner_opt]
+        proposals[proposal_id].status = "passed"
+        emit ProposalFinalized(proposal_id, winner, "passed")
+        return winner
+    }
+}
+```
+
+## 36.3 ATCLang stdlib v0.3
+
+```python
+# modules/atclang/stdlib/atc_stdlib.py
+
+STDLIB = {
+    # Blockchain-Builtins
+    "ATC::Hash":         "SHA-256 Hash-Funktion",
+    "ATC::Token::ATC8300": "Fungible Token Interface",
+    "ATC::NFT::ATC9000": "NFT Interface",
+    "ATC::Time":         "Block-Timestamp-Utilities",
+    "ATC::Math":         "SafeMath (kein Integer-Overflow)",
+    "ATC::Crypto":       "ECDSA-Signaturen",
+    "ATC::Storage":      "ATCFS-Zugriff",
+    "ATC::Governance":   "DAO-Interface",
+    "ATC::Bridge":       "Cross-Chain-Interface",
+    # Typen-Utilities
+    "ATC::Convert":      "Typ-Konvertierungen",
+    "ATC::Encoding":     "Base58, Hex, UTF-8",
+    "ATC::Events":       "Event-Emitter",
+}
+```
+
+## 36.4 Security Analyzer
+
+```python
+# modules/atclang/security/security_analyzer.py
+
+VULN_PATTERNS = [
+    "reentrancy",       # Externe Calls vor State-Update
+    "integer_overflow", # Ungesicherte Arithmetik
+    "access_control",   # Fehlende require(caller == owner)
+    "timestamp_dep",    # Block.timestamp als Zufallsquelle
+    "unchecked_return", # Ignorierte Rückgabewerte
+    "gas_griefing",     # Unbegrenzte Schleifen
+]
+
+def analyze(source_code: str) -> list[dict]:
+    """Statische Sicherheitsanalyse eines ATCLang Contracts."""
+    ...
+```
+
+---
+
+# 37. P2P-Netzwerk — Technische Details
+
+> **Layer:** L5 — P2P | **Standard:** ATS-1006 | **Modul:** `modules/atcnet/`
+
+## 37.1 Kademlia DHT
+
+```
+NODE_ID = SHA256(pubkey)[0:20]   # 20 Bytes = 160 Bit
+
+k-Bucket-Tabelle:
+  160 Buckets (je ein Bit des Node-IDs)
+  k = 20 Einträge pro Bucket
+  α = 3 (parallele Lookup-Threads)
+  Refresh: alle 3600s
+
+Lookup-Algorithmus (iterativ):
+  1. Finde k nächste bekannte Nodes
+  2. Sende FIND_NODE an alle k Nodes parallel
+  3. Merge Antworten, sortiere nach XOR-Distanz
+  4. Wiederhole bis keine näheren Nodes gefunden
+  5. Ergebnis: k nächste Nodes zum Ziel
+```
+
+## 37.2 Bootstrap-Node (Issue #14)
+
+```python
+# blockchain/nodes/discovery.py
+
+class ATCDiscovery:
+    BOOTSTRAP_NODES = [
+        "boot1.testnet.kai-os.io:4001",
+        "boot2.testnet.kai-os.io:4001",
+        "boot3.testnet.kai-os.io:4001",
+    ]
+    PING_INTERVAL   = 30    # Sekunden
+    PEER_TIMEOUT    = 120   # Sekunden bis Peer als tot gilt
+    MAX_PEERS       = 50    # Max gleichzeitige Verbindungen
+
+    async def bootstrap(self):
+        """
+        Schritt 1: UDP-Broadcast im lokalen Netzwerk (mDNS)
+        Schritt 2: Bootstrap-Nodes kontaktieren
+        Schritt 3: FIND_NODE(self.node_id) ausführen
+        Schritt 4: Routing-Tabelle befüllen
+        Schritt 5: Periodisches Refresh starten
+        """
+
+    async def announce(self, peer_info: dict):
+        """Eigene Präsenz im Netzwerk ankündigen."""
+
+    async def get_peers(self, count: int = 10) -> list:
+        """Nächste Peers aus Routing-Tabelle holen."""
+```
+
+## 37.3 Block-Propagation (Issue #15)
+
+```python
+# blockchain/nodes/p2p_propagation.py
+
+class P2PPropagation:
+    GOSSIP_FAN_OUT = 8   # An 8 zufällige Peers weiterleiten
+
+    async def broadcast_block(self, block: dict):
+        """
+        Gossip-Protokoll:
+        1. Block an 8 zufällige bekannte Peers senden
+        2. Jeder Peer prüft: schon gesehen? → ignorieren
+        3. Peer propagiert weiter an 8 eigene Peers
+        4. Exponentiell: 8 → 64 → 512 Nodes in 3 Hops
+        """
+
+    async def broadcast_tx(self, tx: dict):
+        """TX in Mempool + Gossip an Peers."""
+
+    async def sync_from(self, peer: str, from_height: int):
+        """
+        Initial Sync (Issue #16):
+        1. Letzten Block des Peers anfragen
+        2. Fehlende Blöcke in Batches von 500 laden
+        3. Validieren + in lokale Chain einfügen
+        """
+```
+
+## 37.4 ATCNet-Nachrichten-Protokoll
+
+```python
+# modules/atcnet/protocol.py
+
+MSG_TYPES = {
+    0x01: "HANDSHAKE",    # Verbindungsaufbau + Versions-Check
+    0x02: "PING",         # Erreichbarkeit prüfen
+    0x03: "PONG",         # Antwort auf PING
+    0x04: "FIND_NODE",    # DHT-Lookup
+    0x05: "NODES",        # DHT-Antwort (Liste von Peers)
+    0x06: "GET_BLOCKS",   # Block-Anfrage
+    0x07: "BLOCKS",       # Block-Antwort
+    0x08: "NEW_BLOCK",    # Neuen Block ankündigen
+    0x09: "NEW_TX",       # Neue TX ankündigen
+    0x0A: "GET_TX",       # TX-Anfrage
+    0x0B: "TX",           # TX-Antwort
+    0x0C: "CONSENSUS",    # Konsens-Nachricht
+    0x0D: "AGENT_MSG",    # KI-Agenten-Kommunikation
+    0x0E: "ATCFS_REQ",    # ATCFS Datei-Anfrage
+    0x0F: "ATCFS_DATA",   # ATCFS Datei-Antwort
+}
+```
+
+## 37.5 NAT-Traversal (ATCHole)
+
+```
+ATCHole = STUN + TURN Hybrid (eigene Implementierung)
+
+Schritt 1: Node sendet PING an STUN-Server
+Schritt 2: STUN antwortet mit externer IP:Port
+Schritt 3: Node kündigt externe Adresse an Bootstrap-Nodes
+Schritt 4: Bei symmetrischem NAT → TURN-Relay als Fallback
+
+STUN-Server: stun.testnet.kai-os.io:3478
+TURN-Server: turn.testnet.kai-os.io:3479
+```
+
+---
+
+# 38. Wallet, ECDSA & Key-Management
+
+> **Layer:** L0 Security | **Datei:** `blockchain/wallet/`
+
+## 38.1 HD-Wallet-Derivation (BIP-32/44)
+
+```python
+# blockchain/wallet/keygen.py
+
+HD_PATH = "m/44'/9000'/0'/0/{index}"
+# 44'    = BIP-44 Purpose
+# 9000'  = ATC Coin Type (Chain ID)
+# 0'     = Account 0
+# 0      = External Chain (Empfangsadressen)
+# {index}= Adress-Index
+
+def derive_child_key(parent_key: bytes, index: int) -> bytes:
+    """BIP-32 Child-Key Derivation."""
+    data = parent_key + index.to_bytes(4, 'big')
+    hmac = hmac_sha512(key=parent_key[:32], msg=data)
+    child_key = (int.from_bytes(hmac[:32], 'big') +
+                 int.from_bytes(parent_key, 'big')) % SECP256K1_N
+    return child_key.to_bytes(32, 'big')
+```
+
+## 38.2 DID-System (ATS-DID)
+
+```python
+# blockchain/wallet/did.py
+
+class DIDResolver:
+    """
+    ATAUTH-1000 DID:kai System.
+    Dezentrale Identitäten für Nodes, Agenten, User.
+    Format: did:kai:z6Mkh...
+    """
+
+    def create(self, public_key: bytes) -> str:
+        """DID aus Public-Key ableiten."""
+        multikey = b'\xed\x01' + public_key    # Ed25519 Multikey-Prefix
+        did_key  = base58.b58encode(multikey).decode()
+        return f"did:kai:{did_key}"
+
+    def resolve(self, did: str) -> dict:
+        """DID-Dokument aus Chain laden."""
+        return {
+            "@context":            "https://www.w3.org/ns/did/v1",
+            "id":                  did,
+            "verificationMethod":  [...],
+            "authentication":      [...],
+            "assertionMethod":     [...],
+        }
+
+    def verify_signature(self, did: str, message: bytes,
+                         signature: dict) -> bool:
+        """Signatur gegen DID-Dokument verifizieren."""
+```
+
+## 38.3 Multi-Sig Wallet
+
+```python
+# Multi-Sig für Bridge + Franchise Vault
+
+class MultiSigWallet:
+    """M-of-N Multisig-Wallet."""
+
+    def __init__(self, owners: list, threshold: int):
+        self.owners    = owners       # N Unterzeichner
+        self.threshold = threshold    # M benötigte Signaturen
+
+    def propose_tx(self, caller, to, value, data=b"") -> str:
+        """TX vorschlagen (jeder Owner darf das)."""
+
+    def sign_tx(self, caller, tx_id: str) -> dict:
+        """TX unterzeichnen. Bei M Signaturen → automatisch ausführen."""
+
+    def execute_tx(self, tx_id: str) -> dict:
+        """TX ausführen sobald Threshold erreicht."""
+```
+
+## 38.4 Keystore-Format
+
+```json
+{
+  "version": 3,
+  "id": "uuid-v4",
+  "address": "ATC7F3A9B2C...",
+  "crypto": {
+    "cipher":       "aes-128-ctr",
+    "ciphertext":   "hex-encoded-encrypted-privkey",
+    "cipherparams": { "iv": "hex" },
+    "kdf":          "pbkdf2",
+    "kdfparams": {
+      "dklen": 32,
+      "salt":  "hex",
+      "c":     262144,
+      "prf":   "hmac-sha256"
+    },
+    "mac": "hex"
+  }
+}
+```
+
+---
+
+# 39. Cross-Chain Bridge — Technische Details
+
+> **Layer:** L4 — Blockchain | **Datei:** `modules/contracts/bridge/bridge_contract.py` | **Issue:** #10
+
+## 39.1 Lock-and-Mint Mechanismus
+
+```
+A-TownChain                              Ethereum (Sepolia)
+───────────                              ──────────────────
+User: lock(1000 ATC)              →      Relayer erkennt LockEvent
+  → ATC gesperrt im BridgeContract →      Relayer: mint(1000 wATC) an User
+  → LockEvent emittiert                   wATC ist ERC-20 auf Ethereum
+
+User: initiateBurn(500 wATC)      ←      User burned wATC auf Ethereum
+  auf Ethereum                    ←      BurnEvent
+Relayer: release(500 ATC)         →      ATC aus Lock-Contract freigeschaltet
+```
+
+## 39.2 Bridge Contract
+
+```python
+# modules/contracts/bridge/bridge_contract.py
+
+class BridgeContract(BaseContract):
+    """ATC-5000 Cross-Chain Bridge — Lock-Mint Mechanismus."""
+
+    MAX_TX_AMOUNT  = 1_000_000.0   # ATC
+    DAILY_LIMIT    = 5_000_000.0   # ATC
+    TIMELOCK_LARGE = 24 * 3600     # 24h für TX > 100.000 ATC
+    RELAYER_THRESHOLD = 3          # 3-of-5 Multi-Sig Relayer
+
+    def lock_atc(self, sender: str, amount: float,
+                 destination_chain: str,
+                 destination_address: str) -> dict:
+        """
+        Schritt 1: Amount-Limits prüfen
+        Schritt 2: ATC vom Sender-Wallet abziehen
+        Schritt 3: ATC in Bridge-Vault sperren
+        Schritt 4: LockEvent emittieren (Relayer abhören)
+        Schritt 5: Bridge-TX-ID zurückgeben
+        """
+
+    def release_atc(self, relayer: str, bridge_tx_id: str,
+                    recipient: str, amount: float,
+                    signatures: list) -> dict:
+        """
+        Schritt 1: Mindestens 3 Relayer-Signaturen verifizieren
+        Schritt 2: Bridge-TX-ID nicht bereits verwendet?
+        Schritt 3: ATC aus Vault an Recipient freigeben
+        Schritt 4: ReleaseEvent emittieren
+        """
+
+    def emergency_pause(self, caller: str):
+        """Nur Owner oder DAO kann Bridge pausieren."""
+```
+
+## 39.3 Relayer-Architektur
+
+```
+5 unabhängige Relayer-Nodes:
+  relayer-1.bridge.kai-os.io
+  relayer-2.bridge.kai-os.io
+  relayer-3.bridge.kai-os.io
+  relayer-4.bridge.kai-os.io (Backup)
+  relayer-5.bridge.kai-os.io (Backup)
+
+Ablauf (3-of-5):
+  1. Alle 5 Relayer überwachen beide Chains
+  2. LockEvent erkannt → jeder Relayer signiert die Mint-Anfrage
+  3. Nach 3 Signaturen → Mint-TX auf Ethereum ausgeführt
+  4. Audit-Trail: alle Bridge-TXs on-chain (beide Chains)
+```
+
+## 39.4 Wrapped ATC (wATC)
+
+```solidity
+// WrappedATC.sol (Ethereum Sepolia)
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+
+contract WrappedATC is ERC20, AccessControl {
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+
+    constructor() ERC20("Wrapped A-Town Coin", "wATC") {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+    }
+
+    function mint(address to, uint256 amount)
+        external onlyRole(MINTER_ROLE) {
+        _mint(to, amount);
+    }
+
+    function burn(address from, uint256 amount)
+        external onlyRole(MINTER_ROLE) {
+        _burn(from, amount);
+    }
+}
+```
+
+## 39.5 Rate-Limiting & Sicherheit
+
+| Maßnahme | Wert | Zweck |
+|----------|------|-------|
+| Max TX | 1.000.000 ATC | Schutz vor Large-Value-Angriff |
+| Daily Limit | 5.000.000 ATC | Globale Tages-Obergrenze |
+| Timelock | 24h (> 100k ATC) | Zeit für Fraud-Detection |
+| Relayer Threshold | 3-of-5 | Dezentralisierung |
+| Emergency Pause | Owner + DAO | Sofortstopp bei Incident |
+| Replay-Schutz | Bridge-TX-ID | TX nicht doppelt ausführbar |
+
+---
+
+# 40. ShivaOS UI — Rendering Engine & Design
+
+> **Layer:** L10 — dApps | **Standard:** ATS-1007 | **Datei:** `frontend/index.html`
+
+## 40.1 Architektur
+
+```
+ShivaOS = Single-File-App (123 KB, kein Framework)
+
+frontend/index.html
+  ├── <style>     — CSS (Design-Tokens, Neon-Theme)
+  ├── <script>    — Vanilla JS (kein React/Vue/Angular)
+  └── <body>      — DOM-Struktur (Sidebar + Panels)
+
+frontend/assets/js/api.js    — API-Client (alle Endpoints)
+frontend/assets/css/         — Externe CSS-Dateien
+frontend/battle/index.html   — Dediziertes Battle-Interface
+frontend/bootscreen/         — Ladebildschirm-Animation
+```
+
+## 40.2 Design-System (ATS-1007)
+
+```css
+/* A-TownChain Design-Tokens */
+:root {
+  --atc-primary:    #00ffcc;   /* Neon-Türkis */
+  --atc-secondary:  #7b61ff;   /* Neon-Violett */
+  --atc-bg:         #0a0a1a;   /* Tiefschwarz */
+  --atc-surface:    #1a1a3a;   /* Dunkelblau (Cards) */
+  --atc-text:       #e0e0ff;   /* Hellblau-Weiß */
+  --atc-accent:     #ff6b35;   /* Neon-Orange */
+  --atc-success:    #00ff88;   /* Neon-Grün */
+  --atc-error:      #ff2d78;   /* Neon-Pink */
+  --atc-warning:    #ffcc00;   /* Neon-Gelb */
+
+  /* Typografie */
+  --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+  --font-ui:     'Inter', system-ui, sans-serif;
+
+  /* Animationen */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.3s ease;
+  --glow-primary: 0 0 20px rgba(0, 255, 204, 0.3);
+  --glow-accent:  0 0 20px rgba(255, 107, 53, 0.4);
+}
+```
+
+## 40.3 Sidebar-Module
+
+```javascript
+// frontend/assets/js/api.js
+
+const PANELS = {
+  "dashboard":   { icon: "📊", title: "Dashboard",   api: "/api/status" },
+  "blockchain":  { icon: "⛓",  title: "Blockchain",  api: "/api/blockchain/info" },
+  "shivamon":    { icon: "🎮", title: "Shivamon",    api: "/api/game/shivamon/stats" },
+  "marketplace": { icon: "🛒", title: "Marketplace", api: "/api/marketplace/listings" },
+  "governance":  { icon: "🏛", title: "Governance",  api: "/api/governance/proposals" },
+  "wallet":      { icon: "💰", title: "Wallet",      api: "/api/wallet/balance" },
+  "ai":          { icon: "🤖", title: "AI Chat",     api: "/api/ai/status" },
+  "nodes":       { icon: "🌐", title: "Nodes",       api: "/api/nodes/" },
+  "bridge":      { icon: "🌉", title: "Bridge",      api: "/api/blockchain/bridge/status" },
+};
+```
+
+## 40.4 Bootscreen-Animation
+
+```python
+# frontend/bootscreen/bootscreen.py (Generierungs-Script)
+
+BOOT_SEQUENCE = [
+    "[00:00.000] 🔴 INITIALISIERE KAI-OS KERNEL v2.0...",
+    "[00:00.150] ⚡ LADE BLOCKCHAIN-MODUL (L4)...",
+    "[00:00.300] 🧠 VERBINDE KI-AGENTEN (L3)...",
+    "[00:00.450] 🌐 P2P-NETZWERK AUFBAUEN (L5)...",
+    "[00:00.600] 🔐 SICHERHEITS-CHECK (L0)...",
+    "[00:00.750] ✅ ALLE SYSTEME BEREIT",
+    "[00:00.900] 🟢 WILLKOMMEN IN SHIVAOS v2.0",
+]
+```
+
+## 40.5 Responsive API-Client
+
+```javascript
+// frontend/assets/js/api.js (v2.0)
+
+const API_BASE = "http://localhost:4000";
+
+async function apiCall(endpoint, method="GET", body=null) {
+  const opts = {
+    method,
+    headers: { "Content-Type": "application/json" },
+  };
+  if (body) opts.body = JSON.stringify(body);
+
+  const res  = await fetch(`${API_BASE}${endpoint}`, opts);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || "API Error");
+  return data;
+}
+
+// Shivamon minten
+const mint = (owner, element) =>
+  apiCall("/api/game/shivamon/mint", "POST", { owner, element });
+
+// Governance abstimmen
+const vote = (voter, proposal_id, option) =>
+  apiCall("/api/governance/vote", "POST", { voter, proposal_id, option });
+```
+
+---
+
+# 41. Federated Learning
+
+> **Layer:** L3 — KI-Modul | **Datei:** `core/ai_kernel.py`
+
+## 41.1 Konzept
+
+```
+Federated Learning = dezentrales ML-Training ohne Rohdatenaustausch
+
+Ablauf:
+  Runde N:
+  ├── Koordinator wählt 20 zufällige Nodes aus
+  ├── Jeder Node: lokales Training auf eigenen Daten (5 Epochen)
+  ├── Jeder Node: sendet nur Gradienten (kein Rohdaten!)
+  ├── Koordinator: FedAvg-Aggregation der Gradienten
+  ├── Neues Modell an alle Nodes verteilen
+  └── PoI-Score: Qualität des Beitrags bewertet
+```
+
+## 41.2 FedAvg-Algorithmus
+
+```python
+def federated_average(gradients: list[dict],
+                       weights:   list[float]) -> dict:
+    """
+    Federated Averaging (McMahan et al., 2017)
+    weights = Anteil der lokalen Datenmenge je Node
+    """
+    aggregated = {}
+    for key in gradients[0].keys():
+        aggregated[key] = sum(
+            w * g[key]
+            for w, g in zip(weights, gradients)
+        )
+    return aggregated
+```
+
+## 41.3 PoI-Integration
+
+```python
+def calculate_poi_score(node_contribution: dict) -> float:
+    """
+    PoI-Score = f(Gradient-Qualität, Datenmenge, Latenz)
+    Score: 0.0 – 1.0
+    """
+    quality = measure_gradient_quality(node_contribution["gradients"])
+    size    = node_contribution["data_size"] / 10_000   # normalisiert
+    latency = 1.0 - min(node_contribution["latency_ms"] / 5000, 1.0)
+    return 0.5 * quality + 0.3 * size + 0.2 * latency
+```
+
+## 41.4 Datenschutz-Garantien
+
+| Maßnahme | Beschreibung |
+|----------|-------------|
+| Differential Privacy | ε-dp Rauschen zu Gradienten hinzufügen |
+| Secure Aggregation | Kryptografische Summation ohne Einzelwerte |
+| Gradient Compression | Top-k Sparsifikation (90% weniger Bandbreite) |
+| Anomaly Detection | Ausreißer-Gradienten werden verworfen |
+
+---
+
+# 42. Performance & Optimierung
+
+> **Referenz:** `docs/wiki/kai-os/PERFORMANCE_REPORT.md`
+
+## 42.1 Zielwerte
+
+| Komponente | Ziel | Aktuell |
+|-----------|------|---------|
+| Block Time | < 4s | ~4s ✅ |
+| TX/Block | 1.000 | 1.000 ✅ |
+| API-Latenz (Gateway) | < 100ms | ~50ms ✅ |
+| Gemini-Antwortzeit | < 3s | ~1.5s ✅ |
+| LLaMA-Inferenz (CPU) | ≥ 10 t/s | 8.3 t/s ⚠️ |
+| LLaMA-Inferenz (GPU) | ≥ 80 t/s | ~87 t/s ✅ |
+| P2P-Propagation | < 500ms | noch offen |
+| Dashboard-Load | < 2s | ~1.2s ✅ |
+
+## 42.2 Backend-Optimierungen
+
+```python
+# Caching für häufige Abfragen
+from functools import lru_cache
+
+@lru_cache(maxsize=256)
+def get_token_stats(snapshot_id: int) -> dict:
+    """Token-Stats werden gecacht (invalidiert bei neuem Block)."""
+
+# Connection-Pooling für SQLite
+import sqlite3
+from contextlib import contextmanager
+
+_pool = []
+
+@contextmanager
+def db_connection():
+    conn = _pool.pop() if _pool else sqlite3.connect("atcchain.db")
+    try:
+        yield conn
+        conn.commit()
+    finally:
+        _pool.append(conn)
+```
+
+## 42.3 Docker-Ressourcen-Limits
+
+```yaml
+# docker-compose.yml (Auszug)
+services:
+  backend:
+    mem_limit: 512m
+    cpus: "1.0"
+  gateway:
+    mem_limit: 256m
+    cpus: "0.5"
+  bootstrap:
+    mem_limit: 256m
+    cpus: "0.5"
+```
+
+---
+
+# 43. Plugin & Modul-System (atcpkg)
+
+> **Standard:** ATS-1001 | **Modul:** `modules/` | **Status:** 🔨 In Entwicklung
+
+## 43.1 Modul-Spezifikation
+
+```python
+# ATS-1001 Module Spec
+
+MODULE = {
+    "name":         str,       # Eindeutiger Name
+    "version":      str,       # SemVer (z.B. "1.2.3")
+    "author":       str,       # ATC-Adresse
+    "hash":         str,       # SHA-256 Integritäts-Hash
+    "entrypoint":   str,       # Haupt-Datei
+    "exports":      list,      # Öffentliche API
+    "deps":         list,      # Abhängigkeiten
+    "permissions":  list,      # Benötigte Capabilities
+    "stake":        float,     # Benötigter Stake für Deployment
+}
+
+PERMISSIONS = [
+    "FS_READ", "FS_WRITE",
+    "NET_CONNECT", "NET_LISTEN",
+    "KI_QUERY", "KI_TRAIN",
+    "BLOCKCHAIN_READ", "BLOCKCHAIN_WRITE",
+    "PROCESS_SPAWN",
+]
+```
+
+## 43.2 atcpkg CLI
+
+```bash
+# Modul installieren
+atcpkg install shivamon@1.0.0
+
+# Modul verifizieren (Hash-Check)
+atcpkg verify shivamon --hash a3f9b2c1...
+
+# Modul ausführen
+atcpkg run shivamon mint --owner ATC7F3A... --element Fire
+
+# Alle installierten Module
+atcpkg list
+
+# Modul entfernen
+atcpkg remove shivamon
+
+# Modul publizieren (benötigt Stake)
+atcpkg publish ./my-module/ --stake 100
+```
+
+## 43.3 Monorepo-Module-Struktur
+
+```
+modules/
+├── kernel/       L2: ShivaOS Microkernel
+├── gateway/      L7: API Gateway
+├── contracts/    L4: Smart Contracts
+├── atclang/      L1: Compiler + VM
+├── atcnet/       L5: P2P Netzwerk
+├── ui/           L10: Dashboard
+├── shivamon/     L12: NFT-Game
+├── franchise/    L8: Franchise DAO
+└── standards/    L0: Protokoll-Standards
+
+Jedes Modul hat:
+  README.md       — Dokumentation
+  CHANGELOG.md    — Versionshistorie
+  __init__.py     — Python-Package
+  requirements.txt— Abhängigkeiten (optional)
+```
+
+---
+
+# 44. KI-Kernel — Inference Engine Details
+
+> **Layer:** L3 — KI-Modul | **Datei:** `core/ai_kernel.py`
+
+## 44.1 Modell-Stack
+
+```python
+# core/ai_kernel.py
+
+class AIKernel:
+    """KAI-OS AI Orchestrator — Gemini 2.0 + LLaMA Fallback."""
+
+    MODEL_PRIORITY = [
+        ("gemini-2.0-flash-exp", "google", "remote"),
+        ("llama3-8b-q4",         "ollama", "local"),
+        ("mistral-7b-q4",        "ollama", "local"),
+    ]
+
+    def query(self, prompt: str, context: list = None,
+              model: str = None) -> dict:
+        """
+        Schritt 1: Primär-Modell versuchen (Gemini 2.0)
+        Schritt 2: Bei Fehler/Timeout → Fallback (LLaMA lokal)
+        Schritt 3: Gas-Kosten berechnen + abziehen
+        Schritt 4: XAI-Log schreiben (on-chain)
+        Schritt 5: Antwort zurückgeben
+        """
+
+    def schedule_inference(self, tasks: list) -> list:
+        """
+        KI-Scheduler: Priorisierung nach PoI-Score + Stake
+        Parallele Ausführung bei GPU-Verfügbarkeit
+        """
+```
+
+## 44.2 GPU-Abstraktions-Layer
+
+```python
+# Hardware-Beschleunigung (ATS-1000 Kernel-Spec)
+
+GPU_BACKENDS = {
+    "cuda":    "NVIDIA GPU (CUDA)",
+    "rocm":    "AMD GPU (ROCm)",
+    "metal":   "Apple Silicon (Metal)",
+    "cpu":     "CPU-Fallback (langsam)",
+    "webgpu":  "Browser-GPU (geplant)",
+}
+
+def detect_gpu() -> str:
+    """Verfügbaren GPU-Backend erkennen."""
+    try:
+        import torch
+        if torch.cuda.is_available(): return "cuda"
+        if torch.backends.mps.is_available(): return "metal"
+    except ImportError:
+        pass
+    return "cpu"
+```
+
+## 44.3 LLM-Router
+
+```python
+# docs/ai/LLM_ROUTER.md (Auszug)
+
+ROUTER_CONFIG = {
+    "rules": [
+        # Einfache Fragen → schnelles Modell
+        {"if": "token_count < 100", "model": "gemini-flash"},
+        # Code-Generierung → Gemini Pro
+        {"if": "task_type == 'code'", "model": "gemini-pro"},
+        # Offline-Betrieb → lokales Modell
+        {"if": "network == 'offline'", "model": "llama3-8b"},
+        # Standard → Gemini Flash
+        {"default": "gemini-2.0-flash-exp"},
+    ]
+}
+```
+
+---
+
+# 45. ATCFS — Dezentrales Dateisystem
+
+> **Layer:** L6 — Storage | **Standard:** ATS-1002 | **Datei:** `modules/kernel/docs/ATCFS.md`
+
+## 45.1 Konzept
+
+```
+ATCFS = A-TownChain File System
+
+Ähnlich zu IPFS, aber vollständig eigenständig:
+  - Content-Adressierung via SHA-256 (CID)
+  - Dezentrale Replikation (min. 3 Kopien)
+  - Eigene Adress-Syntax: atcfs://<node_id>/<cid>/<path>
+  - Integriert in ShivaOS (transparenter Zugriff)
+  - On-Chain Metadaten (INODE-Hashes gespeichert)
+```
+
+## 45.2 INODE-Struktur
+
+```python
+INODE = {
+    "cid":        str,    # SHA-256(content) — Content-Hash
+    "size":       int,    # Bytes
+    "owner":      str,    # ATC-Adresse
+    "created":    int,    # Unix-Timestamp
+    "modified":   int,
+    "perms":      str,    # "rwxr-xr--" (POSIX-ähnlich)
+    "type":       str,    # FILE | DIR | SYMLINK | CONTRACT
+    "replicas":   int,    # Aktuelle Anzahl Replikas
+    "min_replicas": int,  # Mindest-Replikas (default: 3)
+    "encrypted":  bool,
+    "tags":       list,   # Suchbare Metadaten
+}
+```
+
+## 45.3 Dateitypen
+
+| Endung | Typ | Beschreibung |
+|--------|-----|-------------|
+| `.atc` | Quellcode | ATCLang Smart Contract |
+| `.atcb` | Bytecode | Kompilierter Code |
+| `.atcm` | Modul | Signiertes ATC-Modul |
+| `.atcw` | Wallet | Verschlüsselte Wallet-Datei |
+| `.atcd` | Daten | Strukturierte ATC-Daten |
+| `.atcp` | Prozess | Prozess-Image |
+
+## 45.4 API
+
+```python
+# Kernel-API (ATS-1000)
+
+# Datei schreiben
+fh = kernel.open("atcfs://local/my_contract.atc", "w")
+kernel.write(fh, contract_source.encode())
+kernel.close(fh)
+
+# Datei lesen
+fh  = kernel.open("atcfs://ATC7F.../QmXyz.../contract.atc", "r")
+content = kernel.read(fh, 1024)
+kernel.close(fh)
+
+# HTTP API
+POST /v1/storage/upload   {"content": base64, "filename": "x.atc"}
+GET  /v1/storage/{cid}    → Datei-Download
+GET  /v1/storage/{cid}/info → INODE-Metadaten
+```
+
+---
+
+# 46. XAI & Entscheidungsaudit
+
+> **Layer:** L0 — Security | **Datei:** `core/ai_kernel.py`
+
+## 46.1 Was ist XAI?
+
+XAI (Explainable AI) stellt sicher, dass jede KI-Entscheidung nachvollziehbar und auditierbar ist. A-TownChain speichert XAI-Logs on-chain.
+
+## 46.2 XAI-Log-Format
+
+```python
+XAI_LOG = {
+    "log_id":     str,          # UUID
+    "agent_id":   str,          # ATC-Adresse des Agenten
+    "task_id":    str,          # Task-Referenz
+    "timestamp":  float,        # Unix-Timestamp
+    "model":      str,          # Modell-Name + Version-Hash
+    "input_hash": str,          # SHA-256(prompt) — kein Klartext
+    "reasoning":  str,          # Chain-of-Thought (komprimiert, max 2KB)
+    "confidence": float,        # 0.0–1.0
+    "output_hash":str,          # SHA-256(response)
+    "gas_used":   float,        # Verbrauchtes Gas in ATC
+    "block_ref":  int,          # Block-Nummer zum Zeitpunkt
+    "signature":  dict,         # ECDSA-Signatur des Agenten
+}
+```
+
+## 46.3 On-Chain Audit
+
+```bash
+# XAI-Logs abrufen (CLI)
+kai agent audit {agent_id} --from-block 1000 --to-block 2000
+
+# Compliance-Beweis exportieren (ZKP)
+kai agent zkp-export {agent_id} --period 2026-06
+
+# Entscheidungsprotokoll anzeigen
+GET /v1/agents/{id}/audit?from_block=1000&limit=50
+```
+
+## 46.4 Audit-Trail Garantien
+
+| Garantie | Umsetzung |
+|----------|-----------|
+| Unveränderlichkeit | On-Chain gespeichert |
+| Anonymität | Nur Input-/Output-Hash, kein Klartext |
+| Nachvollziehbarkeit | Chain-of-Thought (komprimiert) |
+| Authentizität | ECDSA-Signatur des Agenten |
+| Zeitstempel | Block-Nummer als Beweis |
+
+---
+
+# 47. Governance — Deep Dive
+
+> **Layer:** L8 | **Standard:** ATC-9900 | **Datei:** `blockchain/contracts/governance/governance_contract.py`
+
+## 47.1 Vollständiger Governance-Flow
+
+```
+1. ATC-Holder erstellt Proposal
+   ├── Deposit: 1.000 ATC (zurück bei Execution)
+   ├── Min. 2, max. 10 Abstimmungsoptionen
+   └── ProposalCreated-Event emittiert
+
+2. Voting-Phase (Standard: 7 Tage)
+   ├── Stimmgewicht = ATC-Balance zum Snapshot-Zeitpunkt
+   ├── Jede Adresse kann einmal pro Proposal abstimmen
+   ├── Voted-Event emittiert
+   └── Stimmen anonym (nur on-chain Hash)
+
+3. Finalisierung (nach Deadline)
+   ├── Quorum-Check: mind. 10% der Supply muss abgestimmt haben
+   ├── Bei FAILED: → Proposal abgelehnt, Deposit → Treasury
+   └── Bei PASSED: → Gewinner-Option ermittelt
+
+4. Timelock (48 Stunden)
+   └── Verzögerung für mögliche Einsprüche
+
+5. Execution
+   ├── Automatisch nach Timelock
+   ├── Deposit → Creator zurück
+   └── ExecutionEvent emittiert
+```
+
+## 47.2 Parameter-Updates via Governance
+
+```python
+# Welche Parameter per DAO änderbar sind:
+GOVERNABLE_PARAMS = {
+    "block_reward":       float,  # Aktuell: 50 ATC
+    "min_stake_validator":float,  # Aktuell: 10.000 ATC
+    "governance_quorum":  float,  # Aktuell: 0.10 (10%)
+    "voting_period":      int,    # Aktuell: 604.800s (7 Tage)
+    "proposal_deposit":   float,  # Aktuell: 1.000 ATC
+    "marketplace_fee":    float,  # Aktuell: 0.01 (1%)
+    "bridge_max_tx":      float,  # Aktuell: 1.000.000 ATC
+    "ai_gas_price":       float,  # Aktuell: 0.01 ATC/Query
+}
+```
+
+## 47.3 Anti-Spam & Sicherheit
+
+```python
+GOVERNANCE_LIMITS = {
+    "max_proposals_per_address": 3,     # gleichzeitig aktiv
+    "min_balance_to_propose":    1_000, # ATC
+    "min_balance_to_vote":       1,     # ATC (jeder darf abstimmen)
+    "spam_cooldown":             86_400, # 24h zwischen Proposals
+}
+```
+
+---
+
+# 48. Marketplace — Deep Dive
+
+> **Layer:** L10 | **Datei:** `modules/contracts/marketplace/marketplace_contract.py`
+
+## 48.1 Listing-Lifecycle
+
+```
+NFT Listing:
+  LISTED → (sold) → COMPLETED
+         → (cancelled) → CANCELLED
+         → (offer accepted) → COMPLETED
+         → (expired 30d) → EXPIRED
+```
+
+## 48.2 Vollständiger Listing-Flow
+
+```python
+# 1. NFT listen
+listing = marketplace.list_for_sale(
+    seller   = "ATC7F3A...",
+    token_id = "SHIV-0001",
+    price_atc= 500.0
+)
+# → NFT wird in Escrow gesperrt
+# → Listing-ID: "LST-a1b2c3"
+
+# 2. Angebote machen
+offer = marketplace.make_offer(
+    buyer    = "ATC9B2C...",
+    token_id = "SHIV-0001",
+    offer_atc= 450.0        # unter Listpreis
+)
+
+# 3. Angebot annehmen
+marketplace.accept_offer(
+    seller   = "ATC7F3A...",
+    offer_id = offer["offer_id"]
+)
+
+# 4. Direkt kaufen (zum Listpreis)
+marketplace.buy(
+    buyer      = "ATC9B2C...",
+    listing_id = "LST-a1b2c3"
+)
+# → ATC-Transfer: 500 → Seller (482.5) + Creator (12.5) + Treasury (5)
+# → NFT-Transfer: Escrow → Buyer
+```
+
+## 48.3 Statistiken & Floor Price
+
+```python
+def get_stats(self) -> dict:
+    return {
+        "total_listings":   len(self._listings),
+        "total_volume_atc": self._total_volume,
+        "total_fees_atc":   self._total_fees,
+        "floor_prices":     self._calculate_floor_prices(),
+        "top_sales":        self._get_top_sales(10),
+        "avg_price_24h":    self._avg_price_24h(),
+        "unique_sellers":   len(set(l["seller"] for l in self._listings.values())),
+    }
+```
+
+---
+
+# 49. Testnet — Docker Compose & Monitoring
+
+> **Issues:** #18 (Docker), #19 (Monitoring) | **Datei:** `docker-compose.yml`
+
+## 49.1 Docker Compose — 5-Node Testnet
+
+```yaml
+# docker-compose.yml (vollständig)
+version: "3.9"
+
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.bootstrap
+    ports:
+      - "4001:4001"   # P2P
+    environment:
+      - NODE_TYPE=bootstrap
+      - P2P_PORT=4001
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - bootstrap
+    environment:
+      - BACKEND_PORT=5000
+      - BOOTSTRAP_NODE=bootstrap:4001
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+  gateway:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.gateway
+    ports:
+      - "4000:4000"
+    depends_on:
+      - backend
+    environment:
+      - GATEWAY_PORT=4000
+      - BACKEND_URL=http://backend:5000
+
+  node-2:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    depends_on:
+      - bootstrap
+    environment:
+      - NODE_TYPE=full
+      - BOOTSTRAP_NODE=bootstrap:4001
+
+  node-3:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    depends_on:
+      - bootstrap
+    environment:
+      - NODE_TYPE=validator
+      - VALIDATOR_STAKE=10000
+      - BOOTSTRAP_NODE=bootstrap:4001
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=kai-os-2026
+```
+
+## 49.2 Monitoring (Issue #19)
+
+```yaml
+# monitoring/prometheus.yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "backend"
+    static_configs:
+      - targets: ["backend:5000"]
+    metrics_path: "/metrics"
+
+  - job_name: "gateway"
+    static_configs:
+      - targets: ["gateway:4000"]
+
+  - job_name: "nodes"
+    static_configs:
+      - targets: ["node-2:5001", "node-3:5002"]
+```
+
+## 49.3 Starten & Testen
+
+```bash
+# Testnet starten
+docker-compose up -d
+
+# Logs überwachen
+docker-compose logs -f backend
+
+# Status prüfen
+docker-compose ps
+
+# Block minen (Testnet)
+curl -X POST http://localhost:4000/api/blockchain/mine \
+  -H "Content-Type: application/json" \
+  -d '{"miner": "ATC_SYSTEM_OWNER_001"}'
+
+# Grafana öffnen
+open http://localhost:3001
+# Login: admin / kai-os-2026
+```
+
+---
+
+# 50. SDK — TypeScript, Python, Rust
+
+> **Datei:** `docs/wiki/overview/` | **Status:** Teils implementiert, teils geplant
+
+## 50.1 TypeScript/JavaScript SDK
+
+```typescript
+// npm install @atcchain/sdk
+
+import { KAIClient, ShivamonContract, GovernanceContract } from "@atcchain/sdk";
+
+const client = new KAIClient({
+  rpcUrl:    "http://localhost:4000",
+  chainId:   9000,
+  privateKey: process.env.PRIVATE_KEY,
+});
+
+// Shivamon minten
+const shivamon = new ShivamonContract(client);
+const token    = await shivamon.mint({
+  element: "Neon",
+  rarity:  "Rare",
+});
+console.log("Geminted:", token.token_id);
+
+// Governance abstimmen
+const gov      = new GovernanceContract(client);
+const proposals= await gov.getProposals({ status: "active" });
+await gov.vote(proposals[0].id, 0); // Option 0 = "Ja"
+```
+
+## 50.2 Python SDK
+
+```python
+# pip install atcchain-sdk
+
+from atcchain import KAIClient, ShivamonContract, ATCToken
+
+client   = KAIClient(rpc_url="http://localhost:4000", chain_id=9000)
+shivamon = ShivamonContract(client)
+token    = ATCToken(client)
+
+# ATC-Balance abfragen
+balance = token.balance_of("ATC7F3A...")
+print(f"Balance: {balance} ATC")
+
+# Battle starten
+result = shivamon.battle(
+    attacker_id = "SHIV-0001",
+    defender_id = "SHIV-0002",
+)
+print(f"Winner: {result['winner']}, XP: {result['xp_gained']}")
+
+# Events überwachen
+@client.on("Transfer")
+async def on_transfer(event):
+    print(f"Transfer: {event['from']} → {event['to']}: {event['value']} ATC")
+```
+
+## 50.3 Rust SDK (geplant)
+
+```toml
+# Cargo.toml
+[dependencies]
+atcchain-sdk = "0.1.0"
+```
+
+```rust
+// Basis-Nutzung (geplant)
+use atcchain_sdk::{KAIClient, ChainConfig};
+
+#[tokio::main]
+async fn main() {
+    let client = KAIClient::new(ChainConfig {
+        rpc_url:  "http://localhost:4000".into(),
+        chain_id: 9000,
+    }).await.unwrap();
+
+    let balance = client.get_balance("ATC7F3A...").await.unwrap();
+    println!("Balance: {} ATC", balance);
+}
+```
+
+---
+
+# 51. Sprint-Plan — Vollständige Roadmap
+
+> **Aktuell:** Sprint 2.5 · **Phase:** 2 — Expansion
+
+## 51.1 Phase-Übersicht
+
+| Phase | Sprints | Zeitraum | Status |
+|-------|---------|----------|--------|
+| Phase 1 — Foundation | 1.1–1.8 | Nov 2025–Mai 2026 | ✅ |
+| Phase 2 — Expansion | 2.1–2.10 | Mai–Sep 2026 | 🔨 Aktiv |
+| Phase 3 — Cross-Chain | 3.1–3.6 | Okt 2026–Jan 2027 | 📋 |
+| Phase 4 — Ecosystem | 4.1–4.6 | Jan–Okt 2027 | 📋 |
+
+## 51.2 Phase 2 — Detaillierter Sprint-Plan
+
+| Sprint | Version | Zeitraum | Fokus | Issues | Status |
+|--------|---------|----------|-------|--------|--------|
+| 2.1 | v2.1.0 | 19.–26. Mai | Core Contracts | #1, #6 | ✅ |
+| 2.2 | v2.1.1 | 27. Mai–3. Jun | ECDSA + Explorer | #4, #5 | ✅ |
+| 2.3 | v2.1.2 | 4.–9. Jun | Governance + Marketplace | #9, #13 | ✅ |
+| 2.4 | v2.1.3 | 9.–11. Jun | Solidity + Bridge | #10, #12 | ✅ |
+| **2.5** | **v2.2.0** | **11.–17. Jun** | **Bootstrap Node + Breeding** | **#8, #11, #14** | 🔨 |
+| 2.6 | v2.2.1 | 18.–24. Jun | ATCLang v0.4 + Block Propagation | #15 | 📋 |
+| 2.7 | v2.2.2 | 25. Jun–1. Jul | Initial Sync + Chain-Rule | #16, #17 | 📋 |
+| 2.8 | v2.3.0 | 2.–15. Jul | Docker Compose + Monitoring | #18, #19 | 📋 |
+| 2.9 | v2.3.1 | 16.–29. Jul | Solidity Testnet Deploy | #12 | 📋 |
+| 2.10 | v2.3.2 | 30. Jul–12. Aug | Build System + Gateway-Tests | #7, #20 | 📋 |
+
+## 51.3 Phase 3 — Cross-Chain & Mainnet
+
+| Sprint | Version | Fokus |
+|--------|---------|-------|
+| 3.1 | v3.0.0-alpha | Mainnet Alpha + Bridge MVP |
+| 3.2 | v3.0.0-beta | wATC (Wrapped ATC) auf Ethereum |
+| 3.3 | v3.0.0-rc1 | Solana-Bridge + Audit |
+| 3.4 | v3.0.0 | Mainnet Launch |
+| 3.5 | v3.1.0 | DeFi L11 (AMM, Lending) |
+| 3.6 | v3.2.0 | Oracle + Flash Loans |
+
+## 51.4 Kritischer Entwicklungspfad
+
+```
+#14 Bootstrap Node
+  └→ #15 Block Propagation
+       └→ #16 Initial Sync
+            └→ #17 Longest-Chain-Rule
+                 └→ #18 Docker Compose
+                      └→ #19 Monitoring
+                           └→ #8 Multi-Node Live
+                                └→ MAINNET v3.0
+```
+
+## 51.5 Offene Issues nach Priorität
+
+| Prio | Issue | Titel | Sprint |
+|------|-------|-------|--------|
+| 🔴 | #8 | Multi-Node Testnet live | 2.5–2.8 |
+| 🟡 | #7 | Build System EXE/AppImage | 2.10 |
+| 🟡 | #11 | Shivamon Breeding Gen 2 | 2.5 |
+| 🟡 | #12 | Solidity On-Chain Contracts | 2.9 |
+| 🟡 | #13 | ATC Marketplace | 2.3 ✅ |
+| 🟡 | #18 | Docker Compose Testnet | 2.8 |
+| 🟡 | #19 | Node-Monitoring Dashboard | 2.8 |
+| 🟢 | #10 | Cross-Chain Bridge | 3.1 |
+
+---
+
+# 52. Glossar & Referenzen
+
+> *Vollständiges Glossar aller Begriffe im A-TownChain Ökosystem*
+
+## 52.1 Begriffe A–Z
+
+| Begriff | Definition |
+|---------|-----------|
+| **ATC** | A-Town Coin — Haupt-Währung des Ökosystems (max. 21M) |
+| **ATC-001** | Genesis Token — symbolischer Ursprungs-Token (Menge: 1) |
+| **ATC-8300** | Fungible Token Standard (analog ERC-20) |
+| **ATC-9000** | NFT Standard (analog ERC-721) — Shivamon |
+| **ATC-9900** | Governance-Token / DAO-Standard |
+| **ATCFS** | A-TownChain File System — dezentrales Dateisystem (ATS-1002) |
+| **ATCLang** | Native Smart-Contract-Sprache des Ökosystems |
+| **ATCNet** | P2P-Netzwerk-Stack (ATS-1006) |
+| **ATCVM** | Stack-basierte Virtual Machine für ATCLang-Bytecode |
+| **atcpkg** | Package-Manager für ATC-Module (ATS-1001) |
+| **Bootstrap Node** | Erster Einstiegspunkt ins P2P-Netzwerk (Issue #14) |
+| **Chain ID** | 9000 — eindeutige Identifikation der A-TownChain |
+| **CID** | Content Identifier — SHA-256-Hash einer ATCFS-Datei |
+| **DAO** | Decentralized Autonomous Organization — Governance-System |
+| **DID** | Decentralized Identifier — `did:kai:z6Mkh...` |
+| **DNA-Hash** | Einzigartiger genetischer Fingerabdruck eines Shivamon |
+| **ECDSA** | Elliptic Curve Digital Signature Algorithm (secp256k1) |
+| **FedAvg** | Federated Averaging — Aggregationsalgorithmus für FL |
+| **Gas** | Rechengebühr in ATC für Blockchain-Operationen |
+| **Governance** | On-Chain-Abstimmungssystem (ATC-9900, 10% Quorum) |
+| **Halving** | Halbierung des Block-Rewards alle 210.000 Blöcke |
+| **HD-Wallet** | Hierarchical Deterministic Wallet (BIP-32/44) |
+| **IPC** | Inter-Process Communication — Agenten-Kommunikation (ATS-1003) |
+| **KAI-OS** | KI-Blockchain-Betriebssystem — Gesamt-System |
+| **L0–L12** | 13 Schichten der KAI-OS Layer-Architektur |
+| **Lock-and-Mint** | Bridge-Mechanismus: ATC sperren → wATC minten |
+| **Marketplace** | NFT-Handelsplatz (2.5% Royalty + 1% Platform-Fee) |
+| **Mnemonic** | 24-Wort-Seed-Phrase für Wallet (BIP-39) |
+| **Multi-Sig** | Multi-Signature Wallet (M-of-N) |
+| **NFT** | Non-Fungible Token — einzigartiges digitales Asset |
+| **Node** | Teilnehmer im A-TownChain P2P-Netzwerk |
+| **PoH** | Proof of History — kryptografischer Zeitstempel-Beweis |
+| **PoI** | Proof of Intelligence — KI-Beitrags-Beweis |
+| **PoS** | Proof of Stake — Stake-basiertes Konsens-Gewicht |
+| **Proposal** | Governance-Antrag (1.000 ATC Deposit, 7 Tage Voting) |
+| **Quorum** | Mindest-Beteiligung bei Governance (10% der Supply) |
+| **ReAct** | Reason-Act-Observe Loop für KI-Agenten |
+| **Relayer** | Service, der Bridge-Events zwischen Chains überträgt |
+| **RPC** | Remote Procedure Call — Blockchain-API |
+| **Shivamon** | NFT-basiertes Battle-Wesen (ATC-9000, max. 9.900) |
+| **ShivaOS** | Browser-basiertes OS-Dashboard (ATS-1007) |
+| **Slashing** | Strafe für Validator-Fehlverhalten (10% Stake-Verlust) |
+| **Snapshot** | Eingefrorene Token-Balances für Governance-Abstimmung |
+| **Stake** | Eingesetztes ATC für Validator-Rechte (min. 10.000 ATC) |
+| **Timelock** | 48h Verzögerung vor Governance-Execution |
+| **Treasury** | On-Chain-Schatzkammer für Protokoll-Einnahmen |
+| **Validator** | Node mit Stake-Recht zur Block-Produktion |
+| **VRF** | Verifiable Random Function — nachweisbare Zufälligkeit |
+| **wATC** | Wrapped ATC — ERC-20 Repräsentation auf Ethereum |
+| **XAI** | Explainable AI — nachvollziehbare KI-Entscheidungen |
+| **ZKP** | Zero-Knowledge Proof — Datenschutz-Beweis |
+
+## 52.2 Datei-Referenz-Matrix
+
+| Komponente | Code | Tests | Doku | Issue |
+|-----------|------|-------|------|-------|
+| ATC-8300 Token | `blockchain/contracts/atc8300/` | `tests/test_smart_contracts.py` | `docs/contracts/ATC_TOKEN_STANDARD.md` | #1 |
+| Shivamon NFT | `modules/shivamon/` | `tests/test_smart_contracts.py` | `docs/contracts/SHIVAMON_NFT_CONTRACT.md` | #3, #11 |
+| Governance | `blockchain/contracts/governance/` | `tests/test_smart_contracts.py` | `docs/issues/ISSUE_09_GOVERNANCE.md` | #9 |
+| Marketplace | `modules/contracts/marketplace/` | `tests/test_smart_contracts.py` | `docs/issues/ISSUE_13_MARKETPLACE.md` | #13 |
+| Bridge | `modules/contracts/bridge/` | — | `docs/issues/ISSUE_10_BRIDGE.md` | #10 |
+| ECDSA Wallet | `blockchain/wallet/` | `tests/test_ecdsa.py` | `docs/architecture/WALLET_KEYGEN.md` | #6 |
+| API Gateway | `gateway/` | `tests/test_gateway.py` | `docs/architecture/GATEWAY.md` | #20 |
+| P2P Discovery | `blockchain/nodes/discovery.py` | `tests/test_discovery.py` | `docs/architecture/ATCNET_P2P.md` | #14 |
+| ATCLang | `modules/atclang/` | `tests/test_atclang.py` | `docs/atclang/ATCLANG_SPEC_FULL.md` | — |
+| Solidity | `blockchain/contracts/solidity/` | `blockchain/contracts/solidity/test/` | `docs/issues/ISSUE_12_SOLIDITY.md` | #12 |
+| Testnet | `docker-compose.yml` | — | `docs/architecture/TESTNET.md` | #8, #18 |
+| Monitoring | `monitoring/` | — | `docs/architecture/TESTNET.md` | #19 |
+
+## 52.3 Externe Referenzen
+
+| Ressource | URL |
+|-----------|-----|
+| GitHub Organisation | https://github.com/A-TownChain-Okosystems |
+| Code-Repo | https://github.com/A-TownChain-Okosystems/a-townchain-os |
+| Docs-Repo | https://github.com/A-TownChain-Okosystems/a-townchain-os-docs |
+| BIP-39 | https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki |
+| BIP-32 | https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki |
+| EIP-721 | https://eips.ethereum.org/EIPS/eip-721 |
+| EIP-20 | https://eips.ethereum.org/EIPS/eip-20 |
+| OpenZeppelin | https://docs.openzeppelin.com/ |
+| Gemini API | https://ai.google.dev/ |
+| Hardhat | https://hardhat.org/ |
+| Docker Compose | https://docs.docker.com/compose/ |
+| Prometheus | https://prometheus.io/ |
+| Kademlia DHT | https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf |
+
+---
+
+> *KAI-OS Wiki — Kapitel 32–52 · Stand: 10. Juni 2026 · Sprint 2.5*
+> *Nächster Update: täglich 08:00 Uhr (Auto-Sync) · Aurora (KAI-OS Agent)*
+

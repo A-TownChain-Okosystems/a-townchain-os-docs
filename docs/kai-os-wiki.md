@@ -2,7 +2,7 @@
 
 > Ein vollständiges Nachschlagewerk für das Konzept, die Architektur, die Entwicklung und den Betrieb des KAI-OS — einem dezentralen, KI-gesteuerten Betriebssystem auf Blockchain-Basis.
 
-**Version:** 1.0.0-alpha | **Stand:** Mai 2026 | **Lizenz:** Apache 2.0
+**Version:** 1.3.3-beta | **Stand:** Juni 2026 (Live-Sync aktiv) | **Lizenz:** Apache 2.0
 
 ---
 
@@ -59,6 +59,42 @@
     - 25.10 Security-Metriken
     - 25.11 Kernel-Sprints K-Sec 1 & 2
     - 25.12 Integration in Roadmap
+26. [DeFi Layer — L11](#26-defi-layer)
+    - 26.1 AMM (Automated Market Maker)
+    - 26.2 Lending Protocol
+    - 26.3 Yield Farming & Staking
+    - 26.4 Oracle-Netzwerk
+    - 26.5 Flash Loan Engine
+    - 26.6 Compute-Marketplace (ResourceMarket)
+    - 26.7 Payment Channels (Mikrozahlungen)
+    - 26.8 MEV-Schutz
+27. [Gamification Layer — L12](#27-gamification-layer)
+    - 27.1 Shivamon NFT-System
+    - 27.2 Quest-Engine
+    - 27.3 Achievement-System
+    - 27.4 Soul-Bound Tokens
+    - 27.5 Battle-System
+    - 27.6 Leaderboard-System
+    - 27.7 Sicherheit — L0 → L12
+    - 27.8 Roadmap-Integration
+28. [Integration Map — Repo ↔ Wiki](#28-integration-map)
+    - 28.1 Bewertungsmatrix
+    - 28.2 Detail-Entscheidungen (Merge-Strategie)
+    - 28.3–28.6 Migrations-Fahrplan & Sync
+29. [Mainnet Readiness Checklist](#29-mainnet-readiness-checklist)
+30. [DevOps-Automatisierung — GitHub Actions & Docusaurus](#30-devops-automatisierung)
+    - 30.1 Automatisierungs-Pipeline Überblick
+    - 30.2 Wiki-Sync Workflow (wiki-sync.yml)
+    - 30.3 Docusaurus Deployment (docusaurus.yml)
+    - 30.4 Täglicher Health-Check (wiki-health.yml)
+    - 30.5–30.6 Docusaurus Konfiguration
+    - 30.7 Einrichtungs-Checkliste
+    - 29.1 Security-Audit-Gate (15 Punkte)
+    - 29.2 Performance-Gate (15 Punkte)
+    - 29.3 Compliance- & Legal-Gate (10 Punkte)
+    - 29.4 Ökosystem-Gate (15 Punkte)
+    - 29.5 Launch-Prozess & Genesis-Block
+    - 29.6 Post-Mainnet-Roadmap (v1.1.0+)
 
 ---
 
@@ -2254,6 +2290,25 @@ KAI-OS betreibt ein öffentliches Bug-Bounty-Programm:
 ---
 
 # 17. Roadmap
+
+<!-- ROADMAP_AUTO_UPDATE_START -->
+> **🔄 Roadmap zuletzt synchronisiert:** 2026-06-09 · HEAD `7389941c23` (2026-06-09) · 16 offene Issues · 10 letzte Commits
+>
+> **Sprint 2.2** — offene Issues: #19, #18, #17, #16, #15, #14, #8
+>
+> **Sprint 2.3** — offene Issues: #12, #10, #5
+>
+> **Sprint 2.5** — offene Issues: #13
+>
+> **Sprint 2.7** — offene Issues: #20
+>
+> **Sprint 2.8** — offene Issues: #11, #3
+<!-- ROADMAP_AUTO_UPDATE_END -->
+
+
+
+
+
 
 > Die technische Roadmap ist in vier Hauptphasen unterteilt. Jede Phase ist in **Sprints** (2-Wochen-Zyklen) gegliedert mit konkreten Entwicklungsaufgaben, integrierten **Fehlerbehebungsschritten**, **Deployment-Checklisten**, Abhängigkeiten und messbaren KPIs.
 
@@ -7469,6 +7524,2921 @@ Diese Python-Implementierungen bleiben als **Referenz-Code** im Repository — s
 
 
 
-*KAI-OS Wiki v1.3.0-alpha — Juni 2026*
+
+---
+
+## 28.5 Repo-Sync: Neue Komponenten (2026-06-03)
+
+> 🔄 Diese Komponenten wurden nach dem letzten Wiki-Stand ins Repo committet und werden hier dokumentiert.
+
+### 28.5.1 API-Gateway Test-Suite (Issue #20)
+
+**Datei:** `tests/test_gateway.py` — 15 Test-Cases, Coverage-Ziel ≥ 80%
+
+| Test-Klasse | Abdeckung | Wiki-Referenz |
+|---|---|---|
+| `TestGatewayHealth` | GET /health → 200, JSON {status:ok}, 404 unbekannte Routen | Kap. 8 API-Referenz |
+| `TestAuthMiddleware` | Token-Prüfung, ATC-Adressformat-Validation | L0/S2 Zero-Trust |
+| `TestRateLimitMiddleware` | Counter, Blocking bei Überschreitung | L7 API-Rate-Limit |
+| `TestSignatureVerify` | ECDSA-Signatur-Verifikation, leere Signatur abgelehnt | L0/S1 ECDSA |
+| `TestRouterStructure` | Router-Modul, Blueprint-Registrierung | Kap. 8 Gateway-Router |
+
+**Migration zu KAI-OS (Sprint 2.2 — L7 API-Layer):**
+```
+tests/test_gateway.py  →  Tests werden portiert für Axum/Tower HTTP-Layer (Rust)
+                           Rate-Limiting-Logik → tower::limit::RateLimit Middleware
+                           ECDSA-Verify → kai-crypto Crate (K-Sec 1)
+```
+
+> 🔗 **L0/S2 Zero-Trust** (Kapitel 25.4): Auth-Middleware + Signature-Verify sind L0-Pflicht-Gates.
+> 🔗 **L7 API & CLI** (Kapitel 2): Rate-Limit-Logik fließt direkt in L7-API-Design ein.
+
+### 28.5.2 ECDSA Finalisierung (Issue #6)
+
+**Dateien:** `tools/ecdsa_impl.py`, `tools/ecdsa_final.py`
+
+Zwei konkurrierende ECDSA-Implementierungen wurden im Repo ergänzt. Vergleich:
+
+| Merkmal | `ecdsa_impl.py` | `ecdsa_final.py` | Entscheidung |
+|---|---|---|---|
+| Private-Key-Encoding | `Encoding.Raw` | `private_numbers().private_value` | **ecdsa_final** (sicherer) |
+| Signing-Hash | `Prehashed` (SHA-256) | Standard ECDSA | **ecdsa_final** |
+| Dokumentation | minimal | vollständig (Docstrings) | **ecdsa_final** |
+| Kurve | secp256k1 | secp256k1 | beide identisch |
+
+**Ergebnis:** `ecdsa_final.py` ist die kanonische Python-Referenz-Implementierung.
+
+**Migration zu KAI-OS (K-Sec 1):**
+```
+ecdsa_final.py (secp256k1, Python) 
+  → legacy/ecdsa_ref.py (Referenz-Signaturvektoren für Tests)
+  → kai-crypto: ED25519 + SR25519 (Substrate-nativ, Rust)
+  Signatur-Vektoren aus ecdsa_final werden als Cross-Check-Tests übernommen
+```
+
+> 🔗 **L0/S1 Crypto-Primitives** (Kapitel 25.3): ecdsa_final liefert Test-Vektoren für
+>    die secp256k1→Ed25519 Migrations-Validierung in K-Sec 1.
+
+### 28.5.3 KAI_INTEGRATION.md — Neue Smart Contracts
+
+**Datei:** `docs/KAI_INTEGRATION.md` — KAI-OS Integrations-Guide (v2.1.0)
+
+Enthält Python-Prototypen für 5 neue Smart Contracts, die in die Wiki-Architektur eingebettet werden:
+
+| Contract (Repo) | Wiki-Ziel | Layer | Sprint |
+|---|---|---|---|
+| `ResourceMarket` — GPU/CPU-Auktionen | L11 DeFi: Compute-Marketplace | L11 | Sprint 3.3 |
+| `AgentRegistry` — DID-basierte Agent-Registrierung | L9 Agent Registry | L9 | Sprint 2.6 |
+| `FederatedLearning` — Training-Round-Koordination | L3 KI-Modul Federated | L3 | Sprint 3.1 |
+| `GovernanceDAO` — Proposals + Conviction Voting | L8 Governance DAO | L8 | Sprint 2.6 |
+| `PaymentChannel` — Mikrozahlungen | L11 DeFi: Payment Channels | L11 | Sprint 3.5 |
+
+**Merge-Entscheidungen:**
+
+| Contract | Repo-Feature behalten | Wiki ergänzen |
+|---|---|---|
+| `ResourceMarket` | Auction-Mechanismus, Bid-System | L0/S2 Signatur-Pflicht, $COMPUTE-Preis |
+| `AgentRegistry` | DID-Format, Capabilities-Liste | L9 Soul-Bound Agent-NFT |
+| `FederatedLearning` | Round-Koordination, Privacy-Mask | L3/ZKP Proof-Verifikation (S3) |
+| `GovernanceDAO` | Conviction-Voting (Zeit×Stake) | L8 On-Chain via Substrate-Pallet |
+| `PaymentChannel` | Mikrozahlungs-Logik | L11 mit Flash-Loan-Sicherheits-Gate |
+
+**`AgentRegistry` — DIDs in L9:**
+```rust
+// L9 Agent Layer (Kapitel 24, KFM-Architektur) — ergänzt durch Repo-DID-Konzept
+pub struct AgentRecord {
+    pub did:          String,          // "did:kai:<z6Mkh...>" aus Repo
+    pub name:         String,
+    pub owner:        AccountId,
+    pub model:        String,          // "llama3-8b-q4" etc.
+    pub capabilities: Vec<String>,     // ["read_storage", "call_contracts"]
+    pub soul_bound:   bool,            // L12-Integration: Agent-NFT
+    pub compute_used: u128,            // $COMPUTE-Tracking
+    pub registered_at: u64,
+}
+```
+
+**`GovernanceDAO` — Conviction Voting → L8:**
+```
+Repo: conviction = Zeit × Stake (linear)
+Wiki: L8 OpenGov-Pallet (Substrate)
+MERGE: Conviction-Faktor aus Repo → als Custom-Pallet-Parameter in L8
+       Conviction-Voting ist Substrate-nativ (pallet_conviction_voting) ✅
+```
+
+> 🔗 **L3 KI-Modul** (Kapitel 24): FederatedLearning-Contract → L3 Federated Learning
+>    Subsystem; ZKP-Proof (S3) wird für Privacy-Masken Pflicht (Kapitel 25.5).
+> 🔗 **L9 Agent** (Kapitel 24): AgentRegistry-DID-Konzept direkt in L9-Kernel-Modul.
+> 🔗 **L11 DeFi** (Kapitel 26): ResourceMarket + PaymentChannel als neue L11-Module.
+
+## 28.6 Aktualisierter Migrations-Fahrplan (vollständig)
+
+| Sprint | Aktion | Input (Repo) | Ziel (Wiki) |
+|---|---|---|---|
+| **K-Sec 1** | kai-crypto Crate | ecdsa_final.py (Signaturvektoren) | Ed25519+SR25519+Kyber |
+| **Sprint 2.1** | Substrate-Chain | consensus/hybrid_consensus.py (PoH) | GRANDPA/BABE+pallet_poh |
+| **Sprint 2.2** | L7 API (Axum) | gateway/ + test_gateway.py | Tower Middleware (Auth, Rate-Limit) |
+| **Sprint 2.3** | L2 Micro-Kernel | core/event_bus.py | Rust IPC+EDF-Scheduler |
+| **Sprint 2.5** | Ink!-Token | atc8300_token.py (Snapshot+Allowances) | $KAI-Pallet+DeFiRegistry |
+| **Sprint 2.6** | L8+L9 | GovernanceDAO + AgentRegistry | pallet_conviction_voting + L9-DID |
+| **Sprint 3.1** | L3 KI | FederatedLearning + ZKP | L3 Federated Subsystem |
+| **Sprint 3.3** | L11 DeFi | ResourceMarket (Compute-Auction) | L11 Compute-Marketplace |
+| **Sprint 3.5** | L11 DeFi | PaymentChannel | L11 Payment Channels |
+| **Sprint 3.7** | L12 Shivamon | shivamon_contract.py (DNA+Battle) | ShivamonNFT.ink |
+
+
+
+---
+
+# 29. Mainnet Readiness Checklist
+
+> **Gate:** Sprint 4.3 — Mainnet Go-Live 🚀 | Ziel: Sep 2027
+> **Referenz:** Kapitel 22 (Incident), Kapitel 25 (L0-Security), Kapitel 19 (Governance), Kapitel 26 (DeFi)
+> **Format:** 100-Punkt-Gate — alle Punkte müssen ✅ sein. Kein optionales "Nice-to-have".
+> **Owner:** Core-Team (Milestones MK4 + MS1 + MS2 müssen GRÜN sein)
+
+---
+
+## 29.1 Security-Audit-Gate *(L0/S1–S6 — Kapitel 25)*
+
+> Abhängigkeit: **MK4** (Phase-4-Gate) + **MS1** (L0-NFT geminted) + **MS2** (IDS live)
+> Acceptance: 0 offene Critical- oder High-Findings. Alle Audit-Berichte öffentlich.
+
+| # | Checkpoint | Owner | Link | Status |
+|---|---|---|---|---|
+| 1.01 | Externer Sicherheits-Audit abgeschlossen (mindestens 2 unabhängige Firmen) | Security Lead | Kap. 25.2 | 🔴 |
+| 1.02 | 0 Critical-Findings offen (CVSS ≥ 9.0) | Security Lead | Kap. 25.6 (IDS) | 🔴 |
+| 1.03 | 0 High-Findings offen (CVSS ≥ 7.0) | Security Lead | Kap. 25.6 | 🔴 |
+| 1.04 | L0-Security-NFT auf Testnet geminted (**MS1** bestätigt) | L0-Team | Kap. 25.9 | 🔴 |
+| 1.05 | IDS/IPS live auf allen Validatoren (**MS2** bestätigt) | Infra-Team | Kap. 25.6 | 🔴 |
+| 1.06 | ZKP-Engine produktionsbereit (Groth16/PLONK Verifier on-chain) | L0-Team | Kap. 25.5 | 🔴 |
+| 1.07 | Key-Lifecycle-Management vollständig (HSM-Integration, Rotation-Policy) | Security Lead | Kap. 25.8 | 🔴 |
+| 1.08 | Zero-Trust-Policy-Engine aktiv (mTLS, DID-Auth, Capability-Tokens) | Infra-Team | Kap. 25.4 | 🔴 |
+| 1.09 | Audit-Trail on-chain aktiviert (alle Tx, Agent-Aktionen, Governance) | L0-Team | Kap. 25.7 | 🔴 |
+| 1.10 | Bug-Bounty-Programm aktiv (mind. 90 Tage vor Mainnet) | Security Lead | — | 🔴 |
+| 1.11 | Penetration-Test bestanden (Netzwerk + Smart Contracts) | Extern | — | 🔴 |
+| 1.12 | Incident-Response-Playbook getestet (Simulation durchgeführt) | Ops-Team | Kap. 22 | 🔴 |
+| 1.13 | Emergency-Pause-Mechanismus getestet (alle L1–L12 pausierbar) | Core-Team | Kap. 25 | 🔴 |
+| 1.14 | L0-NFT-Zertifikate für alle L1–L12 Layer ausgestellt | L0-Team | Kap. 25.9 | 🔴 |
+| 1.15 | Multisig-Threshold für Admin-Keys konfiguriert (min. 3-of-5) | Security Lead | Kap. 25.8 | 🔴 |
+
+**Gate 1 bestanden:** ☐ Security Lead Sign-off · ☐ Externer Auditor Sign-off
+
+---
+
+## 29.2 Performance-Gate *(Kap. 25.10 Security-Metriken + Kap. 4 Blockchain)*
+
+> Abhängigkeit: Alle Performance-Tests unter Mainnet-Last (≥ 1.000 gleichzeitige User)
+> Acceptance: Alle Schwellwerte müssen auf Testnet und Staging erfüllt sein.
+
+| # | Checkpoint | Zielwert | Gemessen | Owner | Link |
+|---|---|---|---|---|---|
+| 2.01 | Block-Finality (GRANDPA) | < 6 Sekunden | — | L4-Team | Kap. 4 |
+| 2.02 | Throughput (TPS) | ≥ 10.000 TPS | — | L4-Team | Kap. 4 |
+| 2.03 | Zero-Trust Auth-Latenz | < 2 ms | — | L0-Team | Kap. 25.10 |
+| 2.04 | ZKP-Proof-Generierung | < 100 ms | — | L0-Team | Kap. 25.10 |
+| 2.05 | P2P-Nachrichtenlatenz (GossipSub) | < 200 ms (95th Perzentil) | — | L5-Team | Kap. 2 |
+| 2.06 | API-Gateway Response-Zeit | < 50 ms (p95) | — | L7-Team | Kap. 8 |
+| 2.07 | KI-Inferenz (L3, 7B Modell) | < 500 ms | — | L3-Team | Kap. 24 |
+| 2.08 | Agent-Task-Ausführung (L9) | < 2 Sekunden | — | L9-Team | Kap. 24 |
+| 2.09 | Smart Contract Deploy (Ink!) | < 10 Sekunden | — | L10-Team | Kap. 5 |
+| 2.10 | DeFi AMM Swap | < 3 Sekunden | — | L11-Team | Kap. 26 |
+| 2.11 | Federated Learning Round | < 5 Minuten (min. 10 Nodes) | — | L3-Team | Kap. 24 |
+| 2.12 | Node-Sync (neuer Validator) | < 4 Stunden (Full Node) | — | Infra | Kap. 4 |
+| 2.13 | Storage-Throughput (L6) | ≥ 1 GB/s | — | L6-Team | Kap. 2 |
+| 2.14 | Memory-Footprint Kernel (L2) | < 512 MB (Idle) | — | L2-Team | Kap. 24 |
+| 2.15 | Uptime Testnet (Rolling 30d) | ≥ 99,9% | — | Infra | Kap. 22 |
+
+**Gate 2 bestanden:** ☐ L4-Team Sign-off · ☐ Infra Sign-off · ☐ Benchmark-Report veröffentlicht
+
+---
+
+## 29.3 Compliance- & Legal-Gate *(NEU — außerhalb der Wiki-Kapitel)*
+
+> Abhängigkeit: Legal-Counsel + Regulatory Affairs
+> Acceptance: Alle Jurisdiktionen des Core-Teams abgedeckt. Kein offenes Verfahren.
+
+| # | Checkpoint | Owner | Status |
+|---|---|---|---|
+| 3.01 | Rechtsstruktur abgeschlossen (Foundation / DAO-LLC / Schweizer Verein) | Legal | 🔴 |
+| 3.02 | Token-Klassifizierung geprüft (kein Wertpapier in DE/CH/US) | Legal | 🔴 |
+| 3.03 | AML/KYC-Policy für Exchanges definiert | Legal | 🔴 |
+| 3.04 | Privacy-Audit abgeschlossen (DSGVO-Konformität) | Legal | 🔴 |
+| 3.05 | Open-Source-Lizenz-Audit (alle Dependencies geprüft) | Legal | 🔴 |
+| 3.06 | Smart-Contract-Audit-Bericht veröffentlicht | Legal + Security | 🔴 |
+| 3.07 | Token-Distribution-Plan (Vesting, Cliff, Lockup) öffentlich | Core-Team | 🔴 |
+| 3.08 | Validator-Onboarding-Vertrag (SLA, Slashing-Policy) | Legal | 🔴 |
+| 3.09 | Disaster-Recovery-Plan dokumentiert + getestet | Ops | Kap. 22 | 
+| 3.10 | OFAC-Screening für Genesis-Validatoren | Legal | 🔴 |
+
+**Gate 3 bestanden:** ☐ Legal-Counsel Sign-off · ☐ Compliance-Officer Sign-off
+
+---
+
+## 29.4 Ökosystem-Gate *(Kap. 22 Incident + Kap. 19 Governance)*
+
+> Abhängigkeit: Community, Developer-Relations, Partnerships
+> Acceptance: Messbare Adoption vor Mainnet. Mindest-Validatoren aktiv.
+
+| # | Checkpoint | Zielwert | Gemessen | Owner | Link |
+|---|---|---|---|---|---|
+| 4.01 | Aktive Validatoren (Genesis Set) | ≥ 21 Validatoren | — | Validator-Team | Kap. 4 |
+| 4.02 | Validatoren geografisch verteilt | ≥ 5 Länder | — | Validator-Team | — |
+| 4.03 | Aktive Entwickler (letzten 30 Tage) | ≥ 500 Devs | — | DevRel | — |
+| 4.04 | dApps auf Testnet deployed | ≥ 20 dApps | — | Ecosystem | Kap. 5 |
+| 4.05 | TVL (Total Value Locked, Testnet) | > $1 Mio (simuliert) | — | L11-Team | Kap. 26 |
+| 4.06 | Shivamon-NFTs geminted (Testnet) | ≥ 1.000 NFTs | — | L12-Team | Kap. 27 |
+| 4.07 | Agent-Registry befüllt (Testnet) | ≥ 100 Agents | — | L9-Team | Kap. 24 |
+| 4.08 | Governance-Proposal erfolgreich durchlaufen | ≥ 3 Proposals | — | L8-Team | Kap. 19 |
+| 4.09 | Exchange-Listing gesichert (mind. 1 DEX) | ≥ 1 DEX | — | Business | — |
+| 4.10 | Dokumentation vollständig (Docusaurus live) | 100% | — | DevRel | — |
+| 4.11 | SDK (TypeScript + Python) veröffentlicht | npm + PyPI | — | Core-Team | — |
+| 4.12 | Mainnet-Roadmap öffentlich kommuniziert | 30 Tage vorher | — | Core-Team | — |
+| 4.13 | Community-Größe (Discord + Forum) | ≥ 5.000 Member | — | Community | — |
+| 4.14 | Testnet-Stress-Test öffentlich (Community-Teilnahme) | ≥ 500 Teilnehmer | — | DevRel | — |
+| 4.15 | Incident-Communication-Kanal etabliert | 24/7-Status-Page | — | Ops | Kap. 22 |
+
+**Gate 4 bestanden:** ☐ DevRel Sign-off · ☐ Validator-Team Sign-off · ☐ Community-Vote (mind. 67% Ja)
+
+---
+
+## 29.5 Technischer Mainnet-Launch-Prozess
+
+> Referenz: Kap. 25 (L0), Kap. 4 (Blockchain), Sprint 4.3 DoD
+
+### 29.5.1 Launch-Sequenz (T-Minus)
+
+```
+T-30 Tage  ── Gate 1 (Security) ✅ vollständig abgeschlossen
+T-14 Tage  ── Gate 2 (Performance) ✅ alle Benchmarks bestanden
+T-07 Tage  ── Gate 3 (Legal/Compliance) ✅ Sign-offs vorhanden
+T-07 Tage  ── Genesis-Validator-Set finalisiert (21 Validatoren)
+T-03 Tage  ── Genesis-Block vorbereitet (Chain-Spec signiert, L0-NFT live)
+T-01 Tag   ── Final-Smoke-Test (alle Gates nochmals geprüft)
+T-00       ── 🚀 MAINNET GENESIS-BLOCK
+
+Post-Launch (T+24h):
+           ── Incident-Watch-Duty (Core-Team 24/7, erste 72h)
+           ── Performance-Monitoring Dashboard öffentlich
+           ── Community-Update veröffentlicht
+```
+
+### 29.5.2 Genesis-Block-Konfiguration
+
+```rust
+// chain_spec.rs — KAI-OS Mainnet Genesis
+ChainSpec {
+    name:             "KAI-OS Mainnet",
+    id:               "kai_os_mainnet",
+    chain_type:       ChainType::Live,
+    protocol_version: "v1.0.0",
+
+    // L0/S1 — Security-Konfiguration
+    security_layer: SecurityConfig {
+        l0_nft_contract: "kai://l0-security-nft",   // MS1 ✅
+        ids_active:      true,                       // MS2 ✅
+        zkp_verifier:    "groth16",
+        key_rotation:    Duration::days(90),
+    },
+
+    // Initiale Validatoren (21 Genesis-Validatoren)
+    validators: genesis_validators(),                // Gate 4.01 ✅
+
+    // Token-Distribution
+    initial_supply:  1_000_000_000_u128,            // 1 Mrd. $KAI
+    foundation_lock: Duration::years(4),             // 4-Jahres-Vesting
+    community_pool:  0.30,                           // 30% Community
+    dev_fund:        0.20,                           // 20% Dev-Team
+    validator_pool:  0.15,                           // 15% Validators
+    public_sale:     0.35,                           // 35% Public
+}
+```
+
+### 29.5.3 Go/No-Go-Entscheidung
+
+```
+FINAL GO/NO-GO CHECKLIST:
+
+  ☐ Gate 1  (Security)     — 15/15 Punkte ✅
+  ☐ Gate 2  (Performance)  — 15/15 Punkte ✅
+  ☐ Gate 3  (Compliance)   — 10/10 Punkte ✅
+  ☐ Gate 4  (Ecosystem)    — 15/15 Punkte ✅
+
+  ☐ MK4 (Phase-4-Gate)   — bestätigt ✅
+  ☐ MS1 (L0-NFT live)    — bestätigt ✅
+  ☐ MS2 (IDS live)       — bestätigt ✅
+
+  GESAMT: 55/55 Punkte → GO 🚀
+          < 55 Punkte   → NO-GO ⛔ (Datum verschoben)
+```
+
+> 🔗 **Kapitel 25** (L0/S1–S6): Gate 1 erfordert vollständige S1–S6 Zertifizierung.
+> 🔗 **Kapitel 22** (Incident): Gate 3.09 und Gate 4.15 basieren auf Incident-Response-Plan.
+> 🔗 **Kapitel 19** (Governance): Gate 4.08 und Community-Vote (Gate 4 Sign-off).
+> 🔗 **Sprint 4.3** (DoD): Mainnet-Readiness-Checklist ist Teil der Definition of Done.
+
+---
+
+## 29.6 Post-Mainnet-Roadmap (v1.1.0 +)
+
+| Version | Geplant | Features |
+|---|---|---|
+| `v1.0.1` | Okt 2027 | Hotfixes, erste Community-Patches |
+| `v1.1.0` | Jan 2028 | SR25519-Batch-Verifikation, Performance-Tuning L2 |
+| `v1.2.0` | Apr 2028 | Kyber-1024 in P2P (Post-Quantum produktiv) |
+| `v1.3.0` | Jul 2028 | L12 Gamification vollständig (Shivamon PvP-Turniere) |
+| `v2.0.0` | 2029 | L13+ Erweiterungen, Cross-Chain-Bridges |
+
+
+
+
+---
+
+# 30. DevOps-Automatisierung — GitHub Actions & Docusaurus
+
+> **Referenz:** Kapitel 23 (CI/CD), Kapitel 29 (Mainnet Readiness Gate 4.10)
+> **Layer:** L7 (API/CLI) · L0/S5 (Audit-Trail) · Sprint 4.1 (DoD: Docs live)
+> **Ziel:** Vollautomatische Dokumentation, Wiki-Sync und Public-Docs-Deployment
+
+---
+
+## 30.1 Überblick — Automatisierungs-Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  DEVOPS AUTOMATISIERUNG                         │
+│                                                                 │
+│  git push → wiki-sync.yml ──► docs/kai-os-wiki.md aktuell      │
+│           → docusaurus.yml ──► https://docs.kai-os.dev live     │
+│           → ci.yml ──────────► Tests + Lint + Security-Scan     │
+│                                                                 │
+│  cron (tägl.) → wiki-health.yml ──► Zeilen/Links/Gate-Check     │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Workflows im Überblick:**
+
+| Datei | Trigger | Aufgabe | Sprint |
+|---|---|---|---|
+| `wiki-sync.yml` | Push auf main | Wiki-Diff + Versions-Tag | Sprint 4.1 |
+| `docusaurus.yml` | Push auf main | Docs-Build + Pages-Deploy | Sprint 4.1 |
+| `wiki-health.yml` | Täglich 06:00 UTC | Konsistenz-Check (Zeilen, Gates) | Sprint 4.1 |
+| `ci.yml` | PR + Push | Tests, Lint, Coverage | Alle Sprints |
+
+---
+
+## 30.2 Wiki-Sync Workflow
+
+```yaml
+# .github/workflows/wiki-sync.yml
+name: 📚 Wiki Sync & Validation
+
+on:
+  push:
+    branches: [main, feature/kai-os-integration]
+    paths:
+      - 'docs/kai-os-wiki.md'
+      - 'docs/**/*.md'
+  workflow_dispatch:
+    inputs:
+      force_rebuild:
+        description: 'Force vollständigen Rebuild'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  wiki-validate:
+    name: 🔍 Wiki Konsistenz-Prüfung
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Python Setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Wiki Health Check
+        run: |
+          python3 - << 'PYEOF'
+          import sys, re
+
+          with open("docs/kai-os-wiki.md") as f:
+              wiki = f.read()
+          lines = wiki.splitlines()
+
+          checks = {
+              "Mindest-Zeilen (≥ 7500)":    len(lines) >= 7500,
+              "29 Kapitel vorhanden":        len(re.findall(r"^# \d+\.", wiki, re.M)) >= 29,
+              "26 Sprints vollständig":      all(f"Sprint {p}.{s}" in wiki
+                                                 for p,s_max in [(1,5),(2,6),(3,7),(4,3)]
+                                                 for s in range(1, s_max+1)),
+              "L0-Security verlinkt":        wiki.count("L0") >= 20,
+              "MK1-MK4 Gates vorhanden":    all(f"MK{i}" in wiki for i in range(1,5)),
+              "55-Punkt-Mainnet-Gate":       "55/55 Punkte" in wiki,
+              "Version-Tag vorhanden":       "v1." in wiki,
+          }
+
+          print("═══ KAI-OS WIKI HEALTH CHECK ═══════════════")
+          all_ok = True
+          for name, ok in checks.items():
+              print(f"  {'✅' if ok else '❌'} {name}")
+              if not ok:
+                  all_ok = False
+
+          print(f"
+  Zeilen: {len(lines)}")
+          if not all_ok:
+              print("
+❌ FEHLER: Wiki-Konsistenz nicht erfüllt!")
+              sys.exit(1)
+          print("
+✅ Wiki vollständig und konsistent.")
+          PYEOF
+
+      - name: Wiki Statistiken generieren
+        run: |
+          python3 - << 'PYEOF'
+          import re, json
+          from pathlib import Path
+
+          with open("docs/kai-os-wiki.md") as f:
+              wiki = f.read()
+
+          stats = {
+              "lines":           len(wiki.splitlines()),
+              "chapters":        len(re.findall(r"^# \d+\.", wiki, re.M)),
+              "sprints":         len(re.findall(r"Sprint \d+\.\d+", wiki)),
+              "security_refs":   wiki.count("L0") + wiki.count("S1") + wiki.count("S2"),
+              "version":         re.search(r"v\d+\.\d+\.\d+-\w+", wiki).group(0) if re.search(r"v\d+\.\d+\.\d+-\w+", wiki) else "unknown",
+              "layer_coverage":  [f"L{i}" for i in range(13) if f"L{i}" in wiki],
+          }
+
+          Path("docs/wiki-stats.json").write_text(json.dumps(stats, indent=2))
+          print(f"Wiki Stats: {stats['lines']} Zeilen | {stats['chapters']} Kapitel | {stats['version']}")
+          PYEOF
+
+      - name: Wiki-Stats als Artifact speichern
+        uses: actions/upload-artifact@v4
+        with:
+          name: wiki-stats
+          path: docs/wiki-stats.json
+
+  wiki-tag:
+    name: 🏷️ Version-Tag erstellen
+    needs: wiki-validate
+    runs-on: ubuntu-22.04
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version aus Wiki extrahieren + Tag setzen
+        run: |
+          VERSION=$(grep -o 'v[0-9]*\.[0-9]*\.[0-9]*-[a-z]*' docs/kai-os-wiki.md | head -1)
+          echo "Wiki-Version: $VERSION"
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Tag nur setzen wenn noch nicht vorhanden
+          if ! git tag | grep -q "wiki-${VERSION}"; then
+            git tag "wiki-${VERSION}" -m "Wiki ${VERSION} — $(wc -l < docs/kai-os-wiki.md) Zeilen"
+            git push origin "wiki-${VERSION}"
+            echo "✅ Tag wiki-${VERSION} gesetzt"
+          else
+            echo "ℹ️ Tag wiki-${VERSION} existiert bereits"
+          fi
+```
+
+---
+
+## 30.3 Docusaurus Deployment Workflow
+
+```yaml
+# .github/workflows/docusaurus.yml
+name: 🌐 Docusaurus Build & Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'docusaurus/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages:    write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: 🔨 Docusaurus Build
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node.js Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: docusaurus/package-lock.json
+
+      - name: Wiki → Docusaurus Markdown konvertieren
+        run: |
+          python3 - << 'PYEOF'
+          import re
+          from pathlib import Path
+
+          Path("docusaurus/docs").mkdir(parents=True, exist_ok=True)
+
+          with open("docs/kai-os-wiki.md") as f:
+              wiki = f.read()
+
+          # Kapitel in einzelne Dateien splitten
+          chapters = re.split(r"
+(?=# \d+\.)", wiki)
+          for chapter in chapters:
+              match = re.match(r"# (\d+)\. (.+)", chapter)
+              if match:
+                  num  = match.group(1).zfill(2)
+                  title = match.group(2).strip()
+                  slug  = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
+
+                  # Docusaurus Frontmatter hinzufügen
+                  frontmatter = f"""---
+id: chapter-{num}
+title: "{num}. {title}"
+sidebar_position: {int(num)}
+---
+
+"""
+                  Path(f"docusaurus/docs/chapter-{num}-{slug}.md").write_text(
+                      frontmatter + chapter
+                  )
+
+          print(f"✅ {len(chapters)-1} Kapitel-Dateien erzeugt")
+          PYEOF
+
+      - name: Docusaurus Dependencies installieren
+        working-directory: docusaurus
+        run: npm ci
+
+      - name: Docusaurus Build
+        working-directory: docusaurus
+        run: npm run build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+
+      - name: GitHub Pages Artifact hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docusaurus/build
+
+  deploy:
+    name: 🚀 GitHub Pages Deploy
+    needs: build
+    runs-on: ubuntu-22.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+---
+
+## 30.4 Täglicher Wiki-Health-Check
+
+```yaml
+# .github/workflows/wiki-health.yml
+name: 🏥 Wiki Health Check (täglich)
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # 06:00 UTC täglich
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Wiki Vollständigkeits-Check
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vollständiger Konsistenz-Check
+        run: |
+          python3 - << 'PYEOF'
+          import re, sys
+
+          with open("docs/kai-os-wiki.md") as f:
+              wiki = f.read()
+
+          # Alle 55 Mainnet-Gates prüfen
+          gate_counts = {
+              "Gate 1 (Security, 15 Punkte)":    sum(1 for i in range(1,16) if f"1.{i:02d}" in wiki),
+              "Gate 2 (Performance, 15 Punkte)": sum(1 for i in range(1,16) if f"2.{i:02d}" in wiki),
+              "Gate 3 (Legal, 10 Punkte)":       sum(1 for i in range(1,11) if f"3.{i:02d}" in wiki),
+              "Gate 4 (Ecosystem, 15 Punkte)":   sum(1 for i in range(1,16) if f"4.{i:02d}" in wiki),
+          }
+
+          all_ok = True
+          print("═══ WIKI HEALTH REPORT ═══════════════════════")
+          print(f"  Zeilen: {len(wiki.splitlines())}")
+          print()
+          print("  Mainnet-Gates:")
+          for gate, count in gate_counts.items():
+              ok = count >= int(gate.split(", ")[1].split(" ")[0])
+              print(f"    {'✅' if ok else '❌'} {gate}: {count} Einträge")
+              if not ok: all_ok = False
+
+          print()
+          print("  Layer-Abdeckung (L0–L12):")
+          for i in range(13):
+              ok = f"L{i}" in wiki
+              print(f"    {'✅' if ok else '❌'} L{i}")
+              if not ok: all_ok = False
+
+          if not all_ok:
+              sys.exit(1)
+          print("
+✅ Wiki vollständig konsistent.")
+          PYEOF
+```
+
+---
+
+## 30.5 Docusaurus Konfiguration
+
+```javascript
+// docusaurus/docusaurus.config.js
+import {themes as prismThemes} from 'prism-react-renderer';
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  title:            'KAI-OS',
+  tagline:          'KI-Blockchain Betriebssystem — Technische Dokumentation',
+  url:              'https://a-townchain-okosystems.github.io',
+  baseUrl:          '/a-townchain-os/',
+  favicon:          'img/kai-os-favicon.ico',
+  organizationName: 'A-TownChain-Okosystems',
+  projectName:      'a-townchain-os',
+
+  onBrokenLinks:    'warn',
+  onBrokenMarkdownLinks: 'warn',
+
+  i18n: {
+    defaultLocale: 'de',
+    locales:       ['de', 'en'],
+  },
+
+  presets: [
+    ['classic', {
+      docs: {
+        sidebarPath:    './sidebars.js',
+        routeBasePath: '/',
+        editUrl:        'https://github.com/A-TownChain-Okosystems/a-townchain-os/edit/main/docs/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime:   true,
+      },
+      blog:  false,
+      theme: {customCss: './src/css/custom.css'},
+    }],
+  ],
+
+  themeConfig: {
+    navbar: {
+      title: 'KAI-OS',
+      logo:  {alt: 'KAI-OS Logo', src: 'img/kai-os-logo.svg'},
+      items: [
+        {type: 'docSidebar', sidebarId: 'wikiSidebar', label: 'Wiki'},
+        {href: 'https://github.com/A-TownChain-Okosystems/a-townchain-os',
+         label: 'GitHub', position: 'right'},
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {title: 'Docs', items: [
+          {label: 'Vision & Konzept', to: '/chapter-01-vision-konzept'},
+          {label: 'Mainnet Readiness', to: '/chapter-29-mainnet-readiness-checklist'},
+        ]},
+        {title: 'Community', items: [
+          {label: 'GitHub', href: 'https://github.com/A-TownChain-Okosystems/a-townchain-os'},
+          {label: 'Discord', href: 'https://discord.gg/kai-os'},
+        ]},
+      ],
+      copyright: `© ${new Date().getFullYear()} KAI-OS Project — Apache 2.0`,
+    },
+    prism: {
+      theme:           prismThemes.github,
+      darkTheme:       prismThemes.dracula,
+      additionalLanguages: ['rust', 'toml', 'bash', 'python', 'typescript'],
+    },
+    colorMode: {defaultMode: 'dark', respectPrefersColorScheme: true},
+  },
+};
+
+export default config;
+```
+
+---
+
+## 30.6 Docusaurus Sidebar-Konfiguration
+
+```javascript
+// docusaurus/sidebars.js
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+const sidebars = {
+  wikiSidebar: [
+    {type: 'doc', id: 'chapter-01-vision-konzept', label: '1. Vision & Konzept'},
+    {type: 'category', label: '🏗️ Architektur', collapsed: false, items: [
+      'chapter-02-architektur',
+      'chapter-03-ki-komponenten',
+      'chapter-04-blockchain-komponenten',
+      'chapter-05-betriebssystem-schicht',
+    ]},
+    {type: 'category', label: '🛠️ Entwicklung', items: [
+      'chapter-06-installation-quickstart',
+      'chapter-09-sdk-entwicklung',
+      'chapter-10-agenten-entwicklung',
+      'chapter-11-smart-contract-entwicklung',
+      'chapter-12-cli-referenz',
+    ]},
+    {type: 'category', label: '🔐 Security (L0)', items: [
+      'chapter-16-sicherheitsrichtlinien',
+      'chapter-25-security-layer',
+    ]},
+    {type: 'category', label: '⚙️ Betrieb', items: [
+      'chapter-15-deployment-betrieb',
+      'chapter-22-erweiterte-fehlerbehebung-incident-management',
+      'chapter-23-cicd-deployment-prozesse',
+      'chapter-30-devops-automatisierung-github-actions-docusaurus',
+    ]},
+    {type: 'category', label: '🪙 DeFi & Gamification', items: [
+      'chapter-26-defi-layer-l11',
+      'chapter-27-gamification-layer-l12',
+    ]},
+    {type: 'category', label: '🗺️ Roadmap & Launch', items: [
+      'chapter-17-roadmap',
+      'chapter-28-integration-map',
+      'chapter-29-mainnet-readiness-checklist',
+    ]},
+    {type: 'doc', id: 'chapter-21-glossar', label: '📖 Glossar'},
+  ],
+};
+
+export default sidebars;
+```
+
+---
+
+## 30.7 Einrichtungs-Checkliste (Einmalig)
+
+> Referenz: Gate 4.10 (Kap. 29) — Dokumentation vollständig (Docusaurus live)
+
+```
+Docusaurus-Setup (einmalig, lokal ausführen):
+
+  cd a-townchain-os/
+  npx create-docusaurus@latest docusaurus classic --typescript
+  cp .github/docusaurus.config.js   docusaurus/docusaurus.config.js
+  cp .github/sidebars.js            docusaurus/sidebars.js
+  cd docusaurus && npm run build    # lokaler Test
+  cd .. && git add docusaurus/
+  git commit -m "feat: Docusaurus-Grundgerüst eingerichtet"
+  git push origin main
+  # → docusaurus.yml läuft automatisch
+  # → https://a-townchain-okosystems.github.io/a-townchain-os/ live
+```
+
+> 🔗 **Sprint 4.1 DoD:** Docusaurus muss live sein bevor MK4 freigegeben wird.
+> 🔗 **Gate 4.10** (Kap. 29): Mainnet-Readiness erfordert 100% Dokumentation.
+> 🔗 **L0/S5** (Kap. 25.7): Audit-Trail — alle Wiki-Änderungen via Git-History nachvollziehbar.
+
+
+
+*KAI-OS Wiki v1.3.3-alpha — Juni 2026*
 
 > **Mitmachen:** [GitHub](https://github.com/kai-os) · [Discord](https://discord.gg/kai-os) · [Forum](https://forum.kai-os.dev) · [Bug Bounty](mailto:security@kai-os.dev)
+
+---
+
+
+---
+
+
+---
+
+
+---
+
+---
+
+
+---
+
+
+---
+
+
+---
+
+# 31. Live-Projektstatus — Echtdaten (Auto-generiert)
+
+> **Auto-generiert:** 2026-06-09 · Aurora (KAI-OS Agent)
+> **Quelle:** GitHub API + Notion + Chat-Verlauf
+> **Branch:** `feature/kai-os-integration` · HEAD: `7389941c23` (2026-06-09)
+
+## 31.1 Repository-Snapshot
+
+| Metrik | Wert |
+|--------|------|
+| **Repo** | `A-TownChain-Okosystems/a-townchain-os` |
+| **HEAD** | `7389941c23` (2026-06-09) |
+| **Offene Issues** | 16 gesamt · 7 🔴 High · 8 🟡 Medium |
+| **Wiki lokal** | v1.3.3-beta (Live-Sync aktiv) |
+| **Wiki-Repo** | [ShivaCoreDev/kai-os-wiki](https://github.com/ShivaCoreDev/kai-os-wiki) |
+
+## 31.2 Letzte Commits
+
+| SHA | Datum | Message |
+|-----|-------|---------|
+| `7389941c23` | 2026-06-09 | 📖 docs(atclang): ATCLANG_SPEC.md auf v0.2.0 erweitert — vollständ |
+| `fbb95b227a` | 2026-06-09 | 🧪 test(atclang): vollständige Test-Suite — 53 Tests für Lexer, VM |
+| `f86720c8d8` | 2026-06-08 | Merge pull request #21 from A-TownChain-Okosystems/dependabot/pip |
+| `e2f7ec6a42` | 2026-06-08 | 🔄 sync: sync_report.html |
+| `3b42d32de9` | 2026-06-08 | 🔄 sync: ecdsa_impl.py |
+| `55a0864bda` | 2026-06-08 | 🔄 sync: ecdsa_final.py |
+| `1dfe8864c5` | 2026-06-08 | 🔄 sync: bootscreen_complete.py |
+| `bd9c49598c` | 2026-06-08 | 🔄 sync: atc_issues_summary.py |
+
+## 31.3 Offene Issues nach Layer
+
+| # | Titel | Layer | Priorität |
+|---|-------|-------|----------|
+| [#20](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/20) | 🧪 API-Gateway-Tests — Unit & Integrationstests für Port | L7 | 🔴 High |
+| [#19](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/19) | 📊 [Testnet] Node-Monitoring Dashboard | L5 | 🟡 Medium |
+| [#18](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/18) | 🐳 [Testnet] Docker Compose — 5-Node lokales Netzwerk | L5 | 🟡 Medium |
+| [#17](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/17) | ⛓ [Testnet] Longest-Chain-Rule — Fork-Auflösung | L5 | 🔴 High |
+| [#16](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/16) | 🔄 [Testnet] Initial Sync — Neue Nodes synchronisieren | L5 | 🔴 High |
+| [#15](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/15) | 📡 [Testnet] Block Propagation — P2P Block Broadcasting | L5 | 🔴 High |
+| [#14](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/14) | 🌐 [Testnet] Bootstrap Node — P2P Discovery Service | L5 | 🔴 High |
+| [#13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13) | 🛒 ATC Marketplace — Shivamon kaufen & verkaufen | L11 | 🟡 Medium |
+| [#12](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/12) | ⛓ Solidity Smart Contracts — On-Chain ATC Token | L3 | 🟡 Medium |
+| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Shivamon Breeding — Gen 2 NFT Züchtung | L12 | 🟡 Medium |
+| [#10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10) | 🌉 Cross-Chain Bridge — ATC ↔ EVM Interoperabilität | L3 | 🟢 Low |
+| [#9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9) | 🏛 Governance Contract (ATC-9900) — DAO Voting | L8 | 🟡 Medium |
+| [#8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) | 🌐 Multi-Node Testnet — P2P Netzwerk live schalten | L5 | 🔴 High |
+| [#7](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/7) | 📦 Build System — EXE / AppImage Installer | L1 | 🟡 Medium |
+| [#5](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/5) | 🌐 ATC Blockchain Explorer — Block & TX Browser | L3 | 🟡 Medium |
+| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Shivamon Battle UI — Animierte Kämpfe im Browser | L12 | 🔴 High |
+
+## 31.4 Sprint-Mapping (offene Issues → Sprints)
+
+| Sprint | Layer | Offene Issues |
+|--------|-------|-------------- |
+| Sprint 2.1 | L2, L4 | — |
+| Sprint 2.2 | L5 | #19, #18, #17, #16, #15, #14, #8 |
+| Sprint 2.3 | L3 | #12, #10, #5 |
+| Sprint 2.4 | L9 | — |
+| Sprint 2.5 | L4, L11 | #13 |
+| Sprint 2.6 | L6 | — |
+| Sprint 2.7 | L7 | #20 |
+| Sprint 2.8 | L0, L12 | #11, #3 |
+
+## 31.5 Notion-Sync
+
+| Datenbank | Einträge | URL |
+|-----------|---------|-----|
+| KAI-OS Wiki Kapitel | 31/31 | [Öffnen](https://app.notion.com/p/379b826db85c815ab865c6eee41815cb) |
+| PR #22 Tracking | 1 | [Öffnen](https://app.notion.com/p/373b826db85c8125ba83f04995191bf0) |
+
+---
+> *Nächster Auto-Sync: täglich 08:00 Uhr + alle 6h · Aurora (KAI-OS Agent)*
+
+---
+
+# 32. Shivamon — Vollständige NFT-Spezifikation
+
+> **Layer:** L12 — Gamification | **Standard:** ATC-9000 | **Status:** ✅ Deployed
+> **Dateien:** `modules/shivamon/` · `blockchain/contracts/shivamon/shivamon_contract.py`
+
+## 32.1 Überblick
+
+Shivamon ist das native NFT-Battle-RPG des A-TownChain Ökosystems.
+
+| Eigenschaft | Wert |
+|-------------|------|
+| Max Supply | 9.900 NFTs |
+| Standard | ATC-9000 (ERC-721 analog) |
+| Elemente | 7 (Fire, Water, Earth, Air, Shadow, Neon, Quantum) |
+| Seltenheitsstufen | 6 (Common → Genesis) |
+| Generationen | 1–N (Breeding, Issue #11) |
+| Battle-System | Turn-based, Typ-Schwächen, VRF-RNG |
+
+## 32.2 DNA-System
+
+Jedes Shivamon erhält beim Mint einen einzigartigen DNA-Hash:
+
+```python
+import hashlib, time, random
+
+def generate_dna(owner: str, element: str, generation: int) -> str:
+    """SHA-256 basierter genetischer Fingerabdruck."""
+    seed = f"{owner}{element}{generation}{time.time()}{random.random()}"
+    return hashlib.sha256(seed.encode()).hexdigest()
+
+# Beispiel-DNA:
+# "a3f9b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0"
+```
+
+## 32.3 Elemente & Namen
+
+| Element | Emoji | Namen (Gen 1) |
+|---------|-------|---------------|
+| Fire | 🔥 | Flamrix, Pyronex, Embervex, Infernox, Blazex |
+| Water | 💧 | Aquarix, Tidalex, Hydrox, Wavrix, Frostix |
+| Earth | 🌍 | Terranox, Stonex, Mudrix, Quarzon, Geovex |
+| Air | 💨 | Windrix, Stormax, Gazeron, Cyclonix, Breezex |
+| Shadow | 🌑 | Shadowx, Voidrix, Darknex, Eclipsion, Umbravex |
+| Neon | ⚡ | Voltrix, Neonex, Arcvex, Plasmon, Thunderix |
+| Quantum | 🌀 | Quantrix, Phasex, Entanglex, Superion, Wavrix |
+
+## 32.4 Seltenheit & Stats-Multiplikatoren
+
+```python
+RARITY_CONFIG = {
+    "Common":    {"multiplier": 1.0,  "probability": 0.50, "base_hp": 100},
+    "Uncommon":  {"multiplier": 1.2,  "probability": 0.25, "base_hp": 120},
+    "Rare":      {"multiplier": 1.5,  "probability": 0.15, "base_hp": 150},
+    "Epic":      {"multiplier": 2.0,  "probability": 0.07, "base_hp": 200},
+    "Legendary": {"multiplier": 3.0,  "probability": 0.025,"base_hp": 300},
+    "Genesis":   {"multiplier": 5.0,  "probability": 0.005,"base_hp": 500},
+}
+
+def calculate_stats(element: str, rarity: str, level: int = 1) -> dict:
+    base = RARITY_CONFIG[rarity]
+    mult = base["multiplier"]
+    lvl  = 1 + (level - 1) * 0.1   # +10% pro Level
+    return {
+        "hp":      int(base["base_hp"] * mult * lvl),
+        "attack":  int(random.randint(20, 40) * mult * lvl),
+        "defense": int(random.randint(15, 35) * mult * lvl),
+        "speed":   int(random.randint(10, 30) * mult * lvl),
+        "special": int(random.randint(25, 50) * mult * lvl),
+    }
+```
+
+## 32.5 Typ-Schwächen-Matrix
+
+```
+           Fire  Water  Earth  Air  Shadow  Neon  Quantum
+Fire         —    0.5x   2.0x  1.0x  1.0x  1.5x   1.0x
+Water       2.0x   —     0.5x  1.0x  1.0x  0.5x   1.5x
+Earth       0.5x  2.0x    —    0.5x  1.5x  1.0x   1.0x
+Air         1.0x  1.0x   2.0x   —    1.5x  1.0x   0.5x
+Shadow      1.0x  1.0x   0.5x  0.5x   —    2.0x   2.0x
+Neon        0.5x  2.0x   1.0x  1.0x  0.5x   —     1.5x
+Quantum     1.0x  0.5x   1.0x  2.0x  0.5x  0.5x    —
+```
+
+## 32.6 Battle-Engine
+
+```python
+# modules/shivamon/engine/battle_engine.py
+
+class BattleEngine:
+    """Turn-based Battle mit Typ-Schwächen und VRF-RNG."""
+
+    def calculate_damage(self, attacker: dict, defender: dict,
+                         move: dict) -> int:
+        base    = move["power"]
+        atk     = attacker["stats"]["attack"]
+        def_    = defender["stats"]["defense"]
+        type_m  = self.TYPE_MATRIX[attacker["element"]][defender["element"]]
+        crit    = 1.5 if random.random() < 0.0625 else 1.0  # 6.25% Crit
+        random_ = random.uniform(0.85, 1.0)
+        damage  = int((base * atk / def_) * type_m * crit * random_)
+        return max(1, damage)
+
+    def run_battle(self, attacker_id: str, defender_id: str) -> dict:
+        att  = self._load_token(attacker_id)
+        dfd  = self._load_token(defender_id)
+        log  = []
+        turn = 0
+        while att["hp"] > 0 and dfd["hp"] > 0:
+            turn += 1
+            dmg  = self.calculate_damage(att, dfd, random.choice(att["moves"]))
+            dfd["hp"] = max(0, dfd["hp"] - dmg)
+            log.append({"turn": turn, "attacker": attacker_id, "damage": dmg})
+            if dfd["hp"] <= 0: break
+            # Defender schlägt zurück
+            dmg2 = self.calculate_damage(dfd, att, random.choice(dfd["moves"]))
+            att["hp"] = max(0, att["hp"] - dmg2)
+            log.append({"turn": turn, "attacker": defender_id, "damage": dmg2})
+
+        winner = attacker_id if att["hp"] > 0 else defender_id
+        xp_gain = 50 + turn * 5
+        return {"winner": winner, "turns": turn, "xp_gained": xp_gain, "log": log}
+```
+
+## 32.7 Breeding-System (Issue #11)
+
+```python
+def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
+    """
+    Gen-2 Breeding — kombiniert DNA beider Eltern.
+    Schritt 1: Cooldown prüfen (48h zwischen Breeds)
+    Schritt 2: Elternteil-Stats ermitteln
+    Schritt 3: Element zufällig von einem Elternteil erben
+    Schritt 4: Stats aus Durchschnitt + 10% Bonus
+    Schritt 5: Neue Generation = max(parent1.gen, parent2.gen) + 1
+    """
+    BREED_COOLDOWN = 48 * 3600  # 48 Stunden
+
+    p1 = self._tokens[parent1_id]
+    p2 = self._tokens[parent2_id]
+
+    # Eltern-Element vererben (50/50 + 5% Mutation)
+    if random.random() < 0.05:
+        element = random.choice(self.ELEMENTS)   # Mutation!
+    else:
+        element = random.choice([p1["element"], p2["element"]])
+
+    generation = max(p1["generation"], p2["generation"]) + 1
+    # Stats = Durchschnitt der Eltern × 1.1 (Hybrid-Bonus)
+    stats = {
+        k: int((p1["stats"][k] + p2["stats"][k]) / 2 * 1.1)
+        for k in p1["stats"]
+    }
+    return self.mint(owner=owner, element=element,
+                     rarity="Uncommon", generation=generation,
+                     parent1=parent1_id, parent2=parent2_id,
+                     stats_override=stats)
+```
+
+## 32.8 API-Endpunkte (Shivamon)
+
+| Methode | Pfad | Beschreibung |
+|---------|------|-------------|
+| `POST` | `/api/game/shivamon/mint` | Neues Shivamon minten |
+| `GET` | `/api/game/shivamon/{id}` | Token-Details |
+| `POST` | `/api/game/shivamon/battle` | Battle starten |
+| `POST` | `/api/game/shivamon/breed` | Breeding (Gen 2) |
+| `GET` | `/api/game/shivamon/owner/{address}` | Alle Token eines Wallets |
+| `GET` | `/api/game/shivamon/stats` | Gesamt-Statistiken |
+
+---
+
+# 33. Token-Ökonomie & Tokenomics
+
+> **Layer:** L4 — Blockchain | **Standard:** ATC-8300 | **Datei:** `blockchain/contracts/atc8300/atc8300_token.py`
+
+## 33.1 ATC-8300 Tokenomics
+
+```
+┌─────────────────────────────────────────────────────┐
+│              ATC-8300 TOKENOMICS                     │
+├─────────────────────────────────────────────────────┤
+│  Name:            A-Town Coin                        │
+│  Symbol:          ATC                                │
+│  Max Supply:      21.000.000 ATC                     │
+│  Initial Supply:   1.000.000 ATC (Genesis-Mint)      │
+│  Decimals:        8                                  │
+│  Chain ID:        9000                               │
+├─────────────────────────────────────────────────────┤
+│  MINING:                                             │
+│  Initial Reward:  50 ATC/Block                       │
+│  Halving:         alle 210.000 Blöcke                │
+│  Max Halvings:    64                                  │
+│  ~Mainnet-Start:  Block 0 (Genesis)                  │
+├─────────────────────────────────────────────────────┤
+│  VERTEILUNG (geplant):                               │
+│  40% Mining & Staking Rewards                        │
+│  20% Team & Entwicklung (3 Jahre Vesting)            │
+│  15% Ökosystem-Fonds (Grants, Bounties)              │
+│  15% Öffentlicher Verkauf (IDO)                      │
+│  10% Treasury / Reserve                              │
+└─────────────────────────────────────────────────────┘
+```
+
+## 33.2 Halving-Tabelle
+
+| Halving # | Block von | Block bis | Reward | Kumulativ |
+|-----------|-----------|-----------|--------|-----------|
+| Genesis | 0 | 209.999 | 50 ATC | 10.500.000 |
+| 1 | 210.000 | 419.999 | 25 ATC | 15.750.000 |
+| 2 | 420.000 | 629.999 | 12,5 ATC | 18.375.000 |
+| 3 | 630.000 | 839.999 | 6,25 ATC | 19.687.500 |
+| 4 | 840.000 | 1.049.999 | 3,125 ATC | 20.343.750 |
+| ... | ... | ... | ... | ... |
+| 64 | ∞ | ∞ | 0 ATC | 21.000.000 |
+
+## 33.3 Gebühren & Flows
+
+```
+TOKEN-FLOW ÜBERSICHT:
+
+User A ──TX-Fee: 0.001 ATC──→ Validator Pool
+      ──Transfer Amount──→ User B
+
+Shivamon Mint:
+  User ──0.1 ATC Mint-Fee──→ Treasury
+  Minter erhält: neues NFT
+
+Marketplace-Kauf (500 ATC):
+  Buyer  ──500 ATC──→ Contract (Escrow)
+  Seller ←──482.5 ATC─── Contract (500 × 96.5%)
+  Creator←── 12.5 ATC─── Contract (500 × 2.5% Royalty)
+  Treasury←── 5.0 ATC─── Contract (500 × 1.0% Fee)
+
+Governance Proposal:
+  Creator ──1.000 ATC Deposit──→ Contract
+  Nach Execution: 1.000 ATC ──→ Creator zurück
+  Bei Ablehnung: 1.000 ATC ──→ Treasury (Spam-Schutz)
+
+Staking (Validator):
+  Min: 10.000 ATC Stake
+  Reward: anteilig am Block-Reward
+  Slashing: 10% bei Fehlverhalten
+  Unstaking-Delay: 48h
+```
+
+## 33.4 Snapshot-System (für Governance)
+
+```python
+def snapshot(self, caller: str) -> dict:
+    """
+    Balance-Snapshot für Governance-Abstimmungen.
+    Verhindert Last-Minute-Manipulation durch Token-Transfers.
+    """
+    self.only_owner(caller)
+    snap_id = len(self._snapshots)
+    self._snapshots[snap_id] = {
+        "balances":    dict(self._balances),
+        "total_supply": self._total_supply,
+        "block":       self._current_block,
+        "timestamp":   time.time(),
+    }
+    return {"snapshot_id": snap_id, "total_supply": self._total_supply}
+```
+
+## 33.5 ATC-001 Genesis Token
+
+```python
+# blockchain/contracts/atc001/genesis_token.py
+# Einmaliger, nicht transferierbarer Ursprungs-Token
+
+class GenesisToken(BaseContract):
+    TOKEN_ID     = "ATC-001-GENESIS"
+    TOTAL_SUPPLY = 1
+    TRANSFERABLE = False
+    MINTED_AT    = "Genesis Block"
+
+    def lock(self):
+        """Einmalig sperren — kann nicht rückgängig gemacht werden."""
+    def verify(self) -> bool:
+        """Echtheit prüfen via Hash-Chain."""
+    def provenance(self) -> dict:
+        """Vollständige Herkunfts-Historie."""
+```
+
+---
+
+# 34. Franchise Factory
+
+> **Layer:** L8 — Governance | **Modul:** `modules/franchise/` | **Status:** 📋 Phase 4
+
+## 34.1 Konzept
+
+Die Franchise Factory ist ein autonomes Deployment-System für dezentrale Geschäftseinheiten:
+
+```
+┌───────────────────────────────────────────────────────┐
+│              FRANCHISE FACTORY — Konzept               │
+│                                                        │
+│  Jede Franchise = eigenständige DAO-Einheit mit:       │
+│  ├── eigenem Smart Contract Vault                      │
+│  ├── eigenem Token (Franchise-Token)                   │
+│  ├── eigener Governance-Instanz                        │
+│  ├── Revenue-Sharing mit ATC-Treasury                  │
+│  └── automatischem Deployment via Factory              │
+└───────────────────────────────────────────────────────┘
+```
+
+## 34.2 Franchise Contract
+
+```python
+# modules/franchise/factory.py
+
+class FranchiseFactory(BaseContract):
+    """
+    ATC-9900 Franchise Factory — autonomes Deployment.
+    Erstellt neue Franchise-DAOs auf Antrag.
+    """
+    CREATION_FEE  = 10_000.0   # ATC
+    ROYALTY_RATE  = 0.05       # 5% Revenue an Haupt-Treasury
+
+    def create_franchise(self, founder: str, name: str,
+                         token_symbol: str, initial_stake: float) -> dict:
+        """
+        Schritt 1: Creation-Fee prüfen (10.000 ATC)
+        Schritt 2: Franchise-Token deployen (ATC-8300 Instanz)
+        Schritt 3: Governance-Contract deployen (ATC-9900 Instanz)
+        Schritt 4: Vault-Contract deployen (Multi-Sig)
+        Schritt 5: Revenue-Sharing konfigurieren (5% → Treasury)
+        Schritt 6: Franchise in Registry eintragen
+        """
+
+    def list_franchises(self) -> list: ...
+    def get_franchise(self, franchise_id: str) -> dict: ...
+    def distribute_revenue(self, franchise_id: str, amount: float): ...
+```
+
+## 34.3 Vault-System
+
+```python
+# modules/franchise/docs/ARCHITECTURE.md (Auszug)
+
+VAULT = {
+    "id":          str,        # Franchise-ID
+    "owner":       str,        # Founder-Adresse
+    "balance":     float,      # ATC im Vault
+    "signers":     list,       # Multi-Sig Unterzeichner (min. 3)
+    "threshold":   int,        # Benötigte Signaturen (z.B. 2-of-3)
+    "auto_royalty": float,     # Automatische Royalty (5%)
+    "created_at":  int,        # Unix-Timestamp
+}
+```
+
+## 34.4 Token-Ökonomie (Franchise)
+
+```
+Franchise-Einnahmen (z.B. 10.000 ATC/Monat):
+  ├── 5% → A-TownChain Treasury (500 ATC)
+  ├── 50% → Franchise-Vault
+  ├── 30% → Token-Holders (Franchise-Token)
+  └── 15% → Founder/Team
+```
+
+## 34.5 Roadmap (Phase 4)
+
+| Feature | Sprint | Status |
+|---------|--------|--------|
+| Franchise Factory Contract | Sprint 4.1 | 📋 |
+| Vault Multi-Sig | Sprint 4.1 | 📋 |
+| Revenue-Sharing | Sprint 4.2 | 📋 |
+| Franchise UI (ShivaOS) | Sprint 4.3 | 📋 |
+| 1. Pilot-Franchise | Sprint 4.4 | 📋 |
+
+---
+
+# 35. Multi-Agenten-Orchestrierung
+
+> **Layer:** L9 — Agenten | **Standard:** ATS-1005 | **Datei:** `core/ai_kernel.py`
+
+## 35.1 Architektur
+
+```
+MULTI-AGENT SYSTEM (MAS):
+
+  Koordinator-Agent
+      │
+      ├── Worker-Agent 1 (KI-Task: Analyse)
+      ├── Worker-Agent 2 (KI-Task: Code-Gen)
+      ├── Worker-Agent 3 (Blockchain: TX)
+      └── Worker-Agent 4 (Storage: ATCFS)
+
+Kommunikation: BROADCAST-Kanal (ATS-1003)
+Koordination:  ReAct-Loop (Reason → Act → Observe)
+Sicherheit:    jede Nachricht ECDSA-signiert
+Gas:           jeder Agent zahlt Gas in ATC
+```
+
+## 35.2 Orchestrator-Service
+
+```python
+# backend/api/orchestrator/orchestrator.py
+
+class Orchestrator:
+    """
+    ATS-1000 Orchestrator — Circuit-Breaker, Load-Balancing, Health-Check.
+    Koordiniert alle KI-Agenten-Anfragen.
+    """
+
+    def __init__(self):
+        self.agents   = {}      # registrierte Agenten
+        self.circuit  = {}      # Circuit-Breaker pro Agent
+        self.lb_index = 0       # Round-Robin Load-Balancer
+
+    def dispatch(self, task: dict) -> dict:
+        """
+        Schritt 1: Passenden Agenten auswählen (Capabilities-Match)
+        Schritt 2: Circuit-Breaker prüfen (offen/geschlossen)
+        Schritt 3: Task an Agenten senden
+        Schritt 4: Timeout-Handling (default: 30s)
+        Schritt 5: Ergebnis zurückgeben + Metrics aktualisieren
+        """
+
+    def register_agent(self, agent_id: str, capabilities: list): ...
+    def health_check(self) -> dict: ...
+    def get_metrics(self) -> dict: ...
+```
+
+## 35.3 ReAct-Loop
+
+```
+ReAct (Reason → Act → Observe) je Agenten-Task:
+
+ITERATION 1:
+  Reason:   "Ich soll Shivamon-Statistiken analysieren."
+  Act:      GET /api/game/shivamon/stats
+  Observe:  {"total_minted": 42, "top_element": "Neon"}
+
+ITERATION 2:
+  Reason:   "Neon ist am häufigsten. Ich erstelle einen Report."
+  Act:      generate_report(data)
+  Observe:  report_text = "..."
+
+ITERATION 3:
+  Reason:   "Report fertig. Ich speichere ihn on-chain."
+  Act:      POST /api/storage/upload (ATCFS)
+  Observe:  {"cid": "QmXyz...", "stored": true}
+
+RESULT: {"report_cid": "QmXyz...", "iterations": 3}
+```
+
+## 35.4 Agent-Memory-Typen
+
+```python
+AgentMemory = {
+    "short_term": [           # Letzten N Nachrichten (RAM)
+        {"role": "user",    "content": "..."},
+        {"role": "agent",   "content": "..."},
+    ],
+    "long_term":  "atcfs://ATC7F.../agents/KAI-001/memory.atcd",
+    "embedding":  [0.23, -0.14, ...],   # 1536-dim Vektor (semantic search)
+    "working":    {},                    # temporäre Task-Daten
+}
+```
+
+## 35.5 Gas-System für Agenten
+
+```
+Gas-Kosten (ATC):
+  KI-Query (Gemini):    0.01 ATC/Anfrage
+  Storage Write:        0.001 ATC/KB
+  Blockchain TX:        0.001 ATC
+  Agent-Spawn:          0.1 ATC
+  Agent-Destroy:        0.0 ATC (kostenlos)
+
+Gas-Budget je Agent:
+  Default:  10.0 ATC
+  Max:     100.0 ATC
+  Top-Up:  POST /v1/agents/{id}/topup
+```
+
+---
+
+# 36. ATCLang — Vollständige Compiler-Spezifikation
+
+> **Layer:** L1 — ATCLang | **Modul:** `modules/atclang/` | **Version:** v0.3.0
+
+## 36.1 Compiler-Pipeline
+
+```
+Quellcode (.atc)
+    │
+  [Lexer]      272 Zeilen  → Token-Stream (51 Keywords, 22 Typen)
+    │
+  [Parser]     376 Zeilen  → AST (Abstract Syntax Tree)
+    │
+  [SemanticAnalyzer]       → Typ-Prüfung, Scope-Auflösung
+    │
+  [Optimizer]              → Constant Folding, Dead Code Elimination
+    │
+  [Compiler]   455 Zeilen  → Bytecode (Instruction-Liste)
+    │
+  [ATCVM]      330 Zeilen  → Stack-VM Ausführung
+```
+
+## 36.2 Vollständiges ATCLang-Beispiel (Governance Contract)
+
+```atc
+// governance.atc — ATC-9900 Governance in ATCLang
+
+import ATC::Token::ATC8300
+import ATC::Time
+
+contract Governance {
+
+    state proposals: Map<Hash256, Proposal>
+    state votes:     Map<Hash256, Map<Address, UInt8>>
+    state token:     ATC8300
+    const QUORUM:    UInt256 = 100_000   // 10% von 1M
+    const DURATION:  UInt64  = 604800    // 7 Tage in Sekunden
+
+    struct Proposal {
+        id:       Hash256
+        creator:  Address
+        title:    String
+        options:  List<String>
+        deadline: UInt64
+        status:   String   // "active" | "passed" | "failed"
+    }
+
+    event ProposalCreated(id: Hash256, creator: Address, title: String)
+    event Voted(proposal: Hash256, voter: Address, option: UInt8)
+    event ProposalFinalized(id: Hash256, winner: String, status: String)
+
+    pub fn create_proposal(title: String, options: List<String>) -> Hash256 {
+        require(options.len() >= 2, "Min 2 options")
+        require(token.balance_of(caller) >= 1000, "Need 1000 ATC deposit")
+
+        let id: Hash256 = ATC::Hash(title + block.timestamp.to_string())
+        let p: Proposal = Proposal {
+            id:       id,
+            creator:  caller,
+            title:    title,
+            options:  options,
+            deadline: block.timestamp + DURATION,
+            status:   "active"
+        }
+        proposals[id] = p
+        emit ProposalCreated(id, caller, title)
+        return id
+    }
+
+    pub fn vote(proposal_id: Hash256, option: UInt8) -> Bool {
+        let p: Proposal = proposals[proposal_id]
+        require(p.status == "active", "Not active")
+        require(block.timestamp < p.deadline, "Voting ended")
+        require(!votes[proposal_id].contains(caller), "Already voted")
+
+        let power: UInt256 = token.balance_of(caller)
+        require(power > 0, "No voting power")
+
+        votes[proposal_id][caller] = option
+        emit Voted(proposal_id, caller, option)
+        return true
+    }
+
+    pub fn finalize(proposal_id: Hash256) -> String {
+        let p: Proposal = proposals[proposal_id]
+        require(block.timestamp >= p.deadline, "Not ended yet")
+        require(p.status == "active", "Already finalized")
+
+        // Stimmen auszählen
+        let counts: Map<UInt8, UInt256> = {}
+        let total:  UInt256 = 0
+        for (voter, opt) in votes[proposal_id] {
+            let power: UInt256 = token.snapshot_balance(voter)
+            counts[opt] += power
+            total += power
+        }
+
+        if total < QUORUM {
+            proposals[proposal_id].status = "failed"
+            emit ProposalFinalized(proposal_id, "none", "failed")
+            return "failed"
+        }
+
+        // Gewinner ermitteln
+        let winner_opt: UInt8 = 0
+        let winner_votes: UInt256 = 0
+        for (opt, cnt) in counts {
+            if cnt > winner_votes {
+                winner_opt   = opt
+                winner_votes = cnt
+            }
+        }
+        let winner: String = p.options[winner_opt]
+        proposals[proposal_id].status = "passed"
+        emit ProposalFinalized(proposal_id, winner, "passed")
+        return winner
+    }
+}
+```
+
+## 36.3 ATCLang stdlib v0.3
+
+```python
+# modules/atclang/stdlib/atc_stdlib.py
+
+STDLIB = {
+    # Blockchain-Builtins
+    "ATC::Hash":         "SHA-256 Hash-Funktion",
+    "ATC::Token::ATC8300": "Fungible Token Interface",
+    "ATC::NFT::ATC9000": "NFT Interface",
+    "ATC::Time":         "Block-Timestamp-Utilities",
+    "ATC::Math":         "SafeMath (kein Integer-Overflow)",
+    "ATC::Crypto":       "ECDSA-Signaturen",
+    "ATC::Storage":      "ATCFS-Zugriff",
+    "ATC::Governance":   "DAO-Interface",
+    "ATC::Bridge":       "Cross-Chain-Interface",
+    # Typen-Utilities
+    "ATC::Convert":      "Typ-Konvertierungen",
+    "ATC::Encoding":     "Base58, Hex, UTF-8",
+    "ATC::Events":       "Event-Emitter",
+}
+```
+
+## 36.4 Security Analyzer
+
+```python
+# modules/atclang/security/security_analyzer.py
+
+VULN_PATTERNS = [
+    "reentrancy",       # Externe Calls vor State-Update
+    "integer_overflow", # Ungesicherte Arithmetik
+    "access_control",   # Fehlende require(caller == owner)
+    "timestamp_dep",    # Block.timestamp als Zufallsquelle
+    "unchecked_return", # Ignorierte Rückgabewerte
+    "gas_griefing",     # Unbegrenzte Schleifen
+]
+
+def analyze(source_code: str) -> list[dict]:
+    """Statische Sicherheitsanalyse eines ATCLang Contracts."""
+    ...
+```
+
+---
+
+# 37. P2P-Netzwerk — Technische Details
+
+> **Layer:** L5 — P2P | **Standard:** ATS-1006 | **Modul:** `modules/atcnet/`
+
+## 37.1 Kademlia DHT
+
+```
+NODE_ID = SHA256(pubkey)[0:20]   # 20 Bytes = 160 Bit
+
+k-Bucket-Tabelle:
+  160 Buckets (je ein Bit des Node-IDs)
+  k = 20 Einträge pro Bucket
+  α = 3 (parallele Lookup-Threads)
+  Refresh: alle 3600s
+
+Lookup-Algorithmus (iterativ):
+  1. Finde k nächste bekannte Nodes
+  2. Sende FIND_NODE an alle k Nodes parallel
+  3. Merge Antworten, sortiere nach XOR-Distanz
+  4. Wiederhole bis keine näheren Nodes gefunden
+  5. Ergebnis: k nächste Nodes zum Ziel
+```
+
+## 37.2 Bootstrap-Node (Issue #14)
+
+```python
+# blockchain/nodes/discovery.py
+
+class ATCDiscovery:
+    BOOTSTRAP_NODES = [
+        "boot1.testnet.kai-os.io:4001",
+        "boot2.testnet.kai-os.io:4001",
+        "boot3.testnet.kai-os.io:4001",
+    ]
+    PING_INTERVAL   = 30    # Sekunden
+    PEER_TIMEOUT    = 120   # Sekunden bis Peer als tot gilt
+    MAX_PEERS       = 50    # Max gleichzeitige Verbindungen
+
+    async def bootstrap(self):
+        """
+        Schritt 1: UDP-Broadcast im lokalen Netzwerk (mDNS)
+        Schritt 2: Bootstrap-Nodes kontaktieren
+        Schritt 3: FIND_NODE(self.node_id) ausführen
+        Schritt 4: Routing-Tabelle befüllen
+        Schritt 5: Periodisches Refresh starten
+        """
+
+    async def announce(self, peer_info: dict):
+        """Eigene Präsenz im Netzwerk ankündigen."""
+
+    async def get_peers(self, count: int = 10) -> list:
+        """Nächste Peers aus Routing-Tabelle holen."""
+```
+
+## 37.3 Block-Propagation (Issue #15)
+
+```python
+# blockchain/nodes/p2p_propagation.py
+
+class P2PPropagation:
+    GOSSIP_FAN_OUT = 8   # An 8 zufällige Peers weiterleiten
+
+    async def broadcast_block(self, block: dict):
+        """
+        Gossip-Protokoll:
+        1. Block an 8 zufällige bekannte Peers senden
+        2. Jeder Peer prüft: schon gesehen? → ignorieren
+        3. Peer propagiert weiter an 8 eigene Peers
+        4. Exponentiell: 8 → 64 → 512 Nodes in 3 Hops
+        """
+
+    async def broadcast_tx(self, tx: dict):
+        """TX in Mempool + Gossip an Peers."""
+
+    async def sync_from(self, peer: str, from_height: int):
+        """
+        Initial Sync (Issue #16):
+        1. Letzten Block des Peers anfragen
+        2. Fehlende Blöcke in Batches von 500 laden
+        3. Validieren + in lokale Chain einfügen
+        """
+```
+
+## 37.4 ATCNet-Nachrichten-Protokoll
+
+```python
+# modules/atcnet/protocol.py
+
+MSG_TYPES = {
+    0x01: "HANDSHAKE",    # Verbindungsaufbau + Versions-Check
+    0x02: "PING",         # Erreichbarkeit prüfen
+    0x03: "PONG",         # Antwort auf PING
+    0x04: "FIND_NODE",    # DHT-Lookup
+    0x05: "NODES",        # DHT-Antwort (Liste von Peers)
+    0x06: "GET_BLOCKS",   # Block-Anfrage
+    0x07: "BLOCKS",       # Block-Antwort
+    0x08: "NEW_BLOCK",    # Neuen Block ankündigen
+    0x09: "NEW_TX",       # Neue TX ankündigen
+    0x0A: "GET_TX",       # TX-Anfrage
+    0x0B: "TX",           # TX-Antwort
+    0x0C: "CONSENSUS",    # Konsens-Nachricht
+    0x0D: "AGENT_MSG",    # KI-Agenten-Kommunikation
+    0x0E: "ATCFS_REQ",    # ATCFS Datei-Anfrage
+    0x0F: "ATCFS_DATA",   # ATCFS Datei-Antwort
+}
+```
+
+## 37.5 NAT-Traversal (ATCHole)
+
+```
+ATCHole = STUN + TURN Hybrid (eigene Implementierung)
+
+Schritt 1: Node sendet PING an STUN-Server
+Schritt 2: STUN antwortet mit externer IP:Port
+Schritt 3: Node kündigt externe Adresse an Bootstrap-Nodes
+Schritt 4: Bei symmetrischem NAT → TURN-Relay als Fallback
+
+STUN-Server: stun.testnet.kai-os.io:3478
+TURN-Server: turn.testnet.kai-os.io:3479
+```
+
+---
+
+# 38. Wallet, ECDSA & Key-Management
+
+> **Layer:** L0 Security | **Datei:** `blockchain/wallet/`
+
+## 38.1 HD-Wallet-Derivation (BIP-32/44)
+
+```python
+# blockchain/wallet/keygen.py
+
+HD_PATH = "m/44'/9000'/0'/0/{index}"
+# 44'    = BIP-44 Purpose
+# 9000'  = ATC Coin Type (Chain ID)
+# 0'     = Account 0
+# 0      = External Chain (Empfangsadressen)
+# {index}= Adress-Index
+
+def derive_child_key(parent_key: bytes, index: int) -> bytes:
+    """BIP-32 Child-Key Derivation."""
+    data = parent_key + index.to_bytes(4, 'big')
+    hmac = hmac_sha512(key=parent_key[:32], msg=data)
+    child_key = (int.from_bytes(hmac[:32], 'big') +
+                 int.from_bytes(parent_key, 'big')) % SECP256K1_N
+    return child_key.to_bytes(32, 'big')
+```
+
+## 38.2 DID-System (ATS-DID)
+
+```python
+# blockchain/wallet/did.py
+
+class DIDResolver:
+    """
+    ATAUTH-1000 DID:kai System.
+    Dezentrale Identitäten für Nodes, Agenten, User.
+    Format: did:kai:z6Mkh...
+    """
+
+    def create(self, public_key: bytes) -> str:
+        """DID aus Public-Key ableiten."""
+        multikey = b'\xed\x01' + public_key    # Ed25519 Multikey-Prefix
+        did_key  = base58.b58encode(multikey).decode()
+        return f"did:kai:{did_key}"
+
+    def resolve(self, did: str) -> dict:
+        """DID-Dokument aus Chain laden."""
+        return {
+            "@context":            "https://www.w3.org/ns/did/v1",
+            "id":                  did,
+            "verificationMethod":  [...],
+            "authentication":      [...],
+            "assertionMethod":     [...],
+        }
+
+    def verify_signature(self, did: str, message: bytes,
+                         signature: dict) -> bool:
+        """Signatur gegen DID-Dokument verifizieren."""
+```
+
+## 38.3 Multi-Sig Wallet
+
+```python
+# Multi-Sig für Bridge + Franchise Vault
+
+class MultiSigWallet:
+    """M-of-N Multisig-Wallet."""
+
+    def __init__(self, owners: list, threshold: int):
+        self.owners    = owners       # N Unterzeichner
+        self.threshold = threshold    # M benötigte Signaturen
+
+    def propose_tx(self, caller, to, value, data=b"") -> str:
+        """TX vorschlagen (jeder Owner darf das)."""
+
+    def sign_tx(self, caller, tx_id: str) -> dict:
+        """TX unterzeichnen. Bei M Signaturen → automatisch ausführen."""
+
+    def execute_tx(self, tx_id: str) -> dict:
+        """TX ausführen sobald Threshold erreicht."""
+```
+
+## 38.4 Keystore-Format
+
+```json
+{
+  "version": 3,
+  "id": "uuid-v4",
+  "address": "ATC7F3A9B2C...",
+  "crypto": {
+    "cipher":       "aes-128-ctr",
+    "ciphertext":   "hex-encoded-encrypted-privkey",
+    "cipherparams": { "iv": "hex" },
+    "kdf":          "pbkdf2",
+    "kdfparams": {
+      "dklen": 32,
+      "salt":  "hex",
+      "c":     262144,
+      "prf":   "hmac-sha256"
+    },
+    "mac": "hex"
+  }
+}
+```
+
+---
+
+# 39. Cross-Chain Bridge — Technische Details
+
+> **Layer:** L4 — Blockchain | **Datei:** `modules/contracts/bridge/bridge_contract.py` | **Issue:** #10
+
+## 39.1 Lock-and-Mint Mechanismus
+
+```
+A-TownChain                              Ethereum (Sepolia)
+───────────                              ──────────────────
+User: lock(1000 ATC)              →      Relayer erkennt LockEvent
+  → ATC gesperrt im BridgeContract →      Relayer: mint(1000 wATC) an User
+  → LockEvent emittiert                   wATC ist ERC-20 auf Ethereum
+
+User: initiateBurn(500 wATC)      ←      User burned wATC auf Ethereum
+  auf Ethereum                    ←      BurnEvent
+Relayer: release(500 ATC)         →      ATC aus Lock-Contract freigeschaltet
+```
+
+## 39.2 Bridge Contract
+
+```python
+# modules/contracts/bridge/bridge_contract.py
+
+class BridgeContract(BaseContract):
+    """ATC-5000 Cross-Chain Bridge — Lock-Mint Mechanismus."""
+
+    MAX_TX_AMOUNT  = 1_000_000.0   # ATC
+    DAILY_LIMIT    = 5_000_000.0   # ATC
+    TIMELOCK_LARGE = 24 * 3600     # 24h für TX > 100.000 ATC
+    RELAYER_THRESHOLD = 3          # 3-of-5 Multi-Sig Relayer
+
+    def lock_atc(self, sender: str, amount: float,
+                 destination_chain: str,
+                 destination_address: str) -> dict:
+        """
+        Schritt 1: Amount-Limits prüfen
+        Schritt 2: ATC vom Sender-Wallet abziehen
+        Schritt 3: ATC in Bridge-Vault sperren
+        Schritt 4: LockEvent emittieren (Relayer abhören)
+        Schritt 5: Bridge-TX-ID zurückgeben
+        """
+
+    def release_atc(self, relayer: str, bridge_tx_id: str,
+                    recipient: str, amount: float,
+                    signatures: list) -> dict:
+        """
+        Schritt 1: Mindestens 3 Relayer-Signaturen verifizieren
+        Schritt 2: Bridge-TX-ID nicht bereits verwendet?
+        Schritt 3: ATC aus Vault an Recipient freigeben
+        Schritt 4: ReleaseEvent emittieren
+        """
+
+    def emergency_pause(self, caller: str):
+        """Nur Owner oder DAO kann Bridge pausieren."""
+```
+
+## 39.3 Relayer-Architektur
+
+```
+5 unabhängige Relayer-Nodes:
+  relayer-1.bridge.kai-os.io
+  relayer-2.bridge.kai-os.io
+  relayer-3.bridge.kai-os.io
+  relayer-4.bridge.kai-os.io (Backup)
+  relayer-5.bridge.kai-os.io (Backup)
+
+Ablauf (3-of-5):
+  1. Alle 5 Relayer überwachen beide Chains
+  2. LockEvent erkannt → jeder Relayer signiert die Mint-Anfrage
+  3. Nach 3 Signaturen → Mint-TX auf Ethereum ausgeführt
+  4. Audit-Trail: alle Bridge-TXs on-chain (beide Chains)
+```
+
+## 39.4 Wrapped ATC (wATC)
+
+```solidity
+// WrappedATC.sol (Ethereum Sepolia)
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+
+contract WrappedATC is ERC20, AccessControl {
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+
+    constructor() ERC20("Wrapped A-Town Coin", "wATC") {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+    }
+
+    function mint(address to, uint256 amount)
+        external onlyRole(MINTER_ROLE) {
+        _mint(to, amount);
+    }
+
+    function burn(address from, uint256 amount)
+        external onlyRole(MINTER_ROLE) {
+        _burn(from, amount);
+    }
+}
+```
+
+## 39.5 Rate-Limiting & Sicherheit
+
+| Maßnahme | Wert | Zweck |
+|----------|------|-------|
+| Max TX | 1.000.000 ATC | Schutz vor Large-Value-Angriff |
+| Daily Limit | 5.000.000 ATC | Globale Tages-Obergrenze |
+| Timelock | 24h (> 100k ATC) | Zeit für Fraud-Detection |
+| Relayer Threshold | 3-of-5 | Dezentralisierung |
+| Emergency Pause | Owner + DAO | Sofortstopp bei Incident |
+| Replay-Schutz | Bridge-TX-ID | TX nicht doppelt ausführbar |
+
+---
+
+# 40. ShivaOS UI — Rendering Engine & Design
+
+> **Layer:** L10 — dApps | **Standard:** ATS-1007 | **Datei:** `frontend/index.html`
+
+## 40.1 Architektur
+
+```
+ShivaOS = Single-File-App (123 KB, kein Framework)
+
+frontend/index.html
+  ├── <style>     — CSS (Design-Tokens, Neon-Theme)
+  ├── <script>    — Vanilla JS (kein React/Vue/Angular)
+  └── <body>      — DOM-Struktur (Sidebar + Panels)
+
+frontend/assets/js/api.js    — API-Client (alle Endpoints)
+frontend/assets/css/         — Externe CSS-Dateien
+frontend/battle/index.html   — Dediziertes Battle-Interface
+frontend/bootscreen/         — Ladebildschirm-Animation
+```
+
+## 40.2 Design-System (ATS-1007)
+
+```css
+/* A-TownChain Design-Tokens */
+:root {
+  --atc-primary:    #00ffcc;   /* Neon-Türkis */
+  --atc-secondary:  #7b61ff;   /* Neon-Violett */
+  --atc-bg:         #0a0a1a;   /* Tiefschwarz */
+  --atc-surface:    #1a1a3a;   /* Dunkelblau (Cards) */
+  --atc-text:       #e0e0ff;   /* Hellblau-Weiß */
+  --atc-accent:     #ff6b35;   /* Neon-Orange */
+  --atc-success:    #00ff88;   /* Neon-Grün */
+  --atc-error:      #ff2d78;   /* Neon-Pink */
+  --atc-warning:    #ffcc00;   /* Neon-Gelb */
+
+  /* Typografie */
+  --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+  --font-ui:     'Inter', system-ui, sans-serif;
+
+  /* Animationen */
+  --transition-fast:   0.15s ease;
+  --transition-normal: 0.3s ease;
+  --glow-primary: 0 0 20px rgba(0, 255, 204, 0.3);
+  --glow-accent:  0 0 20px rgba(255, 107, 53, 0.4);
+}
+```
+
+## 40.3 Sidebar-Module
+
+```javascript
+// frontend/assets/js/api.js
+
+const PANELS = {
+  "dashboard":   { icon: "📊", title: "Dashboard",   api: "/api/status" },
+  "blockchain":  { icon: "⛓",  title: "Blockchain",  api: "/api/blockchain/info" },
+  "shivamon":    { icon: "🎮", title: "Shivamon",    api: "/api/game/shivamon/stats" },
+  "marketplace": { icon: "🛒", title: "Marketplace", api: "/api/marketplace/listings" },
+  "governance":  { icon: "🏛", title: "Governance",  api: "/api/governance/proposals" },
+  "wallet":      { icon: "💰", title: "Wallet",      api: "/api/wallet/balance" },
+  "ai":          { icon: "🤖", title: "AI Chat",     api: "/api/ai/status" },
+  "nodes":       { icon: "🌐", title: "Nodes",       api: "/api/nodes/" },
+  "bridge":      { icon: "🌉", title: "Bridge",      api: "/api/blockchain/bridge/status" },
+};
+```
+
+## 40.4 Bootscreen-Animation
+
+```python
+# frontend/bootscreen/bootscreen.py (Generierungs-Script)
+
+BOOT_SEQUENCE = [
+    "[00:00.000] 🔴 INITIALISIERE KAI-OS KERNEL v2.0...",
+    "[00:00.150] ⚡ LADE BLOCKCHAIN-MODUL (L4)...",
+    "[00:00.300] 🧠 VERBINDE KI-AGENTEN (L3)...",
+    "[00:00.450] 🌐 P2P-NETZWERK AUFBAUEN (L5)...",
+    "[00:00.600] 🔐 SICHERHEITS-CHECK (L0)...",
+    "[00:00.750] ✅ ALLE SYSTEME BEREIT",
+    "[00:00.900] 🟢 WILLKOMMEN IN SHIVAOS v2.0",
+]
+```
+
+## 40.5 Responsive API-Client
+
+```javascript
+// frontend/assets/js/api.js (v2.0)
+
+const API_BASE = "http://localhost:4000";
+
+async function apiCall(endpoint, method="GET", body=null) {
+  const opts = {
+    method,
+    headers: { "Content-Type": "application/json" },
+  };
+  if (body) opts.body = JSON.stringify(body);
+
+  const res  = await fetch(`${API_BASE}${endpoint}`, opts);
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || "API Error");
+  return data;
+}
+
+// Shivamon minten
+const mint = (owner, element) =>
+  apiCall("/api/game/shivamon/mint", "POST", { owner, element });
+
+// Governance abstimmen
+const vote = (voter, proposal_id, option) =>
+  apiCall("/api/governance/vote", "POST", { voter, proposal_id, option });
+```
+
+---
+
+# 41. Federated Learning
+
+> **Layer:** L3 — KI-Modul | **Datei:** `core/ai_kernel.py`
+
+## 41.1 Konzept
+
+```
+Federated Learning = dezentrales ML-Training ohne Rohdatenaustausch
+
+Ablauf:
+  Runde N:
+  ├── Koordinator wählt 20 zufällige Nodes aus
+  ├── Jeder Node: lokales Training auf eigenen Daten (5 Epochen)
+  ├── Jeder Node: sendet nur Gradienten (kein Rohdaten!)
+  ├── Koordinator: FedAvg-Aggregation der Gradienten
+  ├── Neues Modell an alle Nodes verteilen
+  └── PoI-Score: Qualität des Beitrags bewertet
+```
+
+## 41.2 FedAvg-Algorithmus
+
+```python
+def federated_average(gradients: list[dict],
+                       weights:   list[float]) -> dict:
+    """
+    Federated Averaging (McMahan et al., 2017)
+    weights = Anteil der lokalen Datenmenge je Node
+    """
+    aggregated = {}
+    for key in gradients[0].keys():
+        aggregated[key] = sum(
+            w * g[key]
+            for w, g in zip(weights, gradients)
+        )
+    return aggregated
+```
+
+## 41.3 PoI-Integration
+
+```python
+def calculate_poi_score(node_contribution: dict) -> float:
+    """
+    PoI-Score = f(Gradient-Qualität, Datenmenge, Latenz)
+    Score: 0.0 – 1.0
+    """
+    quality = measure_gradient_quality(node_contribution["gradients"])
+    size    = node_contribution["data_size"] / 10_000   # normalisiert
+    latency = 1.0 - min(node_contribution["latency_ms"] / 5000, 1.0)
+    return 0.5 * quality + 0.3 * size + 0.2 * latency
+```
+
+## 41.4 Datenschutz-Garantien
+
+| Maßnahme | Beschreibung |
+|----------|-------------|
+| Differential Privacy | ε-dp Rauschen zu Gradienten hinzufügen |
+| Secure Aggregation | Kryptografische Summation ohne Einzelwerte |
+| Gradient Compression | Top-k Sparsifikation (90% weniger Bandbreite) |
+| Anomaly Detection | Ausreißer-Gradienten werden verworfen |
+
+---
+
+# 42. Performance & Optimierung
+
+> **Referenz:** `docs/wiki/kai-os/PERFORMANCE_REPORT.md`
+
+## 42.1 Zielwerte
+
+| Komponente | Ziel | Aktuell |
+|-----------|------|---------|
+| Block Time | < 4s | ~4s ✅ |
+| TX/Block | 1.000 | 1.000 ✅ |
+| API-Latenz (Gateway) | < 100ms | ~50ms ✅ |
+| Gemini-Antwortzeit | < 3s | ~1.5s ✅ |
+| LLaMA-Inferenz (CPU) | ≥ 10 t/s | 8.3 t/s ⚠️ |
+| LLaMA-Inferenz (GPU) | ≥ 80 t/s | ~87 t/s ✅ |
+| P2P-Propagation | < 500ms | noch offen |
+| Dashboard-Load | < 2s | ~1.2s ✅ |
+
+## 42.2 Backend-Optimierungen
+
+```python
+# Caching für häufige Abfragen
+from functools import lru_cache
+
+@lru_cache(maxsize=256)
+def get_token_stats(snapshot_id: int) -> dict:
+    """Token-Stats werden gecacht (invalidiert bei neuem Block)."""
+
+# Connection-Pooling für SQLite
+import sqlite3
+from contextlib import contextmanager
+
+_pool = []
+
+@contextmanager
+def db_connection():
+    conn = _pool.pop() if _pool else sqlite3.connect("atcchain.db")
+    try:
+        yield conn
+        conn.commit()
+    finally:
+        _pool.append(conn)
+```
+
+## 42.3 Docker-Ressourcen-Limits
+
+```yaml
+# docker-compose.yml (Auszug)
+services:
+  backend:
+    mem_limit: 512m
+    cpus: "1.0"
+  gateway:
+    mem_limit: 256m
+    cpus: "0.5"
+  bootstrap:
+    mem_limit: 256m
+    cpus: "0.5"
+```
+
+---
+
+# 43. Plugin & Modul-System (atcpkg)
+
+> **Standard:** ATS-1001 | **Modul:** `modules/` | **Status:** 🔨 In Entwicklung
+
+## 43.1 Modul-Spezifikation
+
+```python
+# ATS-1001 Module Spec
+
+MODULE = {
+    "name":         str,       # Eindeutiger Name
+    "version":      str,       # SemVer (z.B. "1.2.3")
+    "author":       str,       # ATC-Adresse
+    "hash":         str,       # SHA-256 Integritäts-Hash
+    "entrypoint":   str,       # Haupt-Datei
+    "exports":      list,      # Öffentliche API
+    "deps":         list,      # Abhängigkeiten
+    "permissions":  list,      # Benötigte Capabilities
+    "stake":        float,     # Benötigter Stake für Deployment
+}
+
+PERMISSIONS = [
+    "FS_READ", "FS_WRITE",
+    "NET_CONNECT", "NET_LISTEN",
+    "KI_QUERY", "KI_TRAIN",
+    "BLOCKCHAIN_READ", "BLOCKCHAIN_WRITE",
+    "PROCESS_SPAWN",
+]
+```
+
+## 43.2 atcpkg CLI
+
+```bash
+# Modul installieren
+atcpkg install shivamon@1.0.0
+
+# Modul verifizieren (Hash-Check)
+atcpkg verify shivamon --hash a3f9b2c1...
+
+# Modul ausführen
+atcpkg run shivamon mint --owner ATC7F3A... --element Fire
+
+# Alle installierten Module
+atcpkg list
+
+# Modul entfernen
+atcpkg remove shivamon
+
+# Modul publizieren (benötigt Stake)
+atcpkg publish ./my-module/ --stake 100
+```
+
+## 43.3 Monorepo-Module-Struktur
+
+```
+modules/
+├── kernel/       L2: ShivaOS Microkernel
+├── gateway/      L7: API Gateway
+├── contracts/    L4: Smart Contracts
+├── atclang/      L1: Compiler + VM
+├── atcnet/       L5: P2P Netzwerk
+├── ui/           L10: Dashboard
+├── shivamon/     L12: NFT-Game
+├── franchise/    L8: Franchise DAO
+└── standards/    L0: Protokoll-Standards
+
+Jedes Modul hat:
+  README.md       — Dokumentation
+  CHANGELOG.md    — Versionshistorie
+  __init__.py     — Python-Package
+  requirements.txt— Abhängigkeiten (optional)
+```
+
+---
+
+# 44. KI-Kernel — Inference Engine Details
+
+> **Layer:** L3 — KI-Modul | **Datei:** `core/ai_kernel.py`
+
+## 44.1 Modell-Stack
+
+```python
+# core/ai_kernel.py
+
+class AIKernel:
+    """KAI-OS AI Orchestrator — Gemini 2.0 + LLaMA Fallback."""
+
+    MODEL_PRIORITY = [
+        ("gemini-2.0-flash-exp", "google", "remote"),
+        ("llama3-8b-q4",         "ollama", "local"),
+        ("mistral-7b-q4",        "ollama", "local"),
+    ]
+
+    def query(self, prompt: str, context: list = None,
+              model: str = None) -> dict:
+        """
+        Schritt 1: Primär-Modell versuchen (Gemini 2.0)
+        Schritt 2: Bei Fehler/Timeout → Fallback (LLaMA lokal)
+        Schritt 3: Gas-Kosten berechnen + abziehen
+        Schritt 4: XAI-Log schreiben (on-chain)
+        Schritt 5: Antwort zurückgeben
+        """
+
+    def schedule_inference(self, tasks: list) -> list:
+        """
+        KI-Scheduler: Priorisierung nach PoI-Score + Stake
+        Parallele Ausführung bei GPU-Verfügbarkeit
+        """
+```
+
+## 44.2 GPU-Abstraktions-Layer
+
+```python
+# Hardware-Beschleunigung (ATS-1000 Kernel-Spec)
+
+GPU_BACKENDS = {
+    "cuda":    "NVIDIA GPU (CUDA)",
+    "rocm":    "AMD GPU (ROCm)",
+    "metal":   "Apple Silicon (Metal)",
+    "cpu":     "CPU-Fallback (langsam)",
+    "webgpu":  "Browser-GPU (geplant)",
+}
+
+def detect_gpu() -> str:
+    """Verfügbaren GPU-Backend erkennen."""
+    try:
+        import torch
+        if torch.cuda.is_available(): return "cuda"
+        if torch.backends.mps.is_available(): return "metal"
+    except ImportError:
+        pass
+    return "cpu"
+```
+
+## 44.3 LLM-Router
+
+```python
+# docs/ai/LLM_ROUTER.md (Auszug)
+
+ROUTER_CONFIG = {
+    "rules": [
+        # Einfache Fragen → schnelles Modell
+        {"if": "token_count < 100", "model": "gemini-flash"},
+        # Code-Generierung → Gemini Pro
+        {"if": "task_type == 'code'", "model": "gemini-pro"},
+        # Offline-Betrieb → lokales Modell
+        {"if": "network == 'offline'", "model": "llama3-8b"},
+        # Standard → Gemini Flash
+        {"default": "gemini-2.0-flash-exp"},
+    ]
+}
+```
+
+---
+
+# 45. ATCFS — Dezentrales Dateisystem
+
+> **Layer:** L6 — Storage | **Standard:** ATS-1002 | **Datei:** `modules/kernel/docs/ATCFS.md`
+
+## 45.1 Konzept
+
+```
+ATCFS = A-TownChain File System
+
+Ähnlich zu IPFS, aber vollständig eigenständig:
+  - Content-Adressierung via SHA-256 (CID)
+  - Dezentrale Replikation (min. 3 Kopien)
+  - Eigene Adress-Syntax: atcfs://<node_id>/<cid>/<path>
+  - Integriert in ShivaOS (transparenter Zugriff)
+  - On-Chain Metadaten (INODE-Hashes gespeichert)
+```
+
+## 45.2 INODE-Struktur
+
+```python
+INODE = {
+    "cid":        str,    # SHA-256(content) — Content-Hash
+    "size":       int,    # Bytes
+    "owner":      str,    # ATC-Adresse
+    "created":    int,    # Unix-Timestamp
+    "modified":   int,
+    "perms":      str,    # "rwxr-xr--" (POSIX-ähnlich)
+    "type":       str,    # FILE | DIR | SYMLINK | CONTRACT
+    "replicas":   int,    # Aktuelle Anzahl Replikas
+    "min_replicas": int,  # Mindest-Replikas (default: 3)
+    "encrypted":  bool,
+    "tags":       list,   # Suchbare Metadaten
+}
+```
+
+## 45.3 Dateitypen
+
+| Endung | Typ | Beschreibung |
+|--------|-----|-------------|
+| `.atc` | Quellcode | ATCLang Smart Contract |
+| `.atcb` | Bytecode | Kompilierter Code |
+| `.atcm` | Modul | Signiertes ATC-Modul |
+| `.atcw` | Wallet | Verschlüsselte Wallet-Datei |
+| `.atcd` | Daten | Strukturierte ATC-Daten |
+| `.atcp` | Prozess | Prozess-Image |
+
+## 45.4 API
+
+```python
+# Kernel-API (ATS-1000)
+
+# Datei schreiben
+fh = kernel.open("atcfs://local/my_contract.atc", "w")
+kernel.write(fh, contract_source.encode())
+kernel.close(fh)
+
+# Datei lesen
+fh  = kernel.open("atcfs://ATC7F.../QmXyz.../contract.atc", "r")
+content = kernel.read(fh, 1024)
+kernel.close(fh)
+
+# HTTP API
+POST /v1/storage/upload   {"content": base64, "filename": "x.atc"}
+GET  /v1/storage/{cid}    → Datei-Download
+GET  /v1/storage/{cid}/info → INODE-Metadaten
+```
+
+---
+
+# 46. XAI & Entscheidungsaudit
+
+> **Layer:** L0 — Security | **Datei:** `core/ai_kernel.py`
+
+## 46.1 Was ist XAI?
+
+XAI (Explainable AI) stellt sicher, dass jede KI-Entscheidung nachvollziehbar und auditierbar ist. A-TownChain speichert XAI-Logs on-chain.
+
+## 46.2 XAI-Log-Format
+
+```python
+XAI_LOG = {
+    "log_id":     str,          # UUID
+    "agent_id":   str,          # ATC-Adresse des Agenten
+    "task_id":    str,          # Task-Referenz
+    "timestamp":  float,        # Unix-Timestamp
+    "model":      str,          # Modell-Name + Version-Hash
+    "input_hash": str,          # SHA-256(prompt) — kein Klartext
+    "reasoning":  str,          # Chain-of-Thought (komprimiert, max 2KB)
+    "confidence": float,        # 0.0–1.0
+    "output_hash":str,          # SHA-256(response)
+    "gas_used":   float,        # Verbrauchtes Gas in ATC
+    "block_ref":  int,          # Block-Nummer zum Zeitpunkt
+    "signature":  dict,         # ECDSA-Signatur des Agenten
+}
+```
+
+## 46.3 On-Chain Audit
+
+```bash
+# XAI-Logs abrufen (CLI)
+kai agent audit {agent_id} --from-block 1000 --to-block 2000
+
+# Compliance-Beweis exportieren (ZKP)
+kai agent zkp-export {agent_id} --period 2026-06
+
+# Entscheidungsprotokoll anzeigen
+GET /v1/agents/{id}/audit?from_block=1000&limit=50
+```
+
+## 46.4 Audit-Trail Garantien
+
+| Garantie | Umsetzung |
+|----------|-----------|
+| Unveränderlichkeit | On-Chain gespeichert |
+| Anonymität | Nur Input-/Output-Hash, kein Klartext |
+| Nachvollziehbarkeit | Chain-of-Thought (komprimiert) |
+| Authentizität | ECDSA-Signatur des Agenten |
+| Zeitstempel | Block-Nummer als Beweis |
+
+---
+
+# 47. Governance — Deep Dive
+
+> **Layer:** L8 | **Standard:** ATC-9900 | **Datei:** `blockchain/contracts/governance/governance_contract.py`
+
+## 47.1 Vollständiger Governance-Flow
+
+```
+1. ATC-Holder erstellt Proposal
+   ├── Deposit: 1.000 ATC (zurück bei Execution)
+   ├── Min. 2, max. 10 Abstimmungsoptionen
+   └── ProposalCreated-Event emittiert
+
+2. Voting-Phase (Standard: 7 Tage)
+   ├── Stimmgewicht = ATC-Balance zum Snapshot-Zeitpunkt
+   ├── Jede Adresse kann einmal pro Proposal abstimmen
+   ├── Voted-Event emittiert
+   └── Stimmen anonym (nur on-chain Hash)
+
+3. Finalisierung (nach Deadline)
+   ├── Quorum-Check: mind. 10% der Supply muss abgestimmt haben
+   ├── Bei FAILED: → Proposal abgelehnt, Deposit → Treasury
+   └── Bei PASSED: → Gewinner-Option ermittelt
+
+4. Timelock (48 Stunden)
+   └── Verzögerung für mögliche Einsprüche
+
+5. Execution
+   ├── Automatisch nach Timelock
+   ├── Deposit → Creator zurück
+   └── ExecutionEvent emittiert
+```
+
+## 47.2 Parameter-Updates via Governance
+
+```python
+# Welche Parameter per DAO änderbar sind:
+GOVERNABLE_PARAMS = {
+    "block_reward":       float,  # Aktuell: 50 ATC
+    "min_stake_validator":float,  # Aktuell: 10.000 ATC
+    "governance_quorum":  float,  # Aktuell: 0.10 (10%)
+    "voting_period":      int,    # Aktuell: 604.800s (7 Tage)
+    "proposal_deposit":   float,  # Aktuell: 1.000 ATC
+    "marketplace_fee":    float,  # Aktuell: 0.01 (1%)
+    "bridge_max_tx":      float,  # Aktuell: 1.000.000 ATC
+    "ai_gas_price":       float,  # Aktuell: 0.01 ATC/Query
+}
+```
+
+## 47.3 Anti-Spam & Sicherheit
+
+```python
+GOVERNANCE_LIMITS = {
+    "max_proposals_per_address": 3,     # gleichzeitig aktiv
+    "min_balance_to_propose":    1_000, # ATC
+    "min_balance_to_vote":       1,     # ATC (jeder darf abstimmen)
+    "spam_cooldown":             86_400, # 24h zwischen Proposals
+}
+```
+
+---
+
+# 48. Marketplace — Deep Dive
+
+> **Layer:** L10 | **Datei:** `modules/contracts/marketplace/marketplace_contract.py`
+
+## 48.1 Listing-Lifecycle
+
+```
+NFT Listing:
+  LISTED → (sold) → COMPLETED
+         → (cancelled) → CANCELLED
+         → (offer accepted) → COMPLETED
+         → (expired 30d) → EXPIRED
+```
+
+## 48.2 Vollständiger Listing-Flow
+
+```python
+# 1. NFT listen
+listing = marketplace.list_for_sale(
+    seller   = "ATC7F3A...",
+    token_id = "SHIV-0001",
+    price_atc= 500.0
+)
+# → NFT wird in Escrow gesperrt
+# → Listing-ID: "LST-a1b2c3"
+
+# 2. Angebote machen
+offer = marketplace.make_offer(
+    buyer    = "ATC9B2C...",
+    token_id = "SHIV-0001",
+    offer_atc= 450.0        # unter Listpreis
+)
+
+# 3. Angebot annehmen
+marketplace.accept_offer(
+    seller   = "ATC7F3A...",
+    offer_id = offer["offer_id"]
+)
+
+# 4. Direkt kaufen (zum Listpreis)
+marketplace.buy(
+    buyer      = "ATC9B2C...",
+    listing_id = "LST-a1b2c3"
+)
+# → ATC-Transfer: 500 → Seller (482.5) + Creator (12.5) + Treasury (5)
+# → NFT-Transfer: Escrow → Buyer
+```
+
+## 48.3 Statistiken & Floor Price
+
+```python
+def get_stats(self) -> dict:
+    return {
+        "total_listings":   len(self._listings),
+        "total_volume_atc": self._total_volume,
+        "total_fees_atc":   self._total_fees,
+        "floor_prices":     self._calculate_floor_prices(),
+        "top_sales":        self._get_top_sales(10),
+        "avg_price_24h":    self._avg_price_24h(),
+        "unique_sellers":   len(set(l["seller"] for l in self._listings.values())),
+    }
+```
+
+---
+
+# 49. Testnet — Docker Compose & Monitoring
+
+> **Issues:** #18 (Docker), #19 (Monitoring) | **Datei:** `docker-compose.yml`
+
+## 49.1 Docker Compose — 5-Node Testnet
+
+```yaml
+# docker-compose.yml (vollständig)
+version: "3.9"
+
+services:
+  bootstrap:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.bootstrap
+    ports:
+      - "4001:4001"   # P2P
+    environment:
+      - NODE_TYPE=bootstrap
+      - P2P_PORT=4001
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - bootstrap
+    environment:
+      - BACKEND_PORT=5000
+      - BOOTSTRAP_NODE=bootstrap:4001
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+  gateway:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.gateway
+    ports:
+      - "4000:4000"
+    depends_on:
+      - backend
+    environment:
+      - GATEWAY_PORT=4000
+      - BACKEND_URL=http://backend:5000
+
+  node-2:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    depends_on:
+      - bootstrap
+    environment:
+      - NODE_TYPE=full
+      - BOOTSTRAP_NODE=bootstrap:4001
+
+  node-3:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    depends_on:
+      - bootstrap
+    environment:
+      - NODE_TYPE=validator
+      - VALIDATOR_STAKE=10000
+      - BOOTSTRAP_NODE=bootstrap:4001
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=kai-os-2026
+```
+
+## 49.2 Monitoring (Issue #19)
+
+```yaml
+# monitoring/prometheus.yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "backend"
+    static_configs:
+      - targets: ["backend:5000"]
+    metrics_path: "/metrics"
+
+  - job_name: "gateway"
+    static_configs:
+      - targets: ["gateway:4000"]
+
+  - job_name: "nodes"
+    static_configs:
+      - targets: ["node-2:5001", "node-3:5002"]
+```
+
+## 49.3 Starten & Testen
+
+```bash
+# Testnet starten
+docker-compose up -d
+
+# Logs überwachen
+docker-compose logs -f backend
+
+# Status prüfen
+docker-compose ps
+
+# Block minen (Testnet)
+curl -X POST http://localhost:4000/api/blockchain/mine \
+  -H "Content-Type: application/json" \
+  -d '{"miner": "ATC_SYSTEM_OWNER_001"}'
+
+# Grafana öffnen
+open http://localhost:3001
+# Login: admin / kai-os-2026
+```
+
+---
+
+# 50. SDK — TypeScript, Python, Rust
+
+> **Datei:** `docs/wiki/overview/` | **Status:** Teils implementiert, teils geplant
+
+## 50.1 TypeScript/JavaScript SDK
+
+```typescript
+// npm install @atcchain/sdk
+
+import { KAIClient, ShivamonContract, GovernanceContract } from "@atcchain/sdk";
+
+const client = new KAIClient({
+  rpcUrl:    "http://localhost:4000",
+  chainId:   9000,
+  privateKey: process.env.PRIVATE_KEY,
+});
+
+// Shivamon minten
+const shivamon = new ShivamonContract(client);
+const token    = await shivamon.mint({
+  element: "Neon",
+  rarity:  "Rare",
+});
+console.log("Geminted:", token.token_id);
+
+// Governance abstimmen
+const gov      = new GovernanceContract(client);
+const proposals= await gov.getProposals({ status: "active" });
+await gov.vote(proposals[0].id, 0); // Option 0 = "Ja"
+```
+
+## 50.2 Python SDK
+
+```python
+# pip install atcchain-sdk
+
+from atcchain import KAIClient, ShivamonContract, ATCToken
+
+client   = KAIClient(rpc_url="http://localhost:4000", chain_id=9000)
+shivamon = ShivamonContract(client)
+token    = ATCToken(client)
+
+# ATC-Balance abfragen
+balance = token.balance_of("ATC7F3A...")
+print(f"Balance: {balance} ATC")
+
+# Battle starten
+result = shivamon.battle(
+    attacker_id = "SHIV-0001",
+    defender_id = "SHIV-0002",
+)
+print(f"Winner: {result['winner']}, XP: {result['xp_gained']}")
+
+# Events überwachen
+@client.on("Transfer")
+async def on_transfer(event):
+    print(f"Transfer: {event['from']} → {event['to']}: {event['value']} ATC")
+```
+
+## 50.3 Rust SDK (geplant)
+
+```toml
+# Cargo.toml
+[dependencies]
+atcchain-sdk = "0.1.0"
+```
+
+```rust
+// Basis-Nutzung (geplant)
+use atcchain_sdk::{KAIClient, ChainConfig};
+
+#[tokio::main]
+async fn main() {
+    let client = KAIClient::new(ChainConfig {
+        rpc_url:  "http://localhost:4000".into(),
+        chain_id: 9000,
+    }).await.unwrap();
+
+    let balance = client.get_balance("ATC7F3A...").await.unwrap();
+    println!("Balance: {} ATC", balance);
+}
+```
+
+---
+
+# 51. Sprint-Plan — Vollständige Roadmap
+
+> **Aktuell:** Sprint 2.5 · **Phase:** 2 — Expansion
+
+## 51.1 Phase-Übersicht
+
+| Phase | Sprints | Zeitraum | Status |
+|-------|---------|----------|--------|
+| Phase 1 — Foundation | 1.1–1.8 | Nov 2025–Mai 2026 | ✅ |
+| Phase 2 — Expansion | 2.1–2.10 | Mai–Sep 2026 | 🔨 Aktiv |
+| Phase 3 — Cross-Chain | 3.1–3.6 | Okt 2026–Jan 2027 | 📋 |
+| Phase 4 — Ecosystem | 4.1–4.6 | Jan–Okt 2027 | 📋 |
+
+## 51.2 Phase 2 — Detaillierter Sprint-Plan
+
+| Sprint | Version | Zeitraum | Fokus | Issues | Status |
+|--------|---------|----------|-------|--------|--------|
+| 2.1 | v2.1.0 | 19.–26. Mai | Core Contracts | #1, #6 | ✅ |
+| 2.2 | v2.1.1 | 27. Mai–3. Jun | ECDSA + Explorer | #4, #5 | ✅ |
+| 2.3 | v2.1.2 | 4.–9. Jun | Governance + Marketplace | #9, #13 | ✅ |
+| 2.4 | v2.1.3 | 9.–11. Jun | Solidity + Bridge | #10, #12 | ✅ |
+| **2.5** | **v2.2.0** | **11.–17. Jun** | **Bootstrap Node + Breeding** | **#8, #11, #14** | 🔨 |
+| 2.6 | v2.2.1 | 18.–24. Jun | ATCLang v0.4 + Block Propagation | #15 | 📋 |
+| 2.7 | v2.2.2 | 25. Jun–1. Jul | Initial Sync + Chain-Rule | #16, #17 | 📋 |
+| 2.8 | v2.3.0 | 2.–15. Jul | Docker Compose + Monitoring | #18, #19 | 📋 |
+| 2.9 | v2.3.1 | 16.–29. Jul | Solidity Testnet Deploy | #12 | 📋 |
+| 2.10 | v2.3.2 | 30. Jul–12. Aug | Build System + Gateway-Tests | #7, #20 | 📋 |
+
+## 51.3 Phase 3 — Cross-Chain & Mainnet
+
+| Sprint | Version | Fokus |
+|--------|---------|-------|
+| 3.1 | v3.0.0-alpha | Mainnet Alpha + Bridge MVP |
+| 3.2 | v3.0.0-beta | wATC (Wrapped ATC) auf Ethereum |
+| 3.3 | v3.0.0-rc1 | Solana-Bridge + Audit |
+| 3.4 | v3.0.0 | Mainnet Launch |
+| 3.5 | v3.1.0 | DeFi L11 (AMM, Lending) |
+| 3.6 | v3.2.0 | Oracle + Flash Loans |
+
+## 51.4 Kritischer Entwicklungspfad
+
+```
+#14 Bootstrap Node
+  └→ #15 Block Propagation
+       └→ #16 Initial Sync
+            └→ #17 Longest-Chain-Rule
+                 └→ #18 Docker Compose
+                      └→ #19 Monitoring
+                           └→ #8 Multi-Node Live
+                                └→ MAINNET v3.0
+```
+
+## 51.5 Offene Issues nach Priorität
+
+| Prio | Issue | Titel | Sprint |
+|------|-------|-------|--------|
+| 🔴 | #8 | Multi-Node Testnet live | 2.5–2.8 |
+| 🟡 | #7 | Build System EXE/AppImage | 2.10 |
+| 🟡 | #11 | Shivamon Breeding Gen 2 | 2.5 |
+| 🟡 | #12 | Solidity On-Chain Contracts | 2.9 |
+| 🟡 | #13 | ATC Marketplace | 2.3 ✅ |
+| 🟡 | #18 | Docker Compose Testnet | 2.8 |
+| 🟡 | #19 | Node-Monitoring Dashboard | 2.8 |
+| 🟢 | #10 | Cross-Chain Bridge | 3.1 |
+
+---
+
+# 52. Glossar & Referenzen
+
+> *Vollständiges Glossar aller Begriffe im A-TownChain Ökosystem*
+
+## 52.1 Begriffe A–Z
+
+| Begriff | Definition |
+|---------|-----------|
+| **ATC** | A-Town Coin — Haupt-Währung des Ökosystems (max. 21M) |
+| **ATC-001** | Genesis Token — symbolischer Ursprungs-Token (Menge: 1) |
+| **ATC-8300** | Fungible Token Standard (analog ERC-20) |
+| **ATC-9000** | NFT Standard (analog ERC-721) — Shivamon |
+| **ATC-9900** | Governance-Token / DAO-Standard |
+| **ATCFS** | A-TownChain File System — dezentrales Dateisystem (ATS-1002) |
+| **ATCLang** | Native Smart-Contract-Sprache des Ökosystems |
+| **ATCNet** | P2P-Netzwerk-Stack (ATS-1006) |
+| **ATCVM** | Stack-basierte Virtual Machine für ATCLang-Bytecode |
+| **atcpkg** | Package-Manager für ATC-Module (ATS-1001) |
+| **Bootstrap Node** | Erster Einstiegspunkt ins P2P-Netzwerk (Issue #14) |
+| **Chain ID** | 9000 — eindeutige Identifikation der A-TownChain |
+| **CID** | Content Identifier — SHA-256-Hash einer ATCFS-Datei |
+| **DAO** | Decentralized Autonomous Organization — Governance-System |
+| **DID** | Decentralized Identifier — `did:kai:z6Mkh...` |
+| **DNA-Hash** | Einzigartiger genetischer Fingerabdruck eines Shivamon |
+| **ECDSA** | Elliptic Curve Digital Signature Algorithm (secp256k1) |
+| **FedAvg** | Federated Averaging — Aggregationsalgorithmus für FL |
+| **Gas** | Rechengebühr in ATC für Blockchain-Operationen |
+| **Governance** | On-Chain-Abstimmungssystem (ATC-9900, 10% Quorum) |
+| **Halving** | Halbierung des Block-Rewards alle 210.000 Blöcke |
+| **HD-Wallet** | Hierarchical Deterministic Wallet (BIP-32/44) |
+| **IPC** | Inter-Process Communication — Agenten-Kommunikation (ATS-1003) |
+| **KAI-OS** | KI-Blockchain-Betriebssystem — Gesamt-System |
+| **L0–L12** | 13 Schichten der KAI-OS Layer-Architektur |
+| **Lock-and-Mint** | Bridge-Mechanismus: ATC sperren → wATC minten |
+| **Marketplace** | NFT-Handelsplatz (2.5% Royalty + 1% Platform-Fee) |
+| **Mnemonic** | 24-Wort-Seed-Phrase für Wallet (BIP-39) |
+| **Multi-Sig** | Multi-Signature Wallet (M-of-N) |
+| **NFT** | Non-Fungible Token — einzigartiges digitales Asset |
+| **Node** | Teilnehmer im A-TownChain P2P-Netzwerk |
+| **PoH** | Proof of History — kryptografischer Zeitstempel-Beweis |
+| **PoI** | Proof of Intelligence — KI-Beitrags-Beweis |
+| **PoS** | Proof of Stake — Stake-basiertes Konsens-Gewicht |
+| **Proposal** | Governance-Antrag (1.000 ATC Deposit, 7 Tage Voting) |
+| **Quorum** | Mindest-Beteiligung bei Governance (10% der Supply) |
+| **ReAct** | Reason-Act-Observe Loop für KI-Agenten |
+| **Relayer** | Service, der Bridge-Events zwischen Chains überträgt |
+| **RPC** | Remote Procedure Call — Blockchain-API |
+| **Shivamon** | NFT-basiertes Battle-Wesen (ATC-9000, max. 9.900) |
+| **ShivaOS** | Browser-basiertes OS-Dashboard (ATS-1007) |
+| **Slashing** | Strafe für Validator-Fehlverhalten (10% Stake-Verlust) |
+| **Snapshot** | Eingefrorene Token-Balances für Governance-Abstimmung |
+| **Stake** | Eingesetztes ATC für Validator-Rechte (min. 10.000 ATC) |
+| **Timelock** | 48h Verzögerung vor Governance-Execution |
+| **Treasury** | On-Chain-Schatzkammer für Protokoll-Einnahmen |
+| **Validator** | Node mit Stake-Recht zur Block-Produktion |
+| **VRF** | Verifiable Random Function — nachweisbare Zufälligkeit |
+| **wATC** | Wrapped ATC — ERC-20 Repräsentation auf Ethereum |
+| **XAI** | Explainable AI — nachvollziehbare KI-Entscheidungen |
+| **ZKP** | Zero-Knowledge Proof — Datenschutz-Beweis |
+
+## 52.2 Datei-Referenz-Matrix
+
+| Komponente | Code | Tests | Doku | Issue |
+|-----------|------|-------|------|-------|
+| ATC-8300 Token | `blockchain/contracts/atc8300/` | `tests/test_smart_contracts.py` | `docs/contracts/ATC_TOKEN_STANDARD.md` | #1 |
+| Shivamon NFT | `modules/shivamon/` | `tests/test_smart_contracts.py` | `docs/contracts/SHIVAMON_NFT_CONTRACT.md` | #3, #11 |
+| Governance | `blockchain/contracts/governance/` | `tests/test_smart_contracts.py` | `docs/issues/ISSUE_09_GOVERNANCE.md` | #9 |
+| Marketplace | `modules/contracts/marketplace/` | `tests/test_smart_contracts.py` | `docs/issues/ISSUE_13_MARKETPLACE.md` | #13 |
+| Bridge | `modules/contracts/bridge/` | — | `docs/issues/ISSUE_10_BRIDGE.md` | #10 |
+| ECDSA Wallet | `blockchain/wallet/` | `tests/test_ecdsa.py` | `docs/architecture/WALLET_KEYGEN.md` | #6 |
+| API Gateway | `gateway/` | `tests/test_gateway.py` | `docs/architecture/GATEWAY.md` | #20 |
+| P2P Discovery | `blockchain/nodes/discovery.py` | `tests/test_discovery.py` | `docs/architecture/ATCNET_P2P.md` | #14 |
+| ATCLang | `modules/atclang/` | `tests/test_atclang.py` | `docs/atclang/ATCLANG_SPEC_FULL.md` | — |
+| Solidity | `blockchain/contracts/solidity/` | `blockchain/contracts/solidity/test/` | `docs/issues/ISSUE_12_SOLIDITY.md` | #12 |
+| Testnet | `docker-compose.yml` | — | `docs/architecture/TESTNET.md` | #8, #18 |
+| Monitoring | `monitoring/` | — | `docs/architecture/TESTNET.md` | #19 |
+
+## 52.3 Externe Referenzen
+
+| Ressource | URL |
+|-----------|-----|
+| GitHub Organisation | https://github.com/A-TownChain-Okosystems |
+| Code-Repo | https://github.com/A-TownChain-Okosystems/a-townchain-os |
+| Docs-Repo | https://github.com/A-TownChain-Okosystems/a-townchain-os-docs |
+| BIP-39 | https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki |
+| BIP-32 | https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki |
+| EIP-721 | https://eips.ethereum.org/EIPS/eip-721 |
+| EIP-20 | https://eips.ethereum.org/EIPS/eip-20 |
+| OpenZeppelin | https://docs.openzeppelin.com/ |
+| Gemini API | https://ai.google.dev/ |
+| Hardhat | https://hardhat.org/ |
+| Docker Compose | https://docs.docker.com/compose/ |
+| Prometheus | https://prometheus.io/ |
+| Kademlia DHT | https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf |
+
+---
+
+> *KAI-OS Wiki — Kapitel 32–52 · Stand: 10. Juni 2026 · Sprint 2.5*
+> *Nächster Update: täglich 08:00 Uhr (Auto-Sync) · Aurora (KAI-OS Agent)*
+
