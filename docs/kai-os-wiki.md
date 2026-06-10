@@ -333,6 +333,50 @@ Kritische Entscheidungen → direkt on-chain. Routine → IPFS, Hash on-chain.
 
 ---
 
+## 3.5 LLM-Router — Modell-Selektion
+
+> **Datei:** `core/ai_kernel.py`
+
+```python
+class LLMRouter:
+    """Wählt optimales Modell basierend auf Task-Typ und Budget."""
+
+    MODELS = {
+        "fast":   {"name": "llama3-8b-q4",  "latency": "<100ms", "cost": 0.001},
+        "smart":  {"name": "llama3-70b-q4", "latency": "<500ms", "cost": 0.010},
+        "code":   {"name": "deepseek-coder","latency": "<300ms", "cost": 0.005},
+        "vision": {"name": "llava-13b",     "latency": "<800ms", "cost": 0.015},
+    }
+
+    def route(self, task_type: str, budget: float = 0.01) -> str:
+        """Gibt Model-ID zurück."""
+```
+
+## 3.6 ATCLang VM & Compiler
+
+> **Dateien:** `modules/atclang/`
+
+```python
+class Lexer:
+    """Tokenizer für ATCLang-Quellcode."""
+    def tokenize(self, source: str) -> list: ...
+
+class Parser:
+    """Syntaxbaum-Generator (AST)."""
+    def parse(self, tokens: list) -> dict: ...
+
+class ATCCompiler:
+    """Kompiliert ATCLang-AST zu Bytecode."""
+    def compile(self, ast: dict) -> bytes: ...
+    def compile_file(self, path: str) -> bytes: ...
+
+class ATCVM:
+    """Virtuelle Maschine — führt ATCLang-Bytecode aus."""
+    def execute(self, bytecode: bytes, context: dict = None) -> any: ...
+    def call(self, func_name: str, args: list) -> any: ...
+```
+
+
 # 4. Blockchain-Komponenten
 
 ## 4.1 Wahl der Blockchain
@@ -1550,6 +1594,79 @@ kai contract call \
 ---
 
 ---
+
+## 11.4 ATC8300Token — Python-Klasse
+
+> **Datei:** `blockchain/contracts/atc8300/atc8300_token.py`
+
+```python
+class ATCToken:
+    """ATC-8300 Token — Haupt-Currency des A-TownChain Ökosystems."""
+    SYMBOL   = "ATC"
+    NAME     = "ATC Token"
+    DECIMALS = 18
+    MAX_SUPPLY = 21_000_000  # 21 Millionen
+
+    def mint(self, to: str, amount: float,
+             miner: str) -> dict: ...
+    def burn(self, caller: str, amount: float) -> dict: ...
+    def transfer(self, from_addr: str, to_addr: str,
+                 amount: float) -> dict: ...
+    def balance_of(self, address: str) -> float: ...
+    def approve(self, owner: str, spender: str, amount: float): ...
+    def pos_stats(self) -> dict: ...
+    def poh_state(self) -> dict: ...
+```
+
+
+## 11.5 Solidity Contracts — Dateiübersicht
+
+> **Verzeichnis:** `blockchain/contracts/solidity/`
+> **Framework:** Hardhat · **Tests:** `test/*.test.js`
+
+| Datei | Standard | Beschreibung |
+|-------|---------|-------------|
+| `ATCToken.sol` | ATC-8300 | ERC-20 Token mit PoH/PoW/PoS-Hooks |
+| `Shivamon.sol` | ATC-9000 | NFT-Kollektible, Battle, Breeding |
+| `ATCGovernance.sol` | ATC-9900 | DAO-Governance, Proposals, Voting |
+| `ATCMarketplace.sol` | ATC-9500 | NFT-Marktplatz, Escrow, Royalties |
+| `ATCBridge.sol` | ATC-8800 | Cross-Chain Bridge, Multi-Sig, Lock/Release |
+| `GenesisToken.sol` | ATC-0001 | Ur-Token, unveränderliche Genesis |
+
+```solidity
+// ATCToken.sol — Deployment
+constructor() ERC20("ATC Token", "ATC") {
+    _maxSupply = 21_000_000 * 10**18;
+}
+
+// ATCGovernance.sol — Proposal erstellen
+function createProposal(
+    string calldata title,
+    string[] calldata options,
+    uint256 votingPeriod
+) external returns (uint256 proposalId)
+
+// ATCMarketplace.sol — NFT listen
+function listForSale(
+    address nftContract,
+    uint256 tokenId,
+    uint256 priceATC
+) external returns (uint256 listingId)
+
+// ATCBridge.sol — ATC sperren
+function lockATC(
+    uint256 amount,
+    string calldata destinationChain,
+    string calldata recipient
+) external payable returns (bytes32 lockId)
+
+// GenesisToken.sol — Unveränderliches Genesis-NFT
+function mintGenesis(
+    address to,
+    string calldata uri
+) external onlyOwner returns (uint256 tokenId)
+```
+
 
 # 12. CLI-Referenz
 
@@ -5008,6 +5125,48 @@ spec:
 ```
 
 ---
+
+## 20.7 Vollständige Commit-Historie (letzter Stand 2026-06-10)
+
+> **Repository:** `A-TownChain-Okosystems/a-townchain-os`
+> **Branch:** `main`
+
+```
+ea5175ea75  2026-06-10  test(solidity): ATCToken.test.js — 22 Tests
+8a3574e883  2026-06-10  feat(core): fehlende Module hinzugefuegt — ATCFS, Gateway, MultiSig
+25ed5c3148  2026-06-10  test(solidity): 4 neue Test-Suites — vollständige Contract-Tests
+0d6af1394c  2026-06-10  feat(solidity): fehlende Smart Contracts — Issue #12
+793f61b36d  2026-06-10  docs: AGENT_MANIFEST.md — vollständige Datenkarte für KI-Agenten
+d08f184472  2026-06-10  docs: Split docs/ → a-townchain-os-docs | Software-Repo bereinigt
+29f14f54be  2026-06-10  fix: atc-whitepaper/README.md — Monorepo 100% vollständig
+37dc2dfe76  2026-06-10  refactor: MONOREPO v3.0.0 — Saubere modulare Struktur
+9e6b10814b  2026-06-10  chore: auto-sync STATUS.md + TODO.md — 2026-06-10 08:01
+d97c0e8a6b  2026-06-10  chore: auto-sync STATUS.md — 2026-06-10 06:02
+1f00438dcd  2026-06-10  feat: MONOREPO v3.0.0 — Alle 22 Repos zusammengeführt
+ed2680600b  2026-06-10  fix: Expand logger.py & build.py mit structured logging
+92cfda4c7e  2026-06-09  docs: CHANGELOG — Mapping-Hinweis umbenannte Repos
+60c76d73a4  2026-06-09  chore: DEPRECATED smart_contract_registry.py → blockchain/contracts/
+51da435cdc  2026-06-09  chore: DEPRECATED blockchain/smart_contracts.py → blockchain/contracts/
+da02a95088  2026-06-09  docs: core/kernel.py — L3 AI-Kernel vs L2 Microkernel Kommentar
+e3609ffe9f  2026-06-09  docs: DEPRECATED.md v2.0.0 — vollständige Deprecated-Liste
+7f2bc227cb  2026-06-09  fix: Referenzen — veraltete Repo-Namen/Branch bereinigt
+0af6cc16e3  2026-06-09  fix: Referenzen — veraltete Repo-Namen/Branch bereinigt
+d3ffedd0ed  2026-06-09  fix: Referenzen — veraltete Repo-Namen/Branch bereinigt
+20bad1e34e  2026-06-09  fix: start.py — bereinigt, argparse, alle Dienste
+ad29fd0346  2026-06-09  chore: Duplikat atc-ui entfernt
+31093df98a  2026-06-09  chore: Veraltet backend/wallet/wallet.py entfernt
+```
+
+> **Docs-Repo:** `A-TownChain-Okosystems/a-townchain-os-docs`
+
+```
+de5be7d1ad  2026-06-10  docs(wiki): Kap. 31 + Issues #28-30 — finaler Stand
+60bf8ec0c7  2026-06-10  docs(wiki): Finaler Audit & Sync — 57/57 Checks OK
+62b9038aa1  2026-06-10  docs(wiki): Kap. 31 — alle 27 Issues vollständig eingetragen
+026bed2b7d  2026-06-10  docs(wiki): Wiki-Audit — Code-Abgleich 25/25 Checks OK
+73dfadf7f8  2026-06-10  docs(wiki): Kapitel 32-52 hinzugefuegt (52/52 komplett)
+```
+
 
 # 21. Glossar
 
