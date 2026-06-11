@@ -1,19 +1,39 @@
-# 📊 A-TownChain OS — Projekt-Status
-> **Stand:** 2026-06-11 | v1.4.0 | Aurora Auto-Sync
+# 📊 A-TownChain OS — Status
 
-## Aktueller Sprint: 2.2 → MK3 (Multi-Node Testnet, Dez 2026)
+> Auto-generiert: 2026-06-11 10:19 UTC | Aurora Master Sync v2.0
+
+## Repository-Metriken
 
 | Metrik | Wert |
 |--------|------|
-| Wiki-Kapitel | **62** |
-| Wiki-Zeilen | ~12.009 |
-| Code-Dateien | 300 |
-| Issues ✅ | 43/48 (89.6%) |
-| Issues 🔴 | 5/48 (10.4%) |
-| Audit-Score | 86/86 (100%) |
-| Verbundene Dienste | 16 |
+| Offene Issues | 9 |
+| Commits (30d) | 50 |
+| Wiki-Dateien | 324 |
+| Clones (14d) | 3318 (847 unique) |
+| Branches | main |
+| Wiki-Lücken | 0 |
 
-## Meilensteine
-MK0 Whitepaper ✅ | MK3 Testnet 🔄 Dez2026 | MK4 Alpha ⚪ Apr2027 | MK5 Mainnet ⚪ Okt2027
+## Offene Issues
 
-*2026-06-11 | Aurora · Base44*
+### 🔴 HIGH
+- keine
+
+### 🟡 MEDIUM
+- #51 #51 — IPC Bus: Vollständige Kernel-Integration (Kap. 58)
+- #50 #50 — Hugging Face Code-Review Pipeline (Kap. 61)
+- #49 #49 — BigQuery Analytics Pipeline (Kap. 60)
+
+### 🟢 LOW
+- #52 #52 — Mainnet Launch Manager: Genesis-Block (Kap. 55)
+- #48 ATCLang v0.4.0 — Type System & Formal Verification (Kap. 36)
+- #47 ZKP Zero-Knowledge Proofs — L0 Security Layer (Kap. 25)
+
+## Kritischer Pfad
+```
+#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node
+```
+
+## Letzter Sync
+- **Datum:** 2026-06-11
+- **Agent:** Aurora (Base44 Superagent)
+- **Nächster Sync:** 2026-06-12 08:05 Europe/Berlin
