@@ -1,5 +1,5 @@
 # 📋 MASTER TODO — A-TownChain OS
-> Stand: 2026-06-11 10:39 UTC | Aurora Master Sync v3.0
+> Stand: 2026-06-11 11:08 UTC | Aurora Master Sync v3.0
 
 ## Kritischer Pfad
 `#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node`
@@ -45,9 +45,10 @@
 ## Wiki-Lücken (0)
 - Keine Lücken ✅
 
-## Veraltete Referenzen (5)
-- AGENT_MANIFEST.md → atclang-wiki
-- AGENT_MANIFEST.md → atcnet-wiki
+## Veraltete Referenzen (6)
 - ECOSYSTEM.md → atclang-wiki
 - ECOSYSTEM.md → atcnet-wiki
+- TODO/MASTER_TODO.md → ShivaCoreDev/kai-os-wiki
+- TODO/MASTER_TODO.md → atclang-wiki
+- TODO/MASTER_TODO.md → atcnet-wiki
 - docs/DEPRECATED.md → ShivaCoreDev/kai-os-wiki
