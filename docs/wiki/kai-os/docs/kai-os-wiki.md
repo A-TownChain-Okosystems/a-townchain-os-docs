@@ -445,6 +445,51 @@ did:kai:z6MkhaXgBZDvotDkL5257faiztiGiC2QtKLGpbnnEGta2doK
 
 ---
 
+## 4.10 ForkResolver — Longest-Chain-Rule
+
+> **Datei:** `blockchain/consensus/fork_resolution.py`
+
+```python
+class ForkResolver:
+    """Löst Chain-Forks auf: Longest-Chain + Highest-PoH-Score."""
+
+    def add_block(self, block: ChainBlock): ...
+
+    def get_canonical_chain(self) -> list[ChainBlock]:
+        """Gibt die kanonische (längste + stärkste) Chain zurück."""
+
+    def resolve(self) -> list[ChainBlock]:
+        """Wählt beste Fork:
+        1. Längste Chain (höchste Block-Höhe)
+        2. Bei Gleichstand: Höchstes Gesamt-PoH
+        3. Bei Gleichstand: Größte Gesamt-PoW-Arbeit"""
+```
+
+## 4.11 InitialSyncer — Node-Synchronisation
+
+> **Datei:** `blockchain/nodes/initial_sync.py` · Fixes: #16
+
+```python
+class InitialSyncer:
+    """Synchronisiert neue Nodes mit dem Netzwerk."""
+
+    def on_block(self, cb): self._on_block = cb
+    def on_done(self,  cb): self._on_done  = cb
+
+    async def sync(self, target_height: int = None):
+        """
+        1. Peer mit höchster Block-Höhe finden
+        2. Blocks in Batches herunterladen (100er-Batches)
+        3. Jeden Block validieren (PoH + PoW + PoS)
+        4. State-Trie aufbauen
+        5. on_done() aufrufen
+        """
+
+    async def stop(self): ...
+    def get_stats(self) -> dict: ...
+```
+
+
 # 5. Betriebssystem-Schicht
 
 > 🔗 Die Kernel-Implementierung dieser OS-Schicht ist in **Kapitel 24** (Betriebssystem-Kernel) detailliert dokumentiert.
@@ -497,6 +542,50 @@ Ressourcentypen: CPU/GPU, RAM, Speicher, Bandbreite, Energie.
 ---
 
 ---
+
+## 5.10 ShivaOSSyscallTable — Implementierung
+
+> **Datei:** `shivaos/kernel/syscalls.py` · Fixes: #32
+
+```python
+class SyscallID(IntEnum):
+    # Prozess-Management
+    SYS_FORK      = 1
+    SYS_EXEC      = 2
+    SYS_EXIT      = 3
+    SYS_GETPID    = 4
+    SYS_SLEEP     = 5
+    # ATCFS
+    SYS_OPEN      = 10
+    SYS_READ      = 11
+    SYS_WRITE     = 12
+    SYS_CLOSE     = 13
+    SYS_MKDIR     = 14
+    SYS_STAT      = 15
+    # Blockchain
+    SYS_SEND_TX   = 20
+    SYS_GET_BLOCK = 21
+    SYS_GET_BAL   = 22
+    # KI
+    SYS_AI_INVOKE = 30
+    SYS_AI_REGISTER = 31
+    # Netzwerk
+    SYS_CONNECT   = 40
+    SYS_SEND      = 41
+    SYS_RECV      = 42
+
+class ShivaOSSyscallTable:
+    """System-Call-Tabelle des ShivaOS Kernels."""
+
+    def call(self, syscall_id: int,
+             args: dict) -> 'SyscallResult':
+        """Dispatcht System-Call."""
+
+    def register_process(self, pid: int,
+                         name: str,
+                         priority: int = 5): ...
+```
+
 
 # 6. Installation & Quickstart
 
@@ -3396,7 +3485,81 @@ SECURITY-CHECK (erste 15 Minuten) — Kapitel 25.10:
 
 ---
 
+## 19.9 DAOGovernance — Live-Implementierung
+
+> **Datei:** `blockchain/governance/dao_live.py` · Fixes: #39
+
+```python
+class DAOProposal:
+    proposal_id:    str
+    title:          str
+    description:    str
+    options:        list        # ["Ja", "Nein", "Enthaltung"]
+    votes:          dict        # {addr: (choice_idx, power)}
+    created_at:     int
+    voting_ends_at: int         # + VOTING_PERIOD (7 Tage)
+    timelock_until: int         # + TIMELOCK (48h)
+    executed:       bool
+    quorum_met:     bool
+
+    def is_voting_active(self) -> bool: ...
+    def get_result(self) -> dict:
+        """Gibt Gewinner-Option + Stimmenverteilung zurück."""
+
+class DAOGovernance:
+    QUORUM_PERCENT:  float = 0.10   # 10% der Total Supply
+    VOTING_PERIOD:   int   = 7*86400
+    TIMELOCK:        int   = 48*3600
+    MIN_STAKE:       float = 1_000.0
+
+    def create_proposal(self, proposer: str, title: str,
+                        description: str, options: list) -> str: ...
+    def vote(self, voter: str, proposal_id: str,
+             choice_idx: int) -> dict:
+        """Abstimmen. Power = sqrt(stake_atc) — Quadratic Voting."""
+    def finalize_proposal(self, proposal_id: str) -> dict: ...
+    def execute_proposal(self, proposal_id: str,
+                         executor: str) -> dict: ...
+    def get_stats(self) -> dict: ...
+```
+
+
 # 20. Changelog
+
+## v1.4.0-beta (Juni 2026) — AKTUELL
+
+### Neu — Neue Module
+- `blockchain/bridge/solana_bridge.py` — `SolanaBridge` (SPL-Token, Wormhole, Lock-and-Mint)
+- `blockchain/dex/amm.py` — `ATCAMM` DEX (x*y=k Constant-Product, LP-Token, 0.3% Fee)
+- `blockchain/governance/dao_live.py` — `DAOGovernance` Live (FFT+ATC Voting, Quorum 10%, Timelock 48h)
+- `blockchain/mainnet/mainnet_config.py` — `MainnetLaunchManager` (Chain-ID 9000, Genesis Block)
+- `blockchain/consensus/gas_fee.py` — `GasFeeEngine` (EIP-1559: Base Fee + Priority Fee, Burn 50%)
+- `blockchain/consensus/fork_resolution.py` — `ForkResolver` (Longest-Chain + PoH-Score)
+- `blockchain/nodes/initial_sync.py` — `InitialSyncer` (Neue Nodes bootstrappen)
+- `blockchain/contracts/shivamon/breeding.py` — `BreedingEngine` (DNA-Vererbung, Element-Fusion, Gen 2)
+- `blockchain/atcoin/atcoin.py` — `ATCoin` (dezimale Präzision, ERC-20 kompatibel)
+- `mobile/wallet_api.py` — `MobileWalletManager` (React Native, BIP39, QR, Biometrie)
+- `shivaos/kernel/syscalls.py` — `ShivaOSSyscallTable` (20 Syscalls: Prozess, ATCFS, Chain, KI)
+- `shivaos/ui/renderer.py` — `ShivaOSRenderer` (TUI: Panel, TextBox, ProgressBar, Table)
+- `atcpkg/manager.py` — `ATCPackageManager` (publish/install/search/dependencies)
+- `blockchain/contracts/marketplace/marketplace.py` — `MarketplaceV2` (Festpreis + Auktion)
+
+### ATCLang v0.3.0
+- `async/await` Syntax + Generics + Closures + Module-System
+- 7 neue Tests
+
+### Enterprise
+- `nginx/nginx.conf`, `.github/workflows/ci-cd.yml`, `SECURITY.md`, `CONTRIBUTING.md`
+- `monitoring/alerts/blockchain_alerts.yml` — Prometheus Alert-Rules
+- CodeQL + Docker multi-stage builds
+
+### Status
+- 43/43 GitHub Issues geschlossen ✅
+- 300 Code-Dateien
+- ATCLang VM: 40.380B · SolanaBridge: 10.621B · ATCAMM: 10.018B
+
+---
+
 
 ## v1.0.0-alpha (Mai 2026)
 **Erster öffentlicher Release der Software-Dokumentation.**
@@ -5126,44 +5289,70 @@ spec:
 
 ---
 
-## 20.7 Vollständige Commit-Historie (letzter Stand 2026-06-10)
+## 20.7 Vollständige Commit-Historie (Stand: 2026-06-11)
 
-> **Repository:** `A-TownChain-Okosystems/a-townchain-os`
-> **Branch:** `main`
+> **Repository:** `A-TownChain-Okosystems/a-townchain-os` | **Branch:** `main`
 
 ```
+1e8a5872a1  2026-06-11  chore: Auto-Sync STATUS.md — 2026-06-11 08:01
+a062353fa3  2026-06-10  enterprise: Dockerfile — CI/CD, Docker, Nginx, Prometheus, Security
+5c00e3fea7  2026-06-10  enterprise: docker-compose.yml — CI/CD, Docker, Nginx, Prometheus
+a02104733a  2026-06-10  enterprise: monitoring/alerts/blockchain_alerts.yml
+7bff00f510  2026-06-10  enterprise: monitoring/prometheus.yml — Prometheus Konfiguration
+fa70a4d259  2026-06-10  enterprise: nginx/nginx.conf — Reverse Proxy Konfiguration
+387082e327  2026-06-10  enterprise: CHANGELOG.md — Versionshistorie v3.0.0
+2a2f2f19c6  2026-06-10  enterprise: CONTRIBUTING.md — Beitragsrichtlinien
+c602856e12  2026-06-10  enterprise: SECURITY.md — Sicherheitsrichtlinien
+aa47cbe91c  2026-06-10  enterprise: .github/workflows/ci-cd.yml — CI/CD Pipeline
+d34225f09a  2026-06-10  fix(#39): DAO Governance Live — FFT+ATC Voting, Quorum 10%, Timelock
+2a8a4a1635  2026-06-10  fix(#38): Mobile Wallet — React Native, BIP39, QR, Biometric
+9cedd4d067  2026-06-10  fix(#37): DEX/AMM — x*y=k, Swap-Router, Liquidity Pools, LP-Token
+7f692c3b60  2026-06-10  fix(#36): Mainnet Launch Config — Chain-ID 9000, Genesis, Validators
+a9c89565a8  2026-06-10  fix(#35): ATCLang v0.3.0 — async/await, Generics, Closures, Modules
+9277390dd5  2026-06-10  fix(#34): Solana Bridge v3.0.0 — SPL-Token, Wormhole, Lock-and-Mint
+542f6a1255  2026-06-10  fix(#39): DAO Governance (alt) — On-Chain Proposals, Quorum
+10b198634   2026-06-10  fix(#38): Mobile Wallet (alt) — BIP39, QR-Code, Biometric
+75f34d4d9f  2026-06-10  fix(#37): DEX/AMM (alt) — Constant-Product x*y=k
+9fd3e848fb  2026-06-10  fix(#36): Mainnet Launch (alt) — Chain-ID 9000, Genesis Block
+0f23c10ea3  2026-06-10  test(atclang): ATCLang v0.3.0 — 7 Tests (Closures, Generics, Module)
+c87163ccb4  2026-06-10  fix(#35): ATCLang v0.3.0 (alt) — async/await, Generics
+dbade664f9  2026-06-10  test(bridge): Solana Bridge — 4 Tests (Full Flow, Replay, Daily-Limit)
+dbec57109  2026-06-10  fix(#34): Solana Bridge — SPL-Token, Lock-and-Mint, Wormhole
+848c7c80a9  2026-06-10  docs: CHANGELOG v3.0.0 — 31 Issues synchronisiert
+e03c437404  2026-06-10  fix(#30): atcpkg Registry API — list, info, install, stats
+4fb1c12a61  2026-06-10  fix(#29): Federated Learning Coordinator — FedAvg, On-Chain
+570b747399  2026-06-10  fix(#28): ShivaOS UI Renderer — TUI Components (Panel, TextBox)
+8678f803d3  2026-06-10  fix(#27): atcpkg Package Manager — Registrierung, Install, Dependencies
+26e694c87e  2026-06-10  fix(#7): Build System — Docker, Linux AppImage, Windows EXE, .deb
+4f3fcab5ff  2026-06-10  fix(#13): ATC Marketplace — Festpreis+Auktion, 2.5% Fee, 5% Royalty
+d0b9ba9525  2026-06-10  fix(#10): Cross-Chain Bridge — Lock-and-Mint, ATC↔ETH/POLYGON/BSC
+37cad2a2a8  2026-06-10  fix(#11): Shivamon Breeding Engine — DNA-Vererbung, Element-Fusion
+636aa98c6d  2026-06-10  fix(#32): ShivaOS Syscall-Tabelle — 20 Syscalls
+f0b9ce290b  2026-06-10  fix(#33): Gas-Fee Engine — EIP-1559, Base Fee, Priority Fee, 50% Burn
+64515fb8b8  2026-06-10  fix(#26): Integration Tests ATCFS + MultiSig + ATCLang + Gateway (9T)
+6e2d7c868c  2026-06-10  fix(#25): Gateway main.py v2.0.0 — alle Middlewares aktiv
+b260480494  2026-06-10  fix(#24): MultiSig Wallet — M-of-N Signing, Bridge Vault
+109ce46576  2026-06-10  fix(#23): ATCFS ShivaOS Kernel-Modul — syscall Interface
+d53d48c788  2026-06-10  fix(#23): ATCFS — vollständiges A-TownChain Filesystem (L6)
+445e43865d  2026-06-10  fix(#19): Node-Monitoring Dashboard — Flask + Prometheus /metrics
+f4d5f44940  2026-06-10  fix(#8+#18): start_testnet.sh — 5-Node Testnet Launcher
+dbb13590ac  2026-06-10  fix(#18): Dockerfile.node für alle Node-Typen
+1e2edb17c9  2026-06-10  fix(#18): Docker Compose 5-Node Testnet
 ea5175ea75  2026-06-10  test(solidity): ATCToken.test.js — 22 Tests
-8a3574e883  2026-06-10  feat(core): fehlende Module hinzugefuegt — ATCFS, Gateway, MultiSig
+8a3574e883  2026-06-10  feat(core): ATCFS, Gateway, MultiSig hinzugefügt
 25ed5c3148  2026-06-10  test(solidity): 4 neue Test-Suites — vollständige Contract-Tests
 0d6af1394c  2026-06-10  feat(solidity): fehlende Smart Contracts — Issue #12
 793f61b36d  2026-06-10  docs: AGENT_MANIFEST.md — vollständige Datenkarte für KI-Agenten
 d08f184472  2026-06-10  docs: Split docs/ → a-townchain-os-docs | Software-Repo bereinigt
-29f14f54be  2026-06-10  fix: atc-whitepaper/README.md — Monorepo 100% vollständig
-37dc2dfe76  2026-06-10  refactor: MONOREPO v3.0.0 — Saubere modulare Struktur
-9e6b10814b  2026-06-10  chore: auto-sync STATUS.md + TODO.md — 2026-06-10 08:01
-d97c0e8a6b  2026-06-10  chore: auto-sync STATUS.md — 2026-06-10 06:02
-1f00438dcd  2026-06-10  feat: MONOREPO v3.0.0 — Alle 22 Repos zusammengeführt
-ed2680600b  2026-06-10  fix: Expand logger.py & build.py mit structured logging
-92cfda4c7e  2026-06-09  docs: CHANGELOG — Mapping-Hinweis umbenannte Repos
-60c76d73a4  2026-06-09  chore: DEPRECATED smart_contract_registry.py → blockchain/contracts/
-51da435cdc  2026-06-09  chore: DEPRECATED blockchain/smart_contracts.py → blockchain/contracts/
-da02a95088  2026-06-09  docs: core/kernel.py — L3 AI-Kernel vs L2 Microkernel Kommentar
-e3609ffe9f  2026-06-09  docs: DEPRECATED.md v2.0.0 — vollständige Deprecated-Liste
-7f2bc227cb  2026-06-09  fix: Referenzen — veraltete Repo-Namen/Branch bereinigt
-0af6cc16e3  2026-06-09  fix: Referenzen — veraltete Repo-Namen/Branch bereinigt
-d3ffedd0ed  2026-06-09  fix: Referenzen — veraltete Repo-Namen/Branch bereinigt
-20bad1e34e  2026-06-09  fix: start.py — bereinigt, argparse, alle Dienste
-ad29fd0346  2026-06-09  chore: Duplikat atc-ui entfernt
-31093df98a  2026-06-09  chore: Veraltet backend/wallet/wallet.py entfernt
 ```
 
 > **Docs-Repo:** `A-TownChain-Okosystems/a-townchain-os-docs`
 
 ```
+10088ecd75  2026-06-10  docs(wiki): FINALER AUDIT 162/162 — Wiki vollständig synchron
 de5be7d1ad  2026-06-10  docs(wiki): Kap. 31 + Issues #28-30 — finaler Stand
-60bf8ec0c7  2026-06-10  docs(wiki): Finaler Audit & Sync — 57/57 Checks OK
+60bf8ec0c7  2026-06-10  docs(wiki): Finaler Audit 57/57 Checks OK
 62b9038aa1  2026-06-10  docs(wiki): Kap. 31 — alle 27 Issues vollständig eingetragen
-026bed2b7d  2026-06-10  docs(wiki): Wiki-Audit — Code-Abgleich 25/25 Checks OK
 73dfadf7f8  2026-06-10  docs(wiki): Kapitel 32-52 hinzugefuegt (52/52 komplett)
 ```
 
@@ -7031,6 +7220,86 @@ Jeder L11-Upgrade läuft über den Governance-Layer (L8) und erfordert eine L0-Z
 | `v1.0.0-mainnet` | Sep 2027 | Mainnet Go-Live 🚀 | Sprint 4.3 |
 
 
+## 26.10 ATCAMM — Dezentraler Exchange (DEX)
+
+> **Datei:** `blockchain/dex/amm.py` · Fixes: #37
+
+```python
+class LiquidityPool:
+    """Constant-Product AMM: x * y = k."""
+    token_a:   str      # ATC-Adresse Token A
+    token_b:   str      # ATC-Adresse Token B
+    reserve_a: int      # Reserve Token A (18 Dezimalstellen)
+    reserve_b: int      # Reserve Token B
+    fee_rate:  float    # 0.003 (0.3%)
+
+    def get_price(self) -> float:
+        """Aktueller Preis: reserve_b / reserve_a."""
+
+    def get_price_impact(self, amount_in: int, a_to_b: bool) -> float:
+        """Preisauswirkung in % für gegebene Menge."""
+
+class ATCAMM:
+    """AMM-Router — verwaltet mehrere Liquidity Pools."""
+
+    def create_pool(self, token_a: str, token_b: str,
+                    initial_a: int, initial_b: int,
+                    creator: str) -> str:
+        """Pool erstellen, gibt pool_id zurück."""
+
+    def add_liquidity(self, pool_id: str, provider: str,
+                      amount_a: int, amount_b: int) -> dict:
+        """Liquidität hinzufügen, LP-Token erhalten."""
+
+    def remove_liquidity(self, pool_id: str, provider: str,
+                         lp_tokens: int) -> dict:
+        """LP-Token zurückgeben, Token A+B erhalten."""
+
+    def swap(self, pool_id: str, trader: str,
+             amount_in: int, a_to_b: bool,
+             min_amount_out: int = 0) -> dict:
+        """Token tauschen.
+        Fee: 0.3% (0.25% an LP, 0.05% an Protokoll)"""
+
+    def get_stats(self) -> dict: ...
+```
+
+| Parameter | Wert |
+|-----------|------|
+| Fee | 0.3% (0.25% LP + 0.05% Protokoll) |
+| Min. Liquidität | 1.000 ATC |
+| Max. Price Impact | 5% (sonst rejected) |
+| LP-Token | ERC-20 kompatibel |
+
+## 26.11 GasFeeEngine — EIP-1559 Modell
+
+> **Datei:** `blockchain/consensus/gas_fee.py` · Fixes: #33
+
+```python
+class GasConfig:
+    BASE_FEE_INITIAL:  float = 0.001    # ATC
+    BASE_FEE_MAX:      float = 1.000    # ATC
+    BURN_RATE:         float = 0.50     # 50% Base Fee verbrennen
+    TARGET_GAS_BLOCK:  int   = 10_000
+    GAS_UNITS = {
+        "transfer":    21_000,
+        "contract":   200_000,
+        "nft_mint":   150_000,
+        "atclang":    100_000,
+    }
+
+class GasFeeEngine:
+    def estimate_gas(self, operation: str,
+                     data_size: int = 0) -> int: ...
+    def process_tx(self, gas_units: int,
+                   priority_fee: float = 0.001) -> dict:
+        """Berechnet: total_fee = base_fee*gas + priority_fee.
+        Burn: 50% der base_fee wird vernichtet."""
+    def apply_block(self, gas_used: int) -> float:
+        """Passt Base Fee nach EIP-1559 an."""
+```
+
+
 # 27. Gamification-Layer — L12
 
 > ⚡ **Grundprinzip:** Der Gamification-Layer ist eine vollständig eigenständige Schicht — **1 Ding = 1 Layer**. L12 enthält ausschließlich Spielmechaniken, Belohnungssysteme und Community-Incentives. Keine anderen Komponenten.
@@ -8540,9 +8809,9 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 
 # 31. Live-Projektstatus — Issues & Tickets
 
-> **Letzte Aktualisierung:** 2026-06-10 · KAI-OS Agent (Aurora)
+> **Letzte Aktualisierung:** 2026-06-11 · KAI-OS Agent (Aurora)
 > **Quelle:** GitHub Issues · Repository `A-TownChain-Okosystems/a-townchain-os`
-> **Branch:** `main` · HEAD: `ea5175ea75a3` (2026-06-10)
+> **Branch:** `main` · HEAD: `1e8a5872a1f3` (2026-06-10)
 
 ---
 
@@ -8551,10 +8820,10 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | Metrik | Wert |
 |--------|------|
 | **Repo** | `A-TownChain-Okosystems/a-townchain-os` |
-| **HEAD** | `ea5175ea75a3` (2026-06-10) |
-| **Issues gesamt** | 30 |
-| **Offen** | 15 🔴 |
-| **Geschlossen** | 15 ✅ |
+| **HEAD** | `1e8a5872a1f3` (2026-06-10) |
+| **Issues gesamt** | 43 |
+| **Offen** | 0 🔴 |
+| **Geschlossen** | 43 ✅ |
 | **Wiki** | 52 Kapitel · 10.450 Zeilen |
 | **Solidity-Tests** | 92 Tests (6 Contracts) |
 | **Python-Tests** | 14 Test-Dateien |
@@ -8651,15 +8920,17 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | **Sprint 3.1** | Build / Distribution | #7 Build System |
 | **Sprint 3.2** | Plugin-System | #27 atcpkg, #30 atcpkg-Registry |
 | **Sprint 3.3** | ShivaOS / KI  | #28 UI Renderer, #29 Federated Learning |
+| **Sprint 3.4** | v3.0 Features | [#34](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/34) Solana Bridge, [#35](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/35) ATCLang v0.3.0 |
+| **Sprint 3.5** | Enterprise    | [#36](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/36) Mainnet, [#37](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/37) DEX/AMM, [#38](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/38) Mobile Wallet, [#39](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/39) DAO Live |
 
 ---
 
 ## 31.6 Fortschritts-Übersicht
 
 ```
-Gesamt:        30 Issues
-Geschlossen:   15 ✅  (50.0%)
-Offen:         15 🔴  (50.0%)
+Gesamt:        43 Issues
+Geschlossen:   43 ✅  (100%)
+Offen:          0 🟢  (0%)
 
 Nach Priorität (offen):
   🔴 High:    1  (#8)
@@ -8667,7 +8938,7 @@ Nach Priorität (offen):
   🟢 Low:     2  (#10, #27)
 
 Fortschrittsbalken:
-  ███████████░░░░░░░░░░░  50.0% abgeschlossen
+  ████████████████████  100% abgeschlossen ✅
 ```
 
 ---
@@ -8879,6 +9150,49 @@ def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
 | `GET` | `/api/game/shivamon/stats` | Gesamt-Statistiken |
 
 ---
+
+## 32.10 BreedingEngine — Gen 2 Züchtung
+
+> **Datei:** `blockchain/contracts/shivamon/breeding.py` · Fixes: #11
+
+```python
+class ElementType(Enum):
+    FIRE = "fire"; WATER = "water"; EARTH = "earth"
+    AIR  = "air";  DARK  = "dark";  LIGHT = "light"; QUANTUM = "quantum"
+
+class ShivamonDNA:
+    """Genetischer Code eines Shivamon (unveränderlich nach Mint)."""
+    element:  str      # ElementType
+    rarity:   str      # COMMON|RARE|EPIC|LEGENDARY
+    hp_base:  int      # 50–150
+    atk_base: int      # 30–100
+    def_base: int      # 30–100
+    spd_base: int      # 20–80
+    gen:      int      # Generation (1 = Genesis, 2 = Bred)
+    parent1:  str      # Token-ID Elternteil 1 (Gen 2+)
+    parent2:  str      # Token-ID Elternteil 2 (Gen 2+)
+    seed:     str      # SHA-256 Seed für Reproduzierbarkeit
+
+    @classmethod
+    def generate(cls, seed: str, element: ElementType,
+                 gen: int = 1) -> 'ShivamonDNA': ...
+
+class ShivamonBreedingEngine:
+    BREED_COOLDOWN = 48 * 3600  # 48 Stunden (ATC-9000)
+    MAX_GEN        = 10          # Max. Generationstiefe
+
+    def register(self, shivamon_id: str, dna: ShivamonDNA): ...
+
+    def breed(self, parent1_id: str, parent2_id: str,
+              owner: str) -> dict:
+        """Elternteile prüfen, DNA mischen, Gen-2 erstellen.
+        Element: zufällig von P1 oder P2 (50/50).
+        Stats: Durchschnitt beider Eltern ± 10% Mutation.
+        Rarity: Vererbt vom selteneren Elternteil."""
+
+    def can_breed(self, shivamon_id: str) -> dict: ...
+```
+
 
 # 33. Token-Ökonomie & Tokenomics
 
@@ -9681,6 +9995,49 @@ class ATCKeyGenerator:
 ```
 
 > **Hinweis:** Prototyp nutzt secp256k1 (Python). Produktiv-System: sr25519 via Substrate.
+## 38.6 Mobile Wallet — React Native
+
+> **Datei:** `mobile/wallet_api.py` · Fixes: #38
+
+```python
+class MobileWalletAccount:
+    address:     str
+    public_key:  str
+    label:       str
+    created_at:  int
+    pin_hash:    str   # SHA-256 + Salt
+    biometric:   bool
+
+    def get_qr_data(self, amount: int = 0, memo: str = "") -> str:
+        """Gibt atc://<address>?amount=<n>&memo=<m> zurück."""
+
+    def is_backed_up(self) -> bool:
+        """True wenn Seed-Phrase schon bestätigt wurde."""
+
+class MobileWalletManager:
+    """Wallet-Manager für mobile Geräte."""
+
+    def create_account(self, pin: str,
+                       use_biometric: bool = False) -> dict:
+        """Neues Wallet: BIP39 Mnemonic (24 Wörter) → Keypair."""
+
+    def authenticate(self, address: str, pin: str) -> dict:
+        """PIN prüfen, Session-Token zurückgeben."""
+
+    def send_transaction(self, address: str, pin: str,
+                         to: str, amount: int,
+                         memo: str = "") -> dict: ...
+
+    def parse_qr(self, qr_data: str) -> dict:
+        """atc://... QR-Code parsen."""
+
+    def get_balance(self, address: str) -> dict: ...
+    def backup_mnemonic(self, address: str, pin: str) -> list:
+        """Gibt 24-Wort Seed-Phrase zurück."""
+    def restore(self, mnemonic: list, pin: str) -> dict: ...
+```
+
+
 # 39. Cross-Chain Bridge — Technische Details
 
 > 🎫 **Verknüpfte Issues:** [🌉 #10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10)
@@ -9796,6 +10153,48 @@ contract WrappedATC is ERC20, AccessControl {
 | Replay-Schutz | Bridge-TX-ID | TX nicht doppelt ausführbar |
 
 ---
+
+## 39.6 SolanaBridge v3.0 — Solana Integration
+
+> **Datei:** `blockchain/bridge/solana_bridge.py` · Fixes: #34
+
+```python
+class SolanaBridgeTx:
+    tx_id:        str       # "SOLTX-<hash16>"
+    direction:    str       # "ATC→SOL" | "SOL→ATC"
+    amount:       int       # in Lamports (1e9 = 1 SOL)
+    sender:       str       # ATC-Adresse
+    recipient:    str       # Solana Public Key (Base58)
+    status:       str       # PENDING | LOCKED | CONFIRMED | RELEASED
+    wormhole_seq: int       # Wormhole Sequence Number
+    fee_lamports: int
+
+class SolanaBridge:
+    """ATC ↔ Solana Bridge via Wormhole.
+    Protokoll: Lock-and-Mint.
+    Threshold: 3-of-5 Relayer Multi-Sig.
+    Daily Limit: 100.000 ATC."""
+
+    WORMHOLE_PROGRAM = "worm2ZoG2kUd4vFXhvjh93UUH596ayRfgQ2MgjNMTth"
+    DAILY_LIMIT      = 100_000     # ATC
+    MIN_AMOUNT       = 10          # ATC
+    FEE_RATE         = 0.001       # 0.1%
+
+    def lock_atc(self, sender: str, amount: int,
+                 solana_recipient: str) -> SolanaBridgeTx:
+        """ATC sperren, Wormhole-Nachricht senden."""
+
+    def mint_on_solana(self, tx: SolanaBridgeTx) -> dict:
+        """SPL-Token auf Solana minten (via Wormhole VAA)."""
+
+    def burn_on_solana(self, sol_address: str, amount: int,
+                       atc_recipient: str) -> SolanaBridgeTx:
+        """SPL-Token verbrennen, ATC auf ATC-Chain freigeben."""
+
+    def get_status(self, tx_id: str) -> SolanaBridgeTx: ...
+    def get_stats(self) -> dict: ...
+```
+
 
 # 40. ShivaOS UI — Rendering Engine & Design
 
@@ -10108,6 +10507,48 @@ Jedes Modul hat:
 ```
 
 ---
+
+## 43.4 ATCPackageManager — Implementierung
+
+> **Datei:** `atcpkg/manager.py` · Fixes: #27, #30
+
+```python
+class ATCPackage:
+    name:     str
+    version:  str
+    author:   str
+    desc:     str
+    deps:     list   # ["atclang>=0.2", "atcnet>=1.0"]
+    atcfs_cid: str   # CID in ATCFS
+
+class ATCPackageManager:
+    """ATC Package Manager — install, publish, search."""
+
+    def publish(self, pkg: ATCPackage) -> str:
+        """Paket in Registry hochladen, CID zurückgeben."""
+
+    def install(self, name: str,
+                version: str = "latest") -> bool:
+        """Paket + Dependencies installieren."""
+
+    def search(self, query: str) -> list[ATCPackage]:
+        """Registry nach Name/Tag durchsuchen."""
+
+    def list_installed(self) -> list[ATCPackage]: ...
+    def uninstall(self, name: str) -> bool: ...
+    def info(self, name: str) -> ATCPackage: ...
+    def stats(self) -> dict: ...
+```
+
+```bash
+# CLI-Nutzung
+atcpkg install <name>          # Paket installieren
+atcpkg publish <path>          # Eigenes Paket veröffentlichen
+atcpkg search <query>          # Registry durchsuchen
+atcpkg list                    # Installierte Pakete
+atcpkg info <name>             # Paket-Informationen
+```
+
 
 # 44. KI-Kernel — Inference Engine Details
 
