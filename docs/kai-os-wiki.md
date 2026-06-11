@@ -11635,8 +11635,8 @@ Priority Fee = vom Nutzer gesetzt (Incentive für Validator)
 # blockchain/consensus/gas_fee.py
 class GasFeeEngine:
     BASE_FEE_INITIAL = 1_000_000_000  # 1 Gwei
-    TARGET_GAS_USED  = 15_000_000     # 15M Gas
-    MAX_GAS_PER_BLOCK = 30_000_000    # 30M Gas
+    TARGET_GAS_USED  = 5_000_000      # 5M Gas (A-TownChain Basis)
+    MAX_GAS_PER_BLOCK = 10_000_000    # 10M Gas
     BASE_FEE_MAX_CHANGE = 0.125       # 12.5% pro Block
 
     def calculate_base_fee(self, parent_block: Block) -> int:
