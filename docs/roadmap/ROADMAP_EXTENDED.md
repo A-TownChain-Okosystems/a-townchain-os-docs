@@ -1,6 +1,6 @@
 # 🗺️ KAI-OS / A-TownChain OS — Vollständige Roadmap
 
-> Letzte Aktualisierung: 2026-06-09 | Version: v1.3.3-beta
+> Letzte Aktualisierung: 2026-06-11 | Version: v1.4.0 | 62 Wiki-Kapitel | Aurora Auto-Sync
 > Basis: 26 Basis-Sprints + 11 Erweiterungs-Sprints | 8 Meilensteine
 > Generiert von: Superagent (KAI-OS Agent)
 
@@ -24,7 +24,7 @@
 
 | # | Meilenstein | Sprint | Datum | Status |
 |---|-------------|--------|-------|--------|
-| MK0 | Whitepaper v1.0 veröffentlicht | 1.5 | Jun 2026 | 🟡 v0.9 fertig |
+| MK0 | Whitepaper v1.0 veröffentlicht | 1.5 | Jun 2026 | ✅ Dokumentiert |
 | MK1 | Node produziert Blöcke (Substrate) | 2.1 | Jul 2026 | ⚪ Geplant |
 | MK2 | KI-Inferenz on-node, Agent deployed | 2.3 | Aug 2026 | ⚪ Geplant |
 | MK3 | Multi-Node Testnet live (5 Nodes) | 2.8 | Dez 2026 | ⚪ Geplant |
