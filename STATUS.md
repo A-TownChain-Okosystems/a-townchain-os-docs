@@ -1,44 +1,19 @@
-# 📊 A-TownChain OS — Live Status
+# 📊 A-TownChain OS — Projekt-Status
+> **Stand:** 2026-06-11 | v1.4.0 | Aurora Auto-Sync
 
-> Zuletzt aktualisiert: 2026-06-10 11:12 UTC+2 · v3.0.0
+## Aktueller Sprint: 2.2 → MK3 (Multi-Node Testnet, Dez 2026)
 
-## Repository-Übersicht
+| Metrik | Wert |
+|--------|------|
+| Wiki-Kapitel | **62** |
+| Wiki-Zeilen | ~12.009 |
+| Code-Dateien | 300 |
+| Issues ✅ | 43/48 (89.6%) |
+| Issues 🔴 | 5/48 (10.4%) |
+| Audit-Score | 86/86 (100%) |
+| Verbundene Dienste | 16 |
 
-| Repo | Status | Branch | Dateien |
-|------|--------|--------|---------|
-| [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os) | ✅ Aktiv | main | 266 |
-| [a-townchain-os-docs](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) | ✅ Aktiv | main | 322 |
+## Meilensteine
+MK0 Whitepaper ✅ | MK3 Testnet 🔄 Dez2026 | MK4 Alpha ⚪ Apr2027 | MK5 Mainnet ⚪ Okt2027
 
-## Issue-Status
-
-| Priorität | Anzahl | Issues |
-|-----------|--------|--------|
-| 🔴 High | 1 | #8 Multi-Node Testnet |
-| 🟡 Medium | 12 | #7,#11,#12,#13,#18,#19,#23,#24,#25,#26,#31,#33 |
-| 🟢 Low | 6 | #10,#27,#28,#29,#30,#32 |
-| ✅ Closed | 12 | #1–#6,#9,#14–#17,#20 |
-
-## Sprint-Status
-
-| Sprint | Issues | Status |
-|--------|--------|--------|
-| 2.2 | #8, #18, #19, #25, #26 | 🔄 In Bearbeitung |
-| 2.3 | #12, #23, #24, #33 | 📋 Offen |
-| 2.4 | #32 | 📋 Offen |
-| 2.5 | #11, #13, #31 | 📋 Offen |
-| 2.6 | #7, #27, #28, #30 | 📋 Offen |
-| 2.7 | #10, #29 | 📋 Offen |
-
-## Module (ATX Standards)
-- 133 Module in modules/ Ordner
-- 35 Standard-Familien implementiert
-- 186 ATX-Module gesamt (inkl. Docs)
-
-## Tests
-- 22 Test-Dateien in tests/
-- Solidity: 22 Tests (ATCToken.test.js)
-- Bootstrap: 6 Tests
-- Gateway: 8 Tests
-- Core: 19 Tests
-
-*Auto-generiert von Aurora AI — A-TownChain Ökosystem*
+*2026-06-11 | Aurora · Base44*
