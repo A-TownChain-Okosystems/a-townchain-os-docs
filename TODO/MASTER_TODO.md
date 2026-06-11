@@ -1,11 +1,10 @@
 # 📋 MASTER TODO — A-TownChain OS
-> Stand: 2026-06-11 10:23 UTC | Auto-generiert von Aurora
+> Stand: 2026-06-11 10:39 UTC | Aurora Master Sync v3.0
 
-## Kritischer Pfad (Reihenfolge einhalten!)
-#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node
+## Kritischer Pfad
+`#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node`
 
-## Alle offenen Issues
-
+## Alle offenen Issues (9)
 ### #52 #52 — Mainnet Launch Manager: Genesis-Block (Kap. 55)
 **Labels:** enhancement, priority:low, mainnet
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/52
@@ -43,5 +42,12 @@
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/44
 
 
-## Wiki-Lücken
-- Keine Lücken gefunden ✅
+## Wiki-Lücken (0)
+- Keine Lücken ✅
+
+## Veraltete Referenzen (5)
+- AGENT_MANIFEST.md → atclang-wiki
+- AGENT_MANIFEST.md → atcnet-wiki
+- ECOSYSTEM.md → atclang-wiki
+- ECOSYSTEM.md → atcnet-wiki
+- docs/DEPRECATED.md → ShivaCoreDev/kai-os-wiki
