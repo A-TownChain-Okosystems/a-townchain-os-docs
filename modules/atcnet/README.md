@@ -1,25 +1,29 @@
-# ATCNet — P2P Netzwerk-Layer
+# ATCNet — Vollständige P2P Implementierung
+> Stand: 2026-06-12 | v3.2.0
 
-**Version:** v1.2.0 | **Status:** Aktiv
+## Implementierte Dateien
+| Datei | Beschreibung | Status |
+|-------|-------------|--------|
+| `bootstrap_client.py` | Peer-Discovery | ✅ |
+| `p2p_node.py` | P2P TCP Node | ✅ neu |
+| `gossip.py` | Epidemic Gossip | ✅ neu |
+| `nat_traversal.py` | STUN + Hole-Punch | ✅ neu |
 
-## Ubersicht
-ATCNet ist der P2P-Layer des A-TownChain OS.
-Verwaltet Peer-Discovery, Block-Propagation und Chain-Synchronisation.
+## P2PNode
+- `start()` — TCP Server auf Port 9000
+- `connect(host, port)` — Peer verbinden
+- `broadcast(type, payload)` — An alle Peers
+- `on(type, handler)` — Message-Handler registrieren
 
-## Ports
-| Service | Port |
-|---------|------|
-| P2P     | 9000 |
-| RPC     | 9001 |
-| WS      | 9002 |
+## GossipProtocol
+- Epidemic gossip mit TTL (max 10 Hops)
+- Deduplication via SHA256 Message-IDs
+- `broadcast_block(block, forward_fn)`
+- `broadcast_tx(tx, forward_fn)`
 
-## Dateien
-- bootstrap_client.py: Peer-Discovery (Kademlia)
-- p2p_node.py: P2P Node Management
-- gossip.py: Block/Tx Gossip-Protokoll
+## NATTraversal
+- STUN-Discover: externe IP/Port ermitteln
+- UDP Hole-Punching für NAT-Durchquerung
+- Unterstützte STUN Server: Google, Cloudflare
 
-## Offene TODOs
-- NAT-Traversal vervollstandigen
-- Kademlia DHT vollstandig implementieren
-
-_Stand: 2026-06-11 | Aurora Auto-Sync_
+_Stand: 2026-06-12 | Aurora Auto-Sync_
