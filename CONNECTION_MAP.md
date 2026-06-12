@@ -1,14 +1,18 @@
 # 🔗 A-TownChain OS — Verbindungsmatrix
 > Auto-generiert: 2026-06-12 06:41 UTC | Aurora Cross-Connect v1.0
 
-## Status: 3/3 Verbindungen aktiv
+## Status: 7/7 Verbindungen aktiv
 
 ## Verbindungsübersicht
 | Verbindung | Status | Detail |
 |------------|--------|--------|
 | `github→notion` | ✅ | 9 Issues → Notion Protokoll |
+| `github→tasks` | ✅ | 0 neue Tasks | 14 existierend |
 | `notion→sheets` | ✅ | 8 Notion-Seiten → Sheets Tab |
-| `docs→drive→onedrive` | ✅ | Connection Map Doc (1ZGLVf3bNFeK…) in Drive + OneDrive |
+| `notion→tasks` | ✅ | 0 Roadmap-Tasks angelegt |
+| `docs→drive→onedrive` | ✅ | Connection Map Doc (1oVUBORLiaxI…) in Drive + OneDrive |
+| `calendar→meet` | ✅ | Meet-Link: kein kommender Event mit Meet |
+| `calendar→gmail` | ✅ | Wochenagenda (10 Events) gesendet ✅ |
 
 ## Architektur
 ```
