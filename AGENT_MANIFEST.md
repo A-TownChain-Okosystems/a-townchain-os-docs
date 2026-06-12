@@ -1,46 +1,43 @@
-# AGENT_MANIFEST.md
-> Letzte Aktualisierung: 2026-06-12 06:45 UTC | Aurora Master Sync v3.0
+# AI Agent Manifest — A-TownChain OS
+> Version: 3.1 | Aktualisiert: 2026-06-12 06:55 UTC
+
+## Zweck
+Dieses Dokument ermöglicht jedem KI-Agenten, sich innerhalb von 30 Sekunden
+in das A-TownChain OS Ecosystem einzubinden.
 
 ## Repositories
-- **Code:** https://github.com/A-TownChain-Okosystems/a-townchain-os
-- **Docs:** https://github.com/A-TownChain-Okosystems/a-townchain-os-docs
+| Repo | URL | Inhalt |
+|------|-----|--------|
+| Code | https://github.com/A-TownChain-Okosystems/a-townchain-os | Ausführbarer Code |
+| Docs | https://github.com/A-TownChain-Okosystems/a-townchain-os-docs | Wiki, Roadmap, TODOs |
 
-## Integrationen (17 aktiv)
-| Integration | Status | Zweck |
-|-------------|--------|-------|
-| GitHub | ✅ | Code + Docs Hosting |
-| Notion | ✅ | Roadmap + Protokolle |
-| Google Sheets | ✅ | Dashboard + Metriken |
-| Google Docs | ✅ | Projekt-Reports |
-| Google Slides | ✅ | Sprint-Präsentationen |
-| Google Calendar | ✅ | Sprint-Deadlines |
-| Google Drive | ✅ | Datei-Archiv |
-| Google Analytics | ✅ | Web-Traffic |
-| Google BigQuery | ✅ | Langzeit-Metriken |
-| Google Search Console | ✅ | SEO + Keywords |
-| Google Tasks | ✅ | Issue-Tracking |
-| Google Meet | ✅ | Standup-Meetings |
-| Google Classroom | ✅ | Entwickler-Kurse |
-| Gmail | ✅ | Status-Reports |
-| Microsoft Outlook | ✅ | Status-Reports |
-| Microsoft Teams | ✅ | Team-Kommunikation |
-| Microsoft OneDrive | ✅ | Cross-Cloud-Backup |
-| Hugging Face | ✅ | KI-Modelle |
+## Aktuelle Metriken (2026-06-12)
+- Code-Dateien: 302 | Python: 175 | Tests: 33
+- Wiki-Dateien: 332
+- Offene Issues: 9 | Geschlossene: 41
+- Commits (7d): 50
+
+## Integrierte Dienste (17/17)
+GitHub | Notion | Google Sheets | Google Docs | Google Drive | Google Slides |
+Google Calendar | Google Meet | Google Tasks | Gmail | Outlook |
+HuggingFace | OneDrive | Google Classroom | Search Console | Analytics | Teams
 
 ## Google Sheets Dashboard
 ID: 1xR5c24NrtYC58OsGrLaUHkQUiL_O6eYVyx8KmFcvBD4
-URL: https://docs.google.com/spreadsheets/d/1xR5c24NrtYC58OsGrLaUHkQUiL_O6eYVyx8KmFcvBD4
+Tabs: Modul-Status | Offene Aufgaben | Projekt-Übersicht | Commit-Log
 
-## Notion
-- Roadmap: 373b826d-b85c-8125-ba83-f04995191bf0
-- Tagesprotokoll: 37bb826d-b85c-81c4-bdd4-cfc0dc74de7e
-- Live-Status: 379b826d-b85c-81f4-9b2b-f2a05496a4e1
+## Notion Workspace
+- Protokoll: 37bb826d-b85c-81c4-bdd4-cfc0dc74de7e
+- Roadmap:   373b826d-b85c-8125-ba83-f04995191bf0
 
-## Kritischer Entwicklungspfad
-#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node LIVE
+## Master Sync
+- Läuft: täglich 08:05 (Europe/Berlin)
+- Schritte: 20 | Aktiv: 17 | Übersprungen: 3 (Teams, BigQuery, Analytics)
 
-## Sync-Konfiguration
-- **Schedule:** täglich 08:05 Europe/Berlin
-- **Agent:** Aurora (Base44 Superagent)
-- **Script:** .agents/skills/kai_os_sync/scripts/master_sync.py
-- **Version:** v3.0
+## Kritischer Pfad — ABGESCHLOSSEN
+#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork → #18 Docker → #8 Multi-Node ✅
+
+## Nächste Prioritäten
+1. #51 IPC Bus (MEDIUM, Sprint 2.4)
+2. #50 HuggingFace Pipeline (MEDIUM)
+3. #48 ATCLang Type-Checker (LOW)
