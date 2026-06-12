@@ -1,40 +1,39 @@
-# 📊 A-TownChain OS — Status
-> Auto-generiert: 2026-06-12 06:45 UTC | Aurora Master Sync v3.0 | 17 Integrationen
+# A-TownChain OS — Projektstatus
+> Automatisch aktualisiert: 2026-06-12 06:55 UTC | Aurora v3.1
 
-## Metriken
+## Übersicht
 | Metrik | Wert |
 |--------|------|
-| Offene Issues | 9 |
-| HIGH Priority | 0 🔴 |
-| MEDIUM Priority | 3 🟡 |
-| LOW Priority | 3 🟢 |
-| Commits (30d) | 50 |
+| Code-Dateien | 302 |
+| Python-Dateien | 175 |
+| Test-Dateien | 33 |
 | Wiki-Dateien | 332 |
-| Wiki-Lücken | 0 |
-| Clones (14d) | 3318 (847 unique) |
-| Branches | main |
+| Offene Issues | 9 |
+| Geschlossene Issues | 41 |
+| Commits (7 Tage) | 50 |
+| Repository-Clones | 3.318 |
+| Unique Cloner | 847 |
 
 ## Offene Issues
-### 🔴 HIGH
-- keine
+| # | Titel | Priorität | Zuletzt |
+|---|-------|-----------|---------|
+| #51 | IPC Bus: Kernel-Integration | MEDIUM | 2026-06-11 |
+| #50 | HuggingFace Code-Review Pipeline | MEDIUM | 2026-06-11 |
+| #49 | BigQuery Analytics Pipeline | MEDIUM | 2026-06-11 |
+| #48 | ATCLang v0.4.0 Type System | LOW | 2026-06-11 |
+| #47 | ZKP Zero-Knowledge Proofs | LOW | 2026-06-11 |
+| #46 | Mobile Wallet Biometrie | LOW | 2026-06-11 |
+| #45 | ATCoin DeFi AMM | LOW | 2026-06-11 |
+| #44 | Mainnet Monitoring Grafana | LOW | 2026-06-11 |
+| #52 | Mainnet Launch Manager | LOW | 2026-06-11 |
 
-### 🟡 MEDIUM  
-- #51 [#51 — IPC Bus: Vollständige Kernel-Integration (Kap. 58)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/51)
-- #50 [#50 — Hugging Face Code-Review Pipeline (Kap. 61)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/50)
-- #49 [#49 — BigQuery Analytics Pipeline (Kap. 60)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/49)
+## Kritischer Pfad — alle abgeschlossen
+#14 Bootstrap ✅ | #15 Propagation ✅ | #16 Sync ✅ | #17 Fork ✅ | #18 Docker ✅ | #8 Multi-Node ✅
 
-### 🟢 LOW
-- #52 [#52 — Mainnet Launch Manager: Genesis-Block (Kap. 55)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/52)
-- #48 [ATCLang v0.4.0 — Type System & Formal Verification (Kap. 36)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/48)
-- #47 [ZKP Zero-Knowledge Proofs — L0 Security Layer (Kap. 25)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/47)
+## Empfohlene nächste Schritte
+1. #51 IPC Bus implementieren (Sprint 2.4)
+2. #50 HuggingFace Pipeline (Sprint 2.x)
+3. #48 ATCLang Type-Checker (Sprint 3.x)
 
-## Kritischer Entwicklungspfad
-```
-#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node LIVE
-```
-
-## Integrationen (17 aktiv)
-GitHub · Notion · Sheets · Docs · Slides · Calendar · Drive · Analytics · BigQuery · Search Console · Outlook · Gmail · Classroom · Teams · OneDrive · Tasks · Meet · Hugging Face
-
-## Letzter Sync
-- **Datum:** 2026-06-12 | **Agent:** Aurora v3.0 | **Nächster:** 2026-06-13 08:05
+## Integrationen
+17/17 Dienste aktiv | Master Sync täglich 08:05 (Europe/Berlin)
