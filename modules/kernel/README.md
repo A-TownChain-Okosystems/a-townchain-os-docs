@@ -1,22 +1,32 @@
-# KAI-OS Kernel — A-TownChain OS Core
+# KAI-OS Kernel — Vollständige Implementierung
+> Stand: 2026-06-12 | v3.2.0
 
-**Version:** v2.0.0 | **Status:** Aktiv
+## Implementierte Dateien
+| Datei | Beschreibung | Status |
+|-------|-------------|--------|
+| `kernel.py` | Haupt-Kernel | ✅ |
+| `ipc/ipc_bus.py` | IPC Message Bus | ✅ |
+| `ipc/__init__.py` | Package Export | ✅ |
+| `process/process_mgr.py` | Process Manager | ✅ |
+| `atcfs/atcfs.py` | Dezentrales Filesystem | ✅ |
+| `ai_kernel/ai_kernel.py` | LLM Router + HuggingFace | ✅ |
 
-## Ubersicht
-Der KAI-OS Kernel ist der Kern des A-TownChain OS.
-Verwaltet Prozesse, IPC, Dateisystem und AI-Integration.
+## ProcessManager
+- `spawn(name, fn, args)` → PID
+- `kill(pid)` → bool
+- `list_processes()` → List[Dict]
+- `start_monitor()` — Hintergrund-Health-Check
 
-## Module
-- kernel.py: Haupt-Kernel (Process-Manager)
-- ipc/ipc_bus.py: IPC Message Bus (Issue #51)
-- atcfs/atcfs.py: Dezentrales Dateisystem
-- ai_kernel/ai_kernel.py: LLM Router + HuggingFace
-- process/process_mgr.py: Prozess-Scheduler
+## ATCFS
+- Content-addressiertes Storage (SHA256 CIDs)
+- `write(name, data)` → CID
+- `read(cid)` → bytes
+- `pin/unpin(cid)` → Garbage-Collection-Schutz
 
-## IPC Topics
-block.new | tx.broadcast | peer.connect | ai.query | fs.write
+## AIKernel / LLMRouter
+- 4 HuggingFace Modelle: gemma, mistral, phi, llama
+- `review_code(code, lang)` → str
+- `summarize(text)` → str
+- Automatisches Model-Routing nach Task
 
-## Offene Issues
-- **#51** IPC Bus: Vollstandige Kernel-Integration (Sprint 2.4)
-
-_Stand: 2026-06-11 | Aurora Auto-Sync_
+_Stand: 2026-06-12 | Aurora Auto-Sync_
