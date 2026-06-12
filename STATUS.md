@@ -1,41 +1,35 @@
 # A-TownChain OS — Projektstatus
-> Aktualisiert: 2026-06-12 07:08 UTC | Aurora v3.2 | v3.2.0 Code-Completeness Release
+> Aktualisiert: 2026-06-12 07:25 UTC | v3.2.1 Refactoring Release
 
-## Codebase
-| Metrik | Wert |
-|--------|------|
-| Code-Dateien | 326+ |
-| Python-Dateien | 193+ |
-| Test-Dateien | 33 |
-| Wiki-Dateien | 332 |
-| Offene Issues | 9 |
-| Geschlossene Issues | 41+ |
+## Aktuelle Version: v3.2.1
 
-## v3.2.0 — Heute fertiggestellt
-| Modul | Datei | Status |
+### v3.2.1 Änderungen (heute)
+| Issue | Titel | Status |
 |-------|-------|--------|
-| Kernel IPC | `modules/kernel/ipc/ipc_bus.py` | ✅ |
-| Kernel Prozess | `modules/kernel/process/process_mgr.py` | ✅ neu |
-| Kernel ATCFS | `modules/kernel/atcfs/atcfs.py` | ✅ neu |
-| Kernel AI | `modules/kernel/ai_kernel/ai_kernel.py` | ✅ neu |
-| ATCNet P2P | `modules/atcnet/p2p_node.py` | ✅ neu |
-| ATCNet Gossip | `modules/atcnet/gossip.py` | ✅ neu |
-| ATCNet NAT | `modules/atcnet/nat_traversal.py` | ✅ neu |
-| ATCLang TypeChecker | `atclang/type_checker.py` | ✅ neu |
-| ATCLang Stdlib | `atclang/stdlib/*.py` | ✅ 4 Module |
-| Prometheus | `monitoring/prometheus_metrics.py` | ✅ neu |
-| Grafana | `monitoring/grafana_exporter.py` | ✅ neu |
-| TestnetLauncher | `blockchain/nodes/testnet_launcher.py` | ✅ neu |
-| Block Gossip | `blockchain/propagation/block_gossip.py` | ✅ neu |
-| ServiceDiscovery | `gateway/service_discovery.py` | ✅ neu |
-| HF Pipeline | `tools/hf_review_pipeline.py` | ✅ neu |
-| Docker Testnet | `docker/docker-compose.testnet.yml` | ✅ neu |
+| #65 | ATCFS Konsolidierung (3→1 Implementierung) | ✅ Closed |
+| #66 | AIKernel Konsolidierung (2→1 Implementierung) | ✅ Closed |
+| #53–67 | 15 neue Issues für v3.2.1 Milestone | 📋 Erstellt |
 
-## Empfohlene nächste Schritte
-1. **Tests schreiben** für alle neuen Module (pytest)
-2. **#47** ZKP Zero-Knowledge Proofs (Sprint 3.x)
-3. **#45** ATCoin DeFi AMM+ (Sprint 3.x)
-4. **Docker Testnet starten**: `docker compose -f docker/docker-compose.testnet.yml up -d`
+### Offene v3.2.1 Issues (15)
+| Kategorie | Count | Issues |
+|-----------|-------|--------|
+| 🧪 Tests | 6 | #53, #54, #55, #56, #57, #58 |
+| 🔗 Integration | 4 | #59, #60, #61, #62 |
+| 📄 Docs | 2 | #63, #64 |
+| 🏗️ DevOps | 1 | #67 |
+| ♻️ Refactor | 2 | #65✅, #66✅ |
+
+### Kanonische Modul-Struktur (v3.2.1)
+| Modul | Kanonischer Pfad | Deprecated |
+|-------|-----------------|------------|
+| ATCFS | `modules/kernel/atcfs/atcfs.py` | `core/atcfs.py` → Shim |
+| AIKernel | `modules/kernel/ai_kernel/ai_kernel.py` | `core/ai_kernel.py` → Shim |
+| IPC Bus | `modules/kernel/ipc/ipc_bus.py` | – |
+| ProcessMgr | `modules/kernel/process/process_mgr.py` | – |
+| P2PNode | `modules/atcnet/p2p_node.py` | – |
+| Gossip | `modules/atcnet/gossip.py` | – |
+| NAT | `modules/atcnet/nat_traversal.py` | – |
+| TypeChecker | `atclang/type_checker.py` | – |
 
 ---
-*Aurora Superagent v3.2 · 2026-06-12 07:08 UTC*
+*Aurora v3.1 · 2026-06-12 07:25 UTC*
