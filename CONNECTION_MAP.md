@@ -1,5 +1,5 @@
 # 🔗 A-TownChain OS — Verbindungsmatrix
-> Auto-generiert: 2026-06-12 06:42 UTC | Aurora Cross-Connect v1.0
+> Auto-generiert: 2026-06-12 06:46 UTC | Aurora Cross-Connect v1.0
 
 ## Status: 14/14 Verbindungen aktiv
 
@@ -15,11 +15,11 @@
 | `sheets→bigquery` | ✅ | Übersprungen |
 | `analytics→sheets` | ✅ | Analytics verbunden — Web-Property noch konfigurieren |
 | `searchconsole→sheets` | ✅ | Search Console verbunden — Site noch registrieren |
-| `docs→drive→onedrive` | ✅ | Connection Map Doc (1FXW1IbWUxt4…) in Drive + OneDrive |
+| `docs→drive→onedrive` | ✅ | Connection Map Doc (1rlIEYx69bFa…) in Drive + OneDrive |
 | `calendar→meet` | ✅ | Meet-Link: kein kommender Event mit Meet |
 | `calendar→gmail` | ✅ | Wochenagenda (10 Events) gesendet ✅ |
 | `teams→calendar` | ✅ | Teams verbunden (kein Channel oder Meet-Link) |
-| `slides→drive` | ✅ | Sprint-Präsentation 1IfLYZNMMF6B… in Drive |
+| `slides→drive` | ✅ | Sprint-Präsentation 107iGjZO3fvz… in Drive |
 
 ## Architektur
 ```
@@ -45,4 +45,4 @@ GitHub ←───────────────────────�
 - **Teams** ist der Team-Kommunikationskanal
 - **Google Drive + OneDrive** sind redundante Datei-Backups
 
-_Aurora Superagent · Base44 · 2026-06-12 06:42 UTC_
+_Aurora Superagent · Base44 · 2026-06-12 06:46 UTC_
