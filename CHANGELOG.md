@@ -1,38 +1,53 @@
-# Changelog — A-TownChain Ökosystem
+# Changelog
 
-## v3.0.0 — 10. Juni 2026 (Monorepo)
+## v3.1.0 — 2026-06-11 (Aurora Sync Release)
 
-### Monorepo-Restrukturierung
-- 22 Repos in saubere Struktur überführt
-- a-townchain-os-docs als separates Docs-Repo
-- AGENT_MANIFEST.md — KI-Datenkarte
+### Verbesserungen
+- Modul-Doku fuer alle 7 Module erstellt (atclang, atcnet, kernel, gateway, contracts, franchise, shivamon)
+- README: Quickstart-Section hinzugefuegt
+- AI Agent Manifest v2.0: alle 17 Dienste dokumentiert
+- Cross-Connect: 20/20 bidirektionale Verbindungen aktiv
+- Master Sync v3.1: 20 Schritte, taeglich 08:05
 
-### Neue Features (alle Fixes 10.06.2026)
-- **#33** Gas-Fee Engine — EIP-1559, Base Fee, 50% Burn
-- **#32** ShivaOS Syscall-Tabelle — 20 Syscalls
-- **#30** atcpkg Registry API — list/info/install/stats
-- **#29** Federated Learning — FedAvg, On-Chain Koordination
-- **#28** ShivaOS UI Renderer — TUI Panel/TextBox/ProgressBar
-- **#27** atcpkg Package Manager — Install, Dependencies
-- **#26** Integration Tests — 9/9 ✅ ATCFS+MultiSig+ATCLang+GW
-- **#25** API Gateway v2.0.0 — alle Middlewares aktiv
-- **#24** MultiSig Wallet — M-of-N, Bridge+Franchise Vault
-- **#23** ATCFS Syscall-Interface — open/write/mkdir/stat/delete
-- **#19** Node-Monitoring — Prometheus /metrics + Echtzeit
-- **#18/#8** 5-Node Testnet — Docker Compose, start_testnet.sh
-- **#13** Marketplace v2 — Festpreis+Auktion, 2.5% Fee, 5% Royalty
-- **#11** Breeding Engine — DNA-Vererbung, Element-Fusion, 10% Mutation
-- **#10** Cross-Chain Bridge — Lock-and-Mint, ETH+POLYGON+BSC
-- **#7**  Build System — Docker, AppImage, Windows EXE, .deb
+### Status
+- 9 offene Issues (niedrige/mittlere Prioritaet)
+- 41 geschlossene Issues
+- Kritischer Pfad #14 bis #8: alle 6 Issues geschlossen
 
-## v2.1.0 — 09. Juni 2026
+ — A-TownChain
 
-- ATCLang v0.2.0 (Security Analyzer, Compiler Cache, VM Depth-Limit)
-- Smart Contracts: ATC-8300/9000/9900, Reentrancy-Guard
-- Solidity (Hardhat, 22 Tests) [#12]
-- Gemini AI BYOK [#2]
-- ECDSA Wallet secp256k1 [#6]
-- Security Audit: 10 Lücken geschlossen
-- Franchise Factory v1.0.0
-- 24 Repos + 60+ Wiki-Seiten
-- Whitepaper v3.0.0 (123KB, 159 Kapitel)
+## v3.0.0 — 10.06.2026 (Enterprise Release)
+
+### New Features
+- #34 Solana Bridge (SPL-Token, Wormhole, Relayer M-of-N)
+- #35 ATCLang v0.3.0 (async/await, Generics, Closures, Module-System)
+- #36 Mainnet Launch Config (Chain-ID 9000, 21M ATC Tokenomics)
+- #37 DEX/AMM (x*y=k, SwapRouter, LP-Token, 0.3% Fee)
+- #38 Mobile Wallet (React Native, BIP39, QR, Biometric Auth)
+- #39 DAO Governance Live (FFT+ATC Voting, Quorum, Timelock)
+- Enterprise CI/CD (GitHub Actions, multi-Python matrix)
+- Nginx TLS Reverse Proxy + Rate-Limiting
+- Prometheus+Grafana Monitoring Stack
+- Redis Cache Layer
+- SECURITY.md + Bug Bounty Program
+- CONTRIBUTING.md Enterprise Standards
+
+### Documentation
+- #40 ATCLang Syntax Reference
+- #41 Mathematical Proofs (7 Theorems)
+- #42 Error Codes + Bottleneck Analysis
+- #43 Decentralized Proofs for Users
+
+### Infrastructure
+- Docker Compose Enterprise (9 Services)
+- Prometheus Alert Rules (6 Alerts)
+- Nginx Enterprise Config (TLS, Rate-Limit, Security Headers)
+
+## v2.2.0 — 10.06.2026
+- 17 Issues: Bridge ETH+POL+BSC, Breeding, Marketplace, ATCFS,
+  MultiSig, Gateway v2, Integration Tests 9/9, atcpkg, TUI,
+  Federated Learning, Gas-Fee EIP-1559, Syscall-Tabelle, Testnet
+
+## v2.1.0 — 09.06.2026
+- 11 Issues: Smart Contracts, Gemini AI, Battle UI, ECDSA,
+  Governance, Solidity, Bootstrap, Security Audit, Analyzer
