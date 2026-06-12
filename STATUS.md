@@ -1,7 +1,7 @@
 # A-TownChain OS — Projektstatus
-> Automatisch aktualisiert: 2026-06-12 06:55 UTC | Aurora v3.1
+> Aktualisiert: 2026-06-12 06:59 UTC | Aurora v3.1 | 17/17 Dienste aktiv
 
-## Übersicht
+## Kennzahlen
 | Metrik | Wert |
 |--------|------|
 | Code-Dateien | 302 |
@@ -10,30 +10,37 @@
 | Wiki-Dateien | 332 |
 | Offene Issues | 9 |
 | Geschlossene Issues | 41 |
-| Commits (7 Tage) | 50 |
-| Repository-Clones | 3.318 |
+| Commits | 20 (letzte 20) |
+| Clones | 3318 |
 | Unique Cloner | 847 |
+| Notion-Seiten | 8 |
+| Tasks | 29 |
+| Calendar Events | 15 |
+| HuggingFace Modelle | 4/4 ✅ |
 
-## Offene Issues
-| # | Titel | Priorität | Zuletzt |
-|---|-------|-----------|---------|
-| #51 | IPC Bus: Kernel-Integration | MEDIUM | 2026-06-11 |
-| #50 | HuggingFace Code-Review Pipeline | MEDIUM | 2026-06-11 |
-| #49 | BigQuery Analytics Pipeline | MEDIUM | 2026-06-11 |
-| #48 | ATCLang v0.4.0 Type System | LOW | 2026-06-11 |
-| #47 | ZKP Zero-Knowledge Proofs | LOW | 2026-06-11 |
-| #46 | Mobile Wallet Biometrie | LOW | 2026-06-11 |
-| #45 | ATCoin DeFi AMM | LOW | 2026-06-11 |
-| #44 | Mainnet Monitoring Grafana | LOW | 2026-06-11 |
-| #52 | Mainnet Launch Manager | LOW | 2026-06-11 |
+## Offene Issues (9)
+| # | Titel | Priorität |
+|---|-------|-----------|
+| #52 | #52 — Mainnet Launch Manager: Genesis-Block (Kap. 55) | LOW |
+| #51 | #51 — IPC Bus: Vollständige Kernel-Integration (Kap. 58) | MEDIUM |
+| #50 | #50 — Hugging Face Code-Review Pipeline (Kap. 61) | MEDIUM |
+| #49 | #49 — BigQuery Analytics Pipeline (Kap. 60) | MEDIUM |
+| #48 | ATCLang v0.4.0 — Type System & Formal Verification (Kap. 36) | LOW |
+| #47 | ZKP Zero-Knowledge Proofs — L0 Security Layer (Kap. 25) | LOW |
+| #46 | Mobile Wallet — Biometrie & Push-Notifications (Kap. 38) | LOW |
+| #45 | ATCoin DeFi — AMM Liquidity Pool Integration (Kap. 26) | LOW |
+| #44 | Mainnet Monitoring — Grafana Dashboard (Kap. 49) | LOW |
 
-## Kritischer Pfad — alle abgeschlossen
-#14 Bootstrap ✅ | #15 Propagation ✅ | #16 Sync ✅ | #17 Fork ✅ | #18 Docker ✅ | #8 Multi-Node ✅
+## Kritischer Pfad — ✅ Abgeschlossen
+`#14` → `#15` → `#16` → `#17` → `#18` → `#8` — alle 6 Milensteine erreicht!
 
 ## Empfohlene nächste Schritte
-1. #51 IPC Bus implementieren (Sprint 2.4)
-2. #50 HuggingFace Pipeline (Sprint 2.x)
-3. #48 ATCLang Type-Checker (Sprint 3.x)
+1. **#51** IPC Bus implementieren (Sprint 2.4)
+2. **#50** HuggingFace Code-Review Pipeline
+3. **#48** ATCLang Type-Checker
 
-## Integrationen
-17/17 Dienste aktiv | Master Sync täglich 08:05 (Europe/Berlin)
+## Integrations-Details
+→ [integrations/](integrations/) — vollständige Exporte aller 17 Dienste
+
+---
+*Aurora Superagent v3.1 · 2026-06-12 06:59 UTC*
