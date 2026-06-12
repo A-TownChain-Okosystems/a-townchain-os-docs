@@ -8,7 +8,7 @@
 |------------|--------|--------|
 | `github→notion` | ✅ | 9 Issues → Notion Protokoll |
 | `notion→sheets` | ✅ | 8 Notion-Seiten → Sheets Tab |
-| `docs→drive→onedrive` | ✅ | Connection Map Doc (1VzRtz3Ltknp…) in Drive + OneDrive |
+| `docs→drive→onedrive` | ✅ | Connection Map Doc (1ZGLVf3bNFeK…) in Drive + OneDrive |
 
 ## Architektur
 ```
