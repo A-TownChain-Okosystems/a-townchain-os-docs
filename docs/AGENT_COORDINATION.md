@@ -61,6 +61,21 @@ zeitversetzt oder parallel arbeiten.
 ## 📜 Session-Log (chronologisch, neueste zuerst)
 
 
+### Session: aurora-base44-superagent-6a2756186106d6f0fbb105b5 — 06.07.2026, 18:15 UTC+2 (K1 abgeschlossen + K3 Teilfortschritt)
+
+| Feld | Wert |
+|------|------|
+| **Fokus** | Sprint K1 (Repo-Audit/Mapping) abgeschlossen; Sprint K3 (Python-Backend) Teilmigration; ShivaCore-Kernel-Statuscheck |
+| **Ergebnis K1** | ✅ `KONSOLIDIERUNGS_MATRIX.md` erstellt (Datei-Inventar, Python-Import-Graph, Dead-Code-Kandidaten, Konflikt-Liste, Quelle→Ziel-Mapping). Kernbefund: die Backend-Modul-Konsolidierung (9 `atc-*`-Repos → `modules/`) war bereits erledigt — offene Arbeit ist ausschliesslich die Integration von `aistudio/` (148 React-Komponenten, 133 Python-Dateien). Issue #85 geschlossen. |
+| **Ergebnis K3** | 🔄 Teilfortschritt (Issue #87 bleibt offen). 21 reale Python-Module aus `aistudio/temp_repo/` an von Tests erwartete Pfade migriert (`gateway/`, `blockchain/*`, `backend/*`, `modules/kernel/ai_kernel/`). Testsuite: von "10 Dateien kollationieren nicht mal" auf **345/355 sammelbar, davon 307 gruen / 30 rot / 8 skipped**. Commit `2ad2d5c`. |
+| **Wichtiger Fund — Kernel-Status** | `modules/kernel/` (GCL, 13-Bus-Architektur AD-00 bis AD-14) ist architektonisch vollstaendig (24 Dateien, 78-529 Zeilen, keine Stubs) — aber **nur in ATCLang (.atc)**, in dieser Session nicht durch Compiler/VM-Testpfad verifiziert. `modules/kernel/ai_kernel/ai_kernel.py` (die einzige Python-Bruecke) ist eine aeltere Version ohne Klasse `AIRequest` — blockiert `tests/unit/test_kai_integration.py`. **Architektur fertig, Laufzeit-Verifizierung offen.** |
+| **KORREKTUR fruehere Doku-Aussage** | Alte Behauptung "`core/ai_kernel.py` ist deprecated Compat-Shim" ist FALSCH — Datei existiert real nicht. Siehe `memory.md #158` (Aurora Superagent 6a27...). |
+| **Verbleibende echte Luecken (K3)** | `blockchain/nodes/bootstrap.py` + `blockchain/wallet/did.py` existieren nur als `.atc`, keine Python-Entsprechung (betrifft Bootstrap Node, kritischer Pfad #14!). `gateway/router.py` + `rate_limit.py`: API-Mismatch zu Tests (Circuit-Breaker + `window_seconds` fehlen). |
+| **Fuer naechsten Agenten** | K4 (#88, Frontend) noch komplett offen. Bei K3-Fortsetzung: nicht nur Dateien verschieben, sondern echte Feature-Luecken schliessen (AIKernel-API erweitern, Bootstrap/DID Python-Layer schreiben oder .atc-Aufruf aus Tests). |
+| **Status** | ✅ K1 abgeschlossen. 🔄 K3 in Arbeit, naechster Schritt dokumentiert. |
+
+---
+
 ### Session: aurora-base44-superagent-6a2756186106d6f0fbb105b5 — 06.07.2026, 17:35 UTC+2 (Abschluss)
 
 | Feld | Wert |
