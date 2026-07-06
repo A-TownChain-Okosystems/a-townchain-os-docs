@@ -120,7 +120,7 @@ formal nummerieren, oder die Kennzahl aus Status-Reports streichen.
 
 | Fix | Datei(en) | Commit |
 |---|---|---|
-| Chain-ID 9001→9000 vereinheitlicht (AD-004) | `config/mainnet_genesis.json`, `ROADMAP.md`, `SPRINT_ROADMAP.md`, `docs/genesis_wallet.md`, `docs/sprints/SPRINT_4.0_MAINNET_LAUNCH.md` | `17a4096` |
+| ~~Chain-ID 9001→9000 vereinheitlicht~~ **ZURUECKGENOMMEN** | War falsch — s. Abschnitt 10 | `17a4096` (ueberholt) |
 | Parser: String-Pfad-Importe unterstützt | `atclang/parser/parser.py` | `17a4096` |
 | Dependency-Sicherheitsupdates (cryptography, requests, python-dotenv, pytest, flask, flask-cors) | `requirements.txt`, `backend/requirements.txt`, `requirements-kai.txt`, `aistudio/temp_repo/gateway/requirements.txt` | `17a4096` |
 | npm audit fix (non-breaking) — 11→10 verbleibende Alerts | `aistudio/package-lock.json` | `17a4096` |
@@ -139,3 +139,32 @@ formal nummerieren, oder die Kennzahl aus Status-Reports streichen.
 ---
 *Nächster Agent: Vor jeder "X ist fertig/behoben/abgeschlossen"-Aussage — dieses Dokument
 aktualisieren, nicht nur eine neue Behauptung obendrauf schreiben.*
+
+
+## 10. ⚠️ NACHTRAG (06.07.2026, 22:25) — AD-004 Chain-ID REOPENED, keine Chain-ID final
+
+Michael hat direkt widersprochen: **"Wir haben noch keine Chain-ID, 9000 ist ID von Ethereum"**
+(gemeint: Ethereum-Oekosystem/EVM-Registry). Verifiziert via chainlist.org: **Chain-ID 9000
+ist auf Evmos Testnet registriert.**
+
+Die vorherige "AD-004 RESOLVED"-Markierung (Begruendung: "Non-EVM macht Kollision irrelevant")
+wurde von Michael **nicht akzeptiert und ist damit ungueltig**, auch wenn ein frueherer Agent
+sie in `DECISIONS_REGISTER.md`/`AgentDecision`-Entity als "RESOLVED, resolved_by: Michael +
+Aurora" eingetragen hatte — dieser Eintrag war offenbar falsch attribuiert oder ueberholt.
+
+**Korrigiert in dieser Session:** `AgentDecision`-Entity (Base44) auf State `DECISION` (offen)
+zurueckgesetzt, `docs/DECISIONS_REGISTER.md`, `docs/AGENT_POLICY.md`, `docs/ROADMAP.md`,
+`docs/standards/STANDARDS_REGISTRY.md`, `docs/standards/OVERVIEW.md`,
+`docs/roadmap/ROADMAP_EXTENDED.md` korrigiert: AD-004 = 🔴 OPEN/REOPENED, 9000 = nur Platzhalter.
+
+**NICHT gemacht:** Die ~100+ restlichen Vorkommen von "Chain-ID 9000" in Code-Kommentaren,
+Wiki-Seiten, Whitepaper, Issues wurden **nicht** massenhaft auf eine neue Zahl umgeschrieben —
+das waere derselbe Fehler nochmal (Chain-ID automatisch entscheiden, REGEL 9 verbietet das
+explizit). Diese Vorkommen sind ab sofort als **Platzhalter, nicht final** zu lesen, bis
+Michael eine echte Chain-ID waehlt oder das Non-EVM-Argument erneut bestaetigt.
+
+**Naechster Schritt:** Michael entscheidet zwischen (a) einer verifiziert freien neuen
+Chain-ID, (b) Beibehaltung von 9000 als rein interne, nicht-oeffentlich-registrierte
+Non-EVM-ID (dann muss die Begruendung explizit erneut bestaetigt werden), oder (c) einer
+anderen Loesung. Erst danach macht ein Mass-Replace Sinn.
+
