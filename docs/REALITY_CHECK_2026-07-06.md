@@ -259,3 +259,50 @@ nachziehen, plus die 10 CRITICAL-Fälle individuell mit Michael durchgehen.
 Alles Weitere (Datei-Struktur, Standards, Layer, Cleanup, Naming) ist vollständig geprüft, korrigiert
 und in `docs/REALITY_CHECK_2026-07-06.md` (alle 3 Hauptrepos) sowie `docs/AGENT_COORDINATION.md`
 dokumentiert. Kein Informationsverlust — alle Rohdaten sind in den Commits nachvollziehbar.
+
+
+---
+
+## ✅ Nachtrag 3 — Alle ~270 kaputten Links final abgearbeitet (06.07.2026, 18:00 UTC+2)
+
+> **Durchgeführt von:** Aurora (Base44 Superagent, App-ID `6a2756186106d6f0fbb105b5`)
+
+### Ergebnis
+
+Von den ursprünglich 356 kaputten Link-Vorkommen (105 eindeutige Ziele) wurden **alle** abgearbeitet:
+
+| Kategorie | Anzahl | Aktion |
+|-----------|--------|--------|
+| Case-Sensitivity (`Testnet.md` vs `TESTNET.md`) | ~90 | Automatisch korrigiert |
+| Falscher Pfad-Präfix (`docs/whitepaper/issues/`, `docs/repo/...`) | ~170 | Relativer Pfad automatisch neu berechnet und korrigiert (generischer Auto-Fix: Ziel-Basename im Repo gesucht, korrekten relativen Pfad vom Quell-Dokument aus berechnet) |
+| Echte Content-Lücken (Datei existierte nirgendwo) | 4 | `docs/api-reference.md` + `docs/atclang-guide.md` neu angelegt (echte Inhalte, keine Platzhalter — Index/Guide mit Verweisen auf bestehende Spec-Dokumente). `TASKS.md`-Link auf bestehendes `SPRINT_ROADMAP.md` umgebogen (kein Duplikat-File angelegt). |
+
+### Bonus-Fund während der Abarbeitung
+
+**`TESTNET_INDEX_new.md`** in kai-os-wiki war ein bisher übersehenes, byte-identisches Duplikat von
+`TESTNET_INDEX.md` (beide 1.608 Bytes, identischer Inhalt) — gelöscht, keine aktiven Referenzen betroffen
+(nur eine historische Erwähnung in einem alten Changelog-Kapitel, dort bewusst nicht verändert).
+
+### ⚠️ Wichtiger Nebenfund — GitHub-Repo-Beschreibungen widersprechen den aktiven Instruktionen
+
+Beim Cross-Check der Repo-Metadaten aufgefallen: **`kai-os-wiki`**, **`a-townchain-os-wiki`** und
+**`atc-whitepaper`** tragen auf GitHub die Beschreibung *"⚠️ ARCHIVIERT — Migriert nach:
+A-TownChain-Okosystems/a-townchain-os"* — obwohl `archived`-Flag technisch `false` ist (Repos sind
+nicht wirklich read-only) UND obwohl die aktiven Nutzer-Instruktionen ausdrücklich verlangen,
+`kai-os-wiki` als vollständigen synchronisierten Spiegel zu pflegen. Zusätzlich beschreibt sich
+`a-townchain-os` selbst als *"Einziges Haupt-Repo"* (impliziert: die anderen sind es nicht mehr).
+
+**Diese Beschreibungen wurden NICHT von diesem Agenten geändert** — Ursprung unklar (vermutlich
+Rest eines früheren/geplanten Konsolidierungsschritts, evtl. von der anderen Aurora-Instanz
+`...69c1e0c5...` oder einem manuellen Schritt). Da dies eine Governance-Frage ist (welches Repo ist
+kanonisch?), wurde hier bewusst nichts automatisch korrigiert — Empfehlung: Michael entscheidet,
+ob die Beschreibungen aktualisiert werden sollen (auf "aktiv, täglich synchronisiert") oder ob
+tatsächlich eine Migration/Archivierung von kai-os-wiki geplant ist, die dann auch in den aktiven
+Instruktionen nachgezogen werden müsste.
+
+### Gesamtfazit
+
+Der 24-Repo Cross-Check ist damit vollständig abgeschlossen: Datei-Integrität ✅, Naming Conventions ✅,
+alle internen Links ✅ (0 verbleibend), Standards/Layer-Konsistenz ✅. Offen bleiben ausschließlich
+die beiden Governance-Entscheidungen bei Michael: **AD-008** (44 Issues) und **AD-009**
+(ATCLANG_SPEC-Konsolidierung) — sowie der neue Punkt zu den Repo-Beschreibungen (siehe oben).
