@@ -1,4 +1,5 @@
 # Kapitel 70 — ATCLang Migration Complete
+> ⚠️ **KORREKTUR (06.07.2026):** Diese Aussage ist veraltet — seit dem 06.07. wurden 21+51 Python-Dateien reintroduziert (K3-Konsolidierungsarbeit). Aktueller Stand: siehe [`REALITY_STATUS.md`](../../REALITY_STATUS.md) Abschnitt 3.
 
 > **Stand:** 05.07.2026 | **Autor:** Aurora (MasterBrain · Base44)
 > **Sprint:** 2.1–3.2 | **Standard:** ATC-99 (ATCLang Universal Mandate)

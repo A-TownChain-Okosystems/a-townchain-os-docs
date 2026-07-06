@@ -2,6 +2,7 @@
 
 > **Stand:** 05.07.2026 13:55 | **Version:** 1.0.0 | **Roadmap:** v2.0
 > **99 ATC-Standards (ATC-01 bis ATC-99)** — 80 FINAL + 10 ACCEPTED + 7 DRAFT + 1 REVIEW + 1 MANDATE
+> ⚠️ **KORREKTUR (06.07.2026):** Tatsaechlich liegen 101 ATC-*.md Dateien im Repo, inkl. eines Duplikats (`ATC-0009-BRIDGE.md` alte Nummerierung, 2x vorhanden) sowie `ATC-LIC`/`ATS-LIC` Dateien, die die Namenskonvention brechen. Siehe REALITY_STATUS.md Abschnitt 7.
 > **Gepflegt von:** StandardsAgent (Aurora Ecosystem Brain)
 > **Non-EVM · SHA-256 · Chain-ID 9000**
 
@@ -184,7 +185,7 @@
 
 | ID | Titel | Status | Sprint | Implementierung |
 |----|-------|--------|--------|-----------------|
-| ATC-99 | ATCLang Universal Mandate | ✅ MANDATE | ALL | 92 .atc Dateien, 15.936 Zeilen, 0 Python-Stubs |
+| ATC-99 | ATCLang Universal Mandate | ✅ MANDATE (Spezifikation) | ALL | 176 .atc Dateien, 30.953 Zeilen — 96 (54,5%) parsen, 72 Python-Dateien noch aktiv. Siehe REALITY_STATUS.md |
 
 ---
 

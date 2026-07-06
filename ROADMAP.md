@@ -70,7 +70,7 @@ Vollständige Programmiersprache mit Spec, Bytecode, Konsens und Standard-Biblio
 - Genesis-Wallet (ATCf9327118a7dfb30f72ba6aa82e1186078c42232884)
 - 5 Validator Keys generiert
 - 21.000.000 ATC Token Supply
-- Mainnet Chain ID 9001 konfiguriert
+- Mainnet Chain ID 9000 konfiguriert
 
 ### Ergebnis
 Vollständige Blockchain mit Hybrid-Konsens, Genesis-Konfiguration und Testnet.
@@ -201,7 +201,7 @@ Keine — ready to implement
 - MK8 (Security Audit) ✅ oder 🔵
 
 ### Geplant
-- #71: Genesis Block — Konfiguration & Signierung (Chain ID 9000 → 9001)
+- #71: Genesis Block — Konfiguration & Signierung (Chain ID 9000, finalisiert gemaess AD-004)
 - #70: 10+ Mainnet-Validator bestätigen
 - Bootstrap Node IP (VPS erforderlich — Hetzner empfohlen)
 - SSL-Zertifikate

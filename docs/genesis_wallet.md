@@ -13,7 +13,7 @@ Im Genesis-Block (Block #0) werden alle Token dieser Adresse zugewiesen.
 ```
 Adresse:    ATCf9327118a7dfb30f72ba6aa82e1186078c42232884
 Public Key: 44c87e482de99b8b622afea4e8469a6eeba0407dc72cc97d156ac92109606a26
-Chain-ID:   9001
+Chain-ID:   9000
 Generiert:  2026-06-14T12:12:41Z
 ```
 
@@ -53,7 +53,7 @@ Jeder Validator braucht **10.000 ATC Bond** aus der Genesis-Wallet.
 ```json
 {
   "block_number": 0,
-  "chain_id": 9001,
+  "chain_id": 9000,
   "genesis_wallet": "ATCf9327118a7dfb30f72ba6aa82e1186078c42232884",
   "coinbase_amount": 2100000000000000,
   "validator_count": 5,
@@ -67,7 +67,7 @@ Jeder Validator braucht **10.000 ATC Bond** aus der Genesis-Wallet.
 
 ```bash
 # Genesis-Setup (lokal, offline ausführen!)
-python3 scripts/generate_validators.py --count 5 --chain-id 9001
+python3 scripts/generate_validators.py --count 5 --chain-id 9000
 
 # Outputs:
 #   config/mainnet_genesis.json  ← befüllt ✅
@@ -81,7 +81,7 @@ python3 scripts/generate_validators.py --count 5 --chain-id 9001
 - [x] Genesis-Wallet generiert
 - [x] 5 Validator Keys generiert
 - [x] `config/mainnet_genesis.json` befüllt
-- [x] Chain-ID 9001 festgelegt
+- [x] Chain-ID 9000 festgelegt
 - [x] Tokenomics definiert
 - [ ] Bootstrap-Node IP eintragen
 - [ ] Validator-Bonds funded (5 × 10.000 ATC)

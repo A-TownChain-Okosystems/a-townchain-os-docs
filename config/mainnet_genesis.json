@@ -1,6 +1,6 @@
 {
   "_comment": "A-TownChain OS Mainnet Genesis v3.2.1 \u2014 generiert 2026-06-14",
-  "chain_id": 9001,
+  "chain_id": 9000,
   "chain_name": "A-TownChain Mainnet",
   "genesis_time": "2026-06-14T12:12:41Z",
   "version": "3.2.1",

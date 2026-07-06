@@ -324,7 +324,7 @@ Keine — ready to implement
 ### 📋 Todos
 
 #### Phase 1: Genesis Block Konfiguration (#71)
-- [ ] Genesis Block Struktur finalisieren (Chain ID 9001)
+- [ ] Genesis Block Struktur finalisieren (Chain ID 9000)
 - [ ] Genesis-Wallet ATCf9327118a7dfb30f72ba6aa82e1186078c42232884 verifizieren
 - [ ] 5 Validator Keys in Genesis Block eintragen
 - [ ] Token Distribution Schedule (15/10/50/10/15%)

@@ -5,12 +5,12 @@
 
 ## Overview
 
-Öffentlicher Mainnet-Start von A-TownChain OS (Chain ID 9001). Umfasst Genesis Block Signierung, Bootstrap Node Deployment, Validator Onboarding und öffentlichen Launch.
+Öffentlicher Mainnet-Start von A-TownChain OS (Chain ID 9000). Umfasst Genesis Block Signierung, Bootstrap Node Deployment, Validator Onboarding und öffentlichen Launch.
 
 ## Todos
 
 ### Phase 1: Genesis Block Konfiguration (#71)
-- [ ] Genesis Block Struktur finalisieren (Chain ID 9001)
+- [ ] Genesis Block Struktur finalisieren (Chain ID 9000)
 - [ ] Genesis-Wallet `ATCf9327118a7dfb30f72ba6aa82e1186078c42232884` verifizieren
 - [ ] 5 Validator Public Keys in Genesis Block eintragen
 - [ ] Token Distribution Schedule finalisieren (15/10/50/10/15%)
@@ -58,7 +58,7 @@
 - ✅ MK1-MK6 (alle Core-Meilensteine erfüllt)
 
 ## Deliverables
-1. Signierter Genesis Block (Chain ID 9001)
+1. Signierter Genesis Block (Chain ID 9000)
 2. Bootstrap Node (24/7, public IP, DNS seed)
 3. 10+ aktive Validator Nodes
 4. Block Explorer (public)
