@@ -1,7 +1,7 @@
 # 🏃 A-TownChain OS — Sprint Roadmap & Todo-Tracker
 
 > **Letztes Update:** 05.07.2026 19:16 (Europe/Berlin)
-> **Status:** 78/82 Issues geschlossen (95.1%) | 4 offen
+> **Status:** 79/90 Issues geschlossen (87,8%) | 11 offen -- Zahl per GitHub-API verifiziert 06.07.2026, s. REALITY_STATUS.md
 > **Aktiver Sprint:** Sprint 3.0 (AIP-001 Agent Protocol)
 > **Nächster Sprint:** Sprint 3.3 (Security Audit)
 
@@ -458,26 +458,6 @@ Keine — ready to implement
 
 ---
 
-## 🔧 Konsolidierungs-Sprints (K1–K8)
-
-> **Ziel:** Aus 24 verteilten Repositories eine einzelne, baubare Software erstellen
-> **Dokument:** [`KONSOLIDIERUNGS_ROADMAP.md`](KONSOLIDIERUNGS_ROADMAP.md)
-
-| Sprint | Titel | Issue | Priorität | Dauer |
-|--------|-------|-------|-----------|-------|
-| K1 | Repository Audit & Mapping | #85 | HIGH | 1 Woche |
-| K2 | Monorepo-Struktur | #86 | HIGH | 1 Woche |
-| K3 | Python-Backend (10→1) | #87 | HIGH | 2 Wochen |
-| K4 | Frontend (TS/React) | #88 | HIGH | 1 Woche |
-| K5 | Build-System & Docker | #89 | MEDIUM | 1 Woche |
-| K6 | CI/CD Pipeline | #90 | MEDIUM | 1 Woche |
-| K7 | Tests & QA (≥80%) | #91 | MEDIUM | 1 Woche |
-| K8 | Release v1.0 | #92 | HIGH | 2 Wochen |
-
-**Ziel:** `git clone && ./build.sh && ./start.sh` — eine Software aus 24 Repos
-
----
-
 ## Sprint-Metriken
 
 | Metrik | Wert |
@@ -486,7 +466,7 @@ Keine — ready to implement
 | Aktive Sprints | 2 (3.0, 3.3) |
 | Geplante Sprints | 11 (3.1–6.0) |
 | Gesamt-Sprints | 20 |
-| Geschlossene Issues | 78/82 (95.1%) |
+| Geschlossene Issues | 79/90 (87,8%) -- korrigiert 06.07.2026 |
 | Offene Issues | 4 (#69, #70, #71, #80) |
 | Meilensteine erfüllt | 6/12 (50%) |
 | Meilensteine in Arbeit | 2/12 (MK7, MK8) |

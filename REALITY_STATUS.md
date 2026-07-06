@@ -168,3 +168,36 @@ Chain-ID, (b) Beibehaltung von 9000 als rein interne, nicht-oeffentlich-registri
 Non-EVM-ID (dann muss die Begruendung explizit erneut bestaetigt werden), oder (c) einer
 anderen Loesung. Erst danach macht ein Mass-Replace Sinn.
 
+
+## 11. Sprint-Status: Drei widersprüchliche Quellen (nicht aufgelöst, nur dokumentiert)
+
+Es existieren **drei verschiedene Sprint-Wahrheiten**, die sich teils stark widersprechen:
+
+| Sprint | `EcosystemSprint`-Entity (Base44) | `SPRINT_ROADMAP.md` (Narrativ) | Real verifiziert |
+|---|---|---|---|
+| 2.1 (ATCLang Core) | 80% ACTIVE | ✅ ABGESCHLOSSEN | Parser schafft nur 54,5% aller `.atc`-Dateien — "abgeschlossen" nicht haltbar |
+| 2.3 (Smart Contracts) | 90% ACTIVE | ✅ ABGESCHLOSSEN | — |
+| 2.4 (Kernel/GCL) | **80% status PLANNED** | ✅ ABGESCHLOSSEN | Entity widerspricht sich selbst (80% aber PLANNED) |
+| 2.6 (Governance) | 80% ACTIVE | ✅ ABGESCHLOSSEN | — |
+| 2.7 (CI/CD) | **0% PLANNED** | ✅ ABGESCHLOSSEN | Größter Widerspruch: 0% vs. "fertig" |
+| 3.0–3.6 | Ein einziger Entity-Eintrag "90% PLANNED" | 7 einzelne Sprints, gemischter Status | Entity-Granularität ≠ Doku-Granularität |
+| 4.2a–d | 0% PLANNED ("Physical→Cosmic", "Singularity Engineering", …) | nicht in SPRINT_ROADMAP.md erwähnt | Aspirational/Fantasy-Tier, keine Code-Entsprechung |
+
+**Fazit:** Die Markdown-Haken (✅ ABGESCHLOSSEN) in `SPRINT_ROADMAP.md` sind erkennbar
+**narrativ/optimistisch** gesetzt, nicht aus der `EcosystemSprint`-Datenbank abgeleitet.
+Issue-Zahl in `SPRINT_ROADMAP.md` war zusätzlich falsch (78/82 statt real 79/90 laut
+GitHub-API) — das wurde in dieser Session korrigiert. Die Sprint-Status-Haken selbst
+wurden **nicht angetastet** — das wäre wieder eine Bewertungsfrage, die Michael treffen
+sollte (welche Quelle gilt: Entity oder Doku?).
+
+## 12. TODO-Dateien in beiden Repos sind NICHT synchron
+
+- Code-Repo `TODO/MASTER_TODO.md`: "Aktualisiert: 2026-06-12" (3+ Wochen alt), 31 offene / 0 erledigte Checkboxen, Task-Nummern #48–#51.
+- Docs-Repo `TODO/MASTER_TODO.md`: "Stand: 2026-07-06", 2 offene / 0 erledigte Checkboxen, komplett andere Task-Nummern (#8, #14–#18).
+- **Es sind zwei völlig unterschiedliche Dateien mit demselben Namen** — keine ist eine Kopie der anderen. Nicht zusammengeführt, weil unklar ist, welche die aktive Liste ist.
+
+## 13. Commit/Push-Status (Ende dieser Session)
+
+Beide Repos: Arbeitsverzeichnis sauber, lokale Commits = Remote-HEAD, keine Divergenz.
+Letzte Commits: Code-Repo `3268fd4`, Docs-Repo `28f4381` (jeweils gepusht und verifiziert
+per `git fetch` + `git log HEAD..FETCH_HEAD`).
