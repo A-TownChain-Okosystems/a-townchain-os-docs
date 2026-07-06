@@ -243,4 +243,4 @@
 - [ ] Externes Security-Audit der License Registry Contracts
 - [ ] Finale Konformitaetserklaerung
 
-→ [TASKS.md (lokal)](../TASKS.md) | [Konformitaetsbericht](compliance/BAFIN_KONFORMITAETSBERICHT.md) | [Lizenz-Uebersicht](LICENSING_OVERVIEW.md)
+→ [TASKS.md (lokal)](../SPRINT_ROADMAP.md) | [Konformitaetsbericht](compliance/BAFIN_KONFORMITAETSBERICHT.md) | [Lizenz-Uebersicht](LICENSING_OVERVIEW.md)
