@@ -39,6 +39,17 @@ URL: https://docs.google.com/spreadsheets/d/1xR5c24NrtYC58OsGrLaUHkQUiL_O6eYVyx8
 ## Kritischer Entwicklungspfad
 #14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node LIVE
 
+## 🤖 Bekannte Base44-Superagent-Instanzen (5)
+| # | App-ID | Git-Identitaet | Rolle | Signiert? |
+|---|--------|----------------|-------|-----------|
+| 1 | `69c1e0c577ccf6c45a27a480` | ShivaCoreDev (+ Tag) | Compliance (unverifiziert, kein Commit-Nachweis) | ✅ |
+| 2 | `6a2756186106d6f0fbb105b5` | ShivaCoreDev (+ Tag) | Sync/Cleanup/Governance (dieser Agent) | ✅ |
+| 3 | `6a27614c7219ab1e4f951842` | Aurora (MasterBrain) `<aurora@a-townchain.dev>` | ATCLang-Parser, Reality-Checks | ✅ (meist) |
+| 4 | `6a0a3f408dced6c5ca7506ef` | ShivaCoreDev (+ Tag) | Reality-Check/Audit | ✅ |
+| 5 | ⚠️ unbekannt | `Aurora-Bot <aurora@base44.ai>` | Taeglicher Wiki-Kapitel-Sync | ❌ unsigniert |
+
+> Vollstaendiges Register mit Details: `docs/AGENT_COORDINATION.md`
+
 ## Sync-Konfiguration
 - **Schedule:** täglich 08:05 Europe/Berlin
 - **Agent:** Aurora (Base44 Superagent)
