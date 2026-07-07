@@ -1,5 +1,5 @@
 # 🔗 A-TownChain OS — Verbindungsmatrix
-> Auto-generiert: 2026-07-07 12:09 UTC | Aurora Cross-Connect v1.0
+> Auto-generiert: 2026-07-07 12:10 UTC | Aurora Cross-Connect v1.0
 
 ## Status: 13/16 Verbindungen aktiv
 
@@ -18,7 +18,7 @@
 | `searchconsole→sheets` | ✅ | Search Console verbunden — Site noch registrieren |
 | `docs→drive→onedrive` | ⚠️ | Doc-Erstellung fehlgeschlagen |
 | `calendar→meet` | ✅ | Meet-Link: kein kommender Event mit Meet |
-| `calendar→gmail` | ✅ | Wochenagenda (0 Events) gesendet ⚠️ |
+| `calendar→gmail` | ✅ | Wochenagenda (10 Events) gesendet ✅ |
 | `slides→drive` | ⚠️ | Slides-Erstellung fehlgeschlagen |
 | `classroom→github` | ✅ | Classroom verbunden — noch kein aktiver Kurs |
 | `calendar→classroom` | ✅ | Classroom verbunden — kein aktiver Kurs |
@@ -47,4 +47,4 @@ GitHub ←───────────────────────�
 - **Teams** ist der Team-Kommunikationskanal
 - **Google Drive + OneDrive** sind redundante Datei-Backups
 
-_Aurora Superagent · Base44 · 2026-07-07 12:09 UTC_
+_Aurora Superagent · Base44 · 2026-07-07 12:10 UTC_
