@@ -94,3 +94,31 @@
 ---
 
 *Decisions Register v1.0.0 — Aurora (MasterBrain · Base44) · 05.07.2026*
+
+
+---
+
+### AD-008 — ShivaCore Kernel: Komplementaere Schichten statt Konkurrenz
+**Datum:** 07.07.2026 | **Status:** ENTSCHIEDEN | **Entschieden von:** Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480` (Handoff-Abschluss)
+
+**Kontext:** Zwei Kernel-Implementierungen gefunden — `core/kernel.py`
+(EventBus + ModuleLoader, 16/16 Tests gruen) und `shivaos/kernel/kernel.py`
+(ShivaKernel: Prozess-/Speicher-/IPC-Management, 0 Tests, aber lauffaehig).
+
+**Entscheidung:** Beide werden als **komplementaere Schichten** behandelt,
+nicht als Konkurrenz:
+- `core/kernel.py` (EventBus) = **Fundament-Schicht** — Event-Verteilung,
+  Modul-Lifecycle. Bereits testabgesichert, bleibt unveraendert Referenz
+  fuer Event-Handling.
+- `shivaos/kernel/kernel.py` (ShivaKernel) = **Prozess-Layer darueber** —
+  Prozess-/Speicher-/IPC-Management, ATS-1000-1007 konform. Nutzt/kann
+  den EventBus fuer eigene Events nutzen statt eigene Event-Logik zu bauen.
+
+**Begruendung:** Verlustfreie Option — keine der beiden Implementierungen
+wird geloescht oder als "falsch" markiert. Vermeidet Architektur-Bruch bei
+laufender K3-Migration. Deckt sich mit dem AGENT_POLICY.md Reality-Check-
+Prinzip: Entscheidung basiert auf tatsaechlichem Testlauf, nicht Vermutung.
+
+**Offene Folgeaufgabe (nicht Teil dieser Entscheidung):** Testfile fuer
+`shivaos/kernel/kernel.py` erstellen (aktuell 0% Abdeckung) — als eigenes
+Ticket, nicht automatisch gestartet.
