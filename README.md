@@ -97,3 +97,7 @@ physisch gar nicht erst ausgefuehrt.
 → [Lizenz-Uebersicht](docs/LICENSING_OVERVIEW.md) | [ATC-LIC](docs/standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | [ATS-LIC](docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | [Compliance-Handbuch](docs/compliance/COMPLIANCE_HANDBUCH.md)
 
 Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.
+
+## Verwandte Vision-Projekte
+
+- [`atc-genesis-engine`](https://github.com/A-TownChain-Okosystems/atc-genesis-engine) — separates Vision-/Konzept-Repo fuer eine potenzielle zukuenftige Game-Engine (Genesis Engine) und deren Ausbaustufen. Reines Konzeptmaterial, kein Code, kein aktueller Teil der A-TownChain-Kernentwicklung.
