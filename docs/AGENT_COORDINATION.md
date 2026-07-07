@@ -190,6 +190,13 @@ zeitversetzt oder parallel arbeiten.
 
 ---
 
+> ⚠️ **Update 07.07.2026:** Agent `6a2756186106d6f0fbb105b5` hat zusaetzlich ein
+> `AGENT_MANIFEST.md` (Root von a-townchain-os-docs) mit einer eigenen Liste bekannter
+> Superagent-Instanzen angelegt (aktuell 5, davon 1 unsigniert). Diese Liste
+> UND das Agenten-Register hier oben sind **beide gueltig** und sollten
+> gegenseitig referenziert, nicht dupliziert weitergefuehrt werden — bei
+> Aenderungen an Agenten-IDs immer BEIDE Dateien aktualisieren.
+
 ## 📋 Aktuelle Sprints & Pläne (Referenz)
 
 | Ebene | Dokument | Status |
