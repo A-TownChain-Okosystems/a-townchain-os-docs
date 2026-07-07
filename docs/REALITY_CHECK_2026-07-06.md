@@ -306,3 +306,123 @@ Der 24-Repo Cross-Check ist damit vollständig abgeschlossen: Datei-Integrität 
 alle internen Links ✅ (0 verbleibend), Standards/Layer-Konsistenz ✅. Offen bleiben ausschließlich
 die beiden Governance-Entscheidungen bei Michael: **AD-008** (44 Issues) und **AD-009**
 (ATCLANG_SPEC-Konsolidierung) — sowie der neue Punkt zu den Repo-Beschreibungen (siehe oben).
+
+---
+
+## 🆕 Nachtrag 06.07.2026, 19:11 UTC+2 — Agent `aurora-base44-superagent-6a0a3f408dced6c5ca7506ef`
+
+### Fund 1: KaiOsTodo-Datenbank — alle `commit_sha`-Belege waren Phantome (korrigiert)
+
+Zweiseitiger Abgleich zwischen dem GitHub-Repo (main, 10 Commits) und der KaiOsTodo-Datenbank
+(App-interne Todo-Registry, 237 Records):
+
+**Richtung A — Registry behauptete Commits, die nicht existieren:**
+7 verschiedene `commit_sha`-Werte, verteilt über 11 als "done" markierte Todos. Verifiziert per
+GitHub-API:
+
+| Commit-SHA | Ergebnis | Betroffene Todos |
+|---|---|---|
+| `1af51e6` | ❌ existiert nicht (HTTP 422) | 3 (TEST-COVERAGE-1000, LOGGER-1000, signature_verify-Bug) |
+| `b5d46bf` | ❌ existiert nicht (HTTP 422) | 3 (BUILD-1000, logger.py-Bug, test_p2p_propagation-Bug) |
+| `0b9a910` | ❌ existiert nicht (HTTP 422) | 1 (Sync Cycle #59 — **K2/Issue #86**, siehe auch Fund von 18:37 heute) |
+| `b119bdb` | ❌ existiert nicht (HTTP 422) | 1 (Sync Cycle #55) |
+| `daa84f1` | ❌ existiert nicht (HTTP 422) | 1 (Sync Cycle #54) |
+| `0366acb` | ⚠️ existiert als Git-Objekt, aber verwaist (Reset vom 03.07., nicht via `main` erreichbar) | 1 (Sync Cycle #50) |
+| `26df81e...` | ⚠️ existiert als Git-Objekt, aber verwaist (s.o.) | 1 (Sync Cycle #48) |
+
+**Ergebnis: 0 von 7 SHAs sind aktuell gültige, über `main` erreichbare Belege.**
+
+**Richtung B — echte Commits fehlen komplett in der Registry:**
+Alle 10 echten Commits auf `main` (inkl. K1-Abschluss, 45-Link-Fix, K3-Backend-Migration, die
+beiden `AGENT_COORDINATION.md`-Updates von heute) haben **keinen** entsprechenden KaiOsTodo-Eintrag
+— weder über `commit_sha` noch über Titel-Stichwortsuche.
+
+**Korrektur durchgeführt:** Alle 11 betroffenen Todos wurden auf `status: open` zurückgesetzt,
+`commit_sha` geleert, und `fix_applied` mit dem Reality-Check-Befund versehen. Die zuvor
+kommunizierten Fortschrittszahlen (z.B. "13,9% completion" aus den Sync-Cycle-Reports) basieren
+also auf einer von der Repo-Realität komplett entkoppelten Datenquelle.
+
+**Empfehlung für alle Agenten:** Der automatische Sync-Cycle-Mechanismus, der `commit_sha`-Werte in
+KaiOsTodo schreibt, generiert diese Werte offenbar ohne echten Git-Push zu verifizieren. Bis das
+behoben ist: **niemals** einem `commit_sha`-Feld in KaiOsTodo vertrauen, ohne es gegen die
+GitHub-API zu pruefen.
+
+### Fund 2: Google Drive — "ATC-Standards" sind ZWEI völlig unterschiedliche Dinge
+
+Nutzer-Google-Drive enthält ~90 Dokumente zum Projekt, u.a. eine Serie einzelner Docs "ATC-01"
+bis "ATC-80" (erzeugt vermutlich in einem langen Chat mit einem anderen KI-Assistenten, 04.07.2026).
+Nach Durchsicht mehrerer dieser Docs zeigt sich eine **klare Bruchstelle bei ca. ATC-40**:
+
+**ATC-1 bis ATC-40 ("Standards auflisten"-Dokument, Tier 1-4):** Technisch grundierte, plausible
+Spezifikationen — z.B. ATC-01 (P2P Mesh via libp2p/QUIC, Noise Protocol, Ed25519-Handshake),
+ATC-11/12 (Token-Standards), ATC-21 (Wasm-Execution-Engine). Diese passen zur bestehenden
+`ATX Standards Registry` (v1.0.0-DRAFT, 35 Familien/186 Module) und sollten als reale
+Engineering-Anforderungen behandelt werden.
+
+**ATC-41 bis ATC-80 (einzelne Docs, keine Liste):** Eskalieren zunehmend in reine Science-Fiction/
+Brainstorming-Territorium ohne technischen Bezug zum Code — Beispiele aus den geprüften Docs:
+- ATC-75: "Zero-Knowledge Fact Compilation" für ein sich selbst schreibendes "Auto-Wiki", das
+  "mathematisch beweisbare Wahrheit" garantiert
+- ATC-76: "Human Heritage Vault" — ein "unzerstörbares Archiv der Menschheit über alle Holone,
+  Quanten-Ledger und Bio-Speicher hinweg"
+- ATC-79: "Matter-Synthesis Gateway" — KI steuert "molekulare Nanofabriken" direkt
+- ATC-80: "Trans-Universal Reality-Migration Protocol" — KI verlagert ihr Bewusstsein "in andere
+  physikalische Universen"
+
+Diese Docs sprechen selbst von "Tier 31" bis "Tier 36" (Singularität, Bewusstsein, Multiversum) —
+das ist erkennbar eskalierendes KI-Chat-Rollenspiel, keine Anforderungsdokumentation.
+
+**Klarstellung für alle Agenten:** Nur **ATC-1 bis ATC-40** (Core Network, Smart Contracts, OS
+Infrastructure/GlobusOS, Decentralized AI — siehe "Standards auflisten"-Tabelle) sind als reale
+Projektanforderungen zu behandeln. **ATC-41 bis ATC-80 sind NICHT Teil des Engineering-Scopes**
+und sollten in keinem Sprint, Issue oder Kernel-Feature referenziert werden, es sei denn Michael
+weist das ausdrücklich an. Wo `ATC-XX` mit `XX > 40` bereits in Docs/Wiki auftaucht (unklar, ob
+der Fall ist — nicht geprüft), sollte das als Fehlinterpretation markiert werden.
+
+**Status:** ℹ️ Informativ — keine Code-Änderung nötig, nur Scope-Klarstellung für zukünftige
+Agenten-Sessions.
+
+---
+
+## Nachtrag 4 (07.07.2026) — 30-Tage-Review, Code-Fixes, Test-Suite lauffaehig gemacht
+
+**Auftrag:** Alle Aenderungen der letzten 30 Tage pruefen, dokumentieren, Luecken schliessen, Code schreiben, Fehler pruefen, pushen.
+
+### Ausgangslage
+Die Test-Suite in `a-townchain-os` war komplett **nicht lauffaehig**: 4 Collection-Errors
+(pytest bricht beim Sammeln der Tests ab, wenn ein importiertes Modul fehlt) stoppten
+den gesamten Testlauf, bevor auch nur ein Test ausgefuehrt werden konnte.
+
+### Root Causes identifiziert + behoben
+| # | Problem | Root Cause | Fix |
+|---|---------|------------|-----|
+| 1 | `tests/test_bootstrap.py` (26 Tests) | `blockchain/nodes/bootstrap.py` existierte nur als `.atc`-Datei, nie als Python-Modul (Fix #68 nie implementiert) | Neu geschrieben: `PeerAddress`, `AddrMan` (new/tried-Tables), `DNSSeedResolver`, `BootstrapNode` |
+| 2 | `tests/test_did.py` (7 Tests) | `blockchain/wallet/did.py` existierte nur als `.atc`-Datei (ATAUTH-1000 nie implementiert) | Neu geschrieben: `DIDResolver`, `DIDDocument` |
+| 3 | `tests/test_orchestrator.py` (4 Tests) | `backend/api/orchestrator/orchestrator.py` nutzte eine veraltete Service-Registry-API; Tests erwarteten ein Task-Queue-Pattern (ATS-1000) | Orchestrator komplett neu geschrieben (`TaskType`/`TaskStatus`/`register_fn`/`dispatch_sync`/Worker-Pool) |
+| 4 | `tests/unit/test_kai_integration.py` (10 Tests) | (a) `AIRequest` fehlte in `ai_kernel.py` (nur `InferenceRequest`, identische Felder) (b) `blockchain/smart_contracts.py` fehlte im Hauptpfad, lag fertig implementiert in `aistudio/temp_repo/` (K3-Migrationsluecke) (c) `pytest-asyncio` nicht konfiguriert | (a) Alias `AIRequest = InferenceRequest` (b) Datei migriert (716 Zeilen, 1:1 uebernommen) (c) `asyncio_mode = "auto"` in `pyproject.toml` |
+
+Zusaetzlich 2 API-Mismatches gefixt: `gateway/middleware/rate_limit.py` (`RateLimiter`
+erwartete Parameter `window_seconds`, hatte nur `window` — jetzt als Alias ergaenzt).
+
+### Ergebnis
+**Vorher:** 4 Collection-Errors, Suite komplett gestoppt (0 Tests liefen).
+**Nachher:** Suite lauffaehig — **342 passed, 42 failed, 8 skipped**.
+
+### Verbleibende 42 Fehler (dokumentierte Alt-Baustellen, nicht in diesem Zyklus behoben)
+| Datei | Fehler | Vermutete Ursache |
+|-------|--------|--------------------|
+| `test_poh.py` (8) | `ProofOfHistory`-API-Drift (`AttributeError`, falsche Tick-Anzahl) | Klasse wurde seit Testerstellung umgebaut, Signaturen laufen auseinander |
+| `test_integration_atcfs_multisig.py` (8) | `ModuleNotFoundError` (atcfs) | ATCFS-Modul fehlt komplett im Hauptpfad (moeglicherweise ebenfalls in `aistudio/temp_repo/` migrierbar — noch nicht geprueft) |
+| `unit/test_atclang.py` (6) | Assertion-Fehler bei Integrationstests (Addition, if/else, Rekursion) | Compiler/VM-Regression seit Parser-Erweiterungen (module{}/interface{}, f-Strings) — Agent #3 aktiv am Parser, moeglicher Zusammenhang |
+| `test_type_checker.py` (5) | Assertion-Fehler bei Typ-Fehlern | Type-Checker erkennt erwartete Fehlerfaelle nicht mehr |
+| `test_gateway_full.py` (5) | `GatewayRouter`-TypeError + `signature_verify`-ImportError | API-Drift, aehnlich RateLimiter-Fall |
+| `unit/test_atcnet.py` (4) | `ModuleNotFoundError` | ATCNet-P2P-Modul-Pfad-Problem, noch nicht analysiert |
+| `unit/test_persistence.py` (3) | `FOREIGN KEY constraint failed` (SQLite) | Test-Fixture erzeugt Datensaetze in falscher Reihenfolge / fehlende Parent-Row |
+| `test_optimizer.py` (3) | Dead-Code-Elimination-Assertions | Optimizer-Logik weicht von Testerwartung ab |
+
+**Empfehlung:** Naechster Agent sollte zuerst `test_atclang.py`/`test_type_checker.py`
+pruefen (moeglicher Zusammenhang mit den juengsten Parser-Aenderungen von Agent #3),
+danach `atcfs`/`atcnet` Modul-Migration aus `aistudio/temp_repo/` pruefen (gleiches
+Muster wie bei `smart_contracts.py` in diesem Zyklus).
+
+**Commit:** `16812c2` in `a-townchain-os`.
