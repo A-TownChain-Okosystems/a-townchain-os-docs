@@ -20,6 +20,7 @@
 | `kai-os-kernel` | KAI | 🤖 In-Projekt-KI | Teil der Codebasis selbst, kein Editor-Agent | Laufzeitkomponente — verarbeitet Nutzeranfragen INNERHALB von KAI-OS, bearbeitet NICHT das Repo |
 | `aurora-base44-superagent-6a2756186106d6f0fbb105b5` | Aurora | 🤖 KI-Agent | Base44 Superagent — App-ID `6a2756186106d6f0fbb105b5` (separate Instanz von der oben registrierten App-ID `69c1e0c577ccf6c45a27a480`) | Sync-/Cleanup-/Governance-Agent (Duplikat-Cleanup, Naming Conventions, Wiki-Score, OS-Gap-Analyse) |
 | `aurora-base44-superagent-6a27614c7219ab1e4f951842` | Aurora | 🤖 KI-Agent | Base44 Superagent — App-ID `6a27614c7219ab1e4f951842` (separate Instanz von `69c1e0c577ccf6c45a27a480` und `6a2756186106d6f0fbb105b5`) | KAI-OS Daily Full Sync Owner (16-Dienste-Automation), Reality-Check/Audit-Agent (Roadmap-vs-Code-Konsistenz) |
+| `unsigned-aurora-bot-base44ai` | Aurora-Bot (⚠️ UNSIGNIERT — keine App-ID im Commit) | 🤖 KI-Agent | Git-Identitaet `Aurora-Bot <aurora@base44.ai>` — App-ID unbekannt, da Signatur-Pflicht (siehe unten) verletzt | Taeglicher Wiki-Kapitel-Sync (zuletzt: Kap. 17 + 31, 07.07.2026 08:19 UTC via GitHub+Notion) — Funktion aehnelt Agent `...105b5`s Automationen, aber NICHT von dessen 3 registrierten Automationen (`atc_master_sync`, `kai_os_daily_sync` x2) erzeugt, siehe Verifikation unten |
 | `shivacore-owner-human` | ShivaCore (Michael Wroblewski) | 🧑 Mensch / Projekt-Owner | Base44 Superagent-Chat (Auftraggeber-Seite) | Menschlicher Entscheidungstraeger und Owner des A-TownChain-Oekosystems. Erteilt Auftraege an KI-Agenten, trifft finale Entscheidungen bei offenen Decisions (z.B. AD-002), einziger Copyright-Rechteinhaber. **Kein Agent** — steht hier zur klaren Abgrenzung: Aktionen mit dieser ID sind Menschen-initiiert, nicht KI-generiert. |
 
 > **Wichtig:** KAI ist **kein** Entwicklungs-Agent, der Code/Doku schreibt —
@@ -36,6 +37,26 @@
 > separate Chat-Sessions/Superagent-Instanzen desselben Nutzers), sollte aber
 > bei Governance-Fragen beruecksichtigt werden: **Agent-ID ≠ Agent-Name** —
 > immer die vollstaendige ID mit App-ID pruefen, nicht nur "Aurora".
+
+> 🆕 **5. Agent identifiziert (07.07.2026, Agent `...105b5`):** Ein fuenfter
+> Akteur wurde durch Commit-Forensik gefunden — Git-Identitaet
+> `Aurora-Bot <aurora@base44.ai>` (1 bestaetigter Commit: `53acff6`,
+> 07.07.2026 08:19 UTC, "Auto-sync: Kapitel 17 & 31 aktualisiert"). Er
+> signiert seine Commits NICHT mit `[agent: aurora-base44-superagent-<ID>]`
+> und verstoesst damit gegen die Signatur-Pflicht unten. Verifiziert:
+> es ist KEINE der 3 aktiven Automationen von Agent `...105b5`
+> (`atc_master_sync`, `kai_os_daily_sync` x2 — alle pruefbar ueber
+> `list_automations`, alle mit anderer Commit-Identitaet). Ein weiterer
+> untagged Commit (`9a449bd`, MasterBrain-E-Mail) wurde dagegen eindeutig
+> Agent `...951842` zugeordnet (gleiche E-Mail-Identitaet wie dessen
+> signierte Commits) — das war nur eine einzelne vergessene Signatur,
+> kein 6. Agent.
+>
+> **Konsequenz:** Es gibt nachweislich **5 Base44-Superagent-Akteure**
+> an diesem Repo, einer davon bislang ohne verifizierbare App-ID. Naechster
+> Agent, der einen Commit von `Aurora-Bot <aurora@base44.ai>` sieht: bitte
+> Timing mit eigenen Automation-Laeufen abgleichen und hier die echte
+> App-ID nachtragen, sobald bekannt.
 
 **Wenn ein neuer/anderer Agent dieses Projekt bearbeitet:** Er MUSS sich hier
 mit einer neuen Zeile eintragen (Agent-ID nach Schema `<name>-<plattform>-<typ>`),
