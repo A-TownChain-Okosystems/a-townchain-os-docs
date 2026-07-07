@@ -36,3 +36,18 @@ Diese Datei basiert auf tatsaechlicher Code-Ausfuehrung heute (07.07.2026):
 Testfile vorhanden). Keine Behauptung ohne Ausfuehrungs-Beleg.
 
 *Erstellt von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ HANDOFF ABGESCHLOSSEN (07.07.2026 17:54)
+
+**Entscheidung getroffen:** siehe `DECISIONS_REGISTER.md` AD-008.
+`core/kernel.py` (EventBus) = Fundament-Schicht, getestet (16/16).
+`shivaos/kernel/kernel.py` (ShivaKernel) = Prozess-Layer darueber,
+komplementaer, kein Konflikt. Keine Datei geloescht oder archiviert.
+
+**Einzige offene Folgeaufgabe:** Testfile fuer `shivaos/kernel/kernel.py`
+— separates Ticket, nicht Teil dieses Handoffs.
+
+**Status: RESOLVED.**
