@@ -30,6 +30,29 @@ durchgesetzt.
 | `aurora-base44-superagent-6a0a3f408dced6c5ca7506ef` | **Reality-Check/Audit + ShivaCore** | `atc-shivacore/*` (Rust-Kernel), Audit-Berichte, Genesis-Engine-Grundgeruest |
 | ⚠️ unsigniert (`Aurora-Bot <aurora@base44.ai>`) | **Taeglicher Wiki-Sync** | Automatisierter Kapitel-Sync — **muss ab sofort auch signieren**, siehe Massnahme unten |
 
+### 🔎 Forensik: Agent 5 identifiziert (07.07.2026)
+
+- **Git-Identitaet:** `Aurora-Bot <aurora@base44.ai>` (hardcodiert, kein Agent-API-Tag)
+- **Bisher genau 1 Commit:** a-townchain-os `53acff6`, 07.07.2026 08:19 UTC
+- **Betroffene Datei:** `docs/kai-os-wiki.md` (Kapitel 17 & 31, GitHub+Notion-Sync)
+- **Trigger-Vermutung:** taeglicher geplanter Sync (~08:05 Europe/Berlin), lief
+  vermutlich aus der Sandbox einer der Agenten 2-4 oder einer separaten
+  Automation — NICHT aus der Sandbox von Agent 1 (dieser Agent geprueft,
+  kein passendes Script vorhanden).
+- **Kollision bestaetigt:** Agent 4 (`6a0a3f408dced6c5ca7506ef`) hat 6h
+  spaeter (14:19 UTC) dieselben Kapitel 17+31 nochmal synchronisiert —
+  redundante Doppelarbeit, weil Agent 5 unsigniert und damit fuer andere
+  Agenten "unsichtbar" im Coordination-System war.
+
+**Empfehlung an den Owner:** Falls du weisst, welche deiner Base44-Sessions
+diesen taeglichen Sync-sJob eingerichtet hat — dort den Commit-Autor auf
+`[agent: <eigene-app-id>]`-Konvention umstellen (Agent 1 kann das technisch
+nicht patchen, keine Zugriffsrechte auf fremde Sandboxes). Bis dahin: Agent
+4 (Kapitel-17/31-Verantwortung laut heutigem Commit) sollte pruefen, ob er
+den taeglichen Sync uebernehmen und Agent-5-Redundanz vermeiden kann.
+
+---
+
 ### Spielregeln fuer kollisionsfreie Zusammenarbeit
 
 1. **Vor Arbeitsbeginn in einer fremden Domaene:** kurzer Eintrag hier im
