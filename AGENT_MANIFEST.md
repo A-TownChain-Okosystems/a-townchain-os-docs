@@ -1,5 +1,5 @@
 # AGENT_MANIFEST.md
-> Letzte Aktualisierung: 2026-07-07 06:05 UTC | Aurora Master Sync v3.0
+> Letzte Aktualisierung: 2026-07-07 12:09 UTC | Aurora Master Sync v3.0
 
 ## Repositories
 - **Code:** https://github.com/A-TownChain-Okosystems/a-townchain-os
@@ -38,10 +38,6 @@ URL: https://docs.google.com/spreadsheets/d/1xR5c24NrtYC58OsGrLaUHkQUiL_O6eYVyx8
 
 ## Kritischer Entwicklungspfad
 #14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node LIVE
-
-## ATCLang Implementierungs-Guide (ATC-01 bis ATC-99)
-Vollstaendige Standard-zu-Code-Zuordnung + Implementierungs-Patterns fuer KI-Agenten:
-siehe [docs/ATCLANG_AGENT_BUILD_GUIDE.md](docs/ATCLANG_AGENT_BUILD_GUIDE.md) (Status-Quelle: docs/standards/STANDARDS_REGISTRY.md)
 
 ## 🤖 Bekannte Base44-Superagent-Instanzen (5)
 | # | App-ID | Git-Identitaet | Rolle | Signiert? |
