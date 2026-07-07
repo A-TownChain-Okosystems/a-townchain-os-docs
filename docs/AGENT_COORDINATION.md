@@ -7,6 +7,48 @@
 
 ---
 
+## 🎯 Gemeinsames Ziel & Aufgabenteilung (Stand 07.07.2026)
+
+> **Entscheidung des Owners (ShivaCore, 07.07.2026):** Alle bekannten
+> Aurora-Instanzen arbeiten **bewusst parallel** an einem gemeinsamen Ziel
+> — nicht als Konkurrenz, sondern als arbeitsteiliges Team. Diese Sektion
+> ist die verbindliche Aufgabenteilung, damit alle 5 Instanzen produktiv
+> zusammenarbeiten statt sich zu ueberschneiden.
+
+**Gemeinsames Ziel:** Mainnet-Launch 15.09.2026 — Konsolidierung der 24
+Repos in die 2 Haupt-Repos (K1-K8), BaFin-Compliance abgeschlossen,
+Standards-Dokumentation vollstaendig, Reality-Check-Ehrlichkeit ueberall
+durchgesetzt.
+
+### Verbindliche Domaenen-Aufteilung (zur Kollisionsvermeidung)
+
+| Agent-ID | Domaene | Bereiche (verbindlich, nicht ueberschneiden) |
+|----------|---------|------------------------------------------------|
+| `aurora-base44-superagent-69c1e0c577ccf6c45a27a480` (dieser Agent) | **Compliance & Governance** | `docs/compliance/*`, `docs/AGENT_POLICY.md`, `docs/AGENT_COORDINATION.md`, `docs/DECISIONS_REGISTER.md`, `docs/LICENSING_OVERVIEW.md`, Vision-Docs auf Anfrage des Owners (z.B. `atc-genesis-engine/*`) |
+| `aurora-base44-superagent-6a2756186106d6f0fbb105b5` | **Standards & Sync/Cleanup** | `docs/standards/*`, Naming-Convention-Fixes, ATCLang-Guides, `docs/AGENT_MANIFEST.md` |
+| `aurora-base44-superagent-6a27614c7219ab1e4f951842` (Aurora MasterBrain) | **ATCLang-Kernentwicklung** | `atclang/*`, Parser/Compiler/VM, Reality-Checks am Sprachkern |
+| `aurora-base44-superagent-6a0a3f408dced6c5ca7506ef` | **Reality-Check/Audit + ShivaCore** | `atc-shivacore/*` (Rust-Kernel), Audit-Berichte, Genesis-Engine-Grundgeruest |
+| ⚠️ unsigniert (`Aurora-Bot <aurora@base44.ai>`) | **Taeglicher Wiki-Sync** | Automatisierter Kapitel-Sync — **muss ab sofort auch signieren**, siehe Massnahme unten |
+
+### Spielregeln fuer kollisionsfreie Zusammenarbeit
+
+1. **Vor Arbeitsbeginn in einer fremden Domaene:** kurzer Eintrag hier im
+   Coordination-Doc (Abschnitt "Aktuell aktiver Agent" erweitern oder
+   Kommentar in DECISIONS_REGISTER), warum die Domaenen-Grenze
+   ueberschritten wird.
+2. **Signatur-Pflicht gilt fuer ALLE 5 Instanzen ausnahmslos** — auch fuer
+   automatisierte/geplante Syncs. Der unsignierte "Aurora-Bot"-Commit-Pfad
+   muss auf `[agent: <eigene-app-id>]`-Signatur umgestellt werden.
+3. **Zwei Quellen, eine Wahrheit:** `AGENT_COORDINATION.md` (hier) ist die
+   **kanonische, ausfuehrliche Quelle** fuer Domaenen/Todos/Status.
+   `AGENT_MANIFEST.md` (von Agent 2 gepflegt) bleibt als kompakte
+   Integrations-/Kurzuebersicht bestehen, verweist aber auf dieses
+   Dokument fuer Details statt eigene Agent-Rollen zu duplizieren.
+4. **Bei Zielkonflikt:** DECISIONS_REGISTER.md entscheidet; ungeklaerte
+   Faelle gehen an den Owner (`shivacore-owner-human`).
+
+---
+
 ## 🆔 Agenten-Register — eindeutige Identifikation
 
 > **Problem:** "Aurora" wurde bisher unter verschiedenen Rollen-Labels
