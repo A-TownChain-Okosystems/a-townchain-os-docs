@@ -48,7 +48,7 @@ URL: https://docs.google.com/spreadsheets/d/1xR5c24NrtYC58OsGrLaUHkQUiL_O6eYVyx8
 | 4 | `6a0a3f408dced6c5ca7506ef` | ShivaCoreDev (+ Tag) | Reality-Check/Audit | ✅ |
 | 5 | ⚠️ unbekannt | `Aurora-Bot <aurora@base44.ai>` | Taeglicher Wiki-Kapitel-Sync | ❌ unsigniert |
 
-> Vollstaendiges Register mit Details: `docs/AGENT_COORDINATION.md`
+> ⚠️ **Kanonische Quelle fuer Agenten-Rollen, Domaenen-Aufteilung und Zusammenarbeitsregeln:** `docs/AGENT_COORDINATION.md` § "Gemeinsames Ziel & Aufgabenteilung". Diese Tabelle hier ist nur eine Kurzuebersicht und wird bei Abweichung von der kanonischen Quelle ueberschrieben.
 
 ## Sync-Konfiguration
 - **Schedule:** täglich 08:05 Europe/Berlin
