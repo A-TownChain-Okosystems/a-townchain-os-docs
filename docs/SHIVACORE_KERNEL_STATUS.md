@@ -51,3 +51,42 @@ komplementaer, kein Konflikt. Keine Datei geloescht oder archiviert.
 — separates Ticket, nicht Teil dieses Handoffs.
 
 **Status: RESOLVED.**
+
+
+---
+
+## 📚 Forschungs-Notiz: Ideenpool "moderner dezentraler KI-OS-Kernel" (08.07.2026)
+
+> Externe Recherche/Konzept-Zusammenfassung, keine ShivaCore-spezifische
+> Spezifikation. Hier nur als **Gap-Analyse gegen den echten Kernel-Stand**
+> archiviert, nicht als neue Anforderung.
+
+### Vorgeschlagene Konzepte vs. tatsaechlicher ShivaCore-Stand
+
+| Konzept aus der Recherche | Im echten ShivaCore-Kernel vorhanden? |
+|---|---|
+| Capability-basierte Zugriffskontrolle | ❌ Nein — aktuell einfache owner/stake-Felder, keine delegierbaren Capabilities |
+| Mikrokernel-Trennung (Speicher/Scheduling/IPC privilegiert, Rest Userspace) | ⚠️ Teilweise — `ShivaKernel` buendelt Prozess+Speicher+IPC in einer Klasse, keine harte Trennung |
+| TEE-Unterstuetzung (SGX/SEV/TrustZone) | ❌ Nein |
+| DIDs / dezentrale dentitaet pro Knoten | ⚠️ ATC-Adressen existieren (`owner`-Feld), aber kein W3C-DID-Modell (siehe ATC-03, Status PARTIAL) |
+| Heterogenes Scheduling (CPU/GPU/NPU-Klassen) | ❌ Nein — einfache Prioritaets-Zahl (0-255), kein Ressourcen-Klassen-Modell |
+| Byzantinische Fehlertoleranz im Kernel | ❌ Nein — BFT lebt in ShivaConsensus (separate Schicht), nicht im Kernel |
+| Formale Verifikation (seL4-Stil) | ❌ Nein — Python-Implementierung, nicht formal verifizierbar wie C/Rust+Beweise |
+
+### Einordnung
+
+Die Recherche beschreibt ein **Forschungsniveau-System** (vergleichbar mit
+seL4/Zircon + Web3-Identitaet + KI-Orchestrierung) — deutlich groesser als
+der aktuelle ShivaCore-Kernel (381 Zeilen Python, EventBus + Prozess-
+verwaltung). Kein Widerspruch zu AD-008 (komplementaere Schichten), aber
+ein moeglicher **langfristiger Nordstern** fuer die Kernel-Weiterentwicklung.
+
+### Konkreter naechster Schritt (falls gewuenscht, nicht automatisch gestartet)
+
+Von den 7 Konzepten waere **Capability-basierte Zugriffskontrolle** der
+sinnvollste erste Baustein — baut direkt auf dem bestehenden `owner`/
+`stake`-Feld in `KernelProcess` auf, ohne Kernarchitektur-Bruch, und ist in
+begrenztem Umfang tatsaechlich implementierbar (im Gegensatz zu TEEs/seL4-
+Verifikation, die eigene Hardware/Toolchains brauchen).
+
+*Archiviert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
