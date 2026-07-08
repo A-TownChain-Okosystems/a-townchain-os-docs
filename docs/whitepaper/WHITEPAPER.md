@@ -2420,14 +2420,14 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 | Bridge Contract (Python) | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`bridge_contract.py`](../../modules/contracts/bridge/bridge_contract.atc) |
 | Solidity ATC Token.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`KAI-OS Solidity README`](README.md) |
 | Solidity ShivamonNFT.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`ISSUE_12`](../issues/ISSUE_12_SOLIDITY.md) |
-| Solidity KAIGovernance.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`KAIGovernance.sol`](../blockchain/contracts/solidity/contracts/KAIGovernance.sol) |
-| Solidity KAIMarketplace.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`KAIMarketplace.sol`](../blockchain/contracts/solidity/contracts/KAIMarketplace.sol) |
-| Solidity KAIBridge.sol | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`KAIBridge.sol`](../blockchain/contracts/solidity/contracts/KAIBridge.sol) |
-| Solidity GenesisToken.sol | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`GenesisToken.sol`](../blockchain/contracts/solidity/contracts/GenesisToken.sol) |
-| Hardhat Deploy-Script | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`scripts/deploy.ts`](../blockchain/contracts/solidity/scripts/deploy.ts) |
-| Smart Contract Tests (Chai) | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`test/`](../blockchain/contracts/solidity/test/) |
-| Backend Routes Refactoring | — | ✅ | [`backend/api/routes/`](../backend/api/routes/) |
-| Gateway Port-Fix (:5000) | — | ✅ | [`gateway/router.py`](../gateway/router.py) |
+| Solidity KAIGovernance.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`governance_contract.atc`](../../blockchain/contracts/governance/governance_contract.atc) |
+| Solidity KAIMarketplace.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`marketplace_contract.atc`](../../modules/contracts/marketplace/marketplace_contract.atc) |
+| Solidity KAIBridge.sol | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`bridge_contract.atc`](../../modules/contracts/bridge/bridge_contract.atc) |
+| Solidity GenesisToken.sol | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`genesis_token.atc`](../../blockchain/contracts/atc001/genesis_token.atc) |
+| Hardhat Deploy-Script | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`scripts/generate_validators.atc`](../../scripts/generate_validators.atc) |
+| Smart Contract Tests (Chai) | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`test/`](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/blockchain/contracts/solidity/test/) |
+| Backend Routes Refactoring | — | ✅ | [`backend/api/routes/`](../../backend/api/routes/) |
+| Gateway Port-Fix (:5000) | — | ✅ | [`gateway/router.py`](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/gateway/router.py) |
 
 ### Sprint 2.4–2.5 (a
 
