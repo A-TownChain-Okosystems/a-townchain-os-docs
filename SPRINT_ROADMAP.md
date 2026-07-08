@@ -174,7 +174,7 @@
 ### Blocker
 Keine — ready to implement
 
-**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md) | [Meilenstein MK7](ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
+**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md) | [Meilenstein MK7](docs/ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
 
 ---
 
@@ -262,7 +262,7 @@ Keine — ready to implement
 - 🔴 Externe Audit-Resourcen erforderlich (Budget & Firma)
 - 🔴 Penetration Testing Tools & Expertise
 
-**Querverweis:** [Issue #69](docs/issues/ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md) | [Meilenstein MK8](ROADMAP.md#mk8--security-audit--hardening--in-arbeit)
+**Querverweis:** [Issue #69](docs/issues/ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md) | [Meilenstein MK8](docs/ROADMAP.md#mk8--security-audit--hardening--in-arbeit)
 
 ---
 
@@ -368,7 +368,7 @@ Keine — ready to implement
 - 🔴 MK7 (AI Agent Protocol) — mindestens Spezifikation abgeschlossen
 - 🔴 MK8 (Security Audit) — mindestens interne Phase abgeschlossen
 
-**Querverweise:** [Issue #70](docs/issues/ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md) | [Issue #71](docs/issues/ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md) | [Meilenstein MK9](ROADMAP.md#mk9--mainnet-launch--geplant)
+**Querverweise:** [Issue #70](docs/issues/ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md) | [Issue #71](docs/issues/ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md) | [Meilenstein MK9](docs/ROADMAP.md#mk9--mainnet-launch--geplant)
 
 ---
 

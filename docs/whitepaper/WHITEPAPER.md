@@ -2401,8 +2401,8 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 | NFT Persistenz (SQLite) | [#4](../issues/ISSUE_04_PERSISTENZ.md) | ✅ | [`ISSUE_04`](../issues/ISSUE_04_PERSISTENZ.md) |
 | Gemini AI Integration | [#2](../issues/ISSUE_02_GEMINI_AI.md) | ✅ | [`ISSUE_02`](../issues/ISSUE_02_GEMINI_AI.md) |
 | API Gateway + Backend | — | ✅ | [`GATEWAY.md`](../architecture/GATEWAY.md) |
-| ATC-Standards Dokumente | — | ✅ | [`ATC_STANDARDS.md`](../wiki/kai-os/docs/standards/ATC_STANDARDS.md) |
-| ATS-Standards Dokumente | — | ✅ | [`ATS_STANDARDS.md`](../wiki/kai-os/docs/standards/ATS_STANDARDS.md) |
+| ATC-Standards Dokumente | — | ✅ | [`ATC_STANDARDS.md`](../../module-docs/standards/ATC_STANDARDS.md) |
+| ATS-Standards Dokumente | — | ✅ | [`ATS_STANDARDS.md`](../../module-docs/standards/ATS_STANDARDS.md) |
 | ATCLang Spec v1.0 | — | ✅ | [`ATCLANG_SPEC.md`](../wiki/kai-os/code/atclang/ATCLANG_SPEC.md) |
 
 ---

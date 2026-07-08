@@ -298,8 +298,8 @@ Nach Issue #14 folgt:
 
 ## 📖 Dokumentation
 
-- [Testnet.md](../architecture/TESTNET.md#3-node-discovery-issue-14) — Vollständige Testnet-Doku
-- [TESTNET_INDEX.md](../issues/TESTNET_INDEX.md) — Abhängigkeitsbaum
+- [Testnet.md](../../../../architecture/TESTNET.md#3-node-discovery-issue-14) — Vollständige Testnet-Doku
+- [TESTNET_INDEX.md](../../../../issues/TESTNET_INDEX.md) — Abhängigkeitsbaum
 
 ---
 
