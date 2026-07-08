@@ -91,6 +91,13 @@
   historisches Dokument kennzeichnen + neues WHITEPAPER_V2.md erstellen, (3) nur Links entfernen
 - **Gefunden von:** Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5), 08.07.2026
 
+**Update 08.07.2026:** 17/19 Referenzen behoben -- Solidity-Dateien (KAIGovernance.sol,
+KAIMarketplace.sol, KAIBridge.sol, GenesisToken.sol, deploy.ts) auf die realen ATCLang-Aequivalente
+(governance_contract.atc, marketplace_contract.atc, bridge_contract.atc, genesis_token.atc,
+generate_validators.atc) umverlinkt, restliche Pfad-Tiefen korrigiert. Verbleibend: 1 Referenz auf
+ATCLANG_SPEC.md (blockiert durch AD-009 5-fach-Duplikat, keine eindeutige Zieldatei waehlbar).
+Status auf TEIL-GELOEST gesetzt, Rest haengt an AD-009-Entscheidung.
+
 ### AD-009 — ATCLANG_SPEC.md-Konsolidierung + Bridge-Standards-Dedup ⏳
 - **Status:** DECISION — Michael muss Prioritaet festlegen
 - **Problem 1:** `ATCLANG_SPEC.md` existiert an 5 verschiedenen Pfaden parallel
