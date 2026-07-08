@@ -1,5 +1,5 @@
 # Migrations-Map — Python → ATCLang
-> ⚠️ **KORREKTUR (06.07.2026):** "0 Python-Stubs" stimmt nicht mehr. Aktueller Stand: siehe [`REALITY_STATUS.md`](REALITY_STATUS.md) Abschnitt 3.
+> ⚠️ **KORREKTUR (06.07.2026):** "0 Python-Stubs" stimmt nicht mehr. Aktueller Stand: siehe [`REALITY_STATUS.md`](../REALITY_STATUS.md) Abschnitt 3.
 
 > **Stand:** 05.07.2026 | **Status:** ✅ Abgeschlossen (0 Python-Stubs)
 > **Policy:** ATC-99 (ATCLang Universal Mandate)

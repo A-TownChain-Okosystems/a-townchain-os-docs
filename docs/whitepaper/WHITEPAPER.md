@@ -2392,8 +2392,8 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 | ShivaOS Dashboard v2.0 | — | ✅ | [`frontend/README.md`](README.md) |
 | A-TownChain Blockchain Kern | — | ✅ | [`CONSENSUS.md`](../architecture/CONSENSUS.md) |
 | Python Smart Contract Basis | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`ISSUE_01`](../issues/ISSUE_01_SMART_CONTRACTS.md) |
-| ATC-001 Genesis Token | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`genesis_token.py`](../blockchain/contracts/atc001/genesis_token.py) |
-| ATC-8300 Fungible Token | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`atc8300_token.py`](../blockchain/contracts/atc8300/atc8300_token.py) |
+| ATC-001 Genesis Token | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`genesis_token.py`](../../blockchain/contracts/atc001/genesis_token.atc) |
+| ATC-8300 Fungible Token | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`atc8300_token.py`](../../modules/contracts/atc8300/atc8300_token.atc) |
 | ATC-9000 Shivamon NFT | [#3](../issues/ISSUE_03_BATTLE_UI.md) | ✅ | [`SHIVAMON_NFT_CONTRACT.md`](../contracts/SHIVAMON_NFT_CONTRACT.md) |
 | Shivamon Battle System | [#3](../issues/ISSUE_03_BATTLE_UI.md) | ✅ | [`ISSUE_03`](../issues/ISSUE_03_BATTLE_UI.md) |
 | ECDSA Wallet Implementierung | [#6](../issues/ISSUE_06_ECDSA.md) | ✅ | [`WALLET_KEYGEN.md`](../architecture/WALLET_KEYGEN.md) |
@@ -2415,9 +2415,9 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 
 | Feature | Issue | Status | Doku |
 |---------|-------|--------|------|
-| Governance Contract (Python) | [#9](../issues/ISSUE_09_GOVERNANCE.md) | ✅ | [`governance_contract.py`](../blockchain/contracts/governance/governance_contract.py) |
-| Marketplace Contract (Python) | [#13](../issues/ISSUE_13_MARKETPLACE.md) | ✅ | [`marketplace_contract.py`](../blockchain/contracts/marketplace/marketplace_contract.py) |
-| Bridge Contract (Python) | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`bridge_contract.py`](../blockchain/bridge/bridge_contract.py) |
+| Governance Contract (Python) | [#9](../issues/ISSUE_09_GOVERNANCE.md) | ✅ | [`governance_contract.py`](../../blockchain/contracts/governance/governance_contract.atc) |
+| Marketplace Contract (Python) | [#13](../issues/ISSUE_13_MARKETPLACE.md) | ✅ | [`marketplace_contract.py`](../../modules/contracts/marketplace/marketplace_contract.atc) |
+| Bridge Contract (Python) | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`bridge_contract.py`](../../modules/contracts/bridge/bridge_contract.atc) |
 | Solidity ATC Token.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`KAI-OS Solidity README`](README.md) |
 | Solidity ShivamonNFT.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`ISSUE_12`](../issues/ISSUE_12_SOLIDITY.md) |
 | Solidity KAIGovernance.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`KAIGovernance.sol`](../blockchain/contracts/solidity/contracts/KAIGovernance.sol) |

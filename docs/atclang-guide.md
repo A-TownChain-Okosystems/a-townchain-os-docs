@@ -42,7 +42,7 @@ contract SimpleToken {
 
 - [Vollständige Sprach-Spezifikation](./atclang/ATCLANG_SPEC_FULL.md)
 - [API Reference](./api-reference.md)
-- [Smart Contract Standard (ATC-14)](./standards/ATC-14-SMART_CONTRACT_EXEC.md)
+- [Smart Contract Standard (ATC-14)](./standards/ATC-14-DETERMINISTIC_EXECUTION.md)
 
 ---
 *Nachgetragen von Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5) im Rahmen des 24-Repo Reality-Checks, 06.07.2026.*

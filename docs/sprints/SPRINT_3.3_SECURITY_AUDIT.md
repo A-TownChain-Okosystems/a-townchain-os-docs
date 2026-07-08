@@ -76,7 +76,7 @@ Umfassende Sicherheits-Audit des A-TownChain OS Codebase, inklusive Smart Contra
 ## Querverweise
 - [Issue #69](../issues/ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md)
 - [Roadmap MK8](../ROADMAP.md#mk8--security-audit--hardening--in-arbeit)
-- [Sprint Roadmap](../SPRINT_ROADMAP.md#-sprint-33--security-audit-in-arbeit)
+- [Sprint Roadmap](../../SPRINT_ROADMAP.md#-sprint-33--security-audit-in-arbeit)
 
 ---
 

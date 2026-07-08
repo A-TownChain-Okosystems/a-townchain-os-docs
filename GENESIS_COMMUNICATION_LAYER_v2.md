@@ -422,7 +422,7 @@ pipeline_stats(core) → List<PipelineStat> // Performance-Statistiken
 ## 8. Querverweise
 
 - [ATCLang Spec v1.0](aistudio/temp_repo/atclang/ATCLANG_SPEC.md) — ATC-92
-- [ATC-93 Bytecode Spec](ATC_93_BYTECODE_SPEC.md) — VM Op-Codes
+- [ATC-93 Bytecode Spec](docs/standards/ATC-93-ATCLANG_VM_BYTECODE.md) — VM Op-Codes
 - [Sprint 2.3+2.4+2.7 Report](reports/SPRINT_2.3_2.4_2.7_REPORT.md) — Implementation Report
 - [STATUS.md](STATUS.md) — Projekt-Status
 

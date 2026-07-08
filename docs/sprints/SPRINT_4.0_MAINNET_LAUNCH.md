@@ -71,11 +71,11 @@
 - 🔴 **SSL-Zertifikate** (Let's Encrypt, kostenlos aber Setup erforderlich)
 
 ## Querverweise
-- [Issue #70](docs/issues/ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md)
-- [Issue #71](docs/issues/ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md)
+- [Issue #70](../issues/ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md)
+- [Issue #71](../issues/ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md)
 - [Roadmap MK9](../ROADMAP.md#mk9--mainnet-launch--geplant)
-- [Sprint Roadmap](../SPRINT_ROADMAP.md#-sprint-40--mainnet-launch-geplant)
-- [Genesis Config](../config/mainnet_genesis.json)
+- [Sprint Roadmap](../../SPRINT_ROADMAP.md#-sprint-40--mainnet-launch-geplant)
+- [Genesis Config](../../config/mainnet_genesis.json)
 
 ---
 
