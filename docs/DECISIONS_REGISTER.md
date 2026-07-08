@@ -80,6 +80,17 @@
 - **Details:** `docs/REALITY_CHECK_2026-07-06.md` (Hauptreport)
 - **Gefunden von:** Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5), 06.07.2026
 
+### AD-010 — WHITEPAPER.md referenziert veraltete Solidity-Architektur ⏳
+- **Status:** DECISION — Michael muss Prioritaet fuer Content-Rewrite festlegen
+- **Problem:** docs/whitepaper/WHITEPAPER.md verlinkt auf ~15 Dateien einer alten
+  Solidity/Python-Architektur (blockchain/contracts/solidity/*.sol, backend/api/routes/,
+  gateway/router.py, architecture/*.md), die durch die ATCLang-Migration nicht mehr existieren.
+  Reine Link-Reparatur reicht nicht -- der Fliesstext beschreibt noch die alte Architektur.
+- **Umfang:** ~15-19 kaputte Referenzen je Repo (siehe Markdown-Audit 08.07.2026)
+- **Optionen:** (1) Volle Whitepaper-Ueberarbeitung auf ATCLang-Architektur, (2) Whitepaper als
+  historisches Dokument kennzeichnen + neues WHITEPAPER_V2.md erstellen, (3) nur Links entfernen
+- **Gefunden von:** Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5), 08.07.2026
+
 ### AD-009 — ATCLANG_SPEC.md-Konsolidierung + Bridge-Standards-Dedup ⏳
 - **Status:** DECISION — Michael muss Prioritaet festlegen
 - **Problem 1:** `ATCLANG_SPEC.md` existiert an 5 verschiedenen Pfaden parallel
