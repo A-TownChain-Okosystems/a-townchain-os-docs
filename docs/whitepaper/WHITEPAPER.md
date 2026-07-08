@@ -2403,7 +2403,7 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 | API Gateway + Backend | — | ✅ | [`GATEWAY.md`](../architecture/GATEWAY.md) |
 | ATC-Standards Dokumente | — | ✅ | [`ATC_STANDARDS.md`](../wiki/kai-os/docs/standards/ATC_STANDARDS.md) |
 | ATS-Standards Dokumente | — | ✅ | [`ATS_STANDARDS.md`](../wiki/kai-os/docs/standards/ATS_STANDARDS.md) |
-| ATCLang Spec v0.1 | — | ✅ | [`ATCLANG_SPEC.md`](../wiki/kai-os/code/atclang/ATCLANG_SPEC.md) |
+| ATCLang Spec v1.0 | — | ✅ | [`ATCLANG_SPEC.md`](../wiki/kai-os/code/atclang/ATCLANG_SPEC.md) |
 
 ---
 

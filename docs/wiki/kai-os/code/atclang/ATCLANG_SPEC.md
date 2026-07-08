@@ -1,31 +1,9 @@
-# ATCLang — Die Programmiersprache des A-TownChain Ökosystems
-Version: 0.1.0-alpha
-Datum: 2026-06-06
+# ATCLang Language Specification
 
-## Philosophie
-ATCLang ist eine statisch typisierte, blockchain-native Sprache.
-Keine Abhängigkeit von Python-Syntax. Eigene Grammatik. Eigene VM.
+⚠️ **Diese Datei ist veraltet und wurde konsolidiert (AD-009, 08.07.2026).**
 
-## Syntax-Beispiel
+Die kanonische, aktuelle Spezifikation (v1.0.0, Standard ATC-92, Status STABLE) befindet sich unter:
 
-```atclang
-// Wallet erstellen
-wallet myWallet = ATC::Wallet::new("ShivaCore")
-contract ShivaToken : ATC-8300 {
-    state balance: Map<Address, UInt256>
-    fn transfer(to: Address, amount: UInt256) -> Bool {
-        require(balance[caller] >= amount)
-        balance[caller] -= amount
-        balance[to] += amount
-        emit Transfer(caller, to, amount)
-        return true
-    }
-}
-```
+👉 **[`atclang/ATCLANG_SPEC.md`](../../../../../atclang/ATCLANG_SPEC.md)** (Repo-Root)
 
-## Token-Typen
-- KEYWORD: wallet, contract, fn, state, emit, require, return
-- TYPE: UInt256, Address, Bool, String, Map, List
-- OPERATOR: +, -, *, /, >=, <=, ==, !=, ->, ::
-- LITERAL: Integer, String, Bool
-- SPECIAL: ATC:: (Namespace), @decorator
+Diese Datei wurde absichtlich nicht geloescht, um bestehende Links nicht zu brechen, enthaelt aber nur noch diesen Verweis.

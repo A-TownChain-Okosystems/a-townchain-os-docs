@@ -17,7 +17,7 @@
 | AD-006 | Python vs Substrate | ✅ RESOLVED | — | Aurora (ATCLang First) |
 | AD-007 | EVM Registry | ✅ RESOLVED | — | Aurora (Non-EVM) |
 | AD-008 | Reality-Check: 44 Issues re-auditieren/re-open? | ⏳ DECISION | — | **Michael** |
-| AD-009 | ATCLANG_SPEC.md-Konsolidierung (5 Kopien) + Bridge-Standards-Dedup (ATC-09/38/69/91) | ⏳ DECISION | — | **Michael** |
+| AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ (kanonisch: atclang/ATCLANG_SPEC.md) / Bridge-Standards-Dedup (ATC-09/38/69/91) ⏳ | 🟡 TEIL-GELOEST | 08.07.2026 | **Michael** (nur noch Bridge-Dedup) |
 
 ---
 
@@ -98,8 +98,8 @@ generate_validators.atc) umverlinkt, restliche Pfad-Tiefen korrigiert. Verbleibe
 ATCLANG_SPEC.md (blockiert durch AD-009 5-fach-Duplikat, keine eindeutige Zieldatei waehlbar).
 Status auf TEIL-GELOEST gesetzt, Rest haengt an AD-009-Entscheidung.
 
-### AD-009 — ATCLANG_SPEC.md-Konsolidierung + Bridge-Standards-Dedup ⏳
-- **Status:** DECISION — Michael muss Prioritaet festlegen
+### AD-009 — ATCLANG_SPEC.md-Konsolidierung ✅ / Bridge-Standards-Dedup ⏳
+- **Status:** Problem 1 GELOEST (08.07.2026) -- Problem 2 (Bridge-Dedup) weiterhin DECISION
 - **Problem 1:** `ATCLANG_SPEC.md` existiert an 5 verschiedenen Pfaden parallel
   (`atclang/`, `docs/atclang/ATCLANG_SPEC_FULL.md`, `module-docs/atclang/`,
   `docs/wiki/kai-os/code/atclang/`, `aistudio/temp_repo/atclang/`) — Ursache fuer ~270 verbleibende
@@ -108,6 +108,16 @@ Status auf TEIL-GELOEST gesetzt, Rest haengt an AD-009-Entscheidung.
   (ATC-09, ATC-38, ATC-69, ATC-91) — Dokumentations-Drift im Standards-Register
 - **Details:** `docs/REALITY_CHECK_2026-07-06.md` (Nachtrag 1 + 2)
 - **Gefunden von:** Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5), 06.07.2026
+
+**Loesung Problem 1 (08.07.2026):** Kanonische Version bestimmt: `atclang/ATCLANG_SPEC.md`
+(v1.0.0, Standard ATC-92, Status STABLE, Datum 2026-07-05) -- deutlich vollstaendiger als die
+4 anderen Kopien (v0.1.0-alpha Stub 913 Bytes, v0.2.0-alpha FULL-Version 9184 Bytes). Diese
+Version wurde 1:1 nach `atclang/ATCLANG_SPEC.md` in a-townchain-os-docs und kai-os-wiki kopiert
+(existierte dort noch nicht). Die 4 anderen Kopien in allen 3 Repos (module-docs/, docs/atclang/,
+docs/wiki/kai-os/code/, docs/wiki/kai-os/docs/) wurden durch Redirect-Stubs ersetzt, die auf die
+kanonische Datei verweisen -- Links bleiben so funktionsfaehig, aber es gibt nur noch 1 Quelle
+der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
+
 
 ---
 
