@@ -119,6 +119,22 @@ kanonische Datei verweisen -- Links bleiben so funktionsfaehig, aber es gibt nur
 der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
 
 
+
+### AD-011: Issue #18 Node-Rollen-Abweichung (Docker Testnet)
+**Status:** ENTSCHIEDEN (sachlich begruendet) | **Datum:** 08.07.2026
+
+- **Kontext:** Issue #18 spezifiziert ein 5-Node-Docker-Testnet als 1 Bootstrap + 1 Validator
+  + 1 Miner + 2 Full Nodes. Die tatsaechliche Implementierung (`docker-compose.yml`, Root)
+  nutzt 1 Bootstrap + 2 Validatoren + 1 Full Node + 1 Archive Node -- kein dedizierter
+  "Miner"-Service.
+- **Begruendung:** A-TownChain ist PoS/PoH-basiert (nicht PoW) -- ein "Miner"-Service ist
+  architektonisch nicht vorgesehen. Die Abweichung ist eine Altlast aus einer frueheren
+  PoW-Planungsphase des Issues, keine fehlende Implementierung.
+- **Entscheidung:** Issue #18 gilt trotz Rollen-Abweichung als sachlich erfuellt. Keine
+  Code-Aenderung noetig, nur Dokumentations-Klarstellung.
+- **Details:** `docs/CLUSTER_ARCHITECTURE.md` Abschnitt 4.
+- **Gefunden von:** Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5), 08.07.2026
+
 ---
 
 *Decisions Register v1.0.0 — Aurora (MasterBrain · Base44) · 05.07.2026*
