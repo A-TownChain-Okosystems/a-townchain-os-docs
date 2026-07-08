@@ -90,3 +90,35 @@ begrenztem Umfang tatsaechlich implementierbar (im Gegensatz zu TEEs/seL4-
 Verifikation, die eigene Hardware/Toolchains brauchen).
 
 *Archiviert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: Capability-System implementiert (08.07.2026, ECHTER CODE)
+
+> Reagiert auf die Layer-1/Layer-4-Konzepte aus der Kernel-Architektur-
+> Recherche vom 08.07.2026 (siehe Forschungs-Notiz oben) — aber als
+> **tatsaechlich lauffaehiger, getesteter Code**, nicht als weitere Spec.
+
+**Datei:** `shivaos/kernel/capabilities.py` (159 Zeilen) +
+`shivaos/tests/test_capabilities.py` (10 Tests, **alle gruen**, verifiziert
+vor dem Push: `python3 -m pytest shivaos/tests/test_capabilities.py` →
+`10 passed in 0.04s`).
+
+**Was es tut:** `Capability` (unveraenderliches Zugriffs-Ticket:
+resource_type + resource_id + Rights-Flags READ/WRITE/EXECUTE/DELEGATE) +
+`CapabilityManager` (grant/check/require/delegate/revoke). Delegation kann
+Rechte nur einschraenken, nie erweitern. Revoke kaskadiert auf alle
+delegierten Kind-Capabilities.
+
+**Bewusst NICHT enthalten:** noch keine Integration in `ShivaKernel.alloc()`
+/`create_channel()` selbst (d.h. der bestehende Kernel-Code erzwingt Capability-
+Pruefung noch nicht automatisch) — das waere der naechste Schritt, kein
+Big-Bang. TEEs, DIDs, heterogenes Scheduling bleiben weiterhin offene
+Forschungsideen, nicht Teil dieses Commits.
+
+**Naechster moeglicher Schritt (nicht automatisch gestartet):** `alloc()`
+und `create_channel()` in `shivaos/kernel/kernel.py` so anpassen, dass sie
+eine gueltige Capability verlangen statt direkten Zugriff zu erlauben.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
