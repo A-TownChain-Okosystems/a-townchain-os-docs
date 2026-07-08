@@ -188,3 +188,39 @@ NPU uebernimmt komplette Kette, Deadline eingehalten). Regressionscheck:
 **41/41 Tests gesamt gruen** (alle bisherigen Kernel-Tests unveraendert).
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: DID + Remote-Capability-Tickets, ECHTE Kryptografie (08.07.2026)
+
+> Antwort auf Layer 4 (Remote-Capability-Delegation): im Unterschied zum
+> Scheduler (Hardware-abhaengig, nur simulierbar) ist dieser Teil OHNE
+> Hardware vollstaendig echt umsetzbar -- Signaturen, Replay-Schutz,
+> Delegationsketten sind reale, funktionierende Kryptografie/Logik.
+
+**`shivaos/kernel/did.py`:** `NodeIdentity` mit echtem Ed25519-Schluesselpaar
+(`cryptography`-Bibliothek), `sign()`/`verify()` funktionieren kryptografisch
+korrekt. **Ehrliche Einschraenkung:** privater Schluessel liegt im
+Prozessspeicher, NICHT in einer Hardware-Enklave (TrustZone/SGX gibt es
+hier nicht) -- das wird nicht vorgetaeuscht.
+
+**`shivaos/kernel/remote_capability.py`:** `RemoteCapabilityTicket`
+(signiert, mit Nonce), `RemoteCapabilityResolver` (Signaturpruefung,
+Subject-Check, Replay-Schutz via `NonceStore`, Deadline-Check),
+`resolve_chain()` fuer mehrstufige Delegation (Bob→Charlie→Alice) mit
+Attenuation-Pruefung (Rechte/Operationen/Deadline duerfen pro Kettenglied
+nur EINGESCHRAENKT werden).
+
+**Verifiziert vor Push:** `pytest shivaos/tests/test_remote_capability.py`
+→ **9/9 passed**, inklusive: manipuliertes Ticket abgelehnt, Replay-Angriff
+abgelehnt, falscher Subject abgelehnt, Rechte-Erweiterung in Kette
+abgelehnt, abgelaufenes Ticket abgelehnt. Regressionscheck: **50/50 Tests
+gesamt gruen**.
+
+**Bewusst NICHT enthalten:** Hardware-Enklaven, DHT-Netzwerktransport
+(wie das Ticket physisch zum Zielknoten kommt, ist wie in der Spezifikation
+richtig beschrieben bewusst außerhalb des Kernels), formale TLA+/Coq-
+Verifikation -- alles offene Forschungsideen, nicht Teil dieses Commits.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
