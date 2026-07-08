@@ -151,3 +151,40 @@ Ob sie irgendwann komplett durch die gated Varianten ersetzt werden, ist
 eine offene Folgeentscheidung, kein automatischer naechster Schritt.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: DA-HEFT Scheduler mit Hardware-Interface (08.07.2026)
+
+> Antwort auf den Scheduler-Vorschlag (Layer 3): echte, getestete Python-
+> Implementierung des DA-HEFT-Algorithmus (Deadline-Aware Heterogeneous
+> Earliest-Finish-Time) -- **hardware-agnostisch designed**, damit spaeter
+> echte GPU/NPU-Anbindung moeglich ist, ohne den Algorithmus anzufassen.
+
+**Architektur (Dependency Inversion, bewusst):**
+- `accelerator.py`: `Accelerator` (ABC-Interface) + `SimulatedAccelerator`
+  (Referenzimplementierung fuer diese Sandbox -- ehrlich als Simulation
+  gekennzeichnet, KEIN Anspruch auf echte Hardware)
+- `daheft.py`: `DAHEFTScheduler` kennt NUR das `Accelerator`-Interface,
+  nie eine konkrete Implementierung
+
+**Was das fuer "spaeter echte Hardware" bedeutet:** Jemand mit echter
+GPU/NPU muss nur EINE neue Klasse schreiben, die `Accelerator` implementiert
+(z.B. `OnnxRuntimeAccelerator`, `CudaAccelerator`) -- `daheft.py` bleibt
+unveraendert. Das ist der uebliche, ehrliche Weg zu "hardware-ready" ohne
+heute etwas vorzutaeuschen, das nicht existiert (kein GPU/NPU in dieser
+Sandbox).
+
+**Algorithmus:** kritischer-Pfad-Priorisierung (upward rank) → EFT-Berechnung
+je Beschleuniger → Deadline-Admission-Control (mit Degradation bei
+unmoeglicher Deadline statt Absturz) → thermische Verfuegbarkeitspruefung →
+Auswahl nach minimalem EFT×Energie-Produkt.
+
+**Verifiziert vor Push:** `pytest shivaos/tests/test_daheft_scheduler.py`
+→ **8/8 passed**, inklusive Nachbau des Autonomous-Driving-Beispiels
+(Conv2D→ReLU→MatMul, 5ms Deadline, GPU ueberhitzt bei 85°C/80°C-Limit →
+NPU uebernimmt komplette Kette, Deadline eingehalten). Regressionscheck:
+**41/41 Tests gesamt gruen** (alle bisherigen Kernel-Tests unveraendert).
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
