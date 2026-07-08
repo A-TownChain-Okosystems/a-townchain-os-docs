@@ -122,3 +122,32 @@ und `create_channel()` in `shivaos/kernel/kernel.py` so anpassen, dass sie
 eine gueltige Capability verlangen statt direkten Zugriff zu erlauben.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: Capability-Durchsetzung IM Kernel integriert (08.07.2026)
+
+> Reaktion auf "AethelKernel"-Vorschlag: kein neuer Markenname, kein Rust/
+> seL4-Rewrite (Sandbox-Grenzen) — aber der konkrete Kern der Idee
+> (Capability-Layer) ist jetzt tatsaechlich TEIL des laufenden
+> `shivaos/kernel/kernel.py`, nicht nur ein separates Modul daneben.
+
+**Aenderungen (additiv, nichts Bestehendes gebrochen):**
+- `alloc()` vergibt automatisch eine Capability (ALL rights) an den Prozess
+- `create_channel()` vergibt automatisch eine Capability fuer den Kanal
+- `free()` widerruft die zugehoerige Capability
+- Neu: `read_memory()` / `write_memory()` / `send_with_capability()` /
+  `recv_with_capability()` — pruefen die Capability, werfen `CapabilityError`
+  bei fehlendem/falschem Zugriff
+
+**Verifiziert vor Push:** `pytest shivaos/tests/test_kernel_capabilities.py`
+→ **7/7 passed**. Regressionscheck: bestehende Tests (`test_kernel.py` +
+`test_capabilities.py`) weiterhin **26/26 passed** — nichts kaputt gemacht.
+
+**Bewusst nicht gemacht:** die alten `channel_send`/`channel_recv`/direkter
+`region.read/write` bleiben ungated bestehen (Rueckwaertskompatibilitaet).
+Ob sie irgendwann komplett durch die gated Varianten ersetzt werden, ist
+eine offene Folgeentscheidung, kein automatischer naechster Schritt.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
