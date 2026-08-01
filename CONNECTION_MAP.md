@@ -1,25 +1,24 @@
 # 🔗 A-TownChain OS — Verbindungsmatrix
-> Auto-generiert: 2026-07-08 06:06 UTC | Aurora Cross-Connect v1.0
+> Auto-generiert: 2026-08-01 06:06 UTC | Aurora Cross-Connect v1.0
 
-## Status: 15/17 Verbindungen aktiv
+## Status: 13/16 Verbindungen aktiv
 
 ## Verbindungsübersicht
 | Verbindung | Status | Detail |
 |------------|--------|--------|
-| `github→notion` | ✅ | 11 Issues → Notion Protokoll |
-| `github→tasks` | ✅ | 0 neue Tasks | 20 existierend |
+| `github→notion` | ✅ | 12 Issues → Notion Protokoll |
+| `github→tasks` | ⚠️ | Task-Liste nicht gefunden |
 | `github→bigquery` | ✅ | Übersprungen |
 | `github→huggingface` | ✅ | 4 Modelle in ai_models.json gepusht ✅ |
 | `github→classroom` | ✅ | Verbunden — noch kein aktiver Kurs |
 | `notion→sheets` | ✅ | 13 Notion-Seiten → Sheets Tab |
-| `notion→tasks` | ✅ | 0 Roadmap-Tasks angelegt |
 | `notion→huggingface` | ✅ | Modell-Status in Notion Roadmap verlinkt |
 | `sheets→bigquery` | ✅ | Übersprungen |
 | `analytics→sheets` | ✅ | Analytics verbunden — Web-Property noch konfigurieren |
 | `searchconsole→sheets` | ✅ | Search Console verbunden — Site noch registrieren |
 | `docs→drive→onedrive` | ⚠️ | Doc-Erstellung fehlgeschlagen |
 | `calendar→meet` | ✅ | Meet-Link: kein kommender Event mit Meet |
-| `calendar→gmail` | ✅ | Wochenagenda (0 Events) gesendet ✅ |
+| `calendar→gmail` | ✅ | Wochenagenda (0 Events) gesendet ⚠️ |
 | `slides→drive` | ⚠️ | Slides-Erstellung fehlgeschlagen |
 | `classroom→github` | ✅ | Classroom verbunden — noch kein aktiver Kurs |
 | `calendar→classroom` | ✅ | Classroom verbunden — kein aktiver Kurs |
@@ -48,4 +47,4 @@ GitHub ←───────────────────────�
 - **Teams** ist der Team-Kommunikationskanal
 - **Google Drive + OneDrive** sind redundante Datei-Backups
 
-_Aurora Superagent · Base44 · 2026-07-08 06:06 UTC_
+_Aurora Superagent · Base44 · 2026-08-01 06:06 UTC_
