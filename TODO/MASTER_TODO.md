@@ -1,10 +1,14 @@
 # 📋 MASTER TODO — A-TownChain OS
-> Stand: 2026-07-08 06:05 UTC | Aurora Master Sync v3.0
+> Stand: 2026-08-01 06:05 UTC | Aurora Master Sync v3.0
 
 ## Kritischer Pfad
 `#14 Bootstrap → #15 Propagation → #16 Sync → #17 Fork Resolution → #18 Docker → #8 Multi-Node`
 
-## Alle offenen Issues (11)
+## Alle offenen Issues (12)
+### #93 Sync-Integration: 4 offene Warnungen aus KAI-OS Daily Auto-Sync beheben
+**Labels:** bug, devops
+**URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/93
+
 ### #92 [K8] Konsolidierung — Release v1.0 (24 Repos → 1 Software)
 **Labels:** enhancement, priority:high, sprint:K8
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/92
