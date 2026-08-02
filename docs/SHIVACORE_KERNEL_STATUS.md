@@ -224,3 +224,30 @@ richtig beschrieben bewusst außerhalb des Kernels), formale TLA+/Coq-
 Verifikation -- alles offene Forschungsideen, nicht Teil dieses Commits.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: Capability-System in Rust (03.08.2026)
+
+> Erster Rust-Code-Beitrag zum ShivaCore Kernel: Port des Python-
+> Capability-Systems nach Rust. Die gleiche Logik (Erzeugung, Delegation
+> mit Attenuation, kaskadierender Widerruf) — jetzt im Kernel nativ.
+
+**`atc-shivacore/kernel/src/capability.rs`** (neu, 324 Zeilen):
+- `Rights` als Bitfield (READ/WRITE/EXEC/DELEGATE), `BitOr`/`BitAnd` impl
+- `Capability` struct (id, resource_type, resource_id, rights, owner, parent)
+- `CapabilityTable` mit Spinlock-geschuetzter BTreeMap
+- `create()` — Kernel erzeugt Capability
+- `delegate()` — Attenuation-Pruefung (Rechte-Monotonie), Owner-Check, DELEGATE-Check
+- `check()` — der Kern-Check fuer jeden geschuetzten Syscall
+- `revoke()` — kaskadierender Widerruf (alle abgeleiteten Capabilities)
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **8/8 passed**
+(create_and_check, delegate_attenuation, rejects_rights_expansion,
+requires_delegate_right, wrong_owner, revoke_cascade, list_for_process,
+rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
+
+**In main.rs registriert:** `mod capability;` hinzugefuegt.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
