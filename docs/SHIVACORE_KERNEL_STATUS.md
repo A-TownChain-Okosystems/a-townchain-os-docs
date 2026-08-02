@@ -373,3 +373,34 @@ rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
 **Verifiziert:** `cargo test` mit Rust 1.97 → **50/50 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC).
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: DID + Remote-Capability-Tickets in Rust (03.08.2026)
+
+> K-Sprint 6: Port von did.py + remote_capability.py nach Rust.
+> Dezentrale Identitaet und kryptographisch signierte Capability-Delegation ueber Knotengrenzen.
+
+**`atc-shivacore/kernel/src/did.rs`** (neu, ~130 Zeilen):
+- `Did` — Dezentrale Identitaet im Format `did:shivacore:<hex-public-key>`
+- `CryptoProvider` Trait — abstrahiertes Krypto-Interface (wie `Accelerator` Trait im Scheduler)
+- `SoftwareSigner` — deterministischer Software-Signer fuer Tests; spaeter austauschbar gegen Ed25519Signer oder HardwareEnclaveSigner
+- `sign()` / `verify()` — trait-basiert, Implementierung austauschbar
+
+**`atc-shivacore/kernel/src/remote_caps.rs`** (neu, ~340 Zeilen):
+- `RemoteCapabilityTicket` — issuer_did, subject_did, resource, constraints, nonce, signature, parent_ticket_nonce
+- `ResourceDescriptor` — resource_type, resource_id, rights (nutzt kernel-eigenes `Rights` Bitfield)
+- `Constraints` — max_operations, deadline_unix, energy_budget_uj
+- `issue_ticket()` — Issuer signiert Ticket mit `CryptoProvider::sign()`
+- `signing_payload()` — deterministische Byte-Repraesentation (sortiert, kanonisch)
+- `LocalCap` — lokale Capability nach Einloesung, mit `consume_operation()` Zaehler und Auto-Widerruf
+- `NonceStore` — Replay-Schutz (BTreeSet, exakt statt Bloom-Filter)
+- `RemoteCapabilityResolver::resolve()` — validiert Signatur → Subject → Replay → Deadline → Constraints
+- `RemoteCapabilityResolver::resolve_chain()` — mehrstufige Delegation (Alice→Bob→Charlie→Dave), prueft Kettenintegritaet (Nonce-Verkettung), Ressource-Konsistenz, Rechte-Attenuation, max_operations-Monotonie, Deadline-Monotonie
+
+**Integration:** RCT nutzt `Rights` aus `capability.rs` und `CryptoProvider` aus `did.rs`. Die Trait-basierte Krypto-Abstraktion erlaubt spaeter den nahtlosen Wechsel zu echter Ed25519-Implementierung oder Hardware-Enklaven — die Algorithmus-Logik (Signaturpruefung, Replay-Schutz, Attenuation) bleibt unveraendert.
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **72/72 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC + 6 DID + 16 RCT). Tests decken: Ticket-Ausstellung+Einloesung, InvalidSignature (Forge-Versuch), WrongSubject, Replay-Schutz, Expired, ConstraintsTooStrict, LocalCap-Verbrauch (3 Ops dann Widerruf), Alice→Bob→Charlie Delegationskette, Kettenbruch (falscher Nonce), Rechte-Erweiterung abgewiesen, Ops-Erweiterung abgewiesen, Deadline-Erweiterung abgewiesen, Ressource-Mismatch, leere Kette, deterministische Payload, 3-Hop-Kette (Alice→Bob→Charlie→Dave).
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
