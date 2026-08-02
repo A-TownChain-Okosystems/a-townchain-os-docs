@@ -275,3 +275,25 @@ rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
 **Verifiziert:** `cargo test` mit Rust 1.97 → **18/18 passed** (8 Capability + 10 Process Tests). Tests decken: Spawn+Cap-Erzeugung, Mehrfach-Spawn, Kill+Cap-Widerruf+kaskadierend, Double-Kill-Reject, Parent-Child-Verknuepfung, Kill-entfernt-aus-Parent, Zustandsuebergaenge, Active-Count, Prioritaetserhaltung.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: DA-HEFT Scheduler in Rust (03.08.2026)
+
+> K-Sprint 4: Port des Python DA-HEFT-Schedulers nach Rust.
+> Hardware-agnostisch, deadline-aware, thermisch gesichert.
+
+**`atc-shivacore/kernel/src/scheduler.rs`** (neu, ~280 Zeilen):
+- `Accelerator` Trait — Hardware-Abstraktion fuer CPU/GPU/NPU/TPU; echte Hardware spaeter ohne Algorithmus-Aenderung
+- `SimulatedAccelerator` — simulierte Beschleuniger fuer Tests
+- `Task` struct — compute_flops, memory_mb, deadline, dependencies, PID
+- `compute_upward_ranks()` — iterativ aus Successor-Map (korrekter HEFT-Rank, Entry-Tasks hoechste Prioritaet)
+- `schedule()` — sortiert nach upward-rank (absteigend), weist fruehesten Finish-Time zu
+- `deadline_misses()` / `utilization()` — Statistik-Funktionen
+- Thermisches Throttling (ueberspringt Beschleuniger >85°C)
+- Speicher-Constraint (ueberspringt Beschleuniger mit zu wenig VRAM)
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **28/28 passed** (8 Capability + 10 Process + 10 Scheduler). Tests decken: Basis-Scheduling, heterogene Zuweisung, Abhaengigkeits-Ordering, Deadline-Awareness, thermisches Throttling, Speicher-Constraint, upward-rank Prioritaet, leere Eingaben, Auslastung, Total-Overload.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
