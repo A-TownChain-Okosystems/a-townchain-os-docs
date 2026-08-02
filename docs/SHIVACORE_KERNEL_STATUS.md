@@ -251,3 +251,27 @@ rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
 **In main.rs registriert:** `mod capability;` hinzugefuegt.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: ProcessManager in Rust (03.08.2026)
+
+> K-Sprint 3b: Prozessverwaltung mit integrierter Capability-Durchsetzung.
+> Implementiert den `ProcessManager`-Trait aus `ats1000.rs`.
+
+**`atc-shivacore/kernel/src/process.rs`** (neu, ~350 Zeilen):
+- `ProcessControlBlock` (PCB) — PID, ProzessType, Prioritaet (0-255, ATC-0008), Zustand, Parent/Children
+- `ProcessState` — Ready / Running / Blocked / Terminated(ExitCode)
+- `spawn()` — erzeugt Prozess + **automatische Memory-Capability** (READ/WRITE/EXEC/DELEGATE) fuer eigenen Adressraum
+- `spawn_child()` — Kind-Prozess mit Parent-Verknuepfung
+- `kill()` — **kaskadierender Capability-Widerruf** (alle Caps des Prozesses + alle davon abgeleiteten) + Zustand→Terminated + Entfernung aus Parent-Children-Liste
+- `wait()` — Exit-Code-Abfrage
+- Zustandsautomaten: Ready↔Running (Schedule/Preempt), →Blocked→Ready (IPC/IO-Wait/Wakeup)
+- `check_capability()` / `delegate_capability()` — Direktzugriff auf Capability-Tabelle
+
+**Integration mit Capability-System:** Jeder Prozess bekommt beim Spawn automatisch eine Memory-Cap fuer seinen Adressraum. kill() ruft `CapabilityTable::revoke()` fuer alle Caps auf — der Prozess verliert sofort alle Ressourcen, inkl. Caps die er an andere delegiert hat (kaskadierend).
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **18/18 passed** (8 Capability + 10 Process Tests). Tests decken: Spawn+Cap-Erzeugung, Mehrfach-Spawn, Kill+Cap-Widerruf+kaskadierend, Double-Kill-Reject, Parent-Child-Verknuepfung, Kill-entfernt-aus-Parent, Zustandsuebergaenge, Active-Count, Prioritaetserhaltung.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
