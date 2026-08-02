@@ -297,3 +297,28 @@ rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
 **Verifiziert:** `cargo test` mit Rust 1.97 → **28/28 passed** (8 Capability + 10 Process + 10 Scheduler). Tests decken: Basis-Scheduling, heterogene Zuweisung, Abhaengigkeits-Ordering, Deadline-Awareness, thermisches Throttling, Speicher-Constraint, upward-rank Prioritaet, leere Eingaben, Auslastung, Total-Overload.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: IPC Subsystem in Rust (03.08.2026)
+
+> K-Sprint 5: Channel-basierte Inter-Process Communication mit Capability-Durchsetzung.
+
+**`atc-shivacore/kernel/src/ipc.rs`** (neu, ~230 Zeilen):
+- `IpcSubsystem` — verwaltet alle Channels, erzeugt Channel mit auto-Caps
+- `Channel` struct — owner, sender_cap, recv_cap, FIFO-Buffer, capacity, closed-Flag
+- `Message` struct — sender PID, data (Vec\<u8\>), timestamp
+- `create_channel()` — Owner bekommt automatisch WRITE+READ+DELEGATE Capabilities fuer den Channel
+- `send()` — prueft WRITE-Capability, Channel nicht geschlossen/voll
+- `recv()` — prueft READ-Capability, Channel nicht leer, FIFO-Entfernung
+- `grant_access()` — delegiert Channel-Rechte an andere Prozesse (Attenuation, Owner-Check)
+- `close_channel()` — schliesst Channel + kaskadierender Capability-Widerruf (alle Caps fuer diese Resource)
+- `close_all_for()` — schliesst alle Channels eines Prozesses (wird von ProcessManager::kill() aufgerufen)
+- `IpcError` — ChannelNotFound, ChannelClosed, ChannelFull, ChannelEmpty, NoWriteCapability, NoReadCapability
+
+**Integration:** IPC nutzt die `CapabilityTable` direkt — jede send/recv-Operation ruft `caps.check()` auf. Prozesse ohne die entsprechende Capability werden abgewiesen. `close_all_for()` wird beim kill() eines Prozesses aufgerufen.
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **40/40 passed** (8 Capability + 10 Process + 10 Scheduler + 12 IPC). Tests decken: Channel-Erzeugung+send/recv, send-ohne-WRITE-rejected, recv-ohne-READ-rejected, Cross-Process-Kommunikation via grant_access, Channel-full, Empty-Channel, close, non-Owner-close-rejected, close_all_for, wrong-owner-grant-rejected, FIFO-Order, pending-messages-count.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
