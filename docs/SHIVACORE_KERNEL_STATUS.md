@@ -347,3 +347,29 @@ rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
 **Verifiziert:** `cargo test` mit Rust 1.97 → **40/40 passed** (8 Capability + 10 Process + 10 Scheduler + 12 IPC). Tests decken: Channel-Erzeugung+send/recv, send-ohne-WRITE-rejected, recv-ohne-READ-rejected, Cross-Process-Kommunikation via grant_access, Channel-full, Empty-Channel, close, non-Owner-close-rejected, close_all_for, wrong-owner-grant-rejected, FIFO-Order, pending-messages-count.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: IPC Capability-Gating Tests + Security-Fix (03.08.2026)
+
+> 10 neue Edge-Case Tests fuer Capability-Gating in IPC + recv() Security-Fix.
+
+**Neue Tests (10):**
+1. `test_revoked_cap_blocks_send` — Capability widerrufen → senden blockiert
+2. `test_revoked_cap_blocks_recv` — READ-Cap widerrufen → empfangen blockiert
+3. `test_attenuated_cap_cannot_exceed_original` — Nur READ delegiert → kein WRITE moeglich
+4. `test_delegation_chain_capability_gating` — Alice→Bob→Charlie Delegationskette, Charlie kann nicht weiter delegieren
+5. `test_close_channel_revokes_all_delegated_caps` — Channel schliessen widerruft alle delegierten Caps
+6. `test_isolated_channels_capability_gating` — Prozess kann nur auf eigene Channels zugreifen
+7. `test_grant_then_revoke_blocks_access` — Grant → Revoke → Zugriff blockiert
+8. `test_cross_channel_capability_isolation` — Cap fuer Channel A gibt keinen Zugriff auf Channel B
+9. `test_send_to_nonexistent_channel` — Senden auf nichtexistenten Channel
+10. `test_recv_from_nonexistent_channel` — Empfangen von nichtexistentem Channel
+
+**Security-Fix:**
+`recv()` prueft nun Capability VOR der Buffer-Inspektion. Vorher wurde `ChannelEmpty` preisgegeben, bevor die Capability geprueft wurde — ein unbefugter Prozess koennte so ermitteln, ob ein Channel Nachrichten enthaelt. Jetzt wird `NoReadCapability` zurueckgegeben, bevor Buffer-Informationen preisgegeben werden.
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **50/50 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC).
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
