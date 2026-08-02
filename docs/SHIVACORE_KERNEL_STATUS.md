@@ -404,3 +404,32 @@ rights_operations). Die Tests sind im selben File als `#[cfg(test)]`-Modul.
 **Verifiziert:** `cargo test` mit Rust 1.97 → **72/72 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC + 6 DID + 16 RCT). Tests decken: Ticket-Ausstellung+Einloesung, InvalidSignature (Forge-Versuch), WrongSubject, Replay-Schutz, Expired, ConstraintsTooStrict, LocalCap-Verbrauch (3 Ops dann Widerruf), Alice→Bob→Charlie Delegationskette, Kettenbruch (falscher Nonce), Rechte-Erweiterung abgewiesen, Ops-Erweiterung abgewiesen, Deadline-Erweiterung abgewiesen, Ressource-Mismatch, leere Kette, deterministische Payload, 3-Hop-Kette (Alice→Bob→Charlie→Dave).
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: Ed25519-Signaturen in Rust (03.08.2026)
+
+> K-Sprint 6b: Echte Ed25519-Kryptografie mit ed25519-dalek.
+
+**`atc-shivacore/kernel/src/did.rs`** (erweitert, ~210 Zeilen):
+
+Zwei Implementierungen des `CryptoProvider`-Traits:
+
+1. **SoftwareSigner** — deterministische Pseudo-Signatur (XOR-basiert) fuer reproduzierbare Logik-Tests. `did:shivacore:<hex-key>` Format.
+
+2. **Ed25519Signer** — echte Ed25519-Signaturen mit der `ed25519-dalek` crate:
+   - `new()` — erzeugt frisches Schluesselpaar mit `OsRng` (kryptographisch sicherer Zufall)
+   - `from_seed(&[u8; 32])` — deterministische Erzeugung aus Seed (fuer Tests)
+   - `did:shivacore:ed25519:<hex-pubkey>` Format (32-byte Public Key = 64 hex chars)
+   - `sign()` — erzeugt echte 64-Byte Ed25519-Signatur
+   - `verify()` — extrahiert Public Key aus DID, konstruiert `VerifyingKey`, verifiziert mit `verify()`
+   - Abweisung bei: falscher DID, manipuliertem Payload, manipulierter Signatur, zu kurzer Signatur
+
+**Abhaengigkeiten:** `ed25519-dalek = "2.1"`, `rand = "0.8"` hinzugefuegt.
+
+**Integration:** Beide Signer implementieren dasselbe `CryptoProvider`-Trait. Das RCT-System (`remote_caps.rs`) nutzt `CryptoProvider::sign()` / `CryptoProvider::verify()` — der Wechsel zwischen SoftwareSigner und Ed25519Signer erfordert keine Aenderung an der RCT-Logik. In Produktion kann spaeter ein `HardwareEnclaveSigner` (TrustZone/SGX/Secure Element) dieselbe Schnittstelle implementieren.
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **81/81 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC + 15 DID + 16 RCT). Neue Ed25519-Tests: DID-Format (64 hex chars), sign+verify, wrong-signer rejected, tampered-payload rejected, tampered-signature rejected, short-signature rejected, deterministic-from-seed (gleicher Seed → gleiche DID+Signatur), cross-verify-with-RCT-Szenario, 10KB-large-payload.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
