@@ -433,3 +433,42 @@ Zwei Implementierungen des `CryptoProvider`-Traits:
 **Verifiziert:** `cargo test` mit Rust 1.97 → **81/81 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC + 15 DID + 16 RCT). Neue Ed25519-Tests: DID-Format (64 hex chars), sign+verify, wrong-signer rejected, tampered-payload rejected, tampered-signature rejected, short-signature rejected, deterministic-from-seed (gleicher Seed → gleiche DID+Signatur), cross-verify-with-RCT-Szenario, 10KB-large-payload.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: Knowledge Graph in Rust (03.08.2026)
+
+> K-Sprint 7: Nativer Triple-Store fuer strukturiertes Kernel-Wissen mit Capability-gated Zugriff.
+
+**`atc-shivacore/kernel/src/knowledge_graph.rs`** (neu, ~380 Zeilen):
+
+**Datenstruktur:**
+- `Entity` — eindeutige EntityId, Label, entity_type, created_by (Pid), triples_count
+- `ObjectValue` — Enum: Entity(EntityId), Integer(i64), String, Bytes, Boolean
+- `Triple` — (subject: EntityId, predicate: Predicate, object: ObjectValue)
+- `KnowledgeGraph` — BTreeMap< EntityId, Entity > + Vec< Triple > + drei Indices
+
+**Indices (fuer schnelle Lookups):**
+- `spo_index`: Subject → [Triple-Indices] (fuer outgoing())
+- `osp_index`: Object-Entity → [Triple-Indices] (fuer incoming() / Rueckwaerts-Lookup)
+- `pso_index`: Predicate → [Triple-Indices] (fuer Praedikat-basierte Queries)
+
+**Capability-Integration:**
+- `create_entity()` — vergibt automatisch READ+WRITE+DELEGATE Capability an den Creator
+- `add_triple()` — prueft WRITE-Capability auf Subject-Entity
+- `query()` — filtert Ergebnisse nach READ-Capability (unsichtbar ohne Cap)
+- `remove_triple()` / `delete_entity()` — pruefen WRITE-Capability
+- `grant_read()` — delegiert READ an andere Prozesse (Attenuation via CapabilityTable)
+- `delete_entity()` — widerruft alle Capabilities fuer die Entity
+
+**Query-Engine:**
+- `QueryPattern` — Option-Felder: None = Wildcard (Match-All)
+- `query()` — filtert nach Subject, Predicate, Object (beliebige Kombination)
+- `outgoing(entity)` — alle Tripel mit entity als Subject
+- `incoming(entity)` — alle Tripel mit entity als Object (Rueckwaerts-Lookup)
+- `transitive_closure(start, predicate, max_depth)` — BFS ueber Praedikat-Kanten, mit Zyklus-Schutz (visited-Set), max_depth-Limit
+
+**Verifiziert:** `cargo test` mit Rust 1.97 → **99/99 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC + 15 DID + 16 RCT + 18 KG). Tests decken: Entity-Erzeugung, Triple+Query, Write-Cap-Reject, Read-Cap-Filter, grant_read, outgoing/incoming, transitive_closure (3-Hop, max_depth, Zyklus), Literal-Werte (String/Int/Bool), remove_triple, delete_entity, Wildcard-Query, EntityNotFound, Cross-Process-Isolation, Triple-Counter.
+
+*Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
