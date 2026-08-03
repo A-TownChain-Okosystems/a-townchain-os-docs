@@ -13,7 +13,7 @@
 | AD-002 | EventBus vs IPCBus | ⏳ VALIDATE | 2.4 | **Michael** |
 | AD-003 | Flash-Loan Voting Snapshot | ✅ RESOLVED | 2.6 | Aurora |
 | AD-004 | Chain-ID (Platzhalter 9000) | 🔴 OPEN (reopened 06.07.2026) | — | Michael |
-| AD-005 | ATC-97 Agent Protocol Spec | ⏳ DECISION | 3.0 | **Aurora** (Spec ausarbeiten) |
+| AD-005 | ATC-97 Agent Protocol Spec | 📐 DRAFT_REVIEW | 3.0 | **Aurora** (Spec drafted — pending Michael review) |
 | AD-006 | Python vs Substrate | ✅ RESOLVED | — | Aurora (ATCLang First) |
 | AD-007 | EVM Registry | ✅ RESOLVED | — | Aurora (Non-EVM) |
 | AD-008 | Reality-Check: 44 Issues re-auditieren/re-open? | ⏳ DECISION | — | **Michael** |
@@ -60,7 +60,7 @@
 - **Sprint:** 2.4
 - **Blocker:** Nein — aber Entscheidung nötig vor Sprint 2.4 Abschluss
 
-### AD-005 — ATC-97 Agent Interaction Protocol ⏳
+### AD-005 — ATC-97 Agent Interaction Protocol 📐 DRAFT_REVIEW
 - **Status:** DECISION — Aurora arbeitet Spezifikation aus
 - **Problem:** Message-Format, Fehlerbehandlung und Timeouts für Agent-Kommunikation nicht spezifiziert
 - **Implementierung:** kai_routes.atc (228L) — teilweise
@@ -138,31 +138,3 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
 ---
 
 *Decisions Register v1.0.0 — Aurora (MasterBrain · Base44) · 05.07.2026*
-
-
----
-
-### AD-008 — ShivaCore Kernel: Komplementaere Schichten statt Konkurrenz
-**Datum:** 07.07.2026 | **Status:** ENTSCHIEDEN | **Entschieden von:** Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480` (Handoff-Abschluss)
-
-**Kontext:** Zwei Kernel-Implementierungen gefunden — `core/kernel.py`
-(EventBus + ModuleLoader, 16/16 Tests gruen) und `shivaos/kernel/kernel.py`
-(ShivaKernel: Prozess-/Speicher-/IPC-Management, 0 Tests, aber lauffaehig).
-
-**Entscheidung:** Beide werden als **komplementaere Schichten** behandelt,
-nicht als Konkurrenz:
-- `core/kernel.py` (EventBus) = **Fundament-Schicht** — Event-Verteilung,
-  Modul-Lifecycle. Bereits testabgesichert, bleibt unveraendert Referenz
-  fuer Event-Handling.
-- `shivaos/kernel/kernel.py` (ShivaKernel) = **Prozess-Layer darueber** —
-  Prozess-/Speicher-/IPC-Management, ATS-1000-1007 konform. Nutzt/kann
-  den EventBus fuer eigene Events nutzen statt eigene Event-Logik zu bauen.
-
-**Begruendung:** Verlustfreie Option — keine der beiden Implementierungen
-wird geloescht oder als "falsch" markiert. Vermeidet Architektur-Bruch bei
-laufender K3-Migration. Deckt sich mit dem AGENT_POLICY.md Reality-Check-
-Prinzip: Entscheidung basiert auf tatsaechlichem Testlauf, nicht Vermutung.
-
-**Offene Folgeaufgabe (nicht Teil dieser Entscheidung):** Testfile fuer
-`shivaos/kernel/kernel.py` erstellen (aktuell 0% Abdeckung) — als eigenes
-Ticket, nicht automatisch gestartet.

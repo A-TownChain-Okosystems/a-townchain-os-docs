@@ -173,7 +173,7 @@
 | ID | Titel | Status | Sprint | Implementierung |
 |----|-------|--------|--------|-----------------|
 | ATC-96 | Kernel Interface Protocol | 📐 DRAFT | 2.4 | kernel.atc (147L), shell.atc (295L), pkg/manager.atc (207L) |
-| ATC-97 | Agent Interaction Protocol | 📐 DRAFT | 3.0 | kai_routes.atc (228L) — AD-005 pending |
+| ATC-97 | Agent Interaction Protocol | ✅ SPEC | 3.0 | atc-97_agent_interaction_protocol.atc (906L) — AD-005 draft complete |
 | ATC-98 | Testing Standard | 📐 DRAFT | 2.7 | atclang_test_framework.py |
 
 ## Mandate (ATC-99)
