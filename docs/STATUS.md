@@ -11,7 +11,7 @@
 | Parse-Coverage | 198/198 (100%) | Parser-Lauf (verifiziert 03.08.2026) |
 | Python-Compiler | 30 Module (atclang/) | `find` |
 | Test-Dateien | 24 | `find tests/` |
-| Tests grün | 0 (10 Collection-Errors) | `pytest` — Module nach src/ migriert/gelöscht, Tests nicht angepasst |
+| Tests collected | 286 (0 Errors) | `pytest` — 10 migrierte Tests als skip markiert |
 | Python-Stubs | 11 (nur src/, nicht atclang/) | `find` |
 | Solidity-Dateien | 0 | Non-EVM bestätigt |
 
@@ -23,9 +23,9 @@
 | 2.2 | P2P + Testnet | ✅ DONE | 100% | 13 .atc Module, 26 Tests |
 | 2.3 | Consensus + Gas | 🔵 ACTIVE | 95% | 14 .atc Module |
 | 2.4 | Kernel + Syscalls | 🔵 ACTIVE | 90% | 36 .atc Module, alle parsen (198/198) |
-| 2.5 | NFT + Marketplace | ✅ DONE | 100% | 13 .atc Module |
-| 2.6 | Governance + Security | 🔵 ACTIVE | 85% | 6 .atc Module |
-| 2.7 | Testing + CI/CD | 🟡 PLANNED | 10% | CI/CD Workflows existieren, ATCLang Tests fehlen |
+| 2.5 | NFT + Marketplace | ✅ DONE | 100% | 26 .atc Module (16 assets + 5 token + 4 standards + 1 marketplace) |
+| 2.6 | Governance + Security | 🔵 ACTIVE | 90% | 7 .atc Module (incl. snapshot.atc) |
+| 2.7 | Testing + CI/CD | 🔵 ACTIVE | 25% | CI/CD repariert (ci-cd.yml), 286 Tests collect, ATCLang Parser Check in CI |
 | 2.8 | Multi-Node Testnet | 🟡 PLANNED | 15% | Testnet Launcher + Monitor existieren |
 | 3.0-3.6 | Alpha Release | 🟡 PLANNED | 20% | 14 Gateway/Backend Module |
 

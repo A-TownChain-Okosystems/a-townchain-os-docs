@@ -1,6 +1,6 @@
 # 🏃 A-TownChain OS — Sprint Roadmap & Todo-Tracker
 
-> **Letztes Update:** 03.08.2026 15:50 (Europe/Berlin) — Status korrigiert nach Code-Verifikation
+> **Letztes Update:** 03.08.2026 16:08 (Europe/Berlin) — Sprint-Audit + Fixes: snapshot.atc, CI/CD, Test-Imports
 > **Status:** Verifiziert durch Parser-Lauf (198/198), pytest (10 Errors), find/grep — Korrektur von Aurora 03.08.2026
 > **Aktiver Sprint:** 2.1 (ATCLang Bootstrap, 93%), 2.3 (Consensus, 95%), 2.4 (Kernel, 85%), 2.6 (Governance, 85%)
 
@@ -15,9 +15,9 @@
 | **2.2** | P2P + Testnet | ✅ DONE | 100% | #75,82,83,84 | 13 .atc | 26 Tests grün |
 | **2.3** | Consensus + Gas | 🔵 AKTIV | 95% | #76 | 14 .atc | Code-Analyse |
 | **2.4** | Kernel + Syscalls | 🔵 AKTIV | 90% | #77 | 36 .atc | alle parsen (198/198) |
-| **2.5** | NFT + Marketplace | ✅ DONE | 100% | — | 13 .atc | Code-Analyse |
-| **2.6** | Governance + Security | 🔵 AKTIV | 85% | #78 | 6 .atc | Code-Analyse |
-| **2.7** | Testing + CI/CD | 🟡 PLANNED | 10% | #79 | Workflows exist | CI/CD files da, ATCLang Tests fehlen |
+| **2.5** | NFT + Marketplace | ✅ DONE | 100% | — | 26 .atc | 16 assets + 5 token + 4 standards + 1 marketplace |
+| **2.6** | Governance + Security | 🔵 AKTIV | 90% | #78 | 7 .atc | snapshot.atc erstellt (Issue #78), multisig + timelock + dao |
+| **2.7** | Testing + CI/CD | 🔵 AKTIV | 25% | #79 | 7 Workflows | ci-cd.yml repariert, 286 Tests collect, 14 skip, 14 fail (compiler bugs) |
 | **2.8** | Multi-Node Testnet | 🟡 PLANNED | 15% | — | Launcher+Monitor | .atc vorhanden, Integration fehlt |
 | **3.0** | AI Orchestration | 🟡 PLANNED | 20% | #80 | 14 .atc | Module vorhanden, nicht integriert |
 | 3.1-3.6 | Alpha Release | 🟡 PLANNED | 0% | #69 | — | — |
