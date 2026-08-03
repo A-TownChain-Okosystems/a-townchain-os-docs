@@ -43,16 +43,16 @@ Kein Sprachversions-Konflikt mehr — alle 19 Fehler sind konkrete Parser-Lücke
 **Behoben:** Restore aus Commit 595d731 (mit f-String-Support).
 - Commit `de175b0` — 56 Dateien wiederhergestellt (11115 Zeilen)
 - Parser, Lexer, Stdlib (14 Module), VM (105 Opcodes), Compiler, Optimizer, TypeChecker
-- 24 Test-Dateien, 51 Tests grün
+- 24 Test-Dateien, 0 Tests grün (10 Collection-Errors — Module nach src/ migriert/gelöscht)
 
 ## 4. Sprint-Status (verifiziert durch Code-Analyse)
 
 | Sprint | Entity % | Code-Realität |
 |--------|----------|---------------|
-| 2.1 | 93% | 9/9 Kern-Tasks ✅, Parser 93% (186/198), 30 Compiler-Module |
+| 2.1 | 95% | 9/9 Kern-Tasks ✅, Parser 100% (198/198), 30 Compiler-Module |
 | 2.2 | 100% ✅ | 13 .atc Module, 26 Tests |
 | 2.3 | 95% | 12 .atc Consensus-Module |
-| 2.4 | 85% | 35 .atc Kernel-Module, 2 parsen nicht (:: operator) |
+| 2.4 | 90% | 36 .atc Kernel-Module, alle parsen (198/198) |
 | 2.5 | 100% ✅ | 13 .atc Contract-Module |
 | 2.6 | 85% | 4 .atc Governance-Module |
 | 2.7 | 10% | CI/CD Workflows existieren, ATCLang Tests fehlen |
