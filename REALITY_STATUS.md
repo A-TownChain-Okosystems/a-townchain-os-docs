@@ -49,7 +49,7 @@ Kein Sprachversions-Konflikt mehr — alle 19 Fehler sind konkrete Parser-Lücke
 
 | Sprint | Entity % | Code-Realität |
 |--------|----------|---------------|
-| 2.1 | 90% | 9/9 Kern-Tasks ✅, Parser 90%, 30 Compiler-Module |
+| 2.1 | 93% | 9/9 Kern-Tasks ✅, Parser 93% (186/198), 30 Compiler-Module |
 | 2.2 | 100% ✅ | 13 .atc Module, 26 Tests |
 | 2.3 | 95% | 12 .atc Consensus-Module |
 | 2.4 | 85% | 35 .atc Kernel-Module, 2 parsen nicht (:: operator) |

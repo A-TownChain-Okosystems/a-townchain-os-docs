@@ -19,7 +19,7 @@
 | Sprint | Titel | Status | % | Verifiziert durch |
 |--------|-------|--------|---|------------------|
 | 1.1-1.6 | Whitepaper & Forschung | ✅ DONE | 100% | Issues geschlossen |
-| 2.1 | ATCLang Node Bootstrap | 🔵 ACTIVE | 90% | 9/9 Kern-Tasks ✅, Parser 90% |
+| 2.1 | ATCLang Node Bootstrap | 🔵 ACTIVE | 93% | 9/9 Kern-Tasks ✅, Parser 93% (186/198) |
 | 2.2 | P2P + Testnet | ✅ DONE | 100% | 13 .atc Module, 26 Tests |
 | 2.3 | Consensus + Gas | 🔵 ACTIVE | 95% | 12 .atc Module |
 | 2.4 | Kernel + Syscalls | 🔵 ACTIVE | 85% | 35 .atc Module, 2 parsen nicht |
