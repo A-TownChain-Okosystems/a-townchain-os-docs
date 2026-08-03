@@ -357,3 +357,22 @@ zeitversetzt oder parallel arbeiten.
 ---
 
 *Teil des verbindlichen Mandats — siehe `AGENT_POLICY.md` fuer vollstaendige Reality-Check- und Sync-Regeln.*
+
+### Unsigned Agent Commit — 2026-08-02
+- **Repository:** a-townchain-os
+- **Commit:** `e242db9cfa`
+- **Author:** Aurora (Base44 Superagent) <aurora@base44-superagent.local>
+- **Date:** 2026-08-01 06:23 UTC
+- **Message:** Merge branch 'main' of https://github.com/A-TownChain-Okosystems/a-townchain-os
+- **Finding:** Commit matches the Aurora/Base44 bot pattern but lacks the required `[agent: ...]` signature.
+- **Action:** Recorded for audit; future agent commits must include the standard signature.
+
+### Unsigned Agent Commit — 2026-08-03
+
+- **Repository:** `a-townchain-os`
+- **Commit:** `6ba93370fd` (full SHA available in Git history)
+- **Author:** Aurora (Base44 Superagent) <aurora@base44-superagent.local>
+- **Date:** 2026-08-02 06:22 UTC
+- **Message:** `Merge branch 'main' of https://github.com/A-TownChain-Okosystems/a-townchain-os`
+- **Finding:** Commit matches the Aurora/Base44 bot pattern but lacks the required `[agent: ...]` signature.
+- **Action:** Recorded for audit; future agent commits must include the standard signature.
