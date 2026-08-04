@@ -677,3 +677,24 @@ GenesisBridge::init_from_config(): 1-Aufruf-Initialisierung der kompletten Chain
 GenesisBridge::propose_block(): Post-Genesis Block-Erzeugung mit PoH-Verknüpfung + State-Root.
 
 **Verifiziert:** cargo test → 288/288 passed (248 bisherige + 40 neue Genesis Bridge Tests).
+
+
+---
+
+## ✅ Milestone: P2P Gossip Integration (04.08.2026)
+
+> K-Sprint 28: Issue #2 — atcnet ↔ genesis_bridge ↔ Block-Sync
+
+**`gossip_bridge.rs`** (neu, ~900 Zeilen, 45 Tests):
+
+6 Integration-Punkte zwischen atcnet.rs und genesis_bridge.rs:
+1. **Block-Gossip**: `gossip_block()` broadcastet BlockAnn an alle Peers
+2. **Block-Sync**: `request_blocks()` + `respond_get_blocks()` + `process_blocks()` für fehlende Blöcke
+3. **Vote-Gossip**: `gossip_vote()` + `process_vote()` — Konsens-Votes über TxBroadcast
+4. **Chain-ID-Validierung**: `validate_peer_chain()` + `validate_block_ann()` (9000)
+5. **Mempool-Gossip**: `gossip_transaction()` — TxBroadcast Integration
+6. **Peer-Height-Tracking**: `handle_block_ann()` → automatische Sync-Erkennung
+
+Multi-Node Tests: Block-Propagation (3 Nodes) + Chain-Convergence (Block-Sync über 3 Blöcke).
+
+**Verifiziert:** cargo test → 333/333 passed (288 bisherige + 45 neue Gossip Bridge Tests).
