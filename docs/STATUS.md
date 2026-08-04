@@ -6,12 +6,12 @@
 |--------|------|-------------|
 | System-Version | v1.0.0 | |
 | ATC-Standards | 99 (ATC-01 bis ATC-99) | Entity count |
-| .atc Dateien | 209 (aktive) + 15 (archiviert) | `find . -name '*.atc'` |
+| .atc Dateien | 210 (aktive) + 15 (archiviert) | `find . -name '*.atc'` |
 | ATCLang Zeilen | 32.683 | `wc -l` |
 | Parse-Coverage | 195/205 (95%) | Parser-Lauf (10 .atc mit Syntax-Fehlern) |
 | Python-Compiler | 30 Module (atclang/) | `find` |
 | Test-Dateien | 26 | `find tests/` |
-| Tests | 350 passed, 13 skipped, 0 failed (Python) + 1586 (Rust/ShivaCore) | `pytest --tb=no -q` |
+| Tests | 350 passed, 13 skipped, 0 failed (Python) + 1664 (Rust/ShivaCore) | `pytest --tb=no -q` |
 | Python-Stubs | 21 (nur src/) | `find` |
 | Solidity-Dateien | 0 | Non-EVM bestätigt (AD-007) |
 | ShivaCore Kernel | 712/712 Tests GRÜN | atc-shivacore repo, Commit d3cb52e |
@@ -42,6 +42,8 @@
 - **Issue #79** CI/CD Pipeline — GitHub Token braucht `workflow` scope
 
 ## Letzte Änderungen (04.08.2026)
+- ✅ K-Sprint 44 — Virtual Memory Management (Rust, 2362 Zeilen, 78 Tests)
+- ✅ CoW Fork, Demand Paging, mmap/munmap/mprotect, Shared Memory, Swap, OOM Killer
 - ✅ K-Sprint 43 — SMP / Multi-Core Support (Rust, 2506 Zeilen, 99 Tests)
 - ✅ Per-CPU Run Queues, CPU Affinity, Load Balancing, IPI, Hotplug, Barriers
 - ✅ K-Sprint 42 — Advanced Signal Handling + POSIX RT Signals (Rust, 2249 Zeilen, 82 Tests)
