@@ -70,8 +70,8 @@
 ### ShivaCore Kernel (Sprint 2.4) — 712/712 Tests ✅
 **Repo:** `atc-shivacore` | **Commit:** `d3cb52e` | **Datum:** 04.08.2026
 
-Kernel-Module (alle grün):
-- allocator, block, blockchain, capability, consensus, contract
+Kernel-Module (30 mit Tests, 9 hardware-nah ohne):
+- gossip_bridge(45), genesis_bridge(40), genesis(38), mempool(36), security_audit(34), security(34), atcnet(32), vfs(31), memory_manager(31), tcpip(30), p2p(30), consensus(27), net(26), ai(23), syscall(22), ipc(22), vm(21), atcfs(21), timer(19), knowledge_graph(18), remote_caps(16), cross_subsystem(16), block(16), did(15), blockchain(15), kernel_init(14), contract(12), scheduler(10), process(10), capability(8)
 - did (Ed25519), kernel_init, mempool, net, p2p, process
 - security, syscall, tcpip, timer, vfs, vm
 

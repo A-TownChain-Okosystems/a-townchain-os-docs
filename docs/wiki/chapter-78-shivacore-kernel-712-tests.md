@@ -7,32 +7,62 @@
 
 ## Zusammenfassung
 
-Der ShivaCore Microkernel (L2) erreicht vollständige Test-Abdeckung: **712 Tests, 0 Fehler, 0 Warnings**. Der Kernel ist als `no_std` Rust-Binary kompilierbar (mit `std` für Test-Builds).
+Der ShivaCore Microkernel (L2) erreicht **712 Tests, 0 Fehler, 0 Warnings** über 30 Module. Der Kernel ist als `no_std` Rust-Binary kompilierbar (mit `std` für Test-Builds). 9 hardware-nahe/Infrastruktur-Module haben keine isolierten Unit-Tests.
 
-## Kernel-Module (18)
+## Kernel-Module
 
-| Modul | Tests | Beschreibung |
-|-------|-------|-------------|
-| allocator | ✅ | Page-Allocator, Buddy-System |
-| block | ✅ | Block-Struktur, Serialisierung |
-| blockchain | ✅ | Chain, Genesis, Validation, Pipeline |
-| capability | ✅ | Capability Table, Delegation, check_any |
-| consensus | ✅ | DAG, PoH→PoW→PoS, Slashing, Epochs |
-| contract | ✅ | Deploy, Execute, State |
-| did | ✅ | Ed25519 + Software DIDs, Verifiy |
-| kernel_init | ✅ | Boot-Sequenz, Subsystem-Init |
-| mempool | ✅ | TX-Pool, Validate, Batch, Nonce |
-| net | ✅ | Netzwerk-Stack, TCP/IP |
-| p2p | ✅ | Peers, Handshake, Messages, Gossip |
-| process | ✅ | Process-Manager, Spawn, Kill |
-| security | ✅ | Reputation, Slashing, FNV Hash |
-| syscall | ✅ | 50+ Syscalls, Caps, Context (Node/Contract/Test) |
-| tcpip | ✅ | TCP/IP Stack, Packet-Handling |
-| timer | ✅ | Periodic, Alarm, Monotonic Clock |
-| vfs | ✅ | Virtual FS, Directories, Symlinks |
-| vm | ✅ | Stack-VM, 105 Op-Codes, Store/Load |
+**30 Module mit Tests** (712 gesamt) | **9 Module ohne Tests** (infrastruktur/hardware-nah)
 
-## Bugfixes (18)
+### Module mit Tests (30)
+
+| Modul | # Tests | Beschreibung |
+|-------|---------|-------------|
+| gossip_bridge | 45 | Gossip-Protokoll Bridge, Serialisierung |
+| genesis_bridge | 40 | Genesis Bridge, Cross-Chain |
+| genesis | 38 | Genesis-Block, Konfiguration |
+| mempool | 36 | TX-Pool, Validate, Batch, Nonce |
+| security_audit | 34 | Security-Audit, Schwachstellen |
+| security | 34 | Reputation, Slashing, FNV Hash |
+| atcnet | 32 | ATCNet Protokoll, Peers |
+| vfs | 31 | Virtual FS, Directories, Symlinks |
+| memory_manager | 31 | Memory Management, Konstanten |
+| tcpip | 30 | TCP/IP Stack, Packet-Handling |
+| p2p | 30 | Peers, Handshake, Messages |
+| consensus | 27 | DAG, PoH→PoW→PoS, Slashing, Epochs |
+| net | 26 | Netzwerk-Stack, ARP, Ethernet |
+| ai | 23 | AI-Subsystem, Inferenz |
+| syscall | 22 | 50+ Syscalls, Caps, Context (Node/Contract/Test) |
+| ipc | 22 | IPC Subsystem, Channels |
+| vm | 21 | Stack-VM, 105 Op-Codes, Store/Load |
+| atcfs | 21 | ATC File System, inode, Permissions |
+| timer | 19 | Periodic, Alarm, Monotonic Clock |
+| knowledge_graph | 18 | Knowledge Graph, Entities, Triples |
+| remote_caps | 16 | Remote Capabilities, Delegation |
+| cross_subsystem | 16 | Cross-Subsystem Communication |
+| block | 16 | Block-Struktur, Serialisierung |
+| did | 15 | Ed25519 + Software DIDs, Verify |
+| blockchain | 15 | Chain, Genesis, Validation, Pipeline |
+| kernel_init | 14 | Boot-Sequenz, Subsystem-Init |
+| contract | 12 | Deploy, Execute, State |
+| scheduler | 10 | Scheduler, Round-Robin, Priority |
+| process | 10 | Process-Manager, Spawn, Kill |
+| capability | 8 | Capability Table, Delegation, check_any |
+
+### Module ohne Tests (9)
+
+| Modul | Grund |
+|-------|-------|
+| allocator | `#[global_allocator]` — kann nicht isoliert getestet werden |
+| memory | Hardware-nah (Page Tables, CR3) |
+| gdt | x86 GDT-Setup (Boot-Phase) |
+| interrupts | x86 IDT/IRQ (Hardware-Trigger) |
+| serial | UART Serial Console (Hardware I/O) |
+| framebuffer | VGA Framebuffer (Video Memory) |
+| ats1000 | ATC-1000 Standard Stub |
+| lib | Crate Root (Re-Exports) |
+| main | Binary Entry Point |
+
+## Bugfixes
 
 1. **lib.rs** — `cfg_attr(not(test), no_std)` für Kernel-Binary + `#[global_allocator]` auf `cfg(not(test))`
 2. **security.rs** — FNV-Hash Buffer Overflow (`step_by(4)` bei <4-Byte-Input)

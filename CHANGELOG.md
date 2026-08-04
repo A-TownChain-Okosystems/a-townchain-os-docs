@@ -8,7 +8,7 @@
 
 ### ShivaCore Kernel (Sprint 2.4 → 90%)
 - ✅ **712/712 Tests GRÜN** (Rust, no_std, 0 warnings, 0 errors)
-- ✅ 18 Kernel-Module: allocator, block, blockchain, capability, consensus, contract, did, kernel_init, mempool, net, p2p, process, security, syscall, tcpip, timer, vfs, vm
+- ✅ 30 Kernel-Module mit Tests (712 total): gossip_bridge(45), genesis_bridge(40), genesis(38), mempool(36), security_audit(34), security(34), atcnet(32), vfs(31), memory_manager(31), tcpip(30), p2p(30), consensus(27), net(26), ai(23), syscall(22), ipc(22), vm(21), atcfs(21), timer(19), knowledge_graph(18), remote_caps(16), cross_subsystem(16), block(16), did(15), blockchain(15), kernel_init(14), contract(12), scheduler(10), process(10), capability(8)
 - ✅ lib.rs: cfg_attr(not(test), no_std) — Kernel ist no_std, Tests nutzen std
 - ✅ Bugfixes: FNV hash overflow, VM Store opcode, contract deploy, p2p msg parsing, Ed25519 unique keys, timer periodic intervals, capability check_any, consensus DAG, unban score reset
 - **Commit:** `d3cb52e` in `atc-shivacore`

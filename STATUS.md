@@ -48,7 +48,7 @@ GitHub · Notion · Sheets · Docs · Slides · Calendar · Drive · Analytics �
 | Tests | 712/712 ✅ |
 | Warnings | 0 |
 | Errors | 0 |
-| Module | 18 (allocator, block, blockchain, capability, consensus, contract, did, kernel_init, mempool, net, p2p, process, security, syscall, tcpip, timer, vfs, vm) |
+| Module | 30 mit Tests (712 total), 9 ohne Tests (hardware/infra) |
 | Commit | `d3cb52e` (04.08.2026) |
 | Repo | `atc-shivacore` |
 
