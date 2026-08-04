@@ -1,8 +1,8 @@
-# 📖 shivaos-kernel-wiki
+# 📖 atc-shivacore-wiki
 
-> Offizielle Dokumentation für [shivaos-kernel](https://github.com/A-TownChain-Okosystems/shivaos-kernel) — **L2 Kernel** im A-TownChain Ökosystem
+> Offizielle Dokumentation für [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore) — **L2 Kernel** im A-TownChain Ökosystem
 
-[![Code](https://img.shields.io/badge/Code-shivaos-kernel-blue)](https://github.com/A-TownChain-Okosystems/shivaos-kernel)
+[![Code](https://img.shields.io/badge/Code-atc-shivacore-blue)](https://github.com/A-TownChain-Okosystems/atc-shivacore)
 [![KAI-OS](https://img.shields.io/badge/KAI--OS-Wiki-purple)](https://github.com/ShivaCoreDev/kai-os-wiki)
 [![Ökosystem](https://img.shields.io/badge/Ökosystem-A--TownChain-green)](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/feature/kai-os-integration/ECOSYSTEM.md)
 
@@ -10,7 +10,7 @@
 
 ## 📦 Zugehöriges Code-Repo
 
-**→ [shivaos-kernel](https://github.com/A-TownChain-Okosystems/shivaos-kernel)** (`main` Branch)
+**→ [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore)** (`main` Branch)
 
 ---
 
@@ -21,7 +21,7 @@ Alle Code-Repos auf einen Blick:
 | Repo | Layer | Beschreibung |
 |------|-------|-------------|
 | [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os) | `L2–L4` | Haupt-Repo — KAI-OS Core |
-| [shivaos-kernel](https://github.com/A-TownChain-Okosystems/shivaos-kernel) | `L2` | Microkernel, IPC, ATCFS |
+| [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore) | `L2` | Microkernel, IPC, ATCFS |
 | [atcnet](https://github.com/A-TownChain-Okosystems/atcnet) | `L5` | P2P Netzwerk, Bootstrap |
 | [atc-gateway](https://github.com/A-TownChain-Okosystems/atc-gateway) | `L7` | API Gateway Port 4000 |
 | [atclang](https://github.com/A-TownChain-Okosystems/atclang) | `L2-L4` | Proprietäre Sprache |

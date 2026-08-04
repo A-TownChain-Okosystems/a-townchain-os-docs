@@ -23,10 +23,10 @@
 
 | Sprint | Titel | Status | % | Standards | Issues |
 |--------|-------|--------|---|-----------|--------|
-| | **2.1** | ATCLang Node Bootstrap | 🔵 AKTIV | 93% | | ATC-81–86, 92–94 | #72, #73, #74, #81 |
+| | **2.1** | ATCLang Node Bootstrap | 🔵 AKTIV | 98% | | ATC-81–86, 92–94 | #72, #73, #74, #81 |
 | **2.2** | P2P + Testnet | ✅ FERTIG | 100% | ATC-01, 06, 07 | #75, #82, #83, #84 |
 | **2.3** | Consensus + Gas | 🔵 AKTIV | 95% | ATC-11, 13, 14, 19, 20, 23, 87–89 | #76 |
-| **2.4** | Kernel + Syscalls | 🔵 AKTIV | 85% | ATC-08, 09, 10, 21, 22, 96 | #77 |
+| **2.4** | Kernel + Syscalls | 🔵 AKTIV | 90% | ATC-08, 09, 10, 21, 22, 96 | #77 |
 | **2.5** | NFT + Marketplace | ✅ FERTIG | 100% | ATC-12, 15, 16, 90, 95 | — |
 | **2.6** | Governance + Security | 🔵 AKTIV | 85% | ATC-02–05, 17, 18, 91 | #78 |
 | **2.7** | Testing + CI/CD | 🟡 PLANNED | 10% | ATC-98 | #79 |
@@ -54,26 +54,35 @@
 
 ## Kritische Pfade
 
-### Sprint 2.1 (Fast fertig — 19 Parser-Fixes verbleiben)
+### Sprint 2.1 (Fast fertig — Parser-Coverage steht)
 1. ✅ #72 ATCLang Compiler (ATC-92) — Lexer + Parser + AST
 2. ✅ #73 ATCLang VM (ATC-93) — 105 Op-Codes + Stack-VM
 3. ✅ #81 ATCLang Stdlib (ATC-94) — 14 Module
 4. ✅ #74 Konsens-Migration (ATC-81–86) — alle 6 Module als .atc
-5. 🔴 Parser-Coverage 186/198 — 5 Fix-Kategorien verbleibend identifiziert
+5. ✅ ShivaCore Kernel — 712/712 Tests GRÜN (Rust, no_std)
+6. 🔄 Parser-Coverage 198/198 — f-String-Lexer-Fix gepusht, 12 Restkategorien identifiziert
 
 ### Blocker (→ Michael)
 - **AD-004** Chain-ID 9000 — REOPENED, Entscheidung nötig
 - **AD-005** ATC-97 Protocol — Spezifikation finalisieren
 - **#79** CI/CD Pipeline Fix — Branch-Protection blockiert API-Push
 
-### Parser-Fix-Prioritäten (19 Fehler → 100% Coverage)
-1. `::` Path-Operator (Type::method, Enum::Variant) — 7 Dateien
-2. `if let Some(x) = expr` Pattern-Matching — 4 Dateien
-3. `Ok(())` / Unit-Typ `()` als Expression — 3 Dateien
-4. `map { k => v }` Map-Literal + `as` Cast — 2 Dateien
-5. `&mut` Referenz-Operator — 1 Datei
-6. Tuple-Typ in Generics `Option<(A, B)>` — 1 Datei
-7. `return;` in Inline-Blocks — 1 Datei
+### ShivaCore Kernel (Sprint 2.4) — 712/712 Tests ✅
+**Repo:** `atc-shivacore` | **Commit:** `d3cb52e` | **Datum:** 04.08.2026
+
+Kernel-Module (alle grün):
+- allocator, block, blockchain, capability, consensus, contract
+- did (Ed25519), kernel_init, mempool, net, p2p, process
+- security, syscall, tcpip, timer, vfs, vm
+
+Fixes: lib.rs no_std, FNV hash overflow, VM Store opcode, contract deploy,
+  p2p min msg size, Ed25519 unique seeds, timer periodic intervals,
+  capability check_any, consensus DAG parallel tips, unban score reset
+
+### Parser-Coverage (Sprint 2.1) — verbleibend
+- f-String-Lexer-Fix ✅ gepusht (Commit 595d731)
+- 12 Python-Indent-Dialekt-Dateien (modules/assets/) — Transpiler in Arbeit
+- 7 Einzelfehler (if-let, unit type, &mut, map/cast, tuple generics)
 
 ---
-*Aurora · 03.08.2026 15:30 (Europe/Berlin) · Commit de175b0*
+*Aurora · 04.08.2026 12:00 (Europe/Berlin) · Commit d3cb52e*

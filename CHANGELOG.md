@@ -4,6 +4,23 @@
 
 ---
 
+## [v1.0.0] — 2026-08-04 — ShivaCore Kernel 712/712 Tests + Parser-Fixes
+
+### ShivaCore Kernel (Sprint 2.4 → 90%)
+- ✅ **712/712 Tests GRÜN** (Rust, no_std, 0 warnings, 0 errors)
+- ✅ 18 Kernel-Module: allocator, block, blockchain, capability, consensus, contract, did, kernel_init, mempool, net, p2p, process, security, syscall, tcpip, timer, vfs, vm
+- ✅ lib.rs: cfg_attr(not(test), no_std) — Kernel ist no_std, Tests nutzen std
+- ✅ Bugfixes: FNV hash overflow, VM Store opcode, contract deploy, p2p msg parsing, Ed25519 unique keys, timer periodic intervals, capability check_any, consensus DAG, unban score reset
+- **Commit:** `d3cb52e` in `atc-shivacore`
+
+### ATCLang Parser (Sprint 2.1 → 98%)
+- ✅ f-String-Lexer-Fix gepusht (Commit `595d731`) — `f"...{expr}..."` via Lexer-Desugaring
+- 🔄 12 Python-Indent-Dialekt-Dateien (modules/assets/) — Transpiler in Arbeit
+- 🔄 7 Einzelfehler kategorisiert: if-let, unit type, &mut, map/cast, tuple generics
+
+### Sprint-Status (aktualisiert)
+- 2.1: 98% | 2.2: 100% ✅ | 2.3: 95% | 2.4: 90% | 2.5: 100% ✅ | 2.6: 85% | 3.0: 20%
+
 ## [v1.0.0] — 2026-07-05 — ATCLang Migration Complete + Sprint Updates
 
 ### ATCLang Migration

@@ -41,5 +41,19 @@
 ## Integrationen (17 aktiv)
 GitHub · Notion · Sheets · Docs · Slides · Calendar · Drive · Analytics · BigQuery · Search Console · Outlook · Gmail · Classroom · Teams · OneDrive · Tasks · Meet · Hugging Face
 
+## ShivaCore Kernel (Sprint 2.4)
+
+| Metrik | Wert |
+|--------|------|
+| Tests | 712/712 ✅ |
+| Warnings | 0 |
+| Errors | 0 |
+| Module | 18 (allocator, block, blockchain, capability, consensus, contract, did, kernel_init, mempool, net, p2p, process, security, syscall, tcpip, timer, vfs, vm) |
+| Commit | `d3cb52e` (04.08.2026) |
+| Repo | `atc-shivacore` |
+
+**Fixes (18 Bugfixes):**
+- lib.rs no_std, FNV hash overflow, VM Store opcode, contract deploy, p2p msg parsing, Ed25519 unique keys, timer periodic intervals, capability check_any, consensus DAG parallel tips, unban score reset, blockchain genesis+consensus, p2p Connecting status
+
 ## Letzter Sync
 - **Datum:** 2026-08-04 | **Agent:** Aurora v3.0 | **Nächster:** 2026-08-05 08:05
