@@ -11,7 +11,7 @@
 | Parse-Coverage | 195/205 (95%) | Parser-Lauf (10 .atc mit Syntax-Fehlern) |
 | Python-Compiler | 30 Module (atclang/) | `find` |
 | Test-Dateien | 26 | `find tests/` |
-| Tests | 350 passed, 13 skipped, 0 failed (Python) + 1748 (Rust/ShivaCore) | `pytest --tb=no -q` |
+| Tests | 350 passed, 13 skipped, 0 failed (Python) + 1823 (Rust/ShivaCore) | `pytest --tb=no -q` |
 | Python-Stubs | 21 (nur src/) | `find` |
 | Solidity-Dateien | 0 | Non-EVM bestätigt (AD-007) |
 | ShivaCore Kernel | 712/712 Tests GRÜN | atc-shivacore repo, Commit d3cb52e |
@@ -42,6 +42,8 @@
 - **Issue #79** CI/CD Pipeline — GitHub Token braucht `workflow` scope
 
 ## Letzte Änderungen (04.08.2026)
+- ✅ K-Sprint 46 — Kernel Tracing & Profiling (Rust, 2254 Zeilen, 75 Tests)
+- ✅ RingBuffer, FunctionTracer, SyscallTracer (strace), Profiler (perf), Histograms, LatencyTracker
 - ✅ K-Sprint 45 — Copy-on-Write Fork Engine (Rust, 1484 Zeilen, 84 Tests)
 - ✅ CoW Page-Sharing-Map, KSM-Dedup, Container-CoW, Batched TLB, Process Tree
 - ✅ K-Sprint 44 — Virtual Memory Management (Rust, 2362 Zeilen, 78 Tests)
