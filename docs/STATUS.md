@@ -42,6 +42,8 @@
 - **Issue #79** CI/CD Pipeline — GitHub Token braucht `workflow` scope
 
 ## Letzte Änderungen (04.08.2026)
+- ✅ K-Sprint 48 — Loadable Kernel Modules (Rust, 2997 Zeilen, 100 Tests)
+- ✅ Module State Machine, Dependency Graph (Topo Sort + Cycle Detection), Symbol Table, Auto-Load, 10 Built-in Modules
 - ✅ K-Sprint 47 — Container Networking (Rust, 632 Zeilen, 103 Tests)
 - ✅ Network Namespaces, veth Pairs, Bridge (MAC/ARP Learning), DHCP, Firewall (nftables), DNAT/MASQUERADE, DNS
 - ✅ K-Sprint 46 — Kernel Tracing & Profiling — Kernel Tracing & Profiling (Rust, 2254 Zeilen, 75 Tests)
