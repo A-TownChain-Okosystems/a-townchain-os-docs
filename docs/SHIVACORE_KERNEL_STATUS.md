@@ -472,3 +472,37 @@ Zwei Implementierungen des `CryptoProvider`-Traits:
 **Verifiziert:** `cargo test` mit Rust 1.97 → **99/99 passed** (8 Capability + 10 Process + 10 Scheduler + 22 IPC + 15 DID + 16 RCT + 18 KG). Tests decken: Entity-Erzeugung, Triple+Query, Write-Cap-Reject, Read-Cap-Filter, grant_read, outgoing/incoming, transitive_closure (3-Hop, max_depth, Zyklus), Literal-Werte (String/Int/Bool), remove_triple, delete_entity, Wildcard-Query, EntityNotFound, Cross-Process-Isolation, Triple-Counter.
 
 *Implementiert von Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`.*
+
+
+---
+
+## ✅ Milestone: MemoryManager + ATCFS in Rust (04.08.2026)
+
+> K-Sprint 8: ats1000 Traits MemoryManager + FileSystem implementiert.
+
+**`atc-shivacore/kernel/src/memory_manager.rs`** (neu, ~280 Zeilen):
+- `KernelMemoryManager` — implementiert `ats1000::MemoryManager`-Trait
+- Bump-Allocator mit 4KB-Alignment (Userspace-Simulation, 100 MiB Limit)
+- `allocate()` — vergibt automatisch READ+WRITE+EXEC+DELEGATE Capability
+- `deallocate()` — prueft WRITE-Cap, widerruft alle Capabilities
+- `read_check()` — prueft READ-Cap vor Speicherzugriff
+- `stats()` — total_allocated, peak_allocated, active_regions
+- ats1000 Trait: `alloc()`, `free()`, `mmap()` implementiert
+
+**`atc-shivacore/kernel/src/atcfs.rs`** (neu, ~420 Zeilen):
+- `AtcFileSystem` — implementiert `ats1000::FileSystem`-Trait
+- Content-Adressierung: `atc1` + SHA3-256(`atcfs_v1||` + data)
+- `write_file()` / `read_file()` / `ls()` / `delete_file()` / `create_dir()`
+- Owner-basierte Zugriffskontrolle: oeffentliche Pfade `/atc/` und `/tmp/`, Rest owner-only
+- `export_manifest()` — root_hash + file_count fuer On-Chain-Anchoring
+- ats1000 Trait: `open()`, `read()`, `write()`, `close()` mit File-Handles + Offset-Tracking
+
+**ats1000 Trait Status:**
+| Trait | Status | Implementierung |
+|-------|--------|-----------------|
+| ProcessManager | DONE | process.rs (K3b) |
+| MemoryManager | DONE | memory_manager.rs (K8) |
+| FileSystem | DONE | atcfs.rs (K8) |
+| NetworkStack | STUB | (K7 ATCNet, offen) |
+
+**Verifiziert:** cargo test -> 133/133 passed (8 Cap + 10 Proc + 10 Sched + 22 IPC + 15 DID + 16 RCT + 18 KG + 12 MemMgr + 22 ATCFS).
