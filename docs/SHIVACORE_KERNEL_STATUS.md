@@ -589,3 +589,27 @@ Zwei Implementierungen des `CryptoProvider`-Traits:
   - Stress Test: 50 Prozesse mit Memory + File
 
 **Verifiziert:** cargo test → 178/178 passed (162 bisherige + 15 neue Cross-Subsystem + 1 delegate_fix).
+
+
+---
+
+## ✅ Milestone: ATCNet Protocol Handler (04.08.2026)
+
+> K-Sprint 24: ATC-01 Core Node Protocol auf TCP/IP-Layer.
+
+**`atcnet.rs`** (neu, ~800 Zeilen, 32 Tests):
+
+ATC-01 Core Node Protocol Handler mit 10 Nachrichtentypen:
+- Handshake (DID + Chain-ID 9000 + Blockhöhe)
+- PeerList (Peer-Austausch)
+- BlockAnn (triggert GetBlocks bei höherer Höhe)
+- TxBroadcast (Gossip an alle Peers)
+- Ping/Pong (Keep-Alive)
+- GetBlocks/Blocks (Block-Sync)
+- GetMempool/Mempool (Mempool-Sync)
+
+AtcNetHandler: Peer-Verbindungsverwaltung, State Machine (Connecting→Handshaking→Connected→Disconnected), Chain-ID-Check, Protokoll-Version-Check, MAX_MESSAGE_SIZE DoS-Schutz.
+Serializer/Deserializer für alle Nachrichtentypen (LE-Encoding).
+ats1000::NetworkStack Trait implementiert.
+
+**Verifiziert:** cargo test → 210/210 passed (178 bisherige + 32 neue ATCNet Tests).
