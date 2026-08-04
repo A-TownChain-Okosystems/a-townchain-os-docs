@@ -698,3 +698,25 @@ GenesisBridge::propose_block(): Post-Genesis Block-Erzeugung mit PoH-Verknüpfun
 Multi-Node Tests: Block-Propagation (3 Nodes) + Chain-Convergence (Block-Sync über 3 Blöcke).
 
 **Verifiziert:** cargo test → 333/333 passed (288 bisherige + 45 neue Gossip Bridge Tests).
+
+
+---
+
+## ✅ Milestone: Security Audit (04.08.2026)
+
+> K-Sprint 29: Issue #69 — Systematische Prüfung aller Kernel-Subsysteme
+
+**`security_audit.rs`** (neu, ~800 Zeilen, 34 Tests):
+
+7 Audit-Kategorien mit 30+ Checks:
+1. **Chain-Integrity**: Genesis height 0, Chain-ID 9000, parent-hash linkage, no duplicates
+2. **Genesis Security**: Signature verifiziert, validators non-empty, allocations, state_root, validator count [4,100]
+3. **Validator Security**: Total stake > 0, active count, proposer selection, BFT threshold (66.7%), single-validator dominance (<33%)
+4. **PoH Integrity**: Genesis hash seed (not [0x42;32]), tick count, verification, advancement
+5. **Capability Enforcement**: Chain-ID validation, unsigned rejection, height validation, duplicate genesis, orphan parent
+6. **Network Security**: Chain-ID sync with atcnet, protocol version, MAX_MESSAGE_SIZE, genesis hash non-zero
+7. **Block Validation**: Chain-ID per block, proposer DID, PoH hash, state root
+
+5 Attack-Vector-Simulationen: Chain Forgery, Genesis Replay, Height Skip, Orphan Block, Unsigned Genesis.
+
+**Verifiziert:** cargo test → 367/367 passed (333 bisherige + 34 neue Security Audit Tests).
