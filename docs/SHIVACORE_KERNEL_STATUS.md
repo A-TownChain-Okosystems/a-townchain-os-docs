@@ -506,3 +506,34 @@ Zwei Implementierungen des `CryptoProvider`-Traits:
 | NetworkStack | STUB | (K7 ATCNet, offen) |
 
 **Verifiziert:** cargo test -> 133/133 passed (8 Cap + 10 Proc + 10 Sched + 22 IPC + 15 DID + 16 RCT + 18 KG + 12 MemMgr + 22 ATCFS).
+
+
+---
+
+## ✅ Milestone: MemoryManager Heap-Bridge Integration (04.08.2026)
+
+> K-Sprint 8 Update: Vollstaendige Integration von memory_manager.rs mit allocator.rs.
+
+**Heap-Bridge (L0 <-> L1):**
+- `AllocSource` Enum: `KernelHeap` (echte `alloc::alloc`) vs `UserspaceBump` (virtuelle Adress-Simulation)
+- Allokationen <= `heap_threshold` (4KB) -> echter Kernel-Heap (`alloc::alloc` + `Layout`)
+- Allokationen > `heap_threshold` -> Userspace-Bump (separater Adressbereich `0x555555550000`)
+- `deallocate()` bei KernelHeap-Regionen: echte `dealloc()` mit gespeichertem `Layout`
+- `heap_allocations` Map: `region_id -> (size, Layout)` fuer sichere dealloc
+
+**MemorySubsystem (L1.5):**
+- Vereint Heap-Bruecke + Prozess-Regionen + CapabilityTable in einem Struct
+- `init_kernel()`: Kernel-Init-Sequenz (wird nach `allocator::init_heap()` aufgerufen)
+- `allocate/deallocate/read_check/write_check` als unified API
+- `with_heap_threshold()`: konfigurierbare Routing-Schwelle
+
+**Konstanten-Synchronisation (allocator.rs <-> memory_manager.rs):**
+- `HEAP_START = 0x444444440000` (identisch zu allocator.rs)
+- `HEAP_SIZE = 100 * 1024` (identisch zu allocator.rs)
+- `HEAP_END = HEAP_START + HEAP_SIZE`
+- `USERSPACE_BASE = 0x555555550000` (getrennt vom Kernel-Heap)
+- `validate_heap_config()`: Boot-Time Validierung
+- `boot_log()`: Kernel-Boot-Meldung
+- `is_heap_address()/is_userspace_address()`: Adress-Bereichs-Checks
+
+**Verifiziert:** cargo test -> 151/151 passed (8 Cap + 10 Proc + 10 Sched + 22 IPC + 15 DID + 16 RCT + 18 KG + 28 MemMgr + 22 ATCFS). Neue Tests: Heap-Alloc, Userspace-Alloc, mixed, dealloc-stress (100x), threshold-routing, subsystem-init, subsystem-isolation, boot-log, konstanten-validierung.
