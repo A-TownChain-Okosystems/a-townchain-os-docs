@@ -613,3 +613,25 @@ Serializer/Deserializer für alle Nachrichtentypen (LE-Encoding).
 ats1000::NetworkStack Trait implementiert.
 
 **Verifiziert:** cargo test → 210/210 passed (178 bisherige + 32 neue ATCNet Tests).
+
+
+---
+
+## ✅ Milestone: Type-Mismatch Bereinigung — einheitlicher Pid-Typ (04.08.2026)
+
+> K-Sprint 25: `capability::Pid` und `ats1000::Pid` zu einem einzigen Typ vereinheitlicht. Issue #1 gelöst.
+
+**Änderungen:**
+
+1. **ats1000.rs**: `pub type Pid = u32` → `pub struct Pid(pub u32)` mit derives (Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord)
+2. **capability.rs**: `pub struct Pid(pub u32)` entfernt → `pub use crate::ats1000::Pid` (Re-Export)
+3. **memory_manager.rs**: `CapPid`-Alias entfernt, `CapPid(pid)` → `pid`, test helper `pid(n)` → `Pid(n)`
+4. **cross_subsystem.rs**: 27× `.0`-Konvertierungen entfernt, `CapPid(1)` → `Pid(1)`
+5. **kernel_init.rs**: bare integers → `Pid(1)` für MemorySubsystem-Aufrufe
+
+**Ergebnis:**
+- Ein einziger `Pid`-Typ im gesamten Kernel
+- Keine manuellen `.0` oder `CapPid()` Konvertierungen mehr nötig
+- Alle 210 Tests weiterhin grün
+- `cross_subsystem.rs` TestHarness nutzt einheitlichen `Pid`-Typ
+- `ats1000::MemoryManager` Trait nutzt denselben `Pid`-Typ wie `ProcessManager`
