@@ -564,3 +564,28 @@ Zwei Implementierungen des `CryptoProvider`-Traits:
 - 11 Tests
 
 **Verifiziert:** cargo test -> 162/162 passed (alle bisherigen Tests + 11 neue kernel_init Tests).
+
+
+---
+
+## ✅ Milestone: Cross-Subsystem Integration Tests (04.08.2026)
+
+> K-Sprint 23: 15 Integration-Tests über alle Kernel-Subsysteme.
+
+**`cross_subsystem.rs`** (neu, ~450 Zeilen):
+- `TestHarness` struct: vereinigt CapabilityTable + KernelMemoryManager + AtcFileSystem + ProcessManager + IpcSubsystem
+- 15 Flows testen den kompletten Kernel-End-to-End:
+  - Full Process Lifecycle (Spawn → Memory → FS → Free → Kill)
+  - IPC zwischen Prozessen (Channel, Grant, Send, Recv)
+  - Capability-Isolation (Prozess A kann nicht auf Prozess B's Speicher/Dateien zugreifen)
+  - Parent-Child-Delegation (READ delegieren, WRITE verweigern)
+  - Broadcast-Channel (mehrere Sender, ein Empfänger)
+  - Content-Addressed Sharing (gleiche CID für gleichen Content)
+  - Memory-Stats (per-PID, Peak-Tracking)
+  - Prozess-Prioritäten, Zustandsübergänge
+  - KernelState Boot + Smoke Test
+  - IPC-Cleanup, Mixed Heap/Userspace, ats1000 Traits
+  - FS-Manifest (root_hash ändert sich bei neuen Dateien)
+  - Stress Test: 50 Prozesse mit Memory + File
+
+**Verifiziert:** cargo test → 178/178 passed (162 bisherige + 15 neue Cross-Subsystem + 1 delegate_fix).
