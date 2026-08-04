@@ -376,3 +376,21 @@ zeitversetzt oder parallel arbeiten.
 - **Message:** `Merge branch 'main' of https://github.com/A-TownChain-Okosystems/a-townchain-os`
 - **Finding:** Commit matches the Aurora/Base44 bot pattern but lacks the required `[agent: ...]` signature.
 - **Action:** Recorded for audit; future agent commits must include the standard signature.
+
+### Unsigned Agent Commits — 2026-08-04
+
+- **Repository:** `a-townchain-os-docs`
+- **Commit:** `1b2db0b08c` (full SHA available in Git history)
+- **Author:** Aurora (Base44 Superagent) <aurora@base44-superagent.local>
+- **Date:** 2026-08-03 06:22 UTC
+- **Message:** `docs: record unsigned agent commit 6ba93370fd`
+- **Finding:** Commit matches the Aurora/Base44 bot pattern but lacks the required `[agent: ...]` signature.
+
+- **Repository:** `kai-os-wiki`
+- **Commit:** `9667e0fe2b` (full SHA available in Git history)
+- **Author:** Aurora (Base44 Superagent) <aurora@base44-superagent.local>
+- **Date:** 2026-08-03 06:22 UTC
+- **Message:** `docs: record unsigned agent commit 6ba93370fd`
+- **Finding:** Commit matches the Aurora/Base44 bot pattern but lacks the required `[agent: ...]` signature.
+
+- **Action:** Recorded for audit; future agent commits must include the standard signature.
