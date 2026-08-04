@@ -655,3 +655,25 @@ Genesis Block Konfiguration für A-TownChain Mainnet (Chain-ID 9000):
 - Integration: Chain-ID synchron mit atcnet::CHAIN_ID (9000)
 
 **Verifiziert:** cargo test → 248/248 passed (210 bisherige + 38 neue Genesis Tests).
+
+
+---
+
+## ✅ Milestone: Genesis Bridge (04.08.2026)
+
+> K-Sprint 27: Verbindet genesis.rs (K26) mit blockchain.rs (K18) und consensus.rs (K16).
+
+**`genesis_bridge.rs`** (neu, ~700 Zeilen, 40 Tests):
+
+6 Integration-Gaps geschlossen:
+1. **GenesisBlock → BridgeBlock**: Konverter mit state_root, validator_set, allocations, chain_id
+2. **PoH-Seed**: BridgePoh wird mit echtem Genesis-Hash geseedt (nicht mehr [0x42;32])
+3. **Validator Bulk-Init**: BridgeValidatorRegistry::from_genesis() initialisiert alle Validator aus GenesisConfig
+4. **State Root**: GenesisState → BridgeBlock.state_root (nicht mehr [0;32])
+5. **Chain-ID-Validierung**: add_genesis + add_block prüfen Chain-ID 9000
+6. **Signatur-Verifikation**: Unsigned Genesis-Blocks werden abgelehnt
+
+GenesisBridge::init_from_config(): 1-Aufruf-Initialisierung der kompletten Chain aus GenesisConfig.
+GenesisBridge::propose_block(): Post-Genesis Block-Erzeugung mit PoH-Verknüpfung + State-Root.
+
+**Verifiziert:** cargo test → 288/288 passed (248 bisherige + 40 neue Genesis Bridge Tests).
