@@ -42,7 +42,9 @@
 - **Issue #79** CI/CD Pipeline — GitHub Token braucht `workflow` scope
 
 ## Letzte Änderungen (04.08.2026)
-- ✅ K-Sprint 46 — Kernel Tracing & Profiling (Rust, 2254 Zeilen, 75 Tests)
+- ✅ K-Sprint 47 — Container Networking (Rust, 632 Zeilen, 103 Tests)
+- ✅ Network Namespaces, veth Pairs, Bridge (MAC/ARP Learning), DHCP, Firewall (nftables), DNAT/MASQUERADE, DNS
+- ✅ K-Sprint 46 — Kernel Tracing & Profiling — Kernel Tracing & Profiling (Rust, 2254 Zeilen, 75 Tests)
 - ✅ RingBuffer, FunctionTracer, SyscallTracer (strace), Profiler (perf), Histograms, LatencyTracker
 - ✅ K-Sprint 45 — Copy-on-Write Fork Engine (Rust, 1484 Zeilen, 84 Tests)
 - ✅ CoW Page-Sharing-Map, KSM-Dedup, Container-CoW, Batched TLB, Process Tree
