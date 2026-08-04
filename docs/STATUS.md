@@ -6,12 +6,12 @@
 |--------|------|-------------|
 | System-Version | v1.0.0 | |
 | ATC-Standards | 99 (ATC-01 bis ATC-99) | Entity count |
-| .atc Dateien | 207 (aktive) + 15 (archiviert) | `find . -name '*.atc'` |
+| .atc Dateien | 208 (aktive) + 15 (archiviert) | `find . -name '*.atc'` |
 | ATCLang Zeilen | 32.683 | `wc -l` |
 | Parse-Coverage | 195/205 (95%) | Parser-Lauf (10 .atc mit Syntax-Fehlern) |
 | Python-Compiler | 30 Module (atclang/) | `find` |
 | Test-Dateien | 26 | `find tests/` |
-| Tests | 350 passed, 13 skipped, 0 failed (Python) + 1405 (Rust/ShivaCore) | `pytest --tb=no -q` |
+| Tests | 350 passed, 13 skipped, 0 failed (Python) + 1487 (Rust/ShivaCore) | `pytest --tb=no -q` |
 | Python-Stubs | 21 (nur src/) | `find` |
 | Solidity-Dateien | 0 | Non-EVM bestätigt (AD-007) |
 | ShivaCore Kernel | 712/712 Tests GRÜN | atc-shivacore repo, Commit d3cb52e |
@@ -42,6 +42,8 @@
 - **Issue #79** CI/CD Pipeline — GitHub Token braucht `workflow` scope
 
 ## Letzte Änderungen (04.08.2026)
+- ✅ K-Sprint 42 — Advanced Signal Handling + POSIX RT Signals (Rust, 2249 Zeilen, 82 Tests)
+- ✅ 63 POSIX Signals, Coalescing, Signal Groups, Container Forwarding, Interval Timers
 - ✅ K-Sprint 41 — Container Isolation + Agent Sandboxing (Rust, 2757 Zeilen, 101 Tests)
 - ✅ 7 Namespace-Typen, ResourceLimits, SyscallFilter (Seccomp-Style), HealthChecks
 - ✅ ATCLang Container Runtime Interface (537 Zeilen) zu kernel_api hinzugefügt
