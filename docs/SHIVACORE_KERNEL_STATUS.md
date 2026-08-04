@@ -635,3 +635,23 @@ ats1000::NetworkStack Trait implementiert.
 - Alle 210 Tests weiterhin grün
 - `cross_subsystem.rs` TestHarness nutzt einheitlichen `Pid`-Typ
 - `ats1000::MemoryManager` Trait nutzt denselben `Pid`-Typ wie `ProcessManager`
+
+
+---
+
+## ✅ Milestone: Genesis Block Configuration (04.08.2026)
+
+> K-Sprint 26: Issue #71 — Genesis Block Konfiguration & Signierung (Chain-ID 9000)
+
+**`genesis.rs`** (neu, ~750 Zeilen, 38 Tests):
+
+Genesis Block Konfiguration für A-TownChain Mainnet (Chain-ID 9000):
+- `GenesisConfig`: Chain-ID, initiale Validator (DID + Pubkey + Stake + Commission), Token-Allokationen (mit LockType: None/Vesting/TimeLock), Konsens-Parameter (block_time=3s, threshold=66.7%, slash=10%), Netzwerk-Parameter (p2p_port=9000, rpc_port=9001, max_peers=50)
+- `GenesisBlock`: Height 0, genesis_hash, state_root, validator_set, allocations, signatur
+- `GenesisState`: Balances, Validators, Nonces, Contracts → state_root()
+- `GenesisBuilder`: build() mit Validierung, sign(), verify(), export_json()
+- Deterministischer Hash (gleiche Config = gleicher Genesis-Hash)
+- Validierung: Chain-ID 9000, 4-100 Validator, Stake ≥ 1000 ATC, ATC-Adress-Präfix, keine Duplikate
+- Integration: Chain-ID synchron mit atcnet::CHAIN_ID (9000)
+
+**Verifiziert:** cargo test → 248/248 passed (210 bisherige + 38 neue Genesis Tests).
