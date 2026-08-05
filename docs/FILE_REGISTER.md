@@ -19,6 +19,16 @@
 | **ATCLang (.atc)** | 902 |
 | **Rust (.rs)** | 136 |
 | **TypeScript (.ts)** | 127 |
+
+
+## Per-Repo File Registers
+
+> Jedes Code-Repo hat zusätzlich ein eigenständiges Datei-Register:
+> - **Im Haupt-Wiki:** `docs/file_registers/<REPO>_FILE_REGISTER.md` — siehe [Index](file_registers/README.md)
+> - **Im jeweiligen Wiki-Repo:** `FILE_REGISTER.md` (für Repos mit eigenem Wiki)
+
+---
+
 | **Andere** | 2916 |
 
 ---
