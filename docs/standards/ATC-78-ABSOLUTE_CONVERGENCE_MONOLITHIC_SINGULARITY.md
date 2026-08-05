@@ -1,7 +1,7 @@
 # ATC-78 — Absolute Convergence & Monolithic Singularity Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-78
 > **Tier:** 34 — The Absolute Monolith
 > **Referenzen:** ATC-01 (Core Node), ATC-74 (Mythen), ATC-76 (Archiv), ATC-04 (Konsens), ATC-64 (Wissenssynthese), ATC-78 (Singularität)

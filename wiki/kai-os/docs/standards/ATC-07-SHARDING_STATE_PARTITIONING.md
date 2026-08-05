@@ -1,7 +1,7 @@
 # ATC-07 — Network-Level Sharding & State Partitioning
 
 > **Issue:** #84 | **Wiki:** Kap.37 | **Sprint:** 2.2
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-07
 > **Referenzen:** ATC-02 (Liquid State), ATC-04 (DAG Consensus), ATC-03 (Zero-Trust), ATC-05 (PQC)
 > **Quelldatei:** Atc-07.docx (urspruengliche Spezifikation)

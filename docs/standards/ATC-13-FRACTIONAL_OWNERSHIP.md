@@ -1,5 +1,5 @@
 # ATC-13 — Fractional Asset Ownership & Liquidity Standard
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-13
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-11 (Fungible Assets), ATC-12 (Non-Fungible Assets), ATC-19 (AMM, geplant), Issue #13 (Marketplace)

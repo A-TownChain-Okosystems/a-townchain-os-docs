@@ -22,7 +22,7 @@
 
 ```bash
 cd a-townchain-os
-bash <(curl -s https://raw.githubusercontent.com/ShivaCoreDev/kai-os-wiki/main/patches/APPLY_FIXES.sh)
+bash <(curl -s https://raw.githubusercontent.com/A-TownChain-Okosystems/a-townchain-os-docs/main/patches/APPLY_FIXES.sh)
 ```
 
 ---
@@ -59,7 +59,7 @@ pip freeze | grep -E "google|pynacl|crypto"
 **Verknüpft mit:** Issue #16 [Testnet] Initial Sync — Neue Nodes synchronisieren  
 **Lösung:**
 ```bash
-curl -s https://raw.githubusercontent.com/ShivaCoreDev/kai-os-wiki/main/patches/poh_fixed.py | tail -40
+curl -s https://raw.githubusercontent.com/A-TownChain-Okosystems/a-townchain-os-docs/main/patches/poh_fixed.py | tail -40
 # (Code manuell in blockchain/nodes/node.py am Ende der Node-Klasse einfügen)
 ```
 

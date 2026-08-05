@@ -1,5 +1,5 @@
 # ATC-18 — Multi-Signature Transaction Authorization Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-18
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-03 (DID/Identity), ATC-04 (DAG), ATC-05 (Quantum-Resistant), ATC-13 (Fractional), ATC-17 (DAO), ATC-19 (AMM, geplant), Issue #6 (ECDSA), #12 (Solidity)

@@ -1,7 +1,7 @@
 # ATC-61 — Decentralized AI Trans-Reality Semantic Mapping & Ontology Alignment Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-61
 > **Tier:** 17 — Semantic Unity
 > **Referenzen:** ATC-55 (Simulation), ATC-57 (Selbstoptimierung), ATC-60 (Holone), ATC-49 (Synapsen), ATC-17 (DAO), ATC-44 (ZKP)

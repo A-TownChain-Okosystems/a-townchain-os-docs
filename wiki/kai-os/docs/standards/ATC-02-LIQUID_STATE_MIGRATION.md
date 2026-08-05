@@ -1,5 +1,5 @@
 # ATC-02 — Liquid State Migration & Failover Mechanics
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.2 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.2 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-02
 > **Referenzen:** ATC-01 (Core Node Protocol), ATC-98 (Kernel), Issue #4 (Persistenz), Issue #50 (AI Kernel)
 > **Quelldatei:** Atc-02.docx (ursprüngliche Spezifikation)

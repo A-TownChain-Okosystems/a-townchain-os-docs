@@ -109,4 +109,4 @@ GET http://localhost:4000/gateway/health
 ---
 
 > **Dokument:** `docs/architecture/GATEWAY.md`
-> **Datum:** 2026-05-19 · **Autor:** ShivaCoreDev × Aurora AI
+> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI

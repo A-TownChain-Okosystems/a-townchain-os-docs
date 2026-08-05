@@ -1,5 +1,5 @@
 # ATC-23 — Data-Sharding & Storage Orchestration Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-23
 > **Tier:** 3 (Operating System Infrastructure)
 > **Referenzen:** ATC-02 (Failover), ATC-06 (Latency), ATC-07 (State Partitioning), ATC-08 (Ephemeral Streaming), ATC-21 (Wasm), ATC-22 (HAL)

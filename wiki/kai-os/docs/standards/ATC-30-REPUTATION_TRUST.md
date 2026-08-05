@@ -1,5 +1,5 @@
 # ATC-30 — Decentralized Reputation & Trust Scoring Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-30
 > **Tier:** 4/5 Uebergang (Decentralized AI -> User Experience)
 > **Referenzen:** ATC-01 (Mesh/Uptime), ATC-03 (Identity), ATC-04 (DAG), ATC-15 (Mining), ATC-17 (DAO), ATC-18 (MultiSig/Slashing), ATC-27 (Model Audit), ATC-29 (Marketplace)

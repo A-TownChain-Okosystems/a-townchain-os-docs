@@ -655,7 +655,7 @@ const NodeMonitor = {
 
 ```bash
 # 1. Repository klonen
-git clone https://github.com/ShivaCoreDev/a-townchain-os.git
+git clone https://github.com/A-TownChain-Okosystems/a-townchain-os.git
 cd a-townchain-os
 
 # 2. Testnet starten (Docker erforderlich)
@@ -708,6 +708,6 @@ open http://localhost:3000
 ---
 
 > **Dokument:** `docs/architecture/TESTNET.md`
-> **Issues:** [#8](https://github.com/ShivaCoreDev/a-townchain-os/issues/8) [#14](https://github.com/ShivaCoreDev/a-townchain-os/issues/14)–[#19](https://github.com/ShivaCoreDev/a-townchain-os/issues/19)
+> **Issues:** [#8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) [#14](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/14)–[#19](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/19)
 > **Version:** 2.0.0 · **Datum:** 2026-05-19
-> **Autor:** ShivaCoreDev × Aurora AI
+> **Autor:** A-TownChain-Okosystems × Aurora AI

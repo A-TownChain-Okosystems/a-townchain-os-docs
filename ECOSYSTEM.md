@@ -7,7 +7,7 @@
 | Repo | Typ | Status | Dateien |
 |------|-----|--------|---------|
 | a-townchain-os | Code | ✅ Aktiv | 92 .atc, 19 Python (Compiler) |
-| a-townchain-os-docs | Wiki | ✅ Aktiv | 75 Kapitel, 99 Standards |
+| a-townchain-os-docs | Wiki | ✅ Aktiv | 69 Kapitel, 99 Standards |
 
 ## Verbundene Dienste (16)
 

@@ -1,7 +1,7 @@
 # ATC-17 — Decentralized Autonomous Organization (DAO) Governance Protocol
 
 > **Issue:** #78 | **Wiki:** Kap.41 | **Sprint:** 2.6
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-17
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-03 (DID/Identity), ATC-04 (DAG), ATC-14 (Deterministic Exec), ATC-16 (Referral), ATC-91 (Voting), Issue #9, #39

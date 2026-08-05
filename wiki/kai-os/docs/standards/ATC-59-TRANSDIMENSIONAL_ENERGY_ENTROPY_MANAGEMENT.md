@@ -1,7 +1,7 @@
 # ATC-59 — Decentralized AI Trans-Dimensional Energy & Entropy-Management Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-59
 > **Tier:** 15 — Universal Energy-Intelligence Integration
 > **Referenzen:** ATC-40 (Auto-Remediation), ATC-48 (Neural Mesh), ATC-25 (Tensor Compute), ATC-37 (Ressourcen), ATC-59 (Thermodynamik)

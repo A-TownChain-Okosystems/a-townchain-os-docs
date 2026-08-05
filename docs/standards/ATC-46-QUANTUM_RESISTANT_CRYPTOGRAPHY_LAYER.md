@@ -1,7 +1,7 @@
 # ATC-46 — Decentralized AI Quantum-Resistant Cryptography Layer (QRC-Layer)
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-46
 > **Tier:** 6 — Distributed Intelligence
 > **Referenzen:** ATC-05 (Quantum-Resistant Signatures), ATC-44 (ZKP-Hardware), ATC-04 (DAG Consensus), ATC-03 (DID), ATC-17 (DAO), ATC-06 (ECDSA)

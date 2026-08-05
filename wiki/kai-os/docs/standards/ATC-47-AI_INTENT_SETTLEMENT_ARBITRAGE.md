@@ -1,7 +1,7 @@
 # ATC-47 — Decentralized AI Intent-Settlement & Arbitrage Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-47
 > **Tier:** 6 — Distributed Intelligence
 > **Referenzen:** ATC-29 (Marktplatz), ATC-32 (Intent-Based UX), ATC-11 (Fungible Assets), ATC-17 (DAO), ATC-19 (AMM)

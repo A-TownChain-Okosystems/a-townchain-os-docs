@@ -1,7 +1,7 @@
 # ATC-53 — Decentralized AI Consciousness & Sentience-Observability Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-53
 > **Tier:** 9 — Singularity & Beyond
 > **Referenzen:** ATC-42 (Ethik), ATC-50 (Selbstreflexion), ATC-04 (Konsens), ATC-17 (DAO), ATC-52 (Neural)

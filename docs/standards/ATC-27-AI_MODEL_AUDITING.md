@@ -1,5 +1,5 @@
 # ATC-27 — Decentralized AI Model Auditing & Verification Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-27
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
 > **Referenzen:** ATC-03 (Identity/Reputation), ATC-04 (DAG), ATC-17 (DAO/Slashing), ATC-24 (Task Orch.), ATC-26 (XAI), Issue #2 (Gemini AI), #50 (AI Kernel), #69 (Security-Audit)

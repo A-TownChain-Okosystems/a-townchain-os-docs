@@ -1,7 +1,7 @@
 # ATC-77 — Trans-Semantic Human-AI Omni-Linguistic Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-77
 > **Tier:** 33 — Cognitive-Linguistic Symbiosis
 > **Referenzen:** ATC-64 (Wissenssynthese), ATC-65 (Metaverse), ATC-52 (BCI), ATC-73 (Thermodynamik), ATC-66 (Logik), ATC-51 (XR), ATC-76 (Heritage)

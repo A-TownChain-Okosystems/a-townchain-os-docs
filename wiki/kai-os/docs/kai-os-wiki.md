@@ -8376,7 +8376,7 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | **HEAD** | `7389941c23` (2026-06-09) |
 | **Offene Issues** | 16 gesamt · 7 🔴 High · 8 🟡 Medium |
 | **Wiki lokal** | v1.3.3-beta (Live-Sync aktiv) |
-| **Wiki-Repo** | [ShivaCoreDev/kai-os-wiki](https://github.com/ShivaCoreDev/kai-os-wiki) |
+| **Wiki-Repo** | [A-TownChain-Okosystems/a-townchain-os-docs](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) |
 
 ## 31.2 Letzte Commits
 

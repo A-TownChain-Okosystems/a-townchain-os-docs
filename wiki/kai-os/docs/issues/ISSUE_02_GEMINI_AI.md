@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · ai · priority:high
 > **Priorität:** 🔴 High · **Milestone:** v2.1.0
-> **Referenz:** [GitHub Issue #2](https://github.com/ShivaCoreDev/a-townchain-os/issues/2)
+> **Referenz:** [GitHub Issue #2](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/2)
 
 ---
 

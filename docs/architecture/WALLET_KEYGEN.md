@@ -96,4 +96,4 @@ wallet = keygen.restore_from_mnemonic(
 ---
 
 > **Dokument:** `docs/architecture/WALLET_KEYGEN.md`
-> **Datum:** 2026-05-19 · **Autor:** ShivaCoreDev × Aurora AI
+> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI

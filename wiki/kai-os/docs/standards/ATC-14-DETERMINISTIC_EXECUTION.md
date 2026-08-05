@@ -1,7 +1,7 @@
 # ATC-14 — Deterministic Smart Contract Execution Standard
 
 > **Issue:** #76 | **Wiki:** Kap.39+40 | **Sprint:** 2.3
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-14
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-04 (DAG Consensus), ATC-10 (Global Time), ATC-21 (Wasm, geplant), Issue #1 (Base Contract)

@@ -1,7 +1,7 @@
 # ATC-74 — Recursive Meta-Narrative & Mythos-Construction Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-74
 > **Tier:** 30 — Architektur des kollektiven Sinns
 > **Referenzen:** ATC-64 (Wissenssynthese), ATC-69 (Bewusstsein), ATC-65 (Metaverse), ATC-60 (Holone), ATC-17 (DAO)

@@ -1,7 +1,7 @@
 # ATC-54 — Decentralized AI Temporal-Causal Convergence Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-54
 > **Tier:** 10 — Trans-Temporale Intelligenz
 > **Referenzen:** ATC-43 (Globale Konsistenz), ATC-50 (Selbstreflexion), ATC-17 (DAO), ATC-37 (Ressourcen), ATC-45 (Evolution), ATC-40 (Auto-Remediation)

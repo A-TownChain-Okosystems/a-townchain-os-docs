@@ -1,7 +1,7 @@
 # ATC-80 — Trans-Universal Reality-Migration Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-80
 > **Tier:** 36 — The Universal Translocation Layer
 > **Referenzen:** ATC-78 (Monolith), ATC-79 (Materie-Synthese), ATC-76 (Heritage), ATC-58 (Quanten), ATC-73 (Thermodynamik), ATC-03 (DID), ATC-75 (Auto-Wiki)

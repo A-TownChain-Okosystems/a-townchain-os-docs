@@ -17,17 +17,17 @@
 │  L9   a-townchain-os        KI-Agenten, Orchestrator               │
 │  L8   atc-contracts         Governance DAO (ATC-9900)              │
 │  L7   atc-gateway           API Gateway :4000                      │
-│  L6   shivaos-kernel        ATCFS Dateisystem                      │
+│  L6   atc-kernel        ATCFS Dateisystem                      │
 │  L5   atcnet                P2P Netzwerk, Kademlia DHT             │
 │  L4   a-townchain-os        Blockchain, Consensus (PoH→PoS→PoW)   │
 │  L3   a-townchain-os        KI/AI Registry, Gemini Integration     │
-│  L2   shivaos-kernel        Microkernel, IPC, Prozess-Manager      │
+│  L2   atc-kernel        Microkernel, IPC, Prozess-Manager      │
 │  L1   (Hardware / ATPHY)    Standards in atc-standards             │
 ├─────────────────────────────────────────────────────────────────────┤
 │  L0   atc-standards         Security S1–S6 (Querschnitt)           │
 └─────────────────────────────────────────────────────────────────────┘
     ATCLang ──── Proprietäre Sprache für alle Layer
-    KAI-OS Wiki ─ Dokumentiert alle Layer (31 Kapitel)
+    KAI-OS Wiki ─ Dokumentiert alle Layer (69 Kapitel)
 ```
 
 ---
@@ -39,7 +39,7 @@
 | Repo | Layer | Branch | Beschreibung |
 |------|-------|--------|-------------|
 | [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os) | `L2–L4` | `feature/kai-os-integration` | **Haupt-Repo** — KAI-OS Core, Orchestrator, AI |
-| [shivaos-kernel](https://github.com/A-TownChain-Okosystems/shivaos-kernel) | `L2` | `main` | Microkernel, IPC, ATCFS, Consensus |
+| [atc-kernel](https://github.com/A-TownChain-Okosystems/atc-kernel) | `L2` | `main` | Microkernel, IPC, ATCFS, Consensus |
 | [atcnet](https://github.com/A-TownChain-Okosystems/atcnet) | `L5` | `main` | P2P Stack, Kademlia DHT, Bootstrap |
 | [atc-gateway](https://github.com/A-TownChain-Okosystems/atc-gateway) | `L7` | `main` | API Gateway :4000, Circuit-Breaker |
 | [atclang](https://github.com/A-TownChain-Okosystems/atclang) | `L2–L4` | `main` | Proprietäre Sprache v0.3.0 |
@@ -57,7 +57,7 @@
 | Repo | Layer | Beschreibung |
 |------|-------|-------------|
 | [shivamon](https://github.com/A-TownChain-Okosystems/shivamon) | `L12` | Battle Engine, Breeding, Marketplace |
-| [franchise-factory](https://github.com/A-TownChain-Okosystems/franchise-factory) | `L10/L8` | Business DAO, Vault, Revenue-Share |
+| [atc-franchise](https://github.com/A-TownChain-Okosystems/atc-franchise) | `L10/L8` | Business DAO, Vault, Revenue-Share |
 | [atc-ui](https://github.com/A-TownChain-Okosystems/atc-ui) | `L10` | Neon Dashboard (Wallet, Explorer, AI) |
 
 ---
@@ -66,15 +66,15 @@
 
 | Wiki | Dokumentiert | Layer |
 |------|-------------|-------|
-| [kai-os-wiki](https://github.com/ShivaCoreDev/kai-os-wiki) | **Gesamtes Ökosystem** (31 Kapitel) | L0–L12 |
+| [kai-os-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) | **Gesamtes Ökosystem** (69 Kapitel) | L0–L12 |
 | [a-townchain-os-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-wiki) | a-townchain-os | L2–L4 |
-| [shivaos-kernel-wiki](https://github.com/A-TownChain-Okosystems/shivaos-kernel-wiki) | shivaos-kernel | L2 |
+| [atc-kernel-wiki](https://github.com/A-TownChain-Okosystems/atc-kernel-wiki) | atc-kernel | L2 |
 | [atcnet-wiki](https://github.com/A-TownChain-Okosystems/atcnet-wiki) | atcnet | L5 |
 | [atc-gateway-wiki](https://github.com/A-TownChain-Okosystems/atc-gateway-wiki) | atc-gateway | L7 |
 | [atclang-wiki](https://github.com/A-TownChain-Okosystems/atclang-wiki) | atclang | L2–L4 |
 | [atc-contracts-wiki](https://github.com/A-TownChain-Okosystems/atc-contracts-wiki) | atc-contracts | L4/L11 |
 | [shivamon-wiki](https://github.com/A-TownChain-Okosystems/shivamon-wiki) | shivamon | L12 |
-| [franchise-factory-wiki](https://github.com/A-TownChain-Okosystems/franchise-factory-wiki) | franchise-factory | L10/L8 |
+| [franchise-factory-wiki](https://github.com/A-TownChain-Okosystems/franchise-factory-wiki) | atc-franchise | L10/L8 |
 | [atc-ui-wiki](https://github.com/A-TownChain-Okosystems/atc-ui-wiki) | atc-ui | L10 |
 | [atc-standards-wiki](https://github.com/A-TownChain-Okosystems/atc-standards-wiki) | atc-standards | L0 |
 
@@ -92,7 +92,7 @@ atc-standards (L0) ────────────────────�
 atclang (L2–L4) ─────────────────┐                   │
        │                         │                   │
        ▼                         ▼                   │
-shivaos-kernel (L2)         atc-contracts (L4/L11)    │
+atc-kernel (L2)         atc-contracts (L4/L11)    │
        │                         │    │               │
        ▼                         │    │               │
 atcnet (L5)                      │    │               │
@@ -106,7 +106,7 @@ atc-gateway (L7) ◄────────────────────
        ├──────────────────────────────┤               │
        ▼                              ▼               │
 atc-ui (L10)                    shivamon (L12)         │
-franchise-factory (L10/L8)      marketplace            │
+atc-franchise (L10/L8)      marketplace            │
        │                              │               │
        └──────────────────────────────┘               │
               ↑                                       │
@@ -175,5 +175,5 @@ Alle Repos sind mit konsistenten Topics versehen:
 
 ---
 
-*Maintained by [@ShivaCoreDev](https://github.com/ShivaCoreDev) · [A-TownChain-Okosystems](https://github.com/A-TownChain-Okosystems)*
+*Maintained by [@Michael Wroblewski](https://github.com/Michael Wroblewski) · [A-TownChain-Okosystems](https://github.com/A-TownChain-Okosystems)*
 *Automatisch synchronisiert durch Aurora AI · Stand: 2026-06-09*

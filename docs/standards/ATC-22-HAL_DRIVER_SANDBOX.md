@@ -1,5 +1,5 @@
 # ATC-22 — Hardware Abstraction Layer (HAL) & Deterministic Driver Sandboxing
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-22
 > **Tier:** 3 (Operating System Infrastructure)
 > **Referenzen:** ATC-14 (Deterministic Exec), ATC-21 (Wasm Engine), ATC-31 (Tensor Compute, geplant), Issue #2 (Gemini AI), #50 (AI Kernel)

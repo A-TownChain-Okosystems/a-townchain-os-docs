@@ -1,7 +1,7 @@
 # ATC-55 — Decentralized AI Meta-Reality & Simulation-Convergence Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-55
 > **Tier:** 11 — Hyper-Reality & Simulation
 > **Referenzen:** ATC-54 (Temporal), ATC-51 (Digital Twin), ATC-17 (DAO), ATC-45 (Evolution), ATC-04 (Konsens)

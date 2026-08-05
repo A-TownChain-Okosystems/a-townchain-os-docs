@@ -60,7 +60,7 @@
 31. [Live-Projektstatus & Issues](#31-live-projektstatus--issues--tickets)
 32. [Shivamon NFT-Spezifikation](#32-shivamon--vollständige-nft-spezifikation)
 33. [Token-Ökonomie & Tokenomics](#33-token-ökonomie--tokenomics)
-34. [Franchise Factory](#34-franchise-factory)
+34. [Franchise Factory](#34-atc-franchise)
 35. [Multi-Agenten-Orchestrierung](#35-multi-agenten-orchestrierung)
 36. [ATCLang — Compiler-Spezifikation](#36-atclang--vollständige-compiler-spezifikation)
 37. [P2P-Netzwerk — Technische Details](#37-p2p-netzwerk--technische-details)
@@ -13985,7 +13985,7 @@ Die Konsolidierung wurde am 13.–14.06.2026 durchgeführt (siehe Kapitel 63). A
 | **Größe** | 1.254 KB |
 | **Branch** | `main` (1 Branch) |
 | **Commits** | 100+ |
-| **Contributors** | 2 (ShivaCoreDev, Aurora) |
+| **Contributors** | 2 (Michael Wroblewski, Aurora) |
 | **Stars** | 1 |
 | **Offene Issues** | 3 (#69, #70, #71) |
 | **Geschlossene Issues** | 68 |
@@ -14085,7 +14085,7 @@ Die Konsolidierung wurde am 13.–14.06.2026 durchgeführt (siehe Kapitel 63). A
 | **Größe** | 1.480 KB |
 | **Branch** | `main` (1 Branch) |
 | **Commits** | 100+ |
-| **Contributors** | 1 (ShivaCoreDev) |
+| **Contributors** | 1 (Michael Wroblewski) |
 | **Offene Issues** | 0 |
 | **Version** | 1.0.0 (RELEASE) |
 
@@ -15710,7 +15710,7 @@ Alle 13 Sprint-Entities wurden mit `standards`-Feldern aktualisiert:
 | Python-Dateien ohne STUB-Marker | 21/26 | 0/26 |
 | Sprint-Entities | 9 | 13 |
 | MASTER_TODO Tasks | 108 | 142 |
-| Wiki-Kapitel | 71 | 69 |
+| Wiki-Kapitel | 69 | | 69 |
 
 **Audit-Score:** 94/100 (stabil)  
 **ATC-Standard-Verletzungen:** 0  

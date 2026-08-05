@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · build · priority:medium
 > **Priorität:** 🟡 Medium · **Milestone:** v2.2.0
-> **Referenz:** [GitHub Issue #7](https://github.com/ShivaCoreDev/a-townchain-os/issues/7)
+> **Referenz:** [GitHub Issue #7](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/7)
 
 ---
 

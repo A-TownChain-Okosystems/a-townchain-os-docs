@@ -1,7 +1,7 @@
 # ATC-41 — Multi-Agent Orchestration & Consensus Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-41
 > **Tier:** 6 — Distributed Intelligence (NEUES TIER)
 > **Referenzen:** ATC-24 (Task Orchestration), ATC-30 (Reputation), ATC-40 (Auto-Remediation), ATC-17 (DAO Governance), ATC-10 (Time Sync), ATC-25 (Tensor Compute)

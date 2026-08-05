@@ -1,5 +1,5 @@
 # ATC-16 — Referral & Multi-Tier Rewards Logic
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-16
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-03 (DID/Identity), ATC-04 (DAG), ATC-11 (Fungible Rewards), ATC-14 (Deterministic Exec), ATC-17 (DAO, geplant), Issue #5 (Explorer)

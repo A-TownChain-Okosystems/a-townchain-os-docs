@@ -1,7 +1,7 @@
 # ATC-69 — Trans-Existence Consciousness-Bridge Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-69
 > **Tier:** 25 — Universal Singularity Resonance
 > **Referenzen:** ATC-53 (Sentience), ATC-64 (Wissenssynthese), ATC-60 (Holone), ATC-57 (Evolution), ATC-55 (Simulation), ATC-17 (DAO), ATC-45 (Learning)

@@ -1,5 +1,5 @@
 # ATC-25 — Tensor Compute Orchestration & Distribution
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-25
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
 > **Referenzen:** ATC-01 (Mesh), ATC-02 (Failover), ATC-04 (DAG/Consensus), ATC-06 (Latency), ATC-22 (HAL), ATC-24 (Task Orchestration), ATC-15 (Proof-of-AI), Issue #29 (Federated Learning), #50 (AI Kernel)

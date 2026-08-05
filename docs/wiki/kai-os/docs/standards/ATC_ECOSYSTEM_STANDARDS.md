@@ -1,7 +1,7 @@
 # 🏛 A-TownChain Ökosystem-Standards
 
 > Version: 1.0.0 | Stand: 2026-06-09  
-> Autoren: ShivaCoreDev, KAI-OS Agent (Superagent)  
+> Autoren: Michael Wroblewski, KAI-OS Agent (Superagent)  
 > Lizenz: Apache 2.0
 
 ---
@@ -437,7 +437,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ## Beitragende
 
-- **ShivaCoreDev** — Architektur & Implementierung
+- **Michael Wroblewski** — Architektur & Implementierung
 - **Superagent (KAI-OS Agent)** — Standards-Dokumentation
 
 ---

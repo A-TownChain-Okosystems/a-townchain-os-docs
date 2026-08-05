@@ -1,7 +1,7 @@
 # ATC-49 — Decentralized AI Neural Synapse & Inter-Model Knowledge Transfer Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-49
 > **Tier:** 6 — Distributed Intelligence
 > **Referenzen:** ATC-48 (Neural Mesh), ATC-45 (Evolutionary Learning), ATC-36 (Provenance), ATC-30 (Reputation), ATC-17 (DAO)

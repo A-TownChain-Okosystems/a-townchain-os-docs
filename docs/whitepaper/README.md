@@ -3,7 +3,7 @@
 > **Offizielles Whitepaper v2.1.0**
 
 [![Layer](https://img.shields.io/badge/Layer-L0-purple)](https://github.com/A-TownChain-Okosystems)
-[![KAI-OS](https://img.shields.io/badge/KAI--OS-v2.0.0-blue)](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/docs/kai-os-wiki.md)
+[![KAI-OS](https://img.shields.io/badge/KAI--OS-v1.0.0-blue)](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/docs/kai-os-wiki.md)
 [![Org](https://img.shields.io/badge/Org-A--TownChain--Okosystems-green)](https://github.com/A-TownChain-Okosystems)
 
 
@@ -13,7 +13,7 @@
 
 **Org:** [A-TownChain-Okosystems](https://github.com/A-TownChain-Okosystems)
 **Haupt-Repo:** [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os)
-**KAI-OS Wiki (31 Kapitel):** [→ docs/kai-os-wiki.md](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/docs/kai-os-wiki.md)
+**KAI-OS Wiki (69 Kapitel):** [→ docs/kai-os-wiki.md](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/docs/kai-os-wiki.md)
 **Alle Repos:** [→ ECOSYSTEM.md](https://github.com/A-TownChain-Okosystems/a-townchain-os/blob/main/ECOSYSTEM.md)
 
 ---
@@ -45,4 +45,4 @@
 
 ---
 
-*[A-TownChain-Okosystems](https://github.com/A-TownChain-Okosystems) · v2.0.0 · Stand: 2026-06-09*
+*[A-TownChain-Okosystems](https://github.com/A-TownChain-Okosystems) · v1.0.0 · Stand: 2026-08-05*

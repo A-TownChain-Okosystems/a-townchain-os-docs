@@ -1,5 +1,5 @@
 # ATC-29 — Decentralized AI Marketplace & Model Registry
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-29
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
 > **Referenzen:** ATC-11 (Fungible), ATC-13 (Fractional), ATC-17 (DAO), ATC-24 (Task Orch.), ATC-27 (Model Auditing), ATC-28 (Federated Learning), Issue #13 (Marketplace), #50 (AI Kernel)

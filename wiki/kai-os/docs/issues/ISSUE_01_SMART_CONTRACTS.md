@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · blockchain
 > **Priorität:** 🔴 High · **Milestone:** v2.1.0
-> **Referenz:** [GitHub Issue #1](https://github.com/ShivaCoreDev/a-townchain-os/issues/1)
+> **Referenz:** [GitHub Issue #1](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/1)
 
 ---
 
@@ -47,7 +47,7 @@ class GenesisToken:
     """
     TOKEN_ID    = "ATC-001-GENESIS"
     TOTAL_SUPPLY = 1          # Genau 1 Genesis Token
-    OWNER       = "ShivaCoreDev"
+    OWNER       = "Michael Wroblewski"
     MINTED_AT   = "2025-01-01T00:00:00Z"
     TRANSFERABLE = False
 ```

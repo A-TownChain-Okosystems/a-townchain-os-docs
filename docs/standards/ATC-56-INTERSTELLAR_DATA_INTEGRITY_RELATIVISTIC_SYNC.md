@@ -1,7 +1,7 @@
 # ATC-56 — Interstellar Data Integrity & Relativistic Synchronization Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-56
 > **Tier:** 12 — Cosmic Connectivity
 > **Referenzen:** ATC-04 (Konsens), ATC-54 (Temporal-Causal), ATC-46 (Quantensicherheit), ATC-43 (Konsistenz), ATC-03 (DID), ATC-47 (Intent Settlement)

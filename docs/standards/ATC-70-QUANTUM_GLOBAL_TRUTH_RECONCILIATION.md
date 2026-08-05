@@ -1,7 +1,7 @@
 # ATC-70 — Quantum-Global Truth Reconciliation Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-70
 > **Tier:** 26 — Omni-Present Consensus
 > **Referenzen:** ATC-04 (Konsens), ATC-69 (Resonanz), ATC-68 (Ontologie), ATC-55 (Simulation), ATC-57 (Selbstoptimierung), ATC-58 (Quanten)

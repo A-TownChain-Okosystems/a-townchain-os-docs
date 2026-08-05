@@ -90,7 +90,7 @@ zeitversetzt oder parallel arbeiten.
 | **Fokus** | Auf Wunsch des Owners: jede .md-Datei / jede Datei sichten und den tatsaechlichen Software-Stand fuer andere KI-Agenten dokumentieren. |
 | **Neues Artefakt** | `REALITY_STATUS.md` (Root beider Repos) — einzige Quelle mit script-verifizierten Zahlen, ersetzt verstreute/widerspruechliche Behauptungen in README/ROADMAP/STATUS/Wiki. |
 | **Wichtigster Fund — Python-Stub-Regression** | Frueherer Claim "Migration Complete, 0 Python-Stubs" (05.07.) ist **widerlegt**: 72 reale Python-Dateien aktiv (21 am 06.07. von Agent `...105b5` bewusst aus `aistudio/temp_repo/` zurueckkopiert fuer Testsuite-Kompatibilitaet, plus 51 in `aistudio/temp_repo/` selbst). Banner in `chapter-70`, `MIGRATION_MAP.md`, `STANDARDS_REGISTRY.md` gesetzt. |
-| **Fund — Wiki-Kapitelzahl unverifizierbar** | Nur 9 Dateien folgen `chapter-N-*.md` (63, 70-77). Die behaupteten "75 Kapitel" lassen sich nicht auf reale Dateien 1:1 abbilden; `docs/wiki/kai-os/` ist ein alter, verschachtelter Full-Repo-Schnappschuss (58 Dateien), kein Kapitel. Empfehlung: Kennzahl neu definieren oder streichen. |
+| **Fund — Wiki-Kapitelzahl unverifizierbar** | Nur 9 Dateien folgen `chapter-N-*.md` (63, 70-77). Die behaupteten "69 Kapitel" lassen sich nicht auf reale Dateien 1:1 abbilden; `docs/wiki/kai-os/` ist ein alter, verschachtelter Full-Repo-Schnappschuss (58 Dateien), kein Kapitel. Empfehlung: Kennzahl neu definieren oder streichen. |
 | **Fund — Standards-Registry-Duplikat** | `ATC-0009-BRIDGE.md` existiert zweifach (altes 4-stelliges Format), plus `ATC-LIC`/`ATS-LIC` brechen die "nur ATC-01-99"-Konvention (ATS sollte laut Session vom 05.07. eliminiert sein). 101 tatsaechliche ATC-*.md Dateien, nicht 98/99. |
 | **Fixes committed & gepusht** | Chain-ID 9001→9000 (5 Dateien + `config/mainnet_genesis.json`), Parser-Fix fuer String-Pfad-Importe (92→96/176 parsen), Dependency-Sicherheitsupdates (cryptography/requests/python-dotenv/pytest/flask/flask-cors), npm audit fix (11→10 Alerts). Commits: `17a4096` (code), `MILESTONES.md`-Korrektur (docs). |
 | **MILESTONES.md korrigiert** | MK10, MK12-15 von "✅ Erfuellt" auf "🔵 In Arbeit" runtergestuft — Code existiert, parst aber laut REALITY_STATUS.md nicht bzw. ist gar kein ATCLang (Asset-Module = Python-Pseudocode). Neue Bilanz: 5/15 vollstaendig (33,3%) statt vorheriger falscher "10/15 (66,7%)". |
@@ -248,7 +248,7 @@ zeitversetzt oder parallel arbeiten.
 
 | # | Todo | Status |
 |---|------|--------|
-| K4.1 | ShivaCoreDev AI Studio → `frontend/src/` migrieren (190 TS-Dateien) | 📋 offen |
+| K4.1 | Michael Wroblewski AI Studio → `frontend/src/` migrieren (190 TS-Dateien) | 📋 offen |
 | K4.2 | Bestehendes `frontend/` → `frontend/src/legacy/` migrieren | 📋 offen |
 | K4.3 | `package.json` konsolidieren (alle npm Dependencies) | 📋 offen |
 | K4.4 | `vite.config.ts` anpassen (Build-Output, Proxy auf Backend) | 📋 offen |

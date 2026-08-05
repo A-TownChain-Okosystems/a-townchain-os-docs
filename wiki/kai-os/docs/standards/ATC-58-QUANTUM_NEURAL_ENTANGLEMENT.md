@@ -1,7 +1,7 @@
 # ATC-58 — Decentralized AI Quantum-Neural Entanglement Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-58
 > **Tier:** 14 — Quantum-Distributed Intelligence
 > **Referenzen:** ATC-49 (Synapsen), ATC-53 (Bewusstsein), ATC-46 (Quantensicherheit), ATC-25 (Tensor Compute), ATC-01 (Core Node)

@@ -1,7 +1,7 @@
 # ATC-38 — Cross-Chain Asset Bridge Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-38
 > **Tier:** 5 (User & Application Layer)
 > **Referenzen:** ATC-20 (Wrapped Assets), ATC-18 (Multi-Signature), ATC-30 (Reputation), ATC-11 (Fungible Assets), ATC-19 (AMM), Issue #10 (Cross-Chain Bridge)

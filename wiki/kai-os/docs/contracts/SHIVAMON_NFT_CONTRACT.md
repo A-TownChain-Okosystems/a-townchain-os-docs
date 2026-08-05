@@ -775,4 +775,4 @@ self.services = {
 
 > **Dokument:** `docs/contracts/SHIVAMON_NFT_CONTRACT.md`
 > **Version:** 2.0.0 · **Datum:** 2026-05-19
-> **Autor:** ShivaCoreDev × Aurora AI Agent
+> **Autor:** A-TownChain-Okosystems × Aurora AI Agent

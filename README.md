@@ -31,7 +31,7 @@
 | Version | 1.0.0 |
 | ATC-Standards | 99 (ATC-01–99) |
 | Architektur-Tiers | 36 |
-| Wiki-Kapitel | 71 |
+| Wiki-Kapitel | 69 | |
 | ATCLang-Dateien | 92 (.atc) |
 | ATCLang-Zeilen | 15.936 |
 | ATCLang-Tests | 60/60 GRÜN |
@@ -76,7 +76,7 @@
 
 ```
 a-townchain-os/          # Code-Repository (92 .atc, 15.936 Zeilen)
-a-townchain-os-docs/     # Wiki & Dokumentation (75 Kapitel, 99 Standards)
+a-townchain-os-docs/     # Wiki & Dokumentation (69 Kapitel, 99 Standards)
 ```
 
 ---

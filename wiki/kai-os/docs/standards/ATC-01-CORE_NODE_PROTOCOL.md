@@ -1,5 +1,5 @@
 # ATC-01 — Core Node Protocol & P2P Mesh Topology
-> **Status:** ✅ FINAL — Spezifikation vollständig, Implementation in Arbeit | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** ✅ FINAL — Spezifikation vollständig, Implementation in Arbeit | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-01
 > **Referenzen:** ATC-0001 (Core-Protokoll), ATC-0005 (P2P Kademlia DHT), Issue #14 (Bootstrap Node), Issue #68 (DNS Seed)
 > **Quelldatei:** Atc-01.docx (ursprüngliche Spezifikation)

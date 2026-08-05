@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · game · nft · priority:medium
 > **Priorität:** 🟡 Medium · **Milestone:** v2.2.0
-> **Referenz:** [GitHub Issue #11](https://github.com/ShivaCoreDev/a-townchain-os/issues/11)
+> **Referenz:** [GitHub Issue #11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11)
 
 ---
 

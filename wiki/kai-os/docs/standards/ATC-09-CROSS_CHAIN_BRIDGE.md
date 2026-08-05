@@ -1,5 +1,5 @@
 # ATC-09 — Cross-Chain Interoperability Bridge Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-09
 > **Referenzen:** ATC-03 (Identity/Zero-Trust), ATC-11 (Assets, geplant), ATC-12 (Assets, geplant), Issue #10, #34
 > **Quelldatei:** Atc-09.docx (urspruengliche Spezifikation)

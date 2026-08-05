@@ -1,7 +1,7 @@
 # ATC-60 — Decentralized AI Universal Holonic Structure Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-60
 > **Tier:** 16 — Holon-Intelligenz
 > **Referenzen:** ATC-01 (Core Node), ATC-56 (Interplanetar), ATC-58 (Quanten), ATC-59 (Thermodynamik), ATC-57 (Selbstoptimierung)

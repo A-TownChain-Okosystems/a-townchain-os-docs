@@ -1,7 +1,7 @@
 # ATC-65 — Trans-Metaverse Consensus & Reality-Synchronization Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-65
 > **Tier:** 21 — Meta-Systemic Integration
 > **Referenzen:** ATC-04 (Konsens), ATC-55 (Simulation), ATC-61 (Semantik), ATC-62 (Safety), ATC-03 (DID), ATC-47 (Arbitrage), ATC-64 (Wissenssynthese)

@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · blockchain · governance · priority:medium
 > **Priorität:** 🟡 Medium · **Milestone:** v2.2.0
-> **Referenz:** [GitHub Issue #9](https://github.com/ShivaCoreDev/a-townchain-os/issues/9)
+> **Referenz:** [GitHub Issue #9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9)
 
 ---
 

@@ -1,7 +1,7 @@
 # ATC-50 — Decentralized AI Consciousness & Self-Reflection Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-50
 > **Tier:** 6 — Distributed Intelligence
 > **Referenzen:** ATC-41 (Multi-Agent Orchestration), ATC-42 (Ethics), ATC-43 (Consistency), ATC-44 (ZKP), ATC-45 (Evolutionary Learning), ATC-17 (DAO), ATC-40 (Auto-Remediation)

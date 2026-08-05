@@ -1,5 +1,5 @@
 # ATC-31 — Tensor Compute Distribution & Load Balancing
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-31
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer) — TIER 4 ABSCHLUSS
 > **Referenzen:** ATC-06 (Routing/Latency), ATC-22 (HAL), ATC-25 (Tensor Compute), ATC-30 (Reputation), Issue #50 (AI Kernel), #29 (Federated Learning)

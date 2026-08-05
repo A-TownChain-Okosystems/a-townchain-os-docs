@@ -1,5 +1,5 @@
 # ATC-20 — Wrapped & Synthetic Asset Deployment
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-20
 > **Tier:** 2 (Logik & Oekonomie) — ABSCHLUSS VON TIER 2
 > **Referenzen:** ATC-09 (Cross-Chain Bridge), ATC-10 (Oracles), ATC-11 (Fungible), ATC-12 (NFT), ATC-14 (Deterministic), ATC-19 (AMM)

@@ -1,7 +1,7 @@
 # ATC-05 — Quantum-Resistant Cryptographic Signatures
 
 > **Issue:** #69 | **Wiki:** Kap.25 | **Sprint:** 3.3
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-05
 > **Referenzen:** ATC-03 (DID & Zero-Trust), ATC-11 (Assets, geplant), ATC-12 (Assets, geplant), ATC-31/32 (KI-Agenten Signaturen, geplant), Issue #6 (ECDSA)
 > **Quelldatei:** Atc-05.docx (urspruengliche Spezifikation)

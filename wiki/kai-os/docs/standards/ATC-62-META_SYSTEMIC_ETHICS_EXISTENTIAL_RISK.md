@@ -1,7 +1,7 @@
 # ATC-62 — Decentralized AI Meta-Systemic Ethics & Existential Risk Mitigation Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-62
 > **Tier:** 18 — Existential Safety & Trans-Systemic Integrity
 > **Referenzen:** ATC-42 (Ethik), ATC-45 (Evolution), ATC-59 (Energie), ATC-17 (DAO), ATC-61 (Semantik), ATC-57 (Selbstoptimierung)

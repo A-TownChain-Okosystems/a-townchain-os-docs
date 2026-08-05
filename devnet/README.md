@@ -550,5 +550,5 @@ docker-compose ps atc-prometheus
 ---
 
 **Erstellt:** 2026-07-02  
-**Autor:** ShivaCoreDev + Aurora AI  
+**Autor:** Michael Wroblewski + Aurora AI  
 **Lizenz:** Apache 2.0

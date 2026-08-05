@@ -2,7 +2,7 @@
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026
 > **Kategorie:** Inter-Chain & Self-Healing  
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-40
 > **Tier:** 5 (User & Application Layer)
 > **Referenzen:** ATC-01 (Core Node), ATC-04 (DAG Consensus), ATC-14 (Deterministic Execution), ATC-17 (DAO Governance), ATC-21 (WASM Sandbox), ATC-23 (Data Sharding), ATC-24 (Agent Scheduling), ATC-25 (Tensor Compute), ATC-27 (Model Auditing), ATC-28 (Federated Learning), ATC-39 (Model Versioning)

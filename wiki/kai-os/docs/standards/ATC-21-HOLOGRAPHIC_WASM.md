@@ -1,5 +1,5 @@
 # ATC-21 — Holographic On-Demand Execution Engine (Wasm)
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-21
 > **Tier:** 3 (Operating System Infrastructure) — START VON TIER 3
 > **Referenzen:** ATC-14 (Deterministic Exec), ATC-22 (HAL, geplant), Issue #1 (Smart Contracts), #18 (Docker/CI)

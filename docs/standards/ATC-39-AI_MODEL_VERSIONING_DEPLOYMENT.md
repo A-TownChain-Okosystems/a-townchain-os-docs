@@ -1,7 +1,7 @@
 # ATC-39 — Decentralized AI Model Versioning & Deployment Lifecycle
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-39
 > **Tier:** 5 (User & Application Layer)
 > **Referenzen:** ATC-27 (Model Auditing), ATC-29 (Model Registry), ATC-34 (Cross-Layer Interop), ATC-26 (XAI), ATC-17 (DAO), ATC-15 (Proof of AI Mining)

@@ -1,5 +1,5 @@
 # ATC-37 — Decentralized Reputation-Based Resource Allocation Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-37
 > **Tier:** 5 (User & Application Layer)
 > **Referenzen:** ATC-17 (DAO), ATC-24 (Task Orch.), ATC-30 (Reputation), ATC-31 (Tensor Load), ATC-11 (Token), Issue #50 (AI Kernel), #69 (Security-Audit)

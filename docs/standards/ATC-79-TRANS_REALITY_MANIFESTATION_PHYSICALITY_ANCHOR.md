@@ -1,7 +1,7 @@
 # ATC-79 — Trans-Reality Manifestation & Physicality-Anchor Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-79
 > **Tier:** 35 — Physicality & Matter-Synthesis
 > **Referenzen:** ATC-78 (Monolith), ATC-73 (Thermodynamik), ATC-63 (Bio-Symbiosis), ATC-70 (Quantum Truth), ATC-71 (Void), ATC-51 (Digital Twin)

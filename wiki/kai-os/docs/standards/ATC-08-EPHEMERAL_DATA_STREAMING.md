@@ -1,5 +1,5 @@
 # ATC-08 — Ephemeral Data Streaming Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-08
 > **Referenzen:** ATC-01 (Mesh-Topologie), ATC-06 (Routing/Latenz), Issue #2 (Gemini AI)
 > **Quelldatei:** Atc-08.docx (urspruengliche Spezifikation)

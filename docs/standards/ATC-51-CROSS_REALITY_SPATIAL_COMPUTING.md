@@ -1,7 +1,7 @@
 # ATC-51 — Cross-Reality (XR) Spatial Computing & Physical-Digital Twin Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-51
 > **Tier:** 7 — Physical Integration
 > **Referenzen:** ATC-01 (Core Node), ATC-02 (Zero-Trust), ATC-06 (Latenz), ATC-25 (Tensor Compute), ATC-29 (Marktplatz), ATC-32 (UX)

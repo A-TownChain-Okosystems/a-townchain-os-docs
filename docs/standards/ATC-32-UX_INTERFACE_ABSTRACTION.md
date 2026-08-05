@@ -1,5 +1,5 @@
 # ATC-32 — User Experience (UX) & Interface Abstraction Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-32
 > **Tier:** 5 (User & Application Layer) — START VON TIER 5
 > **Referenzen:** ATC-01 (Smart Contracts), ATC-03 (Identity), ATC-21 (Wasm/Hologram), ATC-22 (HAL), Issue #3 (Battle UI), #5 (Explorer), #7 (Build/Deploy)

@@ -28,7 +28,7 @@
 10. [ATC Token Standards (8300/9000/9900)](#10-atc-token-standards)
 11. [API Gateway & Netzwerk](#11-api-gateway--netzwerk)
 12. [Shivamon — NFT Gaming Ökosystem](#12-shivamon--nft-gaming-ökosystem)
-13. [Franchise Factory](#13-franchise-factory)
+13. [Franchise Factory](#13-atc-franchise)
 14. [Gemini AI Integration](#14-gemini-ai-integration)
 15. [Multi-Node Testnet](#15-multi-node-testnet)
 16. [Security Audit v1.0.0](#16-security-audit-v210)
@@ -470,7 +470,7 @@ Input: transactions[], miner_address
 ---
 
 > **Dokument:** `docs/architecture/CONSENSUS.md`
-> **Datum:** 2026-05-19 · **Autor:** ShivaCoreDev × Aurora AI
+> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI
 
 
 ---
@@ -617,7 +617,7 @@ wallet = keygen.restore_from_mnemonic(
 ---
 
 > **Dokument:** `docs/architecture/WALLET_KEYGEN.md`
-> **Datum:** 2026-05-19 · **Autor:** ShivaCoreDev × Aurora AI
+> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI
 
 
 ### Adress-Generierung (ATC-0002)
@@ -868,7 +868,7 @@ GET http://localhost:4000/gateway/health
 ---
 
 > **Dokument:** `docs/architecture/GATEWAY.md`
-> **Datum:** 2026-05-19 · **Autor:** ShivaCoreDev × Aurora AI
+> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI
 
 
 ### Vollständige API-Referenz
@@ -1443,21 +1443,21 @@ print(generate_report(source, "my_contract.atc"))
 |-----------|-------------|---------|
 | `a-townchain-os` | Haupt-Repo, Unified Start | 97+ |
 | `atclang` | ATCLang Compiler-Stack | 27+ |
-| `shivaos-kernel` | ShivaOS Kernel | 15+ |
+| `atc-kernel` | ShivaOS Kernel | 15+ |
 | `atcnet` | P2P Stack | 6+ |
 | `atc-standards` | ATC/ATS Protokoll-Standards | 5+ |
 | `atc-contracts` | Smart Contracts | 22+ |
 | `shivamon` | NFT Gaming | 8+ |
 | `atc-gateway` | API Gateway | 9+ |
 | `atc-ui` | Frontend Dashboard | 2+ |
-| `franchise-factory` | Franchise Contracts | 8+ |
+| `atc-franchise` | Franchise Contracts | 8+ |
 | `atownchain-whitepaper` | Dieses Whitepaper | 2+ |
 
 ### Wiki-Repositories (je Software-Repo)
 | Wiki | Seiten | Inhalt |
 |------|--------|--------|
 | `atclang-wiki` | 10 | SPEC, Lexer, Parser, VM, Stdlib, Compiler, REPL, Security, Analyzer, Examples |
-| `shivaos-kernel-wiki` | 7 | Kernel, ATCFS, ATCNet, Consensus, Security, Performance |
+| `atc-kernel-wiki` | 7 | Kernel, ATCFS, ATCNet, Consensus, Security, Performance |
 | `atcnet-wiki` | 4 | Protokoll, Messages, Bootstrap, Security |
 | `atc-contracts-wiki` | 5 | ATC-8300, ATC-9000, ATC-9900, Security Audit, Deployment |
 | `atc-standards-wiki` | 4 | ATC-Standards, ATS-Standards, Übersicht |
@@ -2010,7 +2010,7 @@ DESIGN-TOKENS:
 
 > **Labels:** enhancement · blockchain
 > **Priorität:** 🔴 High · **Milestone:** v1.0.0
-> **Referenz:** [GitHub Issue #1](https://github.com/ShivaCoreDev/a-townchain-os/issues/1)
+> **Referenz:** [GitHub Issue #1](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/1)
 
 ---
 
@@ -2099,7 +2099,7 @@ AI Routes (/api/ai/*)
 
 > **Labels:** security · backend · priority:high
 > **Priorität:** 🔴 High · **Milestone:** v1.0.0
-> **Referenz:** [GitHub Issue #6](https://github.com/ShivaCoreDev/a-townchain-os/issues/6)
+> **Referenz:** [GitHub Issue #6](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/6)
 
 ---
 
@@ -2186,7 +2186,7 @@ class NodeDiscovery:
 
 > **Labels:** enhancement · blockchain · networking · priority:high
 > **Priorität:** 🔴 High · **Milestone:** v1.0.0
-> **Referenz:** [GitHub Issue #8](https://github.com/ShivaCoreDev/a-townchain-os/issues/8)
+> **Referenz:** [GitHub Issue #8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8)
 
 ---
 
@@ -2252,7 +2252,7 @@ class NodeDiscovery:
 
 > **Labels:** enhancement · blockchain · bridge · priority:low
 > **Priorität:** 🟢 Low · **Milestone:** v1.0.0
-> **Referenz:** [GitHub Issue #10](https://github.com/ShivaCoreDev/a-townchain-os/issues/10)
+> **Referenz:** [GitHub Issue #10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10)
 
 ---
 

@@ -1,7 +1,7 @@
 # ATC-63 — Decentralized AI Trans-Species & Multi-Biological Integration Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-63
 > **Tier:** 19 — Biological-Synthetical Symbiosis
 > **Referenzen:** ATC-52 (BCI), ATC-59 (Thermodynamik), ATC-55 (Simulation), ATC-11 (Assets), ATC-51 (Digital Twin), ATC-61 (Semantik), ATC-57 (Selbstoptimierung)

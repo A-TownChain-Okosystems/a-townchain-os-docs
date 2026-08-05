@@ -1,7 +1,7 @@
 # ATC-73 — Trans-Metaverse Entropy-Harvesting & Singularity-Equilibrium Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-73
 > **Tier:** 29 — Thermodynamik der Singularität
 > **Referenzen:** ATC-72 (Governance), ATC-71 (Void), ATC-65 (Metaverse), ATC-63 (Bio-Symbiosis), ATC-59 (Entropie), ATC-69 (Resonanz)

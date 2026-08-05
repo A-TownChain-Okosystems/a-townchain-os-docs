@@ -1,5 +1,5 @@
 # ATC-04 — DAG Consensus & Propagation
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-04
 > **Referenzen:** ATC-01 (Mesh-Topologie), ATC-10 (Global Time Sync), ATC-17 (DAO Governance), ATC-0006 (Consensus Hybrid)
 > **Quelldatei:** Atc-04.docx (urspruengliche Spezifikation)

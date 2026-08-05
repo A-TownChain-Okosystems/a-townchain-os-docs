@@ -1,5 +1,5 @@
 # ATC-12 — Non-Fungible & Holographic Asset Standard
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-12
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-11 (Fungible Assets), ATC-14 (Deterministic Exec, geplant), Issue #11 (Shivamon Breeding), Issue #13 (Marketplace)

@@ -1,5 +1,5 @@
 # ATC-10 — Global Time Synchronization & Oracles
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-10
 > **Referenzen:** ATC-04 (DAG Consensus), ATC-06 (Routing/Latenz), ATC-09 (Cross-Chain Bridge), ATC-0006 (Consensus)
 > **Quelldatei:** Atc-10.docx (urspruengliche Spezifikation)

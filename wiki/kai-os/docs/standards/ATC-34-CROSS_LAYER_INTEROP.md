@@ -1,5 +1,5 @@
 # ATC-34 — Cross-Layer Interoperability Protocol (CLIP)
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-34
 > **Tier:** 3/5 Bruecke (Cross-Layer Interop) — Layer-Bridge
 > **Referenzen:** ATC-04 (DAG), ATC-14 (Deterministic Exec), ATC-21 (Wasm), ATC-32 (UX), Issue #3 (Battle UI), #7 (Build/Deploy)

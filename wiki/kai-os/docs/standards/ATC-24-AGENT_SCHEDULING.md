@@ -1,5 +1,5 @@
 # ATC-24 — Autonomous Agent Scheduling & Task Orchestration Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Kategorie:** AI Orchestration  
 > **Standard-ID:** ATC-24
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer) — START VON TIER 4

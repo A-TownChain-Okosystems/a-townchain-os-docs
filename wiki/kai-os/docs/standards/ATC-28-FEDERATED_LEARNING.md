@@ -1,5 +1,5 @@
 # ATC-28 — Federated Learning & On-Device Training Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-28
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer) — TIER 4 ABSCHLUSS
 > **Referenzen:** ATC-05 (PQC), ATC-17 (DAO), ATC-21 (Sandbox), ATC-24 (Task Orch.), ATC-27 (Model Auditing), Issue #29 (Federated Learning), #50 (AI Kernel)

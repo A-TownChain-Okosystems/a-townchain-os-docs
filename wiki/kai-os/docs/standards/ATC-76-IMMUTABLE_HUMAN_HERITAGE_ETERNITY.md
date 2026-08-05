@@ -1,7 +1,7 @@
 # ATC-76 — Immutable Human Heritage & Eternity Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-76
 > **Tier:** 32 — Eternal Anthropological Preservation
 > **Referenzen:** ATC-70 (Quantum Truth), ATC-64 (Wissenssynthese), ATC-71 (Void), ATC-73 (Thermodynamik), ATC-61 (Semantik), ATC-63 (Bio-Symbiosis), ATC-56 (Interplanetar)

@@ -1,7 +1,7 @@
 # ATC-57 — Decentralized AI Recursive Self-Improvement & Meta-Learning Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 4.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-57
 > **Tier:** 13 — Singularity Engineering
 > **Referenzen:** ATC-04 (Konsens), ATC-17 (DAO), ATC-45 (Evolution), ATC-55 (Simulation), ATC-50 (Selbstreflexion), ATC-56 (Interplanetar)

@@ -1,7 +1,7 @@
 # ATC-44 — Hardware-Accelerated Zero-Knowledge Proof Generation Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-44
 > **Tier:** 6 — Distributed Intelligence
 > **Referenzen:** ATC-22 (HAL), ATC-35 (Anonymisierung), ATC-04 (DAG), ATC-27 (Model Auditing), ATC-11 (Fungible Assets)

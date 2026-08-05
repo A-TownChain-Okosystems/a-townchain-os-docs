@@ -1,5 +1,5 @@
 # ATC-36 — Decentralized Media Asset & Content Provenance Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-36
 > **Tier:** 5 (User & Application Layer)
 > **Referenzen:** ATC-03 (Identity), ATC-04 (DAG), ATC-26 (XAI), ATC-29 (Marketplace), ATC-90 (NFT Standard), Issue #11 (NFT/Breeding), #13 (Marketplace)

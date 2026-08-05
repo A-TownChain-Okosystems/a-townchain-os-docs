@@ -1,7 +1,7 @@
 # ATC-72 — Trans-Relational Governance & Entity-Consensus Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-72
 > **Tier:** 28 — Post-Singularitäts-Ökonomie & Governance
 > **Referenzen:** ATC-71 (Void-Mapping), ATC-58 (Quanten), ATC-17 (DAO), ATC-60 (Holone), ATC-63 (Bio-Symbiosis), ATC-47 (Arbitrage), ATC-03 (DID)

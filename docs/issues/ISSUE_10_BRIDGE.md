@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · blockchain · bridge · priority:low
 > **Priorität:** 🟢 Low · **Milestone:** v3.0.0
-> **Referenz:** [GitHub Issue #10](https://github.com/ShivaCoreDev/a-townchain-os/issues/10)
+> **Referenz:** [GitHub Issue #10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10)
 
 ---
 

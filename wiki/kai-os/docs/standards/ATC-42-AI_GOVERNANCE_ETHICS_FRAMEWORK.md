@@ -1,7 +1,7 @@
 # ATC-42 — Decentralized AI Governance & Ethics Framework
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-42
 > **Tier:** 6 — Distributed Intelligence
 > **Referenzen:** ATC-17 (DAO Governance), ATC-26 (XAI), ATC-41 (Multi-Agent Orchestration), ATC-40 (Auto-Remediation)

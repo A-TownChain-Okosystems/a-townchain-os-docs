@@ -118,4 +118,4 @@ Input: transactions[], miner_address
 ---
 
 > **Dokument:** `docs/architecture/CONSENSUS.md`
-> **Datum:** 2026-05-19 · **Autor:** ShivaCoreDev × Aurora AI
+> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI

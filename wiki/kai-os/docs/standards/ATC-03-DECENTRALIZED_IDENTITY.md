@@ -1,5 +1,5 @@
 # ATC-03 — Decentralized Identity (DID) & Zero-Trust IAM
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-03
 > **Referenzen:** ATC-01 (Handshake/Identity), ATC-02 (State Migration), ATC-0002 (Wallet/ECDSA), ATC-91 (Governance)
 > **Quelldatei:** Atc-03.docx (ursprüngliche Spezifikation)

@@ -1,5 +1,5 @@
 # ATC-15 — Decentralized Mining Protocol (Proof-of-AI-Mining)
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.4 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-15
 > **Tier:** 2 (Logik & Oekonomie) — Bruecke zu Tier 4 (KI)
 > **Referenzen:** ATC-11 (Fungible Assets/Rewards), ATC-14 (Deterministic Exec), ATC-31 (Tensor Compute, geplant), Issue #2 (Gemini AI)

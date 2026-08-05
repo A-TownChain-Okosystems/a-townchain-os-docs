@@ -12,7 +12,7 @@
 |-------|------|---------------|-------|
 | `KAI_OS_SUMMARY.py` | a-townchain-os | `docs/kai-os-wiki.md` + `ECOSYSTEM.md` | Manuelles Zusammenfassungs-Script, nicht mehr aktuell |
 | `atc_issues_summary.py` | a-townchain-os | KaiOsTodo-Datenbank (Base44 Aurora) | Ersetzt durch automatisiertes Issue-Tracking |
-| `shivaos-kernel/net/atcnet.py` | shivaos-kernel | [`atcnet` Repo](https://github.com/A-TownChain-Okosystems/atcnet) | Duplikat entfernt — eigenständiges Repo |
+| `atc-kernel/net/atcnet.py` | atc-kernel | [`atcnet` Repo](https://github.com/A-TownChain-Okosystems/atcnet) | Duplikat entfernt — eigenständiges Repo |
 | `build_pdf.py` | kai-os-wiki | Markdown direkt / Docusaurus | PDF-Export nicht mehr primäres Format |
 
 ---

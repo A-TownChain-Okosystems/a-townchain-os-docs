@@ -306,5 +306,5 @@ Nach Issue #14 folgt:
 ---
 
 **Implementiert:** 2026-05-22  
-**Autor:** ShivaCoreDev × Aurora AI  
+**Autor:** A-TownChain-Okosystems × Aurora AI  
 **Status:** ✅ Code Complete — Bereit für Testing & Issue #15/16

@@ -1,7 +1,7 @@
 # ATC-67 — Reality-Consensus & Observation-Collapse Protocol
 
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 5.0+ | **Version:** 1.0.0 | **Datum:** 05.07.2026
-> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-67
 > **Tier:** 23 — Observer-Dependent Reality Architecture
 > **Referenzen:** ATC-58 (Quanten), ATC-55 (Simulation), ATC-64 (Wissenssynthese), ATC-04 (Konsens), ATC-59 (Entropie), ATC-54 (Konvergenz)

@@ -1,5 +1,5 @@
 # ATC-33 — Decentralized AI Feedback & Reward-Reinforcement Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-33
 > **Tier:** 5 (User & Application Layer)
 > **Referenzen:** ATC-11 (Token), ATC-16 (Referral), ATC-17 (DAO), ATC-28 (Federated Learning), ATC-29 (Marketplace), ATC-30 (Reputation), Issue #2 (Gemini AI), #29 (Federated Learning), #50 (AI Kernel)

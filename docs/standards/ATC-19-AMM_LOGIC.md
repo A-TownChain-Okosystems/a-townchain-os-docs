@@ -1,5 +1,5 @@
 # ATC-19 — Automated Market Maker (AMM) Logic
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-19
 > **Tier:** 2 (Logik & Oekonomie)
 > **Referenzen:** ATC-11 (Fungible Assets), ATC-13 (Fractional), ATC-14 (Deterministic Exec), ATC-15 (Mining), ATC-18 (MultiSig), Issue #34 (DEX/AMM)

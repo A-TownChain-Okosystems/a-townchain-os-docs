@@ -1,6 +1,6 @@
 # A-TownChain OS — AI Studio Komponenten-Wiki
 
-> **Quelle:** `ShivaCoreDev/A-TownChain--kosystems` (Google AI Studio App)
+> **Quelle:** `A-TownChain-Okosystems/A-TownChain--kosystems` (Google AI Studio App)
 > **Sync-Datum:** 2026-07-05
 > **App-URL:** https://ai.studio/apps/7546bfc1-4139-434e-aef9-3c24e6578bb2
 > **Gemini Model:** `gemini-3.1-pro-preview`
@@ -429,7 +429,7 @@ Das persönliche Repository enthält die vollständige Google AI Studio Anwendun
 
 - **Hauptrepo (Code):** `A-TownChain-Okosystems/a-townchain-os`
 - **Dokumentationsrepo:** `A-TownChain-Okosystems/a-townchain-os-docs` (dieses Wiki)
-- **Persönliches Repo:** `ShivaCoreDev/A-TownChain--kosystems` (AI Studio Source)
+- **Persönliches Repo:** `A-TownChain-Okosystems/A-TownChain--kosystems` (AI Studio Source)
 - **KAI-OS Wiki:** `A-TownChain-Okosystems/kai-os-wiki`
 - **Whitepaper:** `A-TownChain-Okosystems/atc-whitepaper`
 

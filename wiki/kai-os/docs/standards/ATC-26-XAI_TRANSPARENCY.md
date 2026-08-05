@@ -1,5 +1,5 @@
 # ATC-26 — Explainable AI (XAI) & Transparency Protocol
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 3.0 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-26
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
 > **Referenzen:** ATC-04 (DAG), ATC-10 (Oracles), ATC-17 (DAO/Slashing), ATC-24 (Task Orchestration), ATC-25 (Tensor Compute), Issue #2 (Gemini AI), #50 (AI Kernel)

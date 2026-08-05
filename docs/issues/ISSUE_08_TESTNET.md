@@ -2,7 +2,7 @@
 
 > **Labels:** enhancement · blockchain · networking · priority:high
 > **Priorität:** 🔴 High · **Milestone:** v2.2.0
-> **Referenz:** [GitHub Issue #8](https://github.com/ShivaCoreDev/a-townchain-os/issues/8)
+> **Referenz:** [GitHub Issue #8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8)
 
 ---
 

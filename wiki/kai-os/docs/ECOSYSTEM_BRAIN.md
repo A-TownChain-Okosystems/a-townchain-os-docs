@@ -34,7 +34,7 @@
 | **Sprint aktiv** | 2.2 (80%), 2.1 startet (July) |
 | **Decisions offen** | AD-003 (Flash-Loan, Michael), AD-005 (AIP-001, Aurora) |
 | **Decisions res.** | 5/7 |
-| **Wiki** | 75 Kapitel, 488 KB |
+| **Wiki** | 69 Kapitel, 488 KB |
 | **Archivierte Repos** | 22 (1.179 KB, vollständig migriert) |
 | **Letzter Commit** | 2026-07-04 · 8f09d3a8b8 |
 | **Nächster Milestone** | MK1 (ATCLang Node Bootstrap) — July 2026 |
@@ -53,7 +53,7 @@
 | CodingAgent | ✅ Bereit | 33 .atc-Programme |
 | QAAgent | ✅ Bereit | 26/26 Testnet-Tests grün |
 | SecurityAgent | ✅ Bereit | Audit 94/100 |
-| DocumentationAgent | ✅ Bereit | Wiki 75 Kapitel |
+| DocumentationAgent | ✅ Bereit | Wiki 69 Kapitel |
 | RepositoryAgent | ✅ Bereit | Issues aktuell |
 | GovernanceAgent | ✅ Bereit | Decisions-Register v2.0 |
 | ResearchAgent | ✅ Bereit | Connector-Analyse |

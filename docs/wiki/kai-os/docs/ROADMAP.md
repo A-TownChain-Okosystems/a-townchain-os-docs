@@ -193,7 +193,7 @@
 | Offene Issues | 16 |
 | Offene Decisions | 2 (AD-002, AD-005) |
 | Audit-Score | 94/100 |
-| Wiki-Kapitel | 71 |
+| Wiki-Kapitel | 69 | |
 | Verbundene Dienste | 16 |
 
 ---

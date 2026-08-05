@@ -1,5 +1,5 @@
 # ATC-11 — Fungible Asset Standard
-> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** ShivaCoreDev, Aurora (Superagent)
+> **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.3 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-11
 > **Tier:** 2 (Logik & Oekonomie) — Erster Tier-2 Standard
 > **Referenzen:** ATC-09 (Cross-Chain Bridge), ATC-13 (Fractional Ownership, geplant), ATC-14 (Deterministic Exec, geplant), ATC-17 (DAO, geplant), ATC-19 (Liquidity Pools, geplant), Issue #1

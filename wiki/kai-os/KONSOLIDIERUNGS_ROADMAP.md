@@ -25,7 +25,7 @@
 | `atc-gateway` | Python | 18 KB | API Gateway |
 | `atc-standards` | — | 19 KB | ATC/ATS Standards |
 | `atc-whitepaper` | — | 168 KB | Whitepaper |
-| `ShivaCoreDev/*` | TS/Python | — | AI Studio App (378 Dateien) |
+| `A-TownChain-Okosystems/*` | TS/Python | — | AI Studio App (378 Dateien) |
 | 11× `*-wiki` Repos | — | je 7-23 KB | Wiki pro Modul |
 
 ### Probleme
@@ -96,7 +96,7 @@ a-townchain-os/
 │   └── atclang/                # ← atclang
 │
 ├── frontend/                   # TypeScript Desktop App
-│   ├── src/                    # ← AI Studio (ShivaCoreDev)
+│   ├── src/                    # ← AI Studio (Michael Wroblewski)
 │   ├── package.json
 │   └── vite.config.ts
 │
@@ -188,7 +188,7 @@ a-townchain-os/
 **Ziel:** AI Studio Desktop App + bestehendes Frontend in `frontend/` zusammenführen
 
 #### Todos
-- [ ] **K4.1** — ShivaCoreDev AI Studio → `frontend/src/` migrieren (190 TS-Dateien)
+- [ ] **K4.1** — Michael Wroblewski AI Studio → `frontend/src/` migrieren (190 TS-Dateien)
 - [ ] **K4.2** — Bestehendes `frontend/` aus a-townchain-os → `frontend/src/legacy/` migrieren
 - [ ] **K4.3** — `package.json` konsolidieren (alle npm Dependencies)
 - [ ] **K4.4** — `vite.config.ts` anpassen (Build-Output, Proxy auf Backend)
@@ -324,7 +324,7 @@ a-townchain-os/
 | `atc-shivamon` | `src/game/` | K3 | ~25 |
 | `atc-franchise` | `src/franchise/` | K3 | ~10 |
 | `atclang` | `src/atclang/` | K3 | ~40 |
-| `ShivaCoreDev/*` | `frontend/src/` | K4 | 190 |
+| `A-TownChain-Okosystems/*` | `frontend/src/` | K4 | 190 |
 | `kai-os-wiki` | `docs/wiki/` | K8 | 285 |
 | `atc-standards` | `docs/standards/` | K8 | ~15 |
 | `atc-whitepaper` | `docs/whitepaper/` | K8 | ~20 |
