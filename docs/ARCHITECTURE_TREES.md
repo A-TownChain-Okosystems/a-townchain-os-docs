@@ -2741,6 +2741,94 @@
 
 ---
 
+### atc-globus-os
+
+| Metrik | Wert |
+|--------|------|
+| .atc Dateien | 15 |
+| Zeilen | 942 |
+
+```
+├── civilization/ (4 files, 118 lines)
+│   ├── civilization_engine.atc (36 lines)
+│   ├── ecosystem_ai.atc (30 lines)
+│   ├── experience_orchestrator.atc (26 lines)
+│   └── identity_layer.atc (26 lines)
+├── core/ (2 files, 57 lines)
+│   ├── globus_core.atc (26 lines)
+│   └── world_registry.atc (31 lines)
+├── economy/ (2 files, 67 lines)
+│   ├── global_economy.atc (40 lines)
+│   └── resource_pools.atc (27 lines)
+├── governance/ (2 files, 57 lines)
+│   ├── planetary_council.atc (25 lines)
+│   └── world_governance.atc (32 lines)
+├── network/ (2 files, 34 lines)
+│   ├── globus_discovery.atc (17 lines)
+│   └── world_sync.atc (17 lines)
+├── resources/ (0 files, 0 lines)
+├── world/ (3 files, 100 lines)
+│   ├── persistent_world.atc (29 lines)
+│   ├── proc_universe.atc (38 lines)
+│   └── world_engine.atc (33 lines)
+├── .gitignore (8 lines)
+├── ARCHITECTURE.md (89 lines)
+├── CHANGELOG.md (14 lines)
+├── COMPONENT_PLAN.md (284 lines)
+├── FILE_REGISTER.md (36 lines)
+├── LICENSE (6 lines)
+├── README.md (28 lines)
+├── ROADMAP.md (34 lines)
+└── STATUS.md (24 lines)
+```
+
+---
+
+### atc-aurora-ai
+
+| Metrik | Wert |
+|--------|------|
+| .atc Dateien | 17 |
+| Zeilen | 1,017 |
+
+```
+├── agents/ (6 files, 126 lines)
+│   ├── architect_agent.atc (21 lines)
+│   ├── coding_agent.atc (21 lines)
+│   ├── knowledge_agent.atc (21 lines)
+│   ├── orchestrator_agent.atc (21 lines)
+│   ├── research_agent.atc (21 lines)
+│   └── security_agent.atc (21 lines)
+├── core/ (3 files, 94 lines)
+│   ├── agent_registry.atc (33 lines)
+│   ├── aurora_core.atc (25 lines)
+│   └── model_hub.atc (36 lines)
+├── memory/ (2 files, 59 lines)
+│   ├── agent_memory.atc (31 lines)
+│   └── context_window.atc (28 lines)
+├── models/ (0 files, 0 lines)
+├── orchestration/ (3 files, 95 lines)
+│   ├── decision_handler.atc (30 lines)
+│   ├── sync_orchestrator.atc (28 lines)
+│   └── workflow_engine.atc (37 lines)
+├── runtime/ (3 files, 94 lines)
+│   ├── agent_runtime.atc (32 lines)
+│   ├── llm_router.atc (32 lines)
+│   └── tool_executor.atc (30 lines)
+├── tools/ (0 files, 0 lines)
+├── .gitignore (8 lines)
+├── ARCHITECTURE.md (93 lines)
+├── CHANGELOG.md (14 lines)
+├── COMPONENT_PLAN.md (318 lines)
+├── FILE_REGISTER.md (38 lines)
+├── LICENSE (6 lines)
+├── README.md (28 lines)
+├── ROADMAP.md (34 lines)
+└── STATUS.md (24 lines)
+```
+
+---
+
 ## Wiki-Repositories
 
 ### 35. a-townchain-os-docs
