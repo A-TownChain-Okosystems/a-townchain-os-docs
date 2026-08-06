@@ -36,7 +36,7 @@
 | 19 | Node-Monitoring (Prometheus) | ✅ |
 | 23 | ATCFS Syscall-Interface | ✅ |
 | 24 | MultiSig Wallet M-of-N | ✅ |
-| 25 | API Gateway v2.0.0 | ✅ |
+| 25 | API Gateway v1.0.0 | ✅ |
 | 26 | Integration Tests 9/9 | ✅ |
 | 27 | atcpkg Package Manager | ✅ |
 | 28 | ShivaOS UI Renderer (TUI) | ✅ |

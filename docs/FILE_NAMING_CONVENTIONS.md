@@ -21,7 +21,7 @@
 | **Wiki** | `chapter-XX-name.md` (2-stellige Nummer) | `chapter-01-overview.md` |
 | **Standards** | `ATC-XX-NAME.md` (2-stellige Nummer) | `ATC-01-P2P.md` |
 | **Config** | Kleinbuchstaben, `.`-prefix für dotfiles | `.env.example`, `.gitignore` |
-| **Version** | `v1.0.0` in allen Referenzen | nicht `v2.0.0` |
+| **Version** | `v1.0.0` in allen Referenzen | nicht `v1.0.0` |
 
 ---
 

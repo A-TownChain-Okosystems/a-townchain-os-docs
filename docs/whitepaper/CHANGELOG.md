@@ -9,7 +9,7 @@
 - ✅ Vollständiges Whitepaper (99 Kapitel, 80KB)
 - ✅ 23/23 Tests
 
-## v2.0.0 — 08.06.2026
+## v1.0.0 — 08.06.2026
 - ATCLang v0.2.0 (Lexer, Parser, Compiler, VM, REPL, Stdlib)
 - ShivaOS Kernel, ATCFS, ATCNet, ShivaConsensus
 - Gemini AI Integration (BYOK)

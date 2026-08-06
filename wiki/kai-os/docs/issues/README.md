@@ -1,7 +1,7 @@
 # 📋 A-TownChain OS — Issue Dokumentation
 
 > Technische Spezifikation aller offenen GitHub Issues
-> **Stand:** v2.0.0 Genesis Release · 2026-05-19
+> **Stand:** v1.0.0 Genesis Release · 2026-05-19
 
 ---
 
@@ -59,4 +59,4 @@
 ---
 
 > **Docs:** `docs/issues/` · **Repo:** [A-TownChain-Okosystems/a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os)
-> **Autor:** A-TownChain-Okosystems × Aurora AI · v2.0.0 · 2026-05-19
+> **Autor:** A-TownChain-Okosystems × Aurora AI · v1.0.0 · 2026-05-19

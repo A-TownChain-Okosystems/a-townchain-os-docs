@@ -5330,7 +5330,7 @@ d0b9ba9525  2026-06-10  fix(#10): Cross-Chain Bridge — Lock-and-Mint, ATC↔ET
 636aa98c6d  2026-06-10  fix(#32): ShivaOS Syscall-Tabelle — 20 Syscalls
 f0b9ce290b  2026-06-10  fix(#33): Gas-Fee Engine — EIP-1559, Base Fee, Priority Fee, 50% Burn
 64515fb8b8  2026-06-10  fix(#26): Integration Tests ATCFS + MultiSig + ATCLang + Gateway (9T)
-6e2d7c868c  2026-06-10  fix(#25): Gateway main.py v2.0.0 — alle Middlewares aktiv
+6e2d7c868c  2026-06-10  fix(#25): Gateway main.py v1.0.0 — alle Middlewares aktiv
 b260480494  2026-06-10  fix(#24): MultiSig Wallet — M-of-N Signing, Bridge Vault
 109ce46576  2026-06-10  fix(#23): ATCFS ShivaOS Kernel-Modul — syscall Interface
 d53d48c788  2026-06-10  fix(#23): ATCFS — vollständiges A-TownChain Filesystem (L6)
@@ -6062,7 +6062,7 @@ Core-Team erstellt Proposal (pallet-democracy)
        ├── Monitoring 24h
        └── Rollout auf alle Nodes
   → Neue Kernel-NFT (L2) wird geminted
-  → Event: KernelUpgraded { old: v2.0.0, new: v2.1.0 }
+  → Event: KernelUpgraded { old: v1.0.0, new: v2.1.0 }
 ```
 
 #### Hardware-Tausch (L1 Hardware NFT)
@@ -8292,7 +8292,7 @@ FINAL GO/NO-GO CHECKLIST:
 | `v1.1.0` | Jan 2028 | SR25519-Batch-Verifikation, Performance-Tuning L2 |
 | `v1.2.0` | Apr 2028 | Kyber-1024 in P2P (Post-Quantum produktiv) |
 | `v1.3.0` | Jul 2028 | L12 Gamification vollständig (Shivamon PvP-Turniere) |
-| `v2.0.0` | 2029 | L13+ Erweiterungen, Cross-Chain-Bridges |
+| `v1.0.0` | 2029 | L13+ Erweiterungen, Cross-Chain-Bridges |
 
 
 

@@ -5699,7 +5699,7 @@ Core-Team erstellt Proposal (pallet-democracy)
        ├── Monitoring 24h
        └── Rollout auf alle Nodes
   → Neue Kernel-NFT (L2) wird geminted
-  → Event: KernelUpgraded { old: v2.0.0, new: v2.1.0 }
+  → Event: KernelUpgraded { old: v1.0.0, new: v2.1.0 }
 ```
 
 #### Hardware-Tausch (L1 Hardware NFT)
@@ -7847,7 +7847,7 @@ FINAL GO/NO-GO CHECKLIST:
 | `v1.1.0` | Jan 2028 | SR25519-Batch-Verifikation, Performance-Tuning L2 |
 | `v1.2.0` | Apr 2028 | Kyber-1024 in P2P (Post-Quantum produktiv) |
 | `v1.3.0` | Jul 2028 | L12 Gamification vollständig (Shivamon PvP-Turniere) |
-| `v2.0.0` | 2029 | L13+ Erweiterungen, Cross-Chain-Bridges |
+| `v1.0.0` | 2029 | L13+ Erweiterungen, Cross-Chain-Bridges |
 
 
 

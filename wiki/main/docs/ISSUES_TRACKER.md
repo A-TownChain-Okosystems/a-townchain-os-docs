@@ -50,7 +50,7 @@
 | 19 | Node-Monitoring | `performance` | `Fix #19` |
 | 23 | ATCFS Syscalls | `shivaos` `feature` | `Fix #23` |
 | 24 | MultiSig Wallet | `security` `blockchain` | `Fix #24` |
-| 25 | Gateway v2.0.0 | `feature` `performance` | `Fix #25` |
+| 25 | Gateway v1.0.0 | `feature` `performance` | `Fix #25` |
 | 26 | Integration Tests | `feature` | `Fix #26` |
 | 27 | atcpkg Manager | `atclang` `feature` | `Fix #27` |
 | 28 | ShivaOS UI TUI | `shivaos` `feature` | `Fix #28` |

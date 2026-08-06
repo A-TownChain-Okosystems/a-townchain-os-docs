@@ -15,4 +15,4 @@
 
 ---
 
-*Archiviert 2026-06-09 · A-TownChain Ökosystem v2.0.0*
+*Archiviert 2026-06-09 · A-TownChain Ökosystem v1.0.0*

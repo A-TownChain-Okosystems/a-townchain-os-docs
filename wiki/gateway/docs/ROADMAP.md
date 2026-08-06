@@ -2,7 +2,7 @@
 
 > Stand: 10. Juni 2026
 
-## v2.0.0 — ABGESCHLOSSEN ✅ *(10. Juni 2026 — Fix #25)*
+## v1.0.0 — ABGESCHLOSSEN ✅ *(10. Juni 2026 — Fix #25)*
 - Alle Middlewares aktiv (Auth+RateLimit+ECDSA+CORS)
 - Franchise-Routen, Package-Manager-Routen
 - Monitoring /metrics

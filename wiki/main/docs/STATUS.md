@@ -9,7 +9,7 @@
 | ATCLang | v0.2.0 | ✅ Compiler + VM + REPL + Analyzer |
 | ShivaOS Kernel | v2.2.0 | ✅ ATCFS + Syscalls + TUI |
 | ShivaConsensus | v2.2.0 | ✅ PoH+PoS+PoW |
-| API Gateway | v2.0.0 | ✅ alle Middlewares aktiv |
+| API Gateway | v1.0.0 | ✅ alle Middlewares aktiv |
 | ATCNet P2P | v2.2.0 | ✅ Rate-Limit + ECDSA |
 | Smart Contracts | v2.2.0 | ✅ Bridge + MultiSig + GasFee |
 | Shivamon | v2.2.0 | ✅ Breeding + Marketplace |

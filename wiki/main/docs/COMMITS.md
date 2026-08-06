@@ -44,7 +44,7 @@ d0b9ba95  feat(bridge): Fix #10 Cross-Chain Bridge ETH+POL+BSC
 636aa98c  feat(shivaos):Fix #32 ShivaOS Syscall-Tabelle 20 Syscalls
 f0b9ce29  feat(blockchain):Fix #33 Gas-Fee Engine EIP-1559
 64515fb8  test:         Fix #26 Integration Tests 9/9 bestanden
-6e2d7c86  feat(gateway):Fix #25 Gateway v2.0.0 alle Middlewares
+6e2d7c86  feat(gateway):Fix #25 Gateway v1.0.0 alle Middlewares
 b2604804  feat(security):Fix #24 MultiSig Wallet M-of-N
 109ce465  feat(shivaos):Fix #23 ATCFS Syscall-Interface
 445e4386  feat(shivaos):Fix #19 Node-Monitoring Prometheus

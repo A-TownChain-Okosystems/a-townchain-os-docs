@@ -15,7 +15,7 @@
 - [ ] MultiSig Franchise-Treasury (nutzt #24 ✅)
 - [ ] Mobile Wallet Connect
 
-## v2.0.0 — VISION
+## v1.0.0 — VISION
 - [ ] Cross-Chain Franchise (ETH/BSC via Bridge) [#10 ✅]
 - [ ] KI-Franchise-Bewertung (Gemini) [#2 ✅]
 - [ ] Franchise-DEX (FFT) [#20]

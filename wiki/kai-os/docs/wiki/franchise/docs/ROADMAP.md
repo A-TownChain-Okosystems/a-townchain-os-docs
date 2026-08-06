@@ -13,7 +13,7 @@
 - Revenue-Streaming (kontinuierliche Auszahlung statt Batch)
 - Mobile-Integration (Wallet-Connect)
 
-## v2.0.0 — Vision
+## v1.0.0 — Vision
 - Cross-Chain Franchise (via Bridge ATC ↔ ETH)
 - KI-gestützte Franchise-Bewertung (Gemini)
 - Dezentrale Franchise-Börse (FFT-DEX)

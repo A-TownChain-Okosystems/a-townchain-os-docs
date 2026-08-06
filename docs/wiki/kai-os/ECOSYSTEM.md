@@ -1,6 +1,6 @@
-# 🌐 A-TownChain Ökosystem — Master Index v2.0.0
+# 🌐 A-TownChain Ökosystem — Master Index v1.0.0
 
-> **Stand:** 2026-06-09 | **KAI-OS:** v2.0.0 | **ATX-Standards:** 186 Module
+> **Stand:** 2026-06-09 | **KAI-OS:** v1.0.0 | **ATX-Standards:** 186 Module
 >
 > Ein vollständiges, proprietäres KI-Blockchain-Betriebssystem.
 > **13 Layer (L0–L12)** · **26 Sprints** · **4 Phasen** · **23 Repositories**
@@ -162,7 +162,7 @@ python3 tests/test_orchestrator.py
 | Kritische Blocker gelöst | 4 (ATC-1000, ATN-1000, ATS-1000, ATAUTH-1000) |
 | Aktueller Sprint | 2.1–2.2 |
 | MK1-Gate ETA | ~4 Tage |
-| Version | v2.0.0 |
+| Version | v1.0.0 |
 
 ---
 

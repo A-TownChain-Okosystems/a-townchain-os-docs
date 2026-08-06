@@ -34,7 +34,7 @@
 ### Infrastruktur ✅
 - [x] 5-Node Testnet Docker Compose [#8/#18]
 - [x] Node-Monitoring Prometheus [#19]
-- [x] API Gateway v2.0.0 (alle Middlewares) [#25]
+- [x] API Gateway v1.0.0 (alle Middlewares) [#25]
 - [x] Integration Tests 9/9 ✅ [#26]
 - [x] Build System (Docker/AppImage/EXE/.deb) [#7]
 
