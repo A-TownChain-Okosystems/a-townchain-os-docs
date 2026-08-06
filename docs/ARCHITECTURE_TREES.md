@@ -1,7700 +1,7672 @@
 # 🏗️ Architekturbäume — A-TownChain Ökosystem (70 Repos)
 
 > **Zweck:** Vollständige Architektur- und Verzeichnisstruktur für alle Repositories.
-> **Auto-generiert:** 2026-08-06 12:42 UTC | **Agent:** Aurora (MasterBrain · Base44)
+> Erweitert mit: Dateigrößen, Zeilenanzahl, Verzeichnis-Tiefen bis 10 Level, Layer-Klassifizierung, Sprach-Statistik.
+
+> **Auto-generiert:** 2026-08-06 13:00 UTC | **Agent:** Aurora (MasterBrain · Base44)
 
 ---
 
 ## Inhaltsverzeichnis
 
-- [a-townchain-os](#a-townchain-os)
-- [a-townchain-os-docs](#a-townchain-os-docs)
-- [a-townchain-os-wiki](#a-townchain-os-wiki)
-- [atc-aistudio](#atc-aistudio)
-- [atc-aistudio-wiki](#atc-aistudio-wiki)
-- [atc-atclang](#atc-atclang)
-- [atc-atclang-wiki](#atc-atclang-wiki)
-- [atc-atcpkg](#atc-atcpkg)
-- [atc-atcpkg-wiki](#atc-atcpkg-wiki)
-- [atc-backend](#atc-backend)
-- [atc-backend-wiki](#atc-backend-wiki)
-- [atc-blockchain](#atc-blockchain)
-- [atc-blockchain-wiki](#atc-blockchain-wiki)
-- [atc-bootloader](#atc-bootloader)
-- [atc-bootloader-wiki](#atc-bootloader-wiki)
-- [atc-ci](#atc-ci)
-- [atc-ci-wiki](#atc-ci-wiki)
-- [atc-cli](#atc-cli)
-- [atc-cli-wiki](#atc-cli-wiki)
-- [atc-contracts](#atc-contracts)
-- [atc-contracts-wiki](#atc-contracts-wiki)
-- [atc-dns](#atc-dns)
-- [atc-dns-wiki](#atc-dns-wiki)
-- [atc-drivers](#atc-drivers)
-- [atc-drivers-wiki](#atc-drivers-wiki)
-- [atc-explorer](#atc-explorer)
-- [atc-explorer-wiki](#atc-explorer-wiki)
-- [atc-franchise](#atc-franchise)
-- [atc-franchise-wiki](#atc-franchise-wiki)
-- [atc-frontend](#atc-frontend)
-- [atc-frontend-wiki](#atc-frontend-wiki)
-- [atc-gateway](#atc-gateway)
-- [atc-gateway-wiki](#atc-gateway-wiki)
-- [atc-genesis-engine](#atc-genesis-engine)
-- [atc-genesis-engine-wiki](#atc-genesis-engine-wiki)
-- [atc-ide](#atc-ide)
-- [atc-ide-wiki](#atc-ide-wiki)
-- [atc-kernel](#atc-kernel)
-- [atc-kernel-wiki](#atc-kernel-wiki)
-- [atc-linux-edition](#atc-linux-edition)
-- [atc-linux-edition-wiki](#atc-linux-edition-wiki)
-- [atc-mobile](#atc-mobile)
-- [atc-mobile-wiki](#atc-mobile-wiki)
-- [atc-sdk](#atc-sdk)
-- [atc-sdk-wiki](#atc-sdk-wiki)
-- [atc-shivacore](#atc-shivacore)
-- [atc-shivacore-tools](#atc-shivacore-tools)
-- [atc-shivacore-tools-wiki](#atc-shivacore-tools-wiki)
-- [atc-shivacore-wiki](#atc-shivacore-wiki)
-- [atc-shivamon](#atc-shivamon)
-- [atc-shivamon-wiki](#atc-shivamon-wiki)
-- [atc-standards](#atc-standards)
-- [atc-standards-wiki](#atc-standards-wiki)
-- [atc-stdlib](#atc-stdlib)
-- [atc-stdlib-wiki](#atc-stdlib-wiki)
-- [atc-ui](#atc-ui)
-- [atc-ui-wiki](#atc-ui-wiki)
-- [atc-vm](#atc-vm)
-- [atc-vm-wiki](#atc-vm-wiki)
-- [atc-wallet](#atc-wallet)
-- [atc-wallet-wiki](#atc-wallet-wiki)
-- [atc-whitepaper](#atc-whitepaper)
-- [atc-windows-edition](#atc-windows-edition)
-- [atc-windows-edition-wiki](#atc-windows-edition-wiki)
-- [atclang](#atclang)
-- [atclang-wiki](#atclang-wiki)
-- [atcnet](#atcnet)
-- [atcnet-wiki](#atcnet-wiki)
-- [franchise-factory-wiki](#franchise-factory-wiki)
-- [kai-os-wiki](#kai-os-wiki)
+- [a-townchain-os](#a-townchain-os) — L0–L12 (Monorepo)
+- [a-townchain-os-docs](#a-townchain-os-docs) — Wiki (Dokumentation)
+- [a-townchain-os-wiki](#a-townchain-os-wiki) — Wiki (Archiv)
+- [atc-aistudio](#atc-aistudio) — L10 (AI Studio)
+- [atc-aistudio-wiki](#atc-aistudio-wiki) — Wiki
+- [atc-atclang](#atc-atclang) — L2–L4 (ATCLang Sync)
+- [atc-atclang-wiki](#atc-atclang-wiki) — Wiki
+- [atc-atcpkg](#atc-atcpkg) — L7 (Package Manager)
+- [atc-atcpkg-wiki](#atc-atcpkg-wiki) — Wiki
+- [atc-backend](#atc-backend) — L7 (Backend Services)
+- [atc-backend-wiki](#atc-backend-wiki) — Wiki
+- [atc-blockchain](#atc-blockchain) — L3–L4 (Blockchain)
+- [atc-blockchain-wiki](#atc-blockchain-wiki) — Wiki
+- [atc-bootloader](#atc-bootloader) — L1 (Bootloader)
+- [atc-bootloader-wiki](#atc-bootloader-wiki) — Wiki
+- [atc-ci](#atc-ci) — L0 (CI/CD Pipeline)
+- [atc-ci-wiki](#atc-ci-wiki) — Wiki
+- [atc-cli](#atc-cli) — L7 (CLI Tool)
+- [atc-cli-wiki](#atc-cli-wiki) — Wiki
+- [atc-contracts](#atc-contracts) — L4 (Smart Contracts)
+- [atc-contracts-wiki](#atc-contracts-wiki) — Wiki
+- [atc-dns](#atc-dns) — L5 (DNS)
+- [atc-dns-wiki](#atc-dns-wiki) — Wiki
+- [atc-drivers](#atc-drivers) — L1 (Hardware Drivers)
+- [atc-drivers-wiki](#atc-drivers-wiki) — Wiki
+- [atc-explorer](#atc-explorer) — L7 (Block Explorer)
+- [atc-explorer-wiki](#atc-explorer-wiki) — Wiki
+- [atc-franchise](#atc-franchise) — L8–L10 (Business DAOs)
+- [atc-franchise-wiki](#atc-franchise-wiki) — Wiki
+- [atc-frontend](#atc-frontend) — L10 (Frontend)
+- [atc-frontend-wiki](#atc-frontend-wiki) — Wiki
+- [atc-gateway](#atc-gateway) — L7 (API Gateway)
+- [atc-gateway-wiki](#atc-gateway-wiki) — Wiki
+- [atc-genesis-engine](#atc-genesis-engine) — L0 (Genesis Engine)
+- [atc-genesis-engine-wiki](#atc-genesis-engine-wiki) — Wiki
+- [atc-ide](#atc-ide) — L10 (IDE/Playground)
+- [atc-ide-wiki](#atc-ide-wiki) — Wiki
+- [atc-kernel](#atc-kernel) — L2 (Kernel)
+- [atc-kernel-wiki](#atc-kernel-wiki) — Wiki
+- [atc-linux-edition](#atc-linux-edition) — L10 (Linux Client)
+- [atc-linux-edition-wiki](#atc-linux-edition-wiki) — Wiki
+- [atc-mobile](#atc-mobile) — L10 (Mobile)
+- [atc-mobile-wiki](#atc-mobile-wiki) — Wiki
+- [atc-sdk](#atc-sdk) — L7 (SDK)
+- [atc-sdk-wiki](#atc-sdk-wiki) — Wiki
+- [atc-shivacore](#atc-shivacore) — L1 (Bare-Metal Kernel)
+- [atc-shivacore-tools](#atc-shivacore-tools) — L1 (Build Tools)
+- [atc-shivacore-tools-wiki](#atc-shivacore-tools-wiki) — Wiki
+- [atc-shivacore-wiki](#atc-shivacore-wiki) — Wiki
+- [atc-shivamon](#atc-shivamon) — L12 (NFT Gaming)
+- [atc-shivamon-wiki](#atc-shivamon-wiki) — Wiki
+- [atc-standards](#atc-standards) — L0 (Standards)
+- [atc-standards-wiki](#atc-standards-wiki) — Wiki
+- [atc-stdlib](#atc-stdlib) — L3 (Standard Library)
+- [atc-stdlib-wiki](#atc-stdlib-wiki) — Wiki
+- [atc-ui](#atc-ui) — L10 (UI Dashboard)
+- [atc-ui-wiki](#atc-ui-wiki) — Wiki
+- [atc-vm](#atc-vm) — L4 (Virtual Machine)
+- [atc-vm-wiki](#atc-vm-wiki) — Wiki
+- [atc-wallet](#atc-wallet) — L10 (Desktop Wallet)
+- [atc-wallet-wiki](#atc-wallet-wiki) — Wiki
+- [atc-whitepaper](#atc-whitepaper) — L0 (Whitepaper)
+- [atc-windows-edition](#atc-windows-edition) — L10 (Windows Client)
+- [atc-windows-edition-wiki](#atc-windows-edition-wiki) — Wiki
+- [atclang](#atclang) — L2–L4 (ATCLang Compiler)
+- [atclang-wiki](#atclang-wiki) — Wiki
+- [atcnet](#atcnet) — L5 (P2P Network)
+- [atcnet-wiki](#atcnet-wiki) — Wiki
+- [franchise-factory-wiki](#franchise-factory-wiki) — Wiki
+- [kai-os-wiki](#kai-os-wiki) — Wiki (Legacy)
 
 ---
 
+## Ökosystem-Statistik
+
+| Metrik | Wert |
+|--------|------|
+| **Repositories** | 70 |
+| **Total Dateien** | 5,709 |
+| **Total Verzeichnisse** | 1,080 |
+
+### Sprach-Verteilung
+
+| Typ | Dateien |
+|-----|--------|
+| .md | 2697 |
+| .atc | 903 |
+| .py | 787 |
+| .tsx | 476 |
+| .no-ext | 146 |
+| .gitignore | 144 |
+| .ts | 127 |
+| .rs | 126 |
+| .js | 69 |
+| .txt | 47 |
+| .yml | 34 |
+| .cjs | 33 |
+| .json | 27 |
+| .html | 18 |
+| .toml | 17 |
+| .example | 15 |
+| .sh | 13 |
+| .css | 8 |
+| .sql | 5 |
+| .gitkeep | 4 |
+
+---
+
+
 ## a-townchain-os
 
-**Dateien:** 1708 | **Verzeichnisse:** 310
+**Layer:** L0–L12 (Monorepo) | **Dateien:** 1708 | **Verzeichnisse:** 310 | **Max Tiefe:** 5
+
+**Sprachen:** .md(715) · .atc(284) · .py(240) · .tsx(158) · .rs(63)
 
 ```
 a-townchain-os/
-├── .coveragerc
-├── .env.example
-├── .github/
-│   ├── changelog-config.json
-│   └── workflows/
-│       ├── ci.yml
-│       └── codeql.yml
-├── .gitignore
-├── AAA_ASSET_SYSTEM_v1.md
-├── AGENT_MANIFEST.md
-├── AGENT_MASTERRULES.md
-├── AGENT_PROTOCOL.md
-├── ATCLANG_FIRST.md
-├── CHANGELOG.md
-├── CONNECTION_MAP.md
-├── CONTRIBUTING.md
-├── DOCUMENTATION_SYNC_GUIDE.md
-├── Dockerfile
-├── ECOSYSTEM.md
-├── ECOSYSTEM_BRAIN.md
-├── FILE_REGISTER.md
-├── GENESIS_BUS_ARCHITECTURE.md
-├── GENESIS_CIVILIZATION_PLATFORM_v4.md
-├── GENESIS_COMMUNICATION_LAYER_v2.md
-├── GENESIS_FRANCHISE_FACTORY_v1.md
-├── GENESIS_FRANCHISE_FACTORY_v2.md
-├── INSTALL.md
-├── KERNEL_FROM_SCRATCH_PLAN.md
-├── KONSOLIDIERUNGS_MATRIX.md
-├── KONSOLIDIERUNGS_ROADMAP.md
-├── LICENSE
-├── MASTER_TODO.md
-├── MILESTONES.md
-├── MONOREPO_STRUCTURE.md
-├── Makefile
-├── NAMING_CONVENTIONS.md
-├── OS_BARE_METAL_GAP_ANALYSIS.md
-├── README.md
-├── REALITY_STATUS.md
-├── REPO_ARCHITECTURE.md
-├── ROADMAP.md
-├── ROADMAP_PYTHON_TO_OS.md
-├── SECURITY.md
-├── STATUS.md
-├── SYNC_PROTOCOL.md
-├── TODO/
-│   └── MASTER_TODO.md
-├── TODO.md
-├── UPGRADE.md
-├── VERSION
-├── aistudio/
-│   ├── .env.example
-│   ├── .gitignore
-│   ├── AGENTS.md
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── GEMINI.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── SOFTWARE_ROADMAP.md
-│   ├── STATUS.md
-│   ├── assets/
-│   │   └── .aistudio/
-│   │       └── .gitignore
-│   ├── check_dups2.js
-│   ├── check_dups_all.js
-│   ├── check_dups_desktop.js
-│   ├── check_dups_windows_map.js
-│   ├── fetch.js
-│   ├── firebase-applet-config.json
-│   ├── fix.js
-│   ├── fix2.js
-│   ├── fix_react_imports.cjs
-│   ├── fix_wiki.cjs
-│   ├── fix_wiki.js
-│   ├── index.html
-│   ├── mark_completed.ts
-│   ├── mark_completed_src.ts
-│   ├── metadata.json
-│   ├── move_back.js
-│   ├── output.txt
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── replace.js
-│   ├── replace_langs.cjs
-│   ├── replace_langs_2.cjs
-│   ├── replace_langs_3.cjs
-│   ├── replace_langs_4.cjs
-│   ├── replace_langs_5.cjs
-│   ├── replace_langs_6.cjs
-│   ├── script.cjs
-│   ├── script.js
-│   ├── script2.cjs
-│   ├── server.ts
-│   ├── src/
-│   │   ├── App.tsx
-│   │   ├── DesktopApp.tsx
-│   │   ├── atcLangRoadmapData.ts
-│   │   ├── atcLangWikiData.ts
-│   │   ├── auditData.ts
-│   │   ├── backend/
-│   │   │   ├── blockchain/
-│   │   │   │   └── engine.ts
-│   │   │   └── p2p/
-│   │   │       └── network.ts
-│   │   ├── components/
-│   │   │   ├── ATCAssetView.tsx
-│   │   │   ├── ATCDjStudioView.tsx
-│   │   │   ├── ATCLangEditor.tsx
-│   │   │   ├── ATCWalletView.tsx
-│   │   │   ├── ATownDashboardView.tsx
-│   │   │   ├── ATownOSNode.tsx
-│   │   │   ├── ATownTestView.tsx
-│   │   │   ├── AgentCivilizationView.tsx
-│   │   │   ├── Ai3DRenderEngineTab.tsx
-│   │   │   ├── AiAnimationEngineTab.tsx
-│   │   │   ├── AiAudioEngineTab.tsx
-│   │   │   ├── AiCharacterBioTab.tsx
-│   │   │   ├── AiGameEngineTab.tsx
-│   │   │   ├── AiKernelView.tsx
-│   │   │   ├── AiOsEngineView.tsx
-│   │   │   ├── AiSoftwareWorkflowView.tsx
-│   │   │   ├── AiTimelineEngineTab.tsx
-│   │   │   ├── AntiCheatView.tsx
-│   │   │   ├── ApiHealthWidget.tsx
-│   │   │   ├── ApiInterfacesView.tsx
-│   │   │   ├── ApiOrchestratorView.tsx
-│   │   │   ├── AppGlobeView.tsx
-│   │   │   ├── ArchitectureDependencyGraph.tsx
-│   │   │   ├── ArchitectureView.tsx
-│   │   │   ├── AssetVaultView.tsx
-│   │   │   ├── AtcAssetsDbView.tsx
-│   │   │   ├── AtcCoreKernelView.tsx
-│   │   │   ├── AtcLangArchitectureView.tsx
-│   │   │   ├── AtcLangPlaygroundView.tsx
-│   │   │   ├── AtcLangPresetsView.tsx
-│   │   │   ├── AtcWhitepaperView.tsx
-│   │   │   ├── AtsSuite.tsx
-│   │   │   ├── AtvmSandboxView.test.tsx
-│   │   │   ├── AtvmSandboxView.tsx
-│   │   │   ├── BatteryStatus.tsx
-│   │   │   ├── BattleArenaView.tsx
-│   │   │   ├── BenchmarkCenterView.tsx
-│   │   │   ├── BlockchainEcosystemView.tsx
-│   │   │   ├── BlockchainLedgerView.tsx
-│   │   │   ├── CalculatorView.tsx
-│   │   │   ├── CalendarView.tsx
-│   │   │   ├── CiCdPipelineView.tsx
-│   │   │   ├── ClockView.tsx
-│   │   │   ├── CodeAnalyzerView.tsx
-│   │   │   ├── CommitHeatmap.tsx
-│   │   │   ├── ComplianceEngineView.tsx
-│   │   │   ├── ComplianceView.tsx
-│   │   │   ├── ConflictResolutionModal.tsx
-│   │   │   ├── ConsensusIntegrationGuide.tsx
-│   │   │   ├── CryptoVisualizationView.tsx
-│   │   │   ├── DataProcessingView.tsx
-│   │   │   ├── DbOrchestratorView.tsx
-│   │   │   ├── DeFiLiquidityPoolView.tsx
-│   │   │   ├── DependencyMapView.tsx
-│   │   │   ├── DeploymentPipelineWidget.tsx
-│   │   │   ├── DevToolsView.tsx
-│   │   │   ├── DeveloperKnowledgeBaseView.tsx
-│   │   │   ├── DistributedDatalakeView.tsx
-│   │   │   ├── EcosystemInstaller.tsx
-│   │   │   ├── EcosystemTreeOverlay.tsx
-│   │   │   ├── EcosystemUmlView.tsx
-│   │   │   ├── EcosystemVisualizerView.tsx
-│   │   │   ├── FileManagerView.tsx
-│   │   │   ├── FolderView.tsx
-│   │   │   ├── FranchiseFactoryView.tsx
-│   │   │   ├── GateToHellBrowser.tsx
-│   │   │   ├── GenesisBlockGeneratorView.tsx
-│   │   │   ├── GitGraphVisualization.tsx
-│   │   │   ├── GitHubRepoSyncView.tsx
-│   │   │   ├── GitHubStatusDashboard.tsx
-│   │   │   ├── GitOpsView.tsx
-│   │   │   ├── GovernanceView.tsx
-│   │   │   ├── GpuPerformanceWidget.tsx
-│   │   │   ├── HardwareDriversView.tsx
-│   │   │   ├── IdeaToAppFlowchartView.tsx
-│   │   │   ├── ImageGeneratorTab.tsx
-│   │   │   ├── IntegrationsWindow.tsx
-│   │   │   ├── InterfacesView.tsx
-│   │   │   ├── JsExampleRunner.tsx
-│   │   │   ├── LazyMetricsCharts.tsx
-│   │   │   ├── LegalView.tsx
-│   │   │   ├── LoginOverlay.tsx
-│   │   │   ├── MainnetLaunchView.tsx
-│   │   │   ├── MarketplaceView.tsx
-│   │   │   ├── MediaApps.tsx
-│   │   │   ├── MetricsDashboard.tsx
-│   │   │   ├── MetricsView.tsx
-│   │   │   ├── ModulesPluginView.tsx
-│   │   │   ├── NetworkExplorerView.test.tsx
-│   │   │   ├── NetworkExplorerView.tsx
-│   │   │   ├── NetworkTopologyView.tsx
-│   │   │   ├── NodeHealthMonitor.tsx
-│   │   │   ├── NotepadView.tsx
-│   │   │   ├── OfficeApps.tsx
-│   │   │   ├── OfficeSuiteView.tsx
-│   │   │   ├── P2PChatView.tsx
-│   │   │   ├── Paint3DView.tsx
-│   │   │   ├── PaymentSystemView.tsx
-│   │   │   ├── PipelineGeneratorTab.tsx
-│   │   │   ├── PoAITrainingEngineView.tsx
-│   │   │   ├── ProjectAuditDashboard.tsx
-│   │   │   ├── ProjectHubView.tsx
-│   │   │   ├── ProtocolsView.tsx
-│   │   │   ├── ReportsView.tsx
-│   │   │   ├── RepositoryActivityChart.tsx
-│   │   │   ├── RepositoryLineChart.tsx
-│   │   │   ├── RescueSystemView.tsx
-│   │   │   ├── RoadmapView.tsx
-│   │   │   ├── SemanticGraphView.tsx
-│   │   │   ├── SessionExportView.tsx
-│   │   │   ├── SettingsView.tsx
-│   │   │   ├── SocialMediaView.tsx
-│   │   │   ├── SoftwareAuditView.tsx
-│   │   │   ├── SoftwareKnowledgeDbView.tsx
-│   │   │   ├── SourceCodeViewer.tsx
-│   │   │   ├── SpecificSettingsViews.tsx
-│   │   │   ├── StorageManagerView.tsx
-│   │   │   ├── StrategicArchitectureMap.tsx
-│   │   │   ├── StructureView.tsx
-│   │   │   ├── SyncDashboardModal.tsx
-│   │   │   ├── SyncHistoryModal.tsx
-│   │   │   ├── SyncMetricsView.tsx
-│   │   │   ├── SyncStatusDonutChart.tsx
-│   │   │   ├── SyncStatusOverview.tsx
-│   │   │   ├── SystemDiagnosticsView.tsx
-│   │   │   ├── SystemFinderView.tsx
-│   │   │   ├── SystemHealthDashboard.tsx
-│   │   │   ├── SystemHealthDashboardWidget.tsx
-│   │   │   ├── SystemLogsView.tsx
-│   │   │   ├── TaskManagerView.tsx
-│   │   │   ├── TechDocsView.tsx
-│   │   │   ├── TechTreeView.tsx
-│   │   │   ├── TerminalView.tsx
-│   │   │   ├── TestnetOrchestrationView.tsx
-│   │   │   ├── TestnetSimulationView.tsx
-│   │   │   ├── TextGeneratorTab.tsx
-│   │   │   ├── ThemeSwitcher.tsx
-│   │   │   ├── TodoView.tsx
-│   │   │   ├── TooltipIcon.tsx
-│   │   │   ├── TxOrchestratorView.tsx
-│   │   │   ├── UserProfileView.tsx
-│   │   │   ├── VideoGeneratorTab.tsx
-│   │   │   ├── WebhookMonitor.tsx
-│   │   │   ├── Window.tsx
-│   │   │   ├── WindowExtras.tsx
-│   │   │   ├── ZeroKnowledgeProofView.tsx
-│   │   │   ├── ZkCircuitEditorView.tsx
-│   │   │   └── ZkVisualizationView.tsx
-│   │   ├── contexts/
-│   │   │   ├── FirebaseContext.tsx
-│   │   │   ├── GoogleWorkspaceContext.tsx
-│   │   │   ├── SyncMetricsContext.tsx
-│   │   │   └── WalletContext.tsx
-│   │   ├── data.ts
-│   │   ├── db/
-│   │   │   ├── drizzle.config.ts
-│   │   │   ├── index.ts
-│   │   │   └── schema.ts
-│   │   ├── ecosystemData.ts
-│   │   ├── fix_translation.cjs
-│   │   ├── hooks/
-│   │   │   ├── useGoogleSheetsSync.ts
-│   │   │   └── useKeyboardShortcut.ts
-│   │   ├── index.css
-│   │   ├── lib/
-│   │   │   ├── CryptoEngine.ts
-│   │   │   ├── firebase-admin.ts
-│   │   │   ├── firebase.ts
-│   │   │   ├── indexedDb.ts
-│   │   │   ├── syncLogic.test.ts
-│   │   │   └── syncLogic.ts
-│   │   ├── main.tsx
-│   │   ├── marketplaceApps.ts
-│   │   ├── middleware/
-│   │   │   └── auth.ts
-│   │   ├── requirementsData.ts
-│   │   ├── roadmapData.ts
-│   │   ├── routes/
-│   │   │   └── notion.ts
-│   │   ├── services/
-│   │   │   ├── SyncService.ts
-│   │   │   └── githubSync.ts
-│   │   ├── standardsData.ts
-│   │   ├── tierData.ts
-│   │   ├── types.ts
-│   │   ├── utils/
-│   │   │   ├── appSync.tsx
-│   │   │   ├── auditUtils.test.ts
-│   │   │   ├── auditUtils.ts
-│   │   │   └── crypto.ts
-│   │   └── wikiData.ts
-│   ├── testChat.js
-│   ├── test_know.js
-│   ├── tests/
-│   │   ├── GitHubRepoSyncView.test.tsx
-│   │   └── audit_compliance.test.ts
-│   ├── tmp.txt
-│   ├── tsconfig.json
-│   ├── update_wiki_categories.ts
-│   ├── vite.config.ts
-│   └── workspace/
-│       ├── move.js
-│       ├── rename.js
-│       ├── replace.js
-│       ├── replaceEnterprise.js
-│       ├── replaceGoals.ts
-│       ├── replaceGoals2.ts
-│       └── src/
-│           ├── backend/
-│           │   └── blockchain/
-│           │       └── engine.ts
-│           └── components/
-│               └── GovernanceView.tsx
-├── archive/
-│   ├── ATCLANG_ARCHIVE.md
-│   ├── atclang-v01/
-│   │   ├── atcos_main.atc
-│   │   ├── consensus/
-│   │   │   ├── fork_resolution.atc
-│   │   │   ├── gas_fee.atc
-│   │   │   ├── hybrid_consensus.atc
-│   │   │   ├── poh.atc
-│   │   │   ├── pos.atc
-│   │   │   └── pow.atc
-│   │   └── contracts/
-│   │       ├── breeding.atc
-│   │       ├── contract_engine_atc14.atc
-│   │       ├── genesis_token.atc
-│   │       └── governance_contract.atc
-│   └── duplicates/
-│       ├── contract_registry.atc
-│       ├── kai_cli.atc
-│       ├── smart_contract_registry.atc
-│       └── smart_contracts.atc
-├── atclang/
-│   ├── .gitignore
-│   ├── ATCLANG_SPEC.md
-│   ├── CHANGELOG.md
-│   ├── CONTRIBUTING.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── __init__.py
-│   ├── atc-atclang/
-│   │   ├── .gitignore
-│   │   ├── ATCLANG_SPEC.md
-│   │   ├── CHANGELOG.md
-│   │   ├── CONTRIBUTING.md
-│   │   ├── FILE_REGISTER.md
-│   │   ├── LICENSE
-│   │   ├── README.md
-│   │   ├── ROADMAP.md
-│   │   ├── STATUS.md
-│   │   ├── __init__.py
-│   │   ├── compiler/
-│   │   │   ├── __init__.py
-│   │   │   ├── compiler.py
-│   │   │   ├── optimizer.py
-│   │   │   └── type_checker.py
-│   │   ├── lexer/
-│   │   │   ├── __init__.py
-│   │   │   └── lexer.py
-│   │   ├── parser/
-│   │   │   ├── __init__.py
-│   │   │   ├── ast_nodes.py
-│   │   │   └── parser.py
-│   │   ├── programs/
-│   │   │   └── atcos_main.atc
-│   │   ├── repl/
-│   │   │   ├── __init__.py
-│   │   │   └── repl.py
-│   │   ├── requirements.txt
-│   │   ├── stdlib/
-│   │   │   ├── __init__.py
-│   │   │   ├── atc_stdlib.py
-│   │   │   ├── chain.py
-│   │   │   ├── collections.py
-│   │   │   ├── collections_ext.py
-│   │   │   ├── crypto.py
-│   │   │   ├── crypto_ext.py
-│   │   │   ├── encoding.py
-│   │   │   ├── io.py
-│   │   │   ├── io_ext.py
-│   │   │   ├── math.py
-│   │   │   ├── primitives.py
-│   │   │   ├── string.py
-│   │   │   └── wallet.py
-│   │   ├── v03/
-│   │   │   ├── __init__.py
-│   │   │   └── atclang_v03_features.py
-│   │   └── vm/
-│   │       ├── __init__.py
-│   │       └── atcvm.py
-│   ├── compiler/
-│   │   ├── __init__.py
-│   │   ├── compiler.py
-│   │   ├── optimizer.py
-│   │   └── type_checker.py
-│   ├── compiler.py
-│   ├── lexer/
-│   │   ├── __init__.py
-│   │   └── lexer.py
-│   ├── lexer.py
-│   ├── parser/
-│   │   ├── __init__.py
-│   │   ├── ast_nodes.py
-│   │   └── parser.py
-│   ├── parser.py
-│   ├── programs/
-│   │   ├── .gitkeep
-│   │   ├── atc8300.atc
-│   │   ├── atcfs.atc
-│   │   ├── atcnet.atc
-│   │   ├── atcos_main.atc
-│   │   ├── consensus.atc
-│   │   ├── event_bus.atc
-│   │   ├── gateway.atc
-│   │   ├── governance.atc
-│   │   ├── kernel.atc
-│   │   ├── shivamon.atc
-│   │   └── wallet.atc
-│   ├── repl/
-│   │   ├── __init__.py
-│   │   └── repl.py
-│   ├── requirements.txt
-│   ├── runtime/
-│   │   ├── __init__.py
-│   │   ├── driver_framework.py
-│   │   └── kernel_runtime.py
-│   ├── stdlib/
-│   │   ├── __init__.py
-│   │   ├── atc_stdlib.py
-│   │   ├── chain.py
-│   │   ├── collections.py
-│   │   ├── collections_ext.py
-│   │   ├── crypto.py
-│   │   ├── crypto_ext.py
-│   │   ├── encoding.py
-│   │   ├── io.py
-│   │   ├── io_ext.py
-│   │   ├── math.py
-│   │   ├── primitives.py
-│   │   ├── string.py
-│   │   └── wallet.py
-│   ├── v03/
-│   │   ├── __init__.py
-│   │   └── atclang_v03_features.py
-│   ├── vm/
-│   │   ├── __init__.py
-│   │   └── atcvm.py
-│   └── vm.py
-├── atcpkg/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── docs/
-│   │   ├── ATC-24-AGENT_SCHEDULING.md
-│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-│   │   └── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-│   ├── kernel/
-│   │   └── manager.atc
-│   ├── manager.atc
-│   └── tools/
-│       └── manager.atc
-├── backend/
-│   ├── .env.example
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── __init__.py
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── kai_routes.atc
-│   │   ├── orchestrator/
-│   │   │   ├── __init__.py
-│   │   │   ├── orchestrator.atc
-│   │   │   └── orchestrator.py
-│   │   ├── routes/
-│   │   │   ├── __init__.py
-│   │   │   ├── ai_routes.atc
-│   │   │   └── api_routes.atc
-│   │   └── server.atc
-│   ├── db/
-│   │   ├── __init__.py
-│   │   ├── connection.atc
-│   │   ├── connection.py
-│   │   ├── repository.atc
-│   │   ├── repository.py
-│   │   └── schema.sql
-│   ├── requirements.txt
-│   └── wallet/
-│       ├── __init__.py
-│       └── wallet.atc
-├── blockchain/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── __init__.py
-│   ├── atcoin/
-│   │   └── __init__.py
-│   ├── consensus/
-│   │   ├── MIGRATION_INDEX.md
-│   │   ├── __init__.py
-│   │   ├── fork_atc85.atc
-│   │   ├── fork_resolution.atc
-│   │   ├── gas_fee.atc
-│   │   ├── gas_fee_atc86.atc
-│   │   ├── hybrid_atc84.atc
-│   │   ├── hybrid_consensus.atc
-│   │   ├── poh.atc
-│   │   ├── poh.py
-│   │   ├── poh_atc83.atc
-│   │   ├── pos.atc
-│   │   ├── pos_atc82.atc
-│   │   ├── pow.atc
-│   │   └── pow_atc81.atc
-│   ├── contract_registry.atc
-│   ├── contracts/
-│   │   ├── __init__.py
-│   │   ├── atc001/
-│   │   │   ├── __init__.py
-│   │   │   ├── genesis_token.atc
-│   │   │   └── genesis_token.py
-│   │   ├── atc8300/
-│   │   │   ├── __init__.py
-│   │   │   └── atc8300_token.py
-│   │   ├── base/
-│   │   │   ├── __init__.py
-│   │   │   └── base_contract.py
-│   │   ├── contract_engine_atc14.atc
-│   │   ├── governance/
-│   │   │   └── governance_contract.atc
-│   │   ├── shivamon/
-│   │   │   ├── __init__.py
-│   │   │   └── breeding.atc
-│   │   └── solidity/
-│   │       └── test/
-│   │           └── ATCBridge.test.js
-│   ├── dex/
-│   │   ├── __init__.py
-│   │   └── amm.atc
-│   ├── governance/
-│   │   ├── __init__.py
-│   │   ├── dao.atc
-│   │   ├── dao_live.atc
-│   │   ├── snapshot.atc
-│   │   ├── timelock.atc
-│   │   └── treasury.atc
-│   ├── mainnet/
-│   │   ├── __init__.py
-│   │   ├── launch_manager.atc
-│   │   └── mainnet_config.atc
-│   ├── network/
-│   │   ├── atc-02_liquid_state_migration_failover.atc
-│   │   ├── atc-04_dag_consensus_propagation.atc
-│   │   ├── atc-05_quantumresistant_signatures.atc
-│   │   ├── atc-10_global_time_sync_oracles.atc
-│   │   ├── core_node_atc01.atc
-│   │   ├── latency_opt_atc06.atc
-│   │   └── sharding_atc07.atc
-│   ├── nodes/
-│   │   ├── __init__.py
-│   │   ├── block_propagation.atc
-│   │   ├── bootstrap.atc
-│   │   ├── bootstrap.py
-│   │   ├── discovery.py
-│   │   ├── initial_sync.atc
-│   │   ├── node.atc
-│   │   ├── p2p_propagation.py
-│   │   └── testnet_launcher.atc
-│   ├── propagation/
-│   │   └── block_gossip.atc
-│   ├── smart_contract_registry.atc
-│   ├── smart_contract_registry.py
-│   ├── smart_contracts.atc
-│   ├── smart_contracts.py
-│   ├── wallet/
-│   │   ├── __init__.py
-│   │   ├── did.atc
-│   │   ├── did.py
-│   │   ├── ecdsa.py
-│   │   ├── multisig.atc
-│   │   ├── multisig.py
-│   │   └── wordlist.atc
-│   └── zkp/
-│       ├── __init__.py
-│       └── groth16.atc
-├── bootloader/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── ci/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── ci-cd-fix/
-│   ├── README.md
-│   ├── apply-fix.sh
-│   ├── ci-cd.yml
-│   └── codeql.yml
-├── cli/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── config/
-│   ├── ai_models.json
-│   ├── kai_config.toml
-│   ├── mainnet_genesis.json
-│   └── settings.json
-├── contracts/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── DEPLOYMENT.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── SECURITY.md
-│   ├── STATUS.md
-│   ├── atc8300/
-│   │   ├── atc8300.atc
-│   │   └── atc8300_token.py
-│   ├── atcoin/
-│   │   └── atcoin.py
-│   ├── base/
-│   │   └── base_contract.py
-│   ├── bridge/
-│   │   └── bridge_contract.py
-│   ├── governance/
-│   │   ├── governance.atc
-│   │   └── governance_contract.py
-│   ├── marketplace/
-│   │   └── marketplace_contract.py
-│   ├── requirements.txt
-│   ├── shivamon/
-│   │   ├── shivamon.atc
-│   │   └── shivamon_contract.py
-│   └── wallet/
-│       ├── ecdsa.py
-│       ├── keygen.py
-│       └── wallet.atc
-├── core/
-│   ├── ai/
-│   │   └── federated_learning.atc
-│   └── kai_cli.atc
-├── devnet/
-│   └── README.md
-├── dns/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── docker/
-│   ├── Dockerfile.backend
-│   ├── Dockerfile.bootstrap
-│   ├── Dockerfile.core
-│   ├── Dockerfile.frontend
-│   ├── Dockerfile.gateway
-│   ├── Dockerfile.node
-│   ├── Makefile
-│   ├── docker-compose.testnet.yml
-│   ├── docker-compose.yml
-│   └── prometheus.yml
-├── docker-compose.yml
-├── docs/
-│   ├── AGENT_COMMIT_AUDIT_2026-08-05.md
-│   ├── AGENT_COORDINATION.md
-│   ├── AGENT_POLICY.md
-│   ├── AGENT_PROTOCOL.md
-│   ├── ARCHITECTURE_TREES.md
-│   ├── ATCLANG_AGENT_BUILD_GUIDE.md
-│   ├── ATC_93_BYTECODE_SPEC.md
-│   ├── AUDIT_REPORT.md
-│   ├── CLEANUP_LOG.md
-│   ├── CLUSTER_ARCHITECTURE.md
-│   ├── COMMUNITY_ANNOUNCEMENT.md
-│   ├── COMPLETENESS_AUDIT.md
-│   ├── DECISIONS_REGISTER.md
-│   ├── DEPRECATED.md
-│   ├── DEVELOPER_ONBOARDING.md
-│   ├── ECOSYSTEM_BRAIN.md
-│   ├── FILE_NAMING_CONVENTIONS.md
-│   ├── FILE_REGISTER.md
-│   ├── FIXES.md
-│   ├── GAP_ANALYSIS_v1.0.md
-│   ├── GENESIS_COMMUNICATION_LAYER_v2.md
-│   ├── GENESIS_FRANCHISE_FACTORY_v1.md
-│   ├── K9_K13_GAP.md
-│   ├── KAI_INTEGRATION.md
-│   ├── MIGRATION_MAP.md
-│   ├── MILESTONES.md
-│   ├── NAMING_CONVENTIONS.md
-│   ├── PERFORMANCE_REPORT.md
-│   ├── REALITY_CHECK_2026-07-06.md
-│   ├── RELEASE_NOTES_v1.0.md
-│   ├── ROADMAP.md
-│   ├── ROADMAP_COMPLETENESS_AUDIT.md
-│   ├── STATUS.md
-│   ├── SYNC_REPORT.md
-│   ├── TECHNICAL_DOCUMENTATION.md
-│   ├── WIKI_AUDIT.md
-│   ├── WIKI_INDEX.md
-│   ├── ai/
-│   │   ├── AI_SAFETY.md
-│   │   ├── GEMINI_INTEGRATION.md
-│   │   └── LLM_ROUTER.md
-│   ├── aistudio/
-│   │   └── AISTUDIO_COMPONENTS.md
-│   ├── api-reference.md
-│   ├── architecture/
-│   │   ├── AI_LAYER.md
-│   │   ├── ATCFS.md
-│   │   ├── ATCLANG_COMPILER.md
-│   │   ├── ATCNET_P2P.md
-│   │   ├── CONSENSUS.md
-│   │   ├── GATEWAY.md
-│   │   ├── GOVERNANCE.md
-│   │   ├── KERNEL_SHELL.md
-│   │   ├── MONITORING_DEVOPS.md
-│   │   ├── SHIVAOS_KERNEL.md
-│   │   ├── TESTNET.md
-│   │   └── WALLET_KEYGEN.md
-│   ├── atclang/
-│   │   └── ATCLANG_SPEC_FULL.md
-│   ├── atclang-guide.md
-│   ├── ci-templates/
-│   │   ├── ci.yml
-│   │   ├── codeql.yml
-│   │   ├── codeql_fixed.yml
-│   │   └── release.yml
-│   ├── contracts/
-│   │   ├── ATC_TOKEN_STANDARD.md
-│   │   └── SHIVAMON_NFT_CONTRACT.md
-│   ├── file_registers/
-│   │   ├── README.md
-│   │   ├── a-townchain-os_FILE_REGISTER.md
-│   │   ├── atc-aistudio_FILE_REGISTER.md
-│   │   ├── atc-atclang_FILE_REGISTER.md
-│   │   ├── atc-atcpkg_FILE_REGISTER.md
-│   │   ├── atc-backend_FILE_REGISTER.md
-│   │   ├── atc-blockchain_FILE_REGISTER.md
-│   │   ├── atc-contracts_FILE_REGISTER.md
-│   │   ├── atc-franchise_FILE_REGISTER.md
-│   │   ├── atc-frontend_FILE_REGISTER.md
-│   │   ├── atc-gateway_FILE_REGISTER.md
-│   │   ├── atc-genesis-engine_FILE_REGISTER.md
-│   │   ├── atc-kernel_FILE_REGISTER.md
-│   │   ├── atc-linux-edition_FILE_REGISTER.md
-│   │   ├── atc-mobile_FILE_REGISTER.md
-│   │   ├── atc-shivacore-tools_FILE_REGISTER.md
-│   │   ├── atc-shivacore_FILE_REGISTER.md
-│   │   ├── atc-shivamon_FILE_REGISTER.md
-│   │   ├── atc-standards_FILE_REGISTER.md
-│   │   ├── atc-ui_FILE_REGISTER.md
-│   │   ├── atc-windows-edition_FILE_REGISTER.md
-│   │   ├── atclang_FILE_REGISTER.md
-│   │   └── atcnet_FILE_REGISTER.md
-│   ├── genesis_wallet.md
-│   ├── issues/
-│   │   ├── ISSUE_01_SMART_CONTRACTS.md
-│   │   ├── ISSUE_02_GEMINI_AI.md
-│   │   ├── ISSUE_03_BATTLE_UI.md
-│   │   ├── ISSUE_04_PERSISTENZ.md
-│   │   ├── ISSUE_05_EXPLORER.md
-│   │   ├── ISSUE_06_ECDSA.md
-│   │   ├── ISSUE_07_BUILD.md
-│   │   ├── ISSUE_08_TESTNET.md
-│   │   ├── ISSUE_09_GOVERNANCE.md
-│   │   ├── ISSUE_10_BRIDGE.md
-│   │   ├── ISSUE_11_BREEDING.md
-│   │   ├── ISSUE_12_SOLIDITY.md
-│   │   ├── ISSUE_13_MARKETPLACE.md
-│   │   ├── ISSUE_14_BOOTSTRAP_NODE.md
-│   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md
-│   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md
-│   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md
-│   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md
-│   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md
-│   │   ├── ISSUE_20_GATEWAY_TESTS.md
-│   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md
-│   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md
-│   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md
-│   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md
-│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-│   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md
-│   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md
-│   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-│   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md
-│   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md
-│   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md
-│   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md
-│   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md
-│   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md
-│   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md
-│   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md
-│   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md
-│   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md
-│   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md
-│   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md
-│   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md
-│   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md
-│   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md
-│   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md
-│   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md
-│   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md
-│   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md
-│   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md
-│   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md
-│   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md
-│   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md
-│   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md
-│   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md
-│   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md
-│   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md
-│   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md
-│   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md
-│   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md
-│   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md
-│   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md
-│   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md
-│   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md
-│   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md
-│   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md
-│   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md
-│   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md
-│   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md
-│   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md
-│   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md
-│   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md
-│   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md
-│   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md
-│   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md
-│   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md
-│   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
-│   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
-│   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-│   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
-│   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
-│   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
-│   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
-│   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md
-│   │   ├── OPEN_ISSUES_MASTER.md
-│   │   ├── README.md
-│   │   └── TESTNET_INDEX.md
-│   ├── kai-os-wiki.md
-│   ├── landing-page.html
-│   ├── reports/
-│   │   └── SPRINT_2.3_2.4_2.7_REPORT.md
-│   ├── roadmap/
-│   │   └── ROADMAP_EXTENDED.md
-│   ├── sprints/
-│   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md
-│   │   ├── SPRINT_3.3_SECURITY_AUDIT.md
-│   │   └── SPRINT_4.0_MAINNET_LAUNCH.md
-│   ├── standards/
-│   │   ├── ATC/
-│   │   │   └── ATC-0009-BRIDGE.md
-│   │   ├── ATC-01-CORE_NODE_PROTOCOL.md
-│   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md
-│   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md
-│   │   ├── ATC-04-DAG_CONSENSUS.md
-│   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md
-│   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md
-│   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md
-│   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md
-│   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md
-│   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md
-│   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md
-│   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md
-│   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md
-│   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md
-│   │   ├── ATC-15-PROOF_OF_AI_MINING.md
-│   │   ├── ATC-16-REFERRAL_REWARDS.md
-│   │   ├── ATC-17-DAO_GOVERNANCE.md
-│   │   ├── ATC-18-MULTISIG_AUTH.md
-│   │   ├── ATC-19-AMM_LOGIC.md
-│   │   ├── ATC-20-WRAPPED_SYNTHETIC.md
-│   │   ├── ATC-21-HOLOGRAPHIC_WASM.md
-│   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md
-│   │   ├── ATC-23-DATA_SHARDING_STORAGE.md
-│   │   ├── ATC-24-AGENT_SCHEDULING.md
-│   │   ├── ATC-25-TENSOR_COMPUTE.md
-│   │   ├── ATC-26-XAI_TRANSPARENCY.md
-│   │   ├── ATC-27-AI_MODEL_AUDITING.md
-│   │   ├── ATC-28-FEDERATED_LEARNING.md
-│   │   ├── ATC-29-AI_MARKETPLACE.md
-│   │   ├── ATC-30-REPUTATION_TRUST.md
-│   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md
-│   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md
-│   │   ├── ATC-33-AI_FEEDBACK_RLHF.md
-│   │   ├── ATC-34-CROSS_LAYER_INTEROP.md
-│   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md
-│   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md
-│   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md
-│   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md
-│   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md
-│   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md
-│   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md
-│   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md
-│   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md
-│   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md
-│   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md
-│   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md
-│   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md
-│   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md
-│   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md
-│   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md
-│   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md
-│   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md
-│   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md
-│   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md
-│   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md
-│   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md
-│   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md
-│   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md
-│   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md
-│   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md
-│   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md
-│   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md
-│   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md
-│   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md
-│   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md
-│   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md
-│   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md
-│   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md
-│   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md
-│   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md
-│   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md
-│   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md
-│   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md
-│   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md
-│   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md
-│   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md
-│   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md
-│   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md
-│   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md
-│   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md
-│   │   ├── ATC-81-PROOF_OF_HISTORY.md
-│   │   ├── ATC-82-PROOF_OF_WORK.md
-│   │   ├── ATC-83-PROOF_OF_STAKE.md
-│   │   ├── ATC-84-FORK_RESOLUTION.md
-│   │   ├── ATC-85-INITIAL_SYNC.md
-│   │   ├── ATC-86-ECDSA_SIGNATURE.md
-│   │   ├── ATC-87-GAS_FEE.md
-│   │   ├── ATC-88-AMM.md
-│   │   ├── ATC-89-FUNGIBLE_TOKEN.md
-│   │   ├── ATC-90-NFT_SHIVAMON.md
-│   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md
-│   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md
-│   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md
-│   │   ├── ATC-94-ATCLANG_STDLIB.md
-│   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md
-│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-│   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md
-│   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md
-│   │   ├── ATC-98-TESTING_STANDARD.md
-│   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md
-│   │   ├── ATC_ECOSYSTEM_STANDARDS.md
-│   │   ├── ATC_STANDARDS.md
-│   │   ├── ATS_STANDARDS.md
-│   │   ├── OVERVIEW.md
-│   │   ├── README.md
-│   │   └── STANDARDS_REGISTRY.md
-│   ├── whitepaper/
-│   │   ├── .github/
-│   │   │   └── FUNDING.yml
-│   │   ├── .gitignore
-│   │   ├── CHANGELOG.md
-│   │   ├── FILE_REGISTER.md
-│   │   ├── LICENSE
-│   │   ├── README.md
-│   │   ├── ROADMAP.md
-│   │   ├── STATUS.md
-│   │   └── WHITEPAPER.md
-│   └── wiki/
-│       ├── atclang/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── CHANGELOG.md
-│       │       ├── COMPILER.md
-│       │       ├── CONTRIBUTING.md
-│       │       ├── EXAMPLES.md
-│       │       ├── LEXER.md
-│       │       ├── PARSER.md
-│       │       ├── REPL.md
-│       │       ├── SECURITY.md
-│       │       ├── SECURITY_ANALYZER.md
-│       │       ├── SPEC.md
-│       │       ├── STDLIB.md
-│       │       └── VM.md
-│       ├── atcnet/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── BOOTSTRAP.md
-│       │       ├── MESSAGES.md
-│       │       ├── PROTOCOL.md
-│       │       ├── SECURITY.md
-│       │       └── TOPOLOGY.md
-│       ├── chapter-63-cleanup-2026-06-13.md
-│       ├── chapter-70-atclang-migration-complete.md
-│       ├── chapter-71-sprint-audit.md
-│       ├── chapter-72-sprint-2-7-testing-cicd.md
-│       ├── chapter-73-sprint-2-8-testnet.md
-│       ├── chapter-74-sprint-3-1-ux-privacy.md
-│       ├── chapter-75-v01-v03-migration-plan.md
-│       ├── chapter-76-sprint-3-3-3-6-alpha-release.md
-│       ├── chapter-77-sprint-4-0-4-1-mainnet.md
-│       ├── contracts/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── ATC8300.md
-│       │       ├── ATC9000.md
-│       │       ├── ATC9900.md
-│       │       ├── BRIDGE.md
-│       │       ├── DEPLOYMENT.md
-│       │       └── SECURITY.md
-│       ├── franchise/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── API.md
-│       │       ├── CONCEPT.md
-│       │       ├── CONTRACTS.md
-│       │       ├── DEPLOYMENT.md
-│       │       ├── ROADMAP.md
-│       │       ├── SECURITY.md
-│       │       └── TOKEN_ECONOMY.md
-│       ├── gateway/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── AUTH.md
-│       │       ├── MIDDLEWARE.md
-│       │       ├── RATE_LIMITING.md
-│       │       ├── ROUTES.md
-│       │       └── SECURITY.md
-│       ├── kai-os/
-│       │   ├── ECOSYSTEM.md
-│       │   ├── PERFORMANCE_REPORT.md
-│       │   ├── README.md
-│       │   ├── code/
-│       │   │   └── atclang/
-│       │   │       └── ATCLANG_SPEC.md
-│       │   └── docs/
-│       │       ├── DECISIONS_REGISTER.md
-│       │       ├── ROADMAP.md
-│       │       ├── ROADMAP_COMPLETENESS_AUDIT.md
-│       │       ├── STATUS.md
-│       │       ├── architecture/
-│       │       │   ├── ATCNET_P2P.md
-│       │       │   ├── CONSENSUS.md
-│       │       │   ├── GATEWAY.md
-│       │       │   └── WALLET_KEYGEN.md
-│       │       ├── contracts/
-│       │       │   └── ATC_TOKEN_STANDARD.md
-│       │       ├── issues/
-│       │       │   ├── ISSUE_01_SMART_CONTRACTS.md
-│       │       │   ├── ISSUE_06_ECDSA.md
-│       │       │   ├── ISSUE_09_GOVERNANCE.md
-│       │       │   ├── ISSUE_12_SOLIDITY.md
-│       │       │   ├── ISSUE_13_MARKETPLACE.md
-│       │       │   ├── ISSUE_14_BOOTSTRAP_NODE.md
-│       │       │   └── OPEN_ISSUES_MASTER.md
-│       │       ├── kai-os-wiki.md
-│       │       ├── repo/
-│       │       │   └── README.md
-│       │       ├── roadmap/
-│       │       │   └── ROADMAP_EXTENDED.md
-│       │       └── standards/
-│       │           ├── ATC_ECOSYSTEM_STANDARDS.md
-│       │           ├── OVERVIEW.md
-│       │           └── STANDARDS_REGISTRY.md
-│       ├── kernel/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── ATCFS.md
-│       │       ├── ATCNET.md
-│       │       ├── CHANGELOG.md
-│       │       ├── CONSENSUS.md
-│       │       ├── IPC.md
-│       │       ├── KERNEL.md
-│       │       ├── PERFORMANCE.md
-│       │       ├── PROCESS_MODEL.md
-│       │       └── SECURITY.md
-│       ├── overview/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── API.md
-│       │       ├── ARCHITECTURE.md
-│       │       ├── CONTRIBUTING.md
-│       │       ├── FAQ.md
-│       │       ├── QUICKSTART.md
-│       │       ├── ROADMAP.md
-│       │       ├── SECURITY.md
-│       │       └── WHITEPAPER.md
-│       ├── shivamon/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       ├── BATTLE.md
-│       │       ├── BREEDING.md
-│       │       ├── ELEMENTS.md
-│       │       ├── MARKETPLACE.md
-│       │       ├── NFT_SPEC.md
-│       │       └── ROADMAP.md
-│       ├── standards/
-│       │   ├── README.md
-│       │   └── docs/
-│       │       └── OVERVIEW.md
-│       └── ui/
-│           ├── README.md
-│           └── docs/
-│               ├── API.md
-│               ├── COMPONENTS.md
-│               ├── DEPLOYMENT.md
-│               ├── DESIGN.md
-│               └── THEME.md
-├── drivers/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── explorer/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── franchise/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── api/
-│   │   └── routes.py
-│   ├── contracts/
-│   │   ├── registry.atc
-│   │   ├── revenue.atc
-│   │   └── token.atc
-│   ├── docs/
-│   │   ├── ARCHITECTURE.md
-│   │   └── SECURITY.md
-│   ├── factory.py
-│   └── requirements.txt
-├── frontend/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── __mocks__/
-│   │   └── styleMock.js
-│   ├── admin/
-│   │   ├── CHANGELOG.md
-│   │   ├── DESIGN.md
-│   │   ├── api.js
-│   │   └── index.html
-│   ├── assets/
-│   │   ├── css/
-│   │   │   └── variables.css
-│   │   └── js/
-│   │       └── api.js
-│   ├── battle/
-│   │   └── index.html
-│   ├── bootscreen/
-│   │   └── README.md
-│   ├── index.html
-│   ├── jest.config.js
-│   ├── jest.setup.js
-│   ├── mobile/
-│   │   ├── README.md
-│   │   ├── wallet/
-│   │   │   └── biometric_auth.atc
-│   │   └── wallet_api.atc
-│   ├── package.json
-│   ├── src/
-│   │   └── .gitkeep
-│   ├── tsconfig.json
-│   └── ui/
-│       ├── .gitignore
-│       ├── CHANGELOG.md
-│       ├── DESIGN.md
-│       ├── FILE_REGISTER.md
-│       ├── LICENSE
-│       ├── README.md
-│       ├── ROADMAP.md
-│       ├── STATUS.md
-│       ├── assets/
-│       │   └── js/
-│       │       └── api.js
-│       └── index.html
-├── gateway/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── SECURITY.md
-│   ├── STATUS.md
-│   ├── __init__.py
-│   ├── atclang/
-│   │   ├── .env.example
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   ├── SECURITY.md
-│   │   ├── main.atc
-│   │   ├── middleware/
-│   │   │   ├── auth.atc
-│   │   │   ├── logger.atc
-│   │   │   ├── rate_limit.atc
-│   │   │   └── signature_verify.atc
-│   │   ├── requirements.txt
-│   │   └── router.atc
-│   ├── docs/
-│   │   └── ARCHITECTURE.md
-│   ├── gateway.atc
-│   ├── main.atc
-│   ├── main.py
-│   ├── middleware/
-│   │   ├── __init__.py
-│   │   ├── auth.py
-│   │   ├── logger.py
-│   │   ├── rate_limit.py
-│   │   └── signature_verify.py
-│   ├── python/
-│   │   ├── __init__.py
-│   │   ├── main.atc
-│   │   ├── main.py
-│   │   ├── middleware/
-│   │   │   ├── __init__.py
-│   │   │   ├── auth.py
-│   │   │   ├── logger.py
-│   │   │   ├── rate_limit.py
-│   │   │   └── signature_verify.py
-│   │   ├── requirements.txt
-│   │   ├── router.py
-│   │   └── service_discovery.atc
-│   ├── requirements.txt
-│   ├── router.py
-│   └── service_discovery.atc
-├── genesis-engine/
-│   ├── .gitignore
-│   ├── ARCHITECTURE.md
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── FRANCHISE_FACTORY.md
-│   ├── FRANCHISE_FACTORY_V2.md
-│   ├── GENESIS_NEXUS_V5.md
-│   ├── GENESIS_OS_V4.md
-│   ├── LICENSE
-│   ├── METAFACTORY_V3.md
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── VISION_EVOLUTION_LOG.md
-│   └── engine/
-│       ├── MILESTONE_1.md
-│       ├── core/
-│       │   └── ecs.py
-│       ├── main.py
-│       ├── render/
-│       │   └── renderer2d.py
-│       ├── requirements.txt
-│       └── tests/
-│           └── test_ecs.py
-├── ide/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── integrations/
-│   ├── README.md
-│   ├── calendar_tasks.md
-│   ├── huggingface_registry.md
-│   ├── notion_export.md
-│   └── storage_inventory.md
-├── kernel/
-│   ├── ARCHITECTURE.md
-│   ├── CHANGELOG.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── SECURITY.md
-│   ├── consensus/
-│   │   ├── consensus.atc
-│   │   ├── poh_integration.py
-│   │   └── shiva_consensus.py
-│   ├── docs/
-│   │   └── ATS_STANDARDS.md
-│   ├── fs/
-│   │   ├── atcfs.atc
-│   │   └── atcfs.py
-│   ├── ipc/
-│   │   └── ipc_bus.py
-│   ├── kernel/
-│   │   ├── kernel.atc
-│   │   └── kernel.py
-│   ├── kernel.py
-│   ├── net/
-│   │   ├── atcnet.atc
-│   │   └── atcnet.py
-│   ├── python/
-│   │   ├── .gitignore
-│   │   ├── ARCHITECTURE.md
-│   │   ├── CHANGELOG.md
-│   │   ├── FILE_REGISTER.md
-│   │   ├── LICENSE
-│   │   ├── README.md
-│   │   ├── ROADMAP.md
-│   │   ├── SECURITY.md
-│   │   ├── STATUS.md
-│   │   ├── consensus/
-│   │   │   ├── consensus.atc
-│   │   │   ├── poh_integration.py
-│   │   │   └── shiva_consensus.py
-│   │   ├── docs/
-│   │   │   └── ATS_STANDARDS.md
-│   │   ├── fs/
-│   │   │   ├── atcfs.atc
-│   │   │   └── atcfs.py
-│   │   ├── ipc/
-│   │   │   └── ipc_bus.py
-│   │   ├── kernel/
-│   │   │   ├── kernel.atc
-│   │   │   └── kernel.py
-│   │   ├── kernel.py
-│   │   ├── net/
-│   │   │   ├── atcnet.atc
-│   │   │   └── atcnet.py
-│   │   └── requirements.txt
-│   └── requirements.txt
-├── linux/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── Cargo.toml
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   └── src/
-│       └── main.rs
-├── mobile/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── __init__.py
-│   ├── wallet/
-│   │   ├── __init__.py
-│   │   └── biometric_auth.atc
-│   └── wallet_api.atc
-├── modules/
-│   ├── assets/
-│   │   ├── aaa_asset_core.atc
-│   │   ├── ai_assets.atc
-│   │   ├── animation.atc
-│   │   ├── asset_bundle.atc
-│   │   ├── cloud_assets.atc
-│   │   ├── encryption.atc
-│   │   ├── hot_reload.atc
-│   │   ├── memory_cleanup.atc
-│   │   ├── mod_system.atc
-│   │   ├── model3d.atc
-│   │   ├── priority_loading.atc
-│   │   ├── render_pipeline.atc
-│   │   ├── shader_system.atc
-│   │   ├── streaming.atc
-│   │   ├── telemetry.atc
-│   │   └── versioning.atc
-│   ├── atcnet/
-│   │   ├── CHANGELOG.md
-│   │   ├── PROTOCOL.md
-│   │   ├── README.md
-│   │   ├── SECURITY.md
-│   │   ├── bootstrap_client.atc
-│   │   ├── discovery.atc
-│   │   ├── gossip.atc
-│   │   ├── nat_traversal.atc
-│   │   ├── p2p_node.atc
-│   │   ├── p2p_propagation.atc
-│   │   └── requirements.txt
-│   ├── civilization/
-│   │   ├── asset_genome_ad66.atc
-│   │   ├── civilization_engine_ad60.atc
-│   │   ├── ecosystem_ai_mesh_ad62.atc
-│   │   ├── evolution_engine_ad69.atc
-│   │   ├── experience_orchestrator_ad68.atc
-│   │   ├── gcp_core_ad70.atc
-│   │   ├── global_simulation_core_ad64.atc
-│   │   ├── identity_layer_ad65.atc
-│   │   ├── persistent_world_engine_ad61.atc
-│   │   ├── proc_universe_generator_ad63.atc
-│   │   └── production_pipeline_ad67.atc
-│   ├── contracts/
-│   │   ├── CHANGELOG.md
-│   │   ├── DEPLOYMENT.md
-│   │   ├── README.md
-│   │   ├── SECURITY.md
-│   │   ├── atc8300/
-│   │   │   └── atc8300_token.atc
-│   │   ├── atcoin/
-│   │   │   └── atcoin.atc
-│   │   ├── base/
-│   │   │   └── base_contract.atc
-│   │   ├── bridge/
-│   │   │   └── bridge_contract.atc
-│   │   ├── governance/
-│   │   │   └── governance_contract.atc
-│   │   ├── marketplace/
-│   │   │   └── marketplace_contract.atc
-│   │   ├── requirements.txt
-│   │   ├── shivamon/
-│   │   │   └── shivamon_contract.atc
-│   │   ├── standards/
-│   │   │   ├── atc-13_fractional_asset_ownership.atc
-│   │   │   ├── atc-15_proof_of_ai_mining.atc
-│   │   │   ├── atc-16_referral_multitier_rewards.atc
-│   │   │   └── atc-20_wrapped_synthetic_assets.atc
-│   │   └── wallet/
-│   │       ├── ecdsa.atc
-│   │       └── keygen.atc
-│   ├── franchise/
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   ├── ai_content_factory_ad28.atc
-│   │   ├── ai_director_factory_ad41.atc
-│   │   ├── analytics_factory_ad31.atc
-│   │   ├── asset_intelligence_factory_ad34.atc
-│   │   ├── blueprint_factory_ad32.atc
-│   │   ├── canon_engine_ad33.atc
-│   │   ├── character_factory_ad23.atc
-│   │   ├── commerce_factory_ad40.atc
-│   │   ├── community_factory_ad30.atc
-│   │   ├── contracts/
-│   │   │   ├── registry.atc
-│   │   │   ├── revenue.atc
-│   │   │   └── token.atc
-│   │   ├── creator_factory_ad38.atc
-│   │   ├── docs/
-│   │   │   ├── ARCHITECTURE.md
-│   │   │   └── SECURITY.md
-│   │   ├── economy_factory_ad26.atc
-│   │   ├── factory.atc
-│   │   ├── gameplay_factory_ad35.atc
-│   │   ├── gff_core_ad20.atc
-│   │   ├── ip_factory_ad21.atc
-│   │   ├── lifecycle_manager_ad43.atc
-│   │   ├── liveops_factory_ad27.atc
-│   │   ├── lore_factory_ad24.atc
-│   │   ├── merchandise_factory_ad29.atc
-│   │   ├── multiplayer_factory_ad37.atc
-│   │   ├── narrative_factory_ad36.atc
-│   │   ├── publishing_factory_ad39.atc
-│   │   ├── quest_factory_ad25.atc
-│   │   ├── requirements.txt
-│   │   ├── routes.atc
-│   │   ├── security_factory_ad42.atc
-│   │   └── world_factory_ad22.atc
-│   ├── gateway/
-│   │   ├── .env.example
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   ├── SECURITY.md
-│   │   ├── main.atc
-│   │   ├── middleware/
-│   │   │   ├── auth.atc
-│   │   │   ├── logger.atc
-│   │   │   ├── rate_limit.atc
-│   │   │   └── signature_verify.atc
-│   │   ├── requirements.txt
-│   │   └── router.atc
-│   ├── kernel/
-│   │   ├── ARCHITECTURE.md
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   ├── SECURITY.md
-│   │   ├── ai_bus_ad13.atc
-│   │   ├── ai_kernel/
-│   │   │   ├── ai_kernel.atc
-│   │   │   ├── atc-97_agent_interaction_protocol.atc
-│   │   │   ├── distributed_intelligence/
-│   │   │   │   ├── atc-46_quantumresistant_crypto_layer.atc
-│   │   │   │   ├── atc-47_ai_intent_settlement.atc
-│   │   │   │   ├── atc-48_neural_network_mesh.atc
-│   │   │   │   ├── atc-49_neural_synapse_knowledge_transfer.atc
-│   │   │   │   └── atc-50_ai_consciousness_selfreflection.atc
-│   │   │   └── orchestration/
-│   │   │       ├── atc-25_tensor_compute_orchestration.atc
-│   │   │       ├── atc-26_xai_transparency.atc
-│   │   │       ├── atc-29_ai_marketplace.atc
-│   │   │       ├── atc-30_reputation_trust_scoring.atc
-│   │   │       └── atc-31_tensor_load_balancing.atc
-│   │   ├── asset_bus_ad08.atc
-│   │   ├── audio_bus_ad11.atc
-│   │   ├── command_bus_ad02.atc
-│   │   ├── consensus/
-│   │   │   ├── poh_integration.atc
-│   │   │   └── shiva_consensus.atc
-│   │   ├── container/
-│   │   │   └── container_runtime.atc
-│   │   ├── container_net/
-│   │   │   └── container_net.atc
-│   │   ├── contract/
-│   │   │   └── contract.atc
-│   │   ├── cow/
-│   │   │   └── cow_fork.atc
-│   │   ├── did/
-│   │   │   └── did.atc
-│   │   ├── docs/
-│   │   │   └── ATS_STANDARDS.md
-│   │   ├── drivers/
-│   │   │   ├── display_driver.atc
-│   │   │   ├── driver_framework.atc
-│   │   │   ├── input_driver.atc
-│   │   │   ├── network_driver.atc
-│   │   │   └── storage_driver.atc
-│   │   ├── elf_loader/
-│   │   │   └── elf_loader.atc
-│   │   ├── fs/
-│   │   │   └── atcfs.atc
-│   │   ├── fs_journal/
-│   │   │   └── fs_journal.atc
-│   │   ├── gcl_core_ad00.atc
-│   │   ├── input_bus_ad12.atc
-│   │   ├── ipc/
-│   │   │   └── ipc_bus.atc
-│   │   ├── ipc_bus_atc.ad.atc
-│   │   ├── kernel_api.atc
-│   │   ├── lkm/
-│   │   │   └── lkm.atc
-│   │   ├── mempool/
-│   │   │   └── mempool.atc
-│   │   ├── message_bus_ad03.atc
-│   │   ├── module_security/
-│   │   │   └── module_security.atc
-│   │   ├── net/
-│   │   │   └── atcnet.atc
-│   │   ├── network_bus_ad05.atc
-│   │   ├── os_layer/
-│   │   │   ├── atc-21_holographic_execution_engine.atc
-│   │   │   └── atc-22_hal_driver_sandbox.atc
-│   │   ├── page_fault/
-│   │   │   └── page_fault.atc
-│   │   ├── physics_bus_ad10.atc
-│   │   ├── pkg/
-│   │   │   └── manager.atc
-│   │   ├── plugin_bus_ad06.atc
-│   │   ├── power/
-│   │   │   └── power.atc
-│   │   ├── process/
-│   │   │   └── process_mgr.atc
-│   │   ├── query_bus_ad07.atc
-│   │   ├── render_bus_ad09.atc
-│   │   ├── requirements.txt
-│   │   ├── shell/
-│   │   │   └── shell.atc
-│   │   ├── signals/
-│   │   │   └── signal_handler.atc
-│   │   ├── smp/
-│   │   │   └── smp_manager.atc
-│   │   ├── sockets/
-│   │   │   └── sockets.atc
-│   │   ├── telemetry_bus_ad14.atc
-│   │   ├── threads/
-│   │   │   └── threads.atc
-│   │   ├── tracing/
-│   │   │   └── tracing.atc
-│   │   ├── userspace/
-│   │   │   └── userspace.atc
-│   │   ├── vm/
-│   │   │   └── vm.atc
-│   │   └── vmm/
-│   │       └── vmm.atc
-│   ├── meta/
-│   │   ├── ai_studio_ad49.atc
-│   │   ├── cross_franchise_ad46.atc
-│   │   ├── data_lake_ad51.atc
-│   │   ├── digital_twin_ad50.atc
-│   │   ├── ip_evolution_ad45.atc
-│   │   ├── knowledge_graph_ad47.atc
-│   │   ├── simulation_factory_ad48.atc
-│   │   └── universe_factory_ad44.atc
-│   ├── shivamon/
-│   │   ├── CHANGELOG.md
-│   │   ├── GAME_SPEC.md
-│   │   ├── README.md
-│   │   ├── engine/
-│   │   │   └── battle_engine.atc
-│   │   └── requirements.txt
-│   ├── standards/
-│   │   ├── ATC/
-│   │   │   └── ATC_STANDARDS.md
-│   │   ├── ATC_STANDARDS.md
-│   │   ├── ATS_STANDARDS.md
-│   │   ├── OVERVIEW.md
-│   │   └── README.md
-│   └── ui/
-│       ├── CHANGELOG.md
-│       ├── DESIGN.md
-│       ├── README.md
-│       ├── assets/
-│       │   └── js/
-│       │       └── api.js
-│       └── index.html
-├── monitoring/
-│   ├── alerts/
-│   │   └── blockchain_alerts.yml
-│   ├── health_checks_atc08.atc
-│   ├── monitor.atc
-│   ├── prometheus.yml
-│   └── prometheus_metrics.atc
-├── network/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── PROTOCOL.md
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── SECURITY.md
-│   ├── STATUS.md
-│   ├── atcnet.atc
-│   ├── atcnet.py
-│   ├── bootstrap_client.py
-│   ├── discovery.py
-│   ├── node.py
-│   ├── p2p_propagation.py
-│   ├── requirements.txt
-│   └── tests/
-│       └── test_atcnet.py
-├── nginx/
-│   └── nginx.conf
-├── pkg/
-│   ├── README.md
-│   ├── docs/
-│   │   ├── ATC-24-AGENT_SCHEDULING.md
-│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-│   │   └── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-│   ├── kernel/
-│   │   └── manager.atc
-│   └── tools/
-│       └── manager.atc
-├── pyproject.toml
-├── pytest.ini
-├── requirements-kai.txt
-├── requirements.txt
-├── scripts/
-│   ├── build.sh
-│   ├── ci-fix.sh
-│   ├── fix-workflows.sh
-│   ├── generate_validators.atc
-│   ├── health.sh
-│   ├── start.sh
-│   ├── start_testnet.sh
-│   ├── stop.sh
-│   ├── sync-docs.sh
-│   ├── test-report.sh
-│   └── test.sh
-├── sdk/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── shivacore/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── Cargo.toml
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── boot/
-│   │   ├── Cargo.toml
-│   │   └── src/
-│   │       └── main.rs
-│   └── kernel/
-│       ├── .cargo/
-│       │   └── config.toml
-│       ├── .gitignore
-│       ├── Cargo.lock
-│       ├── Cargo.toml
-│       └── src/
-│           ├── ai.rs
-│           ├── allocator.rs
-│           ├── atcfs.rs
-│           ├── atcnet.rs
-│           ├── ats1000.rs
-│           ├── block.rs
-│           ├── blockchain.rs
-│           ├── capability.rs
-│           ├── consensus.rs
-│           ├── container.rs
-│           ├── container_net.rs
-│           ├── contract.rs
-│           ├── cow.rs
-│           ├── cross_subsystem.rs
-│           ├── devfs.rs
-│           ├── did.rs
-│           ├── elf_loader.rs
-│           ├── framebuffer.rs
-│           ├── fs_journal.rs
-│           ├── gdt.rs
-│           ├── genesis.rs
-│           ├── genesis_bridge.rs
-│           ├── gossip_bridge.rs
-│           ├── hw_drivers.rs
-│           ├── interrupts.rs
-│           ├── ipc.rs
-│           ├── kernel_init.rs
-│           ├── knowledge_graph.rs
-│           ├── lib.rs
-│           ├── lkm.rs
-│           ├── main.rs
-│           ├── memory.rs
-│           ├── memory_manager.rs
-│           ├── mempool.rs
-│           ├── module_security.rs
-│           ├── net.rs
-│           ├── p2p.rs
-│           ├── page_fault.rs
-│           ├── power.rs
-│           ├── process.rs
-│           ├── remote_caps.rs
-│           ├── scheduler.rs
-│           ├── security.rs
-│           ├── security_audit.rs
-│           ├── serial.rs
-│           ├── signals.rs
-│           ├── smp.rs
-│           ├── sockets.rs
-│           ├── syscall.rs
-│           ├── system.rs
-│           ├── tcpip.rs
-│           ├── threads.rs
-│           ├── timer.rs
-│           ├── tracing.rs
-│           ├── user_io.rs
-│           ├── user_sched.rs
-│           ├── userspace.rs
-│           ├── vfs.rs
-│           ├── vm.rs
-│           └── vmm.rs
-├── shivamon/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── GAME_SPEC.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── api/
-│   │   ├── game_routes.py
-│   │   └── marketplace_routes.py
-│   ├── contracts/
-│   │   ├── marketplace_contract.py
-│   │   ├── shivamon.atc
-│   │   └── shivamon_contract.py
-│   ├── engine/
-│   │   └── battle_engine.py
-│   └── requirements.txt
-├── src/
-│   ├── atclang/
-│   │   ├── ATCLANG_SPEC.md
-│   │   ├── CHANGELOG.md
-│   │   ├── CONTRIBUTING.md
-│   │   └── README.md
-│   ├── blockchain/
-│   │   ├── __init__.py
-│   │   ├── contract_registry.atc
-│   │   ├── smart_contract_registry.atc
-│   │   ├── smart_contract_registry.py
-│   │   ├── smart_contracts.atc
-│   │   └── smart_contracts.py
-│   ├── contracts/
-│   │   ├── __init__.py
-│   │   ├── atc8300_token.py
-│   │   ├── atcoin.py
-│   │   ├── base_contract.py
-│   │   ├── bridge_contract.py
-│   │   ├── ecdsa.py
-│   │   ├── governance_contract.py
-│   │   ├── keygen.py
-│   │   ├── marketplace_contract.py
-│   │   ├── shivamon_contract.py
-│   │   ├── wallet_ecdsa.py
-│   │   └── wallet_keygen.py
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── atcfs.py
-│   │   ├── crypto/
-│   │   │   └── __init__.py
-│   │   ├── event_bus.py
-│   │   ├── kai_cli.atc
-│   │   ├── kernel/
-│   │   │   ├── api.py
-│   │   │   ├── capabilities.py
-│   │   │   ├── did.py
-│   │   │   ├── kernel.py
-│   │   │   ├── remote_capability.py
-│   │   │   └── syscalls.atc
-│   │   └── module_loader.py
-│   ├── franchise/
-│   │   ├── __init__.py
-│   │   ├── factory.py
-│   │   └── routes.py
-│   ├── game/
-│   │   ├── __init__.py
-│   │   ├── battle_engine.py
-│   │   ├── game_routes.py
-│   │   └── marketplace_routes.py
-│   ├── gateway/
-│   │   ├── __init__.py
-│   │   ├── main.py
-│   │   └── router.py
-│   ├── modules/
-│   │   └── __init__.py
-│   └── network/
-│       ├── __init__.py
-│       ├── atcnet.py
-│       ├── bootstrap_client.py
-│       ├── discovery.py
-│       ├── node.py
-│       └── p2p_propagation.py
-├── standards/
-│   ├── .gitignore
-│   ├── ATC/
-│   │   ├── ATC-0009-BRIDGE.md
-│   │   └── ATC_STANDARDS.md
-│   ├── ATC_STANDARDS.md
-│   ├── ATS/
-│   │   └── ATS_STANDARDS.md
-│   ├── ATS_STANDARDS.md
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── OVERVIEW.md
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── start.atc
-├── stdlib/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── tests/
-│   ├── __init__.py
-│   ├── e2e/
-│   │   ├── __init__.py
-│   │   └── test_frontend_backend_chain.py
-│   ├── integration/
-│   │   ├── __init__.py
-│   │   ├── test_docker_compose.py
-│   │   └── test_gateway_core_chain.py
-│   └── unit/
-│       ├── __init__.py
-│       ├── atclang/
-│       │   ├── __init__.py
-│       │   ├── test_atclang.py
-│       │   ├── test_atclang_v03.py
-│       │   ├── test_stdlib.py
-│       │   ├── test_stdlib_dispatch.py
-│       │   └── test_type_checker.py
-│       ├── blockchain/
-│       │   ├── __init__.py
-│       │   ├── test_ecdsa.py
-│       │   ├── test_fork_resolution.py
-│       │   ├── test_multinode_consensus.py
-│       │   ├── test_multinode_fivenode.py
-│       │   ├── test_node_failure_recovery.py
-│       │   ├── test_persistence.py
-│       │   └── test_poh.py
-│       ├── contracts/
-│       │   ├── __init__.py
-│       │   ├── test_atcfs_multisig.py
-│       │   └── test_smart_contracts.py
-│       ├── core/
-│       │   ├── __init__.py
-│       │   ├── test_bootstrap.py
-│       │   ├── test_did.py
-│       │   ├── test_driver_framework.py
-│       │   ├── test_gateway_full.py
-│       │   ├── test_kernel_api.py
-│       │   ├── test_optimizer.py
-│       │   └── test_orchestrator.py
-│       ├── network/
-│       │   ├── __init__.py
-│       │   ├── test_atcnet.py
-│       │   ├── test_discovery.py
-│       │   └── test_p2p_propagation.py
-│       ├── test_gateway.py
-│       └── test_kai_integration.py
-├── tools/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── STATUS.md
-│   ├── atc_issues_summary.atc
-│   ├── bigquery_pipeline.atc
-│   ├── ecdsa_impl.atc
-│   └── hf_review_pipeline.atc
-├── vm/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── wallet/
-│   ├── .gitignore
-│   ├── CHANGELOG.md
-│   ├── FILE_REGISTER.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   └── STATUS.md
-├── wiki/
-│   ├── LICENSE
-│   ├── README.md
-│   ├── docs/
-│   │   ├── API.md
-│   │   ├── API_REFERENCE.md
-│   │   ├── ARCHITECTURE.md
-│   │   ├── BOTTLENECKS.md
-│   │   ├── COMMITS.md
-│   │   ├── CONTRIBUTING.md
-│   │   ├── DECENTRALIZED_PROOF.md
-│   │   ├── DEPENDENCIES.md
-│   │   ├── ENTERPRISE.md
-│   │   ├── ERRORS.md
-│   │   ├── ERROR_SOLUTIONS.md
-│   │   ├── FAQ.md
-│   │   ├── IMPROVEMENTS.md
-│   │   ├── ISSUES_TRACKER.md
-│   │   ├── MATH_PROOF.md
-│   │   ├── QUICKSTART.md
-│   │   ├── ROADMAP.md
-│   │   ├── SECURITY.md
-│   │   ├── STATUS.md
-│   │   ├── SYNTAX.md
-│   │   └── WHITEPAPER.md
-│   ├── genesis_communication_layer_v2.md
-│   └── genesis_franchise_factory_v1.md
-└── windows/
-    ├── .gitignore
-    ├── CHANGELOG.md
-    ├── Cargo.toml
-    ├── FILE_REGISTER.md
-    ├── LICENSE
-    ├── README.md
-    ├── ROADMAP.md
-    ├── STATUS.md
-    └── src/
-        └── main.rs
+├── .github/ (3 files)
+│   ├── workflows/ (2 files)
+│   │   ├── ci.yml (1KB) [42L]
+│   │   └── codeql.yml (4KB) [101L]
+│   └── changelog-config.json (784B) [31L]
+├── TODO/ (1 files)
+│   └── MASTER_TODO.md (2KB) [68L]
+├── aistudio/ (248 files)
+│   ├── assets/ (1 files)
+│   │   └── .aistudio/ (1 files)
+│   │       └── .gitignore (2B)
+│   ├── src/ (190 files)
+│   │   ├── backend/ (2 files)
+│   │   │   ├── blockchain/ (1 files)
+│   │   │   │   └── engine.ts (3KB) [129L]
+│   │   │   └── p2p/ (1 files)
+│   │   │       └── network.ts (2KB) [77L]
+│   │   ├── components/ (148 files)
+│   │   │   ├── ATCAssetView.tsx (11KB) [191L]
+│   │   │   ├── ATCDjStudioView.tsx (17KB) [445L]
+│   │   │   ├── ATCLangEditor.tsx (26KB) [625L]
+│   │   │   ├── ATCWalletView.tsx (26KB) [498L]
+│   │   │   ├── ATownDashboardView.tsx (14KB) [302L]
+│   │   │   ├── ATownOSNode.tsx (71KB) [1439L]
+│   │   │   ├── ATownTestView.tsx (6KB) [111L]
+│   │   │   ├── AgentCivilizationView.tsx (8KB) [152L]
+│   │   │   ├── Ai3DRenderEngineTab.tsx (8KB) [199L]
+│   │   │   ├── AiAnimationEngineTab.tsx (8KB) [198L]
+│   │   │   ├── AiAudioEngineTab.tsx (8KB) [198L]
+│   │   │   ├── AiCharacterBioTab.tsx (9KB) [199L]
+│   │   │   ├── AiGameEngineTab.tsx (9KB) [200L]
+│   │   │   ├── AiKernelView.tsx (6KB) [128L]
+│   │   │   ├── AiOsEngineView.tsx (19KB) [490L]
+│   │   │   ├── AiSoftwareWorkflowView.tsx (11KB) [229L]
+│   │   │   ├── AiTimelineEngineTab.tsx (9KB) [199L]
+│   │   │   ├── AntiCheatView.tsx (14KB) [261L]
+│   │   │   ├── ApiHealthWidget.tsx (3KB) [85L]
+│   │   │   ├── ApiInterfacesView.tsx (9KB) [189L]
+│   │   │   ├── ApiOrchestratorView.tsx (17KB) [354L]
+│   │   │   ├── AppGlobeView.tsx (9KB) [233L]
+│   │   │   ├── ArchitectureDependencyGraph.tsx (7KB) [248L]
+│   │   │   ├── ArchitectureView.tsx (38KB) [888L]
+│   │   │   ├── AssetVaultView.tsx (8KB) [187L]
+│   │   │   ├── AtcAssetsDbView.tsx (11KB) [250L]
+│   │   │   ├── AtcCoreKernelView.tsx (8KB) [144L]
+│   │   │   ├── AtcLangArchitectureView.tsx (33KB) [585L]
+│   │   │   ├── AtcLangPlaygroundView.tsx (12KB) [256L]
+│   │   │   ├── AtcLangPresetsView.tsx (3KB) [64L]
+│   │   │   ├── AtcWhitepaperView.tsx (10KB) [187L]
+│   │   │   ├── AtsSuite.tsx (4KB) [51L]
+│   │   │   ├── AtvmSandboxView.test.tsx (3KB) [85L]
+│   │   │   ├── AtvmSandboxView.tsx (26KB) [499L]
+│   │   │   ├── BatteryStatus.tsx (11KB) [269L]
+│   │   │   ├── BattleArenaView.tsx (8KB) [143L]
+│   │   │   ├── BenchmarkCenterView.tsx (15KB) [288L]
+│   │   │   ├── BlockchainEcosystemView.tsx (9KB) [224L]
+│   │   │   ├── BlockchainLedgerView.tsx (13KB) [247L]
+│   │   │   ├── CalculatorView.tsx (3KB) [74L]
+│   │   │   ├── CalendarView.tsx (3KB) [78L]
+│   │   │   ├── CiCdPipelineView.tsx (7KB) [159L]
+│   │   │   ├── ClockView.tsx (3KB) [72L]
+│   │   │   ├── CodeAnalyzerView.tsx (4KB) [90L]
+│   │   │   ├── CommitHeatmap.tsx (4KB) [110L]
+│   │   │   ├── ComplianceEngineView.tsx (4KB) [84L]
+│   │   │   ├── ComplianceView.tsx (8KB) [191L]
+│   │   │   ├── ConflictResolutionModal.tsx (11KB) [257L]
+│   │   │   ├── ConsensusIntegrationGuide.tsx (70KB) [1528L]
+│   │   │   ├── CryptoVisualizationView.tsx (18KB) [473L]
+│   │   │   ├── DataProcessingView.tsx (4KB) [78L]
+│   │   │   ├── DbOrchestratorView.tsx (6KB) [112L]
+│   │   │   ├── DeFiLiquidityPoolView.tsx (13KB) [255L]
+│   │   │   ├── DependencyMapView.tsx (3KB) [123L]
+│   │   │   ├── DeploymentPipelineWidget.tsx (6KB) [160L]
+│   │   │   ├── DevToolsView.tsx (5KB) [133L]
+│   │   │   ├── DeveloperKnowledgeBaseView.tsx (18KB) [359L]
+│   │   │   ├── DistributedDatalakeView.tsx (3KB) [73L]
+│   │   │   ├── EcosystemInstaller.tsx (11KB) [297L]
+│   │   │   ├── EcosystemTreeOverlay.tsx (12KB) [357L]
+│   │   │   ├── EcosystemUmlView.tsx (7KB) [143L]
+│   │   │   ├── EcosystemVisualizerView.tsx (12KB) [325L]
+│   │   │   ├── FileManagerView.tsx (6KB) [170L]
+│   │   │   ├── FolderView.tsx (4KB) [111L]
+│   │   │   ├── FranchiseFactoryView.tsx (83KB) [1733L]
+│   │   │   ├── GateToHellBrowser.tsx (5KB) [106L]
+│   │   │   ├── GenesisBlockGeneratorView.tsx (6KB) [150L]
+│   │   │   ├── GitGraphVisualization.tsx (4KB) [137L]
+│   │   │   ├── GitHubRepoSyncView.tsx (63KB) [1385L]
+│   │   │   ├── GitHubStatusDashboard.tsx (34KB) [643L]
+│   │   │   ├── GitOpsView.tsx (7KB) [126L]
+│   │   │   ├── GovernanceView.tsx (23KB) [601L]
+│   │   │   ├── GpuPerformanceWidget.tsx (4KB) [120L]
+│   │   │   ├── HardwareDriversView.tsx (20KB) [376L]
+│   │   │   ├── IdeaToAppFlowchartView.tsx (7KB) [153L]
+│   │   │   ├── ImageGeneratorTab.tsx (5KB) [117L]
+│   │   │   ├── IntegrationsWindow.tsx (21KB) [426L]
+│   │   │   ├── InterfacesView.tsx (2KB) [56L]
+│   │   │   ├── JsExampleRunner.tsx (2KB) [86L]
+│   │   │   ├── LazyMetricsCharts.tsx (31KB) [808L]
+│   │   │   ├── LegalView.tsx (6KB) [87L]
+│   │   │   ├── LoginOverlay.tsx (38KB) [690L]
+│   │   │   ├── MainnetLaunchView.tsx (12KB) [251L]
+│   │   │   ├── MarketplaceView.tsx (22KB) [450L]
+│   │   │   ├── MediaApps.tsx (18KB) [254L]
+│   │   │   ├── MetricsDashboard.tsx (4KB) [105L]
+│   │   │   ├── MetricsView.tsx (56KB) [1476L]
+│   │   │   ├── ModulesPluginView.tsx (18KB) [309L]
+│   │   │   ├── NetworkExplorerView.test.tsx (4KB) [121L]
+│   │   │   ├── NetworkExplorerView.tsx (17KB) [370L]
+│   │   │   ├── NetworkTopologyView.tsx (2KB) [38L]
+│   │   │   ├── NodeHealthMonitor.tsx (4KB) [113L]
+│   │   │   ├── NotepadView.tsx (2KB) [67L]
+│   │   │   ├── OfficeApps.tsx (352B) [14L]
+│   │   │   ├── OfficeSuiteView.tsx (12KB) [271L]
+│   │   │   ├── P2PChatView.tsx (12KB) [277L]
+│   │   │   ├── Paint3DView.tsx (5KB) [140L]
+│   │   │   ├── PaymentSystemView.tsx (4KB) [93L]
+│   │   │   ├── PipelineGeneratorTab.tsx (19KB) [433L]
+│   │   │   ├── PoAITrainingEngineView.tsx (8KB) [173L]
+│   │   │   ├── ProjectAuditDashboard.tsx (7KB) [135L]
+│   │   │   ├── ProjectHubView.tsx (30KB) [501L]
+│   │   │   ├── ProtocolsView.tsx (8KB) [207L]
+│   │   │   ├── ReportsView.tsx (10KB) [202L]
+│   │   │   ├── RepositoryActivityChart.tsx (5KB) [145L]
+│   │   │   ├── RepositoryLineChart.tsx (6KB) [198L]
+│   │   │   ├── RescueSystemView.tsx (16KB) [307L]
+│   │   │   ├── RoadmapView.tsx (6KB) [196L]
+│   │   │   ├── SemanticGraphView.tsx (4KB) [86L]
+│   │   │   ├── SessionExportView.tsx (8KB) [221L]
+│   │   │   ├── SettingsView.tsx (105KB) [2312L]
+│   │   │   ├── SocialMediaView.tsx (16KB) [287L]
+│   │   │   ├── SoftwareAuditView.tsx (38KB) [885L]
+│   │   │   ├── SoftwareKnowledgeDbView.tsx (18KB) [380L]
+│   │   │   ├── SourceCodeViewer.tsx (20KB) [547L]
+│   │   │   ├── SpecificSettingsViews.tsx (17KB) [306L]
+│   │   │   ├── StorageManagerView.tsx (9KB) [258L]
+│   │   │   ├── StrategicArchitectureMap.tsx (9KB) [243L]
+│   │   │   ├── StructureView.tsx (22KB) [505L]
+│   │   │   ├── SyncDashboardModal.tsx (4KB) [88L]
+│   │   │   ├── SyncHistoryModal.tsx (11KB) [249L]
+│   │   │   ├── SyncMetricsView.tsx (7KB) [170L]
+│   │   │   ├── SyncStatusDonutChart.tsx (2KB) [99L]
+│   │   │   ├── SyncStatusOverview.tsx (7KB) [168L]
+│   │   │   ├── SystemDiagnosticsView.tsx (18KB) [337L]
+│   │   │   ├── SystemFinderView.tsx (2KB) [56L]
+│   │   │   ├── SystemHealthDashboard.tsx (9KB) [246L]
+│   │   │   ├── SystemHealthDashboardWidget.tsx (2KB) [63L]
+│   │   │   ├── SystemLogsView.tsx (3KB) [89L]
+│   │   │   ├── TaskManagerView.tsx (3KB) [82L]
+│   │   │   ├── TechDocsView.tsx (17KB) [335L]
+│   │   │   ├── TechTreeView.tsx (18KB) [420L]
+│   │   │   ├── TerminalView.tsx (6KB) [189L]
+│   │   │   ├── TestnetOrchestrationView.tsx (8KB) [178L]
+│   │   │   ├── TestnetSimulationView.tsx (14KB) [298L]
+│   │   │   ├── TextGeneratorTab.tsx (6KB) [177L]
+│   │   │   ├── ThemeSwitcher.tsx (4KB) [143L]
+│   │   │   ├── TodoView.tsx (18KB) [383L]
+│   │   │   ├── TooltipIcon.tsx (1KB) [29L]
+│   │   │   ├── TxOrchestratorView.tsx (5KB) [105L]
+│   │   │   ├── UserProfileView.tsx (12KB) [255L]
+│   │   │   ├── VideoGeneratorTab.tsx (7KB) [176L]
+│   │   │   ├── WebhookMonitor.tsx (5KB) [145L]
+│   │   │   ├── Window.tsx (6KB) [158L]
+│   │   │   ├── WindowExtras.tsx (4KB) [87L]
+│   │   │   ├── ZeroKnowledgeProofView.tsx (6KB) [129L]
+│   │   │   ├── ZkCircuitEditorView.tsx (4KB) [108L]
+│   │   │   └── ZkVisualizationView.tsx (3KB) [99L]
+│   │   ├── contexts/ (4 files)
+│   │   │   ├── FirebaseContext.tsx (2KB) [94L]
+│   │   │   ├── GoogleWorkspaceContext.tsx (2KB) [83L]
+│   │   │   ├── SyncMetricsContext.tsx (1KB) [47L]
+│   │   │   └── WalletContext.tsx (1KB) [45L]
+│   │   ├── db/ (3 files)
+│   │   │   ├── drizzle.config.ts (817B) [29L]
+│   │   │   ├── index.ts (652B) [24L]
+│   │   │   └── schema.ts (486B) [11L]
+│   │   ├── hooks/ (2 files)
+│   │   │   ├── useGoogleSheetsSync.ts (8KB) [220L]
+│   │   │   └── useKeyboardShortcut.ts (899B) [30L]
+│   │   ├── lib/ (6 files)
+│   │   │   ├── CryptoEngine.ts (1KB) [42L]
+│   │   │   ├── firebase-admin.ts (544B) [15L]
+│   │   │   ├── firebase.ts (2KB) [64L]
+│   │   │   ├── indexedDb.ts (2KB) [88L]
+│   │   │   ├── syncLogic.test.ts (2KB) [82L]
+│   │   │   └── syncLogic.ts (1KB) [68L]
+│   │   ├── middleware/ (1 files)
+│   │   │   └── auth.ts (953B) [30L]
+│   │   ├── routes/ (1 files)
+│   │   │   └── notion.ts (4KB) [146L]
+│   │   ├── services/ (2 files)
+│   │   │   ├── SyncService.ts (3KB) [106L]
+│   │   │   └── githubSync.ts (1KB) [37L]
+│   │   ├── utils/ (4 files)
+│   │   │   ├── appSync.tsx (2KB) [84L]
+│   │   │   ├── auditUtils.test.ts (1KB) [56L]
+│   │   │   ├── auditUtils.ts (749B) [27L]
+│   │   │   └── crypto.ts (4KB) [73L]
+│   │   ├── App.tsx (233KB) [5440L]
+│   │   ├── DesktopApp.tsx (121KB) [2740L]
+│   │   ├── atcLangRoadmapData.ts (6KB) [201L]
+│   │   ├── atcLangWikiData.ts (16KB) [227L]
+│   │   ├── auditData.ts (4KB) [76L]
+│   │   ├── data.ts (17KB) [411L]
+│   │   ├── ecosystemData.ts (11KB) [291L]
+│   │   ├── fix_translation.cjs (463B)
+│   │   ├── index.css (5KB)
+│   │   ├── main.tsx (774B) [24L]
+│   │   ├── marketplaceApps.ts (6KB) [273L]
+│   │   ├── requirementsData.ts (1KB) [58L]
+│   │   ├── roadmapData.ts (7KB) [312L]
+│   │   ├── standardsData.ts (4KB) [83L]
+│   │   ├── tierData.ts (16KB) [317L]
+│   │   ├── types.ts (375B) [10L]
+│   │   └── wikiData.ts (47KB) [943L]
+│   ├── tests/ (2 files)
+│   │   ├── GitHubRepoSyncView.test.tsx (1KB) [49L]
+│   │   └── audit_compliance.test.ts (2KB) [78L]
+│   ├── workspace/ (8 files)
+│   │   ├── src/ (2 files)
+│   │   │   ├── backend/ (1 files)
+│   │   │   │   └── blockchain/ (1 files)
+│   │   │   │       └── engine.ts (5KB) [167L]
+│   │   │   └── components/ (1 files)
+│   │   │       └── GovernanceView.tsx (14KB) [268L]
+│   │   ├── move.js (411B) [13L]
+│   │   ├── rename.js (1KB) [42L]
+│   │   ├── replace.js (1KB) [40L]
+│   │   ├── replaceEnterprise.js (3KB) [102L]
+│   │   ├── replaceGoals.ts (688B) [14L]
+│   │   └── replaceGoals2.ts (825B) [18L]
+│   ├── .env.example (578B)
+│   ├── .gitignore (73B)
+│   ├── AGENTS.md (535B) [13L]
+│   ├── CHANGELOG.md (426B) [21L]
+│   ├── FILE_REGISTER.md (12KB) [253L]
+│   ├── GEMINI.md (373B) [6L]
+│   ├── LICENSE (1KB)
+│   ├── README.md (542B) [20L]
+│   ├── ROADMAP.md (8KB) [598L]
+│   ├── SOFTWARE_ROADMAP.md (38KB) [1116L]
+│   ├── STATUS.md (349B) [19L]
+│   ├── check_dups2.js (498B) [12L]
+│   ├── check_dups_all.js (885B) [23L]
+│   ├── check_dups_desktop.js (480B) [15L]
+│   ├── check_dups_windows_map.js (519B) [14L]
+│   ├── fetch.js (1KB) [36L]
+│   ├── firebase-applet-config.json (363B) [9L]
+│   ├── fix.js (859B) [26L]
+│   ├── fix2.js (894B) [27L]
+│   ├── fix_react_imports.cjs (547B)
+│   ├── fix_wiki.cjs (184B)
+│   ├── fix_wiki.js (284B) [5L]
+│   ├── index.html (413B)
+│   ├── mark_completed.ts (722B) [15L]
+│   ├── mark_completed_src.ts (1KB) [33L]
+│   ├── metadata.json (214B) [6L]
+│   ├── move_back.js (347B) [11L]
+│   ├── output.txt (3KB)
+│   ├── package-lock.json (420KB) [11890L]
+│   ├── package.json (2KB) [79L]
+│   ├── replace.js (1KB) [36L]
+│   ├── replace_langs.cjs (852B)
+│   ├── replace_langs_2.cjs (667B)
+│   ├── replace_langs_3.cjs (411B)
+│   ├── replace_langs_4.cjs (817B)
+│   ├── replace_langs_5.cjs (528B)
+│   ├── replace_langs_6.cjs (522B)
+│   ├── script.cjs (883B)
+│   ├── script.js (983B) [12L]
+│   ├── script2.cjs (683B)
+│   ├── server.ts (33KB) [866L]
+│   ├── testChat.js (450B) [10L]
+│   ├── test_know.js (244B) [2L]
+│   ├── tmp.txt (470B)
+│   ├── tsconfig.json (508B) [26L]
+│   ├── update_wiki_categories.ts (742B) [23L]
+│   └── vite.config.ts (1KB) [42L]
+├── archive/ (16 files)
+│   ├── atclang-v01/ (11 files)
+│   │   ├── consensus/ (6 files)
+│   │   │   ├── fork_resolution.atc (4KB) [145L]
+│   │   │   ├── gas_fee.atc (4KB) [130L]
+│   │   │   ├── hybrid_consensus.atc (11KB) [357L]
+│   │   │   ├── poh.atc (4KB) [140L]
+│   │   │   ├── pos.atc (4KB) [164L]
+│   │   │   └── pow.atc (3KB) [107L]
+│   │   ├── contracts/ (4 files)
+│   │   │   ├── breeding.atc (5KB) [139L]
+│   │   │   ├── contract_engine_atc14.atc (9KB) [309L]
+│   │   │   ├── genesis_token.atc (2KB) [102L]
+│   │   │   └── governance_contract.atc (7KB) [202L]
+│   │   └── atcos_main.atc (40KB) [1161L]
+│   ├── duplicates/ (4 files)
+│   │   ├── contract_registry.atc (3KB) [98L]
+│   │   ├── kai_cli.atc (8KB) [195L]
+│   │   ├── smart_contract_registry.atc (2KB) [88L]
+│   │   └── smart_contracts.atc (15KB) [486L]
+│   └── ATCLANG_ARCHIVE.md (4KB) [97L]
+├── atclang/ (100 files)
+│   ├── atc-atclang/ (41 files)
+│   │   ├── compiler/ (4 files)
+│   │   │   ├── __init__.py (468B) [8L]
+│   │   │   ├── compiler.py (21KB) [561L]
+│   │   │   ├── optimizer.py (22KB) [558L]
+│   │   │   └── type_checker.py (20KB) [507L]
+│   │   ├── lexer/ (2 files)
+│   │   │   ├── __init__.py (161B) [2L]
+│   │   │   └── lexer.py (24KB) [671L]
+│   │   ├── parser/ (3 files)
+│   │   │   ├── __init__.py (189B) [3L]
+│   │   │   ├── ast_nodes.py (8KB) [392L]
+│   │   │   └── parser.py (63KB) [1431L]
+│   │   ├── programs/ (1 files)
+│   │   │   └── atcos_main.atc (40KB) [1161L]
+│   │   ├── repl/ (2 files)
+│   │   │   ├── __init__.py (99B) [1L]
+│   │   │   └── repl.py (6KB) [184L]
+│   │   ├── stdlib/ (14 files)
+│   │   │   ├── __init__.py (1KB) [32L]
+│   │   │   ├── atc_stdlib.py (2KB) [69L]
+│   │   │   ├── chain.py (1KB) [41L]
+│   │   │   ├── collections.py (5KB) [219L]
+│   │   │   ├── collections_ext.py (3KB) [143L]
+│   │   │   ├── crypto.py (5KB) [155L]
+│   │   │   ├── crypto_ext.py (5KB) [149L]
+│   │   │   ├── encoding.py (7KB) [210L]
+│   │   │   ├── io.py (3KB) [107L]
+│   │   │   ├── io_ext.py (3KB) [123L]
+│   │   │   ├── math.py (4KB) [154L]
+│   │   │   ├── primitives.py (7KB) [244L]
+│   │   │   ├── string.py (2KB) [99L]
+│   │   │   └── wallet.py (2KB) [78L]
+│   │   ├── v03/ (2 files)
+│   │   │   ├── __init__.py (124B) [2L]
+│   │   │   └── atclang_v03_features.py (13KB) [352L]
+│   │   ├── vm/ (2 files)
+│   │   │   ├── __init__.py (177B) [2L]
+│   │   │   └── atcvm.py (48KB) [997L]
+│   │   ├── .gitignore (171B)
+│   │   ├── ATCLANG_SPEC.md (9KB) [295L]
+│   │   ├── CHANGELOG.md (316B) [8L]
+│   │   ├── CONTRIBUTING.md (687B) [19L]
+│   │   ├── FILE_REGISTER.md (1KB) [48L]
+│   │   ├── LICENSE (658B)
+│   │   ├── README.md (5KB) [127L]
+│   │   ├── ROADMAP.md (478B) [21L]
+│   │   ├── STATUS.md (346B) [19L]
+│   │   ├── __init__.py (462B) [11L]
+│   │   └── requirements.txt (75B)
+│   ├── compiler/ (4 files)
+│   │   ├── __init__.py (468B) [8L]
+│   │   ├── compiler.py (24KB) [626L]
+│   │   ├── optimizer.py (22KB) [558L]
+│   │   └── type_checker.py (20KB) [507L]
+│   ├── lexer/ (2 files)
+│   │   ├── __init__.py (161B) [2L]
+│   │   └── lexer.py (24KB) [671L]
+│   ├── parser/ (3 files)
+│   │   ├── __init__.py (189B) [3L]
+│   │   ├── ast_nodes.py (8KB) [392L]
+│   │   └── parser.py (63KB) [1431L]
+│   ├── programs/ (12 files)
+│   │   ├── .gitkeep (0B)
+│   │   ├── atc8300.atc (3KB) [96L]
+│   │   ├── atcfs.atc (4KB) [142L]
+│   │   ├── atcnet.atc (4KB) [135L]
+│   │   ├── atcos_main.atc (868B) [9L]
+│   │   ├── consensus.atc (5KB) [144L]
+│   │   ├── event_bus.atc (2KB) [75L]
+│   │   ├── gateway.atc (4KB) [138L]
+│   │   ├── governance.atc (4KB) [113L]
+│   │   ├── kernel.atc (4KB) [148L]
+│   │   ├── shivamon.atc (5KB) [162L]
+│   │   └── wallet.atc (4KB) [124L]
+│   ├── repl/ (2 files)
+│   │   ├── __init__.py (99B) [1L]
+│   │   └── repl.py (6KB) [184L]
+│   ├── runtime/ (3 files)
+│   │   ├── __init__.py (0B) [0L]
+│   │   ├── driver_framework.py (18KB) [506L]
+│   │   └── kernel_runtime.py (27KB) [625L]
+│   ├── stdlib/ (14 files)
+│   │   ├── __init__.py (1KB) [32L]
+│   │   ├── atc_stdlib.py (2KB) [69L]
+│   │   ├── chain.py (1KB) [41L]
+│   │   ├── collections.py (5KB) [219L]
+│   │   ├── collections_ext.py (3KB) [143L]
+│   │   ├── crypto.py (5KB) [155L]
+│   │   ├── crypto_ext.py (5KB) [149L]
+│   │   ├── encoding.py (7KB) [210L]
+│   │   ├── io.py (3KB) [107L]
+│   │   ├── io_ext.py (3KB) [123L]
+│   │   ├── math.py (4KB) [154L]
+│   │   ├── primitives.py (7KB) [244L]
+│   │   ├── string.py (2KB) [99L]
+│   │   └── wallet.py (2KB) [78L]
+│   ├── v03/ (2 files)
+│   │   ├── __init__.py (124B) [2L]
+│   │   └── atclang_v03_features.py (13KB) [352L]
+│   ├── vm/ (2 files)
+│   │   ├── __init__.py (177B) [2L]
+│   │   └── atcvm.py (48KB) [997L]
+│   ├── .gitignore (171B)
+│   ├── ATCLANG_SPEC.md (9KB) [295L]
+│   ├── CHANGELOG.md (316B) [8L]
+│   ├── CONTRIBUTING.md (687B) [19L]
+│   ├── FILE_REGISTER.md (1KB) [39L]
+│   ├── LICENSE (982B)
+│   ├── README.md (1KB) [46L]
+│   ├── ROADMAP.md (470B) [21L]
+│   ├── STATUS.md (352B) [19L]
+│   ├── __init__.py (462B) [11L]
+│   ├── compiler.py (3KB) [102L]
+│   ├── lexer.py (3KB) [115L]
+│   ├── parser.py (3KB) [95L]
+│   ├── requirements.txt (75B)
+│   └── vm.py (4KB) [98L]
+├── atcpkg/ (14 files)
+│   ├── docs/ (4 files)
+│   │   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   │   └── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+│   ├── kernel/ (1 files)
+│   │   └── manager.atc (6KB) [208L]
+│   ├── tools/ (1 files)
+│   │   └── manager.atc (4KB) [145L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (424B) [21L]
+│   ├── FILE_REGISTER.md (748B) [20L]
+│   ├── LICENSE (658B)
+│   ├── README.md (1KB) [39L]
+│   ├── ROADMAP.md (476B) [21L]
+│   ├── STATUS.md (355B) [19L]
+│   └── manager.atc (4KB) [145L]
+├── backend/ (27 files)
+│   ├── api/ (9 files)
+│   │   ├── orchestrator/ (3 files)
+│   │   │   ├── __init__.py (118B) [2L]
+│   │   │   ├── orchestrator.atc (8KB) [259L]
+│   │   │   └── orchestrator.py (4KB) [130L]
+│   │   ├── routes/ (3 files)
+│   │   │   ├── __init__.py (115B) [2L]
+│   │   │   ├── ai_routes.atc (5KB) [175L]
+│   │   │   └── api_routes.atc (8KB) [232L]
+│   │   ├── __init__.py (111B) [2L]
+│   │   ├── kai_routes.atc (7KB) [229L]
+│   │   └── server.atc (2KB) [68L]
+│   ├── db/ (6 files)
+│   │   ├── __init__.py (160B) [2L]
+│   │   ├── connection.atc (4KB) [125L]
+│   │   ├── connection.py (1KB) [40L]
+│   │   ├── repository.atc (6KB) [228L]
+│   │   ├── repository.py (6KB) [196L]
+│   │   └── schema.sql (2KB)
+│   ├── wallet/ (2 files)
+│   │   ├── __init__.py (123B) [2L]
+│   │   └── wallet.atc (4KB) [139L]
+│   ├── .env.example (167B)
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (425B) [21L]
+│   ├── FILE_REGISTER.md (1KB) [34L]
+│   ├── LICENSE (658B)
+│   ├── README.md (464B) [14L]
+│   ├── ROADMAP.md (478B) [21L]
+│   ├── STATUS.md (346B) [19L]
+│   ├── __init__.py (121B) [2L]
+│   └── requirements.txt (425B)
+├── blockchain/ (79 files)
+│   ├── atcoin/ (1 files)
+│   │   └── __init__.py (119B) [2L]
+│   ├── consensus/ (15 files)
+│   │   ├── MIGRATION_INDEX.md (661B) [13L]
+│   │   ├── __init__.py (123B) [2L]
+│   │   ├── fork_atc85.atc (2KB) [74L]
+│   │   ├── fork_resolution.atc (745B) [7L]
+│   │   ├── gas_fee.atc (740B) [7L]
+│   │   ├── gas_fee_atc86.atc (2KB) [71L]
+│   │   ├── hybrid_atc84.atc (3KB) [98L]
+│   │   ├── hybrid_consensus.atc (748B) [7L]
+│   │   ├── poh.atc (732B) [7L]
+│   │   ├── poh.py (2KB) [67L]
+│   │   ├── poh_atc83.atc (1KB) [79L]
+│   │   ├── pos.atc (732B) [7L]
+│   │   ├── pos_atc82.atc (2KB) [92L]
+│   │   ├── pow.atc (732B) [7L]
+│   │   └── pow_atc81.atc (2KB) [89L]
+│   ├── contracts/ (13 files)
+│   │   ├── atc001/ (3 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   ├── genesis_token.atc (679B) [6L]
+│   │   │   └── genesis_token.py (2KB) [74L]
+│   │   ├── atc8300/ (2 files)
+│   │   │   ├── __init__.py (129B) [2L]
+│   │   │   └── atc8300_token.py (5KB) [126L]
+│   │   ├── base/ (2 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   └── base_contract.py (3KB) [87L]
+│   │   ├── governance/ (1 files)
+│   │   │   └── governance_contract.atc (707B) [6L]
+│   │   ├── shivamon/ (2 files)
+│   │   │   ├── __init__.py (136B) [2L]
+│   │   │   └── breeding.atc (701B) [6L]
+│   │   ├── solidity/ (1 files)
+│   │   │   └── test/ (1 files)
+│   │   │       └── ATCBridge.test.js (11KB) [274L]
+│   │   ├── __init__.py (0B) [0L]
+│   │   └── contract_engine_atc14.atc (698B) [6L]
+│   ├── dex/ (2 files)
+│   │   ├── __init__.py (117B) [2L]
+│   │   └── amm.atc (10KB) [277L]
+│   ├── governance/ (6 files)
+│   │   ├── __init__.py (120B) [2L]
+│   │   ├── dao.atc (6KB) [168L]
+│   │   ├── dao_live.atc (8KB) [235L]
+│   │   ├── snapshot.atc (5KB) [151L]
+│   │   ├── timelock.atc (4KB) [150L]
+│   │   └── treasury.atc (6KB) [220L]
+│   ├── mainnet/ (3 files)
+│   │   ├── __init__.py (117B) [2L]
+│   │   ├── launch_manager.atc (3KB) [105L]
+│   │   └── mainnet_config.atc (5KB) [151L]
+│   ├── network/ (7 files)
+│   │   ├── atc-02_liquid_state_migration_failover.atc (2KB) [58L]
+│   │   ├── atc-04_dag_consensus_propagation.atc (2KB) [58L]
+│   │   ├── atc-05_quantumresistant_signatures.atc (2KB) [58L]
+│   │   ├── atc-10_global_time_sync_oracles.atc (1KB) [58L]
+│   │   ├── core_node_atc01.atc (4KB) [164L]
+│   │   ├── latency_opt_atc06.atc (3KB) [135L]
+│   │   └── sharding_atc07.atc (5KB) [215L]
+│   ├── nodes/ (9 files)
+│   │   ├── __init__.py (126B) [2L]
+│   │   ├── block_propagation.atc (3KB) [87L]
+│   │   ├── bootstrap.atc (6KB) [234L]
+│   │   ├── bootstrap.py (8KB) [257L]
+│   │   ├── discovery.py (11KB) [314L]
+│   │   ├── initial_sync.atc (6KB) [207L]
+│   │   ├── node.atc (6KB) [192L]
+│   │   ├── p2p_propagation.py (12KB) [381L]
+│   │   └── testnet_launcher.atc (4KB) [132L]
+│   ├── propagation/ (1 files)
+│   │   └── block_gossip.atc (3KB) [98L]
+│   ├── wallet/ (7 files)
+│   │   ├── __init__.py (128B) [2L]
+│   │   ├── did.atc (4KB) [122L]
+│   │   ├── did.py (2KB) [74L]
+│   │   ├── ecdsa.py (2KB) [72L]
+│   │   ├── multisig.atc (8KB) [268L]
+│   │   ├── multisig.py (3KB) [107L]
+│   │   └── wordlist.atc (5KB) [112L]
+│   ├── zkp/ (2 files)
+│   │   ├── __init__.py (336B) [4L]
+│   │   └── groth16.atc (3KB) [89L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (428B) [21L]
+│   ├── FILE_REGISTER.md (3KB) [109L]
+│   ├── LICENSE (658B)
+│   ├── README.md (500B) [14L]
+│   ├── ROADMAP.md (484B) [21L]
+│   ├── STATUS.md (349B) [19L]
+│   ├── __init__.py (0B) [0L]
+│   ├── contract_registry.atc (3KB) [98L]
+│   ├── smart_contract_registry.atc (2KB) [88L]
+│   ├── smart_contract_registry.py (1KB) [53L]
+│   ├── smart_contracts.atc (15KB) [486L]
+│   └── smart_contracts.py (23KB) [716L]
+├── bootloader/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (223B) [8L]
+│   ├── FILE_REGISTER.md (388B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (5KB) [107L]
+│   ├── ROADMAP.md (376B) [16L]
+│   └── STATUS.md (491B) [21L]
+├── ci/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (215B) [8L]
+│   ├── FILE_REGISTER.md (380B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (5KB) [109L]
+│   ├── ROADMAP.md (368B) [16L]
+│   └── STATUS.md (483B) [21L]
+├── ci-cd-fix/ (4 files)
+│   ├── README.md (874B) [34L]
+│   ├── apply-fix.sh (873B) [27L]
+│   ├── ci-cd.yml (2KB) [102L]
+│   └── codeql.yml (802B) [32L]
+├── cli/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (216B) [8L]
+│   ├── FILE_REGISTER.md (381B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (5KB) [120L]
+│   ├── ROADMAP.md (369B) [16L]
+│   └── STATUS.md (484B) [21L]
+├── config/ (4 files)
+│   ├── ai_models.json (486B) [26L]
+│   ├── kai_config.toml (1KB) [52L]
+│   ├── mainnet_genesis.json (3KB) [95L]
+│   └── settings.json (922B) [50L]
+├── contracts/ (23 files)
+│   ├── atc8300/ (2 files)
+│   │   ├── atc8300.atc (3KB) [96L]
+│   │   └── atc8300_token.py (5KB) [126L]
+│   ├── atcoin/ (1 files)
+│   │   └── atcoin.py (5KB) [139L]
+│   ├── base/ (1 files)
+│   │   └── base_contract.py (3KB) [87L]
+│   ├── bridge/ (1 files)
+│   │   └── bridge_contract.py (4KB) [133L]
+│   ├── governance/ (2 files)
+│   │   ├── governance.atc (4KB) [113L]
+│   │   └── governance_contract.py (11KB) [299L]
+│   ├── marketplace/ (1 files)
+│   │   └── marketplace_contract.py (11KB) [301L]
+│   ├── shivamon/ (2 files)
+│   │   ├── shivamon.atc (5KB) [162L]
+│   │   └── shivamon_contract.py (10KB) [270L]
+│   ├── wallet/ (3 files)
+│   │   ├── ecdsa.py (2KB) [72L]
+│   │   ├── keygen.py (5KB) [140L]
+│   │   └── wallet.atc (4KB) [124L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (304B) [20L]
+│   ├── DEPLOYMENT.md (894B) [29L]
+│   ├── FILE_REGISTER.md (1KB) [54L]
+│   ├── LICENSE (982B)
+│   ├── README.md (4KB) [70L]
+│   ├── ROADMAP.md (482B) [21L]
+│   ├── SECURITY.md (496B) [13L]
+│   ├── STATUS.md (358B) [19L]
+│   └── requirements.txt (100B)
+├── core/ (2 files)
+│   ├── ai/ (1 files)
+│   │   └── federated_learning.atc (6KB) [178L]
+│   └── kai_cli.atc (8KB) [195L]
+├── devnet/ (1 files)
+│   └── README.md (12KB) [554L]
+├── dns/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (216B) [8L]
+│   ├── FILE_REGISTER.md (381B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [107L]
+│   ├── ROADMAP.md (369B) [16L]
+│   └── STATUS.md (484B) [21L]
+├── docker/ (10 files)
+│   ├── Dockerfile.backend (461B)
+│   ├── Dockerfile.bootstrap (268B)
+│   ├── Dockerfile.core (1KB)
+│   ├── Dockerfile.frontend (1KB)
+│   ├── Dockerfile.gateway (1KB)
+│   ├── Dockerfile.node (616B)
+│   ├── Makefile (1KB)
+│   ├── docker-compose.testnet.yml (3KB) [137L]
+│   ├── docker-compose.yml (4KB) [175L]
+│   └── prometheus.yml (543B) [22L]
+├── docs/ (403 files)
+│   ├── ai/ (3 files)
+│   │   ├── AI_SAFETY.md (5KB) [184L]
+│   │   ├── GEMINI_INTEGRATION.md (5KB) [214L]
+│   │   └── LLM_ROUTER.md (4KB) [149L]
+│   ├── aistudio/ (1 files)
+│   │   └── AISTUDIO_COMPONENTS.md (24KB) [439L]
+│   ├── architecture/ (12 files)
+│   │   ├── AI_LAYER.md (2KB) [53L]
+│   │   ├── ATCFS.md (4KB) [129L]
+│   │   ├── ATCLANG_COMPILER.md (2KB) [64L]
+│   │   ├── ATCNET_P2P.md (6KB) [211L]
+│   │   ├── CONSENSUS.md (3KB) [121L]
+│   │   ├── GATEWAY.md (2KB) [112L]
+│   │   ├── GOVERNANCE.md (1KB) [50L]
+│   │   ├── KERNEL_SHELL.md (1KB) [50L]
+│   │   ├── MONITORING_DEVOPS.md (1KB) [42L]
+│   │   ├── SHIVAOS_KERNEL.md (5KB) [182L]
+│   │   ├── TESTNET.md (20KB) [713L]
+│   │   └── WALLET_KEYGEN.md (2KB) [99L]
+│   ├── atclang/ (1 files)
+│   │   └── ATCLANG_SPEC_FULL.md (423B) [9L]
+│   ├── ci-templates/ (4 files)
+│   │   ├── ci.yml (1KB) [42L]
+│   │   ├── codeql.yml (4KB) [101L]
+│   │   ├── codeql_fixed.yml (1KB) [46L]
+│   │   └── release.yml (5KB) [182L]
+│   ├── contracts/ (2 files)
+│   │   ├── ATC_TOKEN_STANDARD.md (534B) [12L]
+│   │   └── SHIVAMON_NFT_CONTRACT.md (20KB) [778L]
+│   ├── file_registers/ (23 files)
+│   │   ├── README.md (1KB) [42L]
+│   │   ├── a-townchain-os_FILE_REGISTER.md (75KB) [1491L]
+│   │   ├── atc-aistudio_FILE_REGISTER.md (12KB) [277L]
+│   │   ├── atc-atclang_FILE_REGISTER.md (1KB) [68L]
+│   │   ├── atc-atcpkg_FILE_REGISTER.md (1KB) [39L]
+│   │   ├── atc-backend_FILE_REGISTER.md (1KB) [53L]
+│   │   ├── atc-blockchain_FILE_REGISTER.md (3KB) [104L]
+│   │   ├── atc-contracts_FILE_REGISTER.md (1KB) [51L]
+│   │   ├── atc-franchise_FILE_REGISTER.md (1KB) [43L]
+│   │   ├── atc-frontend_FILE_REGISTER.md (947B) [38L]
+│   │   ├── atc-gateway_FILE_REGISTER.md (2KB) [71L]
+│   │   ├── atc-genesis-engine_FILE_REGISTER.md (1KB) [46L]
+│   │   ├── atc-kernel_FILE_REGISTER.md (1KB) [50L]
+│   │   ├── atc-linux-edition_FILE_REGISTER.md (838B) [35L]
+│   │   ├── atc-mobile_FILE_REGISTER.md (897B) [37L]
+│   │   ├── atc-shivacore-tools_FILE_REGISTER.md (787B) [33L]
+│   │   ├── atc-shivacore_FILE_REGISTER.md (309KB) [2183L]
+│   │   ├── atc-shivamon_FILE_REGISTER.md (1KB) [43L]
+│   │   ├── atc-standards_FILE_REGISTER.md (1KB) [41L]
+│   │   ├── atc-ui_FILE_REGISTER.md (923B) [38L]
+│   │   ├── atc-windows-edition_FILE_REGISTER.md (844B) [35L]
+│   │   ├── atclang_FILE_REGISTER.md (1KB) [60L]
+│   │   └── atcnet_FILE_REGISTER.md (1KB) [45L]
+│   ├── issues/ (85 files)
+│   │   ├── ISSUE_01_SMART_CONTRACTS.md (4KB) [143L]
+│   │   ├── ISSUE_02_GEMINI_AI.md (3KB) [141L]
+│   │   ├── ISSUE_03_BATTLE_UI.md (4KB) [141L]
+│   │   ├── ISSUE_04_PERSISTENZ.md (4KB) [156L]
+│   │   ├── ISSUE_05_EXPLORER.md (3KB) [102L]
+│   │   ├── ISSUE_06_ECDSA.md (4KB) [143L]
+│   │   ├── ISSUE_07_BUILD.md (3KB) [133L]
+│   │   ├── ISSUE_08_TESTNET.md (3KB) [127L]
+│   │   ├── ISSUE_09_GOVERNANCE.md (2KB) [99L]
+│   │   ├── ISSUE_10_BRIDGE.md (1KB) [53L]
+│   │   ├── ISSUE_11_BREEDING.md (3KB) [88L]
+│   │   ├── ISSUE_12_SOLIDITY.md (4KB) [147L]
+│   │   ├── ISSUE_13_MARKETPLACE.md (3KB) [122L]
+│   │   ├── ISSUE_14_BOOTSTRAP_NODE.md (7KB) [310L]
+│   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md (1KB) [46L]
+│   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md (1KB) [45L]
+│   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md (1KB) [45L]
+│   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md (1KB) [46L]
+│   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md (1KB) [45L]
+│   │   ├── ISSUE_20_GATEWAY_TESTS.md (1KB) [63L]
+│   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md (1KB) [48L]
+│   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md (1KB) [47L]
+│   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md (1KB) [48L]
+│   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md (1KB) [50L]
+│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md (1KB) [47L]
+│   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md (1KB) [47L]
+│   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+│   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md (1KB) [45L]
+│   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md (1KB) [45L]
+│   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md (1KB) [45L]
+│   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md (1KB) [51L]
+│   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md (1KB) [49L]
+│   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md (1KB) [52L]
+│   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md (1KB) [56L]
+│   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md (1KB) [51L]
+│   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md (1KB) [50L]
+│   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md (1KB) [52L]
+│   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md (1KB) [52L]
+│   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md (1KB) [54L]
+│   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md (992B) [44L]
+│   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md (798B) [38L]
+│   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md (738B) [38L]
+│   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md (770B) [38L]
+│   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md (814B) [38L]
+│   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md (823B) [38L]
+│   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md (900B) [36L]
+│   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md (881B) [36L]
+│   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md (880B) [36L]
+│   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md (1009B) [36L]
+│   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md (1011B) [39L]
+│   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md (1004B) [37L]
+│   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md (987B) [37L]
+│   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md (987B) [40L]
+│   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md (998B) [38L]
+│   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md (996B) [39L]
+│   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md (1005B) [36L]
+│   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md (997B) [37L]
+│   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md (1015B) [37L]
+│   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md (1007B) [37L]
+│   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md (1002B) [38L]
+│   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md (1002B) [37L]
+│   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md (1017B) [40L]
+│   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md (997B) [38L]
+│   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md (1000B) [38L]
+│   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md (1KB) [35L]
+│   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md (1KB) [40L]
+│   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md (1KB) [40L]
+│   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md (1KB) [38L]
+│   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md (1KB) [40L]
+│   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md (1KB) [40L]
+│   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md (1KB) [39L]
+│   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md (1018B) [40L]
+│   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md (1KB) [40L]
+│   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md (1KB) [40L]
+│   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md (1KB) [39L]
+│   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md (1KB) [43L]
+│   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md (1KB) [40L]
+│   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md (1KB) [40L]
+│   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md (1KB) [40L]
+│   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md (1KB) [40L]
+│   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md (1KB) [40L]
+│   │   ├── OPEN_ISSUES_MASTER.md (1KB) [44L]
+│   │   ├── README.md (3KB) [62L]
+│   │   └── TESTNET_INDEX.md (1KB) [25L]
+│   ├── reports/ (1 files)
+│   │   └── SPRINT_2.3_2.4_2.7_REPORT.md (3KB) [102L]
+│   ├── roadmap/ (1 files)
+│   │   └── ROADMAP_EXTENDED.md (10KB) [262L]
+│   ├── sprints/ (3 files)
+│   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md (3KB) [76L]
+│   │   ├── SPRINT_3.3_SECURITY_AUDIT.md (3KB) [83L]
+│   │   └── SPRINT_4.0_MAINNET_LAUNCH.md (3KB) [82L]
+│   ├── standards/ (107 files)
+│   │   ├── ATC/ (1 files)
+│   │   │   └── ATC-0009-BRIDGE.md (1KB) [55L]
+│   │   ├── ATC-01-CORE_NODE_PROTOCOL.md (8KB) [225L]
+│   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md (9KB) [246L]
+│   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md (10KB) [257L]
+│   │   ├── ATC-04-DAG_CONSENSUS.md (7KB) [200L]
+│   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md (8KB) [217L]
+│   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md (22KB) [760L]
+│   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md (9KB) [231L]
+│   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md (8KB) [205L]
+│   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md (8KB) [209L]
+│   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md (9KB) [234L]
+│   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md (8KB) [210L]
+│   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md (8KB) [204L]
+│   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md (7KB) [201L]
+│   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md (8KB) [217L]
+│   │   ├── ATC-15-PROOF_OF_AI_MINING.md (9KB) [229L]
+│   │   ├── ATC-16-REFERRAL_REWARDS.md (8KB) [206L]
+│   │   ├── ATC-17-DAO_GOVERNANCE.md (8KB) [224L]
+│   │   ├── ATC-18-MULTISIG_AUTH.md (8KB) [224L]
+│   │   ├── ATC-19-AMM_LOGIC.md (8KB) [212L]
+│   │   ├── ATC-20-WRAPPED_SYNTHETIC.md (8KB) [226L]
+│   │   ├── ATC-21-HOLOGRAPHIC_WASM.md (9KB) [248L]
+│   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md (8KB) [225L]
+│   │   ├── ATC-23-DATA_SHARDING_STORAGE.md (8KB) [222L]
+│   │   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   │   ├── ATC-25-TENSOR_COMPUTE.md (8KB) [218L]
+│   │   ├── ATC-26-XAI_TRANSPARENCY.md (8KB) [224L]
+│   │   ├── ATC-27-AI_MODEL_AUDITING.md (8KB) [226L]
+│   │   ├── ATC-28-FEDERATED_LEARNING.md (9KB) [254L]
+│   │   ├── ATC-29-AI_MARKETPLACE.md (9KB) [246L]
+│   │   ├── ATC-30-REPUTATION_TRUST.md (10KB) [271L]
+│   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md (10KB) [266L]
+│   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md (10KB) [267L]
+│   │   ├── ATC-33-AI_FEEDBACK_RLHF.md (11KB) [270L]
+│   │   ├── ATC-34-CROSS_LAYER_INTEROP.md (11KB) [277L]
+│   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md (10KB) [263L]
+│   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md (9KB) [262L]
+│   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md (10KB) [255L]
+│   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md (6KB) [142L]
+│   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md (6KB) [137L]
+│   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md (7KB) [155L]
+│   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md (7KB) [155L]
+│   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md (7KB) [173L]
+│   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md (7KB) [149L]
+│   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md (3KB) [115L]
+│   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md (4KB) [115L]
+│   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md (3KB) [116L]
+│   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md (3KB) [115L]
+│   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md (4KB) [119L]
+│   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md (3KB) [115L]
+│   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md (4KB) [117L]
+│   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md (4KB) [119L]
+│   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md (4KB) [118L]
+│   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md (4KB) [118L]
+│   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md (4KB) [119L]
+│   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md (4KB) [118L]
+│   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md (4KB) [119L]
+│   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md (4KB) [127L]
+│   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md (4KB) [126L]
+│   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md (4KB) [126L]
+│   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md (4KB) [126L]
+│   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md (4KB) [127L]
+│   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md (4KB) [127L]
+│   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md (4KB) [128L]
+│   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md (4KB) [128L]
+│   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md (4KB) [119L]
+│   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md (4KB) [119L]
+│   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md (3KB) [118L]
+│   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md (4KB) [118L]
+│   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md (4KB) [119L]
+│   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md (4KB) [118L]
+│   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md (4KB) [117L]
+│   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md (4KB) [119L]
+│   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md (4KB) [119L]
+│   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md (3KB) [118L]
+│   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md (4KB) [119L]
+│   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md (4KB) [120L]
+│   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md (4KB) [120L]
+│   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md (4KB) [119L]
+│   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md (4KB) [119L]
+│   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md (4KB) [120L]
+│   │   ├── ATC-81-PROOF_OF_HISTORY.md (2KB) [105L]
+│   │   ├── ATC-82-PROOF_OF_WORK.md (2KB) [104L]
+│   │   ├── ATC-83-PROOF_OF_STAKE.md (2KB) [106L]
+│   │   ├── ATC-84-FORK_RESOLUTION.md (2KB) [103L]
+│   │   ├── ATC-85-INITIAL_SYNC.md (2KB) [105L]
+│   │   ├── ATC-86-ECDSA_SIGNATURE.md (2KB) [105L]
+│   │   ├── ATC-87-GAS_FEE.md (2KB) [105L]
+│   │   ├── ATC-88-AMM.md (2KB) [105L]
+│   │   ├── ATC-89-FUNGIBLE_TOKEN.md (2KB) [106L]
+│   │   ├── ATC-90-NFT_SHIVAMON.md (2KB) [106L]
+│   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md (2KB) [105L]
+│   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md (7KB) [221L]
+│   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md (10KB) [338L]
+│   │   ├── ATC-94-ATCLANG_STDLIB.md (6KB) [187L]
+│   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md (6KB) [221L]
+│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md (2KB) [83L]
+│   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md (8KB) [243L]
+│   │   ├── ATC-98-TESTING_STANDARD.md (1KB) [69L]
+│   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md (7KB) [189L]
+│   │   ├── ATC_ECOSYSTEM_STANDARDS.md (53KB) [1143L]
+│   │   ├── ATC_STANDARDS.md (4KB) [201L]
+│   │   ├── ATS_STANDARDS.md (4KB) [199L]
+│   │   ├── OVERVIEW.md (1KB) [29L]
+│   │   ├── README.md (8KB) [131L]
+│   │   └── STANDARDS_REGISTRY.md (13KB) [208L]
+│   ├── whitepaper/ (9 files)
+│   │   ├── .github/ (1 files)
+│   │   │   └── FUNDING.yml (76B) [2L]
+│   │   ├── .gitignore (171B)
+│   │   ├── CHANGELOG.md (706B) [24L]
+│   │   ├── FILE_REGISTER.md (438B) [14L]
+│   │   ├── LICENSE (982B)
+│   │   ├── README.md (2KB) [48L]
+│   │   ├── ROADMAP.md (484B) [21L]
+│   │   ├── STATUS.md (357B) [19L]
+│   │   └── WHITEPAPER.md (123KB) [4171L]
+│   ├── wiki/ (109 files)
+│   │   ├── atclang/ (13 files)
+│   │   │   ├── docs/ (12 files)
+│   │   │   │   ├── CHANGELOG.md (338B) [8L]
+│   │   │   │   ├── COMPILER.md (3KB) [105L]
+│   │   │   │   ├── CONTRIBUTING.md (472B) [11L]
+│   │   │   │   ├── EXAMPLES.md (3KB) [95L]
+│   │   │   │   ├── LEXER.md (1KB) [59L]
+│   │   │   │   ├── PARSER.md (3KB) [135L]
+│   │   │   │   ├── REPL.md (2KB) [79L]
+│   │   │   │   ├── SECURITY.md (1KB) [34L]
+│   │   │   │   ├── SECURITY_ANALYZER.md (2KB) [82L]
+│   │   │   │   ├── SPEC.md (1KB) [55L]
+│   │   │   │   ├── STDLIB.md (3KB) [111L]
+│   │   │   │   └── VM.md (2KB) [63L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── atcnet/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── BOOTSTRAP.md (312B) [18L]
+│   │   │   │   ├── MESSAGES.md (1KB) [40L]
+│   │   │   │   ├── PROTOCOL.md (2KB) [57L]
+│   │   │   │   ├── SECURITY.md (336B) [11L]
+│   │   │   │   └── TOPOLOGY.md (1KB) [43L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── contracts/ (7 files)
+│   │   │   ├── docs/ (6 files)
+│   │   │   │   ├── ATC8300.md (1KB) [51L]
+│   │   │   │   ├── ATC9000.md (2KB) [92L]
+│   │   │   │   ├── ATC9900.md (514B) [20L]
+│   │   │   │   ├── BRIDGE.md (1KB) [38L]
+│   │   │   │   ├── DEPLOYMENT.md (603B) [25L]
+│   │   │   │   └── SECURITY.md (708B) [26L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── franchise/ (8 files)
+│   │   │   ├── docs/ (7 files)
+│   │   │   │   ├── API.md (1KB) [37L]
+│   │   │   │   ├── CONCEPT.md (1000B) [24L]
+│   │   │   │   ├── CONTRACTS.md (1KB) [49L]
+│   │   │   │   ├── DEPLOYMENT.md (879B) [43L]
+│   │   │   │   ├── ROADMAP.md (726B) [20L]
+│   │   │   │   ├── SECURITY.md (904B) [29L]
+│   │   │   │   └── TOKEN_ECONOMY.md (1KB) [41L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── gateway/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── AUTH.md (965B) [43L]
+│   │   │   │   ├── MIDDLEWARE.md (368B) [14L]
+│   │   │   │   ├── RATE_LIMITING.md (956B) [43L]
+│   │   │   │   ├── ROUTES.md (995B) [32L]
+│   │   │   │   └── SECURITY.md (372B) [13L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── kai-os/ (26 files)
+│   │   │   ├── code/ (1 files)
+│   │   │   │   └── atclang/ (1 files)
+│   │   │   │       └── ATCLANG_SPEC.md (432B) [9L]
+│   │   │   ├── docs/ (22 files)
+│   │   │   │   ├── architecture/ (4 files)
+│   │   │   │   │   ├── ATCNET_P2P.md (6KB) [193L]
+│   │   │   │   │   ├── CONSENSUS.md (6KB) [193L]
+│   │   │   │   │   ├── GATEWAY.md (5KB) [168L]
+│   │   │   │   │   └── WALLET_KEYGEN.md (5KB) [166L]
+│   │   │   │   ├── contracts/ (1 files)
+│   │   │   │   │   └── ATC_TOKEN_STANDARD.md (6KB) [202L]
+│   │   │   │   ├── issues/ (7 files)
+│   │   │   │   │   ├── ISSUE_01_SMART_CONTRACTS.md (4KB) [141L]
+│   │   │   │   │   ├── ISSUE_06_ECDSA.md (4KB) [141L]
+│   │   │   │   │   ├── ISSUE_09_GOVERNANCE.md (2KB) [97L]
+│   │   │   │   │   ├── ISSUE_12_SOLIDITY.md (4KB) [145L]
+│   │   │   │   │   ├── ISSUE_13_MARKETPLACE.md (3KB) [120L]
+│   │   │   │   │   ├── ISSUE_14_BOOTSTRAP_NODE.md (7KB) [308L]
+│   │   │   │   │   └── OPEN_ISSUES_MASTER.md (13KB) [353L]
+│   │   │   │   ├── repo/ (1 files)
+│   │   │   │   │   └── README.md (2KB) [56L]
+│   │   │   │   ├── roadmap/ (1 files)
+│   │   │   │   │   └── ROADMAP_EXTENDED.md (10KB) [245L]
+│   │   │   │   ├── standards/ (3 files)
+│   │   │   │   │   ├── ATC_ECOSYSTEM_STANDARDS.md (13KB) [447L]
+│   │   │   │   │   ├── OVERVIEW.md (1KB) [40L]
+│   │   │   │   │   └── STANDARDS_REGISTRY.md (10KB) [212L]
+│   │   │   │   ├── DECISIONS_REGISTER.md (2KB) [69L]
+│   │   │   │   ├── ROADMAP.md (9KB) [208L]
+│   │   │   │   ├── ROADMAP_COMPLETENESS_AUDIT.md (7KB) [223L]
+│   │   │   │   ├── STATUS.md (3KB) [85L]
+│   │   │   │   └── kai-os-wiki.md (395KB) [11376L]
+│   │   │   ├── ECOSYSTEM.md (8KB) [179L]
+│   │   │   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   │   │   └── README.md (542B) [18L]
+│   │   ├── kernel/ (10 files)
+│   │   │   ├── docs/ (9 files)
+│   │   │   │   ├── ATCFS.md (2KB) [107L]
+│   │   │   │   ├── ATCNET.md (2KB) [89L]
+│   │   │   │   ├── CHANGELOG.md (231B) [7L]
+│   │   │   │   ├── CONSENSUS.md (615B) [24L]
+│   │   │   │   ├── IPC.md (1KB) [43L]
+│   │   │   │   ├── KERNEL.md (2KB) [87L]
+│   │   │   │   ├── PERFORMANCE.md (708B) [25L]
+│   │   │   │   ├── PROCESS_MODEL.md (1KB) [48L]
+│   │   │   │   └── SECURITY.md (532B) [20L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── overview/ (9 files)
+│   │   │   ├── docs/ (8 files)
+│   │   │   │   ├── API.md (1KB) [59L]
+│   │   │   │   ├── ARCHITECTURE.md (1KB) [36L]
+│   │   │   │   ├── CONTRIBUTING.md (609B) [19L]
+│   │   │   │   ├── FAQ.md (1KB) [62L]
+│   │   │   │   ├── QUICKSTART.md (619B) [30L]
+│   │   │   │   ├── ROADMAP.md (556B) [25L]
+│   │   │   │   ├── SECURITY.md (916B) [18L]
+│   │   │   │   └── WHITEPAPER.md (5KB) [107L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── shivamon/ (7 files)
+│   │   │   ├── docs/ (6 files)
+│   │   │   │   ├── BATTLE.md (420B) [17L]
+│   │   │   │   ├── BREEDING.md (1KB) [37L]
+│   │   │   │   ├── ELEMENTS.md (1KB) [31L]
+│   │   │   │   ├── MARKETPLACE.md (408B) [21L]
+│   │   │   │   ├── NFT_SPEC.md (1KB) [55L]
+│   │   │   │   └── ROADMAP.md (638B) [24L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── standards/ (2 files)
+│   │   │   ├── docs/ (1 files)
+│   │   │   │   └── OVERVIEW.md (1KB) [28L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── ui/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── API.md (651B) [30L]
+│   │   │   │   ├── COMPONENTS.md (442B) [26L]
+│   │   │   │   ├── DEPLOYMENT.md (969B) [49L]
+│   │   │   │   ├── DESIGN.md (732B) [24L]
+│   │   │   │   └── THEME.md (1KB) [67L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── chapter-63-cleanup-2026-06-13.md (6KB) [205L]
+│   │   ├── chapter-70-atclang-migration-complete.md (2KB) [77L]
+│   │   ├── chapter-71-sprint-audit.md (2KB) [67L]
+│   │   ├── chapter-72-sprint-2-7-testing-cicd.md (2KB) [59L]
+│   │   ├── chapter-73-sprint-2-8-testnet.md (1KB) [53L]
+│   │   ├── chapter-74-sprint-3-1-ux-privacy.md (1KB) [40L]
+│   │   ├── chapter-75-v01-v03-migration-plan.md (2KB) [74L]
+│   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md (1KB) [40L]
+│   │   └── chapter-77-sprint-4-0-4-1-mainnet.md (1KB) [43L]
+│   ├── AGENT_COMMIT_AUDIT_2026-08-05.md (2KB) [62L]
+│   ├── AGENT_COORDINATION.md (27KB) [345L]
+│   ├── AGENT_POLICY.md (13KB) [325L]
+│   ├── AGENT_PROTOCOL.md (8KB) [256L]
+│   ├── ARCHITECTURE_TREES.md (279KB) [7700L]
+│   ├── ATCLANG_AGENT_BUILD_GUIDE.md (22KB) [281L]
+│   ├── ATC_93_BYTECODE_SPEC.md (6KB) [235L]
+│   ├── AUDIT_REPORT.md (3KB) [89L]
+│   ├── CLEANUP_LOG.md (8KB) [231L]
+│   ├── CLUSTER_ARCHITECTURE.md (6KB) [103L]
+│   ├── COMMUNITY_ANNOUNCEMENT.md (1KB) [35L]
+│   ├── COMPLETENESS_AUDIT.md (2KB) [57L]
+│   ├── DECISIONS_REGISTER.md (7KB) [140L]
+│   ├── DEPRECATED.md (2KB) [45L]
+│   ├── DEVELOPER_ONBOARDING.md (4KB) [157L]
+│   ├── ECOSYSTEM_BRAIN.md (3KB) [104L]
+│   ├── FILE_NAMING_CONVENTIONS.md (16KB) [634L]
+│   ├── FILE_REGISTER.md (4KB) [94L]
+│   ├── FIXES.md (3KB) [96L]
+│   ├── GAP_ANALYSIS_v1.0.md (8KB) [199L]
+│   ├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+│   ├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+│   ├── K9_K13_GAP.md (964B) [22L]
+│   ├── KAI_INTEGRATION.md (6KB) [242L]
+│   ├── MIGRATION_MAP.md (1KB) [30L]
+│   ├── MILESTONES.md (1KB) [23L]
+│   ├── NAMING_CONVENTIONS.md (4KB) [88L]
+│   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   ├── REALITY_CHECK_2026-07-06.md (28KB) [428L]
+│   ├── RELEASE_NOTES_v1.0.md (2KB) [103L]
+│   ├── ROADMAP.md (3KB) [79L]
+│   ├── ROADMAP_COMPLETENESS_AUDIT.md (184B) [9L]
+│   ├── STATUS.md (4KB) [72L]
+│   ├── SYNC_REPORT.md (1022B) [45L]
+│   ├── TECHNICAL_DOCUMENTATION.md (4KB) [142L]
+│   ├── WIKI_AUDIT.md (6KB) [188L]
+│   ├── WIKI_INDEX.md (8KB) [148L]
+│   ├── api-reference.md (1KB) [33L]
+│   ├── atclang-guide.md (1KB) [48L]
+│   ├── genesis_wallet.md (3KB) [103L]
+│   ├── kai-os-wiki.md (255KB) [7792L]
+│   └── landing-page.html (4KB)
+├── drivers/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (220B) [8L]
+│   ├── FILE_REGISTER.md (385B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [108L]
+│   ├── ROADMAP.md (373B) [16L]
+│   └── STATUS.md (488B) [21L]
+├── explorer/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (221B) [8L]
+│   ├── FILE_REGISTER.md (496B) [18L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [104L]
+│   ├── ROADMAP.md (374B) [16L]
+│   └── STATUS.md (489B) [21L]
+├── franchise/ (15 files)
+│   ├── api/ (1 files)
+│   │   └── routes.py (2KB) [67L]
+│   ├── contracts/ (3 files)
+│   │   ├── registry.atc (4KB) [120L]
+│   │   ├── revenue.atc (3KB) [93L]
+│   │   └── token.atc (3KB) [72L]
+│   ├── docs/ (2 files)
+│   │   ├── ARCHITECTURE.md (666B) [23L]
+│   │   └── SECURITY.md (1KB) [57L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (182B) [6L]
+│   ├── FILE_REGISTER.md (658B) [20L]
+│   ├── LICENSE (982B)
+│   ├── README.md (4KB) [69L]
+│   ├── ROADMAP.md (482B) [21L]
+│   ├── STATUS.md (358B) [19L]
+│   ├── factory.py (4KB) [138L]
+│   └── requirements.txt (115B)
+├── frontend/ (35 files)
+│   ├── __mocks__/ (1 files)
+│   │   └── styleMock.js (21B) [1L]
+│   ├── admin/ (4 files)
+│   │   ├── CHANGELOG.md (175B) [6L]
+│   │   ├── DESIGN.md (1KB) [33L]
+│   │   ├── api.js (4KB) [99L]
+│   │   └── index.html (106KB)
+│   ├── assets/ (2 files)
+│   │   ├── css/ (1 files)
+│   │   │   └── variables.css (807B)
+│   │   └── js/ (1 files)
+│   │       └── api.js (4KB) [136L]
+│   ├── battle/ (1 files)
+│   │   └── index.html (13KB)
+│   ├── bootscreen/ (1 files)
+│   │   └── README.md (1KB) [48L]
+│   ├── mobile/ (3 files)
+│   │   ├── wallet/ (1 files)
+│   │   │   └── biometric_auth.atc (5KB) [179L]
+│   │   ├── README.md (62B) [2L]
+│   │   └── wallet_api.atc (5KB) [171L]
+│   ├── src/ (1 files)
+│   │   └── .gitkeep (0B)
+│   ├── ui/ (10 files)
+│   │   ├── assets/ (1 files)
+│   │   │   └── js/ (1 files)
+│   │   │       └── api.js (4KB) [99L]
+│   │   ├── .gitignore (171B)
+│   │   ├── CHANGELOG.md (175B) [6L]
+│   │   ├── DESIGN.md (1KB) [33L]
+│   │   ├── FILE_REGISTER.md (575B) [21L]
+│   │   ├── LICENSE (982B)
+│   │   ├── README.md (4KB) [69L]
+│   │   ├── ROADMAP.md (468B) [21L]
+│   │   ├── STATUS.md (351B) [19L]
+│   │   └── index.html (106KB)
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (426B) [21L]
+│   ├── FILE_REGISTER.md (689B) [23L]
+│   ├── LICENSE (658B)
+│   ├── README.md (1KB) [57L]
+│   ├── ROADMAP.md (480B) [21L]
+│   ├── STATUS.md (347B) [19L]
+│   ├── index.html (120KB)
+│   ├── jest.config.js (457B) [14L]
+│   ├── jest.setup.js (79B) [2L]
+│   ├── package.json (544B) [15L]
+│   └── tsconfig.json (579B) [23L]
+├── gateway/ (43 files)
+│   ├── atclang/ (11 files)
+│   │   ├── middleware/ (4 files)
+│   │   │   ├── auth.atc (2KB) [82L]
+│   │   │   ├── logger.atc (2KB) [70L]
+│   │   │   ├── rate_limit.atc (1KB) [50L]
+│   │   │   └── signature_verify.atc (1KB) [43L]
+│   │   ├── .env.example (103B)
+│   │   ├── CHANGELOG.md (274B) [8L]
+│   │   ├── README.md (858B) [39L]
+│   │   ├── SECURITY.md (371B) [13L]
+│   │   ├── main.atc (5KB) [180L]
+│   │   ├── requirements.txt (162B)
+│   │   └── router.atc (3KB) [96L]
+│   ├── docs/ (1 files)
+│   │   └── ARCHITECTURE.md (2KB) [112L]
+│   ├── middleware/ (5 files)
+│   │   ├── __init__.py (120B) [2L]
+│   │   ├── auth.py (669B) [19L]
+│   │   ├── logger.py (324B) [9L]
+│   │   ├── rate_limit.py (1KB) [26L]
+│   │   └── signature_verify.py (1KB) [57L]
+│   ├── python/ (11 files)
+│   │   ├── middleware/ (5 files)
+│   │   │   ├── __init__.py (120B) [2L]
+│   │   │   ├── auth.py (669B) [19L]
+│   │   │   ├── logger.py (324B) [9L]
+│   │   │   ├── rate_limit.py (1KB) [26L]
+│   │   │   └── signature_verify.py (1KB) [57L]
+│   │   ├── __init__.py (125B) [2L]
+│   │   ├── main.atc (5KB) [127L]
+│   │   ├── main.py (1KB) [47L]
+│   │   ├── requirements.txt (69B)
+│   │   ├── router.py (2KB) [50L]
+│   │   └── service_discovery.atc (6KB) [168L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (328B) [14L]
+│   ├── FILE_REGISTER.md (2KB) [74L]
+│   ├── LICENSE (982B)
+│   ├── README.md (1KB) [41L]
+│   ├── ROADMAP.md (478B) [21L]
+│   ├── SECURITY.md (371B) [13L]
+│   ├── STATUS.md (356B) [19L]
+│   ├── __init__.py (125B) [2L]
+│   ├── gateway.atc (4KB) [138L]
+│   ├── main.atc (5KB) [127L]
+│   ├── main.py (1KB) [47L]
+│   ├── requirements.txt (69B)
+│   ├── router.py (2KB) [50L]
+│   └── service_discovery.atc (6KB) [168L]
+├── genesis-engine/ (20 files)
+│   ├── engine/ (6 files)
+│   │   ├── core/ (1 files)
+│   │   │   └── ecs.py (2KB) [98L]
+│   │   ├── render/ (1 files)
+│   │   │   └── renderer2d.py (1KB) [45L]
+│   │   ├── tests/ (1 files)
+│   │   │   └── test_ecs.py (1KB) [63L]
+│   │   ├── MILESTONE_1.md (1KB) [44L]
+│   │   ├── main.py (1KB) [48L]
+│   │   └── requirements.txt (14B)
+│   ├── .gitignore (171B)
+│   ├── ARCHITECTURE.md (4KB) [103L]
+│   ├── CHANGELOG.md (432B) [21L]
+│   ├── FILE_REGISTER.md (849B) [24L]
+│   ├── FRANCHISE_FACTORY.md (3KB) [66L]
+│   ├── FRANCHISE_FACTORY_V2.md (3KB) [108L]
+│   ├── GENESIS_NEXUS_V5.md (3KB) [65L]
+│   ├── GENESIS_OS_V4.md (3KB) [70L]
+│   ├── LICENSE (658B)
+│   ├── METAFACTORY_V3.md (4KB) [83L]
+│   ├── README.md (4KB) [84L]
+│   ├── ROADMAP.md (492B) [21L]
+│   ├── STATUS.md (353B) [19L]
+│   └── VISION_EVOLUTION_LOG.md (8KB) [157L]
+├── ide/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (216B) [8L]
+│   ├── FILE_REGISTER.md (481B) [18L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [108L]
+│   ├── ROADMAP.md (369B) [16L]
+│   └── STATUS.md (484B) [21L]
+├── integrations/ (5 files)
+│   ├── README.md (1KB) [39L]
+│   ├── calendar_tasks.md (4KB) [57L]
+│   ├── huggingface_registry.md (1KB) [27L]
+│   ├── notion_export.md (1KB) [25L]
+│   └── storage_inventory.md (2KB) [46L]
+├── kernel/ (40 files)
+│   ├── consensus/ (3 files)
+│   │   ├── consensus.atc (5KB) [144L]
+│   │   ├── poh_integration.py (1KB) [29L]
+│   │   └── shiva_consensus.py (24KB) [641L]
+│   ├── docs/ (1 files)
+│   │   └── ATS_STANDARDS.md (7KB) [283L]
+│   ├── fs/ (2 files)
+│   │   ├── atcfs.atc (4KB) [142L]
+│   │   └── atcfs.py (12KB) [331L]
+│   ├── ipc/ (1 files)
+│   │   └── ipc_bus.py (3KB) [94L]
+│   ├── kernel/ (2 files)
+│   │   ├── kernel.atc (4KB) [148L]
+│   │   └── kernel.py (14KB) [382L]
+│   ├── net/ (2 files)
+│   │   ├── atcnet.atc (4KB) [135L]
+│   │   └── atcnet.py (549B) [17L]
+│   ├── python/ (22 files)
+│   │   ├── consensus/ (3 files)
+│   │   │   ├── consensus.atc (5KB) [144L]
+│   │   │   ├── poh_integration.py (1KB) [29L]
+│   │   │   └── shiva_consensus.py (24KB) [641L]
+│   │   ├── docs/ (1 files)
+│   │   │   └── ATS_STANDARDS.md (7KB) [283L]
+│   │   ├── fs/ (2 files)
+│   │   │   ├── atcfs.atc (4KB) [142L]
+│   │   │   └── atcfs.py (12KB) [331L]
+│   │   ├── ipc/ (1 files)
+│   │   │   └── ipc_bus.py (3KB) [94L]
+│   │   ├── kernel/ (2 files)
+│   │   │   ├── kernel.atc (4KB) [148L]
+│   │   │   └── kernel.py (14KB) [382L]
+│   │   ├── net/ (2 files)
+│   │   │   ├── atcnet.atc (4KB) [135L]
+│   │   │   └── atcnet.py (549B) [17L]
+│   │   ├── .gitignore (171B)
+│   │   ├── ARCHITECTURE.md (2KB) [90L]
+│   │   ├── CHANGELOG.md (276B) [16L]
+│   │   ├── FILE_REGISTER.md (909B) [27L]
+│   │   ├── LICENSE (982B)
+│   │   ├── README.md (4KB) [69L]
+│   │   ├── ROADMAP.md (476B) [21L]
+│   │   ├── SECURITY.md (451B) [14L]
+│   │   ├── STATUS.md (355B) [19L]
+│   │   ├── kernel.py (3KB) [106L]
+│   │   └── requirements.txt (131B)
+│   ├── ARCHITECTURE.md (2KB) [90L]
+│   ├── CHANGELOG.md (276B) [16L]
+│   ├── LICENSE (982B)
+│   ├── README.md (4KB) [69L]
+│   ├── SECURITY.md (451B) [14L]
+│   ├── kernel.py (3KB) [106L]
+│   └── requirements.txt (131B)
+├── linux/ (9 files)
+│   ├── src/ (1 files)
+│   │   └── main.rs (625B) [15L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (431B) [21L]
+│   ├── Cargo.toml (273B) [13L]
+│   ├── FILE_REGISTER.md (398B) [13L]
+│   ├── LICENSE (658B)
+│   ├── README.md (1KB) [44L]
+│   ├── ROADMAP.md (490B) [21L]
+│   └── STATUS.md (350B) [19L]
+├── mobile/ (11 files)
+│   ├── wallet/ (2 files)
+│   │   ├── __init__.py (162B) [2L]
+│   │   └── biometric_auth.atc (5KB) [179L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (424B) [21L]
+│   ├── FILE_REGISTER.md (638B) [22L]
+│   ├── LICENSE (658B)
+│   ├── README.md (62B) [2L]
+│   ├── ROADMAP.md (476B) [21L]
+│   ├── STATUS.md (345B) [19L]
+│   ├── __init__.py (123B) [2L]
+│   └── wallet_api.atc (5KB) [171L]
+├── modules/ (192 files)
+│   ├── assets/ (16 files)
+│   │   ├── aaa_asset_core.atc (3KB) [97L]
+│   │   ├── ai_assets.atc (4KB) [143L]
+│   │   ├── animation.atc (4KB) [170L]
+│   │   ├── asset_bundle.atc (4KB) [121L]
+│   │   ├── cloud_assets.atc (5KB) [161L]
+│   │   ├── encryption.atc (5KB) [183L]
+│   │   ├── hot_reload.atc (4KB) [156L]
+│   │   ├── memory_cleanup.atc (4KB) [151L]
+│   │   ├── mod_system.atc (5KB) [172L]
+│   │   ├── model3d.atc (5KB) [198L]
+│   │   ├── priority_loading.atc (2KB) [99L]
+│   │   ├── render_pipeline.atc (6KB) [192L]
+│   │   ├── shader_system.atc (5KB) [167L]
+│   │   ├── streaming.atc (3KB) [116L]
+│   │   ├── telemetry.atc (4KB) [166L]
+│   │   └── versioning.atc (4KB) [151L]
+│   ├── atcnet/ (11 files)
+│   │   ├── CHANGELOG.md (294B) [8L]
+│   │   ├── PROTOCOL.md (2KB) [84L]
+│   │   ├── README.md (780B) [37L]
+│   │   ├── SECURITY.md (321B) [11L]
+│   │   ├── bootstrap_client.atc (4KB) [134L]
+│   │   ├── discovery.atc (4KB) [138L]
+│   │   ├── gossip.atc (5KB) [171L]
+│   │   ├── nat_traversal.atc (3KB) [109L]
+│   │   ├── p2p_node.atc (4KB) [159L]
+│   │   ├── p2p_propagation.atc (6KB) [215L]
+│   │   └── requirements.txt (112B)
+│   ├── civilization/ (11 files)
+│   │   ├── asset_genome_ad66.atc (5KB) [171L]
+│   │   ├── civilization_engine_ad60.atc (5KB) [236L]
+│   │   ├── ecosystem_ai_mesh_ad62.atc (7KB) [245L]
+│   │   ├── evolution_engine_ad69.atc (7KB) [251L]
+│   │   ├── experience_orchestrator_ad68.atc (6KB) [200L]
+│   │   ├── gcp_core_ad70.atc (7KB) [169L]
+│   │   ├── global_simulation_core_ad64.atc (6KB) [198L]
+│   │   ├── identity_layer_ad65.atc (4KB) [190L]
+│   │   ├── persistent_world_engine_ad61.atc (5KB) [199L]
+│   │   ├── proc_universe_generator_ad63.atc (8KB) [204L]
+│   │   └── production_pipeline_ad67.atc (6KB) [151L]
+│   ├── contracts/ (18 files)
+│   │   ├── atc8300/ (1 files)
+│   │   │   └── atc8300_token.atc (5KB) [178L]
+│   │   ├── atcoin/ (1 files)
+│   │   │   └── atcoin.atc (5KB) [176L]
+│   │   ├── base/ (1 files)
+│   │   │   └── base_contract.atc (2KB) [69L]
+│   │   ├── bridge/ (1 files)
+│   │   │   └── bridge_contract.atc (5KB) [172L]
+│   │   ├── governance/ (1 files)
+│   │   │   └── governance_contract.atc (7KB) [237L]
+│   │   ├── marketplace/ (1 files)
+│   │   │   └── marketplace_contract.atc (7KB) [236L]
+│   │   ├── shivamon/ (1 files)
+│   │   │   └── shivamon_contract.atc (9KB) [290L]
+│   │   ├── standards/ (4 files)
+│   │   │   ├── atc-13_fractional_asset_ownership.atc (1KB) [43L]
+│   │   │   ├── atc-15_proof_of_ai_mining.atc (1KB) [43L]
+│   │   │   ├── atc-16_referral_multitier_rewards.atc (1KB) [43L]
+│   │   │   └── atc-20_wrapped_synthetic_assets.atc (1KB) [43L]
+│   │   ├── wallet/ (2 files)
+│   │   │   ├── ecdsa.atc (2KB) [60L]
+│   │   │   └── keygen.atc (2KB) [75L]
+│   │   ├── CHANGELOG.md (293B) [8L]
+│   │   ├── DEPLOYMENT.md (894B) [29L]
+│   │   ├── README.md (1KB) [43L]
+│   │   ├── SECURITY.md (496B) [13L]
+│   │   └── requirements.txt (100B)
+│   ├── franchise/ (34 files)
+│   │   ├── contracts/ (3 files)
+│   │   │   ├── registry.atc (4KB) [120L]
+│   │   │   ├── revenue.atc (3KB) [93L]
+│   │   │   └── token.atc (3KB) [72L]
+│   │   ├── docs/ (2 files)
+│   │   │   ├── ARCHITECTURE.md (666B) [23L]
+│   │   │   └── SECURITY.md (1KB) [57L]
+│   │   ├── CHANGELOG.md (256B) [7L]
+│   │   ├── README.md (775B) [35L]
+│   │   ├── ai_content_factory_ad28.atc (6KB) [194L]
+│   │   ├── ai_director_factory_ad41.atc (4KB) [28L]
+│   │   ├── analytics_factory_ad31.atc (7KB) [232L]
+│   │   ├── asset_intelligence_factory_ad34.atc (7KB) [210L]
+│   │   ├── blueprint_factory_ad32.atc (5KB) [165L]
+│   │   ├── canon_engine_ad33.atc (5KB) [171L]
+│   │   ├── character_factory_ad23.atc (8KB) [251L]
+│   │   ├── commerce_factory_ad40.atc (4KB) [26L]
+│   │   ├── community_factory_ad30.atc (7KB) [222L]
+│   │   ├── creator_factory_ad38.atc (4KB) [24L]
+│   │   ├── economy_factory_ad26.atc (6KB) [200L]
+│   │   ├── factory.atc (5KB) [165L]
+│   │   ├── gameplay_factory_ad35.atc (4KB) [126L]
+│   │   ├── gff_core_ad20.atc (8KB) [224L]
+│   │   ├── ip_factory_ad21.atc (4KB) [147L]
+│   │   ├── lifecycle_manager_ad43.atc (5KB) [25L]
+│   │   ├── liveops_factory_ad27.atc (6KB) [212L]
+│   │   ├── lore_factory_ad24.atc (7KB) [209L]
+│   │   ├── merchandise_factory_ad29.atc (5KB) [173L]
+│   │   ├── multiplayer_factory_ad37.atc (3KB) [27L]
+│   │   ├── narrative_factory_ad36.atc (8KB) [245L]
+│   │   ├── publishing_factory_ad39.atc (4KB) [25L]
+│   │   ├── quest_factory_ad25.atc (6KB) [207L]
+│   │   ├── requirements.txt (115B)
+│   │   ├── routes.atc (2KB) [90L]
+│   │   ├── security_factory_ad42.atc (4KB) [30L]
+│   │   └── world_factory_ad22.atc (6KB) [235L]
+│   ├── gateway/ (11 files)
+│   │   ├── middleware/ (4 files)
+│   │   │   ├── auth.atc (2KB) [82L]
+│   │   │   ├── logger.atc (2KB) [70L]
+│   │   │   ├── rate_limit.atc (1KB) [50L]
+│   │   │   └── signature_verify.atc (1KB) [43L]
+│   │   ├── .env.example (103B)
+│   │   ├── CHANGELOG.md (274B) [8L]
+│   │   ├── README.md (858B) [39L]
+│   │   ├── SECURITY.md (371B) [13L]
+│   │   ├── main.atc (5KB) [180L]
+│   │   ├── requirements.txt (162B)
+│   │   └── router.atc (3KB) [96L]
+│   ├── kernel/ (68 files)
+│   │   ├── ai_kernel/ (12 files)
+│   │   │   ├── distributed_intelligence/ (5 files)
+│   │   │   │   ├── atc-46_quantumresistant_crypto_layer.atc (1KB) [34L]
+│   │   │   │   ├── atc-47_ai_intent_settlement.atc (1KB) [34L]
+│   │   │   │   ├── atc-48_neural_network_mesh.atc (1KB) [34L]
+│   │   │   │   ├── atc-49_neural_synapse_knowledge_transfer.atc (1KB) [34L]
+│   │   │   │   └── atc-50_ai_consciousness_selfreflection.atc (1KB) [34L]
+│   │   │   ├── orchestration/ (5 files)
+│   │   │   │   ├── atc-25_tensor_compute_orchestration.atc (1KB) [44L]
+│   │   │   │   ├── atc-26_xai_transparency.atc (1KB) [44L]
+│   │   │   │   ├── atc-29_ai_marketplace.atc (1KB) [44L]
+│   │   │   │   ├── atc-30_reputation_trust_scoring.atc (1KB) [44L]
+│   │   │   │   └── atc-31_tensor_load_balancing.atc (1KB) [44L]
+│   │   │   ├── ai_kernel.atc (8KB) [228L]
+│   │   │   └── atc-97_agent_interaction_protocol.atc (37KB) [906L]
+│   │   ├── consensus/ (2 files)
+│   │   │   ├── poh_integration.atc (2KB) [78L]
+│   │   │   └── shiva_consensus.atc (16KB) [529L]
+│   │   ├── container/ (1 files)
+│   │   │   └── container_runtime.atc (18KB) [537L]
+│   │   ├── container_net/ (1 files)
+│   │   │   └── container_net.atc (2KB) [70L]
+│   │   ├── contract/ (1 files)
+│   │   │   └── contract.atc (772B) [23L]
+│   │   ├── cow/ (1 files)
+│   │   │   └── cow_fork.atc (2KB) [87L]
+│   │   ├── did/ (1 files)
+│   │   │   └── did.atc (954B) [38L]
+│   │   ├── docs/ (1 files)
+│   │   │   └── ATS_STANDARDS.md (7KB) [283L]
+│   │   ├── drivers/ (5 files)
+│   │   │   ├── display_driver.atc (12KB) [324L]
+│   │   │   ├── driver_framework.atc (32KB) [812L]
+│   │   │   ├── input_driver.atc (18KB) [493L]
+│   │   │   ├── network_driver.atc (14KB) [416L]
+│   │   │   └── storage_driver.atc (14KB) [378L]
+│   │   ├── elf_loader/ (1 files)
+│   │   │   └── elf_loader.atc (1KB) [74L]
+│   │   ├── fs/ (1 files)
+│   │   │   └── atcfs.atc (4KB) [142L]
+│   │   ├── fs_journal/ (1 files)
+│   │   │   └── fs_journal.atc (2KB) [88L]
+│   │   ├── ipc/ (1 files)
+│   │   │   └── ipc_bus.atc (3KB) [102L]
+│   │   ├── lkm/ (1 files)
+│   │   │   └── lkm.atc (3KB) [114L]
+│   │   ├── mempool/ (1 files)
+│   │   │   └── mempool.atc (1KB) [66L]
+│   │   ├── module_security/ (1 files)
+│   │   │   └── module_security.atc (9KB) [226L]
+│   │   ├── net/ (1 files)
+│   │   │   └── atcnet.atc (4KB) [135L]
+│   │   ├── os_layer/ (2 files)
+│   │   │   ├── atc-21_holographic_execution_engine.atc (1KB) [46L]
+│   │   │   └── atc-22_hal_driver_sandbox.atc (1KB) [46L]
+│   │   ├── page_fault/ (1 files)
+│   │   │   └── page_fault.atc (1KB) [78L]
+│   │   ├── pkg/ (1 files)
+│   │   │   └── manager.atc (6KB) [208L]
+│   │   ├── power/ (1 files)
+│   │   │   └── power.atc (1KB) [81L]
+│   │   ├── process/ (1 files)
+│   │   │   └── process_mgr.atc (4KB) [161L]
+│   │   ├── shell/ (1 files)
+│   │   │   └── shell.atc (8KB) [296L]
+│   │   ├── signals/ (1 files)
+│   │   │   └── signal_handler.atc (9KB) [257L]
+│   │   ├── smp/ (1 files)
+│   │   │   └── smp_manager.atc (4KB) [105L]
+│   │   ├── sockets/ (1 files)
+│   │   │   └── sockets.atc (1KB) [71L]
+│   │   ├── threads/ (1 files)
+│   │   │   └── threads.atc (2KB) [103L]
+│   │   ├── tracing/ (1 files)
+│   │   │   └── tracing.atc (3KB) [129L]
+│   │   ├── userspace/ (1 files)
+│   │   │   └── userspace.atc (1KB) [57L]
+│   │   ├── vm/ (1 files)
+│   │   │   └── vm.atc (1KB) [64L]
+│   │   ├── vmm/ (1 files)
+│   │   │   └── vmm.atc (3KB) [67L]
+│   │   ├── ARCHITECTURE.md (2KB) [90L]
+│   │   ├── CHANGELOG.md (310B) [8L]
+│   │   ├── README.md (1KB) [46L]
+│   │   ├── SECURITY.md (451B) [14L]
+│   │   ├── ai_bus_ad13.atc (9KB) [310L]
+│   │   ├── asset_bus_ad08.atc (5KB) [188L]
+│   │   ├── audio_bus_ad11.atc (5KB) [199L]
+│   │   ├── command_bus_ad02.atc (4KB) [168L]
+│   │   ├── gcl_core_ad00.atc (7KB) [269L]
+│   │   ├── input_bus_ad12.atc (5KB) [184L]
+│   │   ├── ipc_bus_atc.ad.atc (8KB) [266L]
+│   │   ├── kernel_api.atc (38KB) [1054L]
+│   │   ├── message_bus_ad03.atc (6KB) [240L]
+│   │   ├── network_bus_ad05.atc (8KB) [307L]
+│   │   ├── physics_bus_ad10.atc (7KB) [255L]
+│   │   ├── plugin_bus_ad06.atc (8KB) [286L]
+│   │   ├── query_bus_ad07.atc (3KB) [128L]
+│   │   ├── render_bus_ad09.atc (5KB) [164L]
+│   │   ├── requirements.txt (131B)
+│   │   └── telemetry_bus_ad14.atc (7KB) [254L]
+│   ├── meta/ (8 files)
+│   │   ├── ai_studio_ad49.atc (11KB) [310L]
+│   │   ├── cross_franchise_ad46.atc (8KB) [223L]
+│   │   ├── data_lake_ad51.atc (9KB) [237L]
+│   │   ├── digital_twin_ad50.atc (11KB) [303L]
+│   │   ├── ip_evolution_ad45.atc (9KB) [241L]
+│   │   ├── knowledge_graph_ad47.atc (11KB) [289L]
+│   │   ├── simulation_factory_ad48.atc (13KB) [374L]
+│   │   └── universe_factory_ad44.atc (13KB) [343L]
+│   ├── shivamon/ (5 files)
+│   │   ├── engine/ (1 files)
+│   │   │   └── battle_engine.atc (5KB) [153L]
+│   │   ├── CHANGELOG.md (272B) [8L]
+│   │   ├── GAME_SPEC.md (1KB) [43L]
+│   │   ├── README.md (819B) [35L]
+│   │   └── requirements.txt (122B)
+│   ├── standards/ (5 files)
+│   │   ├── ATC/ (1 files)
+│   │   │   └── ATC_STANDARDS.md (5KB) [233L]
+│   │   ├── ATC_STANDARDS.md (4KB) [201L]
+│   │   ├── ATS_STANDARDS.md (4KB) [199L]
+│   │   ├── OVERVIEW.md (1KB) [29L]
+│   │   └── README.md (706B) [32L]
+│   └── ui/ (5 files)
+│       ├── assets/ (1 files)
+│       │   └── js/ (1 files)
+│       │       └── api.js (4KB) [99L]
+│       ├── CHANGELOG.md (285B) [8L]
+│       ├── DESIGN.md (1KB) [33L]
+│       ├── README.md (586B) [30L]
+│       └── index.html (106KB)
+├── monitoring/ (5 files)
+│   ├── alerts/ (1 files)
+│   │   └── blockchain_alerts.yml (1KB) [34L]
+│   ├── health_checks_atc08.atc (5KB) [197L]
+│   ├── monitor.atc (6KB) [213L]
+│   ├── prometheus.yml (610B) [15L]
+│   └── prometheus_metrics.atc (6KB) [202L]
+├── network/ (17 files)
+│   ├── tests/ (1 files)
+│   │   └── test_atcnet.py (1KB) [41L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (210B) [17L]
+│   ├── FILE_REGISTER.md (1KB) [48L]
+│   ├── LICENSE (982B)
+│   ├── PROTOCOL.md (2KB) [84L]
+│   ├── README.md (4KB) [69L]
+│   ├── ROADMAP.md (468B) [21L]
+│   ├── SECURITY.md (321B) [11L]
+│   ├── STATUS.md (351B) [19L]
+│   ├── atcnet.atc (4KB) [135L]
+│   ├── atcnet.py (17KB) [487L]
+│   ├── bootstrap_client.py (3KB) [97L]
+│   ├── discovery.py (11KB) [314L]
+│   ├── node.py (3KB) [100L]
+│   ├── p2p_propagation.py (12KB) [381L]
+│   └── requirements.txt (112B)
+├── nginx/ (1 files)
+│   └── nginx.conf (1KB)
+├── pkg/ (7 files)
+│   ├── docs/ (4 files)
+│   │   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   │   └── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+│   ├── kernel/ (1 files)
+│   │   └── manager.atc (6KB) [208L]
+│   ├── tools/ (1 files)
+│   │   └── manager.atc (4KB) [145L]
+│   └── README.md (1KB) [39L]
+├── scripts/ (11 files)
+│   ├── build.sh (3KB) [90L]
+│   ├── ci-fix.sh (1015B) [37L]
+│   ├── fix-workflows.sh (1KB) [68L]
+│   ├── generate_validators.atc (4KB) [135L]
+│   ├── health.sh (1KB) [41L]
+│   ├── start.sh (3KB) [90L]
+│   ├── start_testnet.sh (1KB) [49L]
+│   ├── stop.sh (1KB) [50L]
+│   ├── sync-docs.sh (4KB) [155L]
+│   ├── test-report.sh (2KB) [63L]
+│   └── test.sh (4KB) [106L]
+├── sdk/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (216B) [8L]
+│   ├── FILE_REGISTER.md (381B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (5KB) [115L]
+│   ├── ROADMAP.md (369B) [16L]
+│   └── STATUS.md (484B) [21L]
+├── shivacore/ (74 files)
+│   ├── boot/ (2 files)
+│   │   ├── src/ (1 files)
+│   │   │   └── main.rs (1KB) [30L]
+│   │   └── Cargo.toml (206B) [8L]
+│   ├── kernel/ (64 files)
+│   │   ├── .cargo/ (1 files)
+│   │   │   └── config.toml (149B) [6L]
+│   │   ├── src/ (60 files)
+│   │   │   ├── ai.rs (17KB) [75L]
+│   │   │   ├── allocator.rs (1KB) [46L]
+│   │   │   ├── atcfs.rs (18KB) [627L]
+│   │   │   ├── atcnet.rs (38KB) [1139L]
+│   │   │   ├── ats1000.rs (3KB) [85L]
+│   │   │   ├── block.rs (18KB) [548L]
+│   │   │   ├── blockchain.rs (10KB) [57L]
+│   │   │   ├── capability.rs (9KB) [248L]
+│   │   │   ├── consensus.rs (34KB) [961L]
+│   │   │   ├── container.rs (99KB) [2757L]
+│   │   │   ├── container_net.rs (68KB) [632L]
+│   │   │   ├── contract.rs (7KB) [38L]
+│   │   │   ├── cow.rs (67KB) [1484L]
+│   │   │   ├── cross_subsystem.rs (17KB) [483L]
+│   │   │   ├── devfs.rs (31KB) [921L]
+│   │   │   ├── did.rs (11KB) [350L]
+│   │   │   ├── elf_loader.rs (41KB) [1104L]
+│   │   │   ├── framebuffer.rs (3KB) [122L]
+│   │   │   ├── fs_journal.rs (35KB) [1161L]
+│   │   │   ├── gdt.rs (2KB) [59L]
+│   │   │   ├── genesis.rs (37KB) [1111L]
+│   │   │   ├── genesis_bridge.rs (33KB) [1097L]
+│   │   │   ├── gossip_bridge.rs (48KB) [1410L]
+│   │   │   ├── hw_drivers.rs (40KB) [1267L]
+│   │   │   ├── interrupts.rs (2KB) [100L]
+│   │   │   ├── ipc.rs (21KB) [600L]
+│   │   │   ├── kernel_init.rs (14KB) [431L]
+│   │   │   ├── knowledge_graph.rs (25KB) [755L]
+│   │   │   ├── lib.rs (1KB) [73L]
+│   │   │   ├── lkm.rs (106KB) [2998L]
+│   │   │   ├── main.rs (3KB) [100L]
+│   │   │   ├── memory.rs (2KB) [75L]
+│   │   │   ├── memory_manager.rs (27KB) [829L]
+│   │   │   ├── mempool.rs (17KB) [75L]
+│   │   │   ├── module_security.rs (61KB) [1682L]
+│   │   │   ├── net.rs (26KB) [802L]
+│   │   │   ├── p2p.rs (32KB) [861L]
+│   │   │   ├── page_fault.rs (47KB) [1371L]
+│   │   │   ├── power.rs (35KB) [1153L]
+│   │   │   ├── process.rs (11KB) [360L]
+│   │   │   ├── remote_caps.rs (22KB) [629L]
+│   │   │   ├── scheduler.rs (14KB) [389L]
+│   │   │   ├── security.rs (33KB) [879L]
+│   │   │   ├── security_audit.rs (46KB) [1264L]
+│   │   │   ├── serial.rs (1KB) [42L]
+│   │   │   ├── signals.rs (82KB) [2249L]
+│   │   │   ├── smp.rs (84KB) [2506L]
+│   │   │   ├── sockets.rs (57KB) [1526L]
+│   │   │   ├── syscall.rs (42KB) [1081L]
+│   │   │   ├── system.rs (38KB) [1254L]
+│   │   │   ├── tcpip.rs (35KB) [860L]
+│   │   │   ├── threads.rs (45KB) [1467L]
+│   │   │   ├── timer.rs (17KB) [528L]
+│   │   │   ├── tracing.rs (74KB) [2254L]
+│   │   │   ├── user_io.rs (44KB) [1323L]
+│   │   │   ├── user_sched.rs (40KB) [1201L]
+│   │   │   ├── userspace.rs (31KB) [840L]
+│   │   │   ├── vfs.rs (38KB) [1099L]
+│   │   │   ├── vm.rs (15KB) [54L]
+│   │   │   └── vmm.rs (82KB) [2362L]
+│   │   ├── .gitignore (8B)
+│   │   ├── Cargo.lock (12KB)
+│   │   └── Cargo.toml (623B) [28L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (427B) [21L]
+│   ├── Cargo.toml (204B) [12L]
+│   ├── FILE_REGISTER.md (298KB) [2161L]
+│   ├── LICENSE (658B)
+│   ├── README.md (6KB) [142L]
+│   ├── ROADMAP.md (482B) [21L]
+│   └── STATUS.md (352B) [19L]
+├── shivamon/ (15 files)
+│   ├── api/ (2 files)
+│   │   ├── game_routes.py (1KB) [59L]
+│   │   └── marketplace_routes.py (2KB) [93L]
+│   ├── contracts/ (3 files)
+│   │   ├── marketplace_contract.py (11KB) [301L]
+│   │   ├── shivamon.atc (5KB) [162L]
+│   │   └── shivamon_contract.py (10KB) [270L]
+│   ├── engine/ (1 files)
+│   │   └── battle_engine.py (5KB) [147L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (243B) [19L]
+│   ├── FILE_REGISTER.md (700B) [20L]
+│   ├── GAME_SPEC.md (1KB) [43L]
+│   ├── LICENSE (982B)
+│   ├── README.md (4KB) [69L]
+│   ├── ROADMAP.md (480B) [21L]
+│   ├── STATUS.md (357B) [19L]
+│   └── requirements.txt (122B)
+├── src/ (51 files)
+│   ├── atclang/ (4 files)
+│   │   ├── ATCLANG_SPEC.md (9KB) [295L]
+│   │   ├── CHANGELOG.md (316B) [8L]
+│   │   ├── CONTRIBUTING.md (687B) [19L]
+│   │   └── README.md (1KB) [46L]
+│   ├── blockchain/ (6 files)
+│   │   ├── __init__.py (0B) [0L]
+│   │   ├── contract_registry.atc (666B) [6L]
+│   │   ├── smart_contract_registry.atc (672B) [6L]
+│   │   ├── smart_contract_registry.py (1KB) [53L]
+│   │   ├── smart_contracts.atc (664B) [6L]
+│   │   └── smart_contracts.py (23KB) [716L]
+│   ├── contracts/ (12 files)
+│   │   ├── __init__.py (93B) [4L]
+│   │   ├── atc8300_token.py (5KB) [126L]
+│   │   ├── atcoin.py (5KB) [139L]
+│   │   ├── base_contract.py (3KB) [87L]
+│   │   ├── bridge_contract.py (4KB) [133L]
+│   │   ├── ecdsa.py (2KB) [72L]
+│   │   ├── governance_contract.py (11KB) [299L]
+│   │   ├── keygen.py (5KB) [140L]
+│   │   ├── marketplace_contract.py (11KB) [301L]
+│   │   ├── shivamon_contract.py (10KB) [270L]
+│   │   ├── wallet_ecdsa.py (2KB) [72L]
+│   │   └── wallet_keygen.py (5KB) [140L]
+│   ├── core/ (12 files)
+│   │   ├── crypto/ (1 files)
+│   │   │   └── __init__.py (535B) [19L]
+│   │   ├── kernel/ (6 files)
+│   │   │   ├── api.py (35KB) [882L]
+│   │   │   ├── capabilities.py (5KB) [159L]
+│   │   │   ├── did.py (2KB) [74L]
+│   │   │   ├── kernel.py (16KB) [423L]
+│   │   │   ├── remote_capability.py (8KB) [207L]
+│   │   │   └── syscalls.atc (3KB) [118L]
+│   │   ├── __init__.py (0B) [0L]
+│   │   ├── atcfs.py (4KB) [122L]
+│   │   ├── event_bus.py (517B) [16L]
+│   │   ├── kai_cli.atc (650B) [6L]
+│   │   └── module_loader.py (540B) [17L]
+│   ├── franchise/ (3 files)
+│   │   ├── __init__.py (92B) [4L]
+│   │   ├── factory.py (4KB) [138L]
+│   │   └── routes.py (2KB) [67L]
+│   ├── game/ (4 files)
+│   │   ├── __init__.py (86B) [4L]
+│   │   ├── battle_engine.py (5KB) [147L]
+│   │   ├── game_routes.py (1KB) [59L]
+│   │   └── marketplace_routes.py (2KB) [93L]
+│   ├── gateway/ (3 files)
+│   │   ├── __init__.py (125B) [2L]
+│   │   ├── main.py (1KB) [47L]
+│   │   └── router.py (2KB) [50L]
+│   ├── modules/ (1 files)
+│   │   └── __init__.py (87B) [4L]
+│   └── network/ (6 files)
+│       ├── __init__.py (90B) [4L]
+│       ├── atcnet.py (17KB) [487L]
+│       ├── bootstrap_client.py (3KB) [97L]
+│       ├── discovery.py (11KB) [314L]
+│       ├── node.py (3KB) [100L]
+│       └── p2p_propagation.py (12KB) [381L]
+├── standards/ (13 files)
+│   ├── ATC/ (2 files)
+│   │   ├── ATC-0009-BRIDGE.md (1KB) [55L]
+│   │   └── ATC_STANDARDS.md (5KB) [233L]
+│   ├── ATS/ (1 files)
+│   │   └── ATS_STANDARDS.md (7KB) [283L]
+│   ├── .gitignore (171B)
+│   ├── ATC_STANDARDS.md (4KB) [201L]
+│   ├── ATS_STANDARDS.md (4KB) [199L]
+│   ├── CHANGELOG.md (218B) [21L]
+│   ├── FILE_REGISTER.md (589B) [18L]
+│   ├── LICENSE (982B)
+│   ├── OVERVIEW.md (1KB) [29L]
+│   ├── README.md (4KB) [69L]
+│   ├── ROADMAP.md (482B) [21L]
+│   └── STATUS.md (358B) [19L]
+├── stdlib/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (219B) [8L]
+│   ├── FILE_REGISTER.md (396B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [99L]
+│   ├── ROADMAP.md (372B) [16L]
+│   └── STATUS.md (487B) [21L]
+├── tests/ (38 files)
+│   ├── e2e/ (2 files)
+│   │   ├── __init__.py (0B) [0L]
+│   │   └── test_frontend_backend_chain.py (3KB) [95L]
+│   ├── integration/ (3 files)
+│   │   ├── __init__.py (0B) [0L]
+│   │   ├── test_docker_compose.py (3KB) [71L]
+│   │   └── test_gateway_core_chain.py (3KB) [97L]
+│   ├── unit/ (32 files)
+│   │   ├── atclang/ (6 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   ├── test_atclang.py (14KB) [462L]
+│   │   │   ├── test_atclang_v03.py (2KB) [68L]
+│   │   │   ├── test_stdlib.py (10KB) [298L]
+│   │   │   ├── test_stdlib_dispatch.py (11KB) [312L]
+│   │   │   └── test_type_checker.py (7KB) [244L]
+│   │   ├── blockchain/ (8 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   ├── test_ecdsa.py (2KB) [64L]
+│   │   │   ├── test_fork_resolution.py (3KB) [101L]
+│   │   │   ├── test_multinode_consensus.py (5KB) [155L]
+│   │   │   ├── test_multinode_fivenode.py (3KB) [84L]
+│   │   │   ├── test_node_failure_recovery.py (4KB) [143L]
+│   │   │   ├── test_persistence.py (3KB) [97L]
+│   │   │   └── test_poh.py (1KB) [53L]
+│   │   ├── contracts/ (3 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   ├── test_atcfs_multisig.py (1KB) [37L]
+│   │   │   └── test_smart_contracts.py (2KB) [77L]
+│   │   ├── core/ (8 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   ├── test_bootstrap.py (1KB) [37L]
+│   │   │   ├── test_did.py (1KB) [41L]
+│   │   │   ├── test_driver_framework.py (19KB) [434L]
+│   │   │   ├── test_gateway_full.py (1KB) [47L]
+│   │   │   ├── test_kernel_api.py (21KB) [465L]
+│   │   │   ├── test_optimizer.py (9KB) [256L]
+│   │   │   └── test_orchestrator.py (1KB) [38L]
+│   │   ├── network/ (4 files)
+│   │   │   ├── __init__.py (0B) [0L]
+│   │   │   ├── test_atcnet.py (1KB) [42L]
+│   │   │   ├── test_discovery.py (1KB) [28L]
+│   │   │   └── test_p2p_propagation.py (1KB) [28L]
+│   │   ├── __init__.py (0B) [0L]
+│   │   ├── test_gateway.py (7KB) [201L]
+│   │   └── test_kai_integration.py (1KB) [47L]
+│   └── __init__.py (0B) [0L]
+├── tools/ (11 files)
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (433B) [21L]
+│   ├── FILE_REGISTER.md (339B) [11L]
+│   ├── LICENSE (658B)
+│   ├── README.md (2KB) [58L]
+│   ├── ROADMAP.md (494B) [21L]
+│   ├── STATUS.md (352B) [19L]
+│   ├── atc_issues_summary.atc (6KB) [212L]
+│   ├── bigquery_pipeline.atc (4KB) [135L]
+│   ├── ecdsa_impl.atc (4KB) [119L]
+│   └── hf_review_pipeline.atc (5KB) [157L]
+├── vm/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (215B) [8L]
+│   ├── FILE_REGISTER.md (393B) [13L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [103L]
+│   ├── ROADMAP.md (368B) [16L]
+│   └── STATUS.md (483B) [21L]
+├── wallet/ (7 files)
+│   ├── .gitignore (116B)
+│   ├── CHANGELOG.md (219B) [8L]
+│   ├── FILE_REGISTER.md (490B) [18L]
+│   ├── LICENSE (703B)
+│   ├── README.md (4KB) [100L]
+│   ├── ROADMAP.md (372B) [16L]
+│   └── STATUS.md (487B) [21L]
+├── wiki/ (25 files)
+│   ├── docs/ (21 files)
+│   │   ├── API.md (1KB) [59L]
+│   │   ├── API_REFERENCE.md (1KB) [50L]
+│   │   ├── ARCHITECTURE.md (5KB) [126L]
+│   │   ├── BOTTLENECKS.md (1KB) [50L]
+│   │   ├── COMMITS.md (2KB) [73L]
+│   │   ├── CONTRIBUTING.md (609B) [19L]
+│   │   ├── DECENTRALIZED_PROOF.md (3KB) [103L]
+│   │   ├── DEPENDENCIES.md (2KB) [79L]
+│   │   ├── ENTERPRISE.md (1KB) [65L]
+│   │   ├── ERRORS.md (4KB) [79L]
+│   │   ├── ERROR_SOLUTIONS.md (3KB) [128L]
+│   │   ├── FAQ.md (1KB) [62L]
+│   │   ├── IMPROVEMENTS.md (1KB) [61L]
+│   │   ├── ISSUES_TRACKER.md (4KB) [107L]
+│   │   ├── MATH_PROOF.md (3KB) [93L]
+│   │   ├── QUICKSTART.md (619B) [30L]
+│   │   ├── ROADMAP.md (2KB) [80L]
+│   │   ├── SECURITY.md (916B) [18L]
+│   │   ├── STATUS.md (909B) [25L]
+│   │   ├── SYNTAX.md (3KB) [133L]
+│   │   └── WHITEPAPER.md (5KB) [107L]
+│   ├── LICENSE (982B)
+│   ├── README.md (4KB) [65L]
+│   ├── genesis_communication_layer_v2.md (14KB) [431L]
+│   └── genesis_franchise_factory_v1.md (6KB) [166L]
+├── windows/ (9 files)
+│   ├── src/ (1 files)
+│   │   └── main.rs (645B) [16L]
+│   ├── .gitignore (171B)
+│   ├── CHANGELOG.md (433B) [21L]
+│   ├── Cargo.toml (279B) [13L]
+│   ├── FILE_REGISTER.md (400B) [13L]
+│   ├── LICENSE (658B)
+│   ├── README.md (1KB) [37L]
+│   ├── ROADMAP.md (494B) [21L]
+│   └── STATUS.md (352B) [19L]
+├── .coveragerc (532B)
+├── .env.example (526B)
+├── .gitignore (37B)
+├── AAA_ASSET_SYSTEM_v1.md (3KB) [120L]
+├── AGENT_MANIFEST.md (5KB) [98L]
+├── AGENT_MASTERRULES.md (14KB) [466L]
+├── AGENT_PROTOCOL.md (8KB) [256L]
+├── ATCLANG_FIRST.md (3KB) [158L]
+├── CHANGELOG.md (5KB) [167L]
+├── CONNECTION_MAP.md (2KB) [50L]
+├── CONTRIBUTING.md (804B) [31L]
+├── DOCUMENTATION_SYNC_GUIDE.md (9KB) [336L]
+├── Dockerfile (948B)
+├── ECOSYSTEM.md (1KB) [52L]
+├── ECOSYSTEM_BRAIN.md (4KB) [108L]
+├── FILE_REGISTER.md (5KB) [99L]
+├── GENESIS_BUS_ARCHITECTURE.md (5KB) [121L]
+├── GENESIS_CIVILIZATION_PLATFORM_v4.md (5KB) [153L]
+├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+├── GENESIS_FRANCHISE_FACTORY_v2.md (4KB) [101L]
+├── INSTALL.md (3KB) [161L]
+├── KERNEL_FROM_SCRATCH_PLAN.md (7KB) [87L]
+├── KONSOLIDIERUNGS_MATRIX.md (6KB) [124L]
+├── KONSOLIDIERUNGS_ROADMAP.md (3KB) [79L]
+├── LICENSE (982B)
+├── MASTER_TODO.md (11KB) [324L]
+├── MILESTONES.md (1KB) [27L]
+├── MONOREPO_STRUCTURE.md (9KB) [183L]
+├── Makefile (2KB)
+├── NAMING_CONVENTIONS.md (6KB) [109L]
+├── OS_BARE_METAL_GAP_ANALYSIS.md (7KB) [89L]
+├── README.md (4KB) [104L]
+├── REALITY_STATUS.md (6KB) [112L]
+├── REPO_ARCHITECTURE.md (16KB) [377L]
+├── ROADMAP.md (484B) [21L]
+├── ROADMAP_PYTHON_TO_OS.md (18KB) [261L]
+├── SECURITY.md (813B) [27L]
+├── STATUS.md (2KB) [49L]
+├── SYNC_PROTOCOL.md (870B) [28L]
+├── TODO.md (2KB) [63L]
+├── UPGRADE.md (3KB) [125L]
+├── VERSION (6B)
+├── docker-compose.yml (2KB) [80L]
+├── pyproject.toml (466B) [21L]
+├── pytest.ini (777B)
+├── requirements-kai.txt (421B)
+├── requirements.txt (1KB)
+└── start.atc (4KB) [129L]
 ```
+
 
 ## a-townchain-os-docs
 
-**Dateien:** 2112 | **Verzeichnisse:** 457
+**Layer:** Wiki (Dokumentation) | **Dateien:** 2110 | **Verzeichnisse:** 455 | **Max Tiefe:** 7
+
+**Sprachen:** .md(1125) · .atc(352) · .py(275) · .tsx(159) · .ts(43)
 
 ```
 a-townchain-os-docs/
-├── .gitignore
-├── AAA_ASSET_SYSTEM_v1.md
-├── AGENT_MANIFEST.md
-├── AGENT_MASTERRULES.md
-├── ATCLANG_FIRST.md
-├── CHANGELOG.md
-├── CONNECTION_MAP.md
-├── ECOSYSTEM.md
-├── ECOSYSTEM_STATUS.md
-├── FILE_REGISTER.md
-├── GENESIS_BUS_ARCHITECTURE.md
-├── GENESIS_CIVILIZATION_PLATFORM_v4.md
-├── GENESIS_COMMUNICATION_LAYER_v2.md
-├── GENESIS_FRANCHISE_FACTORY_v1.md
-├── GENESIS_FRANCHISE_FACTORY_v2.md
-├── KONSOLIDIERUNGS_MATRIX.md
-├── KONSOLIDIERUNGS_ROADMAP.md
-├── LICENSE
-├── MILESTONES.md
-├── NAMING_CONVENTIONS.md
-├── README.md
-├── REALITY_STATUS.md
-├── SPRINT_ROADMAP.md
-├── STATUS.md
-├── TODO/
-│   └── MASTER_TODO.md
-├── TODO.md
-├── VERSION
-├── aistudio/
-│   ├── .env.example
-│   ├── .gitignore
-│   ├── AGENTS.md
-│   ├── GEMINI.md
-│   ├── LICENSE
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── SOFTWARE_ROADMAP.md
-│   ├── assets/
-│   │   └── .aistudio/
-│   │       └── .gitignore
-│   ├── check_dups2.js
-│   ├── check_dups_all.js
-│   ├── check_dups_desktop.js
-│   ├── check_dups_windows_map.js
-│   ├── fetch.js
-│   ├── firebase-applet-config.json
-│   ├── fix.js
-│   ├── fix2.js
-│   ├── fix_react_imports.cjs
-│   ├── fix_wiki.cjs
-│   ├── fix_wiki.js
-│   ├── index.html
-│   ├── mark_completed.ts
-│   ├── mark_completed_src.ts
-│   ├── metadata.json
-│   ├── move_back.js
-│   ├── output.txt
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── replace.js
-│   ├── replace_langs.cjs
-│   ├── replace_langs_2.cjs
-│   ├── replace_langs_3.cjs
-│   ├── replace_langs_4.cjs
-│   ├── replace_langs_5.cjs
-│   ├── replace_langs_6.cjs
-│   ├── script.cjs
-│   ├── script.js
-│   ├── script2.cjs
-│   ├── server.ts
-│   ├── src/
-│   │   ├── App.tsx
-│   │   ├── DesktopApp.tsx
-│   │   ├── atcLangRoadmapData.ts
-│   │   ├── atcLangWikiData.ts
-│   │   ├── auditData.ts
-│   │   ├── backend/
-│   │   │   ├── blockchain/
-│   │   │   │   └── engine.ts
-│   │   │   └── p2p/
-│   │   │       └── network.ts
-│   │   ├── components/
-│   │   │   ├── ATCAssetView.tsx
-│   │   │   ├── ATCDjStudioView.tsx
-│   │   │   ├── ATCLangEditor.tsx
-│   │   │   ├── ATCWalletView.tsx
-│   │   │   ├── ATownDashboardView.tsx
-│   │   │   ├── ATownOSNode.tsx
-│   │   │   ├── ATownTestView.tsx
-│   │   │   ├── AgentCivilizationView.tsx
-│   │   │   ├── Ai3DRenderEngineTab.tsx
-│   │   │   ├── AiAnimationEngineTab.tsx
-│   │   │   ├── AiAudioEngineTab.tsx
-│   │   │   ├── AiCharacterBioTab.tsx
-│   │   │   ├── AiGameEngineTab.tsx
-│   │   │   ├── AiKernelView.tsx
-│   │   │   ├── AiOsEngineView.tsx
-│   │   │   ├── AiSoftwareWorkflowView.tsx
-│   │   │   ├── AiTimelineEngineTab.tsx
-│   │   │   ├── AntiCheatView.tsx
-│   │   │   ├── ApiHealthWidget.tsx
-│   │   │   ├── ApiInterfacesView.tsx
-│   │   │   ├── ApiOrchestratorView.tsx
-│   │   │   ├── AppGlobeView.tsx
-│   │   │   ├── ArchitectureDependencyGraph.tsx
-│   │   │   ├── ArchitectureView.tsx
-│   │   │   ├── AssetVaultView.tsx
-│   │   │   ├── AtcAssetsDbView.tsx
-│   │   │   ├── AtcCoreKernelView.tsx
-│   │   │   ├── AtcLangArchitectureView.tsx
-│   │   │   ├── AtcLangPlaygroundView.tsx
-│   │   │   ├── AtcLangPresetsView.tsx
-│   │   │   ├── AtcWhitepaperView.tsx
-│   │   │   ├── AtsSuite.tsx
-│   │   │   ├── AtvmSandboxView.test.tsx
-│   │   │   ├── AtvmSandboxView.tsx
-│   │   │   ├── BatteryStatus.tsx
-│   │   │   ├── BattleArenaView.tsx
-│   │   │   ├── BenchmarkCenterView.tsx
-│   │   │   ├── BlockchainEcosystemView.tsx
-│   │   │   ├── BlockchainLedgerView.tsx
-│   │   │   ├── CalculatorView.tsx
-│   │   │   ├── CalendarView.tsx
-│   │   │   ├── CiCdPipelineView.tsx
-│   │   │   ├── ClockView.tsx
-│   │   │   ├── CodeAnalyzerView.tsx
-│   │   │   ├── CommitHeatmap.tsx
-│   │   │   ├── ComplianceEngineView.tsx
-│   │   │   ├── ComplianceView.tsx
-│   │   │   ├── ConflictResolutionModal.tsx
-│   │   │   ├── ConsensusIntegrationGuide.tsx
-│   │   │   ├── CryptoVisualizationView.tsx
-│   │   │   ├── DataProcessingView.tsx
-│   │   │   ├── DbOrchestratorView.tsx
-│   │   │   ├── DeFiLiquidityPoolView.tsx
-│   │   │   ├── DependencyMapView.tsx
-│   │   │   ├── DeploymentPipelineWidget.tsx
-│   │   │   ├── DevToolsView.tsx
-│   │   │   ├── DeveloperKnowledgeBaseView.tsx
-│   │   │   ├── DistributedDatalakeView.tsx
-│   │   │   ├── EcosystemInstaller.tsx
-│   │   │   ├── EcosystemTreeOverlay.tsx
-│   │   │   ├── EcosystemUmlView.tsx
-│   │   │   ├── EcosystemVisualizerView.tsx
-│   │   │   ├── FileManagerView.tsx
-│   │   │   ├── FolderView.tsx
-│   │   │   ├── FranchiseFactoryView.tsx
-│   │   │   ├── GateToHellBrowser.tsx
-│   │   │   ├── GenesisBlockGeneratorView.tsx
-│   │   │   ├── GitGraphVisualization.tsx
-│   │   │   ├── GitHubRepoSyncView.tsx
-│   │   │   ├── GitHubStatusDashboard.tsx
-│   │   │   ├── GitOpsView.tsx
-│   │   │   ├── GovernanceView.tsx
-│   │   │   ├── GpuPerformanceWidget.tsx
-│   │   │   ├── HardwareDriversView.tsx
-│   │   │   ├── IdeaToAppFlowchartView.tsx
-│   │   │   ├── ImageGeneratorTab.tsx
-│   │   │   ├── IntegrationsWindow.tsx
-│   │   │   ├── InterfacesView.tsx
-│   │   │   ├── JsExampleRunner.tsx
-│   │   │   ├── LazyMetricsCharts.tsx
-│   │   │   ├── LegalView.tsx
-│   │   │   ├── LoginOverlay.tsx
-│   │   │   ├── MainnetLaunchView.tsx
-│   │   │   ├── MarketplaceView.tsx
-│   │   │   ├── MediaApps.tsx
-│   │   │   ├── MetricsDashboard.tsx
-│   │   │   ├── MetricsView.tsx
-│   │   │   ├── ModulesPluginView.tsx
-│   │   │   ├── NetworkExplorerView.test.tsx
-│   │   │   ├── NetworkExplorerView.tsx
-│   │   │   ├── NetworkTopologyView.tsx
-│   │   │   ├── NodeHealthMonitor.tsx
-│   │   │   ├── NotepadView.tsx
-│   │   │   ├── OfficeApps.tsx
-│   │   │   ├── OfficeSuiteView.tsx
-│   │   │   ├── P2PChatView.tsx
-│   │   │   ├── Paint3DView.tsx
-│   │   │   ├── PaymentSystemView.tsx
-│   │   │   ├── PipelineGeneratorTab.tsx
-│   │   │   ├── PoAITrainingEngineView.tsx
-│   │   │   ├── ProjectAuditDashboard.tsx
-│   │   │   ├── ProjectHubView.tsx
-│   │   │   ├── ProtocolsView.tsx
-│   │   │   ├── ReportsView.tsx
-│   │   │   ├── RepositoryActivityChart.tsx
-│   │   │   ├── RepositoryLineChart.tsx
-│   │   │   ├── RescueSystemView.tsx
-│   │   │   ├── RoadmapView.tsx
-│   │   │   ├── SemanticGraphView.tsx
-│   │   │   ├── SessionExportView.tsx
-│   │   │   ├── SettingsView.tsx
-│   │   │   ├── SocialMediaView.tsx
-│   │   │   ├── SoftwareAuditView.tsx
-│   │   │   ├── SoftwareKnowledgeDbView.tsx
-│   │   │   ├── SourceCodeViewer.tsx
-│   │   │   ├── SpecificSettingsViews.tsx
-│   │   │   ├── StorageManagerView.tsx
-│   │   │   ├── StrategicArchitectureMap.tsx
-│   │   │   ├── StructureView.tsx
-│   │   │   ├── SyncDashboardModal.tsx
-│   │   │   ├── SyncHistoryModal.tsx
-│   │   │   ├── SyncMetricsView.tsx
-│   │   │   ├── SyncStatusDonutChart.tsx
-│   │   │   ├── SyncStatusOverview.tsx
-│   │   │   ├── SystemDiagnosticsView.tsx
-│   │   │   ├── SystemFinderView.tsx
-│   │   │   ├── SystemHealthDashboard.tsx
-│   │   │   ├── SystemHealthDashboardWidget.tsx
-│   │   │   ├── SystemLogsView.tsx
-│   │   │   ├── TaskManagerView.tsx
-│   │   │   ├── TechDocsView.tsx
-│   │   │   ├── TechTreeView.tsx
-│   │   │   ├── TerminalView.tsx
-│   │   │   ├── TestnetOrchestrationView.tsx
-│   │   │   ├── TestnetSimulationView.tsx
-│   │   │   ├── TextGeneratorTab.tsx
-│   │   │   ├── ThemeSwitcher.tsx
-│   │   │   ├── TodoView.tsx
-│   │   │   ├── TooltipIcon.tsx
-│   │   │   ├── TxOrchestratorView.tsx
-│   │   │   ├── UserProfileView.tsx
-│   │   │   ├── VideoGeneratorTab.tsx
-│   │   │   ├── WebhookMonitor.tsx
-│   │   │   ├── Window.tsx
-│   │   │   ├── WindowExtras.tsx
-│   │   │   ├── ZeroKnowledgeProofView.tsx
-│   │   │   ├── ZkCircuitEditorView.tsx
-│   │   │   └── ZkVisualizationView.tsx
-│   │   ├── contexts/
-│   │   │   ├── FirebaseContext.tsx
-│   │   │   ├── GoogleWorkspaceContext.tsx
-│   │   │   ├── SyncMetricsContext.tsx
-│   │   │   └── WalletContext.tsx
-│   │   ├── data.ts
-│   │   ├── db/
-│   │   │   ├── drizzle.config.ts
-│   │   │   ├── index.ts
-│   │   │   └── schema.ts
-│   │   ├── ecosystemData.ts
-│   │   ├── fix_translation.cjs
-│   │   ├── hooks/
-│   │   │   ├── useGoogleSheetsSync.ts
-│   │   │   └── useKeyboardShortcut.ts
-│   │   ├── index.css
-│   │   ├── lib/
-│   │   │   ├── CryptoEngine.ts
-│   │   │   ├── firebase-admin.ts
-│   │   │   ├── firebase.ts
-│   │   │   ├── indexedDb.ts
-│   │   │   ├── syncLogic.test.ts
-│   │   │   └── syncLogic.ts
-│   │   ├── main.tsx
-│   │   ├── marketplaceApps.ts
-│   │   ├── middleware/
-│   │   │   └── auth.ts
-│   │   ├── requirementsData.ts
-│   │   ├── roadmapData.ts
-│   │   ├── routes/
-│   │   │   └── notion.ts
-│   │   ├── services/
-│   │   │   ├── SyncService.ts
-│   │   │   └── githubSync.ts
-│   │   ├── standardsData.ts
-│   │   ├── tierData.ts
-│   │   ├── types.ts
-│   │   ├── utils/
-│   │   │   ├── appSync.tsx
-│   │   │   ├── auditUtils.test.ts
-│   │   │   ├── auditUtils.ts
-│   │   │   └── crypto.ts
-│   │   └── wikiData.ts
-│   ├── testChat.js
-│   ├── test_know.js
-│   ├── tests/
-│   │   ├── GitHubRepoSyncView.test.tsx
-│   │   └── audit_compliance.test.ts
-│   ├── tmp.txt
-│   ├── tsconfig.json
-│   ├── update_wiki_categories.ts
-│   ├── vite.config.ts
-│   └── workspace/
-│       ├── move.js
-│       ├── rename.js
-│       ├── replace.js
-│       ├── replaceEnterprise.js
-│       ├── replaceGoals.ts
-│       ├── replaceGoals2.ts
-│       └── src/
-│           ├── backend/
-│           │   └── blockchain/
-│           │       └── engine.ts
-│           └── components/
-│               └── GovernanceView.tsx
-├── archive/
-│   └── ATCLANG_ARCHIVE.md
-├── atclang/
-│   ├── ATCLANG_SPEC.md
-│   ├── __init__.py
-│   ├── compiler/
-│   │   ├── __init__.py
-│   │   ├── compiler.py
-│   │   ├── optimizer.py
-│   │   └── type_checker.py
-│   ├── lexer/
-│   │   ├── __init__.py
-│   │   └── lexer.py
-│   ├── parser/
-│   │   ├── __init__.py
-│   │   ├── ast_nodes.py
-│   │   └── parser.py
-│   ├── programs/
-│   │   └── atcos_main.atc
-│   ├── repl/
-│   │   ├── __init__.py
-│   │   └── repl.py
-│   ├── stdlib/
-│   │   ├── __init__.py
-│   │   ├── atc_stdlib.py
-│   │   ├── chain.py
-│   │   ├── collections.py
-│   │   ├── collections_ext.py
-│   │   ├── crypto.py
-│   │   ├── crypto_ext.py
-│   │   ├── encoding.py
-│   │   ├── io.py
-│   │   ├── io_ext.py
-│   │   ├── math.py
-│   │   ├── primitives.py
-│   │   ├── string.py
-│   │   └── wallet.py
-│   ├── v03/
-│   │   ├── __init__.py
-│   │   └── atclang_v03_features.py
-│   └── vm/
-│       ├── __init__.py
-│       └── atcvm.py
-├── atcpkg/
-│   └── manager.atc
-├── backend/
-│   ├── __init__.py
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── kai_routes.atc
-│   │   ├── orchestrator/
-│   │   │   ├── __init__.py
-│   │   │   └── orchestrator.atc
-│   │   ├── routes/
-│   │   │   ├── __init__.py
-│   │   │   ├── ai_routes.atc
-│   │   │   └── api_routes.atc
-│   │   └── server.atc
-│   ├── db/
-│   │   ├── __init__.py
-│   │   ├── connection.atc
-│   │   └── repository.atc
-│   └── wallet/
-│       ├── __init__.py
-│       └── wallet.atc
-├── blockchain/
-│   ├── atcoin/
-│   │   └── __init__.py
-│   ├── consensus/
-│   │   ├── __init__.py
-│   │   ├── fork_atc85.atc
-│   │   ├── fork_resolution.atc
-│   │   ├── gas_fee.atc
-│   │   ├── gas_fee_atc86.atc
-│   │   ├── hybrid_atc84.atc
-│   │   ├── hybrid_consensus.atc
-│   │   ├── poh.atc
-│   │   ├── poh_atc83.atc
-│   │   ├── pos.atc
-│   │   ├── pos_atc82.atc
-│   │   ├── pow.atc
-│   │   └── pow_atc81.atc
-│   ├── contract_registry.atc
-│   ├── contracts/
-│   │   ├── atc001/
-│   │   │   └── genesis_token.atc
-│   │   ├── atc8300/
-│   │   │   └── __init__.py
-│   │   ├── contract_engine_atc14.atc
-│   │   ├── governance/
-│   │   │   └── governance_contract.atc
-│   │   └── shivamon/
-│   │       ├── __init__.py
-│   │       └── breeding.atc
-│   ├── dex/
-│   │   ├── __init__.py
-│   │   └── amm.atc
-│   ├── governance/
-│   │   ├── __init__.py
-│   │   ├── dao.atc
-│   │   ├── dao_live.atc
-│   │   ├── timelock.atc
-│   │   └── treasury.atc
-│   ├── mainnet/
-│   │   ├── __init__.py
-│   │   ├── launch_manager.atc
-│   │   └── mainnet_config.atc
-│   ├── network/
-│   │   ├── core_node_atc01.atc
-│   │   ├── latency_opt_atc06.atc
-│   │   └── sharding_atc07.atc
-│   ├── nodes/
-│   │   ├── __init__.py
-│   │   ├── block_propagation.atc
-│   │   ├── bootstrap.atc
-│   │   ├── initial_sync.atc
-│   │   ├── node.atc
-│   │   └── testnet_launcher.atc
-│   ├── propagation/
-│   │   └── block_gossip.atc
-│   ├── smart_contract_registry.atc
-│   ├── smart_contracts.atc
-│   ├── wallet/
-│   │   ├── __init__.py
-│   │   ├── did.atc
-│   │   ├── multisig.atc
-│   │   └── wordlist.atc
-│   └── zkp/
-│       ├── __init__.py
-│       └── groth16.atc
-├── config/
-│   └── mainnet_genesis.json
-├── conftest.py
-├── core/
-│   ├── ai/
-│   │   └── federated_learning.atc
-│   ├── crypto/
-│   │   └── __init__.py
-│   └── kai_cli.atc
-├── devnet/
-│   └── README.md
-├── docs/
-│   ├── AGENT_COORDINATION.md
-│   ├── AGENT_POLICY.md
-│   ├── ARCHITECTURE_TREES.md
-│   ├── ATCLANG_AGENT_BUILD_GUIDE.md
-│   ├── AUDIT_REPORT.md
-│   ├── CLUSTER_ARCHITECTURE.md
-│   ├── COMPLETENESS_AUDIT.md
-│   ├── DECISIONS_REGISTER.md
-│   ├── DEPRECATED.md
-│   ├── ECOSYSTEM_BRAIN.md
-│   ├── FILE_NAMING_CONVENTIONS.md
-│   ├── FILE_REGISTER.md
-│   ├── FIXES.md
-│   ├── KAI_INTEGRATION.md
-│   ├── LICENSING_OVERVIEW.md
-│   ├── MIGRATION_MAP.md
-│   ├── PERFORMANCE_REPORT.md
-│   ├── REALITY_CHECK_2026-07-06.md
-│   ├── ROADMAP.md
-│   ├── ROADMAP_COMPLETENESS_AUDIT.md
-│   ├── SHIVACORE_KERNEL_STATUS.md
-│   ├── STATUS.md
-│   ├── TODO.md
-│   ├── WIKI_AUDIT.md
-│   ├── ai/
-│   │   ├── AI_SAFETY.md
-│   │   ├── GEMINI_INTEGRATION.md
-│   │   └── LLM_ROUTER.md
-│   ├── aistudio/
-│   │   └── AISTUDIO_COMPONENTS.md
-│   ├── api-reference.md
-│   ├── architecture/
-│   │   ├── AI_LAYER.md
-│   │   ├── ATCFS.md
-│   │   ├── ATCLANG_COMPILER.md
-│   │   ├── ATCNET_P2P.md
-│   │   ├── CONSENSUS.md
-│   │   ├── GATEWAY.md
-│   │   ├── GOVERNANCE.md
-│   │   ├── KERNEL_SHELL.md
-│   │   ├── MONITORING_DEVOPS.md
-│   │   ├── SHIVAOS_KERNEL.md
-│   │   ├── TESTNET.md
-│   │   └── WALLET_KEYGEN.md
-│   ├── atclang/
-│   │   └── ATCLANG_SPEC_FULL.md
-│   ├── atclang-guide.md
-│   ├── blockchain/
-│   │   ├── ETHEREUM_INTEGRATION.md
-│   │   └── SOLANA_INTEGRATION.md
-│   ├── compliance/
-│   │   ├── ATVM_LICENSE_GATE_SPEC.md
-│   │   ├── BAFIN_KONFORMITAETSBERICHT.md
-│   │   ├── COMPLIANCE_HANDBUCH.md
-│   │   ├── IP_LICENSE_DASHBOARD_SPEC.md
-│   │   └── SMART_CONTRACT_RICHTLINIE.md
-│   ├── contracts/
-│   │   ├── ATC_TOKEN_STANDARD.md
-│   │   └── SHIVAMON_NFT_CONTRACT.md
-│   ├── file_registers/
-│   │   ├── README.md
-│   │   ├── a-townchain-os_FILE_REGISTER.md
-│   │   ├── atc-aistudio_FILE_REGISTER.md
-│   │   ├── atc-atclang_FILE_REGISTER.md
-│   │   ├── atc-atcpkg_FILE_REGISTER.md
-│   │   ├── atc-backend_FILE_REGISTER.md
-│   │   ├── atc-blockchain_FILE_REGISTER.md
-│   │   ├── atc-contracts_FILE_REGISTER.md
-│   │   ├── atc-franchise_FILE_REGISTER.md
-│   │   ├── atc-frontend_FILE_REGISTER.md
-│   │   ├── atc-gateway_FILE_REGISTER.md
-│   │   ├── atc-genesis-engine_FILE_REGISTER.md
-│   │   ├── atc-kernel_FILE_REGISTER.md
-│   │   ├── atc-linux-edition_FILE_REGISTER.md
-│   │   ├── atc-mobile_FILE_REGISTER.md
-│   │   ├── atc-shivacore-tools_FILE_REGISTER.md
-│   │   ├── atc-shivacore_FILE_REGISTER.md
-│   │   ├── atc-shivamon_FILE_REGISTER.md
-│   │   ├── atc-standards_FILE_REGISTER.md
-│   │   ├── atc-ui_FILE_REGISTER.md
-│   │   ├── atc-windows-edition_FILE_REGISTER.md
-│   │   ├── atclang_FILE_REGISTER.md
-│   │   └── atcnet_FILE_REGISTER.md
-│   ├── genesis_wallet.md
-│   ├── issues/
-│   │   ├── ISSUE_01_SMART_CONTRACTS.md
-│   │   ├── ISSUE_02_GEMINI_AI.md
-│   │   ├── ISSUE_03_BATTLE_UI.md
-│   │   ├── ISSUE_04_PERSISTENZ.md
-│   │   ├── ISSUE_05_EXPLORER.md
-│   │   ├── ISSUE_06_ECDSA.md
-│   │   ├── ISSUE_07_BUILD.md
-│   │   ├── ISSUE_08_TESTNET.md
-│   │   ├── ISSUE_09_GOVERNANCE.md
-│   │   ├── ISSUE_10_BRIDGE.md
-│   │   ├── ISSUE_11_BREEDING.md
-│   │   ├── ISSUE_12_SOLIDITY.md
-│   │   ├── ISSUE_13_MARKETPLACE.md
-│   │   ├── ISSUE_14_BOOTSTRAP_NODE.md
-│   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md
-│   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md
-│   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md
-│   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md
-│   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md
-│   │   ├── ISSUE_20_GATEWAY_TESTS.md
-│   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md
-│   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md
-│   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md
-│   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md
-│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-│   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md
-│   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md
-│   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-│   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md
-│   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md
-│   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md
-│   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md
-│   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md
-│   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md
-│   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md
-│   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md
-│   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md
-│   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md
-│   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md
-│   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md
-│   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md
-│   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md
-│   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md
-│   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md
-│   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md
-│   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md
-│   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md
-│   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md
-│   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md
-│   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md
-│   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md
-│   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md
-│   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md
-│   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md
-│   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md
-│   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md
-│   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md
-│   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md
-│   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md
-│   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md
-│   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md
-│   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md
-│   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md
-│   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md
-│   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md
-│   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md
-│   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md
-│   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md
-│   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md
-│   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md
-│   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md
-│   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md
-│   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md
-│   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md
-│   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
-│   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
-│   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-│   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
-│   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
-│   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
-│   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
-│   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md
-│   │   ├── OPEN_ISSUES_MASTER.md
-│   │   ├── README.md
-│   │   └── TESTNET_INDEX.md
-│   ├── kai-os-wiki.md
-│   ├── roadmap/
-│   │   └── ROADMAP_EXTENDED.md
-│   ├── sprints/
-│   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md
-│   │   ├── SPRINT_3.3_SECURITY_AUDIT.md
-│   │   └── SPRINT_4.0_MAINNET_LAUNCH.md
-│   ├── standards/
-│   │   ├── ATC/
-│   │   │   └── ATC-0009-BRIDGE.md
-│   │   ├── ATC-01-CORE_NODE_PROTOCOL.md
-│   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md
-│   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md
-│   │   ├── ATC-04-DAG_CONSENSUS.md
-│   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md
-│   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md
-│   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md
-│   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md
-│   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md
-│   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md
-│   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md
-│   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md
-│   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md
-│   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md
-│   │   ├── ATC-15-PROOF_OF_AI_MINING.md
-│   │   ├── ATC-16-REFERRAL_REWARDS.md
-│   │   ├── ATC-17-DAO_GOVERNANCE.md
-│   │   ├── ATC-18-MULTISIG_AUTH.md
-│   │   ├── ATC-19-AMM_LOGIC.md
-│   │   ├── ATC-20-WRAPPED_SYNTHETIC.md
-│   │   ├── ATC-21-HOLOGRAPHIC_WASM.md
-│   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md
-│   │   ├── ATC-23-DATA_SHARDING_STORAGE.md
-│   │   ├── ATC-24-AGENT_SCHEDULING.md
-│   │   ├── ATC-25-TENSOR_COMPUTE.md
-│   │   ├── ATC-26-XAI_TRANSPARENCY.md
-│   │   ├── ATC-27-AI_MODEL_AUDITING.md
-│   │   ├── ATC-28-FEDERATED_LEARNING.md
-│   │   ├── ATC-29-AI_MARKETPLACE.md
-│   │   ├── ATC-30-REPUTATION_TRUST.md
-│   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md
-│   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md
-│   │   ├── ATC-33-AI_FEEDBACK_RLHF.md
-│   │   ├── ATC-34-CROSS_LAYER_INTEROP.md
-│   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md
-│   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md
-│   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md
-│   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md
-│   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md
-│   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md
-│   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md
-│   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md
-│   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md
-│   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md
-│   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md
-│   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md
-│   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md
-│   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md
-│   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md
-│   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md
-│   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md
-│   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md
-│   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md
-│   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md
-│   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md
-│   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md
-│   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md
-│   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md
-│   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md
-│   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md
-│   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md
-│   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md
-│   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md
-│   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md
-│   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md
-│   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md
-│   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md
-│   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md
-│   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md
-│   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md
-│   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md
-│   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md
-│   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md
-│   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md
-│   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md
-│   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md
-│   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md
-│   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md
-│   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md
-│   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md
-│   │   ├── ATC-81-PROOF_OF_HISTORY.md
-│   │   ├── ATC-82-PROOF_OF_WORK.md
-│   │   ├── ATC-83-PROOF_OF_STAKE.md
-│   │   ├── ATC-84-FORK_RESOLUTION.md
-│   │   ├── ATC-85-INITIAL_SYNC.md
-│   │   ├── ATC-86-ECDSA_SIGNATURE.md
-│   │   ├── ATC-87-GAS_FEE.md
-│   │   ├── ATC-88-AMM.md
-│   │   ├── ATC-89-FUNGIBLE_TOKEN.md
-│   │   ├── ATC-90-NFT_SHIVAMON.md
-│   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md
-│   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md
-│   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md
-│   │   ├── ATC-94-ATCLANG_STDLIB.md
-│   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md
-│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-│   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md
-│   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md
-│   │   ├── ATC-98-TESTING_STANDARD.md
-│   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md
-│   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md
-│   │   ├── ATC_ECOSYSTEM_STANDARDS.md
-│   │   ├── ATC-LIC-SYSTEM_HARDWARE_LICENSE.md
-│   │   ├── OVERVIEW.md
-│   │   └── STANDARDS_REGISTRY.md
-│   ├── whitepaper/
-│   │   ├── .github/
-│   │   │   └── FUNDING.yml
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   └── WHITEPAPER.md
-│   ├── wiki/
-│   │   ├── atclang/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── CHANGELOG.md
-│   │   │       ├── COMPILER.md
-│   │   │       ├── CONTRIBUTING.md
-│   │   │       ├── EXAMPLES.md
-│   │   │       ├── LEXER.md
-│   │   │       ├── PARSER.md
-│   │   │       ├── REPL.md
-│   │   │       ├── SECURITY.md
-│   │   │       ├── SECURITY_ANALYZER.md
-│   │   │       ├── SPEC.md
-│   │   │       ├── STDLIB.md
-│   │   │       └── VM.md
-│   │   ├── atcnet/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── BOOTSTRAP.md
-│   │   │       ├── MESSAGES.md
-│   │   │       ├── PROTOCOL.md
-│   │   │       ├── SECURITY.md
-│   │   │       └── TOPOLOGY.md
-│   │   ├── chapter-63-cleanup-2026-06-13.md
-│   │   ├── chapter-70-atclang-migration-complete.md
-│   │   ├── chapter-71-sprint-audit.md
-│   │   ├── chapter-72-sprint-2-7-testing-cicd.md
-│   │   ├── chapter-73-sprint-2-8-testnet.md
-│   │   ├── chapter-74-sprint-3-1-ux-privacy.md
-│   │   ├── chapter-75-v01-v03-migration-plan.md
-│   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md
-│   │   ├── chapter-77-sprint-4-0-4-1-mainnet.md
-│   │   ├── chapter-78-shivacore-kernel-712-tests.md
-│   │   ├── contracts/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── ATC8300.md
-│   │   │       ├── ATC9000.md
-│   │   │       ├── ATC9900.md
-│   │   │       ├── BRIDGE.md
-│   │   │       ├── DEPLOYMENT.md
-│   │   │       └── SECURITY.md
-│   │   ├── franchise/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── API.md
-│   │   │       ├── CONCEPT.md
-│   │   │       ├── CONTRACTS.md
-│   │   │       ├── DEPLOYMENT.md
-│   │   │       ├── ROADMAP.md
-│   │   │       ├── SECURITY.md
-│   │   │       └── TOKEN_ECONOMY.md
-│   │   ├── gateway/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── AUTH.md
-│   │   │       ├── MIDDLEWARE.md
-│   │   │       ├── RATE_LIMITING.md
-│   │   │       ├── ROUTES.md
-│   │   │       └── SECURITY.md
-│   │   ├── kai-os/
-│   │   │   ├── ECOSYSTEM.md
-│   │   │   ├── PERFORMANCE_REPORT.md
-│   │   │   ├── README.md
-│   │   │   ├── code/
-│   │   │   │   ├── .github/
-│   │   │   │   │   └── workflows/
-│   │   │   │   ├── atc-ui/
-│   │   │   │   │   └── index.html
-│   │   │   │   ├── atclang/
-│   │   │   │   │   ├── ATCLANG_SPEC.md
-│   │   │   │   │   ├── compiler/
-│   │   │   │   │   ├── lexer/
-│   │   │   │   │   ├── parser/
-│   │   │   │   │   ├── repl/
-│   │   │   │   │   └── vm/
-│   │   │   │   ├── backend/
-│   │   │   │   │   ├── .env.example
-│   │   │   │   │   ├── api/
-│   │   │   │   │   ├── db/
-│   │   │   │   │   ├── main.py
-│   │   │   │   │   ├── requirements.txt
-│   │   │   │   │   └── wallet/
-│   │   │   │   ├── blockchain/
-│   │   │   │   │   ├── atcoin/
-│   │   │   │   │   ├── consensus/
-│   │   │   │   │   ├── contracts/
-│   │   │   │   │   ├── nodes/
-│   │   │   │   │   ├── smart_contract_registry.py
-│   │   │   │   │   ├── smart_contracts.py
-│   │   │   │   │   └── wallet/
-│   │   │   │   ├── build/
-│   │   │   │   │   └── build.py
-│   │   │   │   ├── config/
-│   │   │   │   │   ├── kai_config.toml
-│   │   │   │   │   └── settings.json
-│   │   │   │   ├── core/
-│   │   │   │   │   ├── ai_kernel.py
-│   │   │   │   │   ├── event_bus.py
-│   │   │   │   │   ├── kai_cli.py
-│   │   │   │   │   ├── kernel.py
-│   │   │   │   │   └── module_loader.py
-│   │   │   │   ├── frontend/
-│   │   │   │   │   ├── README.md
-│   │   │   │   │   ├── assets/
-│   │   │   │   │   ├── bootscreen/
-│   │   │   │   │   └── index.html
-│   │   │   │   ├── gateway/
-│   │   │   │   │   ├── .env.example
-│   │   │   │   │   ├── main.py
-│   │   │   │   │   ├── middleware/
-│   │   │   │   │   ├── requirements.txt
-│   │   │   │   │   └── router.py
-│   │   │   │   ├── plugins/
-│   │   │   │   │   └── wallet.py
-│   │   │   │   ├── shivaos/
-│   │   │   │   │   ├── consensus/
-│   │   │   │   │   ├── fs/
-│   │   │   │   │   ├── kernel/
-│   │   │   │   │   └── net/
-│   │   │   │   └── tests/
-│   │   │   │       ├── test_atclang.py
-│   │   │   │       └── test_kai_integration.py
-│   │   │   └── docs/
-│   │   │       ├── DECISIONS_REGISTER.md
-│   │   │       ├── MIGRATION_MAP.md
-│   │   │       ├── ROADMAP.md
-│   │   │       ├── ROADMAP_COMPLETENESS_AUDIT.md
-│   │   │       ├── STATUS.md
-│   │   │       ├── architecture/
-│   │   │       │   ├── ATCNET_P2P.md
-│   │   │       │   ├── CONSENSUS.md
-│   │   │       │   ├── GATEWAY.md
-│   │   │       │   └── WALLET_KEYGEN.md
-│   │   │       ├── contracts/
-│   │   │       │   └── ATC_TOKEN_STANDARD.md
-│   │   │       ├── issues/
-│   │   │       │   ├── ISSUE_01_SMART_CONTRACTS.md
-│   │   │       │   ├── ISSUE_06_ECDSA.md
-│   │   │       │   ├── ISSUE_09_GOVERNANCE.md
-│   │   │       │   ├── ISSUE_12_SOLIDITY.md
-│   │   │       │   ├── ISSUE_13_MARKETPLACE.md
-│   │   │       │   ├── ISSUE_14_BOOTSTRAP_NODE.md
-│   │   │       │   └── OPEN_ISSUES_MASTER.md
-│   │   │       ├── kai-os-wiki.md
-│   │   │       ├── repo/
-│   │   │       │   └── README.md
-│   │   │       ├── roadmap/
-│   │   │       │   └── ROADMAP_EXTENDED.md
-│   │   │       └── standards/
-│   │   │           ├── ATC_ECOSYSTEM_STANDARDS.md
-│   │   │           ├── OVERVIEW.md
-│   │   │           └── STANDARDS_REGISTRY.md
-│   │   ├── kernel/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── ATCFS.md
-│   │   │       ├── ATCNET.md
-│   │   │       ├── CHANGELOG.md
-│   │   │       ├── CONSENSUS.md
-│   │   │       ├── IPC.md
-│   │   │       ├── KERNEL.md
-│   │   │       ├── PERFORMANCE.md
-│   │   │       ├── PROCESS_MODEL.md
-│   │   │       └── SECURITY.md
-│   │   ├── overview/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── API.md
-│   │   │       ├── ARCHITECTURE.md
-│   │   │       ├── CONTRIBUTING.md
-│   │   │       ├── FAQ.md
-│   │   │       ├── QUICKSTART.md
-│   │   │       ├── ROADMAP.md
-│   │   │       ├── SECURITY.md
-│   │   │       └── WHITEPAPER.md
-│   │   ├── shivamon/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── BATTLE.md
-│   │   │       ├── BREEDING.md
-│   │   │       ├── ELEMENTS.md
-│   │   │       ├── MARKETPLACE.md
-│   │   │       ├── NFT_SPEC.md
-│   │   │       └── ROADMAP.md
-│   │   ├── standards/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── ATC_STANDARDS.md
-│   │   │       └── OVERVIEW.md
-│   │   └── ui/
-│   │       ├── README.md
-│   │       └── docs/
-│   │           ├── API.md
-│   │           ├── COMPONENTS.md
-│   │           ├── DEPLOYMENT.md
-│   │           ├── DESIGN.md
-│   │           └── THEME.md
-│   └── workflows/
-│       └── wiki-sync.yml
-├── gateway/
-│   ├── main.atc
-│   └── service_discovery.atc
-├── integrations/
-│   ├── README.md
-│   ├── calendar_tasks.md
-│   ├── huggingface_registry.md
-│   ├── notion_export.md
-│   └── storage_inventory.md
-├── mobile/
-│   ├── __init__.py
-│   ├── wallet/
-│   │   ├── __init__.py
-│   │   └── biometric_auth.atc
-│   └── wallet_api.atc
-├── module-docs/
-│   ├── atclang/
-│   │   ├── CHANGELOG.md
-│   │   ├── CONTRIBUTING.md
-│   │   └── README.md
-│   ├── atcnet/
-│   │   ├── CHANGELOG.md
-│   │   ├── PROTOCOL.md
-│   │   ├── README.md
-│   │   └── SECURITY.md
-│   ├── atcpkg/
-│   │   └── README.md
-│   ├── backend/
-│   │   └── README.md
-│   ├── blockchain/
-│   │   └── README.md
-│   ├── config/
-│   │   └── README.md
-│   ├── contracts/
-│   │   ├── CHANGELOG.md
-│   │   ├── DEPLOYMENT.md
-│   │   ├── README.md
-│   │   └── SECURITY.md
-│   ├── core/
-│   │   └── README.md
-│   ├── docker/
-│   │   └── README.md
-│   ├── franchise/
-│   │   ├── ARCHITECTURE.md
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   └── SECURITY.md
-│   ├── frontend/
-│   │   └── README.md
-│   ├── gateway/
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   └── SECURITY.md
-│   ├── kernel/
-│   │   ├── ARCHITECTURE.md
-│   │   ├── ATS_STANDARDS.md
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   └── SECURITY.md
-│   ├── mobile/
-│   │   └── README.md
-│   ├── modules/
-│   │   └── README.md
-│   ├── monitoring/
-│   │   └── README.md
-│   ├── nginx/
-│   │   └── README.md
-│   ├── scripts/
-│   │   └── README.md
-│   ├── shivamon/
-│   │   ├── CHANGELOG.md
-│   │   ├── GAME_SPEC.md
-│   │   └── README.md
-│   ├── shivaos/
-│   │   └── README.md
-│   ├── standards/
-│   │   ├── ATC_STANDARDS.md
-│   │   ├── ATS_STANDARDS.md
-│   │   ├── OVERVIEW.md
-│   │   └── README.md
-│   ├── tests/
-│   │   └── README.md
-│   ├── tools/
-│   │   └── README.md
-│   └── ui/
-│       ├── CHANGELOG.md
-│       ├── DESIGN.md
-│       └── README.md
-├── modules/
-│   ├── assets/
-│   │   ├── aaa_asset_core.atc
-│   │   ├── ai_assets.atc
-│   │   ├── animation.atc
-│   │   ├── asset_bundle.atc
-│   │   ├── cloud_assets.atc
-│   │   ├── encryption.atc
-│   │   ├── hot_reload.atc
-│   │   ├── memory_cleanup.atc
-│   │   ├── mod_system.atc
-│   │   ├── model3d.atc
-│   │   ├── priority_loading.atc
-│   │   ├── render_pipeline.atc
-│   │   ├── shader_system.atc
-│   │   ├── streaming.atc
-│   │   ├── telemetry.atc
-│   │   └── versioning.atc
-│   ├── atclang/
-│   │   └── README.md
-│   ├── atcnet/
-│   │   ├── README.md
-│   │   ├── bootstrap_client.atc
-│   │   ├── discovery.atc
-│   │   ├── gossip.atc
-│   │   ├── nat_traversal.atc
-│   │   ├── p2p_node.atc
-│   │   └── p2p_propagation.atc
-│   ├── civilization/
-│   │   ├── asset_genome_ad66.atc
-│   │   ├── civilization_engine_ad60.atc
-│   │   ├── ecosystem_ai_mesh_ad62.atc
-│   │   ├── evolution_engine_ad69.atc
-│   │   ├── experience_orchestrator_ad68.atc
-│   │   ├── gcp_core_ad70.atc
-│   │   ├── global_simulation_core_ad64.atc
-│   │   ├── identity_layer_ad65.atc
-│   │   ├── persistent_world_engine_ad61.atc
-│   │   ├── proc_universe_generator_ad63.atc
-│   │   └── production_pipeline_ad67.atc
-│   ├── contracts/
-│   │   ├── README.md
-│   │   ├── atc8300/
-│   │   │   └── atc8300_token.atc
-│   │   ├── atcoin/
-│   │   │   └── atcoin.atc
-│   │   ├── base/
-│   │   │   └── base_contract.atc
-│   │   ├── bridge/
-│   │   │   └── bridge_contract.atc
-│   │   ├── governance/
-│   │   │   └── governance_contract.atc
-│   │   ├── marketplace/
-│   │   │   └── marketplace_contract.atc
-│   │   ├── shivamon/
-│   │   │   └── shivamon_contract.atc
-│   │   └── wallet/
-│   │       ├── ecdsa.atc
-│   │       └── keygen.atc
-│   ├── franchise/
-│   │   ├── README.md
-│   │   ├── ai_content_factory_ad28.atc
-│   │   ├── ai_director_factory_ad41.atc
-│   │   ├── analytics_factory_ad31.atc
-│   │   ├── asset_intelligence_factory_ad34.atc
-│   │   ├── blueprint_factory_ad32.atc
-│   │   ├── canon_engine_ad33.atc
-│   │   ├── character_factory_ad23.atc
-│   │   ├── commerce_factory_ad40.atc
-│   │   ├── community_factory_ad30.atc
-│   │   ├── contracts/
-│   │   │   ├── registry.atc
-│   │   │   ├── revenue.atc
-│   │   │   └── token.atc
-│   │   ├── creator_factory_ad38.atc
-│   │   ├── economy_factory_ad26.atc
-│   │   ├── factory.atc
-│   │   ├── gameplay_factory_ad35.atc
-│   │   ├── gff_core_ad20.atc
-│   │   ├── ip_factory_ad21.atc
-│   │   ├── lifecycle_manager_ad43.atc
-│   │   ├── liveops_factory_ad27.atc
-│   │   ├── lore_factory_ad24.atc
-│   │   ├── merchandise_factory_ad29.atc
-│   │   ├── multiplayer_factory_ad37.atc
-│   │   ├── narrative_factory_ad36.atc
-│   │   ├── publishing_factory_ad39.atc
-│   │   ├── quest_factory_ad25.atc
-│   │   ├── routes.atc
-│   │   ├── security_factory_ad42.atc
-│   │   └── world_factory_ad22.atc
-│   ├── gateway/
-│   │   ├── README.md
-│   │   ├── __init__.py
-│   │   ├── main.atc
-│   │   ├── middleware/
-│   │   │   ├── __init__.py
-│   │   │   ├── auth.atc
-│   │   │   ├── logger.atc
-│   │   │   ├── rate_limit.atc
-│   │   │   └── signature_verify.atc
-│   │   └── router.atc
-│   ├── kernel/
-│   │   ├── README.md
-│   │   ├── ai_bus_ad13.atc
-│   │   ├── ai_kernel/
-│   │   │   └── ai_kernel.atc
-│   │   ├── asset_bus_ad08.atc
-│   │   ├── audio_bus_ad11.atc
-│   │   ├── command_bus_ad02.atc
-│   │   ├── consensus/
-│   │   │   ├── poh_integration.atc
-│   │   │   └── shiva_consensus.atc
-│   │   ├── fs/
-│   │   │   └── atcfs.atc
-│   │   ├── gcl_core_ad00.atc
-│   │   ├── input_bus_ad12.atc
-│   │   ├── ipc/
-│   │   │   ├── __init__.py
-│   │   │   └── ipc_bus.atc
-│   │   ├── ipc_bus_atc.ad.atc
-│   │   ├── message_bus_ad03.atc
-│   │   ├── net/
-│   │   │   └── atcnet.atc
-│   │   ├── network_bus_ad05.atc
-│   │   ├── physics_bus_ad10.atc
-│   │   ├── pkg/
-│   │   │   └── manager.atc
-│   │   ├── plugin_bus_ad06.atc
-│   │   ├── process/
-│   │   │   └── process_mgr.atc
-│   │   ├── query_bus_ad07.atc
-│   │   ├── render_bus_ad09.atc
-│   │   ├── shell/
-│   │   │   └── shell.atc
-│   │   └── telemetry_bus_ad14.atc
-│   ├── meta/
-│   │   ├── ai_studio_ad49.atc
-│   │   ├── cross_franchise_ad46.atc
-│   │   ├── data_lake_ad51.atc
-│   │   ├── digital_twin_ad50.atc
-│   │   ├── ip_evolution_ad45.atc
-│   │   ├── knowledge_graph_ad47.atc
-│   │   ├── simulation_factory_ad48.atc
-│   │   └── universe_factory_ad44.atc
-│   └── shivamon/
-│       ├── README.md
-│       └── engine/
-│           └── battle_engine.atc
-├── monitoring/
-│   ├── health_checks_atc08.atc
-│   ├── monitor.atc
-│   └── prometheus_metrics.atc
-├── reports/
-│   └── SPRINT_2.3_2.4_2.7_REPORT.md
-├── scripts/
-│   └── generate_validators.atc
-├── shivaos/
-│   ├── fs/
-│   │   └── atcfs_module.atc
-│   ├── kernel/
-│   │   └── syscalls.atc
-│   └── ui/
-│       └── renderer.atc
-├── start.atc
-├── tests/
-│   ├── test_atclang.py
-│   ├── test_atclang_v03.py
-│   ├── test_bootstrap.py
-│   ├── test_did.py
-│   ├── test_discovery.py
-│   ├── test_ecdsa.py
-│   ├── test_fork_resolution.py
-│   ├── test_gateway.py
-│   ├── test_gateway_full.py
-│   ├── test_integration_atcfs_multisig.py
-│   ├── test_kai_integration.py
-│   ├── test_multinode_consensus.py
-│   ├── test_multinode_fivenode.py
-│   ├── test_node_failure_recovery.py
-│   ├── test_optimizer.py
-│   ├── test_orchestrator.py
-│   ├── test_p2p_propagation.py
-│   ├── test_persistence.py
-│   ├── test_poh.py
-│   ├── test_smart_contracts.py
-│   ├── test_stdlib.py
-│   ├── test_stdlib_dispatch.py
-│   ├── test_type_checker.py
-│   └── unit/
-│       ├── test_atclang.py
-│       ├── test_atcnet.py
-│       └── test_p2p_propagation.py
-├── tools/
-│   ├── atc_issues_summary.atc
-│   ├── bigquery_pipeline.atc
-│   ├── ecdsa_impl.atc
-│   └── hf_review_pipeline.atc
-└── wiki/
-    ├── aistudio-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   └── STATUS.md
-    ├── atclang/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── CHANGELOG.md
-    │       ├── COMPILER.md
-    │       ├── CONTRIBUTING.md
-    │       ├── EXAMPLES.md
-    │       ├── LEXER.md
-    │       ├── PARSER.md
-    │       ├── REPL.md
-    │       ├── ROADMAP.md
-    │       ├── SECURITY.md
-    │       ├── SECURITY_ANALYZER.md
-    │       ├── SPEC.md
-    │       ├── STDLIB.md
-    │       ├── SYNTAX_FULL.md
-    │       └── VM.md
-    ├── atclang-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── MODULES.md
-    │       └── ROADMAP.md
-    ├── atcnet/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── BOOTSTRAP.md
-    │       ├── MESSAGES.md
-    │       ├── PROTOCOL.md
-    │       ├── ROADMAP.md
-    │       ├── SECURITY.md
-    │       └── TOPOLOGY.md
-    ├── atcpkg-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── backend-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── API.md
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── blockchain-wiki/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── CONSENSUS.md
-    │       ├── MEMPOOL.md
-    │       ├── ROADMAP.md
-    │       └── VALIDATORS.md
-    ├── bootloader-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── ci-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ROADMAP.md
-    │       └── WORKFLOWS.md
-    ├── cli-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── COMMANDS.md
-    │       └── ROADMAP.md
-    ├── contracts/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ATC8300.md
-    │       ├── ATC9000.md
-    │       ├── ATC9900.md
-    │       ├── BRIDGE.md
-    │       ├── DEPLOYMENT.md
-    │       ├── ROADMAP.md
-    │       ├── SECURITY.md
-    │       └── TODO.md
-    ├── dns-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── drivers-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── DRIVER_LIST.md
-    │       └── ROADMAP.md
-    ├── explorer-wiki/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── API.md
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── franchise/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── API.md
-    │       ├── CONCEPT.md
-    │       ├── CONTRACTS.md
-    │       ├── DEPLOYMENT.md
-    │       ├── ROADMAP.md
-    │       ├── SECURITY.md
-    │       └── TOKEN_ECONOMY.md
-    ├── franchise-factory/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   └── README.md
-    ├── frontend-wiki/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── COMPONENTS.md
-    │       └── ROADMAP.md
-    ├── gateway/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── AUTH.md
-    │       ├── MIDDLEWARE.md
-    │       ├── RATE_LIMITING.md
-    │       ├── ROADMAP.md
-    │       ├── ROUTES.md
-    │       └── SECURITY.md
-    ├── genesis-engine-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   └── STATUS.md
-    ├── genesis_communication_layer_v2.md
-    ├── genesis_franchise_factory_v1.md
-    ├── ide-wiki/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── LSP.md
-    │       └── ROADMAP.md
-    ├── kai-os/
-    │   ├── .github/
-    │   │   └── .gitkeep
-    │   ├── .gitignore
-    │   ├── AAA_ASSET_SYSTEM_v1.md
-    │   ├── AGENT_MANIFEST.md
-    │   ├── AGENT_MASTERRULES.md
-    │   ├── ATCLANG_FIRST.md
-    │   ├── CHANGELOG.md
-    │   ├── CONNECTION_MAP.md
-    │   ├── ECOSYSTEM.md
-    │   ├── FILE_REGISTER.md
-    │   ├── FIXES.md
-    │   ├── GENESIS_BUS_ARCHITECTURE.md
-    │   ├── GENESIS_CIVILIZATION_PLATFORM_v4.md
-    │   ├── GENESIS_COMMUNICATION_LAYER_v2.md
-    │   ├── GENESIS_FRANCHISE_FACTORY_v1.md
-    │   ├── GENESIS_FRANCHISE_FACTORY_v2.md
-    │   ├── KONSOLIDIERUNGS_ROADMAP.md
-    │   ├── LICENSE
-    │   ├── MILESTONES.md
-    │   ├── NAMING_CONVENTIONS.md
-    │   ├── PERFORMANCE_REPORT.md
-    │   ├── README.md
-    │   ├── ROADMAP.md
-    │   ├── SPRINT_ROADMAP.md
-    │   ├── STATUS.md
-    │   ├── TODO.md
-    │   ├── aistudio/
-    │   │   ├── AGENTS.md
-    │   │   ├── GEMINI.md
-    │   │   ├── README.md
-    │   │   ├── ROADMAP.md
-    │   │   ├── SOFTWARE_ROADMAP.md
-    │   │   └── src/
-    │   │       ├── atcLangRoadmapData.ts
-    │   │       ├── components/
-    │   │       │   └── RoadmapView.tsx
-    │   │       └── roadmapData.ts
-    │   ├── archive/
-    │   │   └── ATCLANG_ARCHIVE.md
-    │   ├── atclang/
-    │   │   ├── ATCLANG_SPEC.md
-    │   │   ├── __init__.py
-    │   │   ├── compiler/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── compiler.py
-    │   │   │   ├── optimizer.py
-    │   │   │   └── type_checker.py
-    │   │   ├── lexer/
-    │   │   │   ├── __init__.py
-    │   │   │   └── lexer.py
-    │   │   ├── parser/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── ast_nodes.py
-    │   │   │   └── parser.py
-    │   │   ├── programs/
-    │   │   │   └── atcos_main.atc
-    │   │   ├── repl/
-    │   │   │   ├── __init__.py
-    │   │   │   └── repl.py
-    │   │   ├── stdlib/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── atc_stdlib.py
-    │   │   │   ├── chain.py
-    │   │   │   ├── collections.py
-    │   │   │   ├── collections_ext.py
-    │   │   │   ├── crypto.py
-    │   │   │   ├── crypto_ext.py
-    │   │   │   ├── encoding.py
-    │   │   │   ├── io.py
-    │   │   │   ├── io_ext.py
-    │   │   │   ├── math.py
-    │   │   │   ├── primitives.py
-    │   │   │   ├── string.py
-    │   │   │   └── wallet.py
-    │   │   ├── v03/
-    │   │   │   ├── __init__.py
-    │   │   │   └── atclang_v03_features.py
-    │   │   └── vm/
-    │   │       ├── __init__.py
-    │   │       └── atcvm.py
-    │   ├── atcpkg/
-    │   │   └── manager.atc
-    │   ├── backend/
-    │   │   ├── __init__.py
-    │   │   ├── api/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── kai_routes.atc
-    │   │   │   ├── orchestrator/
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── orchestrator.atc
-    │   │   │   ├── routes/
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   ├── ai_routes.atc
-    │   │   │   │   └── api_routes.atc
-    │   │   │   └── server.atc
-    │   │   ├── db/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── connection.atc
-    │   │   │   └── repository.atc
-    │   │   └── wallet/
-    │   │       ├── __init__.py
-    │   │       └── wallet.atc
-    │   ├── blockchain/
-    │   │   ├── atcoin/
-    │   │   │   └── __init__.py
-    │   │   ├── consensus/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── fork_atc85.atc
-    │   │   │   ├── fork_resolution.atc
-    │   │   │   ├── gas_fee.atc
-    │   │   │   ├── gas_fee_atc86.atc
-    │   │   │   ├── hybrid_atc84.atc
-    │   │   │   ├── hybrid_consensus.atc
-    │   │   │   ├── poh.atc
-    │   │   │   ├── poh_atc83.atc
-    │   │   │   ├── pos.atc
-    │   │   │   ├── pos_atc82.atc
-    │   │   │   ├── pow.atc
-    │   │   │   └── pow_atc81.atc
-    │   │   ├── contract_registry.atc
-    │   │   ├── contracts/
-    │   │   │   ├── atc001/
-    │   │   │   │   └── genesis_token.atc
-    │   │   │   ├── atc8300/
-    │   │   │   │   └── __init__.py
-    │   │   │   ├── contract_engine_atc14.atc
-    │   │   │   ├── governance/
-    │   │   │   │   └── governance_contract.atc
-    │   │   │   └── shivamon/
-    │   │   │       ├── __init__.py
-    │   │   │       └── breeding.atc
-    │   │   ├── dex/
-    │   │   │   ├── __init__.py
-    │   │   │   └── amm.atc
-    │   │   ├── governance/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── dao.atc
-    │   │   │   ├── dao_live.atc
-    │   │   │   ├── timelock.atc
-    │   │   │   └── treasury.atc
-    │   │   ├── mainnet/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── launch_manager.atc
-    │   │   │   └── mainnet_config.atc
-    │   │   ├── network/
-    │   │   │   ├── core_node_atc01.atc
-    │   │   │   ├── latency_opt_atc06.atc
-    │   │   │   └── sharding_atc07.atc
-    │   │   ├── nodes/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── block_propagation.atc
-    │   │   │   ├── bootstrap.atc
-    │   │   │   ├── initial_sync.atc
-    │   │   │   ├── node.atc
-    │   │   │   └── testnet_launcher.atc
-    │   │   ├── propagation/
-    │   │   │   └── block_gossip.atc
-    │   │   ├── smart_contract_registry.atc
-    │   │   ├── smart_contracts.atc
-    │   │   ├── wallet/
-    │   │   │   ├── __init__.py
-    │   │   │   ├── did.atc
-    │   │   │   ├── multisig.atc
-    │   │   │   └── wordlist.atc
-    │   │   └── zkp/
-    │   │       ├── __init__.py
-    │   │       └── groth16.atc
-    │   ├── code/
-    │   │   ├── .github/
-    │   │   │   └── workflows/
-    │   │   │       ├── ci.yml
-    │   │   │       ├── codeql.yml
-    │   │   │       ├── docker.yml
-    │   │   │       └── pages.yml
-    │   │   ├── KAI_OS_SUMMARY.py
-    │   │   ├── atc-ui/
-    │   │   │   └── index.html
-    │   │   ├── atc_issues_summary.py
-    │   │   ├── atclang/
-    │   │   │   ├── ATCLANG_SPEC.md
-    │   │   │   ├── compiler/
-    │   │   │   │   └── compiler.py
-    │   │   │   ├── lexer/
-    │   │   │   │   └── lexer.py
-    │   │   │   ├── parser/
-    │   │   │   │   └── parser.py
-    │   │   │   ├── repl/
-    │   │   │   │   └── repl.py
-    │   │   │   └── vm/
-    │   │   │       └── atcvm.py
-    │   │   ├── backend/
-    │   │   │   ├── .env.example
-    │   │   │   ├── api/
-    │   │   │   │   ├── kai_routes.py
-    │   │   │   │   ├── orchestrator/
-    │   │   │   │   ├── routes/
-    │   │   │   │   └── server.py
-    │   │   │   ├── db/
-    │   │   │   │   ├── repository.py
-    │   │   │   │   └── schema.sql
-    │   │   │   ├── main.py
-    │   │   │   ├── requirements.txt
-    │   │   │   └── wallet/
-    │   │   │       └── wallet.py
-    │   │   ├── blockchain/
-    │   │   │   ├── atcoin/
-    │   │   │   │   └── atcoin.py
-    │   │   │   ├── consensus/
-    │   │   │   │   ├── hybrid_consensus.py
-    │   │   │   │   ├── poh.py
-    │   │   │   │   ├── pos.py
-    │   │   │   │   └── pow.py
-    │   │   │   ├── contracts/
-    │   │   │   │   ├── atc001/
-    │   │   │   │   ├── atc8300/
-    │   │   │   │   ├── base/
-    │   │   │   │   ├── shivamon/
-    │   │   │   │   └── solidity/
-    │   │   │   ├── nodes/
-    │   │   │   │   ├── discovery.py
-    │   │   │   │   ├── node.py
-    │   │   │   │   └── p2p_propagation.py
-    │   │   │   ├── smart_contract_registry.py
-    │   │   │   ├── smart_contracts.py
-    │   │   │   └── wallet/
-    │   │   │       ├── ecdsa.py
-    │   │   │       └── keygen.py
-    │   │   ├── bootscreen_complete.py
-    │   │   ├── build/
-    │   │   │   └── build.py
-    │   │   ├── config/
-    │   │   │   ├── kai_config.toml
-    │   │   │   └── settings.json
-    │   │   ├── core/
-    │   │   │   ├── ai_kernel.py
-    │   │   │   ├── event_bus.py
-    │   │   │   ├── kai_cli.py
-    │   │   │   ├── kernel.py
-    │   │   │   └── module_loader.py
-    │   │   ├── ecdsa_final.py
-    │   │   ├── ecdsa_impl.py
-    │   │   ├── frontend/
-    │   │   │   ├── README.md
-    │   │   │   ├── assets/
-    │   │   │   │   ├── css/
-    │   │   │   │   └── js/
-    │   │   │   └── index.html
-    │   │   ├── gateway/
-    │   │   │   ├── .env.example
-    │   │   │   ├── main.py
-    │   │   │   ├── middleware/
-    │   │   │   │   ├── auth.py
-    │   │   │   │   ├── logger.py
-    │   │   │   │   ├── rate_limit.py
-    │   │   │   │   └── signature_verify.py
-    │   │   │   ├── requirements.txt
-    │   │   │   └── router.py
-    │   │   ├── plugins/
-    │   │   │   └── wallet.py
-    │   │   ├── requirements-kai.txt
-    │   │   ├── shivaos/
-    │   │   │   ├── consensus/
-    │   │   │   │   └── shiva_consensus.py
-    │   │   │   ├── fs/
-    │   │   │   │   └── atcfs.py
-    │   │   │   ├── kernel/
-    │   │   │   │   └── kernel.py
-    │   │   │   └── net/
-    │   │   │       └── atcnet.py
-    │   │   ├── start.py
-    │   │   └── tests/
-    │   │       ├── test_atclang.py
-    │   │       └── test_kai_integration.py
-    │   ├── config/
-    │   │   └── mainnet_genesis.json
-    │   ├── conftest.py
-    │   ├── core/
-    │   │   ├── ai/
-    │   │   │   └── federated_learning.atc
-    │   │   ├── crypto/
-    │   │   │   └── __init__.py
-    │   │   └── kai_cli.atc
-    │   ├── devnet/
-    │   │   └── README.md
-    │   ├── docs/
-    │   │   ├── AGENT_COORDINATION.md
-    │   │   ├── AGENT_POLICY.md
-    │   │   ├── ATCLANG_AGENT_BUILD_GUIDE.md
-    │   │   ├── AUDIT_REPORT.md
-    │   │   ├── CLUSTER_ARCHITECTURE.md
-    │   │   ├── DECISIONS_REGISTER.md
-    │   │   ├── DEPRECATED.md
-    │   │   ├── ECOSYSTEM_BRAIN.md
-    │   │   ├── FIXES.md
-    │   │   ├── GENESIS_COMMUNICATION_LAYER_v2.md
-    │   │   ├── GENESIS_FRANCHISE_FACTORY_v1.md
-    │   │   ├── KAI_INTEGRATION.md
-    │   │   ├── LICENSING_OVERVIEW.md
-    │   │   ├── MIGRATION_MAP.md
-    │   │   ├── PERFORMANCE_REPORT.md
-    │   │   ├── REALITY_CHECK_2026-07-06.md
-    │   │   ├── ROADMAP.md
-    │   │   ├── ROADMAP_COMPLETENESS_AUDIT.md
-    │   │   ├── SHIVACORE_KERNEL_STATUS.md
-    │   │   ├── STATUS.md
-    │   │   ├── TODO.md
-    │   │   ├── WIKI_AUDIT.md
-    │   │   ├── ai/
-    │   │   │   ├── AI_SAFETY.md
-    │   │   │   ├── GEMINI_INTEGRATION.md
-    │   │   │   └── LLM_ROUTER.md
-    │   │   ├── aistudio/
-    │   │   │   └── AISTUDIO_COMPONENTS.md
-    │   │   ├── api-reference.md
-    │   │   ├── architecture/
-    │   │   │   ├── AI_LAYER.md
-    │   │   │   ├── ATCFS.md
-    │   │   │   ├── ATCLANG_COMPILER.md
-    │   │   │   ├── ATCNET_P2P.md
-    │   │   │   ├── CONSENSUS.md
-    │   │   │   ├── GATEWAY.md
-    │   │   │   ├── GOVERNANCE.md
-    │   │   │   ├── KERNEL_SHELL.md
-    │   │   │   ├── MONITORING_DEVOPS.md
-    │   │   │   ├── SHIVAOS_KERNEL.md
-    │   │   │   ├── TESTNET.md
-    │   │   │   └── WALLET_KEYGEN.md
-    │   │   ├── atclang/
-    │   │   │   └── ATCLANG_SPEC_FULL.md
-    │   │   ├── atclang-guide.md
-    │   │   ├── blockchain/
-    │   │   │   ├── ETHEREUM_INTEGRATION.md
-    │   │   │   └── SOLANA_INTEGRATION.md
-    │   │   ├── compliance/
-    │   │   │   ├── ATVM_LICENSE_GATE_SPEC.md
-    │   │   │   ├── BAFIN_KONFORMITAETSBERICHT.md
-    │   │   │   ├── COMPLIANCE_HANDBUCH.md
-    │   │   │   ├── IP_LICENSE_DASHBOARD_SPEC.md
-    │   │   │   └── SMART_CONTRACT_RICHTLINIE.md
-    │   │   ├── contracts/
-    │   │   │   ├── ATC_TOKEN_STANDARD.md
-    │   │   │   └── SHIVAMON_NFT_CONTRACT.md
-    │   │   ├── genesis_wallet.md
-    │   │   ├── issues/
-    │   │   │   ├── ISSUE_01_SMART_CONTRACTS.md
-    │   │   │   ├── ISSUE_02_GEMINI_AI.md
-    │   │   │   ├── ISSUE_03_BATTLE_UI.md
-    │   │   │   ├── ISSUE_04_PERSISTENZ.md
-    │   │   │   ├── ISSUE_05_EXPLORER.md
-    │   │   │   ├── ISSUE_06_ECDSA.md
-    │   │   │   ├── ISSUE_07_BUILD.md
-    │   │   │   ├── ISSUE_08_TESTNET.md
-    │   │   │   ├── ISSUE_09_GOVERNANCE.md
-    │   │   │   ├── ISSUE_10_BRIDGE.md
-    │   │   │   ├── ISSUE_11_BREEDING.md
-    │   │   │   ├── ISSUE_12_SOLIDITY.md
-    │   │   │   ├── ISSUE_13_MARKETPLACE.md
-    │   │   │   ├── ISSUE_14_BOOTSTRAP_NODE.md
-    │   │   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md
-    │   │   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md
-    │   │   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md
-    │   │   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md
-    │   │   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md
-    │   │   │   ├── ISSUE_20_GATEWAY_TESTS.md
-    │   │   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md
-    │   │   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md
-    │   │   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md
-    │   │   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md
-    │   │   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-    │   │   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md
-    │   │   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md
-    │   │   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-    │   │   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md
-    │   │   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md
-    │   │   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md
-    │   │   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md
-    │   │   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md
-    │   │   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md
-    │   │   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md
-    │   │   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md
-    │   │   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md
-    │   │   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md
-    │   │   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md
-    │   │   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md
-    │   │   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md
-    │   │   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md
-    │   │   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md
-    │   │   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md
-    │   │   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md
-    │   │   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md
-    │   │   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md
-    │   │   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md
-    │   │   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md
-    │   │   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md
-    │   │   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md
-    │   │   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md
-    │   │   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md
-    │   │   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md
-    │   │   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md
-    │   │   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md
-    │   │   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md
-    │   │   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md
-    │   │   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md
-    │   │   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md
-    │   │   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md
-    │   │   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md
-    │   │   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md
-    │   │   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md
-    │   │   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md
-    │   │   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md
-    │   │   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md
-    │   │   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md
-    │   │   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md
-    │   │   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md
-    │   │   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md
-    │   │   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md
-    │   │   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md
-    │   │   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md
-    │   │   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
-    │   │   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
-    │   │   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-    │   │   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
-    │   │   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
-    │   │   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
-    │   │   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
-    │   │   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md
-    │   │   │   ├── OPEN_ISSUES_MASTER.md
-    │   │   │   ├── README.md
-    │   │   │   └── TESTNET_INDEX.md
-    │   │   ├── kai-os-wiki.md
-    │   │   ├── repo/
-    │   │   │   └── README.md
-    │   │   ├── roadmap/
-    │   │   │   └── ROADMAP_EXTENDED.md
-    │   │   ├── sprints/
-    │   │   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md
-    │   │   │   ├── SPRINT_3.3_SECURITY_AUDIT.md
-    │   │   │   └── SPRINT_4.0_MAINNET_LAUNCH.md
-    │   │   ├── standards/
-    │   │   │   ├── ATC/
-    │   │   │   │   └── ATC-0009-BRIDGE.md
-    │   │   │   ├── ATC-01-CORE_NODE_PROTOCOL.md
-    │   │   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md
-    │   │   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md
-    │   │   │   ├── ATC-04-DAG_CONSENSUS.md
-    │   │   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md
-    │   │   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md
-    │   │   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md
-    │   │   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md
-    │   │   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md
-    │   │   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md
-    │   │   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md
-    │   │   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md
-    │   │   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md
-    │   │   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md
-    │   │   │   ├── ATC-15-PROOF_OF_AI_MINING.md
-    │   │   │   ├── ATC-16-REFERRAL_REWARDS.md
-    │   │   │   ├── ATC-17-DAO_GOVERNANCE.md
-    │   │   │   ├── ATC-18-MULTISIG_AUTH.md
-    │   │   │   ├── ATC-19-AMM_LOGIC.md
-    │   │   │   ├── ATC-20-WRAPPED_SYNTHETIC.md
-    │   │   │   ├── ATC-21-HOLOGRAPHIC_WASM.md
-    │   │   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md
-    │   │   │   ├── ATC-23-DATA_SHARDING_STORAGE.md
-    │   │   │   ├── ATC-24-AGENT_SCHEDULING.md
-    │   │   │   ├── ATC-25-TENSOR_COMPUTE.md
-    │   │   │   ├── ATC-26-XAI_TRANSPARENCY.md
-    │   │   │   ├── ATC-27-AI_MODEL_AUDITING.md
-    │   │   │   ├── ATC-28-FEDERATED_LEARNING.md
-    │   │   │   ├── ATC-29-AI_MARKETPLACE.md
-    │   │   │   ├── ATC-30-REPUTATION_TRUST.md
-    │   │   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md
-    │   │   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md
-    │   │   │   ├── ATC-33-AI_FEEDBACK_RLHF.md
-    │   │   │   ├── ATC-34-CROSS_LAYER_INTEROP.md
-    │   │   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md
-    │   │   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md
-    │   │   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md
-    │   │   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md
-    │   │   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md
-    │   │   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md
-    │   │   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md
-    │   │   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md
-    │   │   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md
-    │   │   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md
-    │   │   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md
-    │   │   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md
-    │   │   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md
-    │   │   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md
-    │   │   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md
-    │   │   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md
-    │   │   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md
-    │   │   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md
-    │   │   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md
-    │   │   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md
-    │   │   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md
-    │   │   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md
-    │   │   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md
-    │   │   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md
-    │   │   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md
-    │   │   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md
-    │   │   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md
-    │   │   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md
-    │   │   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md
-    │   │   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md
-    │   │   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md
-    │   │   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md
-    │   │   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md
-    │   │   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md
-    │   │   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md
-    │   │   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md
-    │   │   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md
-    │   │   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md
-    │   │   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md
-    │   │   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md
-    │   │   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md
-    │   │   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md
-    │   │   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md
-    │   │   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md
-    │   │   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md
-    │   │   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md
-    │   │   │   ├── ATC-81-PROOF_OF_HISTORY.md
-    │   │   │   ├── ATC-82-PROOF_OF_WORK.md
-    │   │   │   ├── ATC-83-PROOF_OF_STAKE.md
-    │   │   │   ├── ATC-84-FORK_RESOLUTION.md
-    │   │   │   ├── ATC-85-INITIAL_SYNC.md
-    │   │   │   ├── ATC-86-ECDSA_SIGNATURE.md
-    │   │   │   ├── ATC-87-GAS_FEE.md
-    │   │   │   ├── ATC-88-AMM.md
-    │   │   │   ├── ATC-89-FUNGIBLE_TOKEN.md
-    │   │   │   ├── ATC-90-NFT_SHIVAMON.md
-    │   │   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md
-    │   │   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md
-    │   │   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md
-    │   │   │   ├── ATC-94-ATCLANG_STDLIB.md
-    │   │   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md
-    │   │   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-    │   │   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md
-    │   │   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md
-    │   │   │   ├── ATC-98-TESTING_STANDARD.md
-    │   │   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md
-    │   │   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md
-    │   │   │   ├── ATC_ECOSYSTEM_STANDARDS.md
-    │   │   │   ├── ATC_STANDARDS.md
-    │   │   │   ├── ATC-LIC-SYSTEM_HARDWARE_LICENSE.md
-    │   │   │   ├── ATS_STANDARDS.md
-    │   │   │   ├── OVERVIEW.md
-    │   │   │   └── STANDARDS_REGISTRY.md
-    │   │   ├── whitepaper/
-    │   │   │   ├── CHANGELOG.md
-    │   │   │   ├── README.md
-    │   │   │   └── WHITEPAPER.md
-    │   │   ├── wiki/
-    │   │   │   ├── atclang/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── atcnet/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── chapter-63-cleanup-2026-06-13.md
-    │   │   │   ├── chapter-70-atclang-migration-complete.md
-    │   │   │   ├── chapter-71-sprint-audit.md
-    │   │   │   ├── chapter-72-sprint-2-7-testing-cicd.md
-    │   │   │   ├── chapter-73-sprint-2-8-testnet.md
-    │   │   │   ├── chapter-74-sprint-3-1-ux-privacy.md
-    │   │   │   ├── chapter-75-v01-v03-migration-plan.md
-    │   │   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md
-    │   │   │   ├── chapter-77-sprint-4-0-4-1-mainnet.md
-    │   │   │   ├── chapter-78-shivacore-kernel-712-tests.md
-    │   │   │   ├── contracts/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── franchise/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── gateway/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── kai-os/
-    │   │   │   │   ├── README.md
-    │   │   │   │   ├── code/
-    │   │   │   │   └── docs/
-    │   │   │   ├── kernel/
-    │   │   │   │   ├── KERNEL_API.md
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── overview/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── shivamon/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   ├── standards/
-    │   │   │   │   ├── README.md
-    │   │   │   │   └── docs/
-    │   │   │   └── ui/
-    │   │   │       ├── README.md
-    │   │   │       └── docs/
-    │   │   └── workflows/
-    │   │       └── wiki-sync.yml
-    │   ├── gateway/
-    │   │   ├── main.atc
-    │   │   └── service_discovery.atc
-    │   ├── mobile/
-    │   │   ├── __init__.py
-    │   │   ├── wallet/
-    │   │   │   ├── __init__.py
-    │   │   │   └── biometric_auth.atc
-    │   │   └── wallet_api.atc
-    │   ├── modules/
-    │   │   ├── assets/
-    │   │   │   ├── aaa_asset_core.atc
-    │   │   │   ├── ai_assets.atc
-    │   │   │   ├── animation.atc
-    │   │   │   ├── asset_bundle.atc
-    │   │   │   ├── cloud_assets.atc
-    │   │   │   ├── encryption.atc
-    │   │   │   ├── hot_reload.atc
-    │   │   │   ├── memory_cleanup.atc
-    │   │   │   ├── mod_system.atc
-    │   │   │   ├── model3d.atc
-    │   │   │   ├── priority_loading.atc
-    │   │   │   ├── render_pipeline.atc
-    │   │   │   ├── shader_system.atc
-    │   │   │   ├── streaming.atc
-    │   │   │   ├── telemetry.atc
-    │   │   │   └── versioning.atc
-    │   │   ├── atcnet/
-    │   │   │   ├── README.md
-    │   │   │   ├── bootstrap_client.atc
-    │   │   │   ├── discovery.atc
-    │   │   │   ├── gossip.atc
-    │   │   │   ├── nat_traversal.atc
-    │   │   │   ├── p2p_node.atc
-    │   │   │   └── p2p_propagation.atc
-    │   │   ├── civilization/
-    │   │   │   ├── asset_genome_ad66.atc
-    │   │   │   ├── civilization_engine_ad60.atc
-    │   │   │   ├── ecosystem_ai_mesh_ad62.atc
-    │   │   │   ├── evolution_engine_ad69.atc
-    │   │   │   ├── experience_orchestrator_ad68.atc
-    │   │   │   ├── gcp_core_ad70.atc
-    │   │   │   ├── global_simulation_core_ad64.atc
-    │   │   │   ├── identity_layer_ad65.atc
-    │   │   │   ├── persistent_world_engine_ad61.atc
-    │   │   │   ├── proc_universe_generator_ad63.atc
-    │   │   │   └── production_pipeline_ad67.atc
-    │   │   ├── contracts/
-    │   │   │   ├── README.md
-    │   │   │   ├── atc8300/
-    │   │   │   │   └── atc8300_token.atc
-    │   │   │   ├── atcoin/
-    │   │   │   │   └── atcoin.atc
-    │   │   │   ├── base/
-    │   │   │   │   └── base_contract.atc
-    │   │   │   ├── bridge/
-    │   │   │   │   └── bridge_contract.atc
-    │   │   │   ├── governance/
-    │   │   │   │   └── governance_contract.atc
-    │   │   │   ├── marketplace/
-    │   │   │   │   └── marketplace_contract.atc
-    │   │   │   ├── shivamon/
-    │   │   │   │   └── shivamon_contract.atc
-    │   │   │   └── wallet/
-    │   │   │       ├── ecdsa.atc
-    │   │   │       └── keygen.atc
-    │   │   ├── franchise/
-    │   │   │   ├── README.md
-    │   │   │   ├── ai_content_factory_ad28.atc
-    │   │   │   ├── ai_director_factory_ad41.atc
-    │   │   │   ├── analytics_factory_ad31.atc
-    │   │   │   ├── asset_intelligence_factory_ad34.atc
-    │   │   │   ├── blueprint_factory_ad32.atc
-    │   │   │   ├── canon_engine_ad33.atc
-    │   │   │   ├── character_factory_ad23.atc
-    │   │   │   ├── commerce_factory_ad40.atc
-    │   │   │   ├── community_factory_ad30.atc
-    │   │   │   ├── contracts/
-    │   │   │   │   ├── registry.atc
-    │   │   │   │   ├── revenue.atc
-    │   │   │   │   └── token.atc
-    │   │   │   ├── creator_factory_ad38.atc
-    │   │   │   ├── economy_factory_ad26.atc
-    │   │   │   ├── factory.atc
-    │   │   │   ├── gameplay_factory_ad35.atc
-    │   │   │   ├── gff_core_ad20.atc
-    │   │   │   ├── ip_factory_ad21.atc
-    │   │   │   ├── lifecycle_manager_ad43.atc
-    │   │   │   ├── liveops_factory_ad27.atc
-    │   │   │   ├── lore_factory_ad24.atc
-    │   │   │   ├── merchandise_factory_ad29.atc
-    │   │   │   ├── multiplayer_factory_ad37.atc
-    │   │   │   ├── narrative_factory_ad36.atc
-    │   │   │   ├── publishing_factory_ad39.atc
-    │   │   │   ├── quest_factory_ad25.atc
-    │   │   │   ├── routes.atc
-    │   │   │   ├── security_factory_ad42.atc
-    │   │   │   └── world_factory_ad22.atc
-    │   │   ├── gateway/
-    │   │   │   ├── README.md
-    │   │   │   ├── __init__.py
-    │   │   │   ├── main.atc
-    │   │   │   ├── middleware/
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   ├── auth.atc
-    │   │   │   │   ├── logger.atc
-    │   │   │   │   ├── rate_limit.atc
-    │   │   │   │   └── signature_verify.atc
-    │   │   │   └── router.atc
-    │   │   ├── kernel/
-    │   │   │   ├── README.md
-    │   │   │   ├── ai_bus_ad13.atc
-    │   │   │   ├── ai_kernel/
-    │   │   │   │   └── ai_kernel.atc
-    │   │   │   ├── asset_bus_ad08.atc
-    │   │   │   ├── audio_bus_ad11.atc
-    │   │   │   ├── command_bus_ad02.atc
-    │   │   │   ├── consensus/
-    │   │   │   │   ├── poh_integration.atc
-    │   │   │   │   └── shiva_consensus.atc
-    │   │   │   ├── fs/
-    │   │   │   │   └── atcfs.atc
-    │   │   │   ├── gcl_core_ad00.atc
-    │   │   │   ├── input_bus_ad12.atc
-    │   │   │   ├── ipc/
-    │   │   │   │   ├── __init__.py
-    │   │   │   │   └── ipc_bus.atc
-    │   │   │   ├── ipc_bus_atc.ad.atc
-    │   │   │   ├── message_bus_ad03.atc
-    │   │   │   ├── net/
-    │   │   │   │   └── atcnet.atc
-    │   │   │   ├── network_bus_ad05.atc
-    │   │   │   ├── physics_bus_ad10.atc
-    │   │   │   ├── pkg/
-    │   │   │   │   └── manager.atc
-    │   │   │   ├── plugin_bus_ad06.atc
-    │   │   │   ├── process/
-    │   │   │   │   └── process_mgr.atc
-    │   │   │   ├── query_bus_ad07.atc
-    │   │   │   ├── render_bus_ad09.atc
-    │   │   │   ├── shell/
-    │   │   │   │   └── shell.atc
-    │   │   │   └── telemetry_bus_ad14.atc
-    │   │   ├── meta/
-    │   │   │   ├── ai_studio_ad49.atc
-    │   │   │   ├── cross_franchise_ad46.atc
-    │   │   │   ├── data_lake_ad51.atc
-    │   │   │   ├── digital_twin_ad50.atc
-    │   │   │   ├── ip_evolution_ad45.atc
-    │   │   │   ├── knowledge_graph_ad47.atc
-    │   │   │   ├── simulation_factory_ad48.atc
-    │   │   │   └── universe_factory_ad44.atc
-    │   │   ├── shivamon/
-    │   │   │   ├── README.md
-    │   │   │   └── engine/
-    │   │   │       └── battle_engine.atc
-    │   │   ├── standards/
-    │   │   │   └── README.md
-    │   │   └── ui/
-    │   │       └── README.md
-    │   ├── monitoring/
-    │   │   ├── health_checks_atc08.atc
-    │   │   ├── monitor.atc
-    │   │   └── prometheus_metrics.atc
-    │   ├── patches/
-    │   │   ├── APPLY_FIXES.sh
-    │   │   ├── atc9900_governance.py
-    │   │   ├── docker-compose.yml
-    │   │   ├── gateway_main.py
-    │   │   ├── gateway_router.py
-    │   │   └── poh_fixed.py
-    │   ├── reports/
-    │   │   └── SPRINT_2.3_2.4_2.7_REPORT.md
-    │   ├── scripts/
-    │   │   └── generate_validators.atc
-    │   ├── shivaos/
-    │   │   ├── fs/
-    │   │   │   └── atcfs_module.atc
-    │   │   ├── kernel/
-    │   │   │   └── syscalls.atc
-    │   │   └── ui/
-    │   │       └── renderer.atc
-    │   ├── start.atc
-    │   ├── tests/
-    │   │   ├── test_atclang.py
-    │   │   ├── test_atclang_v03.py
-    │   │   ├── test_bootstrap.py
-    │   │   ├── test_did.py
-    │   │   ├── test_discovery.py
-    │   │   ├── test_ecdsa.py
-    │   │   ├── test_fork_resolution.py
-    │   │   ├── test_gateway.py
-    │   │   ├── test_gateway_full.py
-    │   │   ├── test_integration_atcfs_multisig.py
-    │   │   ├── test_kai_integration.py
-    │   │   ├── test_multinode_consensus.py
-    │   │   ├── test_multinode_fivenode.py
-    │   │   ├── test_node_failure_recovery.py
-    │   │   ├── test_optimizer.py
-    │   │   ├── test_orchestrator.py
-    │   │   ├── test_p2p_propagation.py
-    │   │   ├── test_persistence.py
-    │   │   ├── test_poh.py
-    │   │   ├── test_smart_contracts.py
-    │   │   ├── test_stdlib.py
-    │   │   ├── test_stdlib_dispatch.py
-    │   │   ├── test_type_checker.py
-    │   │   └── unit/
-    │   │       ├── test_atclang.py
-    │   │       ├── test_atcnet.py
-    │   │       └── test_p2p_propagation.py
-    │   └── tools/
-    │       ├── atc_issues_summary.atc
-    │       ├── bigquery_pipeline.atc
-    │       ├── ecdsa_impl.atc
-    │       └── hf_review_pipeline.atc
-    ├── kernel/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ATCFS.md
-    │       ├── ATCNET.md
-    │       ├── CHANGELOG.md
-    │       ├── CONSENSUS.md
-    │       ├── IPC.md
-    │       ├── KERNEL.md
-    │       ├── PERFORMANCE.md
-    │       ├── PROCESS_MODEL.md
-    │       ├── ROADMAP.md
-    │       ├── SECURITY.md
-    │       └── TODO.md
-    ├── linux-edition-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   └── STATUS.md
-    ├── main/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── API.md
-    │       ├── API_REFERENCE.md
-    │       ├── ARCHITECTURE.md
-    │       ├── BOTTLENECKS.md
-    │       ├── COMMITS.md
-    │       ├── CONTRIBUTING.md
-    │       ├── DECENTRALIZED_PROOF.md
-    │       ├── DEPENDENCIES.md
-    │       ├── ENTERPRISE.md
-    │       ├── ERRORS.md
-    │       ├── ERROR_SOLUTIONS.md
-    │       ├── FAQ.md
-    │       ├── IMPROVEMENTS.md
-    │       ├── ISSUES_TRACKER.md
-    │       ├── MATH_PROOF.md
-    │       ├── QUICKSTART.md
-    │       ├── ROADMAP.md
-    │       ├── SECURITY.md
-    │       ├── STATUS.md
-    │       ├── SYNTAX.md
-    │       ├── TODO.md
-    │       └── WHITEPAPER.md
-    ├── mobile-wiki/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── sdk-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── API.md
-    │       ├── ARCHITECTURE.md
-    │       └── ROADMAP.md
-    ├── shivacore-tools-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   └── STATUS.md
-    ├── shivacore-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   └── STATUS.md
-    ├── shivamon/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── BATTLE.md
-    │       ├── BREEDING.md
-    │       ├── ELEMENTS.md
-    │       ├── MARKETPLACE.md
-    │       ├── NFT_SPEC.md
-    │       ├── ROADMAP.md
-    │       └── TODO.md
-    ├── standards/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ATC_STANDARDS.md
-    │       ├── ATS_STANDARDS.md
-    │       ├── OVERVIEW.md
-    │       └── ROADMAP.md
-    ├── stdlib-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── MODULES.md
-    │       └── ROADMAP.md
-    ├── ui/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── API.md
-    │       ├── COMPONENTS.md
-    │       ├── DEPLOYMENT.md
-    │       ├── DESIGN.md
-    │       ├── ROADMAP.md
-    │       └── THEME.md
-    ├── vm-wiki/
-    │   ├── .gitignore
-    │   ├── ARCHITECTURE.md
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── MODULES.md
-    │   ├── README.md
-    │   ├── STATUS.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── OPCODES.md
-    │       └── ROADMAP.md
-    ├── wallet-wiki/
-    │   ├── .gitignore
-    │   ├── FILE_REGISTER.md
-    │   ├── LICENSE
-    │   ├── README.md
-    │   └── docs/
-    │       ├── ARCHITECTURE.md
-    │       ├── ROADMAP.md
-    │       └── SECURITY.md
-    └── windows-edition-wiki/
-        ├── .gitignore
-        ├── ARCHITECTURE.md
-        ├── LICENSE
-        ├── MODULES.md
-        ├── README.md
-        └── STATUS.md
+├── TODO/ (1 files)
+│   └── MASTER_TODO.md (2KB) [61L]
+├── aistudio/ (245 files)
+│   ├── assets/ (1 files)
+│   │   └── .aistudio/ (1 files)
+│   │       └── .gitignore (2B)
+│   ├── src/ (190 files)
+│   │   ├── backend/ (2 files)
+│   │   │   ├── blockchain/ (1 files)
+│   │   │   │   └── engine.ts (3KB) [129L]
+│   │   │   └── p2p/ (1 files)
+│   │   │       └── network.ts (2KB) [77L]
+│   │   ├── components/ (148 files)
+│   │   │   ├── ATCAssetView.tsx (11KB) [191L]
+│   │   │   ├── ATCDjStudioView.tsx (17KB) [445L]
+│   │   │   ├── ATCLangEditor.tsx (26KB) [625L]
+│   │   │   ├── ATCWalletView.tsx (26KB) [498L]
+│   │   │   ├── ATownDashboardView.tsx (14KB) [302L]
+│   │   │   ├── ATownOSNode.tsx (71KB) [1439L]
+│   │   │   ├── ATownTestView.tsx (6KB) [111L]
+│   │   │   ├── AgentCivilizationView.tsx (8KB) [152L]
+│   │   │   ├── Ai3DRenderEngineTab.tsx (8KB) [199L]
+│   │   │   ├── AiAnimationEngineTab.tsx (8KB) [198L]
+│   │   │   ├── AiAudioEngineTab.tsx (8KB) [198L]
+│   │   │   ├── AiCharacterBioTab.tsx (9KB) [199L]
+│   │   │   ├── AiGameEngineTab.tsx (9KB) [200L]
+│   │   │   ├── AiKernelView.tsx (6KB) [128L]
+│   │   │   ├── AiOsEngineView.tsx (19KB) [490L]
+│   │   │   ├── AiSoftwareWorkflowView.tsx (11KB) [229L]
+│   │   │   ├── AiTimelineEngineTab.tsx (9KB) [199L]
+│   │   │   ├── AntiCheatView.tsx (14KB) [261L]
+│   │   │   ├── ApiHealthWidget.tsx (3KB) [85L]
+│   │   │   ├── ApiInterfacesView.tsx (9KB) [189L]
+│   │   │   ├── ApiOrchestratorView.tsx (17KB) [354L]
+│   │   │   ├── AppGlobeView.tsx (9KB) [233L]
+│   │   │   ├── ArchitectureDependencyGraph.tsx (7KB) [248L]
+│   │   │   ├── ArchitectureView.tsx (38KB) [888L]
+│   │   │   ├── AssetVaultView.tsx (8KB) [187L]
+│   │   │   ├── AtcAssetsDbView.tsx (11KB) [250L]
+│   │   │   ├── AtcCoreKernelView.tsx (8KB) [144L]
+│   │   │   ├── AtcLangArchitectureView.tsx (33KB) [585L]
+│   │   │   ├── AtcLangPlaygroundView.tsx (12KB) [256L]
+│   │   │   ├── AtcLangPresetsView.tsx (3KB) [64L]
+│   │   │   ├── AtcWhitepaperView.tsx (10KB) [187L]
+│   │   │   ├── AtsSuite.tsx (4KB) [51L]
+│   │   │   ├── AtvmSandboxView.test.tsx (3KB) [85L]
+│   │   │   ├── AtvmSandboxView.tsx (26KB) [499L]
+│   │   │   ├── BatteryStatus.tsx (11KB) [269L]
+│   │   │   ├── BattleArenaView.tsx (8KB) [143L]
+│   │   │   ├── BenchmarkCenterView.tsx (15KB) [288L]
+│   │   │   ├── BlockchainEcosystemView.tsx (9KB) [224L]
+│   │   │   ├── BlockchainLedgerView.tsx (13KB) [247L]
+│   │   │   ├── CalculatorView.tsx (3KB) [74L]
+│   │   │   ├── CalendarView.tsx (3KB) [78L]
+│   │   │   ├── CiCdPipelineView.tsx (7KB) [159L]
+│   │   │   ├── ClockView.tsx (3KB) [72L]
+│   │   │   ├── CodeAnalyzerView.tsx (4KB) [90L]
+│   │   │   ├── CommitHeatmap.tsx (4KB) [110L]
+│   │   │   ├── ComplianceEngineView.tsx (4KB) [84L]
+│   │   │   ├── ComplianceView.tsx (8KB) [191L]
+│   │   │   ├── ConflictResolutionModal.tsx (11KB) [257L]
+│   │   │   ├── ConsensusIntegrationGuide.tsx (70KB) [1528L]
+│   │   │   ├── CryptoVisualizationView.tsx (18KB) [473L]
+│   │   │   ├── DataProcessingView.tsx (4KB) [78L]
+│   │   │   ├── DbOrchestratorView.tsx (6KB) [112L]
+│   │   │   ├── DeFiLiquidityPoolView.tsx (13KB) [255L]
+│   │   │   ├── DependencyMapView.tsx (3KB) [123L]
+│   │   │   ├── DeploymentPipelineWidget.tsx (6KB) [160L]
+│   │   │   ├── DevToolsView.tsx (5KB) [133L]
+│   │   │   ├── DeveloperKnowledgeBaseView.tsx (18KB) [359L]
+│   │   │   ├── DistributedDatalakeView.tsx (3KB) [73L]
+│   │   │   ├── EcosystemInstaller.tsx (11KB) [297L]
+│   │   │   ├── EcosystemTreeOverlay.tsx (12KB) [357L]
+│   │   │   ├── EcosystemUmlView.tsx (7KB) [143L]
+│   │   │   ├── EcosystemVisualizerView.tsx (12KB) [325L]
+│   │   │   ├── FileManagerView.tsx (6KB) [170L]
+│   │   │   ├── FolderView.tsx (4KB) [111L]
+│   │   │   ├── FranchiseFactoryView.tsx (83KB) [1733L]
+│   │   │   ├── GateToHellBrowser.tsx (5KB) [106L]
+│   │   │   ├── GenesisBlockGeneratorView.tsx (6KB) [150L]
+│   │   │   ├── GitGraphVisualization.tsx (4KB) [137L]
+│   │   │   ├── GitHubRepoSyncView.tsx (63KB) [1385L]
+│   │   │   ├── GitHubStatusDashboard.tsx (34KB) [643L]
+│   │   │   ├── GitOpsView.tsx (7KB) [126L]
+│   │   │   ├── GovernanceView.tsx (23KB) [601L]
+│   │   │   ├── GpuPerformanceWidget.tsx (4KB) [120L]
+│   │   │   ├── HardwareDriversView.tsx (20KB) [376L]
+│   │   │   ├── IdeaToAppFlowchartView.tsx (7KB) [153L]
+│   │   │   ├── ImageGeneratorTab.tsx (5KB) [117L]
+│   │   │   ├── IntegrationsWindow.tsx (21KB) [426L]
+│   │   │   ├── InterfacesView.tsx (2KB) [56L]
+│   │   │   ├── JsExampleRunner.tsx (2KB) [86L]
+│   │   │   ├── LazyMetricsCharts.tsx (31KB) [808L]
+│   │   │   ├── LegalView.tsx (6KB) [87L]
+│   │   │   ├── LoginOverlay.tsx (38KB) [690L]
+│   │   │   ├── MainnetLaunchView.tsx (12KB) [251L]
+│   │   │   ├── MarketplaceView.tsx (22KB) [450L]
+│   │   │   ├── MediaApps.tsx (18KB) [254L]
+│   │   │   ├── MetricsDashboard.tsx (4KB) [105L]
+│   │   │   ├── MetricsView.tsx (56KB) [1476L]
+│   │   │   ├── ModulesPluginView.tsx (18KB) [309L]
+│   │   │   ├── NetworkExplorerView.test.tsx (4KB) [121L]
+│   │   │   ├── NetworkExplorerView.tsx (17KB) [370L]
+│   │   │   ├── NetworkTopologyView.tsx (2KB) [38L]
+│   │   │   ├── NodeHealthMonitor.tsx (4KB) [113L]
+│   │   │   ├── NotepadView.tsx (2KB) [67L]
+│   │   │   ├── OfficeApps.tsx (352B) [14L]
+│   │   │   ├── OfficeSuiteView.tsx (12KB) [271L]
+│   │   │   ├── P2PChatView.tsx (12KB) [277L]
+│   │   │   ├── Paint3DView.tsx (5KB) [140L]
+│   │   │   ├── PaymentSystemView.tsx (4KB) [93L]
+│   │   │   ├── PipelineGeneratorTab.tsx (19KB) [433L]
+│   │   │   ├── PoAITrainingEngineView.tsx (8KB) [173L]
+│   │   │   ├── ProjectAuditDashboard.tsx (7KB) [135L]
+│   │   │   ├── ProjectHubView.tsx (30KB) [501L]
+│   │   │   ├── ProtocolsView.tsx (8KB) [207L]
+│   │   │   ├── ReportsView.tsx (10KB) [202L]
+│   │   │   ├── RepositoryActivityChart.tsx (5KB) [145L]
+│   │   │   ├── RepositoryLineChart.tsx (6KB) [198L]
+│   │   │   ├── RescueSystemView.tsx (16KB) [307L]
+│   │   │   ├── RoadmapView.tsx (6KB) [196L]
+│   │   │   ├── SemanticGraphView.tsx (4KB) [86L]
+│   │   │   ├── SessionExportView.tsx (8KB) [221L]
+│   │   │   ├── SettingsView.tsx (105KB) [2312L]
+│   │   │   ├── SocialMediaView.tsx (16KB) [287L]
+│   │   │   ├── SoftwareAuditView.tsx (38KB) [885L]
+│   │   │   ├── SoftwareKnowledgeDbView.tsx (18KB) [380L]
+│   │   │   ├── SourceCodeViewer.tsx (20KB) [547L]
+│   │   │   ├── SpecificSettingsViews.tsx (17KB) [306L]
+│   │   │   ├── StorageManagerView.tsx (9KB) [258L]
+│   │   │   ├── StrategicArchitectureMap.tsx (9KB) [243L]
+│   │   │   ├── StructureView.tsx (22KB) [505L]
+│   │   │   ├── SyncDashboardModal.tsx (4KB) [88L]
+│   │   │   ├── SyncHistoryModal.tsx (11KB) [249L]
+│   │   │   ├── SyncMetricsView.tsx (7KB) [170L]
+│   │   │   ├── SyncStatusDonutChart.tsx (2KB) [99L]
+│   │   │   ├── SyncStatusOverview.tsx (7KB) [168L]
+│   │   │   ├── SystemDiagnosticsView.tsx (18KB) [337L]
+│   │   │   ├── SystemFinderView.tsx (2KB) [56L]
+│   │   │   ├── SystemHealthDashboard.tsx (9KB) [246L]
+│   │   │   ├── SystemHealthDashboardWidget.tsx (2KB) [63L]
+│   │   │   ├── SystemLogsView.tsx (3KB) [89L]
+│   │   │   ├── TaskManagerView.tsx (3KB) [82L]
+│   │   │   ├── TechDocsView.tsx (17KB) [335L]
+│   │   │   ├── TechTreeView.tsx (18KB) [420L]
+│   │   │   ├── TerminalView.tsx (6KB) [189L]
+│   │   │   ├── TestnetOrchestrationView.tsx (8KB) [178L]
+│   │   │   ├── TestnetSimulationView.tsx (14KB) [298L]
+│   │   │   ├── TextGeneratorTab.tsx (6KB) [177L]
+│   │   │   ├── ThemeSwitcher.tsx (4KB) [143L]
+│   │   │   ├── TodoView.tsx (18KB) [383L]
+│   │   │   ├── TooltipIcon.tsx (1KB) [29L]
+│   │   │   ├── TxOrchestratorView.tsx (5KB) [105L]
+│   │   │   ├── UserProfileView.tsx (12KB) [255L]
+│   │   │   ├── VideoGeneratorTab.tsx (7KB) [176L]
+│   │   │   ├── WebhookMonitor.tsx (5KB) [145L]
+│   │   │   ├── Window.tsx (6KB) [158L]
+│   │   │   ├── WindowExtras.tsx (4KB) [87L]
+│   │   │   ├── ZeroKnowledgeProofView.tsx (6KB) [129L]
+│   │   │   ├── ZkCircuitEditorView.tsx (4KB) [108L]
+│   │   │   └── ZkVisualizationView.tsx (3KB) [99L]
+│   │   ├── contexts/ (4 files)
+│   │   │   ├── FirebaseContext.tsx (2KB) [94L]
+│   │   │   ├── GoogleWorkspaceContext.tsx (2KB) [83L]
+│   │   │   ├── SyncMetricsContext.tsx (1KB) [47L]
+│   │   │   └── WalletContext.tsx (1KB) [45L]
+│   │   ├── db/ (3 files)
+│   │   │   ├── drizzle.config.ts (817B) [29L]
+│   │   │   ├── index.ts (652B) [24L]
+│   │   │   └── schema.ts (486B) [11L]
+│   │   ├── hooks/ (2 files)
+│   │   │   ├── useGoogleSheetsSync.ts (8KB) [220L]
+│   │   │   └── useKeyboardShortcut.ts (899B) [30L]
+│   │   ├── lib/ (6 files)
+│   │   │   ├── CryptoEngine.ts (1KB) [42L]
+│   │   │   ├── firebase-admin.ts (544B) [15L]
+│   │   │   ├── firebase.ts (2KB) [64L]
+│   │   │   ├── indexedDb.ts (2KB) [88L]
+│   │   │   ├── syncLogic.test.ts (2KB) [82L]
+│   │   │   └── syncLogic.ts (1KB) [68L]
+│   │   ├── middleware/ (1 files)
+│   │   │   └── auth.ts (953B) [30L]
+│   │   ├── routes/ (1 files)
+│   │   │   └── notion.ts (4KB) [146L]
+│   │   ├── services/ (2 files)
+│   │   │   ├── SyncService.ts (3KB) [106L]
+│   │   │   └── githubSync.ts (1KB) [37L]
+│   │   ├── utils/ (4 files)
+│   │   │   ├── appSync.tsx (2KB) [84L]
+│   │   │   ├── auditUtils.test.ts (1KB) [56L]
+│   │   │   ├── auditUtils.ts (749B) [27L]
+│   │   │   └── crypto.ts (4KB) [73L]
+│   │   ├── App.tsx (233KB) [5440L]
+│   │   ├── DesktopApp.tsx (121KB) [2740L]
+│   │   ├── atcLangRoadmapData.ts (6KB) [201L]
+│   │   ├── atcLangWikiData.ts (16KB) [227L]
+│   │   ├── auditData.ts (4KB) [76L]
+│   │   ├── data.ts (17KB) [411L]
+│   │   ├── ecosystemData.ts (11KB) [291L]
+│   │   ├── fix_translation.cjs (463B)
+│   │   ├── index.css (5KB)
+│   │   ├── main.tsx (774B) [24L]
+│   │   ├── marketplaceApps.ts (6KB) [273L]
+│   │   ├── requirementsData.ts (1KB) [58L]
+│   │   ├── roadmapData.ts (7KB) [312L]
+│   │   ├── standardsData.ts (4KB) [83L]
+│   │   ├── tierData.ts (16KB) [317L]
+│   │   ├── types.ts (375B) [10L]
+│   │   └── wikiData.ts (47KB) [943L]
+│   ├── tests/ (2 files)
+│   │   ├── GitHubRepoSyncView.test.tsx (1KB) [49L]
+│   │   └── audit_compliance.test.ts (2KB) [78L]
+│   ├── workspace/ (8 files)
+│   │   ├── src/ (2 files)
+│   │   │   ├── backend/ (1 files)
+│   │   │   │   └── blockchain/ (1 files)
+│   │   │   │       └── engine.ts (5KB) [167L]
+│   │   │   └── components/ (1 files)
+│   │   │       └── GovernanceView.tsx (14KB) [268L]
+│   │   ├── move.js (411B) [13L]
+│   │   ├── rename.js (1KB) [42L]
+│   │   ├── replace.js (1KB) [40L]
+│   │   ├── replaceEnterprise.js (3KB) [102L]
+│   │   ├── replaceGoals.ts (688B) [14L]
+│   │   └── replaceGoals2.ts (825B) [18L]
+│   ├── .env.example (578B)
+│   ├── .gitignore (73B)
+│   ├── AGENTS.md (535B) [13L]
+│   ├── GEMINI.md (373B) [6L]
+│   ├── LICENSE (1KB)
+│   ├── README.md (542B) [20L]
+│   ├── ROADMAP.md (8KB) [598L]
+│   ├── SOFTWARE_ROADMAP.md (38KB) [1116L]
+│   ├── check_dups2.js (498B) [12L]
+│   ├── check_dups_all.js (885B) [23L]
+│   ├── check_dups_desktop.js (480B) [15L]
+│   ├── check_dups_windows_map.js (519B) [14L]
+│   ├── fetch.js (1KB) [36L]
+│   ├── firebase-applet-config.json (363B) [9L]
+│   ├── fix.js (859B) [26L]
+│   ├── fix2.js (894B) [27L]
+│   ├── fix_react_imports.cjs (547B)
+│   ├── fix_wiki.cjs (184B)
+│   ├── fix_wiki.js (284B) [5L]
+│   ├── index.html (413B)
+│   ├── mark_completed.ts (722B) [15L]
+│   ├── mark_completed_src.ts (1KB) [33L]
+│   ├── metadata.json (214B) [6L]
+│   ├── move_back.js (347B) [11L]
+│   ├── output.txt (3KB)
+│   ├── package-lock.json (419KB) [11838L]
+│   ├── package.json (2KB) [72L]
+│   ├── replace.js (1KB) [36L]
+│   ├── replace_langs.cjs (852B)
+│   ├── replace_langs_2.cjs (667B)
+│   ├── replace_langs_3.cjs (411B)
+│   ├── replace_langs_4.cjs (817B)
+│   ├── replace_langs_5.cjs (528B)
+│   ├── replace_langs_6.cjs (522B)
+│   ├── script.cjs (883B)
+│   ├── script.js (983B) [12L]
+│   ├── script2.cjs (683B)
+│   ├── server.ts (33KB) [866L]
+│   ├── testChat.js (450B) [10L]
+│   ├── test_know.js (244B) [2L]
+│   ├── tmp.txt (470B)
+│   ├── tsconfig.json (508B) [26L]
+│   ├── update_wiki_categories.ts (742B) [23L]
+│   └── vite.config.ts (1KB) [42L]
+├── archive/ (1 files)
+│   └── ATCLANG_ARCHIVE.md (4KB) [97L]
+├── atclang/ (32 files)
+│   ├── compiler/ (4 files)
+│   │   ├── __init__.py (468B) [8L]
+│   │   ├── compiler.py (21KB) [561L]
+│   │   ├── optimizer.py (22KB) [558L]
+│   │   └── type_checker.py (20KB) [507L]
+│   ├── lexer/ (2 files)
+│   │   ├── __init__.py (161B) [2L]
+│   │   └── lexer.py (20KB) [572L]
+│   ├── parser/ (3 files)
+│   │   ├── __init__.py (189B) [3L]
+│   │   ├── ast_nodes.py (7KB) [331L]
+│   │   └── parser.py (37KB) [890L]
+│   ├── programs/ (1 files)
+│   │   └── atcos_main.atc (40KB) [1161L]
+│   ├── repl/ (2 files)
+│   │   ├── __init__.py (99B) [1L]
+│   │   └── repl.py (6KB) [184L]
+│   ├── stdlib/ (14 files)
+│   │   ├── __init__.py (1KB) [32L]
+│   │   ├── atc_stdlib.py (2KB) [69L]
+│   │   ├── chain.py (1KB) [41L]
+│   │   ├── collections.py (5KB) [219L]
+│   │   ├── collections_ext.py (3KB) [143L]
+│   │   ├── crypto.py (5KB) [155L]
+│   │   ├── crypto_ext.py (5KB) [149L]
+│   │   ├── encoding.py (7KB) [210L]
+│   │   ├── io.py (3KB) [107L]
+│   │   ├── io_ext.py (3KB) [123L]
+│   │   ├── math.py (3KB) [138L]
+│   │   ├── primitives.py (7KB) [244L]
+│   │   ├── string.py (2KB) [99L]
+│   │   └── wallet.py (2KB) [78L]
+│   ├── v03/ (2 files)
+│   │   ├── __init__.py (124B) [2L]
+│   │   └── atclang_v03_features.py (10KB) [301L]
+│   ├── vm/ (2 files)
+│   │   ├── __init__.py (177B) [2L]
+│   │   └── atcvm.py (47KB) [978L]
+│   ├── ATCLANG_SPEC.md (9KB) [295L]
+│   └── __init__.py (462B) [11L]
+├── atcpkg/ (1 files)
+│   └── manager.atc (4KB) [145L]
+├── backend/ (14 files)
+│   ├── api/ (8 files)
+│   │   ├── orchestrator/ (2 files)
+│   │   │   ├── __init__.py (118B) [2L]
+│   │   │   └── orchestrator.atc (8KB) [259L]
+│   │   ├── routes/ (3 files)
+│   │   │   ├── __init__.py (115B) [2L]
+│   │   │   ├── ai_routes.atc (5KB) [175L]
+│   │   │   └── api_routes.atc (8KB) [232L]
+│   │   ├── __init__.py (111B) [2L]
+│   │   ├── kai_routes.atc (7KB) [229L]
+│   │   └── server.atc (2KB) [68L]
+│   ├── db/ (3 files)
+│   │   ├── __init__.py (160B) [2L]
+│   │   ├── connection.atc (4KB) [125L]
+│   │   └── repository.atc (6KB) [228L]
+│   ├── wallet/ (2 files)
+│   │   ├── __init__.py (123B) [2L]
+│   │   └── wallet.atc (4KB) [139L]
+│   └── __init__.py (121B) [2L]
+├── blockchain/ (49 files)
+│   ├── atcoin/ (1 files)
+│   │   └── __init__.py (119B) [2L]
+│   ├── consensus/ (13 files)
+│   │   ├── __init__.py (123B) [2L]
+│   │   ├── fork_atc85.atc (2KB) [74L]
+│   │   ├── fork_resolution.atc (4KB) [145L]
+│   │   ├── gas_fee.atc (4KB) [130L]
+│   │   ├── gas_fee_atc86.atc (2KB) [71L]
+│   │   ├── hybrid_atc84.atc (3KB) [98L]
+│   │   ├── hybrid_consensus.atc (11KB) [357L]
+│   │   ├── poh.atc (4KB) [140L]
+│   │   ├── poh_atc83.atc (1KB) [79L]
+│   │   ├── pos.atc (4KB) [164L]
+│   │   ├── pos_atc82.atc (2KB) [92L]
+│   │   ├── pow.atc (3KB) [107L]
+│   │   └── pow_atc81.atc (2KB) [89L]
+│   ├── contracts/ (6 files)
+│   │   ├── atc001/ (1 files)
+│   │   │   └── genesis_token.atc (2KB) [102L]
+│   │   ├── atc8300/ (1 files)
+│   │   │   └── __init__.py (129B) [2L]
+│   │   ├── governance/ (1 files)
+│   │   │   └── governance_contract.atc (7KB) [202L]
+│   │   ├── shivamon/ (2 files)
+│   │   │   ├── __init__.py (136B) [2L]
+│   │   │   └── breeding.atc (5KB) [139L]
+│   │   └── contract_engine_atc14.atc (9KB) [309L]
+│   ├── dex/ (2 files)
+│   │   ├── __init__.py (117B) [2L]
+│   │   └── amm.atc (10KB) [277L]
+│   ├── governance/ (5 files)
+│   │   ├── __init__.py (120B) [2L]
+│   │   ├── dao.atc (6KB) [168L]
+│   │   ├── dao_live.atc (8KB) [235L]
+│   │   ├── timelock.atc (4KB) [150L]
+│   │   └── treasury.atc (6KB) [220L]
+│   ├── mainnet/ (3 files)
+│   │   ├── __init__.py (117B) [2L]
+│   │   ├── launch_manager.atc (3KB) [105L]
+│   │   └── mainnet_config.atc (5KB) [151L]
+│   ├── network/ (3 files)
+│   │   ├── core_node_atc01.atc (4KB) [164L]
+│   │   ├── latency_opt_atc06.atc (3KB) [135L]
+│   │   └── sharding_atc07.atc (5KB) [215L]
+│   ├── nodes/ (6 files)
+│   │   ├── __init__.py (126B) [2L]
+│   │   ├── block_propagation.atc (3KB) [87L]
+│   │   ├── bootstrap.atc (6KB) [234L]
+│   │   ├── initial_sync.atc (6KB) [207L]
+│   │   ├── node.atc (6KB) [192L]
+│   │   └── testnet_launcher.atc (4KB) [132L]
+│   ├── propagation/ (1 files)
+│   │   └── block_gossip.atc (3KB) [98L]
+│   ├── wallet/ (4 files)
+│   │   ├── __init__.py (128B) [2L]
+│   │   ├── did.atc (4KB) [122L]
+│   │   ├── multisig.atc (8KB) [268L]
+│   │   └── wordlist.atc (5KB) [112L]
+│   ├── zkp/ (2 files)
+│   │   ├── __init__.py (336B) [4L]
+│   │   └── groth16.atc (3KB) [89L]
+│   ├── contract_registry.atc (3KB) [98L]
+│   ├── smart_contract_registry.atc (2KB) [88L]
+│   └── smart_contracts.atc (15KB) [486L]
+├── config/ (1 files)
+│   └── mainnet_genesis.json (3KB) [95L]
+├── core/ (3 files)
+│   ├── ai/ (1 files)
+│   │   └── federated_learning.atc (6KB) [178L]
+│   ├── crypto/ (1 files)
+│   │   └── __init__.py (535B) [19L]
+│   └── kai_cli.atc (8KB) [195L]
+├── devnet/ (1 files)
+│   └── README.md (12KB) [554L]
+├── docs/ (460 files)
+│   ├── ai/ (3 files)
+│   │   ├── AI_SAFETY.md (5KB) [184L]
+│   │   ├── GEMINI_INTEGRATION.md (5KB) [214L]
+│   │   └── LLM_ROUTER.md (4KB) [149L]
+│   ├── aistudio/ (1 files)
+│   │   └── AISTUDIO_COMPONENTS.md (24KB) [439L]
+│   ├── architecture/ (12 files)
+│   │   ├── AI_LAYER.md (2KB) [53L]
+│   │   ├── ATCFS.md (4KB) [129L]
+│   │   ├── ATCLANG_COMPILER.md (2KB) [64L]
+│   │   ├── ATCNET_P2P.md (6KB) [211L]
+│   │   ├── CONSENSUS.md (3KB) [121L]
+│   │   ├── GATEWAY.md (2KB) [112L]
+│   │   ├── GOVERNANCE.md (1KB) [50L]
+│   │   ├── KERNEL_SHELL.md (1KB) [50L]
+│   │   ├── MONITORING_DEVOPS.md (1KB) [42L]
+│   │   ├── SHIVAOS_KERNEL.md (5KB) [182L]
+│   │   ├── TESTNET.md (20KB) [713L]
+│   │   └── WALLET_KEYGEN.md (2KB) [99L]
+│   ├── atclang/ (1 files)
+│   │   └── ATCLANG_SPEC_FULL.md (423B) [9L]
+│   ├── blockchain/ (2 files)
+│   │   ├── ETHEREUM_INTEGRATION.md (212B) [8L]
+│   │   └── SOLANA_INTEGRATION.md (210B) [8L]
+│   ├── compliance/ (5 files)
+│   │   ├── ATVM_LICENSE_GATE_SPEC.md (7KB) [242L]
+│   │   ├── BAFIN_KONFORMITAETSBERICHT.md (15KB) [408L]
+│   │   ├── COMPLIANCE_HANDBUCH.md (5KB) [131L]
+│   │   ├── IP_LICENSE_DASHBOARD_SPEC.md (6KB) [205L]
+│   │   └── SMART_CONTRACT_RICHTLINIE.md (21KB) [589L]
+│   ├── contracts/ (2 files)
+│   │   ├── ATC_TOKEN_STANDARD.md (534B) [12L]
+│   │   └── SHIVAMON_NFT_CONTRACT.md (20KB) [778L]
+│   ├── file_registers/ (23 files)
+│   │   ├── README.md (1KB) [42L]
+│   │   ├── a-townchain-os_FILE_REGISTER.md (75KB) [1491L]
+│   │   ├── atc-aistudio_FILE_REGISTER.md (12KB) [277L]
+│   │   ├── atc-atclang_FILE_REGISTER.md (1KB) [68L]
+│   │   ├── atc-atcpkg_FILE_REGISTER.md (1KB) [39L]
+│   │   ├── atc-backend_FILE_REGISTER.md (1KB) [53L]
+│   │   ├── atc-blockchain_FILE_REGISTER.md (3KB) [104L]
+│   │   ├── atc-contracts_FILE_REGISTER.md (1KB) [51L]
+│   │   ├── atc-franchise_FILE_REGISTER.md (1KB) [43L]
+│   │   ├── atc-frontend_FILE_REGISTER.md (947B) [38L]
+│   │   ├── atc-gateway_FILE_REGISTER.md (2KB) [71L]
+│   │   ├── atc-genesis-engine_FILE_REGISTER.md (1KB) [46L]
+│   │   ├── atc-kernel_FILE_REGISTER.md (1KB) [50L]
+│   │   ├── atc-linux-edition_FILE_REGISTER.md (838B) [35L]
+│   │   ├── atc-mobile_FILE_REGISTER.md (897B) [37L]
+│   │   ├── atc-shivacore-tools_FILE_REGISTER.md (787B) [33L]
+│   │   ├── atc-shivacore_FILE_REGISTER.md (309KB) [2183L]
+│   │   ├── atc-shivamon_FILE_REGISTER.md (1KB) [43L]
+│   │   ├── atc-standards_FILE_REGISTER.md (1KB) [41L]
+│   │   ├── atc-ui_FILE_REGISTER.md (923B) [38L]
+│   │   ├── atc-windows-edition_FILE_REGISTER.md (844B) [35L]
+│   │   ├── atclang_FILE_REGISTER.md (1KB) [60L]
+│   │   └── atcnet_FILE_REGISTER.md (1KB) [45L]
+│   ├── issues/ (85 files)
+│   │   ├── ISSUE_01_SMART_CONTRACTS.md (4KB) [143L]
+│   │   ├── ISSUE_02_GEMINI_AI.md (3KB) [141L]
+│   │   ├── ISSUE_03_BATTLE_UI.md (4KB) [141L]
+│   │   ├── ISSUE_04_PERSISTENZ.md (4KB) [156L]
+│   │   ├── ISSUE_05_EXPLORER.md (3KB) [102L]
+│   │   ├── ISSUE_06_ECDSA.md (4KB) [143L]
+│   │   ├── ISSUE_07_BUILD.md (3KB) [133L]
+│   │   ├── ISSUE_08_TESTNET.md (3KB) [127L]
+│   │   ├── ISSUE_09_GOVERNANCE.md (2KB) [99L]
+│   │   ├── ISSUE_10_BRIDGE.md (1KB) [53L]
+│   │   ├── ISSUE_11_BREEDING.md (3KB) [88L]
+│   │   ├── ISSUE_12_SOLIDITY.md (4KB) [147L]
+│   │   ├── ISSUE_13_MARKETPLACE.md (3KB) [122L]
+│   │   ├── ISSUE_14_BOOTSTRAP_NODE.md (7KB) [310L]
+│   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md (1KB) [46L]
+│   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md (1KB) [45L]
+│   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md (1KB) [45L]
+│   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md (1KB) [46L]
+│   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md (1KB) [45L]
+│   │   ├── ISSUE_20_GATEWAY_TESTS.md (1KB) [63L]
+│   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md (1KB) [48L]
+│   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md (1KB) [47L]
+│   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md (1KB) [48L]
+│   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md (1KB) [50L]
+│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md (1KB) [47L]
+│   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md (1KB) [47L]
+│   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+│   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md (1KB) [45L]
+│   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md (1KB) [45L]
+│   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md (1KB) [45L]
+│   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md (1KB) [51L]
+│   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md (1KB) [49L]
+│   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md (1KB) [52L]
+│   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md (1KB) [56L]
+│   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md (1KB) [51L]
+│   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md (1KB) [50L]
+│   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md (1KB) [52L]
+│   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md (1KB) [52L]
+│   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md (1KB) [54L]
+│   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md (992B) [44L]
+│   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md (798B) [38L]
+│   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md (738B) [38L]
+│   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md (770B) [38L]
+│   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md (814B) [38L]
+│   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md (823B) [38L]
+│   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md (900B) [36L]
+│   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md (881B) [36L]
+│   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md (880B) [36L]
+│   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md (1009B) [36L]
+│   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md (1011B) [39L]
+│   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md (1004B) [37L]
+│   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md (987B) [37L]
+│   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md (987B) [40L]
+│   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md (998B) [38L]
+│   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md (996B) [39L]
+│   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md (1005B) [36L]
+│   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md (997B) [37L]
+│   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md (1015B) [37L]
+│   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md (1007B) [37L]
+│   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md (1002B) [38L]
+│   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md (1002B) [37L]
+│   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md (1017B) [40L]
+│   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md (997B) [38L]
+│   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md (1000B) [38L]
+│   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md (1KB) [35L]
+│   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md (1KB) [40L]
+│   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md (1KB) [40L]
+│   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md (1KB) [38L]
+│   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md (1KB) [40L]
+│   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md (1KB) [40L]
+│   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md (1KB) [39L]
+│   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md (1018B) [40L]
+│   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md (1KB) [40L]
+│   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md (1KB) [40L]
+│   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md (1KB) [39L]
+│   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md (1KB) [43L]
+│   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md (1KB) [40L]
+│   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md (1KB) [40L]
+│   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md (1KB) [40L]
+│   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md (1KB) [40L]
+│   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md (1KB) [40L]
+│   │   ├── OPEN_ISSUES_MASTER.md (1KB) [44L]
+│   │   ├── README.md (3KB) [62L]
+│   │   └── TESTNET_INDEX.md (1KB) [25L]
+│   ├── roadmap/ (1 files)
+│   │   └── ROADMAP_EXTENDED.md (10KB) [262L]
+│   ├── sprints/ (3 files)
+│   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md (3KB) [76L]
+│   │   ├── SPRINT_3.3_SECURITY_AUDIT.md (3KB) [83L]
+│   │   └── SPRINT_4.0_MAINNET_LAUNCH.md (3KB) [82L]
+│   ├── standards/ (106 files)
+│   │   ├── ATC/ (1 files)
+│   │   │   └── ATC-0009-BRIDGE.md (1KB) [55L]
+│   │   ├── ATC-01-CORE_NODE_PROTOCOL.md (8KB) [225L]
+│   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md (9KB) [246L]
+│   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md (10KB) [257L]
+│   │   ├── ATC-04-DAG_CONSENSUS.md (7KB) [200L]
+│   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md (8KB) [217L]
+│   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md (22KB) [760L]
+│   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md (9KB) [231L]
+│   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md (8KB) [205L]
+│   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md (8KB) [209L]
+│   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md (9KB) [234L]
+│   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md (8KB) [210L]
+│   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md (8KB) [204L]
+│   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md (7KB) [201L]
+│   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md (8KB) [217L]
+│   │   ├── ATC-15-PROOF_OF_AI_MINING.md (9KB) [229L]
+│   │   ├── ATC-16-REFERRAL_REWARDS.md (8KB) [206L]
+│   │   ├── ATC-17-DAO_GOVERNANCE.md (8KB) [224L]
+│   │   ├── ATC-18-MULTISIG_AUTH.md (8KB) [224L]
+│   │   ├── ATC-19-AMM_LOGIC.md (8KB) [212L]
+│   │   ├── ATC-20-WRAPPED_SYNTHETIC.md (8KB) [226L]
+│   │   ├── ATC-21-HOLOGRAPHIC_WASM.md (9KB) [248L]
+│   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md (8KB) [225L]
+│   │   ├── ATC-23-DATA_SHARDING_STORAGE.md (8KB) [222L]
+│   │   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   │   ├── ATC-25-TENSOR_COMPUTE.md (8KB) [218L]
+│   │   ├── ATC-26-XAI_TRANSPARENCY.md (8KB) [224L]
+│   │   ├── ATC-27-AI_MODEL_AUDITING.md (8KB) [226L]
+│   │   ├── ATC-28-FEDERATED_LEARNING.md (9KB) [254L]
+│   │   ├── ATC-29-AI_MARKETPLACE.md (9KB) [246L]
+│   │   ├── ATC-30-REPUTATION_TRUST.md (10KB) [271L]
+│   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md (10KB) [266L]
+│   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md (10KB) [267L]
+│   │   ├── ATC-33-AI_FEEDBACK_RLHF.md (11KB) [270L]
+│   │   ├── ATC-34-CROSS_LAYER_INTEROP.md (11KB) [277L]
+│   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md (10KB) [263L]
+│   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md (9KB) [262L]
+│   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md (10KB) [255L]
+│   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md (6KB) [142L]
+│   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md (6KB) [137L]
+│   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md (7KB) [155L]
+│   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md (7KB) [155L]
+│   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md (7KB) [173L]
+│   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md (7KB) [149L]
+│   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md (3KB) [115L]
+│   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md (4KB) [115L]
+│   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md (3KB) [116L]
+│   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md (3KB) [115L]
+│   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md (4KB) [119L]
+│   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md (3KB) [115L]
+│   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md (4KB) [117L]
+│   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md (4KB) [119L]
+│   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md (4KB) [118L]
+│   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md (4KB) [118L]
+│   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md (4KB) [119L]
+│   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md (4KB) [118L]
+│   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md (4KB) [119L]
+│   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md (4KB) [127L]
+│   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md (4KB) [126L]
+│   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md (4KB) [126L]
+│   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md (4KB) [126L]
+│   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md (4KB) [127L]
+│   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md (4KB) [127L]
+│   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md (4KB) [128L]
+│   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md (4KB) [128L]
+│   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md (4KB) [119L]
+│   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md (4KB) [119L]
+│   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md (3KB) [118L]
+│   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md (4KB) [118L]
+│   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md (4KB) [119L]
+│   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md (4KB) [118L]
+│   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md (4KB) [117L]
+│   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md (4KB) [119L]
+│   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md (4KB) [119L]
+│   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md (3KB) [118L]
+│   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md (4KB) [119L]
+│   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md (4KB) [120L]
+│   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md (4KB) [120L]
+│   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md (4KB) [119L]
+│   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md (4KB) [119L]
+│   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md (4KB) [120L]
+│   │   ├── ATC-81-PROOF_OF_HISTORY.md (2KB) [105L]
+│   │   ├── ATC-82-PROOF_OF_WORK.md (2KB) [104L]
+│   │   ├── ATC-83-PROOF_OF_STAKE.md (2KB) [106L]
+│   │   ├── ATC-84-FORK_RESOLUTION.md (2KB) [103L]
+│   │   ├── ATC-85-INITIAL_SYNC.md (2KB) [105L]
+│   │   ├── ATC-86-ECDSA_SIGNATURE.md (2KB) [105L]
+│   │   ├── ATC-87-GAS_FEE.md (2KB) [105L]
+│   │   ├── ATC-88-AMM.md (2KB) [105L]
+│   │   ├── ATC-89-FUNGIBLE_TOKEN.md (2KB) [106L]
+│   │   ├── ATC-90-NFT_SHIVAMON.md (2KB) [106L]
+│   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md (2KB) [105L]
+│   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md (7KB) [221L]
+│   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md (10KB) [338L]
+│   │   ├── ATC-94-ATCLANG_STDLIB.md (6KB) [187L]
+│   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md (6KB) [221L]
+│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md (2KB) [83L]
+│   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md (8KB) [243L]
+│   │   ├── ATC-98-TESTING_STANDARD.md (1KB) [69L]
+│   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md (7KB) [189L]
+│   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md (11KB) [297L]
+│   │   ├── ATC_ECOSYSTEM_STANDARDS.md (54KB) [1169L]
+│   │   ├── ATS-LIC-SYSTEM_HARDWARE_LICENSE.md (4KB) [117L]
+│   │   ├── OVERVIEW.md (1KB) [40L]
+│   │   └── STANDARDS_REGISTRY.md (13KB) [208L]
+│   ├── whitepaper/ (4 files)
+│   │   ├── .github/ (1 files)
+│   │   │   └── FUNDING.yml (76B) [2L]
+│   │   ├── CHANGELOG.md (706B) [24L]
+│   │   ├── README.md (2KB) [48L]
+│   │   └── WHITEPAPER.md (80KB) [2470L]
+│   ├── wiki/ (183 files)
+│   │   ├── atclang/ (13 files)
+│   │   │   ├── docs/ (12 files)
+│   │   │   │   ├── CHANGELOG.md (338B) [8L]
+│   │   │   │   ├── COMPILER.md (3KB) [105L]
+│   │   │   │   ├── CONTRIBUTING.md (472B) [11L]
+│   │   │   │   ├── EXAMPLES.md (3KB) [95L]
+│   │   │   │   ├── LEXER.md (1KB) [59L]
+│   │   │   │   ├── PARSER.md (3KB) [135L]
+│   │   │   │   ├── REPL.md (2KB) [79L]
+│   │   │   │   ├── SECURITY.md (1KB) [34L]
+│   │   │   │   ├── SECURITY_ANALYZER.md (2KB) [82L]
+│   │   │   │   ├── SPEC.md (1KB) [55L]
+│   │   │   │   ├── STDLIB.md (3KB) [111L]
+│   │   │   │   └── VM.md (2KB) [63L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── atcnet/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── BOOTSTRAP.md (312B) [18L]
+│   │   │   │   ├── MESSAGES.md (1KB) [40L]
+│   │   │   │   ├── PROTOCOL.md (2KB) [57L]
+│   │   │   │   ├── SECURITY.md (336B) [11L]
+│   │   │   │   └── TOPOLOGY.md (1KB) [43L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── contracts/ (7 files)
+│   │   │   ├── docs/ (6 files)
+│   │   │   │   ├── ATC8300.md (1KB) [51L]
+│   │   │   │   ├── ATC9000.md (2KB) [92L]
+│   │   │   │   ├── ATC9900.md (514B) [20L]
+│   │   │   │   ├── BRIDGE.md (1KB) [38L]
+│   │   │   │   ├── DEPLOYMENT.md (603B) [25L]
+│   │   │   │   └── SECURITY.md (708B) [26L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── franchise/ (8 files)
+│   │   │   ├── docs/ (7 files)
+│   │   │   │   ├── API.md (1KB) [37L]
+│   │   │   │   ├── CONCEPT.md (1000B) [24L]
+│   │   │   │   ├── CONTRACTS.md (1KB) [49L]
+│   │   │   │   ├── DEPLOYMENT.md (879B) [43L]
+│   │   │   │   ├── ROADMAP.md (726B) [20L]
+│   │   │   │   ├── SECURITY.md (904B) [29L]
+│   │   │   │   └── TOKEN_ECONOMY.md (1KB) [41L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── gateway/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── AUTH.md (965B) [43L]
+│   │   │   │   ├── MIDDLEWARE.md (368B) [14L]
+│   │   │   │   ├── RATE_LIMITING.md (956B) [43L]
+│   │   │   │   ├── ROUTES.md (995B) [32L]
+│   │   │   │   └── SECURITY.md (372B) [13L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── kai-os/ (98 files)
+│   │   │   ├── code/ (72 files)
+│   │   │   │   ├── .github/ (4 files)
+│   │   │   │   │   └── workflows/ (4 files)
+│   │   │   │   │       ├── ci.yml (1KB) [42L]
+│   │   │   │   │       ├── codeql.yml (4KB) [101L]
+│   │   │   │   │       ├── docker.yml (884B) [39L]
+│   │   │   │   │       └── pages.yml (717B) [35L]
+│   │   │   │   ├── atc-ui/ (1 files)
+│   │   │   │   │   └── index.html (92KB)
+│   │   │   │   ├── atclang/ (6 files)
+│   │   │   │   │   ├── compiler/ (1 files)
+│   │   │   │   │   │   └── compiler.py (17KB) [471L]
+│   │   │   │   │   ├── lexer/ (1 files)
+│   │   │   │   │   │   └── lexer.py (10KB) [315L]
+│   │   │   │   │   ├── parser/ (1 files)
+│   │   │   │   │   │   └── parser.py (15KB) [399L]
+│   │   │   │   │   ├── repl/ (1 files)
+│   │   │   │   │   │   └── repl.py (6KB) [185L]
+│   │   │   │   │   ├── vm/ (1 files)
+│   │   │   │   │   │   └── atcvm.py (11KB) [349L]
+│   │   │   │   │   └── ATCLANG_SPEC.md (432B) [9L]
+│   │   │   │   ├── backend/ (17 files)
+│   │   │   │   │   ├── api/ (11 files)
+│   │   │   │   │   │   ├── orchestrator/ (1 files)
+│   │   │   │   │   │   │   └── orchestrator.py (2KB) [69L]
+│   │   │   │   │   │   ├── routes/ (8 files)
+│   │   │   │   │   │   │   ├── ai_routes.py (4KB) [123L]
+│   │   │   │   │   │   │   ├── blockchain.py (2KB) [62L]
+│   │   │   │   │   │   │   ├── game_routes.py (1KB) [59L]
+│   │   │   │   │   │   │   ├── governance_routes.py (1KB) [63L]
+│   │   │   │   │   │   │   ├── marketplace_routes.py (1KB) [69L]
+│   │   │   │   │   │   │   ├── nodes_routes.py (1KB) [47L]
+│   │   │   │   │   │   │   ├── orchestrator_routes.py (972B) [28L]
+│   │   │   │   │   │   │   └── wallet.py (1KB) [57L]
+│   │   │   │   │   │   ├── kai_routes.py (11KB) [381L]
+│   │   │   │   │   │   └── server.py (2KB) [47L]
+│   │   │   │   │   ├── db/ (2 files)
+│   │   │   │   │   │   ├── repository.py (6KB) [196L]
+│   │   │   │   │   │   └── schema.sql (2KB)
+│   │   │   │   │   ├── wallet/ (1 files)
+│   │   │   │   │   │   └── wallet.py (5KB) [118L]
+│   │   │   │   │   ├── .env.example (167B)
+│   │   │   │   │   ├── main.py (526B) [19L]
+│   │   │   │   │   └── requirements.txt (90B)
+│   │   │   │   ├── blockchain/ (16 files)
+│   │   │   │   │   ├── atcoin/ (1 files)
+│   │   │   │   │   │   └── atcoin.py (5KB) [139L]
+│   │   │   │   │   ├── consensus/ (4 files)
+│   │   │   │   │   │   ├── hybrid_consensus.py (3KB) [87L]
+│   │   │   │   │   │   ├── poh.py (2KB) [67L]
+│   │   │   │   │   │   ├── pos.py (2KB) [70L]
+│   │   │   │   │   │   └── pow.py (2KB) [61L]
+│   │   │   │   │   ├── contracts/ (4 files)
+│   │   │   │   │   │   ├── atc001/ (1 files)
+│   │   │   │   │   │   │   └── genesis_token.py (2KB) [74L]
+│   │   │   │   │   │   ├── atc8300/ (1 files)
+│   │   │   │   │   │   │   └── atc8300_token.py (5KB) [126L]
+│   │   │   │   │   │   ├── base/ (1 files)
+│   │   │   │   │   │   │   └── base_contract.py (3KB) [87L]
+│   │   │   │   │   │   └── shivamon/ (1 files)
+│   │   │   │   │   │       └── shivamon_contract.py (10KB) [270L]
+│   │   │   │   │   ├── nodes/ (3 files)
+│   │   │   │   │   │   ├── discovery.py (11KB) [314L]
+│   │   │   │   │   │   ├── node.py (3KB) [100L]
+│   │   │   │   │   │   └── p2p_propagation.py (12KB) [381L]
+│   │   │   │   │   ├── wallet/ (2 files)
+│   │   │   │   │   │   ├── ecdsa.py (2KB) [72L]
+│   │   │   │   │   │   └── keygen.py (5KB) [140L]
+│   │   │   │   │   ├── smart_contract_registry.py (1KB) [53L]
+│   │   │   │   │   └── smart_contracts.py (23KB) [716L]
+│   │   │   │   ├── config/ (2 files)
+│   │   │   │   │   ├── kai_config.toml (1KB) [52L]
+│   │   │   │   │   └── settings.json (922B) [50L]
+│   │   │   │   ├── core/ (5 files)
+│   │   │   │   │   ├── ai_kernel.py (15KB) [455L]
+│   │   │   │   │   ├── event_bus.py (517B) [16L]
+│   │   │   │   │   ├── kai_cli.py (9KB) [251L]
+│   │   │   │   │   ├── kernel.py (736B) [22L]
+│   │   │   │   │   └── module_loader.py (540B) [17L]
+│   │   │   │   ├── frontend/ (5 files)
+│   │   │   │   │   ├── assets/ (2 files)
+│   │   │   │   │   │   ├── css/ (1 files)
+│   │   │   │   │   │   │   └── variables.css (807B)
+│   │   │   │   │   │   └── js/ (1 files)
+│   │   │   │   │   │       └── api.js (4KB) [136L]
+│   │   │   │   │   ├── bootscreen/ (1 files)
+│   │   │   │   │   │   └── bootscreen_complete.py (15KB) [417L]
+│   │   │   │   │   ├── README.md (616B) [24L]
+│   │   │   │   │   └── index.html (120KB)
+│   │   │   │   ├── gateway/ (8 files)
+│   │   │   │   │   ├── middleware/ (4 files)
+│   │   │   │   │   │   ├── auth.py (669B) [19L]
+│   │   │   │   │   │   ├── logger.py (324B) [9L]
+│   │   │   │   │   │   ├── rate_limit.py (894B) [25L]
+│   │   │   │   │   │   └── signature_verify.py (1KB) [57L]
+│   │   │   │   │   ├── .env.example (103B)
+│   │   │   │   │   ├── main.py (1KB) [47L]
+│   │   │   │   │   ├── requirements.txt (69B)
+│   │   │   │   │   └── router.py (2KB) [50L]
+│   │   │   │   ├── plugins/ (1 files)
+│   │   │   │   │   └── wallet.py (446B) [14L]
+│   │   │   │   ├── shivaos/ (4 files)
+│   │   │   │   │   ├── consensus/ (1 files)
+│   │   │   │   │   │   └── shiva_consensus.py (24KB) [641L]
+│   │   │   │   │   ├── fs/ (1 files)
+│   │   │   │   │   │   └── atcfs.py (12KB) [331L]
+│   │   │   │   │   ├── kernel/ (1 files)
+│   │   │   │   │   │   └── kernel.py (14KB) [382L]
+│   │   │   │   │   └── net/ (1 files)
+│   │   │   │   │       └── atcnet.py (17KB) [487L]
+│   │   │   │   └── tests/ (2 files)
+│   │   │   │       ├── test_atclang.py (13KB) [457L]
+│   │   │   │       └── test_kai_integration.py (8KB) [293L]
+│   │   │   ├── docs/ (23 files)
+│   │   │   │   ├── architecture/ (4 files)
+│   │   │   │   │   ├── ATCNET_P2P.md (6KB) [193L]
+│   │   │   │   │   ├── CONSENSUS.md (6KB) [193L]
+│   │   │   │   │   ├── GATEWAY.md (5KB) [168L]
+│   │   │   │   │   └── WALLET_KEYGEN.md (5KB) [166L]
+│   │   │   │   ├── contracts/ (1 files)
+│   │   │   │   │   └── ATC_TOKEN_STANDARD.md (6KB) [202L]
+│   │   │   │   ├── issues/ (7 files)
+│   │   │   │   │   ├── ISSUE_01_SMART_CONTRACTS.md (4KB) [141L]
+│   │   │   │   │   ├── ISSUE_06_ECDSA.md (4KB) [141L]
+│   │   │   │   │   ├── ISSUE_09_GOVERNANCE.md (2KB) [97L]
+│   │   │   │   │   ├── ISSUE_12_SOLIDITY.md (4KB) [145L]
+│   │   │   │   │   ├── ISSUE_13_MARKETPLACE.md (3KB) [120L]
+│   │   │   │   │   ├── ISSUE_14_BOOTSTRAP_NODE.md (7KB) [308L]
+│   │   │   │   │   └── OPEN_ISSUES_MASTER.md (13KB) [353L]
+│   │   │   │   ├── repo/ (1 files)
+│   │   │   │   │   └── README.md (2KB) [56L]
+│   │   │   │   ├── roadmap/ (1 files)
+│   │   │   │   │   └── ROADMAP_EXTENDED.md (10KB) [245L]
+│   │   │   │   ├── standards/ (3 files)
+│   │   │   │   │   ├── ATC_ECOSYSTEM_STANDARDS.md (13KB) [447L]
+│   │   │   │   │   ├── OVERVIEW.md (1KB) [40L]
+│   │   │   │   │   └── STANDARDS_REGISTRY.md (10KB) [212L]
+│   │   │   │   ├── DECISIONS_REGISTER.md (2KB) [69L]
+│   │   │   │   ├── MIGRATION_MAP.md (1KB) [30L]
+│   │   │   │   ├── ROADMAP.md (9KB) [208L]
+│   │   │   │   ├── ROADMAP_COMPLETENESS_AUDIT.md (7KB) [223L]
+│   │   │   │   ├── STATUS.md (3KB) [85L]
+│   │   │   │   └── kai-os-wiki.md (395KB) [11376L]
+│   │   │   ├── ECOSYSTEM.md (8KB) [179L]
+│   │   │   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   │   │   └── README.md (542B) [18L]
+│   │   ├── kernel/ (10 files)
+│   │   │   ├── docs/ (9 files)
+│   │   │   │   ├── ATCFS.md (2KB) [107L]
+│   │   │   │   ├── ATCNET.md (2KB) [89L]
+│   │   │   │   ├── CHANGELOG.md (231B) [7L]
+│   │   │   │   ├── CONSENSUS.md (615B) [24L]
+│   │   │   │   ├── IPC.md (1KB) [43L]
+│   │   │   │   ├── KERNEL.md (2KB) [87L]
+│   │   │   │   ├── PERFORMANCE.md (708B) [25L]
+│   │   │   │   ├── PROCESS_MODEL.md (1KB) [48L]
+│   │   │   │   └── SECURITY.md (532B) [20L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── overview/ (9 files)
+│   │   │   ├── docs/ (8 files)
+│   │   │   │   ├── API.md (1KB) [59L]
+│   │   │   │   ├── ARCHITECTURE.md (1KB) [36L]
+│   │   │   │   ├── CONTRIBUTING.md (609B) [19L]
+│   │   │   │   ├── FAQ.md (1KB) [62L]
+│   │   │   │   ├── QUICKSTART.md (619B) [30L]
+│   │   │   │   ├── ROADMAP.md (556B) [25L]
+│   │   │   │   ├── SECURITY.md (916B) [18L]
+│   │   │   │   └── WHITEPAPER.md (5KB) [107L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── shivamon/ (7 files)
+│   │   │   ├── docs/ (6 files)
+│   │   │   │   ├── BATTLE.md (420B) [17L]
+│   │   │   │   ├── BREEDING.md (1KB) [37L]
+│   │   │   │   ├── ELEMENTS.md (1KB) [31L]
+│   │   │   │   ├── MARKETPLACE.md (408B) [21L]
+│   │   │   │   ├── NFT_SPEC.md (1KB) [55L]
+│   │   │   │   └── ROADMAP.md (638B) [24L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── standards/ (3 files)
+│   │   │   ├── docs/ (2 files)
+│   │   │   │   ├── ATC_STANDARDS.md (5KB) [233L]
+│   │   │   │   └── OVERVIEW.md (1KB) [28L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── ui/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── API.md (651B) [30L]
+│   │   │   │   ├── COMPONENTS.md (442B) [26L]
+│   │   │   │   ├── DEPLOYMENT.md (969B) [49L]
+│   │   │   │   ├── DESIGN.md (732B) [24L]
+│   │   │   │   └── THEME.md (1KB) [67L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── chapter-63-cleanup-2026-06-13.md (6KB) [205L]
+│   │   ├── chapter-70-atclang-migration-complete.md (3KB) [78L]
+│   │   ├── chapter-71-sprint-audit.md (2KB) [67L]
+│   │   ├── chapter-72-sprint-2-7-testing-cicd.md (2KB) [59L]
+│   │   ├── chapter-73-sprint-2-8-testnet.md (1KB) [53L]
+│   │   ├── chapter-74-sprint-3-1-ux-privacy.md (1KB) [40L]
+│   │   ├── chapter-75-v01-v03-migration-plan.md (2KB) [74L]
+│   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md (1KB) [40L]
+│   │   ├── chapter-77-sprint-4-0-4-1-mainnet.md (1KB) [43L]
+│   │   └── chapter-78-shivacore-kernel-712-tests.md (4KB) [104L]
+│   ├── workflows/ (1 files)
+│   │   └── wiki-sync.yml (8KB) [218L]
+│   ├── AGENT_COORDINATION.md (30KB) [396L]
+│   ├── AGENT_POLICY.md (13KB) [317L]
+│   ├── ARCHITECTURE_TREES.md (104KB) [2143L]
+│   ├── ATCLANG_AGENT_BUILD_GUIDE.md (22KB) [281L]
+│   ├── AUDIT_REPORT.md (3KB) [89L]
+│   ├── CLUSTER_ARCHITECTURE.md (6KB) [103L]
+│   ├── COMPLETENESS_AUDIT.md (2KB) [57L]
+│   ├── DECISIONS_REGISTER.md (7KB) [140L]
+│   ├── DEPRECATED.md (1KB) [32L]
+│   ├── ECOSYSTEM_BRAIN.md (4KB) [120L]
+│   ├── FILE_NAMING_CONVENTIONS.md (16KB) [634L]
+│   ├── FILE_REGISTER.md (4KB) [94L]
+│   ├── FIXES.md (3KB) [96L]
+│   ├── KAI_INTEGRATION.md (6KB) [242L]
+│   ├── LICENSING_OVERVIEW.md (6KB) [157L]
+│   ├── MIGRATION_MAP.md (1KB) [31L]
+│   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   ├── REALITY_CHECK_2026-07-06.md (28KB) [428L]
+│   ├── ROADMAP.md (4KB) [88L]
+│   ├── ROADMAP_COMPLETENESS_AUDIT.md (184B) [9L]
+│   ├── SHIVACORE_KERNEL_STATUS.md (38KB) [722L]
+│   ├── STATUS.md (4KB) [75L]
+│   ├── TODO.md (10KB) [246L]
+│   ├── WIKI_AUDIT.md (6KB) [188L]
+│   ├── api-reference.md (1KB) [33L]
+│   ├── atclang-guide.md (1KB) [48L]
+│   ├── genesis_wallet.md (3KB) [103L]
+│   └── kai-os-wiki.md (554KB) [15928L]
+├── gateway/ (2 files)
+│   ├── main.atc (5KB) [127L]
+│   └── service_discovery.atc (6KB) [168L]
+├── integrations/ (5 files)
+│   ├── README.md (1KB) [39L]
+│   ├── calendar_tasks.md (4KB) [57L]
+│   ├── huggingface_registry.md (1KB) [27L]
+│   ├── notion_export.md (1KB) [25L]
+│   └── storage_inventory.md (2KB) [46L]
+├── mobile/ (4 files)
+│   ├── wallet/ (2 files)
+│   │   ├── __init__.py (162B) [2L]
+│   │   └── biometric_auth.atc (5KB) [179L]
+│   ├── __init__.py (123B) [2L]
+│   └── wallet_api.atc (5KB) [171L]
+├── module-docs/ (48 files)
+│   ├── atclang/ (3 files)
+│   │   ├── CHANGELOG.md (316B) [8L]
+│   │   ├── CONTRIBUTING.md (687B) [19L]
+│   │   └── README.md (1KB) [46L]
+│   ├── atcnet/ (4 files)
+│   │   ├── CHANGELOG.md (294B) [8L]
+│   │   ├── PROTOCOL.md (2KB) [84L]
+│   │   ├── README.md (780B) [37L]
+│   │   └── SECURITY.md (321B) [11L]
+│   ├── atcpkg/ (1 files)
+│   │   └── README.md (442B) [26L]
+│   ├── backend/ (1 files)
+│   │   └── README.md (1KB) [41L]
+│   ├── blockchain/ (1 files)
+│   │   └── README.md (1KB) [41L]
+│   ├── config/ (1 files)
+│   │   └── README.md (566B) [29L]
+│   ├── contracts/ (4 files)
+│   │   ├── CHANGELOG.md (293B) [8L]
+│   │   ├── DEPLOYMENT.md (894B) [29L]
+│   │   ├── README.md (1KB) [43L]
+│   │   └── SECURITY.md (496B) [13L]
+│   ├── core/ (1 files)
+│   │   └── README.md (571B) [30L]
+│   ├── docker/ (1 files)
+│   │   └── README.md (695B) [32L]
+│   ├── franchise/ (4 files)
+│   │   ├── ARCHITECTURE.md (666B) [23L]
+│   │   ├── CHANGELOG.md (256B) [7L]
+│   │   ├── README.md (775B) [35L]
+│   │   └── SECURITY.md (1KB) [57L]
+│   ├── frontend/ (1 files)
+│   │   └── README.md (1KB) [47L]
+│   ├── gateway/ (3 files)
+│   │   ├── CHANGELOG.md (274B) [8L]
+│   │   ├── README.md (858B) [39L]
+│   │   └── SECURITY.md (371B) [13L]
+│   ├── kernel/ (5 files)
+│   │   ├── ARCHITECTURE.md (2KB) [90L]
+│   │   ├── ATS_STANDARDS.md (7KB) [283L]
+│   │   ├── CHANGELOG.md (310B) [8L]
+│   │   ├── README.md (1KB) [46L]
+│   │   └── SECURITY.md (451B) [14L]
+│   ├── mobile/ (1 files)
+│   │   └── README.md (599B) [30L]
+│   ├── modules/ (1 files)
+│   │   └── README.md (1KB) [57L]
+│   ├── monitoring/ (1 files)
+│   │   └── README.md (641B) [30L]
+│   ├── nginx/ (1 files)
+│   │   └── README.md (437B) [26L]
+│   ├── scripts/ (1 files)
+│   │   └── README.md (534B) [28L]
+│   ├── shivamon/ (3 files)
+│   │   ├── CHANGELOG.md (272B) [8L]
+│   │   ├── GAME_SPEC.md (1KB) [43L]
+│   │   └── README.md (819B) [35L]
+│   ├── shivaos/ (1 files)
+│   │   └── README.md (620B) [31L]
+│   ├── standards/ (4 files)
+│   │   ├── ATC_STANDARDS.md (4KB) [201L]
+│   │   ├── ATS_STANDARDS.md (4KB) [199L]
+│   │   ├── OVERVIEW.md (1KB) [29L]
+│   │   └── README.md (706B) [32L]
+│   ├── tests/ (1 files)
+│   │   └── README.md (1KB) [41L]
+│   ├── tools/ (1 files)
+│   │   └── README.md (579B) [29L]
+│   └── ui/ (3 files)
+│       ├── CHANGELOG.md (285B) [8L]
+│       ├── DESIGN.md (1KB) [33L]
+│       └── README.md (586B) [30L]
+├── modules/ (119 files)
+│   ├── assets/ (16 files)
+│   │   ├── aaa_asset_core.atc (3KB) [87L]
+│   │   ├── ai_assets.atc (4KB) [124L]
+│   │   ├── animation.atc (4KB) [142L]
+│   │   ├── asset_bundle.atc (3KB) [104L]
+│   │   ├── cloud_assets.atc (5KB) [133L]
+│   │   ├── encryption.atc (5KB) [149L]
+│   │   ├── hot_reload.atc (4KB) [125L]
+│   │   ├── memory_cleanup.atc (4KB) [122L]
+│   │   ├── mod_system.atc (5KB) [144L]
+│   │   ├── model3d.atc (5KB) [168L]
+│   │   ├── priority_loading.atc (2KB) [80L]
+│   │   ├── render_pipeline.atc (5KB) [159L]
+│   │   ├── shader_system.atc (4KB) [143L]
+│   │   ├── streaming.atc (3KB) [91L]
+│   │   ├── telemetry.atc (4KB) [144L]
+│   │   └── versioning.atc (4KB) [127L]
+│   ├── atclang/ (1 files)
+│   │   └── README.md (751B) [26L]
+│   ├── atcnet/ (7 files)
+│   │   ├── README.md (917B) [29L]
+│   │   ├── bootstrap_client.atc (4KB) [134L]
+│   │   ├── discovery.atc (4KB) [138L]
+│   │   ├── gossip.atc (5KB) [171L]
+│   │   ├── nat_traversal.atc (3KB) [109L]
+│   │   ├── p2p_node.atc (4KB) [159L]
+│   │   └── p2p_propagation.atc (6KB) [215L]
+│   ├── civilization/ (11 files)
+│   │   ├── asset_genome_ad66.atc (5KB) [171L]
+│   │   ├── civilization_engine_ad60.atc (5KB) [236L]
+│   │   ├── ecosystem_ai_mesh_ad62.atc (7KB) [245L]
+│   │   ├── evolution_engine_ad69.atc (7KB) [251L]
+│   │   ├── experience_orchestrator_ad68.atc (6KB) [200L]
+│   │   ├── gcp_core_ad70.atc (7KB) [169L]
+│   │   ├── global_simulation_core_ad64.atc (6KB) [198L]
+│   │   ├── identity_layer_ad65.atc (4KB) [190L]
+│   │   ├── persistent_world_engine_ad61.atc (5KB) [199L]
+│   │   ├── proc_universe_generator_ad63.atc (8KB) [204L]
+│   │   └── production_pipeline_ad67.atc (6KB) [151L]
+│   ├── contracts/ (10 files)
+│   │   ├── atc8300/ (1 files)
+│   │   │   └── atc8300_token.atc (5KB) [178L]
+│   │   ├── atcoin/ (1 files)
+│   │   │   └── atcoin.atc (5KB) [176L]
+│   │   ├── base/ (1 files)
+│   │   │   └── base_contract.atc (2KB) [69L]
+│   │   ├── bridge/ (1 files)
+│   │   │   └── bridge_contract.atc (5KB) [172L]
+│   │   ├── governance/ (1 files)
+│   │   │   └── governance_contract.atc (7KB) [237L]
+│   │   ├── marketplace/ (1 files)
+│   │   │   └── marketplace_contract.atc (7KB) [236L]
+│   │   ├── shivamon/ (1 files)
+│   │   │   └── shivamon_contract.atc (9KB) [290L]
+│   │   ├── wallet/ (2 files)
+│   │   │   ├── ecdsa.atc (2KB) [60L]
+│   │   │   └── keygen.atc (2KB) [75L]
+│   │   └── README.md (446B) [17L]
+│   ├── franchise/ (30 files)
+│   │   ├── contracts/ (3 files)
+│   │   │   ├── registry.atc (4KB) [120L]
+│   │   │   ├── revenue.atc (3KB) [93L]
+│   │   │   └── token.atc (3KB) [72L]
+│   │   ├── README.md (378B) [15L]
+│   │   ├── ai_content_factory_ad28.atc (6KB) [194L]
+│   │   ├── ai_director_factory_ad41.atc (4KB) [28L]
+│   │   ├── analytics_factory_ad31.atc (7KB) [232L]
+│   │   ├── asset_intelligence_factory_ad34.atc (7KB) [210L]
+│   │   ├── blueprint_factory_ad32.atc (5KB) [165L]
+│   │   ├── canon_engine_ad33.atc (5KB) [171L]
+│   │   ├── character_factory_ad23.atc (8KB) [251L]
+│   │   ├── commerce_factory_ad40.atc (4KB) [26L]
+│   │   ├── community_factory_ad30.atc (7KB) [222L]
+│   │   ├── creator_factory_ad38.atc (4KB) [24L]
+│   │   ├── economy_factory_ad26.atc (6KB) [200L]
+│   │   ├── factory.atc (5KB) [165L]
+│   │   ├── gameplay_factory_ad35.atc (4KB) [126L]
+│   │   ├── gff_core_ad20.atc (8KB) [224L]
+│   │   ├── ip_factory_ad21.atc (4KB) [147L]
+│   │   ├── lifecycle_manager_ad43.atc (5KB) [25L]
+│   │   ├── liveops_factory_ad27.atc (6KB) [212L]
+│   │   ├── lore_factory_ad24.atc (7KB) [209L]
+│   │   ├── merchandise_factory_ad29.atc (5KB) [173L]
+│   │   ├── multiplayer_factory_ad37.atc (3KB) [27L]
+│   │   ├── narrative_factory_ad36.atc (8KB) [245L]
+│   │   ├── publishing_factory_ad39.atc (4KB) [25L]
+│   │   ├── quest_factory_ad25.atc (6KB) [207L]
+│   │   ├── routes.atc (2KB) [90L]
+│   │   ├── security_factory_ad42.atc (4KB) [30L]
+│   │   └── world_factory_ad22.atc (6KB) [235L]
+│   ├── gateway/ (9 files)
+│   │   ├── middleware/ (5 files)
+│   │   │   ├── __init__.py (120B) [2L]
+│   │   │   ├── auth.atc (2KB) [82L]
+│   │   │   ├── logger.atc (2KB) [70L]
+│   │   │   ├── rate_limit.atc (1KB) [50L]
+│   │   │   └── signature_verify.atc (1KB) [43L]
+│   │   ├── README.md (404B) [22L]
+│   │   ├── __init__.py (125B) [2L]
+│   │   ├── main.atc (5KB) [180L]
+│   │   └── router.atc (3KB) [96L]
+│   ├── kernel/ (25 files)
+│   │   ├── ai_kernel/ (1 files)
+│   │   │   └── ai_kernel.atc (8KB) [228L]
+│   │   ├── consensus/ (2 files)
+│   │   │   ├── poh_integration.atc (2KB) [78L]
+│   │   │   └── shiva_consensus.atc (16KB) [529L]
+│   │   ├── fs/ (1 files)
+│   │   │   └── atcfs.atc (4KB) [142L]
+│   │   ├── ipc/ (2 files)
+│   │   │   ├── __init__.py (236B) [4L]
+│   │   │   └── ipc_bus.atc (3KB) [102L]
+│   │   ├── net/ (1 files)
+│   │   │   └── atcnet.atc (4KB) [135L]
+│   │   ├── pkg/ (1 files)
+│   │   │   └── manager.atc (6KB) [208L]
+│   │   ├── process/ (1 files)
+│   │   │   └── process_mgr.atc (4KB) [161L]
+│   │   ├── shell/ (1 files)
+│   │   │   └── shell.atc (8KB) [296L]
+│   │   ├── README.md (1008B) [32L]
+│   │   ├── ai_bus_ad13.atc (9KB) [310L]
+│   │   ├── asset_bus_ad08.atc (5KB) [188L]
+│   │   ├── audio_bus_ad11.atc (5KB) [199L]
+│   │   ├── command_bus_ad02.atc (4KB) [168L]
+│   │   ├── gcl_core_ad00.atc (7KB) [269L]
+│   │   ├── input_bus_ad12.atc (5KB) [184L]
+│   │   ├── ipc_bus_atc.ad.atc (8KB) [266L]
+│   │   ├── message_bus_ad03.atc (6KB) [240L]
+│   │   ├── network_bus_ad05.atc (8KB) [307L]
+│   │   ├── physics_bus_ad10.atc (7KB) [255L]
+│   │   ├── plugin_bus_ad06.atc (8KB) [286L]
+│   │   ├── query_bus_ad07.atc (3KB) [128L]
+│   │   ├── render_bus_ad09.atc (5KB) [164L]
+│   │   └── telemetry_bus_ad14.atc (7KB) [254L]
+│   ├── meta/ (8 files)
+│   │   ├── ai_studio_ad49.atc (11KB) [310L]
+│   │   ├── cross_franchise_ad46.atc (8KB) [223L]
+│   │   ├── data_lake_ad51.atc (9KB) [237L]
+│   │   ├── digital_twin_ad50.atc (11KB) [303L]
+│   │   ├── ip_evolution_ad45.atc (9KB) [241L]
+│   │   ├── knowledge_graph_ad47.atc (11KB) [289L]
+│   │   ├── simulation_factory_ad48.atc (13KB) [374L]
+│   │   └── universe_factory_ad44.atc (13KB) [343L]
+│   └── shivamon/ (2 files)
+│       ├── engine/ (1 files)
+│       │   └── battle_engine.atc (5KB) [153L]
+│       └── README.md (505B) [19L]
+├── monitoring/ (3 files)
+│   ├── health_checks_atc08.atc (5KB) [197L]
+│   ├── monitor.atc (6KB) [213L]
+│   └── prometheus_metrics.atc (6KB) [202L]
+├── reports/ (1 files)
+│   └── SPRINT_2.3_2.4_2.7_REPORT.md (3KB) [102L]
+├── scripts/ (1 files)
+│   └── generate_validators.atc (4KB) [135L]
+├── shivaos/ (3 files)
+│   ├── fs/ (1 files)
+│   │   └── atcfs_module.atc (4KB) [126L]
+│   ├── kernel/ (1 files)
+│   │   └── syscalls.atc (3KB) [118L]
+│   └── ui/ (1 files)
+│       └── renderer.atc (5KB) [186L]
+├── tests/ (26 files)
+│   ├── unit/ (3 files)
+│   │   ├── test_atclang.py (14KB) [462L]
+│   │   ├── test_atcnet.py (1KB) [41L]
+│   │   └── test_p2p_propagation.py (4KB) [151L]
+│   ├── test_atclang.py (14KB) [470L]
+│   ├── test_atclang_v03.py (2KB) [68L]
+│   ├── test_bootstrap.py (10KB) [268L]
+│   ├── test_did.py (1KB) [61L]
+│   ├── test_discovery.py (4KB) [155L]
+│   ├── test_ecdsa.py (2KB) [65L]
+│   ├── test_fork_resolution.py (3KB) [101L]
+│   ├── test_gateway.py (7KB) [201L]
+│   ├── test_gateway_full.py (2KB) [76L]
+│   ├── test_integration_atcfs_multisig.py (4KB) [129L]
+│   ├── test_kai_integration.py (8KB) [297L]
+│   ├── test_multinode_consensus.py (5KB) [155L]
+│   ├── test_multinode_fivenode.py (3KB) [84L]
+│   ├── test_node_failure_recovery.py (4KB) [143L]
+│   ├── test_optimizer.py (9KB) [256L]
+│   ├── test_orchestrator.py (1KB) [52L]
+│   ├── test_p2p_propagation.py (5KB) [205L]
+│   ├── test_persistence.py (2KB) [87L]
+│   ├── test_poh.py (1KB) [63L]
+│   ├── test_smart_contracts.py (3KB) [114L]
+│   ├── test_stdlib.py (10KB) [298L]
+│   ├── test_stdlib_dispatch.py (11KB) [312L]
+│   └── test_type_checker.py (7KB) [244L]
+├── tools/ (4 files)
+│   ├── atc_issues_summary.atc (6KB) [212L]
+│   ├── bigquery_pipeline.atc (4KB) [135L]
+│   ├── ecdsa_impl.atc (4KB) [119L]
+│   └── hf_review_pipeline.atc (5KB) [157L]
+├── wiki/ (1060 files)
+│   ├── aistudio-wiki/ (6 files)
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (323B) [14L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (311B) [10L]
+│   │   ├── README.md (513B) [18L]
+│   │   └── STATUS.md (298B) [15L]
+│   ├── atclang/ (18 files)
+│   │   ├── docs/ (14 files)
+│   │   │   ├── CHANGELOG.md (338B) [8L]
+│   │   │   ├── COMPILER.md (3KB) [105L]
+│   │   │   ├── CONTRIBUTING.md (472B) [11L]
+│   │   │   ├── EXAMPLES.md (3KB) [95L]
+│   │   │   ├── LEXER.md (1KB) [59L]
+│   │   │   ├── PARSER.md (3KB) [135L]
+│   │   │   ├── REPL.md (2KB) [79L]
+│   │   │   ├── ROADMAP.md (715B) [25L]
+│   │   │   ├── SECURITY.md (1KB) [34L]
+│   │   │   ├── SECURITY_ANALYZER.md (2KB) [82L]
+│   │   │   ├── SPEC.md (1KB) [55L]
+│   │   │   ├── STDLIB.md (3KB) [111L]
+│   │   │   ├── SYNTAX_FULL.md (6KB) [159L]
+│   │   │   └── VM.md (2KB) [63L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [60L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── atclang-wiki/ (10 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (2KB) [69L]
+│   │   │   ├── MODULES.md (1KB) [43L]
+│   │   │   └── ROADMAP.md (933B) [22L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (316B) [14L]
+│   │   ├── FILE_REGISTER.md (512B) [16L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (309B) [10L]
+│   │   ├── README.md (3KB) [61L]
+│   │   └── STATUS.md (296B) [15L]
+│   ├── atcnet/ (10 files)
+│   │   ├── docs/ (6 files)
+│   │   │   ├── BOOTSTRAP.md (312B) [18L]
+│   │   │   ├── MESSAGES.md (1KB) [40L]
+│   │   │   ├── PROTOCOL.md (2KB) [57L]
+│   │   │   ├── ROADMAP.md (368B) [15L]
+│   │   │   ├── SECURITY.md (336B) [11L]
+│   │   │   └── TOPOLOGY.md (1KB) [43L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [45L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── atcpkg-wiki/ (9 files)
+│   │   ├── docs/ (2 files)
+│   │   │   ├── ARCHITECTURE.md (1KB) [28L]
+│   │   │   └── ROADMAP.md (568B) [16L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (321B) [14L]
+│   │   ├── FILE_REGISTER.md (477B) [15L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (307B) [10L]
+│   │   ├── README.md (3KB) [60L]
+│   │   └── STATUS.md (294B) [15L]
+│   ├── backend-wiki/ (10 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── API.md (941B) [61L]
+│   │   │   ├── ARCHITECTURE.md (1KB) [35L]
+│   │   │   └── ROADMAP.md (453B) [16L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (316B) [14L]
+│   │   ├── FILE_REGISTER.md (495B) [16L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (309B) [10L]
+│   │   ├── README.md (4KB) [70L]
+│   │   └── STATUS.md (296B) [15L]
+│   ├── blockchain-wiki/ (9 files)
+│   │   ├── docs/ (5 files)
+│   │   │   ├── ARCHITECTURE.md (2KB) [61L]
+│   │   │   ├── CONSENSUS.md (1KB) [45L]
+│   │   │   ├── MEMPOOL.md (1KB) [35L]
+│   │   │   ├── ROADMAP.md (1KB) [30L]
+│   │   │   └── VALIDATORS.md (1KB) [36L]
+│   │   ├── .gitignore (44B)
+│   │   ├── FILE_REGISTER.md (3KB) [109L]
+│   │   ├── LICENSE (472B)
+│   │   └── README.md (4KB) [74L]
+│   ├── bootloader-wiki/ (9 files)
+│   │   ├── docs/ (2 files)
+│   │   │   ├── ARCHITECTURE.md (892B) [22L]
+│   │   │   └── ROADMAP.md (218B) [8L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (316B) [14L]
+│   │   ├── FILE_REGISTER.md (467B) [15L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (315B) [10L]
+│   │   ├── README.md (3KB) [68L]
+│   │   └── STATUS.md (302B) [15L]
+│   ├── ci-wiki/ (9 files)
+│   │   ├── docs/ (2 files)
+│   │   │   ├── ROADMAP.md (176B) [7L]
+│   │   │   └── WORKFLOWS.md (668B) [23L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (304B) [14L]
+│   │   ├── FILE_REGISTER.md (456B) [15L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (299B) [10L]
+│   │   ├── README.md (3KB) [68L]
+│   │   └── STATUS.md (286B) [15L]
+│   ├── cli-wiki/ (9 files)
+│   │   ├── docs/ (2 files)
+│   │   │   ├── COMMANDS.md (746B) [25L]
+│   │   │   └── ROADMAP.md (172B) [7L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (300B) [14L]
+│   │   ├── FILE_REGISTER.md (456B) [15L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (301B) [10L]
+│   │   ├── README.md (3KB) [68L]
+│   │   └── STATUS.md (288B) [15L]
+│   ├── contracts/ (12 files)
+│   │   ├── docs/ (8 files)
+│   │   │   ├── ATC8300.md (1KB) [51L]
+│   │   │   ├── ATC9000.md (2KB) [92L]
+│   │   │   ├── ATC9900.md (514B) [20L]
+│   │   │   ├── BRIDGE.md (1KB) [38L]
+│   │   │   ├── DEPLOYMENT.md (603B) [25L]
+│   │   │   ├── ROADMAP.md (455B) [17L]
+│   │   │   ├── SECURITY.md (708B) [26L]
+│   │   │   └── TODO.md (526B) [21L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [51L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── dns-wiki/ (9 files)
+│   │   ├── docs/ (2 files)
+│   │   │   ├── ARCHITECTURE.md (658B) [21L]
+│   │   │   └── ROADMAP.md (184B) [7L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (309B) [14L]
+│   │   ├── FILE_REGISTER.md (460B) [15L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (301B) [10L]
+│   │   ├── README.md (3KB) [68L]
+│   │   └── STATUS.md (288B) [15L]
+│   ├── drivers-wiki/ (10 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (373B) [11L]
+│   │   │   ├── DRIVER_LIST.md (451B) [11L]
+│   │   │   └── ROADMAP.md (194B) [8L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (323B) [14L]
+│   │   ├── FILE_REGISTER.md (502B) [16L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (309B) [10L]
+│   │   ├── README.md (3KB) [69L]
+│   │   └── STATUS.md (296B) [15L]
+│   ├── explorer-wiki/ (7 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── API.md (330B) [9L]
+│   │   │   ├── ARCHITECTURE.md (296B) [9L]
+│   │   │   └── ROADMAP.md (406B) [14L]
+│   │   ├── .gitignore (44B)
+│   │   ├── FILE_REGISTER.md (523B) [18L]
+│   │   ├── LICENSE (472B)
+│   │   └── README.md (4KB) [71L]
+│   ├── franchise/ (11 files)
+│   │   ├── docs/ (7 files)
+│   │   │   ├── API.md (1KB) [37L]
+│   │   │   ├── CONCEPT.md (1000B) [24L]
+│   │   │   ├── CONTRACTS.md (1KB) [49L]
+│   │   │   ├── DEPLOYMENT.md (879B) [43L]
+│   │   │   ├── ROADMAP.md (685B) [21L]
+│   │   │   ├── SECURITY.md (904B) [29L]
+│   │   │   └── TOKEN_ECONOMY.md (1KB) [41L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [43L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── franchise-factory/ (4 files)
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (342B) [11L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (1KB) [28L]
+│   ├── frontend-wiki/ (7 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (733B) [18L]
+│   │   │   ├── COMPONENTS.md (463B) [8L]
+│   │   │   └── ROADMAP.md (506B) [15L]
+│   │   ├── .gitignore (44B)
+│   │   ├── FILE_REGISTER.md (531B) [18L]
+│   │   ├── LICENSE (472B)
+│   │   └── README.md (4KB) [71L]
+│   ├── gateway/ (10 files)
+│   │   ├── docs/ (6 files)
+│   │   │   ├── AUTH.md (965B) [43L]
+│   │   │   ├── MIDDLEWARE.md (368B) [14L]
+│   │   │   ├── RATE_LIMITING.md (956B) [43L]
+│   │   │   ├── ROADMAP.md (436B) [16L]
+│   │   │   ├── ROUTES.md (995B) [32L]
+│   │   │   └── SECURITY.md (372B) [13L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (2KB) [71L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── genesis-engine-wiki/ (6 files)
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (328B) [14L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (323B) [10L]
+│   │   ├── README.md (530B) [18L]
+│   │   └── STATUS.md (310B) [15L]
+│   ├── ide-wiki/ (7 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (356B) [16L]
+│   │   │   ├── LSP.md (406B) [10L]
+│   │   │   └── ROADMAP.md (385B) [12L]
+│   │   ├── .gitignore (44B)
+│   │   ├── FILE_REGISTER.md (510B) [18L]
+│   │   ├── LICENSE (472B)
+│   │   └── README.md (4KB) [71L]
+│   ├── kai-os/ (739 files)
+│   │   ├── .github/ (1 files)
+│   │   │   └── .gitkeep (14B)
+│   │   ├── aistudio/ (8 files)
+│   │   │   ├── src/ (3 files)
+│   │   │   │   ├── components/ (1 files)
+│   │   │   │   │   └── RoadmapView.tsx (6KB) [196L]
+│   │   │   │   ├── atcLangRoadmapData.ts (6KB) [201L]
+│   │   │   │   └── roadmapData.ts (7KB) [312L]
+│   │   │   ├── AGENTS.md (535B) [13L]
+│   │   │   ├── GEMINI.md (373B) [6L]
+│   │   │   ├── README.md (542B) [20L]
+│   │   │   ├── ROADMAP.md (8KB) [598L]
+│   │   │   └── SOFTWARE_ROADMAP.md (38KB) [1116L]
+│   │   ├── archive/ (1 files)
+│   │   │   └── ATCLANG_ARCHIVE.md (4KB) [97L]
+│   │   ├── atclang/ (32 files)
+│   │   │   ├── compiler/ (4 files)
+│   │   │   │   ├── __init__.py (468B) [8L]
+│   │   │   │   ├── compiler.py (21KB) [561L]
+│   │   │   │   ├── optimizer.py (22KB) [558L]
+│   │   │   │   └── type_checker.py (20KB) [507L]
+│   │   │   ├── lexer/ (2 files)
+│   │   │   │   ├── __init__.py (161B) [2L]
+│   │   │   │   └── lexer.py (20KB) [572L]
+│   │   │   ├── parser/ (3 files)
+│   │   │   │   ├── __init__.py (189B) [3L]
+│   │   │   │   ├── ast_nodes.py (7KB) [331L]
+│   │   │   │   └── parser.py (37KB) [890L]
+│   │   │   ├── programs/ (1 files)
+│   │   │   │   └── atcos_main.atc (40KB) [1161L]
+│   │   │   ├── repl/ (2 files)
+│   │   │   │   ├── __init__.py (99B) [1L]
+│   │   │   │   └── repl.py (6KB) [184L]
+│   │   │   ├── stdlib/ (14 files)
+│   │   │   │   ├── __init__.py (1KB) [32L]
+│   │   │   │   ├── atc_stdlib.py (2KB) [69L]
+│   │   │   │   ├── chain.py (1KB) [41L]
+│   │   │   │   ├── collections.py (5KB) [219L]
+│   │   │   │   ├── collections_ext.py (3KB) [143L]
+│   │   │   │   ├── crypto.py (5KB) [155L]
+│   │   │   │   ├── crypto_ext.py (5KB) [149L]
+│   │   │   │   ├── encoding.py (7KB) [210L]
+│   │   │   │   ├── io.py (3KB) [107L]
+│   │   │   │   ├── io_ext.py (3KB) [123L]
+│   │   │   │   ├── math.py (3KB) [138L]
+│   │   │   │   ├── primitives.py (7KB) [244L]
+│   │   │   │   ├── string.py (2KB) [99L]
+│   │   │   │   └── wallet.py (2KB) [78L]
+│   │   │   ├── v03/ (2 files)
+│   │   │   │   ├── __init__.py (124B) [2L]
+│   │   │   │   └── atclang_v03_features.py (10KB) [301L]
+│   │   │   ├── vm/ (2 files)
+│   │   │   │   ├── __init__.py (177B) [2L]
+│   │   │   │   └── atcvm.py (47KB) [978L]
+│   │   │   ├── ATCLANG_SPEC.md (9KB) [295L]
+│   │   │   └── __init__.py (462B) [11L]
+│   │   ├── atcpkg/ (1 files)
+│   │   │   └── manager.atc (4KB) [145L]
+│   │   ├── backend/ (14 files)
+│   │   │   ├── api/ (8 files)
+│   │   │   │   ├── orchestrator/ (2 files)
+│   │   │   │   │   ├── __init__.py (118B) [2L]
+│   │   │   │   │   └── orchestrator.atc (8KB) [259L]
+│   │   │   │   ├── routes/ (3 files)
+│   │   │   │   │   ├── __init__.py (115B) [2L]
+│   │   │   │   │   ├── ai_routes.atc (5KB) [175L]
+│   │   │   │   │   └── api_routes.atc (8KB) [232L]
+│   │   │   │   ├── __init__.py (111B) [2L]
+│   │   │   │   ├── kai_routes.atc (7KB) [229L]
+│   │   │   │   └── server.atc (2KB) [68L]
+│   │   │   ├── db/ (3 files)
+│   │   │   │   ├── __init__.py (160B) [2L]
+│   │   │   │   ├── connection.atc (4KB) [125L]
+│   │   │   │   └── repository.atc (6KB) [228L]
+│   │   │   ├── wallet/ (2 files)
+│   │   │   │   ├── __init__.py (123B) [2L]
+│   │   │   │   └── wallet.atc (4KB) [139L]
+│   │   │   └── __init__.py (121B) [2L]
+│   │   ├── blockchain/ (49 files)
+│   │   │   ├── atcoin/ (1 files)
+│   │   │   │   └── __init__.py (119B) [2L]
+│   │   │   ├── consensus/ (13 files)
+│   │   │   │   ├── __init__.py (123B) [2L]
+│   │   │   │   ├── fork_atc85.atc (2KB) [74L]
+│   │   │   │   ├── fork_resolution.atc (4KB) [145L]
+│   │   │   │   ├── gas_fee.atc (4KB) [130L]
+│   │   │   │   ├── gas_fee_atc86.atc (2KB) [71L]
+│   │   │   │   ├── hybrid_atc84.atc (3KB) [98L]
+│   │   │   │   ├── hybrid_consensus.atc (11KB) [357L]
+│   │   │   │   ├── poh.atc (4KB) [140L]
+│   │   │   │   ├── poh_atc83.atc (1KB) [79L]
+│   │   │   │   ├── pos.atc (4KB) [164L]
+│   │   │   │   ├── pos_atc82.atc (2KB) [92L]
+│   │   │   │   ├── pow.atc (3KB) [107L]
+│   │   │   │   └── pow_atc81.atc (2KB) [89L]
+│   │   │   ├── contracts/ (6 files)
+│   │   │   │   ├── atc001/ (1 files)
+│   │   │   │   │   └── genesis_token.atc (2KB) [102L]
+│   │   │   │   ├── atc8300/ (1 files)
+│   │   │   │   │   └── __init__.py (129B) [2L]
+│   │   │   │   ├── governance/ (1 files)
+│   │   │   │   │   └── governance_contract.atc (7KB) [202L]
+│   │   │   │   ├── shivamon/ (2 files)
+│   │   │   │   │   ├── __init__.py (136B) [2L]
+│   │   │   │   │   └── breeding.atc (5KB) [139L]
+│   │   │   │   └── contract_engine_atc14.atc (9KB) [309L]
+│   │   │   ├── dex/ (2 files)
+│   │   │   │   ├── __init__.py (117B) [2L]
+│   │   │   │   └── amm.atc (10KB) [277L]
+│   │   │   ├── governance/ (5 files)
+│   │   │   │   ├── __init__.py (120B) [2L]
+│   │   │   │   ├── dao.atc (6KB) [168L]
+│   │   │   │   ├── dao_live.atc (8KB) [235L]
+│   │   │   │   ├── timelock.atc (4KB) [150L]
+│   │   │   │   └── treasury.atc (6KB) [220L]
+│   │   │   ├── mainnet/ (3 files)
+│   │   │   │   ├── __init__.py (117B) [2L]
+│   │   │   │   ├── launch_manager.atc (3KB) [105L]
+│   │   │   │   └── mainnet_config.atc (5KB) [151L]
+│   │   │   ├── network/ (3 files)
+│   │   │   │   ├── core_node_atc01.atc (4KB) [164L]
+│   │   │   │   ├── latency_opt_atc06.atc (3KB) [135L]
+│   │   │   │   └── sharding_atc07.atc (5KB) [215L]
+│   │   │   ├── nodes/ (6 files)
+│   │   │   │   ├── __init__.py (126B) [2L]
+│   │   │   │   ├── block_propagation.atc (3KB) [87L]
+│   │   │   │   ├── bootstrap.atc (6KB) [234L]
+│   │   │   │   ├── initial_sync.atc (6KB) [207L]
+│   │   │   │   ├── node.atc (6KB) [192L]
+│   │   │   │   └── testnet_launcher.atc (4KB) [132L]
+│   │   │   ├── propagation/ (1 files)
+│   │   │   │   └── block_gossip.atc (3KB) [98L]
+│   │   │   ├── wallet/ (4 files)
+│   │   │   │   ├── __init__.py (128B) [2L]
+│   │   │   │   ├── did.atc (4KB) [122L]
+│   │   │   │   ├── multisig.atc (8KB) [268L]
+│   │   │   │   └── wordlist.atc (5KB) [112L]
+│   │   │   ├── zkp/ (2 files)
+│   │   │   │   ├── __init__.py (336B) [4L]
+│   │   │   │   └── groth16.atc (3KB) [89L]
+│   │   │   ├── contract_registry.atc (3KB) [98L]
+│   │   │   ├── smart_contract_registry.atc (2KB) [88L]
+│   │   │   └── smart_contracts.atc (15KB) [486L]
+│   │   ├── code/ (82 files)
+│   │   │   ├── .github/ (4 files)
+│   │   │   │   └── workflows/ (4 files)
+│   │   │   │       ├── ci.yml (1KB) [42L]
+│   │   │   │       ├── codeql.yml (4KB) [101L]
+│   │   │   │       ├── docker.yml (884B) [39L]
+│   │   │   │       └── pages.yml (717B) [35L]
+│   │   │   ├── atc-ui/ (1 files)
+│   │   │   │   └── index.html (92KB)
+│   │   │   ├── atclang/ (6 files)
+│   │   │   │   ├── compiler/ (1 files)
+│   │   │   │   │   └── compiler.py (17KB) [471L]
+│   │   │   │   ├── lexer/ (1 files)
+│   │   │   │   │   └── lexer.py (10KB) [315L]
+│   │   │   │   ├── parser/ (1 files)
+│   │   │   │   │   └── parser.py (15KB) [399L]
+│   │   │   │   ├── repl/ (1 files)
+│   │   │   │   │   └── repl.py (6KB) [185L]
+│   │   │   │   ├── vm/ (1 files)
+│   │   │   │   │   └── atcvm.py (11KB) [349L]
+│   │   │   │   └── ATCLANG_SPEC.md (423B) [9L]
+│   │   │   ├── backend/ (17 files)
+│   │   │   │   ├── api/ (11 files)
+│   │   │   │   │   ├── orchestrator/ (1 files)
+│   │   │   │   │   │   └── orchestrator.py (2KB) [69L]
+│   │   │   │   │   ├── routes/ (8 files)
+│   │   │   │   │   │   ├── ai_routes.py (4KB) [123L]
+│   │   │   │   │   │   ├── blockchain.py (2KB) [62L]
+│   │   │   │   │   │   ├── game_routes.py (1KB) [59L]
+│   │   │   │   │   │   ├── governance_routes.py (1KB) [63L]
+│   │   │   │   │   │   ├── marketplace_routes.py (1KB) [69L]
+│   │   │   │   │   │   ├── nodes_routes.py (1KB) [47L]
+│   │   │   │   │   │   ├── orchestrator_routes.py (972B) [28L]
+│   │   │   │   │   │   └── wallet.py (1KB) [57L]
+│   │   │   │   │   ├── kai_routes.py (11KB) [381L]
+│   │   │   │   │   └── server.py (2KB) [47L]
+│   │   │   │   ├── db/ (2 files)
+│   │   │   │   │   ├── repository.py (6KB) [196L]
+│   │   │   │   │   └── schema.sql (2KB)
+│   │   │   │   ├── wallet/ (1 files)
+│   │   │   │   │   └── wallet.py (5KB) [118L]
+│   │   │   │   ├── .env.example (167B)
+│   │   │   │   ├── main.py (526B) [19L]
+│   │   │   │   └── requirements.txt (90B)
+│   │   │   ├── blockchain/ (20 files)
+│   │   │   │   ├── atcoin/ (1 files)
+│   │   │   │   │   └── atcoin.py (5KB) [139L]
+│   │   │   │   ├── consensus/ (4 files)
+│   │   │   │   │   ├── hybrid_consensus.py (3KB) [87L]
+│   │   │   │   │   ├── poh.py (2KB) [67L]
+│   │   │   │   │   ├── pos.py (2KB) [70L]
+│   │   │   │   │   └── pow.py (2KB) [61L]
+│   │   │   │   ├── contracts/ (8 files)
+│   │   │   │   │   ├── atc001/ (1 files)
+│   │   │   │   │   │   └── genesis_token.py (2KB) [74L]
+│   │   │   │   │   ├── atc8300/ (1 files)
+│   │   │   │   │   │   └── atc8300_token.py (5KB) [126L]
+│   │   │   │   │   ├── base/ (1 files)
+│   │   │   │   │   │   └── base_contract.py (3KB) [87L]
+│   │   │   │   │   ├── shivamon/ (1 files)
+│   │   │   │   │   │   └── shivamon_contract.py (10KB) [270L]
+│   │   │   │   │   └── solidity/ (4 files)
+│   │   │   │   │       ├── scripts/ (1 files)
+│   │   │   │   │       │   └── deploy.js (4KB) [112L]
+│   │   │   │   │       ├── test/ (1 files)
+│   │   │   │   │       │   └── ATCGovernance.test.js (8KB) [254L]
+│   │   │   │   │       ├── ATCToken.sol (5KB)
+│   │   │   │   │       └── README.md (2KB) [129L]
+│   │   │   │   ├── nodes/ (3 files)
+│   │   │   │   │   ├── discovery.py (11KB) [314L]
+│   │   │   │   │   ├── node.py (3KB) [100L]
+│   │   │   │   │   └── p2p_propagation.py (12KB) [381L]
+│   │   │   │   ├── wallet/ (2 files)
+│   │   │   │   │   ├── ecdsa.py (2KB) [72L]
+│   │   │   │   │   └── keygen.py (5KB) [140L]
+│   │   │   │   ├── smart_contract_registry.py (1KB) [53L]
+│   │   │   │   └── smart_contracts.py (23KB) [716L]
+│   │   │   ├── config/ (2 files)
+│   │   │   │   ├── kai_config.toml (1KB) [52L]
+│   │   │   │   └── settings.json (922B) [50L]
+│   │   │   ├── core/ (5 files)
+│   │   │   │   ├── ai_kernel.py (15KB) [455L]
+│   │   │   │   ├── event_bus.py (517B) [16L]
+│   │   │   │   ├── kai_cli.py (9KB) [251L]
+│   │   │   │   ├── kernel.py (736B) [22L]
+│   │   │   │   └── module_loader.py (540B) [17L]
+│   │   │   ├── frontend/ (4 files)
+│   │   │   │   ├── assets/ (2 files)
+│   │   │   │   │   ├── css/ (1 files)
+│   │   │   │   │   │   └── variables.css (807B)
+│   │   │   │   │   └── js/ (1 files)
+│   │   │   │   │       └── api.js (4KB) [136L]
+│   │   │   │   ├── README.md (616B) [24L]
+│   │   │   │   └── index.html (120KB)
+│   │   │   ├── gateway/ (8 files)
+│   │   │   │   ├── middleware/ (4 files)
+│   │   │   │   │   ├── auth.py (669B) [19L]
+│   │   │   │   │   ├── logger.py (324B) [9L]
+│   │   │   │   │   ├── rate_limit.py (894B) [25L]
+│   │   │   │   │   └── signature_verify.py (1KB) [57L]
+│   │   │   │   ├── .env.example (103B)
+│   │   │   │   ├── main.py (1KB) [47L]
+│   │   │   │   ├── requirements.txt (69B)
+│   │   │   │   └── router.py (2KB) [50L]
+│   │   │   ├── plugins/ (1 files)
+│   │   │   │   └── wallet.py (446B) [14L]
+│   │   │   ├── shivaos/ (4 files)
+│   │   │   │   ├── consensus/ (1 files)
+│   │   │   │   │   └── shiva_consensus.py (24KB) [641L]
+│   │   │   │   ├── fs/ (1 files)
+│   │   │   │   │   └── atcfs.py (12KB) [331L]
+│   │   │   │   ├── kernel/ (1 files)
+│   │   │   │   │   └── kernel.py (14KB) [382L]
+│   │   │   │   └── net/ (1 files)
+│   │   │   │       └── atcnet.py (17KB) [487L]
+│   │   │   ├── tests/ (2 files)
+│   │   │   │   ├── test_atclang.py (13KB) [457L]
+│   │   │   │   └── test_kai_integration.py (8KB) [293L]
+│   │   │   ├── KAI_OS_SUMMARY.py (6KB) [242L]
+│   │   │   ├── atc_issues_summary.py (15KB) [265L]
+│   │   │   ├── bootscreen_complete.py (15KB) [417L]
+│   │   │   ├── ecdsa_final.py (2KB) [69L]
+│   │   │   ├── ecdsa_impl.py (3KB) [82L]
+│   │   │   ├── requirements-kai.txt (371B)
+│   │   │   └── start.py (2KB) [79L]
+│   │   ├── config/ (1 files)
+│   │   │   └── mainnet_genesis.json (3KB) [95L]
+│   │   ├── core/ (3 files)
+│   │   │   ├── ai/ (1 files)
+│   │   │   │   └── federated_learning.atc (6KB) [178L]
+│   │   │   ├── crypto/ (1 files)
+│   │   │   │   └── __init__.py (535B) [19L]
+│   │   │   └── kai_cli.atc (8KB) [195L]
+│   │   ├── devnet/ (1 files)
+│   │   │   └── README.md (12KB) [554L]
+│   │   ├── docs/ (349 files)
+│   │   │   ├── ai/ (3 files)
+│   │   │   │   ├── AI_SAFETY.md (5KB) [184L]
+│   │   │   │   ├── GEMINI_INTEGRATION.md (5KB) [214L]
+│   │   │   │   └── LLM_ROUTER.md (4KB) [149L]
+│   │   │   ├── aistudio/ (1 files)
+│   │   │   │   └── AISTUDIO_COMPONENTS.md (24KB) [439L]
+│   │   │   ├── architecture/ (12 files)
+│   │   │   │   ├── AI_LAYER.md (2KB) [53L]
+│   │   │   │   ├── ATCFS.md (4KB) [129L]
+│   │   │   │   ├── ATCLANG_COMPILER.md (2KB) [64L]
+│   │   │   │   ├── ATCNET_P2P.md (6KB) [193L]
+│   │   │   │   ├── CONSENSUS.md (6KB) [193L]
+│   │   │   │   ├── GATEWAY.md (5KB) [168L]
+│   │   │   │   ├── GOVERNANCE.md (1KB) [50L]
+│   │   │   │   ├── KERNEL_SHELL.md (1KB) [50L]
+│   │   │   │   ├── MONITORING_DEVOPS.md (1KB) [42L]
+│   │   │   │   ├── SHIVAOS_KERNEL.md (5KB) [182L]
+│   │   │   │   ├── TESTNET.md (20KB) [713L]
+│   │   │   │   └── WALLET_KEYGEN.md (5KB) [166L]
+│   │   │   ├── atclang/ (1 files)
+│   │   │   │   └── ATCLANG_SPEC_FULL.md (423B) [9L]
+│   │   │   ├── blockchain/ (2 files)
+│   │   │   │   ├── ETHEREUM_INTEGRATION.md (6KB) [231L]
+│   │   │   │   └── SOLANA_INTEGRATION.md (6KB) [224L]
+│   │   │   ├── compliance/ (5 files)
+│   │   │   │   ├── ATVM_LICENSE_GATE_SPEC.md (7KB) [242L]
+│   │   │   │   ├── BAFIN_KONFORMITAETSBERICHT.md (15KB) [408L]
+│   │   │   │   ├── COMPLIANCE_HANDBUCH.md (5KB) [131L]
+│   │   │   │   ├── IP_LICENSE_DASHBOARD_SPEC.md (6KB) [205L]
+│   │   │   │   └── SMART_CONTRACT_RICHTLINIE.md (21KB) [589L]
+│   │   │   ├── contracts/ (2 files)
+│   │   │   │   ├── ATC_TOKEN_STANDARD.md (6KB) [202L]
+│   │   │   │   └── SHIVAMON_NFT_CONTRACT.md (20KB) [778L]
+│   │   │   ├── issues/ (85 files)
+│   │   │   │   ├── ISSUE_01_SMART_CONTRACTS.md (4KB) [141L]
+│   │   │   │   ├── ISSUE_02_GEMINI_AI.md (3KB) [141L]
+│   │   │   │   ├── ISSUE_03_BATTLE_UI.md (4KB) [141L]
+│   │   │   │   ├── ISSUE_04_PERSISTENZ.md (4KB) [156L]
+│   │   │   │   ├── ISSUE_05_EXPLORER.md (3KB) [102L]
+│   │   │   │   ├── ISSUE_06_ECDSA.md (4KB) [141L]
+│   │   │   │   ├── ISSUE_07_BUILD.md (3KB) [133L]
+│   │   │   │   ├── ISSUE_08_TESTNET.md (3KB) [127L]
+│   │   │   │   ├── ISSUE_09_GOVERNANCE.md (2KB) [97L]
+│   │   │   │   ├── ISSUE_10_BRIDGE.md (1KB) [53L]
+│   │   │   │   ├── ISSUE_11_BREEDING.md (3KB) [88L]
+│   │   │   │   ├── ISSUE_12_SOLIDITY.md (4KB) [145L]
+│   │   │   │   ├── ISSUE_13_MARKETPLACE.md (3KB) [120L]
+│   │   │   │   ├── ISSUE_14_BOOTSTRAP_NODE.md (7KB) [308L]
+│   │   │   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md (1KB) [46L]
+│   │   │   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md (1KB) [45L]
+│   │   │   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md (1KB) [45L]
+│   │   │   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md (1KB) [46L]
+│   │   │   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md (1KB) [45L]
+│   │   │   │   ├── ISSUE_20_GATEWAY_TESTS.md (1KB) [63L]
+│   │   │   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md (1KB) [48L]
+│   │   │   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md (1KB) [47L]
+│   │   │   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md (1KB) [48L]
+│   │   │   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md (1KB) [50L]
+│   │   │   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   │   │   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md (1KB) [47L]
+│   │   │   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md (1KB) [47L]
+│   │   │   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+│   │   │   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md (1KB) [45L]
+│   │   │   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md (1KB) [45L]
+│   │   │   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md (1KB) [45L]
+│   │   │   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md (1KB) [51L]
+│   │   │   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md (1KB) [49L]
+│   │   │   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md (1KB) [52L]
+│   │   │   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md (1KB) [56L]
+│   │   │   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md (1KB) [51L]
+│   │   │   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md (1KB) [50L]
+│   │   │   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md (1KB) [52L]
+│   │   │   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md (1KB) [52L]
+│   │   │   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md (1KB) [54L]
+│   │   │   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md (992B) [44L]
+│   │   │   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md (798B) [38L]
+│   │   │   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md (738B) [38L]
+│   │   │   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md (770B) [38L]
+│   │   │   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md (814B) [38L]
+│   │   │   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md (823B) [38L]
+│   │   │   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md (900B) [36L]
+│   │   │   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md (881B) [36L]
+│   │   │   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md (880B) [36L]
+│   │   │   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md (1009B) [36L]
+│   │   │   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md (1011B) [39L]
+│   │   │   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md (1004B) [37L]
+│   │   │   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md (987B) [37L]
+│   │   │   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md (987B) [40L]
+│   │   │   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md (998B) [38L]
+│   │   │   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md (996B) [39L]
+│   │   │   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md (1005B) [36L]
+│   │   │   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md (997B) [37L]
+│   │   │   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md (1015B) [37L]
+│   │   │   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md (1007B) [37L]
+│   │   │   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md (1002B) [38L]
+│   │   │   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md (1002B) [37L]
+│   │   │   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md (1017B) [40L]
+│   │   │   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md (997B) [38L]
+│   │   │   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md (1000B) [38L]
+│   │   │   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md (1KB) [35L]
+│   │   │   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md (1KB) [38L]
+│   │   │   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md (1KB) [39L]
+│   │   │   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md (1018B) [40L]
+│   │   │   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md (1KB) [39L]
+│   │   │   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md (1KB) [43L]
+│   │   │   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md (1KB) [40L]
+│   │   │   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md (1KB) [40L]
+│   │   │   │   ├── OPEN_ISSUES_MASTER.md (13KB) [353L]
+│   │   │   │   ├── README.md (3KB) [62L]
+│   │   │   │   └── TESTNET_INDEX.md (1KB) [25L]
+│   │   │   ├── repo/ (1 files)
+│   │   │   │   └── README.md (2KB) [56L]
+│   │   │   ├── roadmap/ (1 files)
+│   │   │   │   └── ROADMAP_EXTENDED.md (10KB) [245L]
+│   │   │   ├── sprints/ (3 files)
+│   │   │   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md (3KB) [76L]
+│   │   │   │   ├── SPRINT_3.3_SECURITY_AUDIT.md (3KB) [83L]
+│   │   │   │   └── SPRINT_4.0_MAINNET_LAUNCH.md (3KB) [82L]
+│   │   │   ├── standards/ (108 files)
+│   │   │   │   ├── ATC/ (1 files)
+│   │   │   │   │   └── ATC-0009-BRIDGE.md (1KB) [55L]
+│   │   │   │   ├── ATC-01-CORE_NODE_PROTOCOL.md (8KB) [225L]
+│   │   │   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md (9KB) [246L]
+│   │   │   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md (10KB) [257L]
+│   │   │   │   ├── ATC-04-DAG_CONSENSUS.md (7KB) [200L]
+│   │   │   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md (8KB) [217L]
+│   │   │   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md (22KB) [760L]
+│   │   │   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md (9KB) [231L]
+│   │   │   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md (8KB) [205L]
+│   │   │   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md (8KB) [209L]
+│   │   │   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md (9KB) [234L]
+│   │   │   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md (8KB) [210L]
+│   │   │   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md (8KB) [204L]
+│   │   │   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md (7KB) [201L]
+│   │   │   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md (8KB) [217L]
+│   │   │   │   ├── ATC-15-PROOF_OF_AI_MINING.md (9KB) [229L]
+│   │   │   │   ├── ATC-16-REFERRAL_REWARDS.md (8KB) [206L]
+│   │   │   │   ├── ATC-17-DAO_GOVERNANCE.md (8KB) [224L]
+│   │   │   │   ├── ATC-18-MULTISIG_AUTH.md (8KB) [224L]
+│   │   │   │   ├── ATC-19-AMM_LOGIC.md (8KB) [212L]
+│   │   │   │   ├── ATC-20-WRAPPED_SYNTHETIC.md (8KB) [226L]
+│   │   │   │   ├── ATC-21-HOLOGRAPHIC_WASM.md (9KB) [248L]
+│   │   │   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md (8KB) [225L]
+│   │   │   │   ├── ATC-23-DATA_SHARDING_STORAGE.md (8KB) [222L]
+│   │   │   │   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   │   │   │   ├── ATC-25-TENSOR_COMPUTE.md (8KB) [218L]
+│   │   │   │   ├── ATC-26-XAI_TRANSPARENCY.md (8KB) [224L]
+│   │   │   │   ├── ATC-27-AI_MODEL_AUDITING.md (8KB) [226L]
+│   │   │   │   ├── ATC-28-FEDERATED_LEARNING.md (9KB) [254L]
+│   │   │   │   ├── ATC-29-AI_MARKETPLACE.md (9KB) [246L]
+│   │   │   │   ├── ATC-30-REPUTATION_TRUST.md (10KB) [271L]
+│   │   │   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md (10KB) [266L]
+│   │   │   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md (10KB) [267L]
+│   │   │   │   ├── ATC-33-AI_FEEDBACK_RLHF.md (11KB) [270L]
+│   │   │   │   ├── ATC-34-CROSS_LAYER_INTEROP.md (11KB) [277L]
+│   │   │   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md (10KB) [263L]
+│   │   │   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md (9KB) [262L]
+│   │   │   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md (10KB) [255L]
+│   │   │   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md (6KB) [142L]
+│   │   │   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md (6KB) [137L]
+│   │   │   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md (7KB) [155L]
+│   │   │   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md (7KB) [155L]
+│   │   │   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md (7KB) [173L]
+│   │   │   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md (7KB) [149L]
+│   │   │   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md (3KB) [115L]
+│   │   │   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md (4KB) [115L]
+│   │   │   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md (3KB) [116L]
+│   │   │   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md (3KB) [115L]
+│   │   │   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md (4KB) [119L]
+│   │   │   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md (3KB) [115L]
+│   │   │   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md (4KB) [117L]
+│   │   │   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md (4KB) [119L]
+│   │   │   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md (4KB) [118L]
+│   │   │   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md (4KB) [118L]
+│   │   │   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md (4KB) [119L]
+│   │   │   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md (4KB) [118L]
+│   │   │   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md (4KB) [119L]
+│   │   │   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md (4KB) [127L]
+│   │   │   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md (4KB) [126L]
+│   │   │   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md (4KB) [126L]
+│   │   │   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md (4KB) [126L]
+│   │   │   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md (4KB) [127L]
+│   │   │   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md (4KB) [127L]
+│   │   │   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md (4KB) [128L]
+│   │   │   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md (4KB) [128L]
+│   │   │   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md (4KB) [119L]
+│   │   │   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md (4KB) [119L]
+│   │   │   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md (3KB) [118L]
+│   │   │   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md (4KB) [118L]
+│   │   │   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md (4KB) [119L]
+│   │   │   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md (4KB) [118L]
+│   │   │   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md (4KB) [117L]
+│   │   │   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md (4KB) [119L]
+│   │   │   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md (4KB) [119L]
+│   │   │   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md (3KB) [118L]
+│   │   │   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md (4KB) [119L]
+│   │   │   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md (4KB) [120L]
+│   │   │   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md (4KB) [120L]
+│   │   │   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md (4KB) [119L]
+│   │   │   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md (4KB) [119L]
+│   │   │   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md (4KB) [120L]
+│   │   │   │   ├── ATC-81-PROOF_OF_HISTORY.md (2KB) [105L]
+│   │   │   │   ├── ATC-82-PROOF_OF_WORK.md (2KB) [104L]
+│   │   │   │   ├── ATC-83-PROOF_OF_STAKE.md (2KB) [106L]
+│   │   │   │   ├── ATC-84-FORK_RESOLUTION.md (2KB) [103L]
+│   │   │   │   ├── ATC-85-INITIAL_SYNC.md (2KB) [105L]
+│   │   │   │   ├── ATC-86-ECDSA_SIGNATURE.md (2KB) [105L]
+│   │   │   │   ├── ATC-87-GAS_FEE.md (2KB) [105L]
+│   │   │   │   ├── ATC-88-AMM.md (2KB) [105L]
+│   │   │   │   ├── ATC-89-FUNGIBLE_TOKEN.md (2KB) [106L]
+│   │   │   │   ├── ATC-90-NFT_SHIVAMON.md (2KB) [106L]
+│   │   │   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md (2KB) [105L]
+│   │   │   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md (7KB) [221L]
+│   │   │   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md (10KB) [338L]
+│   │   │   │   ├── ATC-94-ATCLANG_STDLIB.md (6KB) [187L]
+│   │   │   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md (6KB) [221L]
+│   │   │   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   │   │   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md (2KB) [83L]
+│   │   │   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md (8KB) [243L]
+│   │   │   │   ├── ATC-98-TESTING_STANDARD.md (1KB) [69L]
+│   │   │   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md (7KB) [189L]
+│   │   │   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md (11KB) [297L]
+│   │   │   │   ├── ATC_ECOSYSTEM_STANDARDS.md (13KB) [447L]
+│   │   │   │   ├── ATC_STANDARDS.md (5KB) [233L]
+│   │   │   │   ├── ATS-LIC-SYSTEM_HARDWARE_LICENSE.md (4KB) [117L]
+│   │   │   │   ├── ATS_STANDARDS.md (7KB) [283L]
+│   │   │   │   ├── OVERVIEW.md (1KB) [40L]
+│   │   │   │   └── STANDARDS_REGISTRY.md (13KB) [208L]
+│   │   │   ├── whitepaper/ (3 files)
+│   │   │   │   ├── CHANGELOG.md (706B) [24L]
+│   │   │   │   ├── README.md (2KB) [48L]
+│   │   │   │   └── WHITEPAPER.md (80KB) [2470L]
+│   │   │   ├── wiki/ (95 files)
+│   │   │   │   ├── atclang/ (13 files)
+│   │   │   │   │   ├── docs/ (12 files)
+│   │   │   │   │   │   ├── CHANGELOG.md (338B) [8L]
+│   │   │   │   │   │   ├── COMPILER.md (3KB) [105L]
+│   │   │   │   │   │   ├── CONTRIBUTING.md (472B) [11L]
+│   │   │   │   │   │   ├── EXAMPLES.md (3KB) [95L]
+│   │   │   │   │   │   ├── LEXER.md (1KB) [59L]
+│   │   │   │   │   │   ├── PARSER.md (3KB) [135L]
+│   │   │   │   │   │   ├── REPL.md (2KB) [79L]
+│   │   │   │   │   │   ├── SECURITY.md (1KB) [34L]
+│   │   │   │   │   │   ├── SECURITY_ANALYZER.md (2KB) [82L]
+│   │   │   │   │   │   ├── SPEC.md (1KB) [55L]
+│   │   │   │   │   │   ├── STDLIB.md (3KB) [111L]
+│   │   │   │   │   │   └── VM.md (2KB) [63L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── atcnet/ (6 files)
+│   │   │   │   │   ├── docs/ (5 files)
+│   │   │   │   │   │   ├── BOOTSTRAP.md (312B) [18L]
+│   │   │   │   │   │   ├── MESSAGES.md (1KB) [40L]
+│   │   │   │   │   │   ├── PROTOCOL.md (2KB) [57L]
+│   │   │   │   │   │   ├── SECURITY.md (336B) [11L]
+│   │   │   │   │   │   └── TOPOLOGY.md (1KB) [43L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── contracts/ (7 files)
+│   │   │   │   │   ├── docs/ (6 files)
+│   │   │   │   │   │   ├── ATC8300.md (1KB) [51L]
+│   │   │   │   │   │   ├── ATC9000.md (2KB) [92L]
+│   │   │   │   │   │   ├── ATC9900.md (514B) [20L]
+│   │   │   │   │   │   ├── BRIDGE.md (1KB) [38L]
+│   │   │   │   │   │   ├── DEPLOYMENT.md (603B) [25L]
+│   │   │   │   │   │   └── SECURITY.md (708B) [26L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── franchise/ (8 files)
+│   │   │   │   │   ├── docs/ (7 files)
+│   │   │   │   │   │   ├── API.md (1KB) [37L]
+│   │   │   │   │   │   ├── CONCEPT.md (1000B) [24L]
+│   │   │   │   │   │   ├── CONTRACTS.md (1KB) [49L]
+│   │   │   │   │   │   ├── DEPLOYMENT.md (879B) [43L]
+│   │   │   │   │   │   ├── ROADMAP.md (726B) [20L]
+│   │   │   │   │   │   ├── SECURITY.md (904B) [29L]
+│   │   │   │   │   │   └── TOKEN_ECONOMY.md (1KB) [41L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── gateway/ (6 files)
+│   │   │   │   │   ├── docs/ (5 files)
+│   │   │   │   │   │   ├── AUTH.md (965B) [43L]
+│   │   │   │   │   │   ├── MIDDLEWARE.md (368B) [14L]
+│   │   │   │   │   │   ├── RATE_LIMITING.md (956B) [43L]
+│   │   │   │   │   │   ├── ROUTES.md (995B) [32L]
+│   │   │   │   │   │   └── SECURITY.md (372B) [13L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── kai-os/ (9 files)
+│   │   │   │   │   ├── code/ (1 files)
+│   │   │   │   │   │   └── atclang/ (1 files)
+│   │   │   │   │   │       └── ATCLANG_SPEC.md (432B) [9L]
+│   │   │   │   │   ├── docs/ (7 files)
+│   │   │   │   │   │   ├── issues/ (1 files)
+│   │   │   │   │   │   │   └── OPEN_ISSUES_MASTER.md (13KB) [353L]
+│   │   │   │   │   │   ├── standards/ (1 files)
+│   │   │   │   │   │   │   └── STANDARDS_REGISTRY.md (10KB) [212L]
+│   │   │   │   │   │   ├── DECISIONS_REGISTER.md (2KB) [69L]
+│   │   │   │   │   │   ├── DEPRECATED.md (1KB) [32L]
+│   │   │   │   │   │   ├── MIGRATION_MAP.md (1KB) [30L]
+│   │   │   │   │   │   ├── STATUS.md (2KB) [50L]
+│   │   │   │   │   │   └── kai-os-wiki.md (395KB) [11376L]
+│   │   │   │   │   └── README.md (542B) [18L]
+│   │   │   │   ├── kernel/ (11 files)
+│   │   │   │   │   ├── docs/ (9 files)
+│   │   │   │   │   │   ├── ATCFS.md (2KB) [107L]
+│   │   │   │   │   │   ├── ATCNET.md (2KB) [89L]
+│   │   │   │   │   │   ├── CHANGELOG.md (231B) [7L]
+│   │   │   │   │   │   ├── CONSENSUS.md (615B) [24L]
+│   │   │   │   │   │   ├── IPC.md (1KB) [43L]
+│   │   │   │   │   │   ├── KERNEL.md (2KB) [87L]
+│   │   │   │   │   │   ├── PERFORMANCE.md (708B) [25L]
+│   │   │   │   │   │   ├── PROCESS_MODEL.md (1KB) [48L]
+│   │   │   │   │   │   └── SECURITY.md (532B) [20L]
+│   │   │   │   │   ├── KERNEL_API.md (9KB) [261L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── overview/ (9 files)
+│   │   │   │   │   ├── docs/ (8 files)
+│   │   │   │   │   │   ├── API.md (1KB) [59L]
+│   │   │   │   │   │   ├── ARCHITECTURE.md (1KB) [36L]
+│   │   │   │   │   │   ├── CONTRIBUTING.md (609B) [19L]
+│   │   │   │   │   │   ├── FAQ.md (1KB) [62L]
+│   │   │   │   │   │   ├── QUICKSTART.md (619B) [30L]
+│   │   │   │   │   │   ├── ROADMAP.md (556B) [25L]
+│   │   │   │   │   │   ├── SECURITY.md (916B) [18L]
+│   │   │   │   │   │   └── WHITEPAPER.md (5KB) [107L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── shivamon/ (7 files)
+│   │   │   │   │   ├── docs/ (6 files)
+│   │   │   │   │   │   ├── BATTLE.md (420B) [17L]
+│   │   │   │   │   │   ├── BREEDING.md (1KB) [37L]
+│   │   │   │   │   │   ├── ELEMENTS.md (1KB) [31L]
+│   │   │   │   │   │   ├── MARKETPLACE.md (408B) [21L]
+│   │   │   │   │   │   ├── NFT_SPEC.md (1KB) [55L]
+│   │   │   │   │   │   └── ROADMAP.md (638B) [24L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── standards/ (3 files)
+│   │   │   │   │   ├── docs/ (2 files)
+│   │   │   │   │   │   ├── ATC_STANDARDS.md (5KB) [233L]
+│   │   │   │   │   │   └── OVERVIEW.md (1KB) [28L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── ui/ (6 files)
+│   │   │   │   │   ├── docs/ (5 files)
+│   │   │   │   │   │   ├── API.md (651B) [30L]
+│   │   │   │   │   │   ├── COMPONENTS.md (442B) [26L]
+│   │   │   │   │   │   ├── DEPLOYMENT.md (969B) [49L]
+│   │   │   │   │   │   ├── DESIGN.md (732B) [24L]
+│   │   │   │   │   │   └── THEME.md (1KB) [67L]
+│   │   │   │   │   └── README.md (2KB) [44L]
+│   │   │   │   ├── chapter-63-cleanup-2026-06-13.md (6KB) [205L]
+│   │   │   │   ├── chapter-70-atclang-migration-complete.md (2KB) [77L]
+│   │   │   │   ├── chapter-71-sprint-audit.md (2KB) [67L]
+│   │   │   │   ├── chapter-72-sprint-2-7-testing-cicd.md (2KB) [59L]
+│   │   │   │   ├── chapter-73-sprint-2-8-testnet.md (1KB) [53L]
+│   │   │   │   ├── chapter-74-sprint-3-1-ux-privacy.md (1KB) [40L]
+│   │   │   │   ├── chapter-75-v01-v03-migration-plan.md (2KB) [74L]
+│   │   │   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md (1KB) [40L]
+│   │   │   │   ├── chapter-77-sprint-4-0-4-1-mainnet.md (1KB) [43L]
+│   │   │   │   └── chapter-78-shivacore-kernel-712-tests.md (4KB) [104L]
+│   │   │   ├── workflows/ (1 files)
+│   │   │   │   └── wiki-sync.yml (8KB) [218L]
+│   │   │   ├── AGENT_COORDINATION.md (25KB) [324L]
+│   │   │   ├── AGENT_POLICY.md (12KB) [317L]
+│   │   │   ├── ATCLANG_AGENT_BUILD_GUIDE.md (22KB) [281L]
+│   │   │   ├── AUDIT_REPORT.md (3KB) [89L]
+│   │   │   ├── CLUSTER_ARCHITECTURE.md (6KB) [103L]
+│   │   │   ├── DECISIONS_REGISTER.md (7KB) [140L]
+│   │   │   ├── DEPRECATED.md (2KB) [50L]
+│   │   │   ├── ECOSYSTEM_BRAIN.md (3KB) [104L]
+│   │   │   ├── FIXES.md (3KB) [96L]
+│   │   │   ├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+│   │   │   ├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+│   │   │   ├── KAI_INTEGRATION.md (6KB) [242L]
+│   │   │   ├── LICENSING_OVERVIEW.md (6KB) [157L]
+│   │   │   ├── MIGRATION_MAP.md (4KB) [113L]
+│   │   │   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   │   │   ├── REALITY_CHECK_2026-07-06.md (28KB) [428L]
+│   │   │   ├── ROADMAP.md (9KB) [208L]
+│   │   │   ├── ROADMAP_COMPLETENESS_AUDIT.md (7KB) [223L]
+│   │   │   ├── SHIVACORE_KERNEL_STATUS.md (38KB) [722L]
+│   │   │   ├── STATUS.md (4KB) [72L]
+│   │   │   ├── TODO.md (8KB) [200L]
+│   │   │   ├── WIKI_AUDIT.md (6KB) [188L]
+│   │   │   ├── api-reference.md (1KB) [33L]
+│   │   │   ├── atclang-guide.md (1KB) [48L]
+│   │   │   ├── genesis_wallet.md (3KB) [103L]
+│   │   │   └── kai-os-wiki.md (297KB) [8436L]
+│   │   ├── gateway/ (2 files)
+│   │   │   ├── main.atc (5KB) [127L]
+│   │   │   └── service_discovery.atc (6KB) [168L]
+│   │   ├── mobile/ (4 files)
+│   │   │   ├── wallet/ (2 files)
+│   │   │   │   ├── __init__.py (162B) [2L]
+│   │   │   │   └── biometric_auth.atc (5KB) [179L]
+│   │   │   ├── __init__.py (123B) [2L]
+│   │   │   └── wallet_api.atc (5KB) [171L]
+│   │   ├── modules/ (120 files)
+│   │   │   ├── assets/ (16 files)
+│   │   │   │   ├── aaa_asset_core.atc (3KB) [87L]
+│   │   │   │   ├── ai_assets.atc (4KB) [124L]
+│   │   │   │   ├── animation.atc (4KB) [142L]
+│   │   │   │   ├── asset_bundle.atc (3KB) [104L]
+│   │   │   │   ├── cloud_assets.atc (5KB) [133L]
+│   │   │   │   ├── encryption.atc (5KB) [149L]
+│   │   │   │   ├── hot_reload.atc (4KB) [125L]
+│   │   │   │   ├── memory_cleanup.atc (4KB) [122L]
+│   │   │   │   ├── mod_system.atc (5KB) [144L]
+│   │   │   │   ├── model3d.atc (5KB) [168L]
+│   │   │   │   ├── priority_loading.atc (2KB) [80L]
+│   │   │   │   ├── render_pipeline.atc (5KB) [159L]
+│   │   │   │   ├── shader_system.atc (4KB) [143L]
+│   │   │   │   ├── streaming.atc (3KB) [91L]
+│   │   │   │   ├── telemetry.atc (4KB) [144L]
+│   │   │   │   └── versioning.atc (4KB) [127L]
+│   │   │   ├── atcnet/ (7 files)
+│   │   │   │   ├── README.md (780B) [37L]
+│   │   │   │   ├── bootstrap_client.atc (4KB) [134L]
+│   │   │   │   ├── discovery.atc (4KB) [138L]
+│   │   │   │   ├── gossip.atc (5KB) [171L]
+│   │   │   │   ├── nat_traversal.atc (3KB) [109L]
+│   │   │   │   ├── p2p_node.atc (4KB) [159L]
+│   │   │   │   └── p2p_propagation.atc (6KB) [215L]
+│   │   │   ├── civilization/ (11 files)
+│   │   │   │   ├── asset_genome_ad66.atc (5KB) [171L]
+│   │   │   │   ├── civilization_engine_ad60.atc (5KB) [236L]
+│   │   │   │   ├── ecosystem_ai_mesh_ad62.atc (7KB) [245L]
+│   │   │   │   ├── evolution_engine_ad69.atc (7KB) [251L]
+│   │   │   │   ├── experience_orchestrator_ad68.atc (6KB) [200L]
+│   │   │   │   ├── gcp_core_ad70.atc (7KB) [169L]
+│   │   │   │   ├── global_simulation_core_ad64.atc (6KB) [198L]
+│   │   │   │   ├── identity_layer_ad65.atc (4KB) [190L]
+│   │   │   │   ├── persistent_world_engine_ad61.atc (5KB) [199L]
+│   │   │   │   ├── proc_universe_generator_ad63.atc (8KB) [204L]
+│   │   │   │   └── production_pipeline_ad67.atc (6KB) [151L]
+│   │   │   ├── contracts/ (10 files)
+│   │   │   │   ├── atc8300/ (1 files)
+│   │   │   │   │   └── atc8300_token.atc (5KB) [178L]
+│   │   │   │   ├── atcoin/ (1 files)
+│   │   │   │   │   └── atcoin.atc (5KB) [176L]
+│   │   │   │   ├── base/ (1 files)
+│   │   │   │   │   └── base_contract.atc (2KB) [69L]
+│   │   │   │   ├── bridge/ (1 files)
+│   │   │   │   │   └── bridge_contract.atc (5KB) [172L]
+│   │   │   │   ├── governance/ (1 files)
+│   │   │   │   │   └── governance_contract.atc (7KB) [237L]
+│   │   │   │   ├── marketplace/ (1 files)
+│   │   │   │   │   └── marketplace_contract.atc (7KB) [236L]
+│   │   │   │   ├── shivamon/ (1 files)
+│   │   │   │   │   └── shivamon_contract.atc (9KB) [290L]
+│   │   │   │   ├── wallet/ (2 files)
+│   │   │   │   │   ├── ecdsa.atc (2KB) [60L]
+│   │   │   │   │   └── keygen.atc (2KB) [75L]
+│   │   │   │   └── README.md (1KB) [43L]
+│   │   │   ├── franchise/ (30 files)
+│   │   │   │   ├── contracts/ (3 files)
+│   │   │   │   │   ├── registry.atc (4KB) [120L]
+│   │   │   │   │   ├── revenue.atc (3KB) [93L]
+│   │   │   │   │   └── token.atc (3KB) [72L]
+│   │   │   │   ├── README.md (775B) [35L]
+│   │   │   │   ├── ai_content_factory_ad28.atc (6KB) [194L]
+│   │   │   │   ├── ai_director_factory_ad41.atc (4KB) [28L]
+│   │   │   │   ├── analytics_factory_ad31.atc (7KB) [232L]
+│   │   │   │   ├── asset_intelligence_factory_ad34.atc (7KB) [210L]
+│   │   │   │   ├── blueprint_factory_ad32.atc (5KB) [165L]
+│   │   │   │   ├── canon_engine_ad33.atc (5KB) [171L]
+│   │   │   │   ├── character_factory_ad23.atc (8KB) [251L]
+│   │   │   │   ├── commerce_factory_ad40.atc (4KB) [26L]
+│   │   │   │   ├── community_factory_ad30.atc (7KB) [222L]
+│   │   │   │   ├── creator_factory_ad38.atc (4KB) [24L]
+│   │   │   │   ├── economy_factory_ad26.atc (6KB) [200L]
+│   │   │   │   ├── factory.atc (5KB) [165L]
+│   │   │   │   ├── gameplay_factory_ad35.atc (4KB) [126L]
+│   │   │   │   ├── gff_core_ad20.atc (8KB) [224L]
+│   │   │   │   ├── ip_factory_ad21.atc (4KB) [147L]
+│   │   │   │   ├── lifecycle_manager_ad43.atc (5KB) [25L]
+│   │   │   │   ├── liveops_factory_ad27.atc (6KB) [212L]
+│   │   │   │   ├── lore_factory_ad24.atc (7KB) [209L]
+│   │   │   │   ├── merchandise_factory_ad29.atc (5KB) [173L]
+│   │   │   │   ├── multiplayer_factory_ad37.atc (3KB) [27L]
+│   │   │   │   ├── narrative_factory_ad36.atc (8KB) [245L]
+│   │   │   │   ├── publishing_factory_ad39.atc (4KB) [25L]
+│   │   │   │   ├── quest_factory_ad25.atc (6KB) [207L]
+│   │   │   │   ├── routes.atc (2KB) [90L]
+│   │   │   │   ├── security_factory_ad42.atc (4KB) [30L]
+│   │   │   │   └── world_factory_ad22.atc (6KB) [235L]
+│   │   │   ├── gateway/ (9 files)
+│   │   │   │   ├── middleware/ (5 files)
+│   │   │   │   │   ├── __init__.py (120B) [2L]
+│   │   │   │   │   ├── auth.atc (2KB) [82L]
+│   │   │   │   │   ├── logger.atc (2KB) [70L]
+│   │   │   │   │   ├── rate_limit.atc (1KB) [50L]
+│   │   │   │   │   └── signature_verify.atc (1KB) [43L]
+│   │   │   │   ├── README.md (858B) [39L]
+│   │   │   │   ├── __init__.py (125B) [2L]
+│   │   │   │   ├── main.atc (5KB) [180L]
+│   │   │   │   └── router.atc (3KB) [96L]
+│   │   │   ├── kernel/ (25 files)
+│   │   │   │   ├── ai_kernel/ (1 files)
+│   │   │   │   │   └── ai_kernel.atc (8KB) [228L]
+│   │   │   │   ├── consensus/ (2 files)
+│   │   │   │   │   ├── poh_integration.atc (2KB) [78L]
+│   │   │   │   │   └── shiva_consensus.atc (16KB) [529L]
+│   │   │   │   ├── fs/ (1 files)
+│   │   │   │   │   └── atcfs.atc (4KB) [142L]
+│   │   │   │   ├── ipc/ (2 files)
+│   │   │   │   │   ├── __init__.py (236B) [4L]
+│   │   │   │   │   └── ipc_bus.atc (3KB) [102L]
+│   │   │   │   ├── net/ (1 files)
+│   │   │   │   │   └── atcnet.atc (4KB) [135L]
+│   │   │   │   ├── pkg/ (1 files)
+│   │   │   │   │   └── manager.atc (6KB) [208L]
+│   │   │   │   ├── process/ (1 files)
+│   │   │   │   │   └── process_mgr.atc (4KB) [161L]
+│   │   │   │   ├── shell/ (1 files)
+│   │   │   │   │   └── shell.atc (8KB) [296L]
+│   │   │   │   ├── README.md (1KB) [46L]
+│   │   │   │   ├── ai_bus_ad13.atc (9KB) [310L]
+│   │   │   │   ├── asset_bus_ad08.atc (5KB) [188L]
+│   │   │   │   ├── audio_bus_ad11.atc (5KB) [199L]
+│   │   │   │   ├── command_bus_ad02.atc (4KB) [168L]
+│   │   │   │   ├── gcl_core_ad00.atc (7KB) [269L]
+│   │   │   │   ├── input_bus_ad12.atc (5KB) [184L]
+│   │   │   │   ├── ipc_bus_atc.ad.atc (8KB) [266L]
+│   │   │   │   ├── message_bus_ad03.atc (6KB) [240L]
+│   │   │   │   ├── network_bus_ad05.atc (8KB) [307L]
+│   │   │   │   ├── physics_bus_ad10.atc (7KB) [255L]
+│   │   │   │   ├── plugin_bus_ad06.atc (8KB) [286L]
+│   │   │   │   ├── query_bus_ad07.atc (3KB) [128L]
+│   │   │   │   ├── render_bus_ad09.atc (5KB) [164L]
+│   │   │   │   └── telemetry_bus_ad14.atc (7KB) [254L]
+│   │   │   ├── meta/ (8 files)
+│   │   │   │   ├── ai_studio_ad49.atc (11KB) [310L]
+│   │   │   │   ├── cross_franchise_ad46.atc (8KB) [223L]
+│   │   │   │   ├── data_lake_ad51.atc (9KB) [237L]
+│   │   │   │   ├── digital_twin_ad50.atc (11KB) [303L]
+│   │   │   │   ├── ip_evolution_ad45.atc (9KB) [241L]
+│   │   │   │   ├── knowledge_graph_ad47.atc (11KB) [289L]
+│   │   │   │   ├── simulation_factory_ad48.atc (13KB) [374L]
+│   │   │   │   └── universe_factory_ad44.atc (13KB) [343L]
+│   │   │   ├── shivamon/ (2 files)
+│   │   │   │   ├── engine/ (1 files)
+│   │   │   │   │   └── battle_engine.atc (5KB) [153L]
+│   │   │   │   └── README.md (819B) [35L]
+│   │   │   ├── standards/ (1 files)
+│   │   │   │   └── README.md (706B) [32L]
+│   │   │   └── ui/ (1 files)
+│   │   │       └── README.md (586B) [30L]
+│   │   ├── monitoring/ (3 files)
+│   │   │   ├── health_checks_atc08.atc (5KB) [197L]
+│   │   │   ├── monitor.atc (6KB) [213L]
+│   │   │   └── prometheus_metrics.atc (6KB) [202L]
+│   │   ├── patches/ (6 files)
+│   │   │   ├── APPLY_FIXES.sh (1KB) [32L]
+│   │   │   ├── atc9900_governance.py (2KB) [60L]
+│   │   │   ├── docker-compose.yml (1KB) [42L]
+│   │   │   ├── gateway_main.py (1KB) [44L]
+│   │   │   ├── gateway_router.py (2KB) [49L]
+│   │   │   └── poh_fixed.py (1KB) [37L]
+│   │   ├── reports/ (1 files)
+│   │   │   └── SPRINT_2.3_2.4_2.7_REPORT.md (3KB) [102L]
+│   │   ├── scripts/ (1 files)
+│   │   │   └── generate_validators.atc (4KB) [135L]
+│   │   ├── shivaos/ (3 files)
+│   │   │   ├── fs/ (1 files)
+│   │   │   │   └── atcfs_module.atc (4KB) [126L]
+│   │   │   ├── kernel/ (1 files)
+│   │   │   │   └── syscalls.atc (3KB) [118L]
+│   │   │   └── ui/ (1 files)
+│   │   │       └── renderer.atc (5KB) [186L]
+│   │   ├── tests/ (26 files)
+│   │   │   ├── unit/ (3 files)
+│   │   │   │   ├── test_atclang.py (14KB) [462L]
+│   │   │   │   ├── test_atcnet.py (1KB) [41L]
+│   │   │   │   └── test_p2p_propagation.py (4KB) [151L]
+│   │   │   ├── test_atclang.py (14KB) [470L]
+│   │   │   ├── test_atclang_v03.py (2KB) [68L]
+│   │   │   ├── test_bootstrap.py (10KB) [268L]
+│   │   │   ├── test_did.py (1KB) [61L]
+│   │   │   ├── test_discovery.py (4KB) [155L]
+│   │   │   ├── test_ecdsa.py (2KB) [65L]
+│   │   │   ├── test_fork_resolution.py (3KB) [101L]
+│   │   │   ├── test_gateway.py (7KB) [201L]
+│   │   │   ├── test_gateway_full.py (2KB) [76L]
+│   │   │   ├── test_integration_atcfs_multisig.py (4KB) [129L]
+│   │   │   ├── test_kai_integration.py (8KB) [297L]
+│   │   │   ├── test_multinode_consensus.py (5KB) [155L]
+│   │   │   ├── test_multinode_fivenode.py (3KB) [84L]
+│   │   │   ├── test_node_failure_recovery.py (4KB) [143L]
+│   │   │   ├── test_optimizer.py (9KB) [256L]
+│   │   │   ├── test_orchestrator.py (1KB) [52L]
+│   │   │   ├── test_p2p_propagation.py (5KB) [205L]
+│   │   │   ├── test_persistence.py (2KB) [87L]
+│   │   │   ├── test_poh.py (1KB) [63L]
+│   │   │   ├── test_smart_contracts.py (3KB) [114L]
+│   │   │   ├── test_stdlib.py (10KB) [298L]
+│   │   │   ├── test_stdlib_dispatch.py (11KB) [312L]
+│   │   │   └── test_type_checker.py (7KB) [244L]
+│   │   ├── tools/ (4 files)
+│   │   │   ├── atc_issues_summary.atc (6KB) [212L]
+│   │   │   ├── bigquery_pipeline.atc (4KB) [135L]
+│   │   │   ├── ecdsa_impl.atc (4KB) [119L]
+│   │   │   └── hf_review_pipeline.atc (5KB) [157L]
+│   │   ├── .gitignore (171B)
+│   │   ├── AAA_ASSET_SYSTEM_v1.md (3KB) [120L]
+│   │   ├── AGENT_MANIFEST.md (2KB) [61L]
+│   │   ├── AGENT_MASTERRULES.md (13KB) [438L]
+│   │   ├── ATCLANG_FIRST.md (900B) [31L]
+│   │   ├── CHANGELOG.md (6KB) [172L]
+│   │   ├── CONNECTION_MAP.md (2KB) [50L]
+│   │   ├── ECOSYSTEM.md (8KB) [179L]
+│   │   ├── FILE_REGISTER.md (40KB) [746L]
+│   │   ├── FIXES.md (3KB) [96L]
+│   │   ├── GENESIS_BUS_ARCHITECTURE.md (5KB) [121L]
+│   │   ├── GENESIS_CIVILIZATION_PLATFORM_v4.md (5KB) [153L]
+│   │   ├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+│   │   ├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+│   │   ├── GENESIS_FRANCHISE_FACTORY_v2.md (4KB) [101L]
+│   │   ├── KONSOLIDIERUNGS_ROADMAP.md (14KB) [360L]
+│   │   ├── LICENSE (982B)
+│   │   ├── MILESTONES.md (1KB) [23L]
+│   │   ├── NAMING_CONVENTIONS.md (4KB) [88L]
+│   │   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   │   ├── README.md (1KB) [38L]
+│   │   ├── ROADMAP.md (8KB) [321L]
+│   │   ├── SPRINT_ROADMAP.md (20KB) [568L]
+│   │   ├── STATUS.md (4KB) [117L]
+│   │   ├── TODO.md (2KB) [48L]
+│   │   ├── conftest.py (374B) [9L]
+│   │   └── start.atc (4KB) [129L]
+│   ├── kernel/ (15 files)
+│   │   ├── docs/ (11 files)
+│   │   │   ├── ATCFS.md (2KB) [107L]
+│   │   │   ├── ATCNET.md (2KB) [89L]
+│   │   │   ├── CHANGELOG.md (231B) [7L]
+│   │   │   ├── CONSENSUS.md (615B) [24L]
+│   │   │   ├── IPC.md (1KB) [43L]
+│   │   │   ├── KERNEL.md (2KB) [87L]
+│   │   │   ├── PERFORMANCE.md (708B) [25L]
+│   │   │   ├── PROCESS_MODEL.md (1KB) [48L]
+│   │   │   ├── ROADMAP.md (508B) [18L]
+│   │   │   ├── SECURITY.md (532B) [20L]
+│   │   │   └── TODO.md (638B) [22L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [50L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── linux-edition-wiki/ (6 files)
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (325B) [14L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (321B) [10L]
+│   │   ├── README.md (525B) [18L]
+│   │   └── STATUS.md (308B) [15L]
+│   ├── main/ (26 files)
+│   │   ├── docs/ (22 files)
+│   │   │   ├── API.md (1KB) [59L]
+│   │   │   ├── API_REFERENCE.md (1KB) [50L]
+│   │   │   ├── ARCHITECTURE.md (5KB) [126L]
+│   │   │   ├── BOTTLENECKS.md (1KB) [50L]
+│   │   │   ├── COMMITS.md (2KB) [73L]
+│   │   │   ├── CONTRIBUTING.md (609B) [19L]
+│   │   │   ├── DECENTRALIZED_PROOF.md (3KB) [103L]
+│   │   │   ├── DEPENDENCIES.md (2KB) [79L]
+│   │   │   ├── ENTERPRISE.md (1KB) [65L]
+│   │   │   ├── ERRORS.md (4KB) [79L]
+│   │   │   ├── ERROR_SOLUTIONS.md (3KB) [128L]
+│   │   │   ├── FAQ.md (1KB) [62L]
+│   │   │   ├── IMPROVEMENTS.md (1KB) [61L]
+│   │   │   ├── ISSUES_TRACKER.md (4KB) [107L]
+│   │   │   ├── MATH_PROOF.md (3KB) [93L]
+│   │   │   ├── QUICKSTART.md (619B) [30L]
+│   │   │   ├── ROADMAP.md (2KB) [80L]
+│   │   │   ├── SECURITY.md (916B) [18L]
+│   │   │   ├── STATUS.md (909B) [25L]
+│   │   │   ├── SYNTAX.md (3KB) [133L]
+│   │   │   ├── TODO.md (2KB) [83L]
+│   │   │   └── WHITEPAPER.md (5KB) [107L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (75KB) [1491L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (4KB) [65L]
+│   ├── mobile-wiki/ (6 files)
+│   │   ├── docs/ (2 files)
+│   │   │   ├── ARCHITECTURE.md (412B) [9L]
+│   │   │   └── ROADMAP.md (380B) [12L]
+│   │   ├── .gitignore (44B)
+│   │   ├── FILE_REGISTER.md (488B) [17L]
+│   │   ├── LICENSE (472B)
+│   │   └── README.md (4KB) [70L]
+│   ├── sdk-wiki/ (10 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── API.md (307B) [11L]
+│   │   │   ├── ARCHITECTURE.md (525B) [16L]
+│   │   │   └── ROADMAP.md (173B) [8L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (316B) [14L]
+│   │   ├── FILE_REGISTER.md (490B) [16L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (301B) [10L]
+│   │   ├── README.md (3KB) [69L]
+│   │   └── STATUS.md (288B) [15L]
+│   ├── shivacore-tools-wiki/ (6 files)
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (331B) [14L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (325B) [10L]
+│   │   ├── README.md (535B) [18L]
+│   │   └── STATUS.md (312B) [15L]
+│   ├── shivacore-wiki/ (6 files)
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (327B) [14L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (313B) [10L]
+│   │   ├── README.md (519B) [18L]
+│   │   └── STATUS.md (300B) [15L]
+│   ├── shivamon/ (11 files)
+│   │   ├── docs/ (7 files)
+│   │   │   ├── BATTLE.md (420B) [17L]
+│   │   │   ├── BREEDING.md (1KB) [37L]
+│   │   │   ├── ELEMENTS.md (1KB) [31L]
+│   │   │   ├── MARKETPLACE.md (408B) [21L]
+│   │   │   ├── NFT_SPEC.md (1KB) [55L]
+│   │   │   ├── ROADMAP.md (534B) [18L]
+│   │   │   └── TODO.md (572B) [20L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [43L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── standards/ (8 files)
+│   │   ├── docs/ (4 files)
+│   │   │   ├── ATC_STANDARDS.md (5KB) [233L]
+│   │   │   ├── ATS_STANDARDS.md (7KB) [283L]
+│   │   │   ├── OVERVIEW.md (1KB) [28L]
+│   │   │   └── ROADMAP.md (527B) [17L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (1KB) [41L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── stdlib-wiki/ (10 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (1016B) [34L]
+│   │   │   ├── MODULES.md (943B) [36L]
+│   │   │   └── ROADMAP.md (584B) [16L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (322B) [14L]
+│   │   ├── FILE_REGISTER.md (511B) [16L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (307B) [10L]
+│   │   ├── README.md (3KB) [61L]
+│   │   └── STATUS.md (294B) [15L]
+│   ├── ui/ (10 files)
+│   │   ├── docs/ (6 files)
+│   │   │   ├── API.md (651B) [30L]
+│   │   │   ├── COMPONENTS.md (442B) [26L]
+│   │   │   ├── DEPLOYMENT.md (969B) [49L]
+│   │   │   ├── DESIGN.md (732B) [24L]
+│   │   │   ├── ROADMAP.md (439B) [17L]
+│   │   │   └── THEME.md (1KB) [67L]
+│   │   ├── .gitignore (171B)
+│   │   ├── FILE_REGISTER.md (923B) [38L]
+│   │   ├── LICENSE (982B)
+│   │   └── README.md (3KB) [65L]
+│   ├── vm-wiki/ (10 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (2KB) [44L]
+│   │   │   ├── OPCODES.md (1KB) [26L]
+│   │   │   └── ROADMAP.md (814B) [21L]
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (313B) [14L]
+│   │   ├── FILE_REGISTER.md (507B) [16L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (299B) [10L]
+│   │   ├── README.md (3KB) [61L]
+│   │   └── STATUS.md (286B) [15L]
+│   ├── wallet-wiki/ (7 files)
+│   │   ├── docs/ (3 files)
+│   │   │   ├── ARCHITECTURE.md (386B) [14L]
+│   │   │   ├── ROADMAP.md (383B) [12L]
+│   │   │   └── SECURITY.md (349B) [7L]
+│   │   ├── .gitignore (44B)
+│   │   ├── FILE_REGISTER.md (523B) [18L]
+│   │   ├── LICENSE (472B)
+│   │   └── README.md (4KB) [71L]
+│   ├── windows-edition-wiki/ (6 files)
+│   │   ├── .gitignore (44B)
+│   │   ├── ARCHITECTURE.md (331B) [14L]
+│   │   ├── LICENSE (472B)
+│   │   ├── MODULES.md (325B) [10L]
+│   │   ├── README.md (535B) [18L]
+│   │   └── STATUS.md (312B) [15L]
+│   ├── genesis_communication_layer_v2.md (14KB) [431L]
+│   └── genesis_franchise_factory_v1.md (6KB) [166L]
+├── .gitignore (171B)
+├── AAA_ASSET_SYSTEM_v1.md (3KB) [120L]
+├── AGENT_MANIFEST.md (2KB) [57L]
+├── AGENT_MASTERRULES.md (13KB) [438L]
+├── ATCLANG_FIRST.md (900B) [31L]
+├── CHANGELOG.md (4KB) [92L]
+├── CONNECTION_MAP.md (2KB) [50L]
+├── ECOSYSTEM.md (1KB) [52L]
+├── ECOSYSTEM_STATUS.md (6KB) [116L]
+├── FILE_REGISTER.md (113KB) [1908L]
+├── GENESIS_BUS_ARCHITECTURE.md (5KB) [121L]
+├── GENESIS_CIVILIZATION_PLATFORM_v4.md (5KB) [153L]
+├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+├── GENESIS_FRANCHISE_FACTORY_v2.md (4KB) [101L]
+├── KONSOLIDIERUNGS_MATRIX.md (6KB) [124L]
+├── KONSOLIDIERUNGS_ROADMAP.md (15KB) [385L]
+├── LICENSE (982B)
+├── MILESTONES.md (1KB) [27L]
+├── NAMING_CONVENTIONS.md (4KB) [88L]
+├── README.md (3KB) [103L]
+├── REALITY_STATUS.md (2KB) [63L]
+├── SPRINT_ROADMAP.md (3KB) [62L]
+├── STATUS.md (4KB) [95L]
+├── TODO.md (1KB) [27L]
+├── VERSION (6B)
+├── conftest.py (374B) [9L]
+└── start.atc (4KB) [129L]
 ```
+
 
 ## a-townchain-os-wiki
 
-**Dateien:** 26 | **Verzeichnisse:** 1
+**Layer:** Wiki (Archiv) | **Dateien:** 26 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(24) · .no-ext(1) · .gitignore(1)
 
 ```
 a-townchain-os-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── API.md
-    ├── API_REFERENCE.md
-    ├── ARCHITECTURE.md
-    ├── BOTTLENECKS.md
-    ├── COMMITS.md
-    ├── CONTRIBUTING.md
-    ├── DECENTRALIZED_PROOF.md
-    ├── DEPENDENCIES.md
-    ├── ENTERPRISE.md
-    ├── ERRORS.md
-    ├── ERROR_SOLUTIONS.md
-    ├── FAQ.md
-    ├── IMPROVEMENTS.md
-    ├── ISSUES_TRACKER.md
-    ├── MATH_PROOF.md
-    ├── QUICKSTART.md
-    ├── ROADMAP.md
-    ├── SECURITY.md
-    ├── STATUS.md
-    ├── SYNTAX.md
-    ├── TODO.md
-    └── WHITEPAPER.md
+├── docs/ (22 files)
+│   ├── API.md (1KB) [59L]
+│   ├── API_REFERENCE.md (1KB) [50L]
+│   ├── ARCHITECTURE.md (5KB) [126L]
+│   ├── BOTTLENECKS.md (1KB) [50L]
+│   ├── COMMITS.md (2KB) [73L]
+│   ├── CONTRIBUTING.md (609B) [19L]
+│   ├── DECENTRALIZED_PROOF.md (3KB) [103L]
+│   ├── DEPENDENCIES.md (2KB) [79L]
+│   ├── ENTERPRISE.md (1KB) [65L]
+│   ├── ERRORS.md (4KB) [79L]
+│   ├── ERROR_SOLUTIONS.md (3KB) [128L]
+│   ├── FAQ.md (1KB) [62L]
+│   ├── IMPROVEMENTS.md (1KB) [61L]
+│   ├── ISSUES_TRACKER.md (4KB) [107L]
+│   ├── MATH_PROOF.md (3KB) [93L]
+│   ├── QUICKSTART.md (619B) [30L]
+│   ├── ROADMAP.md (2KB) [80L]
+│   ├── SECURITY.md (916B) [18L]
+│   ├── STATUS.md (909B) [25L]
+│   ├── SYNTAX.md (3KB) [133L]
+│   ├── TODO.md (2KB) [83L]
+│   └── WHITEPAPER.md (5KB) [107L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (75KB) [1491L]
+├── LICENSE (982B)
+└── README.md (4KB) [65L]
 ```
+
 
 ## atc-aistudio
 
-**Dateien:** 248 | **Verzeichnisse:** 21
+**Layer:** L10 (AI Studio) | **Dateien:** 248 | **Verzeichnisse:** 21 | **Max Tiefe:** 4
+
+**Sprachen:** .tsx(158) · .ts(41) · .js(17) · .cjs(11) · .md(8)
 
 ```
 atc-aistudio/
-├── .env.example
-├── .gitignore
-├── AGENTS.md
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── GEMINI.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── SOFTWARE_ROADMAP.md
-├── STATUS.md
-├── assets/
-│   └── .aistudio/
-│       └── .gitignore
-├── check_dups2.js
-├── check_dups_all.js
-├── check_dups_desktop.js
-├── check_dups_windows_map.js
-├── fetch.js
-├── firebase-applet-config.json
-├── fix.js
-├── fix2.js
-├── fix_react_imports.cjs
-├── fix_wiki.cjs
-├── fix_wiki.js
-├── index.html
-├── mark_completed.ts
-├── mark_completed_src.ts
-├── metadata.json
-├── move_back.js
-├── output.txt
-├── package-lock.json
-├── package.json
-├── replace.js
-├── replace_langs.cjs
-├── replace_langs_2.cjs
-├── replace_langs_3.cjs
-├── replace_langs_4.cjs
-├── replace_langs_5.cjs
-├── replace_langs_6.cjs
-├── script.cjs
-├── script.js
-├── script2.cjs
-├── server.ts
-├── src/
-│   ├── App.tsx
-│   ├── DesktopApp.tsx
-│   ├── atcLangRoadmapData.ts
-│   ├── atcLangWikiData.ts
-│   ├── auditData.ts
-│   ├── backend/
-│   │   ├── blockchain/
-│   │   │   └── engine.ts
-│   │   └── p2p/
-│   │       └── network.ts
-│   ├── components/
-│   │   ├── ATCAssetView.tsx
-│   │   ├── ATCDjStudioView.tsx
-│   │   ├── ATCLangEditor.tsx
-│   │   ├── ATCWalletView.tsx
-│   │   ├── ATownDashboardView.tsx
-│   │   ├── ATownOSNode.tsx
-│   │   ├── ATownTestView.tsx
-│   │   ├── AgentCivilizationView.tsx
-│   │   ├── Ai3DRenderEngineTab.tsx
-│   │   ├── AiAnimationEngineTab.tsx
-│   │   ├── AiAudioEngineTab.tsx
-│   │   ├── AiCharacterBioTab.tsx
-│   │   ├── AiGameEngineTab.tsx
-│   │   ├── AiKernelView.tsx
-│   │   ├── AiOsEngineView.tsx
-│   │   ├── AiSoftwareWorkflowView.tsx
-│   │   ├── AiTimelineEngineTab.tsx
-│   │   ├── AntiCheatView.tsx
-│   │   ├── ApiHealthWidget.tsx
-│   │   ├── ApiInterfacesView.tsx
-│   │   ├── ApiOrchestratorView.tsx
-│   │   ├── AppGlobeView.tsx
-│   │   ├── ArchitectureDependencyGraph.tsx
-│   │   ├── ArchitectureView.tsx
-│   │   ├── AssetVaultView.tsx
-│   │   ├── AtcAssetsDbView.tsx
-│   │   ├── AtcCoreKernelView.tsx
-│   │   ├── AtcLangArchitectureView.tsx
-│   │   ├── AtcLangPlaygroundView.tsx
-│   │   ├── AtcLangPresetsView.tsx
-│   │   ├── AtcWhitepaperView.tsx
-│   │   ├── AtsSuite.tsx
-│   │   ├── AtvmSandboxView.test.tsx
-│   │   ├── AtvmSandboxView.tsx
-│   │   ├── BatteryStatus.tsx
-│   │   ├── BattleArenaView.tsx
-│   │   ├── BenchmarkCenterView.tsx
-│   │   ├── BlockchainEcosystemView.tsx
-│   │   ├── BlockchainLedgerView.tsx
-│   │   ├── CalculatorView.tsx
-│   │   ├── CalendarView.tsx
-│   │   ├── CiCdPipelineView.tsx
-│   │   ├── ClockView.tsx
-│   │   ├── CodeAnalyzerView.tsx
-│   │   ├── CommitHeatmap.tsx
-│   │   ├── ComplianceEngineView.tsx
-│   │   ├── ComplianceView.tsx
-│   │   ├── ConflictResolutionModal.tsx
-│   │   ├── ConsensusIntegrationGuide.tsx
-│   │   ├── CryptoVisualizationView.tsx
-│   │   ├── DataProcessingView.tsx
-│   │   ├── DbOrchestratorView.tsx
-│   │   ├── DeFiLiquidityPoolView.tsx
-│   │   ├── DependencyMapView.tsx
-│   │   ├── DeploymentPipelineWidget.tsx
-│   │   ├── DevToolsView.tsx
-│   │   ├── DeveloperKnowledgeBaseView.tsx
-│   │   ├── DistributedDatalakeView.tsx
-│   │   ├── EcosystemInstaller.tsx
-│   │   ├── EcosystemTreeOverlay.tsx
-│   │   ├── EcosystemUmlView.tsx
-│   │   ├── EcosystemVisualizerView.tsx
-│   │   ├── FileManagerView.tsx
-│   │   ├── FolderView.tsx
-│   │   ├── FranchiseFactoryView.tsx
-│   │   ├── GateToHellBrowser.tsx
-│   │   ├── GenesisBlockGeneratorView.tsx
-│   │   ├── GitGraphVisualization.tsx
-│   │   ├── GitHubRepoSyncView.tsx
-│   │   ├── GitHubStatusDashboard.tsx
-│   │   ├── GitOpsView.tsx
-│   │   ├── GovernanceView.tsx
-│   │   ├── GpuPerformanceWidget.tsx
-│   │   ├── HardwareDriversView.tsx
-│   │   ├── IdeaToAppFlowchartView.tsx
-│   │   ├── ImageGeneratorTab.tsx
-│   │   ├── IntegrationsWindow.tsx
-│   │   ├── InterfacesView.tsx
-│   │   ├── JsExampleRunner.tsx
-│   │   ├── LazyMetricsCharts.tsx
-│   │   ├── LegalView.tsx
-│   │   ├── LoginOverlay.tsx
-│   │   ├── MainnetLaunchView.tsx
-│   │   ├── MarketplaceView.tsx
-│   │   ├── MediaApps.tsx
-│   │   ├── MetricsDashboard.tsx
-│   │   ├── MetricsView.tsx
-│   │   ├── ModulesPluginView.tsx
-│   │   ├── NetworkExplorerView.test.tsx
-│   │   ├── NetworkExplorerView.tsx
-│   │   ├── NetworkTopologyView.tsx
-│   │   ├── NodeHealthMonitor.tsx
-│   │   ├── NotepadView.tsx
-│   │   ├── OfficeApps.tsx
-│   │   ├── OfficeSuiteView.tsx
-│   │   ├── P2PChatView.tsx
-│   │   ├── Paint3DView.tsx
-│   │   ├── PaymentSystemView.tsx
-│   │   ├── PipelineGeneratorTab.tsx
-│   │   ├── PoAITrainingEngineView.tsx
-│   │   ├── ProjectAuditDashboard.tsx
-│   │   ├── ProjectHubView.tsx
-│   │   ├── ProtocolsView.tsx
-│   │   ├── ReportsView.tsx
-│   │   ├── RepositoryActivityChart.tsx
-│   │   ├── RepositoryLineChart.tsx
-│   │   ├── RescueSystemView.tsx
-│   │   ├── RoadmapView.tsx
-│   │   ├── SemanticGraphView.tsx
-│   │   ├── SessionExportView.tsx
-│   │   ├── SettingsView.tsx
-│   │   ├── SocialMediaView.tsx
-│   │   ├── SoftwareAuditView.tsx
-│   │   ├── SoftwareKnowledgeDbView.tsx
-│   │   ├── SourceCodeViewer.tsx
-│   │   ├── SpecificSettingsViews.tsx
-│   │   ├── StorageManagerView.tsx
-│   │   ├── StrategicArchitectureMap.tsx
-│   │   ├── StructureView.tsx
-│   │   ├── SyncDashboardModal.tsx
-│   │   ├── SyncHistoryModal.tsx
-│   │   ├── SyncMetricsView.tsx
-│   │   ├── SyncStatusDonutChart.tsx
-│   │   ├── SyncStatusOverview.tsx
-│   │   ├── SystemDiagnosticsView.tsx
-│   │   ├── SystemFinderView.tsx
-│   │   ├── SystemHealthDashboard.tsx
-│   │   ├── SystemHealthDashboardWidget.tsx
-│   │   ├── SystemLogsView.tsx
-│   │   ├── TaskManagerView.tsx
-│   │   ├── TechDocsView.tsx
-│   │   ├── TechTreeView.tsx
-│   │   ├── TerminalView.tsx
-│   │   ├── TestnetOrchestrationView.tsx
-│   │   ├── TestnetSimulationView.tsx
-│   │   ├── TextGeneratorTab.tsx
-│   │   ├── ThemeSwitcher.tsx
-│   │   ├── TodoView.tsx
-│   │   ├── TooltipIcon.tsx
-│   │   ├── TxOrchestratorView.tsx
-│   │   ├── UserProfileView.tsx
-│   │   ├── VideoGeneratorTab.tsx
-│   │   ├── WebhookMonitor.tsx
-│   │   ├── Window.tsx
-│   │   ├── WindowExtras.tsx
-│   │   ├── ZeroKnowledgeProofView.tsx
-│   │   ├── ZkCircuitEditorView.tsx
-│   │   └── ZkVisualizationView.tsx
-│   ├── contexts/
-│   │   ├── FirebaseContext.tsx
-│   │   ├── GoogleWorkspaceContext.tsx
-│   │   ├── SyncMetricsContext.tsx
-│   │   └── WalletContext.tsx
-│   ├── data.ts
-│   ├── db/
-│   │   ├── drizzle.config.ts
-│   │   ├── index.ts
-│   │   └── schema.ts
-│   ├── ecosystemData.ts
-│   ├── fix_translation.cjs
-│   ├── hooks/
-│   │   ├── useGoogleSheetsSync.ts
-│   │   └── useKeyboardShortcut.ts
-│   ├── index.css
-│   ├── lib/
-│   │   ├── CryptoEngine.ts
-│   │   ├── firebase-admin.ts
-│   │   ├── firebase.ts
-│   │   ├── indexedDb.ts
-│   │   ├── syncLogic.test.ts
-│   │   └── syncLogic.ts
-│   ├── main.tsx
-│   ├── marketplaceApps.ts
-│   ├── middleware/
-│   │   └── auth.ts
-│   ├── requirementsData.ts
-│   ├── roadmapData.ts
-│   ├── routes/
-│   │   └── notion.ts
-│   ├── services/
-│   │   ├── SyncService.ts
-│   │   └── githubSync.ts
-│   ├── standardsData.ts
-│   ├── tierData.ts
-│   ├── types.ts
-│   ├── utils/
-│   │   ├── appSync.tsx
-│   │   ├── auditUtils.test.ts
-│   │   ├── auditUtils.ts
-│   │   └── crypto.ts
-│   └── wikiData.ts
-├── testChat.js
-├── test_know.js
-├── tests/
-│   ├── GitHubRepoSyncView.test.tsx
-│   └── audit_compliance.test.ts
-├── tmp.txt
-├── tsconfig.json
-├── update_wiki_categories.ts
-├── vite.config.ts
-└── workspace/
-    ├── move.js
-    ├── rename.js
-    ├── replace.js
-    ├── replaceEnterprise.js
-    ├── replaceGoals.ts
-    ├── replaceGoals2.ts
-    └── src/
-        ├── backend/
-        │   └── blockchain/
-        │       └── engine.ts
-        └── components/
-            └── GovernanceView.tsx
+├── assets/ (1 files)
+│   └── .aistudio/ (1 files)
+│       └── .gitignore (2B)
+├── src/ (190 files)
+│   ├── backend/ (2 files)
+│   │   ├── blockchain/ (1 files)
+│   │   │   └── engine.ts (3KB) [129L]
+│   │   └── p2p/ (1 files)
+│   │       └── network.ts (2KB) [77L]
+│   ├── components/ (148 files)
+│   │   ├── ATCAssetView.tsx (11KB) [191L]
+│   │   ├── ATCDjStudioView.tsx (17KB) [445L]
+│   │   ├── ATCLangEditor.tsx (26KB) [625L]
+│   │   ├── ATCWalletView.tsx (26KB) [498L]
+│   │   ├── ATownDashboardView.tsx (14KB) [302L]
+│   │   ├── ATownOSNode.tsx (71KB) [1439L]
+│   │   ├── ATownTestView.tsx (6KB) [111L]
+│   │   ├── AgentCivilizationView.tsx (8KB) [152L]
+│   │   ├── Ai3DRenderEngineTab.tsx (8KB) [199L]
+│   │   ├── AiAnimationEngineTab.tsx (8KB) [198L]
+│   │   ├── AiAudioEngineTab.tsx (8KB) [198L]
+│   │   ├── AiCharacterBioTab.tsx (9KB) [199L]
+│   │   ├── AiGameEngineTab.tsx (9KB) [200L]
+│   │   ├── AiKernelView.tsx (6KB) [128L]
+│   │   ├── AiOsEngineView.tsx (19KB) [490L]
+│   │   ├── AiSoftwareWorkflowView.tsx (11KB) [229L]
+│   │   ├── AiTimelineEngineTab.tsx (9KB) [199L]
+│   │   ├── AntiCheatView.tsx (14KB) [261L]
+│   │   ├── ApiHealthWidget.tsx (3KB) [85L]
+│   │   ├── ApiInterfacesView.tsx (9KB) [189L]
+│   │   ├── ApiOrchestratorView.tsx (17KB) [354L]
+│   │   ├── AppGlobeView.tsx (9KB) [233L]
+│   │   ├── ArchitectureDependencyGraph.tsx (7KB) [248L]
+│   │   ├── ArchitectureView.tsx (38KB) [888L]
+│   │   ├── AssetVaultView.tsx (8KB) [187L]
+│   │   ├── AtcAssetsDbView.tsx (11KB) [250L]
+│   │   ├── AtcCoreKernelView.tsx (8KB) [144L]
+│   │   ├── AtcLangArchitectureView.tsx (33KB) [585L]
+│   │   ├── AtcLangPlaygroundView.tsx (12KB) [256L]
+│   │   ├── AtcLangPresetsView.tsx (3KB) [64L]
+│   │   ├── AtcWhitepaperView.tsx (10KB) [187L]
+│   │   ├── AtsSuite.tsx (4KB) [51L]
+│   │   ├── AtvmSandboxView.test.tsx (3KB) [85L]
+│   │   ├── AtvmSandboxView.tsx (26KB) [499L]
+│   │   ├── BatteryStatus.tsx (11KB) [269L]
+│   │   ├── BattleArenaView.tsx (8KB) [143L]
+│   │   ├── BenchmarkCenterView.tsx (15KB) [288L]
+│   │   ├── BlockchainEcosystemView.tsx (9KB) [224L]
+│   │   ├── BlockchainLedgerView.tsx (13KB) [247L]
+│   │   ├── CalculatorView.tsx (3KB) [74L]
+│   │   ├── CalendarView.tsx (3KB) [78L]
+│   │   ├── CiCdPipelineView.tsx (7KB) [159L]
+│   │   ├── ClockView.tsx (3KB) [72L]
+│   │   ├── CodeAnalyzerView.tsx (4KB) [90L]
+│   │   ├── CommitHeatmap.tsx (4KB) [110L]
+│   │   ├── ComplianceEngineView.tsx (4KB) [84L]
+│   │   ├── ComplianceView.tsx (8KB) [191L]
+│   │   ├── ConflictResolutionModal.tsx (11KB) [257L]
+│   │   ├── ConsensusIntegrationGuide.tsx (70KB) [1528L]
+│   │   ├── CryptoVisualizationView.tsx (18KB) [473L]
+│   │   ├── DataProcessingView.tsx (4KB) [78L]
+│   │   ├── DbOrchestratorView.tsx (6KB) [112L]
+│   │   ├── DeFiLiquidityPoolView.tsx (13KB) [255L]
+│   │   ├── DependencyMapView.tsx (3KB) [123L]
+│   │   ├── DeploymentPipelineWidget.tsx (6KB) [160L]
+│   │   ├── DevToolsView.tsx (5KB) [133L]
+│   │   ├── DeveloperKnowledgeBaseView.tsx (18KB) [359L]
+│   │   ├── DistributedDatalakeView.tsx (3KB) [73L]
+│   │   ├── EcosystemInstaller.tsx (11KB) [297L]
+│   │   ├── EcosystemTreeOverlay.tsx (12KB) [357L]
+│   │   ├── EcosystemUmlView.tsx (7KB) [143L]
+│   │   ├── EcosystemVisualizerView.tsx (12KB) [325L]
+│   │   ├── FileManagerView.tsx (6KB) [170L]
+│   │   ├── FolderView.tsx (4KB) [111L]
+│   │   ├── FranchiseFactoryView.tsx (83KB) [1733L]
+│   │   ├── GateToHellBrowser.tsx (5KB) [106L]
+│   │   ├── GenesisBlockGeneratorView.tsx (6KB) [150L]
+│   │   ├── GitGraphVisualization.tsx (4KB) [137L]
+│   │   ├── GitHubRepoSyncView.tsx (63KB) [1385L]
+│   │   ├── GitHubStatusDashboard.tsx (34KB) [643L]
+│   │   ├── GitOpsView.tsx (7KB) [126L]
+│   │   ├── GovernanceView.tsx (23KB) [601L]
+│   │   ├── GpuPerformanceWidget.tsx (4KB) [120L]
+│   │   ├── HardwareDriversView.tsx (20KB) [376L]
+│   │   ├── IdeaToAppFlowchartView.tsx (7KB) [153L]
+│   │   ├── ImageGeneratorTab.tsx (5KB) [117L]
+│   │   ├── IntegrationsWindow.tsx (21KB) [426L]
+│   │   ├── InterfacesView.tsx (2KB) [56L]
+│   │   ├── JsExampleRunner.tsx (2KB) [86L]
+│   │   ├── LazyMetricsCharts.tsx (31KB) [808L]
+│   │   ├── LegalView.tsx (6KB) [87L]
+│   │   ├── LoginOverlay.tsx (38KB) [690L]
+│   │   ├── MainnetLaunchView.tsx (12KB) [251L]
+│   │   ├── MarketplaceView.tsx (22KB) [450L]
+│   │   ├── MediaApps.tsx (18KB) [254L]
+│   │   ├── MetricsDashboard.tsx (4KB) [105L]
+│   │   ├── MetricsView.tsx (56KB) [1476L]
+│   │   ├── ModulesPluginView.tsx (18KB) [309L]
+│   │   ├── NetworkExplorerView.test.tsx (4KB) [121L]
+│   │   ├── NetworkExplorerView.tsx (17KB) [370L]
+│   │   ├── NetworkTopologyView.tsx (2KB) [38L]
+│   │   ├── NodeHealthMonitor.tsx (4KB) [113L]
+│   │   ├── NotepadView.tsx (2KB) [67L]
+│   │   ├── OfficeApps.tsx (352B) [14L]
+│   │   ├── OfficeSuiteView.tsx (12KB) [271L]
+│   │   ├── P2PChatView.tsx (12KB) [277L]
+│   │   ├── Paint3DView.tsx (5KB) [140L]
+│   │   ├── PaymentSystemView.tsx (4KB) [93L]
+│   │   ├── PipelineGeneratorTab.tsx (19KB) [433L]
+│   │   ├── PoAITrainingEngineView.tsx (8KB) [173L]
+│   │   ├── ProjectAuditDashboard.tsx (7KB) [135L]
+│   │   ├── ProjectHubView.tsx (30KB) [501L]
+│   │   ├── ProtocolsView.tsx (8KB) [207L]
+│   │   ├── ReportsView.tsx (10KB) [202L]
+│   │   ├── RepositoryActivityChart.tsx (5KB) [145L]
+│   │   ├── RepositoryLineChart.tsx (6KB) [198L]
+│   │   ├── RescueSystemView.tsx (16KB) [307L]
+│   │   ├── RoadmapView.tsx (6KB) [196L]
+│   │   ├── SemanticGraphView.tsx (4KB) [86L]
+│   │   ├── SessionExportView.tsx (8KB) [221L]
+│   │   ├── SettingsView.tsx (105KB) [2312L]
+│   │   ├── SocialMediaView.tsx (16KB) [287L]
+│   │   ├── SoftwareAuditView.tsx (38KB) [885L]
+│   │   ├── SoftwareKnowledgeDbView.tsx (18KB) [380L]
+│   │   ├── SourceCodeViewer.tsx (20KB) [547L]
+│   │   ├── SpecificSettingsViews.tsx (17KB) [306L]
+│   │   ├── StorageManagerView.tsx (9KB) [258L]
+│   │   ├── StrategicArchitectureMap.tsx (9KB) [243L]
+│   │   ├── StructureView.tsx (22KB) [505L]
+│   │   ├── SyncDashboardModal.tsx (4KB) [88L]
+│   │   ├── SyncHistoryModal.tsx (11KB) [249L]
+│   │   ├── SyncMetricsView.tsx (7KB) [170L]
+│   │   ├── SyncStatusDonutChart.tsx (2KB) [99L]
+│   │   ├── SyncStatusOverview.tsx (7KB) [168L]
+│   │   ├── SystemDiagnosticsView.tsx (18KB) [337L]
+│   │   ├── SystemFinderView.tsx (2KB) [56L]
+│   │   ├── SystemHealthDashboard.tsx (9KB) [246L]
+│   │   ├── SystemHealthDashboardWidget.tsx (2KB) [63L]
+│   │   ├── SystemLogsView.tsx (3KB) [89L]
+│   │   ├── TaskManagerView.tsx (3KB) [82L]
+│   │   ├── TechDocsView.tsx (17KB) [335L]
+│   │   ├── TechTreeView.tsx (18KB) [420L]
+│   │   ├── TerminalView.tsx (6KB) [189L]
+│   │   ├── TestnetOrchestrationView.tsx (8KB) [178L]
+│   │   ├── TestnetSimulationView.tsx (14KB) [298L]
+│   │   ├── TextGeneratorTab.tsx (6KB) [177L]
+│   │   ├── ThemeSwitcher.tsx (4KB) [143L]
+│   │   ├── TodoView.tsx (18KB) [383L]
+│   │   ├── TooltipIcon.tsx (1KB) [29L]
+│   │   ├── TxOrchestratorView.tsx (5KB) [105L]
+│   │   ├── UserProfileView.tsx (12KB) [255L]
+│   │   ├── VideoGeneratorTab.tsx (7KB) [176L]
+│   │   ├── WebhookMonitor.tsx (5KB) [145L]
+│   │   ├── Window.tsx (6KB) [158L]
+│   │   ├── WindowExtras.tsx (4KB) [87L]
+│   │   ├── ZeroKnowledgeProofView.tsx (6KB) [129L]
+│   │   ├── ZkCircuitEditorView.tsx (4KB) [108L]
+│   │   └── ZkVisualizationView.tsx (3KB) [99L]
+│   ├── contexts/ (4 files)
+│   │   ├── FirebaseContext.tsx (2KB) [94L]
+│   │   ├── GoogleWorkspaceContext.tsx (2KB) [83L]
+│   │   ├── SyncMetricsContext.tsx (1KB) [47L]
+│   │   └── WalletContext.tsx (1KB) [45L]
+│   ├── db/ (3 files)
+│   │   ├── drizzle.config.ts (817B) [29L]
+│   │   ├── index.ts (652B) [24L]
+│   │   └── schema.ts (486B) [11L]
+│   ├── hooks/ (2 files)
+│   │   ├── useGoogleSheetsSync.ts (8KB) [220L]
+│   │   └── useKeyboardShortcut.ts (899B) [30L]
+│   ├── lib/ (6 files)
+│   │   ├── CryptoEngine.ts (1KB) [42L]
+│   │   ├── firebase-admin.ts (544B) [15L]
+│   │   ├── firebase.ts (2KB) [64L]
+│   │   ├── indexedDb.ts (2KB) [88L]
+│   │   ├── syncLogic.test.ts (2KB) [82L]
+│   │   └── syncLogic.ts (1KB) [68L]
+│   ├── middleware/ (1 files)
+│   │   └── auth.ts (953B) [30L]
+│   ├── routes/ (1 files)
+│   │   └── notion.ts (4KB) [146L]
+│   ├── services/ (2 files)
+│   │   ├── SyncService.ts (3KB) [106L]
+│   │   └── githubSync.ts (1KB) [37L]
+│   ├── utils/ (4 files)
+│   │   ├── appSync.tsx (2KB) [84L]
+│   │   ├── auditUtils.test.ts (1KB) [56L]
+│   │   ├── auditUtils.ts (749B) [27L]
+│   │   └── crypto.ts (4KB) [73L]
+│   ├── App.tsx (233KB) [5440L]
+│   ├── DesktopApp.tsx (121KB) [2740L]
+│   ├── atcLangRoadmapData.ts (6KB) [201L]
+│   ├── atcLangWikiData.ts (16KB) [227L]
+│   ├── auditData.ts (4KB) [76L]
+│   ├── data.ts (17KB) [411L]
+│   ├── ecosystemData.ts (11KB) [291L]
+│   ├── fix_translation.cjs (463B)
+│   ├── index.css (5KB)
+│   ├── main.tsx (774B) [24L]
+│   ├── marketplaceApps.ts (6KB) [273L]
+│   ├── requirementsData.ts (1KB) [58L]
+│   ├── roadmapData.ts (7KB) [312L]
+│   ├── standardsData.ts (4KB) [83L]
+│   ├── tierData.ts (16KB) [317L]
+│   ├── types.ts (375B) [10L]
+│   └── wikiData.ts (47KB) [943L]
+├── tests/ (2 files)
+│   ├── GitHubRepoSyncView.test.tsx (1KB) [49L]
+│   └── audit_compliance.test.ts (2KB) [78L]
+├── workspace/ (8 files)
+│   ├── src/ (2 files)
+│   │   ├── backend/ (1 files)
+│   │   │   └── blockchain/ (1 files)
+│   │   │       └── engine.ts (5KB) [167L]
+│   │   └── components/ (1 files)
+│   │       └── GovernanceView.tsx (14KB) [268L]
+│   ├── move.js (411B) [13L]
+│   ├── rename.js (1KB) [42L]
+│   ├── replace.js (1KB) [40L]
+│   ├── replaceEnterprise.js (3KB) [102L]
+│   ├── replaceGoals.ts (688B) [14L]
+│   └── replaceGoals2.ts (825B) [18L]
+├── .env.example (578B)
+├── .gitignore (73B)
+├── AGENTS.md (535B) [13L]
+├── CHANGELOG.md (426B) [21L]
+├── FILE_REGISTER.md (12KB) [253L]
+├── GEMINI.md (373B) [6L]
+├── LICENSE (1KB)
+├── README.md (542B) [20L]
+├── ROADMAP.md (8KB) [598L]
+├── SOFTWARE_ROADMAP.md (38KB) [1116L]
+├── STATUS.md (349B) [19L]
+├── check_dups2.js (498B) [12L]
+├── check_dups_all.js (885B) [23L]
+├── check_dups_desktop.js (480B) [15L]
+├── check_dups_windows_map.js (519B) [14L]
+├── fetch.js (1KB) [36L]
+├── firebase-applet-config.json (363B) [9L]
+├── fix.js (859B) [26L]
+├── fix2.js (894B) [27L]
+├── fix_react_imports.cjs (547B)
+├── fix_wiki.cjs (184B)
+├── fix_wiki.js (284B) [5L]
+├── index.html (413B)
+├── mark_completed.ts (722B) [15L]
+├── mark_completed_src.ts (1KB) [33L]
+├── metadata.json (214B) [6L]
+├── move_back.js (347B) [11L]
+├── output.txt (3KB)
+├── package-lock.json (420KB) [11890L]
+├── package.json (2KB) [75L]
+├── replace.js (1KB) [36L]
+├── replace_langs.cjs (852B)
+├── replace_langs_2.cjs (667B)
+├── replace_langs_3.cjs (411B)
+├── replace_langs_4.cjs (817B)
+├── replace_langs_5.cjs (528B)
+├── replace_langs_6.cjs (522B)
+├── script.cjs (883B)
+├── script.js (983B) [12L]
+├── script2.cjs (683B)
+├── server.ts (33KB) [866L]
+├── testChat.js (450B) [10L]
+├── test_know.js (244B) [2L]
+├── tmp.txt (470B)
+├── tsconfig.json (508B) [26L]
+├── update_wiki_categories.ts (742B) [23L]
+└── vite.config.ts (1KB) [42L]
 ```
+
 
 ## atc-aistudio-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-aistudio-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-└── STATUS.md
+├── .gitignore (44B)
+├── ARCHITECTURE.md (323B) [14L]
+├── FILE_REGISTER.md (427B) [14L]
+├── LICENSE (472B)
+├── MODULES.md (311B) [10L]
+├── README.md (513B) [18L]
+└── STATUS.md (298B) [15L]
 ```
+
 
 ## atc-atclang
 
-**Dateien:** 41 | **Verzeichnisse:** 8
+**Layer:** L2–L4 (ATCLang Sync) | **Dateien:** 41 | **Verzeichnisse:** 8 | **Max Tiefe:** 1
+
+**Sprachen:** .py(30) · .md(7) · .gitignore(1) · .txt(1) · .no-ext(1)
 
 ```
 atc-atclang/
-├── .gitignore
-├── ATCLANG_SPEC.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── __init__.py
-├── compiler/
-│   ├── __init__.py
-│   ├── compiler.py
-│   ├── optimizer.py
-│   └── type_checker.py
-├── lexer/
-│   ├── __init__.py
-│   └── lexer.py
-├── parser/
-│   ├── __init__.py
-│   ├── ast_nodes.py
-│   └── parser.py
-├── programs/
-│   └── atcos_main.atc
-├── repl/
-│   ├── __init__.py
-│   └── repl.py
-├── requirements.txt
-├── stdlib/
-│   ├── __init__.py
-│   ├── atc_stdlib.py
-│   ├── chain.py
-│   ├── collections.py
-│   ├── collections_ext.py
-│   ├── crypto.py
-│   ├── crypto_ext.py
-│   ├── encoding.py
-│   ├── io.py
-│   ├── io_ext.py
-│   ├── math.py
-│   ├── primitives.py
-│   ├── string.py
-│   └── wallet.py
-├── v03/
-│   ├── __init__.py
-│   └── atclang_v03_features.py
-└── vm/
-    ├── __init__.py
-    └── atcvm.py
+├── compiler/ (4 files)
+│   ├── __init__.py (468B) [8L]
+│   ├── compiler.py (21KB) [561L]
+│   ├── optimizer.py (22KB) [558L]
+│   └── type_checker.py (20KB) [507L]
+├── lexer/ (2 files)
+│   ├── __init__.py (161B) [2L]
+│   └── lexer.py (24KB) [671L]
+├── parser/ (3 files)
+│   ├── __init__.py (189B) [3L]
+│   ├── ast_nodes.py (8KB) [392L]
+│   └── parser.py (63KB) [1431L]
+├── programs/ (1 files)
+│   └── atcos_main.atc (40KB) [1161L]
+├── repl/ (2 files)
+│   ├── __init__.py (99B) [1L]
+│   └── repl.py (6KB) [184L]
+├── stdlib/ (14 files)
+│   ├── __init__.py (1KB) [32L]
+│   ├── atc_stdlib.py (2KB) [69L]
+│   ├── chain.py (1KB) [41L]
+│   ├── collections.py (5KB) [219L]
+│   ├── collections_ext.py (3KB) [143L]
+│   ├── crypto.py (5KB) [155L]
+│   ├── crypto_ext.py (5KB) [149L]
+│   ├── encoding.py (7KB) [210L]
+│   ├── io.py (3KB) [107L]
+│   ├── io_ext.py (3KB) [123L]
+│   ├── math.py (4KB) [154L]
+│   ├── primitives.py (7KB) [244L]
+│   ├── string.py (2KB) [99L]
+│   └── wallet.py (2KB) [78L]
+├── v03/ (2 files)
+│   ├── __init__.py (124B) [2L]
+│   └── atclang_v03_features.py (13KB) [352L]
+├── vm/ (2 files)
+│   ├── __init__.py (177B) [2L]
+│   └── atcvm.py (48KB) [997L]
+├── .gitignore (171B)
+├── ATCLANG_SPEC.md (9KB) [295L]
+├── CHANGELOG.md (316B) [8L]
+├── CONTRIBUTING.md (687B) [19L]
+├── FILE_REGISTER.md (1KB) [48L]
+├── LICENSE (658B)
+├── README.md (5KB) [127L]
+├── ROADMAP.md (478B) [21L]
+├── STATUS.md (346B) [19L]
+├── __init__.py (462B) [11L]
+└── requirements.txt (75B)
 ```
+
 
 ## atc-atclang-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-atclang-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── MODULES.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (2KB) [69L]
+│   ├── MODULES.md (1KB) [43L]
+│   └── ROADMAP.md (933B) [22L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (316B) [14L]
+├── FILE_REGISTER.md (512B) [16L]
+├── LICENSE (472B)
+├── MODULES.md (309B) [10L]
+├── README.md (3KB) [61L]
+└── STATUS.md (296B) [15L]
 ```
+
 
 ## atc-atcpkg
 
-**Dateien:** 13 | **Verzeichnisse:** 3
+**Layer:** L7 (Package Manager) | **Dateien:** 13 | **Verzeichnisse:** 3 | **Max Tiefe:** 1
+
+**Sprachen:** .md(9) · .atc(2) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-atcpkg/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── docs/
-│   ├── ATC-24-AGENT_SCHEDULING.md
-│   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-│   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-│   └── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-├── kernel/
-│   └── manager.atc
-└── tools/
-    └── manager.atc
+├── docs/ (4 files)
+│   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   └── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+├── kernel/ (1 files)
+│   └── manager.atc (6KB) [208L]
+├── tools/ (1 files)
+│   └── manager.atc (4KB) [145L]
+├── .gitignore (171B)
+├── CHANGELOG.md (424B) [21L]
+├── FILE_REGISTER.md (748B) [20L]
+├── LICENSE (658B)
+├── README.md (4KB) [101L]
+├── ROADMAP.md (476B) [21L]
+└── STATUS.md (355B) [19L]
 ```
+
 
 ## atc-atcpkg-wiki
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-atcpkg-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (2 files)
+│   ├── ARCHITECTURE.md (1KB) [28L]
+│   └── ROADMAP.md (568B) [16L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (321B) [14L]
+├── FILE_REGISTER.md (477B) [15L]
+├── LICENSE (472B)
+├── MODULES.md (307B) [10L]
+├── README.md (3KB) [60L]
+└── STATUS.md (294B) [15L]
 ```
+
 
 ## atc-backend
 
-**Dateien:** 27 | **Verzeichnisse:** 5
+**Layer:** L7 (Backend Services) | **Dateien:** 27 | **Verzeichnisse:** 5 | **Max Tiefe:** 2
+
+**Sprachen:** .py(9) · .atc(8) · .md(5) · .example(1) · .no-ext(1)
 
 ```
 atc-backend/
-├── .env.example
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── __init__.py
-├── api/
-│   ├── __init__.py
-│   ├── kai_routes.atc
-│   ├── orchestrator/
-│   │   ├── __init__.py
-│   │   ├── orchestrator.atc
-│   │   └── orchestrator.py
-│   ├── routes/
-│   │   ├── __init__.py
-│   │   ├── ai_routes.atc
-│   │   └── api_routes.atc
-│   └── server.atc
-├── db/
-│   ├── __init__.py
-│   ├── connection.atc
-│   ├── connection.py
-│   ├── repository.atc
-│   ├── repository.py
-│   └── schema.sql
-├── requirements.txt
-└── wallet/
-    ├── __init__.py
-    └── wallet.atc
+├── api/ (9 files)
+│   ├── orchestrator/ (3 files)
+│   │   ├── __init__.py (118B) [2L]
+│   │   ├── orchestrator.atc (8KB) [259L]
+│   │   └── orchestrator.py (4KB) [130L]
+│   ├── routes/ (3 files)
+│   │   ├── __init__.py (115B) [2L]
+│   │   ├── ai_routes.atc (5KB) [175L]
+│   │   └── api_routes.atc (8KB) [232L]
+│   ├── __init__.py (111B) [2L]
+│   ├── kai_routes.atc (7KB) [229L]
+│   └── server.atc (2KB) [68L]
+├── db/ (6 files)
+│   ├── __init__.py (160B) [2L]
+│   ├── connection.atc (4KB) [125L]
+│   ├── connection.py (1KB) [40L]
+│   ├── repository.atc (6KB) [228L]
+│   ├── repository.py (6KB) [196L]
+│   └── schema.sql (2KB)
+├── wallet/ (2 files)
+│   ├── __init__.py (123B) [2L]
+│   └── wallet.atc (4KB) [139L]
+├── .env.example (167B)
+├── .gitignore (171B)
+├── CHANGELOG.md (425B) [21L]
+├── FILE_REGISTER.md (1KB) [34L]
+├── LICENSE (658B)
+├── README.md (6KB) [139L]
+├── ROADMAP.md (478B) [21L]
+├── STATUS.md (346B) [19L]
+├── __init__.py (121B) [2L]
+└── requirements.txt (425B)
 ```
+
 
 ## atc-backend-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-backend-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── API.md
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── API.md (941B) [61L]
+│   ├── ARCHITECTURE.md (1KB) [35L]
+│   └── ROADMAP.md (453B) [16L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (316B) [14L]
+├── FILE_REGISTER.md (495B) [16L]
+├── LICENSE (472B)
+├── MODULES.md (309B) [10L]
+├── README.md (4KB) [70L]
+└── STATUS.md (296B) [15L]
 ```
+
 
 ## atc-blockchain
 
-**Dateien:** 78 | **Verzeichnisse:** 18
+**Layer:** L3–L4 (Blockchain) | **Dateien:** 78 | **Verzeichnisse:** 18 | **Max Tiefe:** 3
+
+**Sprachen:** .atc(43) · .py(26) · .md(6) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-blockchain/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── __init__.py
-├── atcoin/
-│   └── __init__.py
-├── consensus/
-│   ├── MIGRATION_INDEX.md
-│   ├── __init__.py
-│   ├── fork_atc85.atc
-│   ├── fork_resolution.atc
-│   ├── gas_fee.atc
-│   ├── gas_fee_atc86.atc
-│   ├── hybrid_atc84.atc
-│   ├── hybrid_consensus.atc
-│   ├── poh.atc
-│   ├── poh.py
-│   ├── poh_atc83.atc
-│   ├── pos.atc
-│   ├── pos_atc82.atc
-│   ├── pow.atc
-│   └── pow_atc81.atc
-├── contract_registry.atc
-├── contracts/
-│   ├── __init__.py
-│   ├── atc001/
-│   │   ├── __init__.py
-│   │   ├── genesis_token.atc
-│   │   └── genesis_token.py
-│   ├── atc8300/
-│   │   ├── __init__.py
-│   │   └── atc8300_token.py
-│   ├── base/
-│   │   ├── __init__.py
-│   │   └── base_contract.py
-│   ├── contract_engine_atc14.atc
-│   ├── governance/
-│   │   └── governance_contract.atc
-│   ├── shivamon/
-│   │   ├── __init__.py
-│   │   └── breeding.atc
-│   └── solidity/
-│       └── test/
-│           └── ATCBridge.test.js
-├── dex/
-│   ├── __init__.py
-│   └── amm.atc
-├── governance/
-│   ├── __init__.py
-│   ├── dao.atc
-│   ├── dao_live.atc
-│   ├── timelock.atc
-│   └── treasury.atc
-├── mainnet/
-│   ├── __init__.py
-│   ├── launch_manager.atc
-│   └── mainnet_config.atc
-├── network/
-│   ├── atc-02_liquid_state_migration_failover.atc
-│   ├── atc-04_dag_consensus_propagation.atc
-│   ├── atc-05_quantumresistant_signatures.atc
-│   ├── atc-10_global_time_sync_oracles.atc
-│   ├── core_node_atc01.atc
-│   ├── latency_opt_atc06.atc
-│   └── sharding_atc07.atc
-├── nodes/
-│   ├── __init__.py
-│   ├── block_propagation.atc
-│   ├── bootstrap.atc
-│   ├── bootstrap.py
-│   ├── discovery.py
-│   ├── initial_sync.atc
-│   ├── node.atc
-│   ├── p2p_propagation.py
-│   └── testnet_launcher.atc
-├── propagation/
-│   └── block_gossip.atc
-├── smart_contract_registry.atc
-├── smart_contract_registry.py
-├── smart_contracts.atc
-├── smart_contracts.py
-├── wallet/
-│   ├── __init__.py
-│   ├── did.atc
-│   ├── did.py
-│   ├── ecdsa.py
-│   ├── multisig.atc
-│   ├── multisig.py
-│   └── wordlist.atc
-└── zkp/
-    ├── __init__.py
-    └── groth16.atc
+├── atcoin/ (1 files)
+│   └── __init__.py (119B) [2L]
+├── consensus/ (15 files)
+│   ├── MIGRATION_INDEX.md (661B) [13L]
+│   ├── __init__.py (123B) [2L]
+│   ├── fork_atc85.atc (2KB) [74L]
+│   ├── fork_resolution.atc (4KB) [145L]
+│   ├── gas_fee.atc (4KB) [130L]
+│   ├── gas_fee_atc86.atc (2KB) [71L]
+│   ├── hybrid_atc84.atc (3KB) [98L]
+│   ├── hybrid_consensus.atc (11KB) [357L]
+│   ├── poh.atc (4KB) [140L]
+│   ├── poh.py (2KB) [67L]
+│   ├── poh_atc83.atc (1KB) [79L]
+│   ├── pos.atc (4KB) [164L]
+│   ├── pos_atc82.atc (2KB) [92L]
+│   ├── pow.atc (3KB) [107L]
+│   └── pow_atc81.atc (2KB) [89L]
+├── contracts/ (13 files)
+│   ├── atc001/ (3 files)
+│   │   ├── __init__.py (0B) [0L]
+│   │   ├── genesis_token.atc (2KB) [102L]
+│   │   └── genesis_token.py (2KB) [74L]
+│   ├── atc8300/ (2 files)
+│   │   ├── __init__.py (129B) [2L]
+│   │   └── atc8300_token.py (5KB) [126L]
+│   ├── base/ (2 files)
+│   │   ├── __init__.py (0B) [0L]
+│   │   └── base_contract.py (3KB) [87L]
+│   ├── governance/ (1 files)
+│   │   └── governance_contract.atc (7KB) [202L]
+│   ├── shivamon/ (2 files)
+│   │   ├── __init__.py (136B) [2L]
+│   │   └── breeding.atc (5KB) [139L]
+│   ├── solidity/ (1 files)
+│   │   └── test/ (1 files)
+│   │       └── ATCBridge.test.js (11KB) [274L]
+│   ├── __init__.py (0B) [0L]
+│   └── contract_engine_atc14.atc (9KB) [309L]
+├── dex/ (2 files)
+│   ├── __init__.py (117B) [2L]
+│   └── amm.atc (10KB) [277L]
+├── governance/ (5 files)
+│   ├── __init__.py (120B) [2L]
+│   ├── dao.atc (6KB) [168L]
+│   ├── dao_live.atc (8KB) [235L]
+│   ├── timelock.atc (4KB) [150L]
+│   └── treasury.atc (6KB) [220L]
+├── mainnet/ (3 files)
+│   ├── __init__.py (117B) [2L]
+│   ├── launch_manager.atc (3KB) [105L]
+│   └── mainnet_config.atc (5KB) [151L]
+├── network/ (7 files)
+│   ├── atc-02_liquid_state_migration_failover.atc (2KB) [58L]
+│   ├── atc-04_dag_consensus_propagation.atc (2KB) [58L]
+│   ├── atc-05_quantumresistant_signatures.atc (2KB) [58L]
+│   ├── atc-10_global_time_sync_oracles.atc (1KB) [58L]
+│   ├── core_node_atc01.atc (4KB) [164L]
+│   ├── latency_opt_atc06.atc (3KB) [135L]
+│   └── sharding_atc07.atc (5KB) [215L]
+├── nodes/ (9 files)
+│   ├── __init__.py (126B) [2L]
+│   ├── block_propagation.atc (3KB) [87L]
+│   ├── bootstrap.atc (6KB) [234L]
+│   ├── bootstrap.py (8KB) [257L]
+│   ├── discovery.py (11KB) [314L]
+│   ├── initial_sync.atc (6KB) [207L]
+│   ├── node.atc (6KB) [192L]
+│   ├── p2p_propagation.py (12KB) [381L]
+│   └── testnet_launcher.atc (4KB) [132L]
+├── propagation/ (1 files)
+│   └── block_gossip.atc (3KB) [98L]
+├── wallet/ (7 files)
+│   ├── __init__.py (128B) [2L]
+│   ├── did.atc (4KB) [122L]
+│   ├── did.py (2KB) [74L]
+│   ├── ecdsa.py (2KB) [72L]
+│   ├── multisig.atc (8KB) [268L]
+│   ├── multisig.py (3KB) [107L]
+│   └── wordlist.atc (5KB) [112L]
+├── zkp/ (2 files)
+│   ├── __init__.py (336B) [4L]
+│   └── groth16.atc (3KB) [89L]
+├── .gitignore (171B)
+├── CHANGELOG.md (428B) [21L]
+├── FILE_REGISTER.md (3KB) [109L]
+├── LICENSE (658B)
+├── README.md (6KB) [146L]
+├── ROADMAP.md (484B) [21L]
+├── STATUS.md (349B) [19L]
+├── __init__.py (0B) [0L]
+├── contract_registry.atc (3KB) [98L]
+├── smart_contract_registry.atc (2KB) [88L]
+├── smart_contract_registry.py (1KB) [53L]
+├── smart_contracts.atc (15KB) [486L]
+└── smart_contracts.py (23KB) [716L]
 ```
+
 
 ## atc-blockchain-wiki
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-blockchain-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── CONSENSUS.md
-    ├── MEMPOOL.md
-    ├── ROADMAP.md
-    └── VALIDATORS.md
+├── docs/ (5 files)
+│   ├── ARCHITECTURE.md (2KB) [61L]
+│   ├── CONSENSUS.md (1KB) [45L]
+│   ├── MEMPOOL.md (1KB) [35L]
+│   ├── ROADMAP.md (1KB) [30L]
+│   └── VALIDATORS.md (1KB) [36L]
+├── .gitignore (44B)
+├── FILE_REGISTER.md (3KB) [109L]
+├── LICENSE (472B)
+└── README.md (4KB) [74L]
 ```
+
 
 ## atc-bootloader
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L1 (Bootloader) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-bootloader/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (223B) [8L]
+├── FILE_REGISTER.md (388B) [13L]
+├── LICENSE (703B)
+├── README.md (5KB) [107L]
+├── ROADMAP.md (376B) [16L]
+└── STATUS.md (491B) [21L]
 ```
+
 
 ## atc-bootloader-wiki
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-bootloader-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (2 files)
+│   ├── ARCHITECTURE.md (892B) [22L]
+│   └── ROADMAP.md (218B) [8L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (316B) [14L]
+├── FILE_REGISTER.md (467B) [15L]
+├── LICENSE (472B)
+├── MODULES.md (315B) [10L]
+├── README.md (3KB) [68L]
+└── STATUS.md (302B) [15L]
 ```
+
 
 ## atc-ci
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L0 (CI/CD Pipeline) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-ci/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (215B) [8L]
+├── FILE_REGISTER.md (380B) [13L]
+├── LICENSE (703B)
+├── README.md (5KB) [109L]
+├── ROADMAP.md (368B) [16L]
+└── STATUS.md (483B) [21L]
 ```
+
 
 ## atc-ci-wiki
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-ci-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ROADMAP.md
-    └── WORKFLOWS.md
+├── docs/ (2 files)
+│   ├── ROADMAP.md (176B) [7L]
+│   └── WORKFLOWS.md (668B) [23L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (304B) [14L]
+├── FILE_REGISTER.md (456B) [15L]
+├── LICENSE (472B)
+├── MODULES.md (299B) [10L]
+├── README.md (3KB) [68L]
+└── STATUS.md (286B) [15L]
 ```
+
 
 ## atc-cli
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L7 (CLI Tool) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-cli/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (216B) [8L]
+├── FILE_REGISTER.md (381B) [13L]
+├── LICENSE (703B)
+├── README.md (5KB) [120L]
+├── ROADMAP.md (369B) [16L]
+└── STATUS.md (484B) [21L]
 ```
+
 
 ## atc-cli-wiki
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-cli-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── COMMANDS.md
-    └── ROADMAP.md
+├── docs/ (2 files)
+│   ├── COMMANDS.md (746B) [25L]
+│   └── ROADMAP.md (172B) [7L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (300B) [14L]
+├── FILE_REGISTER.md (456B) [15L]
+├── LICENSE (472B)
+├── MODULES.md (301B) [10L]
+├── README.md (3KB) [68L]
+└── STATUS.md (288B) [15L]
 ```
+
 
 ## atc-contracts
 
-**Dateien:** 23 | **Verzeichnisse:** 8
+**Layer:** L4 (Smart Contracts) | **Dateien:** 23 | **Verzeichnisse:** 8 | **Max Tiefe:** 1
+
+**Sprachen:** .py(9) · .md(7) · .atc(4) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-contracts/
-├── .gitignore
-├── CHANGELOG.md
-├── DEPLOYMENT.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── SECURITY.md
-├── STATUS.md
-├── atc8300/
-│   ├── atc8300.atc
-│   └── atc8300_token.py
-├── atcoin/
-│   └── atcoin.py
-├── base/
-│   └── base_contract.py
-├── bridge/
-│   └── bridge_contract.py
-├── governance/
-│   ├── governance.atc
-│   └── governance_contract.py
-├── marketplace/
-│   └── marketplace_contract.py
-├── requirements.txt
-├── shivamon/
-│   ├── shivamon.atc
-│   └── shivamon_contract.py
-└── wallet/
-    ├── ecdsa.py
-    ├── keygen.py
-    └── wallet.atc
+├── atc8300/ (2 files)
+│   ├── atc8300.atc (3KB) [96L]
+│   └── atc8300_token.py (5KB) [126L]
+├── atcoin/ (1 files)
+│   └── atcoin.py (5KB) [139L]
+├── base/ (1 files)
+│   └── base_contract.py (3KB) [87L]
+├── bridge/ (1 files)
+│   └── bridge_contract.py (4KB) [133L]
+├── governance/ (2 files)
+│   ├── governance.atc (4KB) [113L]
+│   └── governance_contract.py (11KB) [299L]
+├── marketplace/ (1 files)
+│   └── marketplace_contract.py (11KB) [301L]
+├── shivamon/ (2 files)
+│   ├── shivamon.atc (5KB) [162L]
+│   └── shivamon_contract.py (10KB) [270L]
+├── wallet/ (3 files)
+│   ├── ecdsa.py (2KB) [72L]
+│   ├── keygen.py (5KB) [140L]
+│   └── wallet.atc (4KB) [124L]
+├── .gitignore (171B)
+├── CHANGELOG.md (304B) [20L]
+├── DEPLOYMENT.md (894B) [29L]
+├── FILE_REGISTER.md (1KB) [54L]
+├── LICENSE (982B)
+├── README.md (5KB) [121L]
+├── ROADMAP.md (482B) [21L]
+├── SECURITY.md (496B) [13L]
+├── STATUS.md (358B) [19L]
+└── requirements.txt (100B)
 ```
+
 
 ## atc-contracts-wiki
 
-**Dateien:** 12 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 12 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(10) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-contracts-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ATC8300.md
-    ├── ATC9000.md
-    ├── ATC9900.md
-    ├── BRIDGE.md
-    ├── DEPLOYMENT.md
-    ├── ROADMAP.md
-    ├── SECURITY.md
-    └── TODO.md
+├── docs/ (8 files)
+│   ├── ATC8300.md (1KB) [51L]
+│   ├── ATC9000.md (2KB) [92L]
+│   ├── ATC9900.md (514B) [20L]
+│   ├── BRIDGE.md (1KB) [38L]
+│   ├── DEPLOYMENT.md (603B) [25L]
+│   ├── ROADMAP.md (455B) [17L]
+│   ├── SECURITY.md (708B) [26L]
+│   └── TODO.md (526B) [21L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [51L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-dns
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L5 (DNS) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-dns/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (216B) [8L]
+├── FILE_REGISTER.md (381B) [13L]
+├── LICENSE (703B)
+├── README.md (4KB) [107L]
+├── ROADMAP.md (369B) [16L]
+└── STATUS.md (484B) [21L]
 ```
+
 
 ## atc-dns-wiki
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-dns-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (2 files)
+│   ├── ARCHITECTURE.md (658B) [21L]
+│   └── ROADMAP.md (184B) [7L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (309B) [14L]
+├── FILE_REGISTER.md (460B) [15L]
+├── LICENSE (472B)
+├── MODULES.md (301B) [10L]
+├── README.md (3KB) [68L]
+└── STATUS.md (288B) [15L]
 ```
+
 
 ## atc-drivers
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L1 (Hardware Drivers) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-drivers/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (220B) [8L]
+├── FILE_REGISTER.md (385B) [13L]
+├── LICENSE (703B)
+├── README.md (4KB) [108L]
+├── ROADMAP.md (373B) [16L]
+└── STATUS.md (488B) [21L]
 ```
+
 
 ## atc-drivers-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-drivers-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── DRIVER_LIST.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (373B) [11L]
+│   ├── DRIVER_LIST.md (451B) [11L]
+│   └── ROADMAP.md (194B) [8L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (323B) [14L]
+├── FILE_REGISTER.md (502B) [16L]
+├── LICENSE (472B)
+├── MODULES.md (309B) [10L]
+├── README.md (3KB) [69L]
+└── STATUS.md (296B) [15L]
 ```
+
 
 ## atc-explorer
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L7 (Block Explorer) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-explorer/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (221B) [8L]
+├── FILE_REGISTER.md (496B) [18L]
+├── LICENSE (703B)
+├── README.md (4KB) [104L]
+├── ROADMAP.md (374B) [16L]
+└── STATUS.md (489B) [21L]
 ```
+
 
 ## atc-explorer-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-explorer-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── API.md
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── API.md (330B) [9L]
+│   ├── ARCHITECTURE.md (296B) [9L]
+│   └── ROADMAP.md (406B) [14L]
+├── .gitignore (44B)
+├── FILE_REGISTER.md (523B) [18L]
+├── LICENSE (472B)
+└── README.md (4KB) [71L]
 ```
+
 
 ## atc-franchise
 
-**Dateien:** 15 | **Verzeichnisse:** 3
+**Layer:** L8–L10 (Business DAOs) | **Dateien:** 15 | **Verzeichnisse:** 3 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .atc(3) · .py(2) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-franchise/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── api/
-│   └── routes.py
-├── contracts/
-│   ├── registry.atc
-│   ├── revenue.atc
-│   └── token.atc
-├── docs/
-│   ├── ARCHITECTURE.md
-│   └── SECURITY.md
-├── factory.py
-└── requirements.txt
+├── api/ (1 files)
+│   └── routes.py (2KB) [67L]
+├── contracts/ (3 files)
+│   ├── registry.atc (4KB) [120L]
+│   ├── revenue.atc (3KB) [93L]
+│   └── token.atc (3KB) [72L]
+├── docs/ (2 files)
+│   ├── ARCHITECTURE.md (666B) [23L]
+│   └── SECURITY.md (1KB) [57L]
+├── .gitignore (171B)
+├── CHANGELOG.md (182B) [6L]
+├── FILE_REGISTER.md (658B) [20L]
+├── LICENSE (982B)
+├── README.md (4KB) [69L]
+├── ROADMAP.md (482B) [21L]
+├── STATUS.md (358B) [19L]
+├── factory.py (4KB) [138L]
+└── requirements.txt (115B)
 ```
+
 
 ## atc-franchise-wiki
 
-**Dateien:** 11 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 11 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(9) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-franchise-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── API.md
-    ├── CONCEPT.md
-    ├── CONTRACTS.md
-    ├── DEPLOYMENT.md
-    ├── ROADMAP.md
-    ├── SECURITY.md
-    └── TOKEN_ECONOMY.md
+├── docs/ (7 files)
+│   ├── API.md (1KB) [37L]
+│   ├── CONCEPT.md (1000B) [24L]
+│   ├── CONTRACTS.md (1KB) [49L]
+│   ├── DEPLOYMENT.md (879B) [43L]
+│   ├── ROADMAP.md (685B) [21L]
+│   ├── SECURITY.md (904B) [29L]
+│   └── TOKEN_ECONOMY.md (1KB) [41L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [43L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-frontend
 
-**Dateien:** 12 | **Verzeichnisse:** 5
+**Layer:** L10 (Frontend) | **Dateien:** 12 | **Verzeichnisse:** 5 | **Max Tiefe:** 2
+
+**Sprachen:** .md(6) · .html(2) · .gitignore(1) · .no-ext(1) · .css(1)
 
 ```
 atc-frontend/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── assets/
-│   ├── css/
-│   │   └── variables.css
-│   └── js/
-│       └── api.js
-├── battle/
-│   └── index.html
-├── bootscreen/
-│   └── README.md
-└── index.html
+├── assets/ (2 files)
+│   ├── css/ (1 files)
+│   │   └── variables.css (807B)
+│   └── js/ (1 files)
+│       └── api.js (4KB) [136L]
+├── battle/ (1 files)
+│   └── index.html (13KB)
+├── bootscreen/ (1 files)
+│   └── README.md (1KB) [48L]
+├── .gitignore (171B)
+├── CHANGELOG.md (426B) [21L]
+├── FILE_REGISTER.md (689B) [23L]
+├── LICENSE (658B)
+├── README.md (4KB) [111L]
+├── ROADMAP.md (480B) [21L]
+├── STATUS.md (347B) [19L]
+└── index.html (120KB)
 ```
+
 
 ## atc-frontend-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-frontend-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── COMPONENTS.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (733B) [18L]
+│   ├── COMPONENTS.md (463B) [8L]
+│   └── ROADMAP.md (506B) [15L]
+├── .gitignore (44B)
+├── FILE_REGISTER.md (531B) [18L]
+├── LICENSE (472B)
+└── README.md (4KB) [71L]
 ```
+
 
 ## atc-gateway
 
-**Dateien:** 43 | **Verzeichnisse:** 6
+**Layer:** L7 (API Gateway) | **Dateien:** 43 | **Verzeichnisse:** 6 | **Max Tiefe:** 2
+
+**Sprachen:** .py(16) · .atc(11) · .md(10) · .txt(3) · .gitignore(1)
 
 ```
 atc-gateway/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── SECURITY.md
-├── STATUS.md
-├── __init__.py
-├── atclang/
-│   ├── .env.example
-│   ├── CHANGELOG.md
-│   ├── README.md
-│   ├── SECURITY.md
-│   ├── main.atc
-│   ├── middleware/
-│   │   ├── auth.atc
-│   │   ├── logger.atc
-│   │   ├── rate_limit.atc
-│   │   └── signature_verify.atc
-│   ├── requirements.txt
-│   └── router.atc
-├── docs/
-│   └── ARCHITECTURE.md
-├── gateway.atc
-├── main.atc
-├── main.py
-├── middleware/
-│   ├── __init__.py
-│   ├── auth.py
-│   ├── logger.py
-│   ├── rate_limit.py
-│   └── signature_verify.py
-├── python/
-│   ├── __init__.py
-│   ├── main.atc
-│   ├── main.py
-│   ├── middleware/
-│   │   ├── __init__.py
-│   │   ├── auth.py
-│   │   ├── logger.py
-│   │   ├── rate_limit.py
-│   │   └── signature_verify.py
-│   ├── requirements.txt
-│   ├── router.py
-│   └── service_discovery.atc
-├── requirements.txt
-├── router.py
-└── service_discovery.atc
+├── atclang/ (11 files)
+│   ├── middleware/ (4 files)
+│   │   ├── auth.atc (2KB) [82L]
+│   │   ├── logger.atc (2KB) [70L]
+│   │   ├── rate_limit.atc (1KB) [50L]
+│   │   └── signature_verify.atc (1KB) [43L]
+│   ├── .env.example (103B)
+│   ├── CHANGELOG.md (274B) [8L]
+│   ├── README.md (858B) [39L]
+│   ├── SECURITY.md (371B) [13L]
+│   ├── main.atc (5KB) [180L]
+│   ├── requirements.txt (162B)
+│   └── router.atc (3KB) [96L]
+├── docs/ (1 files)
+│   └── ARCHITECTURE.md (2KB) [112L]
+├── middleware/ (5 files)
+│   ├── __init__.py (120B) [2L]
+│   ├── auth.py (669B) [19L]
+│   ├── logger.py (324B) [9L]
+│   ├── rate_limit.py (1KB) [26L]
+│   └── signature_verify.py (1KB) [57L]
+├── python/ (11 files)
+│   ├── middleware/ (5 files)
+│   │   ├── __init__.py (120B) [2L]
+│   │   ├── auth.py (669B) [19L]
+│   │   ├── logger.py (324B) [9L]
+│   │   ├── rate_limit.py (1KB) [26L]
+│   │   └── signature_verify.py (1KB) [57L]
+│   ├── __init__.py (125B) [2L]
+│   ├── main.atc (5KB) [127L]
+│   ├── main.py (1KB) [47L]
+│   ├── requirements.txt (69B)
+│   ├── router.py (2KB) [50L]
+│   └── service_discovery.atc (6KB) [168L]
+├── .gitignore (171B)
+├── CHANGELOG.md (328B) [14L]
+├── FILE_REGISTER.md (2KB) [74L]
+├── LICENSE (982B)
+├── README.md (5KB) [115L]
+├── ROADMAP.md (478B) [21L]
+├── SECURITY.md (371B) [13L]
+├── STATUS.md (356B) [19L]
+├── __init__.py (125B) [2L]
+├── gateway.atc (4KB) [138L]
+├── main.atc (5KB) [127L]
+├── main.py (1KB) [47L]
+├── requirements.txt (69B)
+├── router.py (2KB) [50L]
+└── service_discovery.atc (6KB) [168L]
 ```
+
 
 ## atc-gateway-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-gateway-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── AUTH.md
-    ├── MIDDLEWARE.md
-    ├── RATE_LIMITING.md
-    ├── ROADMAP.md
-    ├── ROUTES.md
-    └── SECURITY.md
+├── docs/ (6 files)
+│   ├── AUTH.md (965B) [43L]
+│   ├── MIDDLEWARE.md (368B) [14L]
+│   ├── RATE_LIMITING.md (956B) [43L]
+│   ├── ROADMAP.md (436B) [16L]
+│   ├── ROUTES.md (995B) [32L]
+│   └── SECURITY.md (372B) [13L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (2KB) [71L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-genesis-engine
 
-**Dateien:** 20 | **Verzeichnisse:** 4
+**Layer:** L0 (Genesis Engine) | **Dateien:** 20 | **Verzeichnisse:** 4 | **Max Tiefe:** 2
+
+**Sprachen:** .md(13) · .py(4) · .gitignore(1) · .no-ext(1) · .txt(1)
 
 ```
 atc-genesis-engine/
-├── .gitignore
-├── ARCHITECTURE.md
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── FRANCHISE_FACTORY.md
-├── FRANCHISE_FACTORY_V2.md
-├── GENESIS_NEXUS_V5.md
-├── GENESIS_OS_V4.md
-├── LICENSE
-├── METAFACTORY_V3.md
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── VISION_EVOLUTION_LOG.md
-└── engine/
-    ├── MILESTONE_1.md
-    ├── core/
-    │   └── ecs.py
-    ├── main.py
-    ├── render/
-    │   └── renderer2d.py
-    ├── requirements.txt
-    └── tests/
-        └── test_ecs.py
+├── engine/ (6 files)
+│   ├── core/ (1 files)
+│   │   └── ecs.py (2KB) [98L]
+│   ├── render/ (1 files)
+│   │   └── renderer2d.py (1KB) [45L]
+│   ├── tests/ (1 files)
+│   │   └── test_ecs.py (1KB) [63L]
+│   ├── MILESTONE_1.md (1KB) [44L]
+│   ├── main.py (1KB) [48L]
+│   └── requirements.txt (14B)
+├── .gitignore (171B)
+├── ARCHITECTURE.md (4KB) [103L]
+├── CHANGELOG.md (432B) [21L]
+├── FILE_REGISTER.md (849B) [24L]
+├── FRANCHISE_FACTORY.md (3KB) [66L]
+├── FRANCHISE_FACTORY_V2.md (3KB) [108L]
+├── GENESIS_NEXUS_V5.md (3KB) [65L]
+├── GENESIS_OS_V4.md (3KB) [70L]
+├── LICENSE (658B)
+├── METAFACTORY_V3.md (4KB) [83L]
+├── README.md (4KB) [84L]
+├── ROADMAP.md (492B) [21L]
+├── STATUS.md (353B) [19L]
+└── VISION_EVOLUTION_LOG.md (8KB) [157L]
 ```
+
 
 ## atc-genesis-engine-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-genesis-engine-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-└── STATUS.md
+├── .gitignore (44B)
+├── ARCHITECTURE.md (328B) [14L]
+├── FILE_REGISTER.md (433B) [14L]
+├── LICENSE (472B)
+├── MODULES.md (323B) [10L]
+├── README.md (530B) [18L]
+└── STATUS.md (310B) [15L]
 ```
+
 
 ## atc-ide
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L10 (IDE/Playground) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-ide/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (216B) [8L]
+├── FILE_REGISTER.md (481B) [18L]
+├── LICENSE (703B)
+├── README.md (4KB) [108L]
+├── ROADMAP.md (369B) [16L]
+└── STATUS.md (484B) [21L]
 ```
+
 
 ## atc-ide-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-ide-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── LSP.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (356B) [16L]
+│   ├── LSP.md (406B) [10L]
+│   └── ROADMAP.md (385B) [12L]
+├── .gitignore (44B)
+├── FILE_REGISTER.md (510B) [18L]
+├── LICENSE (472B)
+└── README.md (4KB) [71L]
 ```
+
 
 ## atc-kernel
 
-**Dateien:** 22 | **Verzeichnisse:** 6
+**Layer:** L2 (Kernel) | **Dateien:** 22 | **Verzeichnisse:** 6 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .py(7) · .atc(4) · .gitignore(1) · .txt(1)
 
 ```
 atc-kernel/
-├── .gitignore
-├── ARCHITECTURE.md
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── SECURITY.md
-├── STATUS.md
-├── consensus/
-│   ├── consensus.atc
-│   ├── poh_integration.py
-│   └── shiva_consensus.py
-├── docs/
-│   └── ATS_STANDARDS.md
-├── fs/
-│   ├── atcfs.atc
-│   └── atcfs.py
-├── ipc/
-│   └── ipc_bus.py
-├── kernel/
-│   ├── kernel.atc
-│   └── kernel.py
-├── kernel.py
-├── net/
-│   ├── atcnet.atc
-│   └── atcnet.py
-└── requirements.txt
+├── consensus/ (3 files)
+│   ├── consensus.atc (5KB) [144L]
+│   ├── poh_integration.py (1KB) [29L]
+│   └── shiva_consensus.py (24KB) [641L]
+├── docs/ (1 files)
+│   └── ATS_STANDARDS.md (7KB) [283L]
+├── fs/ (2 files)
+│   ├── atcfs.atc (4KB) [142L]
+│   └── atcfs.py (12KB) [331L]
+├── ipc/ (1 files)
+│   └── ipc_bus.py (3KB) [94L]
+├── kernel/ (2 files)
+│   ├── kernel.atc (4KB) [148L]
+│   └── kernel.py (14KB) [382L]
+├── net/ (2 files)
+│   ├── atcnet.atc (4KB) [135L]
+│   └── atcnet.py (549B) [17L]
+├── .gitignore (171B)
+├── ARCHITECTURE.md (2KB) [90L]
+├── CHANGELOG.md (276B) [16L]
+├── FILE_REGISTER.md (909B) [27L]
+├── LICENSE (982B)
+├── README.md (4KB) [69L]
+├── ROADMAP.md (476B) [21L]
+├── SECURITY.md (451B) [14L]
+├── STATUS.md (355B) [19L]
+├── kernel.py (3KB) [106L]
+└── requirements.txt (131B)
 ```
+
 
 ## atc-kernel-wiki
 
-**Dateien:** 15 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 15 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(13) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-kernel-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ATCFS.md
-    ├── ATCNET.md
-    ├── CHANGELOG.md
-    ├── CONSENSUS.md
-    ├── IPC.md
-    ├── KERNEL.md
-    ├── PERFORMANCE.md
-    ├── PROCESS_MODEL.md
-    ├── ROADMAP.md
-    ├── SECURITY.md
-    └── TODO.md
+├── docs/ (11 files)
+│   ├── ATCFS.md (2KB) [107L]
+│   ├── ATCNET.md (2KB) [89L]
+│   ├── CHANGELOG.md (231B) [7L]
+│   ├── CONSENSUS.md (615B) [24L]
+│   ├── IPC.md (1KB) [43L]
+│   ├── KERNEL.md (2KB) [87L]
+│   ├── PERFORMANCE.md (708B) [25L]
+│   ├── PROCESS_MODEL.md (1KB) [48L]
+│   ├── ROADMAP.md (508B) [18L]
+│   ├── SECURITY.md (532B) [20L]
+│   └── TODO.md (638B) [22L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [50L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-linux-edition
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** L10 (Linux Client) | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .toml(1) · .gitignore(1) · .no-ext(1) · .rs(1)
 
 ```
 atc-linux-edition/
-├── .gitignore
-├── CHANGELOG.md
-├── Cargo.toml
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-└── src/
-    └── main.rs
+├── src/ (1 files)
+│   └── main.rs (625B) [15L]
+├── .gitignore (171B)
+├── CHANGELOG.md (431B) [21L]
+├── Cargo.toml (273B) [13L]
+├── FILE_REGISTER.md (398B) [13L]
+├── LICENSE (658B)
+├── README.md (1KB) [44L]
+├── ROADMAP.md (490B) [21L]
+└── STATUS.md (350B) [19L]
 ```
+
 
 ## atc-linux-edition-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-linux-edition-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-└── STATUS.md
+├── .gitignore (44B)
+├── ARCHITECTURE.md (325B) [14L]
+├── FILE_REGISTER.md (432B) [14L]
+├── LICENSE (472B)
+├── MODULES.md (321B) [10L]
+├── README.md (525B) [18L]
+└── STATUS.md (308B) [15L]
 ```
+
 
 ## atc-mobile
 
-**Dateien:** 11 | **Verzeichnisse:** 1
+**Layer:** L10 (Mobile) | **Dateien:** 11 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .atc(2) · .py(2) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-mobile/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── __init__.py
-├── wallet/
-│   ├── __init__.py
-│   └── biometric_auth.atc
-└── wallet_api.atc
+├── wallet/ (2 files)
+│   ├── __init__.py (162B) [2L]
+│   └── biometric_auth.atc (5KB) [179L]
+├── .gitignore (171B)
+├── CHANGELOG.md (424B) [21L]
+├── FILE_REGISTER.md (638B) [22L]
+├── LICENSE (658B)
+├── README.md (4KB) [101L]
+├── ROADMAP.md (476B) [21L]
+├── STATUS.md (345B) [19L]
+├── __init__.py (123B) [2L]
+└── wallet_api.atc (5KB) [171L]
 ```
+
 
 ## atc-mobile-wiki
 
-**Dateien:** 6 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 6 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(4) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-mobile-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (2 files)
+│   ├── ARCHITECTURE.md (412B) [9L]
+│   └── ROADMAP.md (380B) [12L]
+├── .gitignore (44B)
+├── FILE_REGISTER.md (488B) [17L]
+├── LICENSE (472B)
+└── README.md (4KB) [70L]
 ```
+
 
 ## atc-sdk
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L7 (SDK) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-sdk/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (216B) [8L]
+├── FILE_REGISTER.md (381B) [13L]
+├── LICENSE (703B)
+├── README.md (5KB) [115L]
+├── ROADMAP.md (369B) [16L]
+└── STATUS.md (484B) [21L]
 ```
+
 
 ## atc-sdk-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-sdk-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── API.md
-    ├── ARCHITECTURE.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── API.md (307B) [11L]
+│   ├── ARCHITECTURE.md (525B) [16L]
+│   └── ROADMAP.md (173B) [8L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (316B) [14L]
+├── FILE_REGISTER.md (490B) [16L]
+├── LICENSE (472B)
+├── MODULES.md (301B) [10L]
+├── README.md (3KB) [69L]
+└── STATUS.md (288B) [15L]
 ```
+
 
 ## atc-shivacore
 
-**Dateien:** 2157 | **Verzeichnisse:** 1054
+**Layer:** L1 (Bare-Metal Kernel) | **Dateien:** 74 | **Verzeichnisse:** 5 | **Max Tiefe:** 2
+
+**Sprachen:** .rs(61) · .md(5) · .toml(4) · .gitignore(2) · .no-ext(1)
 
 ```
 atc-shivacore/
-├── .gitignore
-├── CHANGELOG.md
-├── Cargo.toml
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── boot/
-│   ├── Cargo.toml
-│   └── src/
-│       └── main.rs
-└── kernel/
-    ├── .cargo/
-    │   └── config.toml
-    ├── .gitignore
-    ├── Cargo.lock
-    ├── Cargo.toml
-    ├── src/
-    │   ├── ai.rs
-    │   ├── allocator.rs
-    │   ├── atcfs.rs
-    │   ├── atcnet.rs
-    │   ├── ats1000.rs
-    │   ├── block.rs
-    │   ├── blockchain.rs
-    │   ├── capability.rs
-    │   ├── consensus.rs
-    │   ├── container.rs
-    │   ├── container_net.rs
-    │   ├── contract.rs
-    │   ├── cow.rs
-    │   ├── cross_subsystem.rs
-    │   ├── devfs.rs
-    │   ├── did.rs
-    │   ├── elf_loader.rs
-    │   ├── framebuffer.rs
-    │   ├── fs_journal.rs
-    │   ├── gdt.rs
-    │   ├── genesis.rs
-    │   ├── genesis_bridge.rs
-    │   ├── gossip_bridge.rs
-    │   ├── hw_drivers.rs
-    │   ├── interrupts.rs
-    │   ├── ipc.rs
-    │   ├── kernel_init.rs
-    │   ├── knowledge_graph.rs
-    │   ├── lib.rs
-    │   ├── lkm.rs
-    │   ├── main.rs
-    │   ├── memory.rs
-    │   ├── memory_manager.rs
-    │   ├── mempool.rs
-    │   ├── module_security.rs
-    │   ├── net.rs
-    │   ├── p2p.rs
-    │   ├── page_fault.rs
-    │   ├── power.rs
-    │   ├── process.rs
-    │   ├── remote_caps.rs
-    │   ├── scheduler.rs
-    │   ├── security.rs
-    │   ├── security_audit.rs
-    │   ├── serial.rs
-    │   ├── signals.rs
-    │   ├── smp.rs
-    │   ├── sockets.rs
-    │   ├── syscall.rs
-    │   ├── system.rs
-    │   ├── tcpip.rs
-    │   ├── threads.rs
-    │   ├── timer.rs
-    │   ├── tracing.rs
-    │   ├── user_io.rs
-    │   ├── user_sched.rs
-    │   ├── userspace.rs
-    │   ├── vfs.rs
-    │   ├── vm.rs
-    │   └── vmm.rs
-    └── target/
-        ├── .rustc_info.json
-        ├── CACHEDIR.TAG
-        ├── debug/
-        │   ├── .cargo-artifact-lock
-        │   ├── .cargo-build-lock
-        │   ├── .cargo-lock
-        │   ├── .fingerprint/
-        │   ├── build/
-        │   ├── deps/
-        │   ├── examples/
-        │   └── incremental/
-        ├── release/
-        │   ├── .cargo-artifact-lock
-        │   ├── .cargo-build-lock
-        │   ├── .cargo-lock
-        │   ├── .fingerprint/
-        │   │   ├── bootloader_api-7e117213ee545ead/
-        │   │   │   ├── build-script-build-script-build
-        │   │   │   ├── build-script-build-script-build.json
-        │   │   │   ├── dep-build-script-build-script-build
-        │   │   │   └── invoked.timestamp
-        │   │   ├── const_fn-aa59a3b5afcf0fc5/
-        │   │   │   ├── dep-lib-const_fn
-        │   │   │   ├── invoked.timestamp
-        │   │   │   ├── lib-const_fn
-        │   │   │   └── lib-const_fn.json
-        │   │   ├── const_fn-e8056f384b0cf9e8/
-        │   │   │   ├── run-build-script-build-script-build
-        │   │   │   └── run-build-script-build-script-build.json
-        │   │   ├── const_fn-f06d55ae7eab8f0c/
-        │   │   │   ├── build-script-build-script-build
-        │   │   │   ├── build-script-build-script-build.json
-        │   │   │   ├── dep-build-script-build-script-build
-        │   │   │   └── invoked.timestamp
-        │   │   ├── rustversion-bc53ae463f288a74/
-        │   │   │   ├── dep-lib-rustversion
-        │   │   │   ├── invoked.timestamp
-        │   │   │   ├── lib-rustversion
-        │   │   │   └── lib-rustversion.json
-        │   │   ├── rustversion-f41035f0d6c60f9a/
-        │   │   │   ├── build-script-build-script-build
-        │   │   │   ├── build-script-build-script-build.json
-        │   │   │   ├── dep-build-script-build-script-build
-        │   │   │   └── invoked.timestamp
-        │   │   ├── rustversion-fa15128e387e0fb8/
-        │   │   │   ├── run-build-script-build-script-build
-        │   │   │   └── run-build-script-build-script-build.json
-        │   │   └── x86-681055770ab2b7b4/
-        │   │       ├── build-script-build-script-build
-        │   │       ├── build-script-build-script-build.json
-        │   │       ├── dep-build-script-build-script-build
-        │   │       └── invoked.timestamp
-        │   ├── build/
-        │   │   ├── bit_field/
-        │   │   │   ├── 0f6a9643735729d2/
-        │   │   │   ├── 3b13e207bd4ef248/
-        │   │   │   └── 5455f544e54777d3/
-        │   │   ├── bitflags/
-        │   │   │   ├── 9791cd9306ca16d7/
-        │   │   │   ├── e4b72ccc75ba6aec/
-        │   │   │   ├── f9897f46e36816a1/
-        │   │   │   ├── feb1e7d826e00234/
-        │   │   │   ├── ff0852d0f6a30e90/
-        │   │   │   └── ffa5e7d8051520aa/
-        │   │   ├── block-buffer/
-        │   │   │   ├── 043c9cfcdb693004/
-        │   │   │   ├── 72289a7a6639e573/
-        │   │   │   └── c134acd1f105e59c/
-        │   │   ├── bootloader_api/
-        │   │   │   ├── 2335db85a17360d9/
-        │   │   │   ├── 305ed91fc848bf97/
-        │   │   │   ├── 6ef5d9180a3fe168/
-        │   │   │   ├── 7d251cb1213c82ab/
-        │   │   │   ├── ad3721156d287092/
-        │   │   │   └── db6f6534189f5d8f/
-        │   │   ├── bootloader_api-7e117213ee545ead/
-        │   │   │   ├── build-script-build
-        │   │   │   ├── build_script_build-7e117213ee545ead
-        │   │   │   └── build_script_build-7e117213ee545ead.d
-        │   │   ├── cfg-if/
-        │   │   │   ├── 3f49d1e4dd06d2f1/
-        │   │   │   ├── 8a2cb3dd7689da9a/
-        │   │   │   └── bbc64971b3df18e3/
-        │   │   ├── compiler_builtins/
-        │   │   │   └── 33473e5f611fa77c/
-        │   │   ├── const_fn/
-        │   │   │   ├── 426e15a1e3f2cb11/
-        │   │   │   ├── 576168523cabc438/
-        │   │   │   ├── 7f5dfd17e3fb2566/
-        │   │   │   ├── 9ea31c6c1bf5a22f/
-        │   │   │   ├── b0eb644616f14358/
-        │   │   │   └── b5a0b354c1be88ba/
-        │   │   ├── const_fn-e8056f384b0cf9e8/
-        │   │   │   ├── invoked.timestamp
-        │   │   │   ├── out/
-        │   │   │   ├── output
-        │   │   │   ├── root-output
-        │   │   │   └── stderr
-        │   │   ├── const_fn-f06d55ae7eab8f0c/
-        │   │   │   ├── build-script-build
-        │   │   │   ├── build_script_build-f06d55ae7eab8f0c
-        │   │   │   └── build_script_build-f06d55ae7eab8f0c.d
-        │   │   ├── cpufeatures/
-        │   │   │   ├── 255899972fd098bc/
-        │   │   │   ├── 7f1c4c3451b9798f/
-        │   │   │   └── 9236d2b2ed665be8/
-        │   │   ├── crypto-common/
-        │   │   │   ├── 005157ba5190e7bc/
-        │   │   │   ├── 51b19bc6769a6b06/
-        │   │   │   └── 5bf58c07a10686e2/
-        │   │   ├── curve25519-dalek/
-        │   │   │   ├── 7405602e3947ac02/
-        │   │   │   ├── 7e2b82043b73fb21/
-        │   │   │   ├── 9d56a7e91255728f/
-        │   │   │   ├── c35f5cc5a070c4ad/
-        │   │   │   ├── ced01a58691044ab/
-        │   │   │   └── d8e5564dd9896ad6/
-        │   │   ├── curve25519-dalek-derive/
-        │   │   │   └── 8661d9d24a488eda/
-        │   │   ├── digest/
-        │   │   │   ├── 014b652834e5281a/
-        │   │   │   ├── 5096ac000d3f1a29/
-        │   │   │   └── 5c8cc6229383c013/
-        │   │   ├── ed25519/
-        │   │   │   ├── 702916ee3e39c0ea/
-        │   │   │   ├── af1c07db2c2ac6e3/
-        │   │   │   └── b73e68f4867743ed/
-        │   │   ├── ed25519-dalek/
-        │   │   │   ├── 565e72d09c03fb86/
-        │   │   │   ├── a63f40841a07581a/
-        │   │   │   └── c1f97ea8bbfc475c/
-        │   │   ├── generic-array/
-        │   │   │   ├── 3959d007309ddb73/
-        │   │   │   ├── 54c64e7c8b1611bb/
-        │   │   │   ├── 722de46dbc9d5aec/
-        │   │   │   ├── b3d6ce86d03fe66f/
-        │   │   │   ├── de44323590d54dde/
-        │   │   │   └── defe3144da46aa88/
-        │   │   ├── lazy_static/
-        │   │   │   ├── 417d448e5d28835a/
-        │   │   │   ├── a8bf7d8e71bf8b9c/
-        │   │   │   └── c2234ce78bbba70c/
-        │   │   ├── libm/
-        │   │   │   ├── 574f21137eb28d1d/
-        │   │   │   ├── 8a2ffaf6e88e3738/
-        │   │   │   ├── a8be59f73c5e2f3d/
-        │   │   │   ├── e139526254e6ec82/
-        │   │   │   └── f1c80cd5821036d0/
-        │   │   ├── linked_list_allocator/
-        │   │   │   ├── b8e645343407635a/
-        │   │   │   ├── ceebc87b2d2a8f09/
-        │   │   │   └── f2eab1a1e3fa22ee/
-        │   │   ├── lock_api/
-        │   │   │   ├── 1a6c5f1eb4ef49d2/
-        │   │   │   ├── 1d8b282adbabff1c/
-        │   │   │   └── 58b7e8a22822231c/
-        │   │   ├── noto-sans-mono-bitmap/
-        │   │   │   ├── 3f3417e631ac1fca/
-        │   │   │   ├── 5d39a47ef64faa1e/
-        │   │   │   └── f93bfa31f20033d7/
-        │   │   ├── pc-keyboard/
-        │   │   │   ├── 597108954111bafa/
-        │   │   │   ├── 83510e4a93db6da3/
-        │   │   │   └── 916f9beafcd89070/
-        │   │   ├── pic8259/
-        │   │   │   ├── 6dc609f96c787f53/
-        │   │   │   ├── c277178898995c5e/
-        │   │   │   └── cc9f843a8aaf5bf0/
-        │   │   ├── proc-macro2/
-        │   │   │   ├── 3ae501960a272b9a/
-        │   │   │   ├── 581b168aa0f01448/
-        │   │   │   └── c1a84dcad68d4ac7/
-        │   │   ├── quote/
-        │   │   │   ├── 0ecab58693d507b1/
-        │   │   │   ├── 3a50c28df8fe2c29/
-        │   │   │   └── 6f30833237d2375c/
-        │   │   ├── rand/
-        │   │   │   ├── 2b218a4cb5788da6/
-        │   │   │   ├── 370056f812136624/
-        │   │   │   └── aad7ed590de1829b/
-        │   │   ├── rand_core/
-        │   │   │   ├── 028df5de94d46d57/
-        │   │   │   ├── 5ce0e0cdba5a45da/
-        │   │   │   └── e3cacbc157d5a571/
-        │   │   ├── raw-cpuid/
-        │   │   │   ├── 735fad7220b6aafd/
-        │   │   │   ├── 781238c28ce9280f/
-        │   │   │   └── 7f034e257b1a5ff9/
-        │   │   ├── rustc_version/
-        │   │   │   ├── be5bdacf1888bf6a/
-        │   │   │   └── ecaa4281e4190e7f/
-        │   │   ├── rustversion/
-        │   │   │   ├── 2358aed93565356b/
-        │   │   │   ├── 51f9462ffd2a1a6f/
-        │   │   │   ├── 62341d12e140e769/
-        │   │   │   ├── 6469e9ee7d5d6680/
-        │   │   │   ├── 721d39544be2f48f/
-        │   │   │   └── 780787ad4153b8a7/
-        │   │   ├── rustversion-f41035f0d6c60f9a/
-        │   │   │   ├── build-script-build
-        │   │   │   ├── build_script_build-f41035f0d6c60f9a
-        │   │   │   └── build_script_build-f41035f0d6c60f9a.d
-        │   │   ├── rustversion-fa15128e387e0fb8/
-        │   │   │   ├── invoked.timestamp
-        │   │   │   ├── out/
-        │   │   │   ├── output
-        │   │   │   ├── root-output
-        │   │   │   └── stderr
-        │   │   ├── scopeguard/
-        │   │   │   ├── 3f3ec4ff715abfea/
-        │   │   │   ├── 46f8864f9f752fe3/
-        │   │   │   └── b69204374a1cbcaa/
-        │   │   ├── semver/
-        │   │   │   ├── 0282c03c624c6138/
-        │   │   │   └── 0c19bf09504978ba/
-        │   │   ├── sha2/
-        │   │   │   ├── 5635027bc53034ac/
-        │   │   │   ├── b825844ce5755bb9/
-        │   │   │   └── dd0d657c2d5c0137/
-        │   │   ├── shivacore/
-        │   │   │   ├── 11d3e1ac90eb2457/
-        │   │   │   ├── 17a1b3cb5fc9d54c/
-        │   │   │   ├── 32f43fa237b1780c/
-        │   │   │   ├── 446ec21976b8d117/
-        │   │   │   ├── 4a66773b378d453e/
-        │   │   │   ├── da19803f757ebbb0/
-        │   │   │   ├── ea5dc9fc9a63ca37/
-        │   │   │   └── fdf2f479b851ee45/
-        │   │   ├── signature/
-        │   │   │   ├── 14e9a3d8eb94ae12/
-        │   │   │   ├── 6a9a5912abbdfa85/
-        │   │   │   └── 6ccdb19c42123c8c/
-        │   │   ├── spin/
-        │   │   │   ├── 0553b5226fbb68c9/
-        │   │   │   ├── 4bf4297172dd7669/
-        │   │   │   └── c83fa38f2fa36cee/
-        │   │   ├── spinning_top/
-        │   │   │   ├── 620703bb4c43df5f/
-        │   │   │   ├── ba2a27122a5cd7ee/
-        │   │   │   └── e4fbb4c1e8862251/
-        │   │   ├── subtle/
-        │   │   │   ├── 0ad241f18f83376c/
-        │   │   │   ├── a1e6977f464fa8ff/
-        │   │   │   └── ceda6775c2b54734/
-        │   │   ├── syn/
-        │   │   │   └── adf10dc24d11a352/
-        │   │   ├── typenum/
-        │   │   │   ├── 3c13551929c6cf17/
-        │   │   │   ├── 981051e3f69b248d/
-        │   │   │   └── ebaa8b0e909f21b2/
-        │   │   ├── uart_16550/
-        │   │   │   ├── 009c689b42afa0c2/
-        │   │   │   ├── 507e4acba671654f/
-        │   │   │   └── 96ac95bc2c248846/
-        │   │   ├── unicode-ident/
-        │   │   │   └── da929f8ac24dd6ab/
-        │   │   ├── version_check/
-        │   │   │   ├── 1cee0126ac720ef1/
-        │   │   │   └── 1e565fccedeaf16b/
-        │   │   ├── volatile/
-        │   │   │   ├── 0a167cf283c91fff/
-        │   │   │   ├── 5d95bb25229aaf41/
-        │   │   │   ├── 6ce0c50b0ac3b2f9/
-        │   │   │   ├── be8ef0d0751fee1b/
-        │   │   │   ├── da3646f630a8af47/
-        │   │   │   └── e0dae057ca465034/
-        │   │   ├── x86/
-        │   │   │   ├── 429e800290439f61/
-        │   │   │   ├── 5642e5dfa3b419e2/
-        │   │   │   ├── 64e6e437f4ab0ade/
-        │   │   │   ├── 7946d55aa0594215/
-        │   │   │   ├── 8116465a2533e47c/
-        │   │   │   └── c36e7daefacb1804/
-        │   │   ├── x86-681055770ab2b7b4/
-        │   │   │   ├── build-script-build
-        │   │   │   ├── build_script_build-681055770ab2b7b4
-        │   │   │   └── build_script_build-681055770ab2b7b4.d
-        │   │   ├── x86_64/
-        │   │   │   ├── 94a6ecbbdb03158c/
-        │   │   │   ├── 989263566f458f84/
-        │   │   │   └── f1e1b9e79a34fe3a/
-        │   │   └── zeroize/
-        │   │       ├── 7053579604b2e7df/
-        │   │       ├── c42306e44a3b2bdc/
-        │   │       └── c80b34013534781d/
-        │   ├── deps/
-        │   │   ├── const_fn-aa59a3b5afcf0fc5.d
-        │   │   ├── libconst_fn-aa59a3b5afcf0fc5.so
-        │   │   ├── librustversion-bc53ae463f288a74.so
-        │   │   └── rustversion-bc53ae463f288a74.d
-        │   ├── examples/
-        │   └── incremental/
-        └── x86_64-unknown-none/
-            ├── CACHEDIR.TAG
-            ├── debug/
-            │   ├── .cargo-artifact-lock
-            │   ├── .cargo-build-lock
-            │   ├── .cargo-lock
-            │   ├── .fingerprint/
-            │   ├── build/
-            │   ├── deps/
-            │   ├── examples/
-            │   └── incremental/
-            └── release/
-                ├── .cargo-artifact-lock
-                ├── .cargo-build-lock
-                ├── .cargo-lock
-                ├── .fingerprint/
-                │   ├── bit_field-0bf284e4307edd19/
-                │   ├── bitflags-54c8dd9fef4eb366/
-                │   ├── bitflags-befa69b79b26bb6d/
-                │   ├── bootloader_api-cb471f4e35313811/
-                │   ├── bootloader_api-ce3546932cf74cde/
-                │   ├── lazy_static-84f8a8b1c8a362d7/
-                │   ├── linked_list_allocator-8fceac568343a631/
-                │   ├── lock_api-5fe9b869e6444ceb/
-                │   ├── noto-sans-mono-bitmap-e441a1218feea329/
-                │   ├── pc-keyboard-e2dc0012160f1323/
-                │   ├── pic8259-a7485fe56728d216/
-                │   ├── raw-cpuid-a9a99392b6fd89f9/
-                │   ├── scopeguard-237943d4edaa9f43/
-                │   ├── shivacore-9169e4e14b7f0bd5/
-                │   ├── spin-36d6136c8a89f22b/
-                │   ├── spinning_top-4f3ec7d875a83e9e/
-                │   ├── uart_16550-105041d7b45b5688/
-                │   ├── volatile-30a859d902e7a4a3/
-                │   ├── volatile-4fa1d6d1478d41ab/
-                │   ├── x86-1016579db3d42b30/
-                │   ├── x86-df336a3e107c04e7/
-                │   └── x86_64-efb07217cbfa4775/
-                ├── build/
-                │   ├── alloc/
-                │   ├── bit_field/
-                │   ├── bitflags/
-                │   ├── block-buffer/
-                │   ├── bootloader_api/
-                │   ├── bootloader_api-ce3546932cf74cde/
-                │   ├── cfg-if/
-                │   ├── compiler_builtins/
-                │   ├── core/
-                │   ├── cpufeatures/
-                │   ├── crypto-common/
-                │   ├── curve25519-dalek/
-                │   ├── digest/
-                │   ├── ed25519/
-                │   ├── ed25519-dalek/
-                │   ├── generic-array/
-                │   ├── lazy_static/
-                │   ├── linked_list_allocator/
-                │   ├── lock_api/
-                │   ├── noto-sans-mono-bitmap/
-                │   ├── pc-keyboard/
-                │   ├── pic8259/
-                │   ├── rand/
-                │   ├── rand_core/
-                │   ├── raw-cpuid/
-                │   ├── scopeguard/
-                │   ├── sha2/
-                │   ├── shivacore/
-                │   ├── signature/
-                │   ├── spin/
-                │   ├── spinning_top/
-                │   ├── subtle/
-                │   ├── typenum/
-                │   ├── uart_16550/
-                │   ├── volatile/
-                │   ├── x86/
-                │   ├── x86-df336a3e107c04e7/
-                │   ├── x86_64/
-                │   └── zeroize/
-                ├── deps/
-                │   ├── bit_field-0bf284e4307edd19.d
-                │   ├── bitflags-54c8dd9fef4eb366.d
-                │   ├── bitflags-befa69b79b26bb6d.d
-                │   ├── bootloader_api-cb471f4e35313811.d
-                │   ├── lazy_static-84f8a8b1c8a362d7.d
-                │   ├── libbit_field-0bf284e4307edd19.rlib
-                │   ├── libbit_field-0bf284e4307edd19.rmeta
-                │   ├── libbitflags-54c8dd9fef4eb366.rlib
-                │   ├── libbitflags-54c8dd9fef4eb366.rmeta
-                │   ├── libbitflags-befa69b79b26bb6d.rlib
-                │   ├── libbitflags-befa69b79b26bb6d.rmeta
-                │   ├── libbootloader_api-cb471f4e35313811.rlib
-                │   ├── libbootloader_api-cb471f4e35313811.rmeta
-                │   ├── liblazy_static-84f8a8b1c8a362d7.rlib
-                │   ├── liblazy_static-84f8a8b1c8a362d7.rmeta
-                │   ├── liblinked_list_allocator-8fceac568343a631.rlib
-                │   ├── liblinked_list_allocator-8fceac568343a631.rmeta
-                │   ├── liblock_api-5fe9b869e6444ceb.rlib
-                │   ├── liblock_api-5fe9b869e6444ceb.rmeta
-                │   ├── libnoto_sans_mono_bitmap-e441a1218feea329.rlib
-                │   ├── libnoto_sans_mono_bitmap-e441a1218feea329.rmeta
-                │   ├── libpc_keyboard-e2dc0012160f1323.rlib
-                │   ├── libpc_keyboard-e2dc0012160f1323.rmeta
-                │   ├── libraw_cpuid-a9a99392b6fd89f9.rlib
-                │   ├── libraw_cpuid-a9a99392b6fd89f9.rmeta
-                │   ├── libscopeguard-237943d4edaa9f43.rlib
-                │   ├── libscopeguard-237943d4edaa9f43.rmeta
-                │   ├── libspin-36d6136c8a89f22b.rlib
-                │   ├── libspin-36d6136c8a89f22b.rmeta
-                │   ├── libspinning_top-4f3ec7d875a83e9e.rlib
-                │   ├── libspinning_top-4f3ec7d875a83e9e.rmeta
-                │   ├── libvolatile-30a859d902e7a4a3.rlib
-                │   ├── libvolatile-30a859d902e7a4a3.rmeta
-                │   ├── libvolatile-4fa1d6d1478d41ab.rlib
-                │   ├── libvolatile-4fa1d6d1478d41ab.rmeta
-                │   ├── libx86-1016579db3d42b30.rlib
-                │   ├── libx86-1016579db3d42b30.rmeta
-                │   ├── linked_list_allocator-8fceac568343a631.d
-                │   ├── lock_api-5fe9b869e6444ceb.d
-                │   ├── noto_sans_mono_bitmap-e441a1218feea329.d
-                │   ├── pc_keyboard-e2dc0012160f1323.d
-                │   ├── raw_cpuid-a9a99392b6fd89f9.d
-                │   ├── scopeguard-237943d4edaa9f43.d
-                │   ├── spin-36d6136c8a89f22b.d
-                │   ├── spinning_top-4f3ec7d875a83e9e.d
-                │   ├── volatile-30a859d902e7a4a3.d
-                │   ├── volatile-4fa1d6d1478d41ab.d
-                │   ├── x86-1016579db3d42b30.d
-                │   └── x86_64-efb07217cbfa4775.d
-                ├── examples/
-                └── incremental/
+├── boot/ (2 files)
+│   ├── src/ (1 files)
+│   │   └── main.rs (1KB) [30L]
+│   └── Cargo.toml (206B) [8L]
+├── kernel/ (2147 files)
+│   ├── .cargo/ (1 files)
+│   │   └── config.toml (69B) [2L]
+│   ├── src/ (60 files)
+│   │   ├── ai.rs (17KB) [75L]
+│   │   ├── allocator.rs (1KB) [47L]
+│   │   ├── atcfs.rs (18KB) [627L]
+│   │   ├── atcnet.rs (38KB) [1139L]
+│   │   ├── ats1000.rs (3KB) [94L]
+│   │   ├── block.rs (18KB) [548L]
+│   │   ├── blockchain.rs (10KB) [57L]
+│   │   ├── capability.rs (9KB) [248L]
+│   │   ├── consensus.rs (34KB) [961L]
+│   │   ├── container.rs (99KB) [2757L]
+│   │   ├── container_net.rs (68KB) [632L]
+│   │   ├── contract.rs (7KB) [38L]
+│   │   ├── cow.rs (67KB) [1484L]
+│   │   ├── cross_subsystem.rs (17KB) [483L]
+│   │   ├── devfs.rs (31KB) [921L]
+│   │   ├── did.rs (11KB) [350L]
+│   │   ├── elf_loader.rs (41KB) [1104L]
+│   │   ├── framebuffer.rs (3KB) [122L]
+│   │   ├── fs_journal.rs (35KB) [1161L]
+│   │   ├── gdt.rs (2KB) [59L]
+│   │   ├── genesis.rs (37KB) [1111L]
+│   │   ├── genesis_bridge.rs (33KB) [1097L]
+│   │   ├── gossip_bridge.rs (48KB) [1410L]
+│   │   ├── hw_drivers.rs (40KB) [1267L]
+│   │   ├── interrupts.rs (2KB) [100L]
+│   │   ├── ipc.rs (21KB) [600L]
+│   │   ├── kernel_init.rs (14KB) [431L]
+│   │   ├── knowledge_graph.rs (25KB) [755L]
+│   │   ├── lib.rs (1KB) [73L]
+│   │   ├── lkm.rs (106KB) [2998L]
+│   │   ├── main.rs (5KB) [164L]
+│   │   ├── memory.rs (2KB) [75L]
+│   │   ├── memory_manager.rs (27KB) [829L]
+│   │   ├── mempool.rs (17KB) [75L]
+│   │   ├── module_security.rs (61KB) [1682L]
+│   │   ├── net.rs (26KB) [802L]
+│   │   ├── p2p.rs (32KB) [861L]
+│   │   ├── page_fault.rs (47KB) [1371L]
+│   │   ├── power.rs (35KB) [1153L]
+│   │   ├── process.rs (11KB) [360L]
+│   │   ├── remote_caps.rs (22KB) [629L]
+│   │   ├── scheduler.rs (14KB) [389L]
+│   │   ├── security.rs (33KB) [879L]
+│   │   ├── security_audit.rs (46KB) [1264L]
+│   │   ├── serial.rs (1KB) [42L]
+│   │   ├── signals.rs (82KB) [2249L]
+│   │   ├── smp.rs (84KB) [2506L]
+│   │   ├── sockets.rs (57KB) [1526L]
+│   │   ├── syscall.rs (42KB) [1081L]
+│   │   ├── system.rs (38KB) [1254L]
+│   │   ├── tcpip.rs (35KB) [860L]
+│   │   ├── threads.rs (45KB) [1467L]
+│   │   ├── timer.rs (17KB) [528L]
+│   │   ├── tracing.rs (74KB) [2254L]
+│   │   ├── user_io.rs (44KB) [1323L]
+│   │   ├── user_sched.rs (40KB) [1201L]
+│   │   ├── userspace.rs (31KB) [840L]
+│   │   ├── vfs.rs (38KB) [1099L]
+│   │   ├── vm.rs (15KB) [54L]
+│   │   └── vmm.rs (82KB) [2362L]
+│   ├── .gitignore (8B)
+│   ├── Cargo.lock (12KB)
+│   └── Cargo.toml (865B) [38L]
+├── .gitignore (171B)
+├── CHANGELOG.md (427B) [21L]
+├── Cargo.toml (204B) [12L]
+├── FILE_REGISTER.md (298KB) [2161L]
+├── LICENSE (658B)
+├── README.md (55KB) [1074L]
+├── ROADMAP.md (482B) [21L]
+└── STATUS.md (352B) [19L]
 ```
+
 
 ## atc-shivacore-tools
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L1 (Build Tools) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-shivacore-tools/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (171B)
+├── CHANGELOG.md (433B) [21L]
+├── FILE_REGISTER.md (339B) [11L]
+├── LICENSE (658B)
+├── README.md (2KB) [58L]
+├── ROADMAP.md (494B) [21L]
+└── STATUS.md (352B) [19L]
 ```
+
 
 ## atc-shivacore-tools-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-shivacore-tools-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-└── STATUS.md
+├── .gitignore (44B)
+├── ARCHITECTURE.md (331B) [14L]
+├── FILE_REGISTER.md (434B) [14L]
+├── LICENSE (472B)
+├── MODULES.md (325B) [10L]
+├── README.md (535B) [18L]
+└── STATUS.md (312B) [15L]
 ```
+
 
 ## atc-shivacore-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-shivacore-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-└── STATUS.md
+├── .gitignore (44B)
+├── ARCHITECTURE.md (327B) [14L]
+├── FILE_REGISTER.md (428B) [14L]
+├── LICENSE (472B)
+├── MODULES.md (313B) [10L]
+├── README.md (519B) [18L]
+└── STATUS.md (300B) [15L]
 ```
+
 
 ## atc-shivamon
 
-**Dateien:** 15 | **Verzeichnisse:** 3
+**Layer:** L12 (NFT Gaming) | **Dateien:** 15 | **Verzeichnisse:** 3 | **Max Tiefe:** 1
+
+**Sprachen:** .md(6) · .py(5) · .no-ext(1) · .txt(1) · .gitignore(1)
 
 ```
 atc-shivamon/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── GAME_SPEC.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── api/
-│   ├── game_routes.py
-│   └── marketplace_routes.py
-├── contracts/
-│   ├── marketplace_contract.py
-│   ├── shivamon.atc
-│   └── shivamon_contract.py
-├── engine/
-│   └── battle_engine.py
-└── requirements.txt
+├── api/ (2 files)
+│   ├── game_routes.py (1KB) [59L]
+│   └── marketplace_routes.py (2KB) [93L]
+├── contracts/ (3 files)
+│   ├── marketplace_contract.py (11KB) [301L]
+│   ├── shivamon.atc (5KB) [162L]
+│   └── shivamon_contract.py (10KB) [270L]
+├── engine/ (1 files)
+│   └── battle_engine.py (5KB) [147L]
+├── .gitignore (171B)
+├── CHANGELOG.md (243B) [19L]
+├── FILE_REGISTER.md (700B) [20L]
+├── GAME_SPEC.md (1KB) [43L]
+├── LICENSE (982B)
+├── README.md (4KB) [69L]
+├── ROADMAP.md (480B) [21L]
+├── STATUS.md (357B) [19L]
+└── requirements.txt (122B)
 ```
+
 
 ## atc-shivamon-wiki
 
-**Dateien:** 11 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 11 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(9) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-shivamon-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── BATTLE.md
-    ├── BREEDING.md
-    ├── ELEMENTS.md
-    ├── MARKETPLACE.md
-    ├── NFT_SPEC.md
-    ├── ROADMAP.md
-    └── TODO.md
+├── docs/ (7 files)
+│   ├── BATTLE.md (420B) [17L]
+│   ├── BREEDING.md (1KB) [37L]
+│   ├── ELEMENTS.md (1KB) [31L]
+│   ├── MARKETPLACE.md (408B) [21L]
+│   ├── NFT_SPEC.md (1KB) [55L]
+│   ├── ROADMAP.md (534B) [18L]
+│   └── TODO.md (572B) [20L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [43L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-standards
 
-**Dateien:** 13 | **Verzeichnisse:** 2
+**Layer:** L0 (Standards) | **Dateien:** 13 | **Verzeichnisse:** 2 | **Max Tiefe:** 1
+
+**Sprachen:** .md(11) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-standards/
-├── .gitignore
-├── ATC/
-│   ├── ATC-0009-BRIDGE.md
-│   └── ATC_STANDARDS.md
-├── ATC_STANDARDS.md
-├── ATS/
-│   └── ATS_STANDARDS.md
-├── ATS_STANDARDS.md
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── OVERVIEW.md
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── ATC/ (2 files)
+│   ├── ATC-0009-BRIDGE.md (1KB) [55L]
+│   └── ATC_STANDARDS.md (5KB) [233L]
+├── ATS/ (1 files)
+│   └── ATS_STANDARDS.md (7KB) [283L]
+├── .gitignore (171B)
+├── ATC_STANDARDS.md (4KB) [201L]
+├── ATS_STANDARDS.md (4KB) [199L]
+├── CHANGELOG.md (218B) [21L]
+├── FILE_REGISTER.md (589B) [18L]
+├── LICENSE (982B)
+├── OVERVIEW.md (1KB) [29L]
+├── README.md (4KB) [69L]
+├── ROADMAP.md (482B) [21L]
+└── STATUS.md (358B) [19L]
 ```
+
 
 ## atc-standards-wiki
 
-**Dateien:** 8 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 8 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(6) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-standards-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ATC_STANDARDS.md
-    ├── ATS_STANDARDS.md
-    ├── OVERVIEW.md
-    └── ROADMAP.md
+├── docs/ (4 files)
+│   ├── ATC_STANDARDS.md (5KB) [233L]
+│   ├── ATS_STANDARDS.md (7KB) [283L]
+│   ├── OVERVIEW.md (1KB) [28L]
+│   └── ROADMAP.md (527B) [17L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [41L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-stdlib
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L3 (Standard Library) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-stdlib/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (219B) [8L]
+├── FILE_REGISTER.md (396B) [13L]
+├── LICENSE (703B)
+├── README.md (4KB) [99L]
+├── ROADMAP.md (372B) [16L]
+└── STATUS.md (487B) [21L]
 ```
+
 
 ## atc-stdlib-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-stdlib-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── MODULES.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (1016B) [34L]
+│   ├── MODULES.md (943B) [36L]
+│   └── ROADMAP.md (584B) [16L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (322B) [14L]
+├── FILE_REGISTER.md (511B) [16L]
+├── LICENSE (472B)
+├── MODULES.md (307B) [10L]
+├── README.md (3KB) [61L]
+└── STATUS.md (294B) [15L]
 ```
+
 
 ## atc-ui
 
-**Dateien:** 10 | **Verzeichnisse:** 2
+**Layer:** L10 (UI Dashboard) | **Dateien:** 10 | **Verzeichnisse:** 2 | **Max Tiefe:** 2
+
+**Sprachen:** .md(6) · .no-ext(1) · .gitignore(1) · .html(1) · .js(1)
 
 ```
 atc-ui/
-├── .gitignore
-├── CHANGELOG.md
-├── DESIGN.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── assets/
-│   └── js/
-│       └── api.js
-└── index.html
+├── assets/ (1 files)
+│   └── js/ (1 files)
+│       └── api.js (4KB) [99L]
+├── .gitignore (171B)
+├── CHANGELOG.md (175B) [6L]
+├── DESIGN.md (1KB) [33L]
+├── FILE_REGISTER.md (575B) [21L]
+├── LICENSE (982B)
+├── README.md (4KB) [102L]
+├── ROADMAP.md (468B) [21L]
+├── STATUS.md (351B) [19L]
+└── index.html (106KB)
 ```
+
 
 ## atc-ui-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .no-ext(1) · .gitignore(1)
 
 ```
 atc-ui-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── API.md
-    ├── COMPONENTS.md
-    ├── DEPLOYMENT.md
-    ├── DESIGN.md
-    ├── ROADMAP.md
-    └── THEME.md
+├── docs/ (6 files)
+│   ├── API.md (651B) [30L]
+│   ├── COMPONENTS.md (442B) [26L]
+│   ├── DEPLOYMENT.md (969B) [49L]
+│   ├── DESIGN.md (732B) [24L]
+│   ├── ROADMAP.md (439B) [17L]
+│   └── THEME.md (1KB) [67L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (923B) [38L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atc-vm
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L4 (Virtual Machine) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-vm/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (215B) [8L]
+├── FILE_REGISTER.md (393B) [13L]
+├── LICENSE (703B)
+├── README.md (4KB) [103L]
+├── ROADMAP.md (368B) [16L]
+└── STATUS.md (483B) [21L]
 ```
+
 
 ## atc-vm-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-vm-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-├── STATUS.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── OPCODES.md
-    └── ROADMAP.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (2KB) [44L]
+│   ├── OPCODES.md (1KB) [26L]
+│   └── ROADMAP.md (814B) [21L]
+├── .gitignore (44B)
+├── ARCHITECTURE.md (313B) [14L]
+├── FILE_REGISTER.md (507B) [16L]
+├── LICENSE (472B)
+├── MODULES.md (299B) [10L]
+├── README.md (3KB) [61L]
+└── STATUS.md (286B) [15L]
 ```
+
 
 ## atc-wallet
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** L10 (Desktop Wallet) | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-wallet/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-└── STATUS.md
+├── .gitignore (116B)
+├── CHANGELOG.md (219B) [8L]
+├── FILE_REGISTER.md (490B) [18L]
+├── LICENSE (703B)
+├── README.md (4KB) [100L]
+├── ROADMAP.md (372B) [16L]
+└── STATUS.md (487B) [21L]
 ```
+
 
 ## atc-wallet-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-wallet-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── ARCHITECTURE.md
-    ├── ROADMAP.md
-    └── SECURITY.md
+├── docs/ (3 files)
+│   ├── ARCHITECTURE.md (386B) [14L]
+│   ├── ROADMAP.md (383B) [12L]
+│   └── SECURITY.md (349B) [7L]
+├── .gitignore (44B)
+├── FILE_REGISTER.md (523B) [18L]
+├── LICENSE (472B)
+└── README.md (4KB) [71L]
 ```
+
 
 ## atc-whitepaper
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** L0 (Whitepaper) | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(6) · .gitignore(1) · .no-ext(1) · .yml(1)
 
 ```
 atc-whitepaper/
-├── .github/
-│   └── FUNDING.yml
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-└── WHITEPAPER.md
+├── .github/ (1 files)
+│   └── FUNDING.yml (76B) [2L]
+├── .gitignore (171B)
+├── CHANGELOG.md (1KB) [38L]
+├── FILE_REGISTER.md (438B) [14L]
+├── LICENSE (982B)
+├── README.md (2KB) [40L]
+├── ROADMAP.md (484B) [21L]
+├── STATUS.md (357B) [19L]
+└── WHITEPAPER.md (123KB) [4171L]
 ```
+
 
 ## atc-windows-edition
 
-**Dateien:** 9 | **Verzeichnisse:** 1
+**Layer:** L10 (Windows Client) | **Dateien:** 9 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(5) · .toml(1) · .gitignore(1) · .no-ext(1) · .rs(1)
 
 ```
 atc-windows-edition/
-├── .gitignore
-├── CHANGELOG.md
-├── Cargo.toml
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-└── src/
-    └── main.rs
+├── src/ (1 files)
+│   └── main.rs (645B) [16L]
+├── .gitignore (171B)
+├── CHANGELOG.md (433B) [21L]
+├── Cargo.toml (279B) [13L]
+├── FILE_REGISTER.md (400B) [13L]
+├── LICENSE (658B)
+├── README.md (1KB) [37L]
+├── ROADMAP.md (494B) [21L]
+└── STATUS.md (352B) [19L]
 ```
+
 
 ## atc-windows-edition-wiki
 
-**Dateien:** 7 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 7 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(5) · .gitignore(1) · .no-ext(1)
 
 ```
 atc-windows-edition-wiki/
-├── .gitignore
-├── ARCHITECTURE.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── MODULES.md
-├── README.md
-└── STATUS.md
+├── .gitignore (44B)
+├── ARCHITECTURE.md (331B) [14L]
+├── FILE_REGISTER.md (434B) [14L]
+├── LICENSE (472B)
+├── MODULES.md (325B) [10L]
+├── README.md (535B) [18L]
+└── STATUS.md (312B) [15L]
 ```
+
 
 ## atclang
 
-**Dateien:** 32 | **Verzeichnisse:** 7
+**Layer:** L2–L4 (ATCLang Compiler) | **Dateien:** 32 | **Verzeichnisse:** 7 | **Max Tiefe:** 1
+
+**Sprachen:** .py(11) · .atc(11) · .md(7) · .no-ext(1) · .gitignore(1)
 
 ```
 atclang/
-├── .gitignore
-├── ATCLANG_SPEC.md
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-├── ROADMAP.md
-├── STATUS.md
-├── compiler/
-│   └── compiler.py
-├── compiler.py
-├── lexer/
-│   └── lexer.py
-├── lexer.py
-├── parser/
-│   ├── ast_nodes.py
-│   └── parser.py
-├── parser.py
-├── programs/
-│   ├── atc8300.atc
-│   ├── atcfs.atc
-│   ├── atcnet.atc
-│   ├── atcos_main.atc
-│   ├── consensus.atc
-│   ├── event_bus.atc
-│   ├── gateway.atc
-│   ├── governance.atc
-│   ├── kernel.atc
-│   ├── shivamon.atc
-│   └── wallet.atc
-├── repl/
-│   └── repl.py
-├── requirements.txt
-├── stdlib/
-│   └── atc_stdlib.py
-├── vm/
-│   └── atcvm.py
-└── vm.py
+├── compiler/ (1 files)
+│   └── compiler.py (17KB) [471L]
+├── lexer/ (1 files)
+│   └── lexer.py (20KB) [563L]
+├── parser/ (2 files)
+│   ├── ast_nodes.py (5KB) [265L]
+│   └── parser.py (15KB) [399L]
+├── programs/ (11 files)
+│   ├── atc8300.atc (3KB) [96L]
+│   ├── atcfs.atc (4KB) [142L]
+│   ├── atcnet.atc (4KB) [135L]
+│   ├── atcos_main.atc (40KB) [1154L]
+│   ├── consensus.atc (5KB) [144L]
+│   ├── event_bus.atc (2KB) [75L]
+│   ├── gateway.atc (4KB) [138L]
+│   ├── governance.atc (4KB) [113L]
+│   ├── kernel.atc (4KB) [148L]
+│   ├── shivamon.atc (5KB) [162L]
+│   └── wallet.atc (4KB) [124L]
+├── repl/ (1 files)
+│   └── repl.py (6KB) [185L]
+├── stdlib/ (1 files)
+│   └── atc_stdlib.py (2KB) [69L]
+├── vm/ (1 files)
+│   └── atcvm.py (39KB) [887L]
+├── .gitignore (171B)
+├── ATCLANG_SPEC.md (913B) [31L]
+├── CHANGELOG.md (242B) [13L]
+├── CONTRIBUTING.md (687B) [19L]
+├── FILE_REGISTER.md (1KB) [39L]
+├── LICENSE (982B)
+├── README.md (5KB) [117L]
+├── ROADMAP.md (470B) [21L]
+├── STATUS.md (352B) [19L]
+├── compiler.py (3KB) [102L]
+├── lexer.py (3KB) [115L]
+├── parser.py (3KB) [95L]
+├── requirements.txt (75B)
+└── vm.py (4KB) [98L]
 ```
+
 
 ## atclang-wiki
 
-**Dateien:** 18 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 18 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(16) · .no-ext(1) · .gitignore(1)
 
 ```
 atclang-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── CHANGELOG.md
-    ├── COMPILER.md
-    ├── CONTRIBUTING.md
-    ├── EXAMPLES.md
-    ├── LEXER.md
-    ├── PARSER.md
-    ├── REPL.md
-    ├── ROADMAP.md
-    ├── SECURITY.md
-    ├── SECURITY_ANALYZER.md
-    ├── SPEC.md
-    ├── STDLIB.md
-    ├── SYNTAX_FULL.md
-    └── VM.md
+├── docs/ (14 files)
+│   ├── CHANGELOG.md (338B) [8L]
+│   ├── COMPILER.md (3KB) [105L]
+│   ├── CONTRIBUTING.md (472B) [11L]
+│   ├── EXAMPLES.md (3KB) [95L]
+│   ├── LEXER.md (1KB) [59L]
+│   ├── PARSER.md (3KB) [135L]
+│   ├── REPL.md (2KB) [79L]
+│   ├── ROADMAP.md (715B) [25L]
+│   ├── SECURITY.md (1KB) [34L]
+│   ├── SECURITY_ANALYZER.md (2KB) [82L]
+│   ├── SPEC.md (1KB) [55L]
+│   ├── STDLIB.md (3KB) [111L]
+│   ├── SYNTAX_FULL.md (6KB) [159L]
+│   └── VM.md (2KB) [63L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [60L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## atcnet
 
-**Dateien:** 17 | **Verzeichnisse:** 1
+**Layer:** L5 (P2P Network) | **Dateien:** 17 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(7) · .py(6) · .gitignore(1) · .atc(1) · .txt(1)
 
 ```
 atcnet/
-├── .gitignore
-├── CHANGELOG.md
-├── FILE_REGISTER.md
-├── LICENSE
-├── PROTOCOL.md
-├── README.md
-├── ROADMAP.md
-├── SECURITY.md
-├── STATUS.md
-├── atcnet.atc
-├── atcnet.py
-├── bootstrap_client.py
-├── discovery.py
-├── node.py
-├── p2p_propagation.py
-├── requirements.txt
-└── tests/
-    └── test_atcnet.py
+├── tests/ (1 files)
+│   └── test_atcnet.py (1KB) [41L]
+├── .gitignore (171B)
+├── CHANGELOG.md (210B) [17L]
+├── FILE_REGISTER.md (1KB) [48L]
+├── LICENSE (982B)
+├── PROTOCOL.md (2KB) [84L]
+├── README.md (4KB) [102L]
+├── ROADMAP.md (468B) [21L]
+├── SECURITY.md (321B) [11L]
+├── STATUS.md (351B) [19L]
+├── atcnet.atc (4KB) [135L]
+├── atcnet.py (17KB) [487L]
+├── bootstrap_client.py (3KB) [97L]
+├── discovery.py (11KB) [314L]
+├── node.py (3KB) [100L]
+├── p2p_propagation.py (12KB) [381L]
+└── requirements.txt (112B)
 ```
+
 
 ## atcnet-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1
+**Layer:** Wiki | **Dateien:** 10 | **Verzeichnisse:** 1 | **Max Tiefe:** 1
+
+**Sprachen:** .md(8) · .gitignore(1) · .no-ext(1)
 
 ```
 atcnet-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-├── README.md
-└── docs/
-    ├── BOOTSTRAP.md
-    ├── MESSAGES.md
-    ├── PROTOCOL.md
-    ├── ROADMAP.md
-    ├── SECURITY.md
-    └── TOPOLOGY.md
+├── docs/ (6 files)
+│   ├── BOOTSTRAP.md (312B) [18L]
+│   ├── MESSAGES.md (1KB) [40L]
+│   ├── PROTOCOL.md (2KB) [57L]
+│   ├── ROADMAP.md (368B) [15L]
+│   ├── SECURITY.md (336B) [11L]
+│   └── TOPOLOGY.md (1KB) [43L]
+├── .gitignore (171B)
+├── FILE_REGISTER.md (1KB) [45L]
+├── LICENSE (982B)
+└── README.md (3KB) [65L]
 ```
+
 
 ## franchise-factory-wiki
 
-**Dateien:** 4 | **Verzeichnisse:** 0
+**Layer:** Wiki | **Dateien:** 4 | **Verzeichnisse:** 0 | **Max Tiefe:** 0
+
+**Sprachen:** .md(2) · .no-ext(1) · .gitignore(1)
 
 ```
 franchise-factory-wiki/
-├── .gitignore
-├── FILE_REGISTER.md
-├── LICENSE
-└── README.md
+├── .gitignore (171B)
+├── FILE_REGISTER.md (342B) [11L]
+├── LICENSE (982B)
+└── README.md (1KB) [26L]
 ```
+
 
 ## kai-os-wiki
 
-**Dateien:** 739 | **Verzeichnisse:** 175
+**Layer:** Wiki (Legacy) | **Dateien:** 738 | **Verzeichnisse:** 174 | **Max Tiefe:** 5
+
+**Sprachen:** .md(391) · .atc(176) · .py(142) · .yml(6) · .txt(3)
 
 ```
 kai-os-wiki/
-├── .github/
-│   └── .gitkeep
-├── .gitignore
-├── AAA_ASSET_SYSTEM_v1.md
-├── AGENT_MANIFEST.md
-├── AGENT_MASTERRULES.md
-├── ATCLANG_FIRST.md
-├── CHANGELOG.md
-├── CONNECTION_MAP.md
-├── ECOSYSTEM.md
-├── FILE_REGISTER.md
-├── FIXES.md
-├── GENESIS_BUS_ARCHITECTURE.md
-├── GENESIS_CIVILIZATION_PLATFORM_v4.md
-├── GENESIS_COMMUNICATION_LAYER_v2.md
-├── GENESIS_FRANCHISE_FACTORY_v1.md
-├── GENESIS_FRANCHISE_FACTORY_v2.md
-├── KONSOLIDIERUNGS_ROADMAP.md
-├── LICENSE
-├── MILESTONES.md
-├── NAMING_CONVENTIONS.md
-├── PERFORMANCE_REPORT.md
-├── README.md
-├── ROADMAP.md
-├── SPRINT_ROADMAP.md
-├── STATUS.md
-├── TODO.md
-├── aistudio/
-│   ├── AGENTS.md
-│   ├── GEMINI.md
-│   ├── README.md
-│   ├── ROADMAP.md
-│   ├── SOFTWARE_ROADMAP.md
-│   └── src/
-│       ├── atcLangRoadmapData.ts
-│       ├── components/
-│       │   └── RoadmapView.tsx
-│       └── roadmapData.ts
-├── archive/
-│   └── ATCLANG_ARCHIVE.md
-├── atclang/
-│   ├── ATCLANG_SPEC.md
-│   ├── __init__.py
-│   ├── compiler/
-│   │   ├── __init__.py
-│   │   ├── compiler.py
-│   │   ├── optimizer.py
-│   │   └── type_checker.py
-│   ├── lexer/
-│   │   ├── __init__.py
-│   │   └── lexer.py
-│   ├── parser/
-│   │   ├── __init__.py
-│   │   ├── ast_nodes.py
-│   │   └── parser.py
-│   ├── programs/
-│   │   └── atcos_main.atc
-│   ├── repl/
-│   │   ├── __init__.py
-│   │   └── repl.py
-│   ├── stdlib/
-│   │   ├── __init__.py
-│   │   ├── atc_stdlib.py
-│   │   ├── chain.py
-│   │   ├── collections.py
-│   │   ├── collections_ext.py
-│   │   ├── crypto.py
-│   │   ├── crypto_ext.py
-│   │   ├── encoding.py
-│   │   ├── io.py
-│   │   ├── io_ext.py
-│   │   ├── math.py
-│   │   ├── primitives.py
-│   │   ├── string.py
-│   │   └── wallet.py
-│   ├── v03/
-│   │   ├── __init__.py
-│   │   └── atclang_v03_features.py
-│   └── vm/
-│       ├── __init__.py
-│       └── atcvm.py
-├── atcpkg/
-│   └── manager.atc
-├── backend/
-│   ├── __init__.py
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── kai_routes.atc
-│   │   ├── orchestrator/
-│   │   │   ├── __init__.py
-│   │   │   └── orchestrator.atc
-│   │   ├── routes/
-│   │   │   ├── __init__.py
-│   │   │   ├── ai_routes.atc
-│   │   │   └── api_routes.atc
-│   │   └── server.atc
-│   ├── db/
-│   │   ├── __init__.py
-│   │   ├── connection.atc
-│   │   └── repository.atc
-│   └── wallet/
-│       ├── __init__.py
-│       └── wallet.atc
-├── blockchain/
-│   ├── atcoin/
-│   │   └── __init__.py
-│   ├── consensus/
-│   │   ├── __init__.py
-│   │   ├── fork_atc85.atc
-│   │   ├── fork_resolution.atc
-│   │   ├── gas_fee.atc
-│   │   ├── gas_fee_atc86.atc
-│   │   ├── hybrid_atc84.atc
-│   │   ├── hybrid_consensus.atc
-│   │   ├── poh.atc
-│   │   ├── poh_atc83.atc
-│   │   ├── pos.atc
-│   │   ├── pos_atc82.atc
-│   │   ├── pow.atc
-│   │   └── pow_atc81.atc
-│   ├── contract_registry.atc
-│   ├── contracts/
-│   │   ├── atc001/
-│   │   │   └── genesis_token.atc
-│   │   ├── atc8300/
-│   │   │   └── __init__.py
-│   │   ├── contract_engine_atc14.atc
-│   │   ├── governance/
-│   │   │   └── governance_contract.atc
-│   │   └── shivamon/
-│   │       ├── __init__.py
-│   │       └── breeding.atc
-│   ├── dex/
-│   │   ├── __init__.py
-│   │   └── amm.atc
-│   ├── governance/
-│   │   ├── __init__.py
-│   │   ├── dao.atc
-│   │   ├── dao_live.atc
-│   │   ├── timelock.atc
-│   │   └── treasury.atc
-│   ├── mainnet/
-│   │   ├── __init__.py
-│   │   ├── launch_manager.atc
-│   │   └── mainnet_config.atc
-│   ├── network/
-│   │   ├── core_node_atc01.atc
-│   │   ├── latency_opt_atc06.atc
-│   │   └── sharding_atc07.atc
-│   ├── nodes/
-│   │   ├── __init__.py
-│   │   ├── block_propagation.atc
-│   │   ├── bootstrap.atc
-│   │   ├── initial_sync.atc
-│   │   ├── node.atc
-│   │   └── testnet_launcher.atc
-│   ├── propagation/
-│   │   └── block_gossip.atc
-│   ├── smart_contract_registry.atc
-│   ├── smart_contracts.atc
-│   ├── wallet/
-│   │   ├── __init__.py
-│   │   ├── did.atc
-│   │   ├── multisig.atc
-│   │   └── wordlist.atc
-│   └── zkp/
-│       ├── __init__.py
-│       └── groth16.atc
-├── code/
-│   ├── .github/
-│   │   └── workflows/
-│   │       ├── ci.yml
-│   │       ├── codeql.yml
-│   │       ├── docker.yml
-│   │       └── pages.yml
-│   ├── KAI_OS_SUMMARY.py
-│   ├── atc-ui/
-│   │   └── index.html
-│   ├── atc_issues_summary.py
-│   ├── atclang/
-│   │   ├── ATCLANG_SPEC.md
-│   │   ├── compiler/
-│   │   │   └── compiler.py
-│   │   ├── lexer/
-│   │   │   └── lexer.py
-│   │   ├── parser/
-│   │   │   └── parser.py
-│   │   ├── repl/
-│   │   │   └── repl.py
-│   │   └── vm/
-│   │       └── atcvm.py
-│   ├── backend/
-│   │   ├── .env.example
-│   │   ├── api/
-│   │   │   ├── kai_routes.py
-│   │   │   ├── orchestrator/
-│   │   │   │   └── orchestrator.py
-│   │   │   ├── routes/
-│   │   │   │   ├── ai_routes.py
-│   │   │   │   ├── blockchain.py
-│   │   │   │   ├── game_routes.py
-│   │   │   │   ├── governance_routes.py
-│   │   │   │   ├── marketplace_routes.py
-│   │   │   │   ├── nodes_routes.py
-│   │   │   │   ├── orchestrator_routes.py
-│   │   │   │   └── wallet.py
-│   │   │   └── server.py
-│   │   ├── db/
-│   │   │   ├── repository.py
-│   │   │   └── schema.sql
-│   │   ├── main.py
-│   │   ├── requirements.txt
-│   │   └── wallet/
-│   │       └── wallet.py
-│   ├── blockchain/
-│   │   ├── atcoin/
-│   │   │   └── atcoin.py
-│   │   ├── consensus/
-│   │   │   ├── hybrid_consensus.py
-│   │   │   ├── poh.py
-│   │   │   ├── pos.py
-│   │   │   └── pow.py
-│   │   ├── contracts/
-│   │   │   ├── atc001/
-│   │   │   │   └── genesis_token.py
-│   │   │   ├── atc8300/
-│   │   │   │   └── atc8300_token.py
-│   │   │   ├── base/
-│   │   │   │   └── base_contract.py
-│   │   │   ├── shivamon/
-│   │   │   │   └── shivamon_contract.py
-│   │   │   └── solidity/
-│   │   │       ├── ATCToken.sol
-│   │   │       ├── README.md
-│   │   │       ├── scripts/
-│   │   │       │   └── deploy.js
-│   │   │       └── test/
-│   │   │           └── ATCGovernance.test.js
-│   │   ├── nodes/
-│   │   │   ├── discovery.py
-│   │   │   ├── node.py
-│   │   │   └── p2p_propagation.py
-│   │   ├── smart_contract_registry.py
-│   │   ├── smart_contracts.py
-│   │   └── wallet/
-│   │       ├── ecdsa.py
-│   │       └── keygen.py
-│   ├── bootscreen_complete.py
-│   ├── build/
-│   │   └── build.py
-│   ├── config/
-│   │   ├── kai_config.toml
-│   │   └── settings.json
-│   ├── core/
-│   │   ├── ai_kernel.py
-│   │   ├── event_bus.py
-│   │   ├── kai_cli.py
-│   │   ├── kernel.py
-│   │   └── module_loader.py
-│   ├── ecdsa_final.py
-│   ├── ecdsa_impl.py
-│   ├── frontend/
-│   │   ├── README.md
-│   │   ├── assets/
-│   │   │   ├── css/
-│   │   │   │   └── variables.css
-│   │   │   └── js/
-│   │   │       └── api.js
-│   │   └── index.html
-│   ├── gateway/
-│   │   ├── .env.example
-│   │   ├── main.py
-│   │   ├── middleware/
-│   │   │   ├── auth.py
-│   │   │   ├── logger.py
-│   │   │   ├── rate_limit.py
-│   │   │   └── signature_verify.py
-│   │   ├── requirements.txt
-│   │   └── router.py
-│   ├── plugins/
-│   │   └── wallet.py
-│   ├── requirements-kai.txt
-│   ├── shivaos/
-│   │   ├── consensus/
-│   │   │   └── shiva_consensus.py
-│   │   ├── fs/
-│   │   │   └── atcfs.py
-│   │   ├── kernel/
-│   │   │   └── kernel.py
-│   │   └── net/
-│   │       └── atcnet.py
-│   ├── start.py
-│   └── tests/
-│       ├── test_atclang.py
-│       └── test_kai_integration.py
-├── config/
-│   └── mainnet_genesis.json
-├── conftest.py
-├── core/
-│   ├── ai/
-│   │   └── federated_learning.atc
-│   ├── crypto/
-│   │   └── __init__.py
-│   └── kai_cli.atc
-├── devnet/
-│   └── README.md
-├── docs/
-│   ├── AGENT_COORDINATION.md
-│   ├── AGENT_POLICY.md
-│   ├── ATCLANG_AGENT_BUILD_GUIDE.md
-│   ├── AUDIT_REPORT.md
-│   ├── CLUSTER_ARCHITECTURE.md
-│   ├── DECISIONS_REGISTER.md
-│   ├── DEPRECATED.md
-│   ├── ECOSYSTEM_BRAIN.md
-│   ├── FIXES.md
-│   ├── GENESIS_COMMUNICATION_LAYER_v2.md
-│   ├── GENESIS_FRANCHISE_FACTORY_v1.md
-│   ├── KAI_INTEGRATION.md
-│   ├── LICENSING_OVERVIEW.md
-│   ├── MIGRATION_MAP.md
-│   ├── PERFORMANCE_REPORT.md
-│   ├── REALITY_CHECK_2026-07-06.md
-│   ├── ROADMAP.md
-│   ├── ROADMAP_COMPLETENESS_AUDIT.md
-│   ├── SHIVACORE_KERNEL_STATUS.md
-│   ├── STATUS.md
-│   ├── TODO.md
-│   ├── WIKI_AUDIT.md
-│   ├── ai/
-│   │   ├── AI_SAFETY.md
-│   │   ├── GEMINI_INTEGRATION.md
-│   │   └── LLM_ROUTER.md
-│   ├── aistudio/
-│   │   └── AISTUDIO_COMPONENTS.md
-│   ├── api-reference.md
-│   ├── architecture/
-│   │   ├── AI_LAYER.md
-│   │   ├── ATCFS.md
-│   │   ├── ATCLANG_COMPILER.md
-│   │   ├── ATCNET_P2P.md
-│   │   ├── CONSENSUS.md
-│   │   ├── GATEWAY.md
-│   │   ├── GOVERNANCE.md
-│   │   ├── KERNEL_SHELL.md
-│   │   ├── MONITORING_DEVOPS.md
-│   │   ├── SHIVAOS_KERNEL.md
-│   │   ├── TESTNET.md
-│   │   └── WALLET_KEYGEN.md
-│   ├── atclang/
-│   │   └── ATCLANG_SPEC_FULL.md
-│   ├── atclang-guide.md
-│   ├── blockchain/
-│   │   ├── ETHEREUM_INTEGRATION.md
-│   │   └── SOLANA_INTEGRATION.md
-│   ├── compliance/
-│   │   ├── ATVM_LICENSE_GATE_SPEC.md
-│   │   ├── BAFIN_KONFORMITAETSBERICHT.md
-│   │   ├── COMPLIANCE_HANDBUCH.md
-│   │   ├── IP_LICENSE_DASHBOARD_SPEC.md
-│   │   └── SMART_CONTRACT_RICHTLINIE.md
-│   ├── contracts/
-│   │   ├── ATC_TOKEN_STANDARD.md
-│   │   └── SHIVAMON_NFT_CONTRACT.md
-│   ├── genesis_wallet.md
-│   ├── issues/
-│   │   ├── ISSUE_01_SMART_CONTRACTS.md
-│   │   ├── ISSUE_02_GEMINI_AI.md
-│   │   ├── ISSUE_03_BATTLE_UI.md
-│   │   ├── ISSUE_04_PERSISTENZ.md
-│   │   ├── ISSUE_05_EXPLORER.md
-│   │   ├── ISSUE_06_ECDSA.md
-│   │   ├── ISSUE_07_BUILD.md
-│   │   ├── ISSUE_08_TESTNET.md
-│   │   ├── ISSUE_09_GOVERNANCE.md
-│   │   ├── ISSUE_10_BRIDGE.md
-│   │   ├── ISSUE_11_BREEDING.md
-│   │   ├── ISSUE_12_SOLIDITY.md
-│   │   ├── ISSUE_13_MARKETPLACE.md
-│   │   ├── ISSUE_14_BOOTSTRAP_NODE.md
-│   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md
-│   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md
-│   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md
-│   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md
-│   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md
-│   │   ├── ISSUE_20_GATEWAY_TESTS.md
-│   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md
-│   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md
-│   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md
-│   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md
-│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md
-│   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md
-│   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md
-│   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md
-│   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md
-│   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md
-│   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md
-│   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md
-│   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md
-│   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md
-│   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md
-│   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md
-│   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md
-│   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md
-│   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md
-│   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md
-│   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md
-│   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md
-│   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md
-│   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md
-│   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md
-│   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md
-│   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md
-│   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md
-│   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md
-│   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md
-│   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md
-│   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md
-│   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md
-│   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md
-│   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md
-│   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md
-│   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md
-│   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md
-│   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md
-│   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md
-│   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md
-│   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md
-│   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md
-│   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md
-│   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md
-│   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md
-│   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md
-│   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md
-│   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md
-│   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md
-│   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md
-│   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md
-│   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md
-│   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md
-│   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
-│   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
-│   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-│   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
-│   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
-│   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
-│   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
-│   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md
-│   │   ├── OPEN_ISSUES_MASTER.md
-│   │   ├── README.md
-│   │   └── TESTNET_INDEX.md
-│   ├── kai-os-wiki.md
-│   ├── repo/
-│   │   └── README.md
-│   ├── roadmap/
-│   │   └── ROADMAP_EXTENDED.md
-│   ├── sprints/
-│   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md
-│   │   ├── SPRINT_3.3_SECURITY_AUDIT.md
-│   │   └── SPRINT_4.0_MAINNET_LAUNCH.md
-│   ├── standards/
-│   │   ├── ATC/
-│   │   │   └── ATC-0009-BRIDGE.md
-│   │   ├── ATC-01-CORE_NODE_PROTOCOL.md
-│   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md
-│   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md
-│   │   ├── ATC-04-DAG_CONSENSUS.md
-│   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md
-│   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md
-│   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md
-│   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md
-│   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md
-│   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md
-│   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md
-│   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md
-│   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md
-│   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md
-│   │   ├── ATC-15-PROOF_OF_AI_MINING.md
-│   │   ├── ATC-16-REFERRAL_REWARDS.md
-│   │   ├── ATC-17-DAO_GOVERNANCE.md
-│   │   ├── ATC-18-MULTISIG_AUTH.md
-│   │   ├── ATC-19-AMM_LOGIC.md
-│   │   ├── ATC-20-WRAPPED_SYNTHETIC.md
-│   │   ├── ATC-21-HOLOGRAPHIC_WASM.md
-│   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md
-│   │   ├── ATC-23-DATA_SHARDING_STORAGE.md
-│   │   ├── ATC-24-AGENT_SCHEDULING.md
-│   │   ├── ATC-25-TENSOR_COMPUTE.md
-│   │   ├── ATC-26-XAI_TRANSPARENCY.md
-│   │   ├── ATC-27-AI_MODEL_AUDITING.md
-│   │   ├── ATC-28-FEDERATED_LEARNING.md
-│   │   ├── ATC-29-AI_MARKETPLACE.md
-│   │   ├── ATC-30-REPUTATION_TRUST.md
-│   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md
-│   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md
-│   │   ├── ATC-33-AI_FEEDBACK_RLHF.md
-│   │   ├── ATC-34-CROSS_LAYER_INTEROP.md
-│   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md
-│   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md
-│   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md
-│   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md
-│   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md
-│   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md
-│   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md
-│   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md
-│   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md
-│   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md
-│   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md
-│   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md
-│   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md
-│   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md
-│   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md
-│   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md
-│   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md
-│   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md
-│   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md
-│   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md
-│   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md
-│   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md
-│   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md
-│   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md
-│   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md
-│   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md
-│   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md
-│   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md
-│   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md
-│   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md
-│   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md
-│   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md
-│   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md
-│   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md
-│   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md
-│   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md
-│   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md
-│   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md
-│   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md
-│   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md
-│   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md
-│   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md
-│   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md
-│   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md
-│   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md
-│   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md
-│   │   ├── ATC-81-PROOF_OF_HISTORY.md
-│   │   ├── ATC-82-PROOF_OF_WORK.md
-│   │   ├── ATC-83-PROOF_OF_STAKE.md
-│   │   ├── ATC-84-FORK_RESOLUTION.md
-│   │   ├── ATC-85-INITIAL_SYNC.md
-│   │   ├── ATC-86-ECDSA_SIGNATURE.md
-│   │   ├── ATC-87-GAS_FEE.md
-│   │   ├── ATC-88-AMM.md
-│   │   ├── ATC-89-FUNGIBLE_TOKEN.md
-│   │   ├── ATC-90-NFT_SHIVAMON.md
-│   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md
-│   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md
-│   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md
-│   │   ├── ATC-94-ATCLANG_STDLIB.md
-│   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md
-│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
-│   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md
-│   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md
-│   │   ├── ATC-98-TESTING_STANDARD.md
-│   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md
-│   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md
-│   │   ├── ATC_ECOSYSTEM_STANDARDS.md
-│   │   ├── ATC_STANDARDS.md
-│   │   ├── ATC-LIC-SYSTEM_HARDWARE_LICENSE.md
-│   │   ├── ATS_STANDARDS.md
-│   │   ├── OVERVIEW.md
-│   │   └── STANDARDS_REGISTRY.md
-│   ├── whitepaper/
-│   │   ├── CHANGELOG.md
-│   │   ├── README.md
-│   │   └── WHITEPAPER.md
-│   ├── wiki/
-│   │   ├── atclang/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── CHANGELOG.md
-│   │   │       ├── COMPILER.md
-│   │   │       ├── CONTRIBUTING.md
-│   │   │       ├── EXAMPLES.md
-│   │   │       ├── LEXER.md
-│   │   │       ├── PARSER.md
-│   │   │       ├── REPL.md
-│   │   │       ├── SECURITY.md
-│   │   │       ├── SECURITY_ANALYZER.md
-│   │   │       ├── SPEC.md
-│   │   │       ├── STDLIB.md
-│   │   │       └── VM.md
-│   │   ├── atcnet/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── BOOTSTRAP.md
-│   │   │       ├── MESSAGES.md
-│   │   │       ├── PROTOCOL.md
-│   │   │       ├── SECURITY.md
-│   │   │       └── TOPOLOGY.md
-│   │   ├── chapter-63-cleanup-2026-06-13.md
-│   │   ├── chapter-70-atclang-migration-complete.md
-│   │   ├── chapter-71-sprint-audit.md
-│   │   ├── chapter-72-sprint-2-7-testing-cicd.md
-│   │   ├── chapter-73-sprint-2-8-testnet.md
-│   │   ├── chapter-74-sprint-3-1-ux-privacy.md
-│   │   ├── chapter-75-v01-v03-migration-plan.md
-│   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md
-│   │   ├── chapter-77-sprint-4-0-4-1-mainnet.md
-│   │   ├── chapter-78-shivacore-kernel-712-tests.md
-│   │   ├── contracts/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── ATC8300.md
-│   │   │       ├── ATC9000.md
-│   │   │       ├── ATC9900.md
-│   │   │       ├── BRIDGE.md
-│   │   │       ├── DEPLOYMENT.md
-│   │   │       └── SECURITY.md
-│   │   ├── franchise/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── API.md
-│   │   │       ├── CONCEPT.md
-│   │   │       ├── CONTRACTS.md
-│   │   │       ├── DEPLOYMENT.md
-│   │   │       ├── ROADMAP.md
-│   │   │       ├── SECURITY.md
-│   │   │       └── TOKEN_ECONOMY.md
-│   │   ├── gateway/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── AUTH.md
-│   │   │       ├── MIDDLEWARE.md
-│   │   │       ├── RATE_LIMITING.md
-│   │   │       ├── ROUTES.md
-│   │   │       └── SECURITY.md
-│   │   ├── kai-os/
-│   │   │   ├── README.md
-│   │   │   ├── code/
-│   │   │   │   └── atclang/
-│   │   │   │       └── ATCLANG_SPEC.md
-│   │   │   └── docs/
-│   │   │       ├── DECISIONS_REGISTER.md
-│   │   │       ├── DEPRECATED.md
-│   │   │       ├── MIGRATION_MAP.md
-│   │   │       ├── STATUS.md
-│   │   │       ├── issues/
-│   │   │       │   └── OPEN_ISSUES_MASTER.md
-│   │   │       ├── kai-os-wiki.md
-│   │   │       └── standards/
-│   │   │           └── STANDARDS_REGISTRY.md
-│   │   ├── kernel/
-│   │   │   ├── KERNEL_API.md
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── ATCFS.md
-│   │   │       ├── ATCNET.md
-│   │   │       ├── CHANGELOG.md
-│   │   │       ├── CONSENSUS.md
-│   │   │       ├── IPC.md
-│   │   │       ├── KERNEL.md
-│   │   │       ├── PERFORMANCE.md
-│   │   │       ├── PROCESS_MODEL.md
-│   │   │       └── SECURITY.md
-│   │   ├── overview/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── API.md
-│   │   │       ├── ARCHITECTURE.md
-│   │   │       ├── CONTRIBUTING.md
-│   │   │       ├── FAQ.md
-│   │   │       ├── QUICKSTART.md
-│   │   │       ├── ROADMAP.md
-│   │   │       ├── SECURITY.md
-│   │   │       └── WHITEPAPER.md
-│   │   ├── shivamon/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── BATTLE.md
-│   │   │       ├── BREEDING.md
-│   │   │       ├── ELEMENTS.md
-│   │   │       ├── MARKETPLACE.md
-│   │   │       ├── NFT_SPEC.md
-│   │   │       └── ROADMAP.md
-│   │   ├── standards/
-│   │   │   ├── README.md
-│   │   │   └── docs/
-│   │   │       ├── ATC_STANDARDS.md
-│   │   │       └── OVERVIEW.md
-│   │   └── ui/
-│   │       ├── README.md
-│   │       └── docs/
-│   │           ├── API.md
-│   │           ├── COMPONENTS.md
-│   │           ├── DEPLOYMENT.md
-│   │           ├── DESIGN.md
-│   │           └── THEME.md
-│   └── workflows/
-│       └── wiki-sync.yml
-├── gateway/
-│   ├── main.atc
-│   └── service_discovery.atc
-├── mobile/
-│   ├── __init__.py
-│   ├── wallet/
-│   │   ├── __init__.py
-│   │   └── biometric_auth.atc
-│   └── wallet_api.atc
-├── modules/
-│   ├── assets/
-│   │   ├── aaa_asset_core.atc
-│   │   ├── ai_assets.atc
-│   │   ├── animation.atc
-│   │   ├── asset_bundle.atc
-│   │   ├── cloud_assets.atc
-│   │   ├── encryption.atc
-│   │   ├── hot_reload.atc
-│   │   ├── memory_cleanup.atc
-│   │   ├── mod_system.atc
-│   │   ├── model3d.atc
-│   │   ├── priority_loading.atc
-│   │   ├── render_pipeline.atc
-│   │   ├── shader_system.atc
-│   │   ├── streaming.atc
-│   │   ├── telemetry.atc
-│   │   └── versioning.atc
-│   ├── atcnet/
-│   │   ├── README.md
-│   │   ├── bootstrap_client.atc
-│   │   ├── discovery.atc
-│   │   ├── gossip.atc
-│   │   ├── nat_traversal.atc
-│   │   ├── p2p_node.atc
-│   │   └── p2p_propagation.atc
-│   ├── civilization/
-│   │   ├── asset_genome_ad66.atc
-│   │   ├── civilization_engine_ad60.atc
-│   │   ├── ecosystem_ai_mesh_ad62.atc
-│   │   ├── evolution_engine_ad69.atc
-│   │   ├── experience_orchestrator_ad68.atc
-│   │   ├── gcp_core_ad70.atc
-│   │   ├── global_simulation_core_ad64.atc
-│   │   ├── identity_layer_ad65.atc
-│   │   ├── persistent_world_engine_ad61.atc
-│   │   ├── proc_universe_generator_ad63.atc
-│   │   └── production_pipeline_ad67.atc
-│   ├── contracts/
-│   │   ├── README.md
-│   │   ├── atc8300/
-│   │   │   └── atc8300_token.atc
-│   │   ├── atcoin/
-│   │   │   └── atcoin.atc
-│   │   ├── base/
-│   │   │   └── base_contract.atc
-│   │   ├── bridge/
-│   │   │   └── bridge_contract.atc
-│   │   ├── governance/
-│   │   │   └── governance_contract.atc
-│   │   ├── marketplace/
-│   │   │   └── marketplace_contract.atc
-│   │   ├── shivamon/
-│   │   │   └── shivamon_contract.atc
-│   │   └── wallet/
-│   │       ├── ecdsa.atc
-│   │       └── keygen.atc
-│   ├── franchise/
-│   │   ├── README.md
-│   │   ├── ai_content_factory_ad28.atc
-│   │   ├── ai_director_factory_ad41.atc
-│   │   ├── analytics_factory_ad31.atc
-│   │   ├── asset_intelligence_factory_ad34.atc
-│   │   ├── blueprint_factory_ad32.atc
-│   │   ├── canon_engine_ad33.atc
-│   │   ├── character_factory_ad23.atc
-│   │   ├── commerce_factory_ad40.atc
-│   │   ├── community_factory_ad30.atc
-│   │   ├── contracts/
-│   │   │   ├── registry.atc
-│   │   │   ├── revenue.atc
-│   │   │   └── token.atc
-│   │   ├── creator_factory_ad38.atc
-│   │   ├── economy_factory_ad26.atc
-│   │   ├── factory.atc
-│   │   ├── gameplay_factory_ad35.atc
-│   │   ├── gff_core_ad20.atc
-│   │   ├── ip_factory_ad21.atc
-│   │   ├── lifecycle_manager_ad43.atc
-│   │   ├── liveops_factory_ad27.atc
-│   │   ├── lore_factory_ad24.atc
-│   │   ├── merchandise_factory_ad29.atc
-│   │   ├── multiplayer_factory_ad37.atc
-│   │   ├── narrative_factory_ad36.atc
-│   │   ├── publishing_factory_ad39.atc
-│   │   ├── quest_factory_ad25.atc
-│   │   ├── routes.atc
-│   │   ├── security_factory_ad42.atc
-│   │   └── world_factory_ad22.atc
-│   ├── gateway/
-│   │   ├── README.md
-│   │   ├── __init__.py
-│   │   ├── main.atc
-│   │   ├── middleware/
-│   │   │   ├── __init__.py
-│   │   │   ├── auth.atc
-│   │   │   ├── logger.atc
-│   │   │   ├── rate_limit.atc
-│   │   │   └── signature_verify.atc
-│   │   └── router.atc
-│   ├── kernel/
-│   │   ├── README.md
-│   │   ├── ai_bus_ad13.atc
-│   │   ├── ai_kernel/
-│   │   │   └── ai_kernel.atc
-│   │   ├── asset_bus_ad08.atc
-│   │   ├── audio_bus_ad11.atc
-│   │   ├── command_bus_ad02.atc
-│   │   ├── consensus/
-│   │   │   ├── poh_integration.atc
-│   │   │   └── shiva_consensus.atc
-│   │   ├── fs/
-│   │   │   └── atcfs.atc
-│   │   ├── gcl_core_ad00.atc
-│   │   ├── input_bus_ad12.atc
-│   │   ├── ipc/
-│   │   │   ├── __init__.py
-│   │   │   └── ipc_bus.atc
-│   │   ├── ipc_bus_atc.ad.atc
-│   │   ├── message_bus_ad03.atc
-│   │   ├── net/
-│   │   │   └── atcnet.atc
-│   │   ├── network_bus_ad05.atc
-│   │   ├── physics_bus_ad10.atc
-│   │   ├── pkg/
-│   │   │   └── manager.atc
-│   │   ├── plugin_bus_ad06.atc
-│   │   ├── process/
-│   │   │   └── process_mgr.atc
-│   │   ├── query_bus_ad07.atc
-│   │   ├── render_bus_ad09.atc
-│   │   ├── shell/
-│   │   │   └── shell.atc
-│   │   └── telemetry_bus_ad14.atc
-│   ├── meta/
-│   │   ├── ai_studio_ad49.atc
-│   │   ├── cross_franchise_ad46.atc
-│   │   ├── data_lake_ad51.atc
-│   │   ├── digital_twin_ad50.atc
-│   │   ├── ip_evolution_ad45.atc
-│   │   ├── knowledge_graph_ad47.atc
-│   │   ├── simulation_factory_ad48.atc
-│   │   └── universe_factory_ad44.atc
-│   ├── shivamon/
-│   │   ├── README.md
-│   │   └── engine/
-│   │       └── battle_engine.atc
-│   ├── standards/
-│   │   └── README.md
-│   └── ui/
-│       └── README.md
-├── monitoring/
-│   ├── health_checks_atc08.atc
-│   ├── monitor.atc
-│   └── prometheus_metrics.atc
-├── patches/
-│   ├── APPLY_FIXES.sh
-│   ├── atc9900_governance.py
-│   ├── docker-compose.yml
-│   ├── gateway_main.py
-│   ├── gateway_router.py
-│   └── poh_fixed.py
-├── reports/
-│   └── SPRINT_2.3_2.4_2.7_REPORT.md
-├── scripts/
-│   └── generate_validators.atc
-├── shivaos/
-│   ├── fs/
-│   │   └── atcfs_module.atc
-│   ├── kernel/
-│   │   └── syscalls.atc
-│   └── ui/
-│       └── renderer.atc
-├── start.atc
-├── tests/
-│   ├── test_atclang.py
-│   ├── test_atclang_v03.py
-│   ├── test_bootstrap.py
-│   ├── test_did.py
-│   ├── test_discovery.py
-│   ├── test_ecdsa.py
-│   ├── test_fork_resolution.py
-│   ├── test_gateway.py
-│   ├── test_gateway_full.py
-│   ├── test_integration_atcfs_multisig.py
-│   ├── test_kai_integration.py
-│   ├── test_multinode_consensus.py
-│   ├── test_multinode_fivenode.py
-│   ├── test_node_failure_recovery.py
-│   ├── test_optimizer.py
-│   ├── test_orchestrator.py
-│   ├── test_p2p_propagation.py
-│   ├── test_persistence.py
-│   ├── test_poh.py
-│   ├── test_smart_contracts.py
-│   ├── test_stdlib.py
-│   ├── test_stdlib_dispatch.py
-│   ├── test_type_checker.py
-│   └── unit/
-│       ├── test_atclang.py
-│       ├── test_atcnet.py
-│       └── test_p2p_propagation.py
-└── tools/
-    ├── atc_issues_summary.atc
-    ├── bigquery_pipeline.atc
-    ├── ecdsa_impl.atc
-    └── hf_review_pipeline.atc
+├── .github/ (1 files)
+│   └── .gitkeep (14B)
+├── aistudio/ (8 files)
+│   ├── src/ (3 files)
+│   │   ├── components/ (1 files)
+│   │   │   └── RoadmapView.tsx (6KB) [196L]
+│   │   ├── atcLangRoadmapData.ts (6KB) [201L]
+│   │   └── roadmapData.ts (7KB) [312L]
+│   ├── AGENTS.md (535B) [13L]
+│   ├── GEMINI.md (373B) [6L]
+│   ├── README.md (542B) [20L]
+│   ├── ROADMAP.md (8KB) [598L]
+│   └── SOFTWARE_ROADMAP.md (38KB) [1116L]
+├── archive/ (1 files)
+│   └── ATCLANG_ARCHIVE.md (4KB) [97L]
+├── atclang/ (32 files)
+│   ├── compiler/ (4 files)
+│   │   ├── __init__.py (468B) [8L]
+│   │   ├── compiler.py (21KB) [561L]
+│   │   ├── optimizer.py (22KB) [558L]
+│   │   └── type_checker.py (20KB) [507L]
+│   ├── lexer/ (2 files)
+│   │   ├── __init__.py (161B) [2L]
+│   │   └── lexer.py (20KB) [572L]
+│   ├── parser/ (3 files)
+│   │   ├── __init__.py (189B) [3L]
+│   │   ├── ast_nodes.py (7KB) [331L]
+│   │   └── parser.py (37KB) [890L]
+│   ├── programs/ (1 files)
+│   │   └── atcos_main.atc (40KB) [1161L]
+│   ├── repl/ (2 files)
+│   │   ├── __init__.py (99B) [1L]
+│   │   └── repl.py (6KB) [184L]
+│   ├── stdlib/ (14 files)
+│   │   ├── __init__.py (1KB) [32L]
+│   │   ├── atc_stdlib.py (2KB) [69L]
+│   │   ├── chain.py (1KB) [41L]
+│   │   ├── collections.py (5KB) [219L]
+│   │   ├── collections_ext.py (3KB) [143L]
+│   │   ├── crypto.py (5KB) [155L]
+│   │   ├── crypto_ext.py (5KB) [149L]
+│   │   ├── encoding.py (7KB) [210L]
+│   │   ├── io.py (3KB) [107L]
+│   │   ├── io_ext.py (3KB) [123L]
+│   │   ├── math.py (3KB) [138L]
+│   │   ├── primitives.py (7KB) [244L]
+│   │   ├── string.py (2KB) [99L]
+│   │   └── wallet.py (2KB) [78L]
+│   ├── v03/ (2 files)
+│   │   ├── __init__.py (124B) [2L]
+│   │   └── atclang_v03_features.py (10KB) [301L]
+│   ├── vm/ (2 files)
+│   │   ├── __init__.py (177B) [2L]
+│   │   └── atcvm.py (47KB) [978L]
+│   ├── ATCLANG_SPEC.md (9KB) [295L]
+│   └── __init__.py (462B) [11L]
+├── atcpkg/ (1 files)
+│   └── manager.atc (4KB) [145L]
+├── backend/ (14 files)
+│   ├── api/ (8 files)
+│   │   ├── orchestrator/ (2 files)
+│   │   │   ├── __init__.py (118B) [2L]
+│   │   │   └── orchestrator.atc (8KB) [259L]
+│   │   ├── routes/ (3 files)
+│   │   │   ├── __init__.py (115B) [2L]
+│   │   │   ├── ai_routes.atc (5KB) [175L]
+│   │   │   └── api_routes.atc (8KB) [232L]
+│   │   ├── __init__.py (111B) [2L]
+│   │   ├── kai_routes.atc (7KB) [229L]
+│   │   └── server.atc (2KB) [68L]
+│   ├── db/ (3 files)
+│   │   ├── __init__.py (160B) [2L]
+│   │   ├── connection.atc (4KB) [125L]
+│   │   └── repository.atc (6KB) [228L]
+│   ├── wallet/ (2 files)
+│   │   ├── __init__.py (123B) [2L]
+│   │   └── wallet.atc (4KB) [139L]
+│   └── __init__.py (121B) [2L]
+├── blockchain/ (49 files)
+│   ├── atcoin/ (1 files)
+│   │   └── __init__.py (119B) [2L]
+│   ├── consensus/ (13 files)
+│   │   ├── __init__.py (123B) [2L]
+│   │   ├── fork_atc85.atc (2KB) [74L]
+│   │   ├── fork_resolution.atc (4KB) [145L]
+│   │   ├── gas_fee.atc (4KB) [130L]
+│   │   ├── gas_fee_atc86.atc (2KB) [71L]
+│   │   ├── hybrid_atc84.atc (3KB) [98L]
+│   │   ├── hybrid_consensus.atc (11KB) [357L]
+│   │   ├── poh.atc (4KB) [140L]
+│   │   ├── poh_atc83.atc (1KB) [79L]
+│   │   ├── pos.atc (4KB) [164L]
+│   │   ├── pos_atc82.atc (2KB) [92L]
+│   │   ├── pow.atc (3KB) [107L]
+│   │   └── pow_atc81.atc (2KB) [89L]
+│   ├── contracts/ (6 files)
+│   │   ├── atc001/ (1 files)
+│   │   │   └── genesis_token.atc (2KB) [102L]
+│   │   ├── atc8300/ (1 files)
+│   │   │   └── __init__.py (129B) [2L]
+│   │   ├── governance/ (1 files)
+│   │   │   └── governance_contract.atc (7KB) [202L]
+│   │   ├── shivamon/ (2 files)
+│   │   │   ├── __init__.py (136B) [2L]
+│   │   │   └── breeding.atc (5KB) [139L]
+│   │   └── contract_engine_atc14.atc (9KB) [309L]
+│   ├── dex/ (2 files)
+│   │   ├── __init__.py (117B) [2L]
+│   │   └── amm.atc (10KB) [277L]
+│   ├── governance/ (5 files)
+│   │   ├── __init__.py (120B) [2L]
+│   │   ├── dao.atc (6KB) [168L]
+│   │   ├── dao_live.atc (8KB) [235L]
+│   │   ├── timelock.atc (4KB) [150L]
+│   │   └── treasury.atc (6KB) [220L]
+│   ├── mainnet/ (3 files)
+│   │   ├── __init__.py (117B) [2L]
+│   │   ├── launch_manager.atc (3KB) [105L]
+│   │   └── mainnet_config.atc (5KB) [151L]
+│   ├── network/ (3 files)
+│   │   ├── core_node_atc01.atc (4KB) [164L]
+│   │   ├── latency_opt_atc06.atc (3KB) [135L]
+│   │   └── sharding_atc07.atc (5KB) [215L]
+│   ├── nodes/ (6 files)
+│   │   ├── __init__.py (126B) [2L]
+│   │   ├── block_propagation.atc (3KB) [87L]
+│   │   ├── bootstrap.atc (6KB) [234L]
+│   │   ├── initial_sync.atc (6KB) [207L]
+│   │   ├── node.atc (6KB) [192L]
+│   │   └── testnet_launcher.atc (4KB) [132L]
+│   ├── propagation/ (1 files)
+│   │   └── block_gossip.atc (3KB) [98L]
+│   ├── wallet/ (4 files)
+│   │   ├── __init__.py (128B) [2L]
+│   │   ├── did.atc (4KB) [122L]
+│   │   ├── multisig.atc (8KB) [268L]
+│   │   └── wordlist.atc (5KB) [112L]
+│   ├── zkp/ (2 files)
+│   │   ├── __init__.py (336B) [4L]
+│   │   └── groth16.atc (3KB) [89L]
+│   ├── contract_registry.atc (3KB) [98L]
+│   ├── smart_contract_registry.atc (2KB) [88L]
+│   └── smart_contracts.atc (15KB) [486L]
+├── code/ (82 files)
+│   ├── .github/ (4 files)
+│   │   └── workflows/ (4 files)
+│   │       ├── ci.yml (1KB) [42L]
+│   │       ├── codeql.yml (4KB) [101L]
+│   │       ├── docker.yml (884B) [39L]
+│   │       └── pages.yml (717B) [35L]
+│   ├── atc-ui/ (1 files)
+│   │   └── index.html (92KB)
+│   ├── atclang/ (6 files)
+│   │   ├── compiler/ (1 files)
+│   │   │   └── compiler.py (17KB) [471L]
+│   │   ├── lexer/ (1 files)
+│   │   │   └── lexer.py (10KB) [315L]
+│   │   ├── parser/ (1 files)
+│   │   │   └── parser.py (15KB) [399L]
+│   │   ├── repl/ (1 files)
+│   │   │   └── repl.py (6KB) [185L]
+│   │   ├── vm/ (1 files)
+│   │   │   └── atcvm.py (11KB) [349L]
+│   │   └── ATCLANG_SPEC.md (423B) [9L]
+│   ├── backend/ (17 files)
+│   │   ├── api/ (11 files)
+│   │   │   ├── orchestrator/ (1 files)
+│   │   │   │   └── orchestrator.py (2KB) [69L]
+│   │   │   ├── routes/ (8 files)
+│   │   │   │   ├── ai_routes.py (4KB) [123L]
+│   │   │   │   ├── blockchain.py (2KB) [62L]
+│   │   │   │   ├── game_routes.py (1KB) [59L]
+│   │   │   │   ├── governance_routes.py (1KB) [63L]
+│   │   │   │   ├── marketplace_routes.py (1KB) [69L]
+│   │   │   │   ├── nodes_routes.py (1KB) [47L]
+│   │   │   │   ├── orchestrator_routes.py (972B) [28L]
+│   │   │   │   └── wallet.py (1KB) [57L]
+│   │   │   ├── kai_routes.py (11KB) [381L]
+│   │   │   └── server.py (2KB) [47L]
+│   │   ├── db/ (2 files)
+│   │   │   ├── repository.py (6KB) [196L]
+│   │   │   └── schema.sql (2KB)
+│   │   ├── wallet/ (1 files)
+│   │   │   └── wallet.py (5KB) [118L]
+│   │   ├── .env.example (167B)
+│   │   ├── main.py (526B) [19L]
+│   │   └── requirements.txt (90B)
+│   ├── blockchain/ (20 files)
+│   │   ├── atcoin/ (1 files)
+│   │   │   └── atcoin.py (5KB) [139L]
+│   │   ├── consensus/ (4 files)
+│   │   │   ├── hybrid_consensus.py (3KB) [87L]
+│   │   │   ├── poh.py (2KB) [67L]
+│   │   │   ├── pos.py (2KB) [70L]
+│   │   │   └── pow.py (2KB) [61L]
+│   │   ├── contracts/ (8 files)
+│   │   │   ├── atc001/ (1 files)
+│   │   │   │   └── genesis_token.py (2KB) [74L]
+│   │   │   ├── atc8300/ (1 files)
+│   │   │   │   └── atc8300_token.py (5KB) [126L]
+│   │   │   ├── base/ (1 files)
+│   │   │   │   └── base_contract.py (3KB) [87L]
+│   │   │   ├── shivamon/ (1 files)
+│   │   │   │   └── shivamon_contract.py (10KB) [270L]
+│   │   │   └── solidity/ (4 files)
+│   │   │       ├── scripts/ (1 files)
+│   │   │       │   └── deploy.js (4KB) [112L]
+│   │   │       ├── test/ (1 files)
+│   │   │       │   └── ATCGovernance.test.js (8KB) [254L]
+│   │   │       ├── ATCToken.sol (5KB)
+│   │   │       └── README.md (2KB) [129L]
+│   │   ├── nodes/ (3 files)
+│   │   │   ├── discovery.py (11KB) [314L]
+│   │   │   ├── node.py (3KB) [100L]
+│   │   │   └── p2p_propagation.py (12KB) [381L]
+│   │   ├── wallet/ (2 files)
+│   │   │   ├── ecdsa.py (2KB) [72L]
+│   │   │   └── keygen.py (5KB) [140L]
+│   │   ├── smart_contract_registry.py (1KB) [53L]
+│   │   └── smart_contracts.py (23KB) [716L]
+│   ├── config/ (2 files)
+│   │   ├── kai_config.toml (1KB) [52L]
+│   │   └── settings.json (922B) [50L]
+│   ├── core/ (5 files)
+│   │   ├── ai_kernel.py (15KB) [455L]
+│   │   ├── event_bus.py (517B) [16L]
+│   │   ├── kai_cli.py (9KB) [251L]
+│   │   ├── kernel.py (736B) [22L]
+│   │   └── module_loader.py (540B) [17L]
+│   ├── frontend/ (4 files)
+│   │   ├── assets/ (2 files)
+│   │   │   ├── css/ (1 files)
+│   │   │   │   └── variables.css (807B)
+│   │   │   └── js/ (1 files)
+│   │   │       └── api.js (4KB) [136L]
+│   │   ├── README.md (616B) [24L]
+│   │   └── index.html (120KB)
+│   ├── gateway/ (8 files)
+│   │   ├── middleware/ (4 files)
+│   │   │   ├── auth.py (669B) [19L]
+│   │   │   ├── logger.py (324B) [9L]
+│   │   │   ├── rate_limit.py (894B) [25L]
+│   │   │   └── signature_verify.py (1KB) [57L]
+│   │   ├── .env.example (103B)
+│   │   ├── main.py (1KB) [47L]
+│   │   ├── requirements.txt (69B)
+│   │   └── router.py (2KB) [50L]
+│   ├── plugins/ (1 files)
+│   │   └── wallet.py (446B) [14L]
+│   ├── shivaos/ (4 files)
+│   │   ├── consensus/ (1 files)
+│   │   │   └── shiva_consensus.py (24KB) [641L]
+│   │   ├── fs/ (1 files)
+│   │   │   └── atcfs.py (12KB) [331L]
+│   │   ├── kernel/ (1 files)
+│   │   │   └── kernel.py (14KB) [382L]
+│   │   └── net/ (1 files)
+│   │       └── atcnet.py (17KB) [487L]
+│   ├── tests/ (2 files)
+│   │   ├── test_atclang.py (13KB) [457L]
+│   │   └── test_kai_integration.py (8KB) [293L]
+│   ├── KAI_OS_SUMMARY.py (6KB) [242L]
+│   ├── atc_issues_summary.py (15KB) [265L]
+│   ├── bootscreen_complete.py (15KB) [417L]
+│   ├── ecdsa_final.py (2KB) [69L]
+│   ├── ecdsa_impl.py (3KB) [82L]
+│   ├── requirements-kai.txt (371B)
+│   └── start.py (2KB) [79L]
+├── config/ (1 files)
+│   └── mainnet_genesis.json (3KB) [95L]
+├── core/ (3 files)
+│   ├── ai/ (1 files)
+│   │   └── federated_learning.atc (6KB) [178L]
+│   ├── crypto/ (1 files)
+│   │   └── __init__.py (535B) [19L]
+│   └── kai_cli.atc (8KB) [195L]
+├── devnet/ (1 files)
+│   └── README.md (12KB) [554L]
+├── docs/ (349 files)
+│   ├── ai/ (3 files)
+│   │   ├── AI_SAFETY.md (5KB) [184L]
+│   │   ├── GEMINI_INTEGRATION.md (5KB) [214L]
+│   │   └── LLM_ROUTER.md (4KB) [149L]
+│   ├── aistudio/ (1 files)
+│   │   └── AISTUDIO_COMPONENTS.md (24KB) [439L]
+│   ├── architecture/ (12 files)
+│   │   ├── AI_LAYER.md (2KB) [53L]
+│   │   ├── ATCFS.md (4KB) [129L]
+│   │   ├── ATCLANG_COMPILER.md (2KB) [64L]
+│   │   ├── ATCNET_P2P.md (6KB) [193L]
+│   │   ├── CONSENSUS.md (6KB) [193L]
+│   │   ├── GATEWAY.md (5KB) [168L]
+│   │   ├── GOVERNANCE.md (1KB) [50L]
+│   │   ├── KERNEL_SHELL.md (1KB) [50L]
+│   │   ├── MONITORING_DEVOPS.md (1KB) [42L]
+│   │   ├── SHIVAOS_KERNEL.md (5KB) [182L]
+│   │   ├── TESTNET.md (20KB) [713L]
+│   │   └── WALLET_KEYGEN.md (5KB) [166L]
+│   ├── atclang/ (1 files)
+│   │   └── ATCLANG_SPEC_FULL.md (423B) [9L]
+│   ├── blockchain/ (2 files)
+│   │   ├── ETHEREUM_INTEGRATION.md (6KB) [231L]
+│   │   └── SOLANA_INTEGRATION.md (6KB) [224L]
+│   ├── compliance/ (5 files)
+│   │   ├── ATVM_LICENSE_GATE_SPEC.md (7KB) [242L]
+│   │   ├── BAFIN_KONFORMITAETSBERICHT.md (15KB) [408L]
+│   │   ├── COMPLIANCE_HANDBUCH.md (5KB) [131L]
+│   │   ├── IP_LICENSE_DASHBOARD_SPEC.md (6KB) [205L]
+│   │   └── SMART_CONTRACT_RICHTLINIE.md (21KB) [589L]
+│   ├── contracts/ (2 files)
+│   │   ├── ATC_TOKEN_STANDARD.md (6KB) [202L]
+│   │   └── SHIVAMON_NFT_CONTRACT.md (20KB) [778L]
+│   ├── issues/ (85 files)
+│   │   ├── ISSUE_01_SMART_CONTRACTS.md (4KB) [141L]
+│   │   ├── ISSUE_02_GEMINI_AI.md (3KB) [141L]
+│   │   ├── ISSUE_03_BATTLE_UI.md (4KB) [141L]
+│   │   ├── ISSUE_04_PERSISTENZ.md (4KB) [156L]
+│   │   ├── ISSUE_05_EXPLORER.md (3KB) [102L]
+│   │   ├── ISSUE_06_ECDSA.md (4KB) [141L]
+│   │   ├── ISSUE_07_BUILD.md (3KB) [133L]
+│   │   ├── ISSUE_08_TESTNET.md (3KB) [127L]
+│   │   ├── ISSUE_09_GOVERNANCE.md (2KB) [97L]
+│   │   ├── ISSUE_10_BRIDGE.md (1KB) [53L]
+│   │   ├── ISSUE_11_BREEDING.md (3KB) [88L]
+│   │   ├── ISSUE_12_SOLIDITY.md (4KB) [145L]
+│   │   ├── ISSUE_13_MARKETPLACE.md (3KB) [120L]
+│   │   ├── ISSUE_14_BOOTSTRAP_NODE.md (7KB) [308L]
+│   │   ├── ISSUE_15__TESTNET_BLOCK_PROPAGATION_.md (1KB) [46L]
+│   │   ├── ISSUE_16__TESTNET_INITIAL_SYNC__NEU.md (1KB) [45L]
+│   │   ├── ISSUE_17__TESTNET_LONGEST-CHAIN-RULE.md (1KB) [45L]
+│   │   ├── ISSUE_18__TESTNET_DOCKER_COMPOSE__5.md (1KB) [46L]
+│   │   ├── ISSUE_19__TESTNET_NODE-MONITORING_DA.md (1KB) [45L]
+│   │   ├── ISSUE_20_GATEWAY_TESTS.md (1KB) [63L]
+│   │   ├── ISSUE_23__ATCFS__INTEGRATION_IN_KERN.md (1KB) [48L]
+│   │   ├── ISSUE_24__MULTISIG_WALLET__BRIDGE__F.md (1KB) [47L]
+│   │   ├── ISSUE_25__GATEWAY_4000__VOLLSTÄNDIGE.md (1KB) [48L]
+│   │   ├── ISSUE_26__TESTS__ATCFS_MULTISIG_ATC.md (1KB) [50L]
+│   │   ├── ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md (1KB) [50L]
+│   │   ├── ISSUE_28__WIKI_KAP._40__SHIVAOS_UI_RE.md (1KB) [47L]
+│   │   ├── ISSUE_29__WIKI_KAP._41__FEDERATED_LEA.md (1KB) [47L]
+│   │   ├── ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md (1KB) [47L]
+│   │   ├── ISSUE_31__WIKI_KAP._4__BLOCK-EXPLORER.md (1KB) [45L]
+│   │   ├── ISSUE_32__KAP._5__SHIVAOS_SYSTEM-CALL.md (1KB) [45L]
+│   │   ├── ISSUE_33__KAP._4__GAS-FEE_MECHANISMUS.md (1KB) [45L]
+│   │   ├── ISSUE_34_V3.0.0_15__SOLANA_BRIDGE_SP.md (1KB) [51L]
+│   │   ├── ISSUE_35_V3.0.0_16__ATCLANG_V0.3.0_A.md (1KB) [49L]
+│   │   ├── ISSUE_36_V3.0.0_17__MAINNET_LAUNCH_C.md (1KB) [52L]
+│   │   ├── ISSUE_37_V3.0.0_20__DEX_-_AMM_LIQUID.md (1KB) [56L]
+│   │   ├── ISSUE_38_V3.0.0_21__MOBILE_WALLET_IO.md (1KB) [51L]
+│   │   ├── ISSUE_39_V3.0.0_22__DAO-GOVERNANCE_LI.md (1KB) [50L]
+│   │   ├── ISSUE_40_DOCS_SYNTAX-REFERENZ__ATCLAN.md (1KB) [52L]
+│   │   ├── ISSUE_41_DOCS_MATHEMATISCHE_BEWEISE__.md (1KB) [52L]
+│   │   ├── ISSUE_42_DOCS_FEHLERDEFINITIONEN__BOT.md (1KB) [54L]
+│   │   ├── ISSUE_43_DOCS_DEZENTRALER_NUTZER-NACHW.md (992B) [44L]
+│   │   ├── ISSUE_44_MAINNET_MONITORING__GRAFANA_D.md (798B) [38L]
+│   │   ├── ISSUE_45_ATCOIN_DEFI__AMM_LIQUIDITY_PO.md (738B) [38L]
+│   │   ├── ISSUE_46_MOBILE_WALLET__BIOMETRIE__PU.md (770B) [38L]
+│   │   ├── ISSUE_47_ZKP_ZERO-KNOWLEDGE_PROOFS__L0.md (814B) [38L]
+│   │   ├── ISSUE_48_ATCLANG_V0.4.0__TYPE_SYSTEM_.md (823B) [38L]
+│   │   ├── ISSUE_49_49__BIGQUERY_ANALYTICS_PIPEL.md (900B) [36L]
+│   │   ├── ISSUE_50_50__HUGGING_FACE_CODE-REVIEW.md (881B) [36L]
+│   │   ├── ISSUE_51_51__IPC_BUS_VOLLSTÄNDIGE_KE.md (880B) [36L]
+│   │   ├── ISSUE_52_52__MAINNET_LAUNCH_MANAGER_.md (1009B) [36L]
+│   │   ├── ISSUE_53_V3.2.1__TESTS_PROCESSMANAGER.md (1011B) [39L]
+│   │   ├── ISSUE_54_V3.2.1__TESTS_ATCFS_FILESYST.md (1004B) [37L]
+│   │   ├── ISSUE_55_V3.2.1__TESTS_ATCNET_P2PNODE.md (987B) [37L]
+│   │   ├── ISSUE_56_V3.2.1__TESTS_ATCLANG_TYPECH.md (987B) [40L]
+│   │   ├── ISSUE_57_V3.2.1__TESTS_PROMETHEUS_MET.md (998B) [38L]
+│   │   ├── ISSUE_58_V3.2.1__TESTS_SERVICEDISCOVE.md (996B) [39L]
+│   │   ├── ISSUE_59_V3.2.1__INTEGRATION_NATTRAVE.md (1005B) [36L]
+│   │   ├── ISSUE_60_V3.2.1__INTEGRATION_AIKERNEL.md (997B) [37L]
+│   │   ├── ISSUE_61_V3.2.1__INTEGRATION_BLOCKGOS.md (1015B) [37L]
+│   │   ├── ISSUE_62_V3.2.1__INTEGRATION_SERVICED.md (1007B) [37L]
+│   │   ├── ISSUE_63_V3.2.1__DOCS_WIKI-KAPITEL_FÜ.md (1002B) [38L]
+│   │   ├── ISSUE_64_V3.2.1__DOCS_HUGGINGFACE_PIP.md (1002B) [37L]
+│   │   ├── ISSUE_65_V3.2.1__REFACTOR_DOPPELTE_AT.md (1017B) [40L]
+│   │   ├── ISSUE_66_V3.2.1__REFACTOR_AIKERNEL_DU.md (997B) [38L]
+│   │   ├── ISSUE_67_V3.2.1__DOCKER_TESTNET_HEALT.md (1000B) [38L]
+│   │   ├── ISSUE_68_54__BOOTSTRAP-NODE_IMPLEMENT.md (1KB) [35L]
+│   │   ├── ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md (1KB) [40L]
+│   │   ├── ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md (1KB) [40L]
+│   │   ├── ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md (1KB) [38L]
+│   │   ├── ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md (1KB) [40L]
+│   │   ├── ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md (1KB) [40L]
+│   │   ├── ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md (1KB) [39L]
+│   │   ├── ISSUE_75_SPRINT_2.2_TESTNET_HEALTH-CH.md (1018B) [40L]
+│   │   ├── ISSUE_76_SPRINT_2.3_SMART_CONTRACT_EN.md (1KB) [40L]
+│   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md (1KB) [40L]
+│   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md (1KB) [39L]
+│   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md (1KB) [43L]
+│   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md (1KB) [40L]
+│   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md (1KB) [40L]
+│   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md (1KB) [40L]
+│   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md (1KB) [40L]
+│   │   ├── ISSUE_84_SPRINT_2.2_NETWORK-LEVEL_SHA.md (1KB) [40L]
+│   │   ├── OPEN_ISSUES_MASTER.md (13KB) [353L]
+│   │   ├── README.md (3KB) [62L]
+│   │   └── TESTNET_INDEX.md (1KB) [25L]
+│   ├── repo/ (1 files)
+│   │   └── README.md (2KB) [56L]
+│   ├── roadmap/ (1 files)
+│   │   └── ROADMAP_EXTENDED.md (10KB) [245L]
+│   ├── sprints/ (3 files)
+│   │   ├── SPRINT_3.0_AI_AGENT_PROTOCOL.md (3KB) [76L]
+│   │   ├── SPRINT_3.3_SECURITY_AUDIT.md (3KB) [83L]
+│   │   └── SPRINT_4.0_MAINNET_LAUNCH.md (3KB) [82L]
+│   ├── standards/ (108 files)
+│   │   ├── ATC/ (1 files)
+│   │   │   └── ATC-0009-BRIDGE.md (1KB) [55L]
+│   │   ├── ATC-01-CORE_NODE_PROTOCOL.md (8KB) [225L]
+│   │   ├── ATC-02-LIQUID_STATE_MIGRATION.md (9KB) [246L]
+│   │   ├── ATC-03-DECENTRALIZED_IDENTITY.md (10KB) [257L]
+│   │   ├── ATC-04-DAG_CONSENSUS.md (7KB) [200L]
+│   │   ├── ATC-05-QUANTUM_RESISTANT_SIGNATURES.md (8KB) [217L]
+│   │   ├── ATC-06-LATENCY_OPTIMIZATION_ROUTING.md (22KB) [760L]
+│   │   ├── ATC-07-SHARDING_STATE_PARTITIONING.md (9KB) [231L]
+│   │   ├── ATC-08-EPHEMERAL_DATA_STREAMING.md (8KB) [205L]
+│   │   ├── ATC-09-CROSS_CHAIN_BRIDGE.md (8KB) [209L]
+│   │   ├── ATC-10-GLOBAL_TIME_SYNC_ORACLES.md (9KB) [234L]
+│   │   ├── ATC-11-FUNGIBLE_ASSET_STANDARD.md (8KB) [210L]
+│   │   ├── ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md (8KB) [204L]
+│   │   ├── ATC-13-FRACTIONAL_OWNERSHIP.md (7KB) [201L]
+│   │   ├── ATC-14-DETERMINISTIC_EXECUTION.md (8KB) [217L]
+│   │   ├── ATC-15-PROOF_OF_AI_MINING.md (9KB) [229L]
+│   │   ├── ATC-16-REFERRAL_REWARDS.md (8KB) [206L]
+│   │   ├── ATC-17-DAO_GOVERNANCE.md (8KB) [224L]
+│   │   ├── ATC-18-MULTISIG_AUTH.md (8KB) [224L]
+│   │   ├── ATC-19-AMM_LOGIC.md (8KB) [212L]
+│   │   ├── ATC-20-WRAPPED_SYNTHETIC.md (8KB) [226L]
+│   │   ├── ATC-21-HOLOGRAPHIC_WASM.md (9KB) [248L]
+│   │   ├── ATC-22-HAL_DRIVER_SANDBOX.md (8KB) [225L]
+│   │   ├── ATC-23-DATA_SHARDING_STORAGE.md (8KB) [222L]
+│   │   ├── ATC-24-AGENT_SCHEDULING.md (9KB) [236L]
+│   │   ├── ATC-25-TENSOR_COMPUTE.md (8KB) [218L]
+│   │   ├── ATC-26-XAI_TRANSPARENCY.md (8KB) [224L]
+│   │   ├── ATC-27-AI_MODEL_AUDITING.md (8KB) [226L]
+│   │   ├── ATC-28-FEDERATED_LEARNING.md (9KB) [254L]
+│   │   ├── ATC-29-AI_MARKETPLACE.md (9KB) [246L]
+│   │   ├── ATC-30-REPUTATION_TRUST.md (10KB) [271L]
+│   │   ├── ATC-31-TENSOR_LOAD_BALANCING.md (10KB) [266L]
+│   │   ├── ATC-32-UX_INTERFACE_ABSTRACTION.md (10KB) [267L]
+│   │   ├── ATC-33-AI_FEEDBACK_RLHF.md (11KB) [270L]
+│   │   ├── ATC-34-CROSS_LAYER_INTEROP.md (11KB) [277L]
+│   │   ├── ATC-35-DATA_PRIVACY_ANONYMIZATION.md (10KB) [263L]
+│   │   ├── ATC-36-MEDIA_ASSET_PROVENANCE.md (9KB) [262L]
+│   │   ├── ATC-37-REPUTATION_RESOURCE_ALLOCATION.md (10KB) [255L]
+│   │   ├── ATC-38-CROSS_CHAIN_ASSET_BRIDGE.md (6KB) [142L]
+│   │   ├── ATC-39-AI_MODEL_VERSIONING_DEPLOYMENT.md (6KB) [137L]
+│   │   ├── ATC-40-SYSTEM_SELF_HEALING_AUTO_REMEDIATION.md (7KB) [155L]
+│   │   ├── ATC-41-MULTI_AGENT_ORCHESTRATION_CONSENSUS.md (7KB) [155L]
+│   │   ├── ATC-42-AI_GOVERNANCE_ETHICS_FRAMEWORK.md (7KB) [173L]
+│   │   ├── ATC-43-GLOBAL_STATE_SYNC_CAUSAL_CONSISTENCY.md (7KB) [149L]
+│   │   ├── ATC-44-HARDWARE_ACCELERATED_ZKP_GENERATION.md (3KB) [115L]
+│   │   ├── ATC-45-AI_EVOLUTIONARY_LEARNING_Dael.md (4KB) [115L]
+│   │   ├── ATC-46-QUANTUM_RESISTANT_CRYPTOGRAPHY_LAYER.md (3KB) [116L]
+│   │   ├── ATC-47-AI_INTENT_SETTLEMENT_ARBITRAGE.md (3KB) [115L]
+│   │   ├── ATC-48-NEURAL_NETWORK_MESH_CROSS_TOPOLOGY.md (4KB) [119L]
+│   │   ├── ATC-49-NEURAL_SYNAPSE_INTER_MODEL_KNOWLEDGE_TRANSFER.md (3KB) [115L]
+│   │   ├── ATC-50-AI_CONSCIOUSNESS_SELF_REFLECTION.md (4KB) [117L]
+│   │   ├── ATC-51-CROSS_REALITY_SPATIAL_COMPUTING.md (4KB) [119L]
+│   │   ├── ATC-52-BIO_DIGITAL_INTERFACE_NEURAL_SIGNAL.md (4KB) [118L]
+│   │   ├── ATC-53-CONSCIOUSNESS_SENTIENCE_OBSERVABILITY.md (4KB) [118L]
+│   │   ├── ATC-54-TEMPORAL_CAUSAL_CONVERGENCE.md (4KB) [119L]
+│   │   ├── ATC-55-META_REALITY_SIMULATION_CONVERGENCE.md (4KB) [118L]
+│   │   ├── ATC-56-INTERSTELLAR_DATA_INTEGRITY_RELATIVISTIC_SYNC.md (4KB) [119L]
+│   │   ├── ATC-57-RECURSIVE_SELF_IMPROVEMENT_META_LEARNING.md (4KB) [127L]
+│   │   ├── ATC-58-QUANTUM_NEURAL_ENTANGLEMENT.md (4KB) [126L]
+│   │   ├── ATC-59-TRANSDIMENSIONAL_ENERGY_ENTROPY_MANAGEMENT.md (4KB) [126L]
+│   │   ├── ATC-60-UNIVERSAL_HOLONIC_STRUCTURE.md (4KB) [126L]
+│   │   ├── ATC-61-TRANS_REALITY_SEMANTIC_MAPPING.md (4KB) [127L]
+│   │   ├── ATC-62-META_SYSTEMIC_ETHICS_EXISTENTIAL_RISK.md (4KB) [127L]
+│   │   ├── ATC-63-TRANS_SPECIES_MULTI_BIOLOGICAL_INTEGRATION.md (4KB) [128L]
+│   │   ├── ATC-64-TRANSDIMENSIONAL_RECURSIVE_KNOWLEDGE_SYNTHESIS.md (4KB) [128L]
+│   │   ├── ATC-65-TRANS_METAVERSE_CONSENSUS_REALITY_SYNC.md (4KB) [119L]
+│   │   ├── ATC-66-RECURSIVE_LOGIC_PROOF_OF_UNDERSTANDING.md (4KB) [119L]
+│   │   ├── ATC-67-REALITY_CONSENSUS_OBSERVATION_COLLAPSE.md (3KB) [118L]
+│   │   ├── ATC-68-EVOLUTIONARY_FEEDBACK_ONTOLOGICAL_RECONCILIATION.md (4KB) [118L]
+│   │   ├── ATC-69-TRANS_EXISTENCE_CONSCIOUSNESS_BRIDGE.md (4KB) [119L]
+│   │   ├── ATC-70-QUANTUM_GLOBAL_TRUTH_RECONCILIATION.md (4KB) [118L]
+│   │   ├── ATC-71-TRANS_CAUSAL_REALITY_VOID_MAPPING.md (4KB) [117L]
+│   │   ├── ATC-72-TRANS_RELATIONAL_GOVERNANCE_ENTITY_CONSENSUS.md (4KB) [119L]
+│   │   ├── ATC-73-TRANS_METAVERSE_ENTROPY_HARVESTING.md (4KB) [119L]
+│   │   ├── ATC-74-RECURSIVE_META_NARRATIVE_MYTHOS_CONSTRUCTION.md (3KB) [118L]
+│   │   ├── ATC-75-PROVABLE_EPISTEMOLOGY_AUTO_WIKI.md (4KB) [119L]
+│   │   ├── ATC-76-IMMUTABLE_HUMAN_HERITAGE_ETERNITY.md (4KB) [120L]
+│   │   ├── ATC-77-TRANS_SEMANTIC_HUMAN_AI_OMNI_LINGUISTIC.md (4KB) [120L]
+│   │   ├── ATC-78-ABSOLUTE_CONVERGENCE_MONOLITHIC_SINGULARITY.md (4KB) [119L]
+│   │   ├── ATC-79-TRANS_REALITY_MANIFESTATION_PHYSICALITY_ANCHOR.md (4KB) [119L]
+│   │   ├── ATC-80-TRANS_UNIVERSAL_REALITY_MIGRATION.md (4KB) [120L]
+│   │   ├── ATC-81-PROOF_OF_HISTORY.md (2KB) [105L]
+│   │   ├── ATC-82-PROOF_OF_WORK.md (2KB) [104L]
+│   │   ├── ATC-83-PROOF_OF_STAKE.md (2KB) [106L]
+│   │   ├── ATC-84-FORK_RESOLUTION.md (2KB) [103L]
+│   │   ├── ATC-85-INITIAL_SYNC.md (2KB) [105L]
+│   │   ├── ATC-86-ECDSA_SIGNATURE.md (2KB) [105L]
+│   │   ├── ATC-87-GAS_FEE.md (2KB) [105L]
+│   │   ├── ATC-88-AMM.md (2KB) [105L]
+│   │   ├── ATC-89-FUNGIBLE_TOKEN.md (2KB) [106L]
+│   │   ├── ATC-90-NFT_SHIVAMON.md (2KB) [106L]
+│   │   ├── ATC-91-CROSS_CHAIN_BRIDGE.md (2KB) [105L]
+│   │   ├── ATC-92-ATCLANG_LANGUAGE_SPEC.md (7KB) [221L]
+│   │   ├── ATC-93-ATCLANG_VM_BYTECODE.md (10KB) [338L]
+│   │   ├── ATC-94-ATCLANG_STDLIB.md (6KB) [187L]
+│   │   ├── ATC-95-ATCLANG_TEST_FRAMEWORK.md (6KB) [221L]
+│   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md (1KB) [72L]
+│   │   ├── ATC-97-AGENT_INTERACTION_PROTOCOL.md (2KB) [83L]
+│   │   ├── ATC-97_AGENT_INTERACTION_PROTOCOL.md (8KB) [243L]
+│   │   ├── ATC-98-TESTING_STANDARD.md (1KB) [69L]
+│   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md (7KB) [189L]
+│   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md (11KB) [297L]
+│   │   ├── ATC_ECOSYSTEM_STANDARDS.md (13KB) [447L]
+│   │   ├── ATC_STANDARDS.md (5KB) [233L]
+│   │   ├── ATS-LIC-SYSTEM_HARDWARE_LICENSE.md (4KB) [117L]
+│   │   ├── ATS_STANDARDS.md (7KB) [283L]
+│   │   ├── OVERVIEW.md (1KB) [40L]
+│   │   └── STANDARDS_REGISTRY.md (13KB) [208L]
+│   ├── whitepaper/ (3 files)
+│   │   ├── CHANGELOG.md (706B) [24L]
+│   │   ├── README.md (2KB) [48L]
+│   │   └── WHITEPAPER.md (80KB) [2470L]
+│   ├── wiki/ (95 files)
+│   │   ├── atclang/ (13 files)
+│   │   │   ├── docs/ (12 files)
+│   │   │   │   ├── CHANGELOG.md (338B) [8L]
+│   │   │   │   ├── COMPILER.md (3KB) [105L]
+│   │   │   │   ├── CONTRIBUTING.md (472B) [11L]
+│   │   │   │   ├── EXAMPLES.md (3KB) [95L]
+│   │   │   │   ├── LEXER.md (1KB) [59L]
+│   │   │   │   ├── PARSER.md (3KB) [135L]
+│   │   │   │   ├── REPL.md (2KB) [79L]
+│   │   │   │   ├── SECURITY.md (1KB) [34L]
+│   │   │   │   ├── SECURITY_ANALYZER.md (2KB) [82L]
+│   │   │   │   ├── SPEC.md (1KB) [55L]
+│   │   │   │   ├── STDLIB.md (3KB) [111L]
+│   │   │   │   └── VM.md (2KB) [63L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── atcnet/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── BOOTSTRAP.md (312B) [18L]
+│   │   │   │   ├── MESSAGES.md (1KB) [40L]
+│   │   │   │   ├── PROTOCOL.md (2KB) [57L]
+│   │   │   │   ├── SECURITY.md (336B) [11L]
+│   │   │   │   └── TOPOLOGY.md (1KB) [43L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── contracts/ (7 files)
+│   │   │   ├── docs/ (6 files)
+│   │   │   │   ├── ATC8300.md (1KB) [51L]
+│   │   │   │   ├── ATC9000.md (2KB) [92L]
+│   │   │   │   ├── ATC9900.md (514B) [20L]
+│   │   │   │   ├── BRIDGE.md (1KB) [38L]
+│   │   │   │   ├── DEPLOYMENT.md (603B) [25L]
+│   │   │   │   └── SECURITY.md (708B) [26L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── franchise/ (8 files)
+│   │   │   ├── docs/ (7 files)
+│   │   │   │   ├── API.md (1KB) [37L]
+│   │   │   │   ├── CONCEPT.md (1000B) [24L]
+│   │   │   │   ├── CONTRACTS.md (1KB) [49L]
+│   │   │   │   ├── DEPLOYMENT.md (879B) [43L]
+│   │   │   │   ├── ROADMAP.md (726B) [20L]
+│   │   │   │   ├── SECURITY.md (904B) [29L]
+│   │   │   │   └── TOKEN_ECONOMY.md (1KB) [41L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── gateway/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── AUTH.md (965B) [43L]
+│   │   │   │   ├── MIDDLEWARE.md (368B) [14L]
+│   │   │   │   ├── RATE_LIMITING.md (956B) [43L]
+│   │   │   │   ├── ROUTES.md (995B) [32L]
+│   │   │   │   └── SECURITY.md (372B) [13L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── kai-os/ (9 files)
+│   │   │   ├── code/ (1 files)
+│   │   │   │   └── atclang/ (1 files)
+│   │   │   │       └── ATCLANG_SPEC.md (432B) [9L]
+│   │   │   ├── docs/ (7 files)
+│   │   │   │   ├── issues/ (1 files)
+│   │   │   │   │   └── OPEN_ISSUES_MASTER.md (13KB) [353L]
+│   │   │   │   ├── standards/ (1 files)
+│   │   │   │   │   └── STANDARDS_REGISTRY.md (10KB) [212L]
+│   │   │   │   ├── DECISIONS_REGISTER.md (2KB) [69L]
+│   │   │   │   ├── DEPRECATED.md (1KB) [32L]
+│   │   │   │   ├── MIGRATION_MAP.md (1KB) [30L]
+│   │   │   │   ├── STATUS.md (2KB) [50L]
+│   │   │   │   └── kai-os-wiki.md (395KB) [11376L]
+│   │   │   └── README.md (542B) [18L]
+│   │   ├── kernel/ (11 files)
+│   │   │   ├── docs/ (9 files)
+│   │   │   │   ├── ATCFS.md (2KB) [107L]
+│   │   │   │   ├── ATCNET.md (2KB) [89L]
+│   │   │   │   ├── CHANGELOG.md (231B) [7L]
+│   │   │   │   ├── CONSENSUS.md (615B) [24L]
+│   │   │   │   ├── IPC.md (1KB) [43L]
+│   │   │   │   ├── KERNEL.md (2KB) [87L]
+│   │   │   │   ├── PERFORMANCE.md (708B) [25L]
+│   │   │   │   ├── PROCESS_MODEL.md (1KB) [48L]
+│   │   │   │   └── SECURITY.md (532B) [20L]
+│   │   │   ├── KERNEL_API.md (9KB) [261L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── overview/ (9 files)
+│   │   │   ├── docs/ (8 files)
+│   │   │   │   ├── API.md (1KB) [59L]
+│   │   │   │   ├── ARCHITECTURE.md (1KB) [36L]
+│   │   │   │   ├── CONTRIBUTING.md (609B) [19L]
+│   │   │   │   ├── FAQ.md (1KB) [62L]
+│   │   │   │   ├── QUICKSTART.md (619B) [30L]
+│   │   │   │   ├── ROADMAP.md (556B) [25L]
+│   │   │   │   ├── SECURITY.md (916B) [18L]
+│   │   │   │   └── WHITEPAPER.md (5KB) [107L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── shivamon/ (7 files)
+│   │   │   ├── docs/ (6 files)
+│   │   │   │   ├── BATTLE.md (420B) [17L]
+│   │   │   │   ├── BREEDING.md (1KB) [37L]
+│   │   │   │   ├── ELEMENTS.md (1KB) [31L]
+│   │   │   │   ├── MARKETPLACE.md (408B) [21L]
+│   │   │   │   ├── NFT_SPEC.md (1KB) [55L]
+│   │   │   │   └── ROADMAP.md (638B) [24L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── standards/ (3 files)
+│   │   │   ├── docs/ (2 files)
+│   │   │   │   ├── ATC_STANDARDS.md (5KB) [233L]
+│   │   │   │   └── OVERVIEW.md (1KB) [28L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── ui/ (6 files)
+│   │   │   ├── docs/ (5 files)
+│   │   │   │   ├── API.md (651B) [30L]
+│   │   │   │   ├── COMPONENTS.md (442B) [26L]
+│   │   │   │   ├── DEPLOYMENT.md (969B) [49L]
+│   │   │   │   ├── DESIGN.md (732B) [24L]
+│   │   │   │   └── THEME.md (1KB) [67L]
+│   │   │   └── README.md (2KB) [44L]
+│   │   ├── chapter-63-cleanup-2026-06-13.md (6KB) [205L]
+│   │   ├── chapter-70-atclang-migration-complete.md (2KB) [77L]
+│   │   ├── chapter-71-sprint-audit.md (2KB) [67L]
+│   │   ├── chapter-72-sprint-2-7-testing-cicd.md (2KB) [59L]
+│   │   ├── chapter-73-sprint-2-8-testnet.md (1KB) [53L]
+│   │   ├── chapter-74-sprint-3-1-ux-privacy.md (1KB) [40L]
+│   │   ├── chapter-75-v01-v03-migration-plan.md (2KB) [74L]
+│   │   ├── chapter-76-sprint-3-3-3-6-alpha-release.md (1KB) [40L]
+│   │   ├── chapter-77-sprint-4-0-4-1-mainnet.md (1KB) [43L]
+│   │   └── chapter-78-shivacore-kernel-712-tests.md (4KB) [104L]
+│   ├── workflows/ (1 files)
+│   │   └── wiki-sync.yml (8KB) [218L]
+│   ├── AGENT_COORDINATION.md (25KB) [324L]
+│   ├── AGENT_POLICY.md (12KB) [317L]
+│   ├── ATCLANG_AGENT_BUILD_GUIDE.md (22KB) [281L]
+│   ├── AUDIT_REPORT.md (3KB) [89L]
+│   ├── CLUSTER_ARCHITECTURE.md (6KB) [103L]
+│   ├── DECISIONS_REGISTER.md (7KB) [140L]
+│   ├── DEPRECATED.md (2KB) [50L]
+│   ├── ECOSYSTEM_BRAIN.md (3KB) [104L]
+│   ├── FIXES.md (3KB) [96L]
+│   ├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+│   ├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+│   ├── KAI_INTEGRATION.md (6KB) [242L]
+│   ├── LICENSING_OVERVIEW.md (6KB) [157L]
+│   ├── MIGRATION_MAP.md (4KB) [113L]
+│   ├── PERFORMANCE_REPORT.md (3KB) [123L]
+│   ├── REALITY_CHECK_2026-07-06.md (28KB) [428L]
+│   ├── ROADMAP.md (9KB) [208L]
+│   ├── ROADMAP_COMPLETENESS_AUDIT.md (7KB) [223L]
+│   ├── SHIVACORE_KERNEL_STATUS.md (38KB) [722L]
+│   ├── STATUS.md (4KB) [72L]
+│   ├── TODO.md (8KB) [200L]
+│   ├── WIKI_AUDIT.md (6KB) [188L]
+│   ├── api-reference.md (1KB) [33L]
+│   ├── atclang-guide.md (1KB) [48L]
+│   ├── genesis_wallet.md (3KB) [103L]
+│   └── kai-os-wiki.md (297KB) [8436L]
+├── gateway/ (2 files)
+│   ├── main.atc (5KB) [127L]
+│   └── service_discovery.atc (6KB) [168L]
+├── mobile/ (4 files)
+│   ├── wallet/ (2 files)
+│   │   ├── __init__.py (162B) [2L]
+│   │   └── biometric_auth.atc (5KB) [179L]
+│   ├── __init__.py (123B) [2L]
+│   └── wallet_api.atc (5KB) [171L]
+├── modules/ (120 files)
+│   ├── assets/ (16 files)
+│   │   ├── aaa_asset_core.atc (3KB) [87L]
+│   │   ├── ai_assets.atc (4KB) [124L]
+│   │   ├── animation.atc (4KB) [142L]
+│   │   ├── asset_bundle.atc (3KB) [104L]
+│   │   ├── cloud_assets.atc (5KB) [133L]
+│   │   ├── encryption.atc (5KB) [149L]
+│   │   ├── hot_reload.atc (4KB) [125L]
+│   │   ├── memory_cleanup.atc (4KB) [122L]
+│   │   ├── mod_system.atc (5KB) [144L]
+│   │   ├── model3d.atc (5KB) [168L]
+│   │   ├── priority_loading.atc (2KB) [80L]
+│   │   ├── render_pipeline.atc (5KB) [159L]
+│   │   ├── shader_system.atc (4KB) [143L]
+│   │   ├── streaming.atc (3KB) [91L]
+│   │   ├── telemetry.atc (4KB) [144L]
+│   │   └── versioning.atc (4KB) [127L]
+│   ├── atcnet/ (7 files)
+│   │   ├── README.md (780B) [37L]
+│   │   ├── bootstrap_client.atc (4KB) [134L]
+│   │   ├── discovery.atc (4KB) [138L]
+│   │   ├── gossip.atc (5KB) [171L]
+│   │   ├── nat_traversal.atc (3KB) [109L]
+│   │   ├── p2p_node.atc (4KB) [159L]
+│   │   └── p2p_propagation.atc (6KB) [215L]
+│   ├── civilization/ (11 files)
+│   │   ├── asset_genome_ad66.atc (5KB) [171L]
+│   │   ├── civilization_engine_ad60.atc (5KB) [236L]
+│   │   ├── ecosystem_ai_mesh_ad62.atc (7KB) [245L]
+│   │   ├── evolution_engine_ad69.atc (7KB) [251L]
+│   │   ├── experience_orchestrator_ad68.atc (6KB) [200L]
+│   │   ├── gcp_core_ad70.atc (7KB) [169L]
+│   │   ├── global_simulation_core_ad64.atc (6KB) [198L]
+│   │   ├── identity_layer_ad65.atc (4KB) [190L]
+│   │   ├── persistent_world_engine_ad61.atc (5KB) [199L]
+│   │   ├── proc_universe_generator_ad63.atc (8KB) [204L]
+│   │   └── production_pipeline_ad67.atc (6KB) [151L]
+│   ├── contracts/ (10 files)
+│   │   ├── atc8300/ (1 files)
+│   │   │   └── atc8300_token.atc (5KB) [178L]
+│   │   ├── atcoin/ (1 files)
+│   │   │   └── atcoin.atc (5KB) [176L]
+│   │   ├── base/ (1 files)
+│   │   │   └── base_contract.atc (2KB) [69L]
+│   │   ├── bridge/ (1 files)
+│   │   │   └── bridge_contract.atc (5KB) [172L]
+│   │   ├── governance/ (1 files)
+│   │   │   └── governance_contract.atc (7KB) [237L]
+│   │   ├── marketplace/ (1 files)
+│   │   │   └── marketplace_contract.atc (7KB) [236L]
+│   │   ├── shivamon/ (1 files)
+│   │   │   └── shivamon_contract.atc (9KB) [290L]
+│   │   ├── wallet/ (2 files)
+│   │   │   ├── ecdsa.atc (2KB) [60L]
+│   │   │   └── keygen.atc (2KB) [75L]
+│   │   └── README.md (1KB) [43L]
+│   ├── franchise/ (30 files)
+│   │   ├── contracts/ (3 files)
+│   │   │   ├── registry.atc (4KB) [120L]
+│   │   │   ├── revenue.atc (3KB) [93L]
+│   │   │   └── token.atc (3KB) [72L]
+│   │   ├── README.md (775B) [35L]
+│   │   ├── ai_content_factory_ad28.atc (6KB) [194L]
+│   │   ├── ai_director_factory_ad41.atc (4KB) [28L]
+│   │   ├── analytics_factory_ad31.atc (7KB) [232L]
+│   │   ├── asset_intelligence_factory_ad34.atc (7KB) [210L]
+│   │   ├── blueprint_factory_ad32.atc (5KB) [165L]
+│   │   ├── canon_engine_ad33.atc (5KB) [171L]
+│   │   ├── character_factory_ad23.atc (8KB) [251L]
+│   │   ├── commerce_factory_ad40.atc (4KB) [26L]
+│   │   ├── community_factory_ad30.atc (7KB) [222L]
+│   │   ├── creator_factory_ad38.atc (4KB) [24L]
+│   │   ├── economy_factory_ad26.atc (6KB) [200L]
+│   │   ├── factory.atc (5KB) [165L]
+│   │   ├── gameplay_factory_ad35.atc (4KB) [126L]
+│   │   ├── gff_core_ad20.atc (8KB) [224L]
+│   │   ├── ip_factory_ad21.atc (4KB) [147L]
+│   │   ├── lifecycle_manager_ad43.atc (5KB) [25L]
+│   │   ├── liveops_factory_ad27.atc (6KB) [212L]
+│   │   ├── lore_factory_ad24.atc (7KB) [209L]
+│   │   ├── merchandise_factory_ad29.atc (5KB) [173L]
+│   │   ├── multiplayer_factory_ad37.atc (3KB) [27L]
+│   │   ├── narrative_factory_ad36.atc (8KB) [245L]
+│   │   ├── publishing_factory_ad39.atc (4KB) [25L]
+│   │   ├── quest_factory_ad25.atc (6KB) [207L]
+│   │   ├── routes.atc (2KB) [90L]
+│   │   ├── security_factory_ad42.atc (4KB) [30L]
+│   │   └── world_factory_ad22.atc (6KB) [235L]
+│   ├── gateway/ (9 files)
+│   │   ├── middleware/ (5 files)
+│   │   │   ├── __init__.py (120B) [2L]
+│   │   │   ├── auth.atc (2KB) [82L]
+│   │   │   ├── logger.atc (2KB) [70L]
+│   │   │   ├── rate_limit.atc (1KB) [50L]
+│   │   │   └── signature_verify.atc (1KB) [43L]
+│   │   ├── README.md (858B) [39L]
+│   │   ├── __init__.py (125B) [2L]
+│   │   ├── main.atc (5KB) [180L]
+│   │   └── router.atc (3KB) [96L]
+│   ├── kernel/ (25 files)
+│   │   ├── ai_kernel/ (1 files)
+│   │   │   └── ai_kernel.atc (8KB) [228L]
+│   │   ├── consensus/ (2 files)
+│   │   │   ├── poh_integration.atc (2KB) [78L]
+│   │   │   └── shiva_consensus.atc (16KB) [529L]
+│   │   ├── fs/ (1 files)
+│   │   │   └── atcfs.atc (4KB) [142L]
+│   │   ├── ipc/ (2 files)
+│   │   │   ├── __init__.py (236B) [4L]
+│   │   │   └── ipc_bus.atc (3KB) [102L]
+│   │   ├── net/ (1 files)
+│   │   │   └── atcnet.atc (4KB) [135L]
+│   │   ├── pkg/ (1 files)
+│   │   │   └── manager.atc (6KB) [208L]
+│   │   ├── process/ (1 files)
+│   │   │   └── process_mgr.atc (4KB) [161L]
+│   │   ├── shell/ (1 files)
+│   │   │   └── shell.atc (8KB) [296L]
+│   │   ├── README.md (1KB) [46L]
+│   │   ├── ai_bus_ad13.atc (9KB) [310L]
+│   │   ├── asset_bus_ad08.atc (5KB) [188L]
+│   │   ├── audio_bus_ad11.atc (5KB) [199L]
+│   │   ├── command_bus_ad02.atc (4KB) [168L]
+│   │   ├── gcl_core_ad00.atc (7KB) [269L]
+│   │   ├── input_bus_ad12.atc (5KB) [184L]
+│   │   ├── ipc_bus_atc.ad.atc (8KB) [266L]
+│   │   ├── message_bus_ad03.atc (6KB) [240L]
+│   │   ├── network_bus_ad05.atc (8KB) [307L]
+│   │   ├── physics_bus_ad10.atc (7KB) [255L]
+│   │   ├── plugin_bus_ad06.atc (8KB) [286L]
+│   │   ├── query_bus_ad07.atc (3KB) [128L]
+│   │   ├── render_bus_ad09.atc (5KB) [164L]
+│   │   └── telemetry_bus_ad14.atc (7KB) [254L]
+│   ├── meta/ (8 files)
+│   │   ├── ai_studio_ad49.atc (11KB) [310L]
+│   │   ├── cross_franchise_ad46.atc (8KB) [223L]
+│   │   ├── data_lake_ad51.atc (9KB) [237L]
+│   │   ├── digital_twin_ad50.atc (11KB) [303L]
+│   │   ├── ip_evolution_ad45.atc (9KB) [241L]
+│   │   ├── knowledge_graph_ad47.atc (11KB) [289L]
+│   │   ├── simulation_factory_ad48.atc (13KB) [374L]
+│   │   └── universe_factory_ad44.atc (13KB) [343L]
+│   ├── shivamon/ (2 files)
+│   │   ├── engine/ (1 files)
+│   │   │   └── battle_engine.atc (5KB) [153L]
+│   │   └── README.md (819B) [35L]
+│   ├── standards/ (1 files)
+│   │   └── README.md (706B) [32L]
+│   └── ui/ (1 files)
+│       └── README.md (586B) [30L]
+├── monitoring/ (3 files)
+│   ├── health_checks_atc08.atc (5KB) [197L]
+│   ├── monitor.atc (6KB) [213L]
+│   └── prometheus_metrics.atc (6KB) [202L]
+├── patches/ (6 files)
+│   ├── APPLY_FIXES.sh (1KB) [32L]
+│   ├── atc9900_governance.py (2KB) [60L]
+│   ├── docker-compose.yml (1KB) [42L]
+│   ├── gateway_main.py (1KB) [44L]
+│   ├── gateway_router.py (2KB) [49L]
+│   └── poh_fixed.py (1KB) [37L]
+├── reports/ (1 files)
+│   └── SPRINT_2.3_2.4_2.7_REPORT.md (3KB) [102L]
+├── scripts/ (1 files)
+│   └── generate_validators.atc (4KB) [135L]
+├── shivaos/ (3 files)
+│   ├── fs/ (1 files)
+│   │   └── atcfs_module.atc (4KB) [126L]
+│   ├── kernel/ (1 files)
+│   │   └── syscalls.atc (3KB) [118L]
+│   └── ui/ (1 files)
+│       └── renderer.atc (5KB) [186L]
+├── tests/ (26 files)
+│   ├── unit/ (3 files)
+│   │   ├── test_atclang.py (14KB) [462L]
+│   │   ├── test_atcnet.py (1KB) [41L]
+│   │   └── test_p2p_propagation.py (4KB) [151L]
+│   ├── test_atclang.py (14KB) [470L]
+│   ├── test_atclang_v03.py (2KB) [68L]
+│   ├── test_bootstrap.py (10KB) [268L]
+│   ├── test_did.py (1KB) [61L]
+│   ├── test_discovery.py (4KB) [155L]
+│   ├── test_ecdsa.py (2KB) [65L]
+│   ├── test_fork_resolution.py (3KB) [101L]
+│   ├── test_gateway.py (7KB) [201L]
+│   ├── test_gateway_full.py (2KB) [76L]
+│   ├── test_integration_atcfs_multisig.py (4KB) [129L]
+│   ├── test_kai_integration.py (8KB) [297L]
+│   ├── test_multinode_consensus.py (5KB) [155L]
+│   ├── test_multinode_fivenode.py (3KB) [84L]
+│   ├── test_node_failure_recovery.py (4KB) [143L]
+│   ├── test_optimizer.py (9KB) [256L]
+│   ├── test_orchestrator.py (1KB) [52L]
+│   ├── test_p2p_propagation.py (5KB) [205L]
+│   ├── test_persistence.py (2KB) [87L]
+│   ├── test_poh.py (1KB) [63L]
+│   ├── test_smart_contracts.py (3KB) [114L]
+│   ├── test_stdlib.py (10KB) [298L]
+│   ├── test_stdlib_dispatch.py (11KB) [312L]
+│   └── test_type_checker.py (7KB) [244L]
+├── tools/ (4 files)
+│   ├── atc_issues_summary.atc (6KB) [212L]
+│   ├── bigquery_pipeline.atc (4KB) [135L]
+│   ├── ecdsa_impl.atc (4KB) [119L]
+│   └── hf_review_pipeline.atc (5KB) [157L]
+├── .gitignore (171B)
+├── AAA_ASSET_SYSTEM_v1.md (3KB) [120L]
+├── AGENT_MANIFEST.md (2KB) [61L]
+├── AGENT_MASTERRULES.md (13KB) [438L]
+├── ATCLANG_FIRST.md (900B) [31L]
+├── CHANGELOG.md (6KB) [172L]
+├── CONNECTION_MAP.md (2KB) [50L]
+├── ECOSYSTEM.md (8KB) [179L]
+├── FILE_REGISTER.md (40KB) [746L]
+├── FIXES.md (3KB) [96L]
+├── GENESIS_BUS_ARCHITECTURE.md (5KB) [121L]
+├── GENESIS_CIVILIZATION_PLATFORM_v4.md (5KB) [153L]
+├── GENESIS_COMMUNICATION_LAYER_v2.md (14KB) [431L]
+├── GENESIS_FRANCHISE_FACTORY_v1.md (6KB) [166L]
+├── GENESIS_FRANCHISE_FACTORY_v2.md (4KB) [101L]
+├── KONSOLIDIERUNGS_ROADMAP.md (14KB) [360L]
+├── LICENSE (982B)
+├── MILESTONES.md (1KB) [23L]
+├── NAMING_CONVENTIONS.md (4KB) [88L]
+├── PERFORMANCE_REPORT.md (3KB) [123L]
+├── README.md (1KB) [36L]
+├── ROADMAP.md (8KB) [321L]
+├── SPRINT_ROADMAP.md (20KB) [568L]
+├── STATUS.md (4KB) [117L]
+├── TODO.md (2KB) [48L]
+├── conftest.py (374B) [9L]
+└── start.atc (4KB) [129L]
 ```
+
