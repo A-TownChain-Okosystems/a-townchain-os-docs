@@ -1,9 +1,7 @@
-# 🏗️ Architekturbäume — A-TownChain Ökosystem (36 Repos)
+# 🏗️ Architekturbäume — A-TownChain Ökosystem (70 Repos)
 
-> **Zweck:** Vollständige Architektur- und Verzeichnisstruktur für jedes der 36 Repositories.
-> Dient als Nachweis der tatsächlichen Repository-Organisation.
->
-> **Auto-generiert:** 2026-08-05 04:06 UTC | **Agent:** Aurora (MasterBrain · Base44)
+> **Zweck:** Vollständige Architektur- und Verzeichnisstruktur für alle Repositories.
+> **Auto-generiert:** 2026-08-06 12:42 UTC | **Agent:** Aurora (MasterBrain · Base44)
 
 ---
 
@@ -13,32 +11,66 @@
 - [a-townchain-os-docs](#a-townchain-os-docs)
 - [a-townchain-os-wiki](#a-townchain-os-wiki)
 - [atc-aistudio](#atc-aistudio)
+- [atc-aistudio-wiki](#atc-aistudio-wiki)
 - [atc-atclang](#atc-atclang)
+- [atc-atclang-wiki](#atc-atclang-wiki)
 - [atc-atcpkg](#atc-atcpkg)
+- [atc-atcpkg-wiki](#atc-atcpkg-wiki)
 - [atc-backend](#atc-backend)
+- [atc-backend-wiki](#atc-backend-wiki)
 - [atc-blockchain](#atc-blockchain)
+- [atc-blockchain-wiki](#atc-blockchain-wiki)
+- [atc-bootloader](#atc-bootloader)
+- [atc-bootloader-wiki](#atc-bootloader-wiki)
+- [atc-ci](#atc-ci)
+- [atc-ci-wiki](#atc-ci-wiki)
+- [atc-cli](#atc-cli)
+- [atc-cli-wiki](#atc-cli-wiki)
 - [atc-contracts](#atc-contracts)
 - [atc-contracts-wiki](#atc-contracts-wiki)
+- [atc-dns](#atc-dns)
+- [atc-dns-wiki](#atc-dns-wiki)
+- [atc-drivers](#atc-drivers)
+- [atc-drivers-wiki](#atc-drivers-wiki)
+- [atc-explorer](#atc-explorer)
+- [atc-explorer-wiki](#atc-explorer-wiki)
 - [atc-franchise](#atc-franchise)
 - [atc-franchise-wiki](#atc-franchise-wiki)
 - [atc-frontend](#atc-frontend)
+- [atc-frontend-wiki](#atc-frontend-wiki)
 - [atc-gateway](#atc-gateway)
 - [atc-gateway-wiki](#atc-gateway-wiki)
 - [atc-genesis-engine](#atc-genesis-engine)
+- [atc-genesis-engine-wiki](#atc-genesis-engine-wiki)
+- [atc-ide](#atc-ide)
+- [atc-ide-wiki](#atc-ide-wiki)
 - [atc-kernel](#atc-kernel)
 - [atc-kernel-wiki](#atc-kernel-wiki)
 - [atc-linux-edition](#atc-linux-edition)
+- [atc-linux-edition-wiki](#atc-linux-edition-wiki)
 - [atc-mobile](#atc-mobile)
+- [atc-mobile-wiki](#atc-mobile-wiki)
+- [atc-sdk](#atc-sdk)
+- [atc-sdk-wiki](#atc-sdk-wiki)
 - [atc-shivacore](#atc-shivacore)
 - [atc-shivacore-tools](#atc-shivacore-tools)
+- [atc-shivacore-tools-wiki](#atc-shivacore-tools-wiki)
+- [atc-shivacore-wiki](#atc-shivacore-wiki)
 - [atc-shivamon](#atc-shivamon)
 - [atc-shivamon-wiki](#atc-shivamon-wiki)
 - [atc-standards](#atc-standards)
 - [atc-standards-wiki](#atc-standards-wiki)
+- [atc-stdlib](#atc-stdlib)
+- [atc-stdlib-wiki](#atc-stdlib-wiki)
 - [atc-ui](#atc-ui)
 - [atc-ui-wiki](#atc-ui-wiki)
+- [atc-vm](#atc-vm)
+- [atc-vm-wiki](#atc-vm-wiki)
+- [atc-wallet](#atc-wallet)
+- [atc-wallet-wiki](#atc-wallet-wiki)
 - [atc-whitepaper](#atc-whitepaper)
 - [atc-windows-edition](#atc-windows-edition)
+- [atc-windows-edition-wiki](#atc-windows-edition-wiki)
 - [atclang](#atclang)
 - [atclang-wiki](#atclang-wiki)
 - [atcnet](#atcnet)
@@ -50,7 +82,7 @@
 
 ## a-townchain-os
 
-**Dateien:** 1483 | **Verzeichnisse:** 290 | **Tiefe:** 6 Level max
+**Dateien:** 1708 | **Verzeichnisse:** 310
 
 ```
 a-townchain-os/
@@ -93,6 +125,7 @@ a-townchain-os/
 ├── OS_BARE_METAL_GAP_ANALYSIS.md
 ├── README.md
 ├── REALITY_STATUS.md
+├── REPO_ARCHITECTURE.md
 ├── ROADMAP.md
 ├── ROADMAP_PYTHON_TO_OS.md
 ├── SECURITY.md
@@ -107,11 +140,14 @@ a-townchain-os/
 │   ├── .env.example
 │   ├── .gitignore
 │   ├── AGENTS.md
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── GEMINI.md
 │   ├── LICENSE
 │   ├── README.md
 │   ├── ROADMAP.md
 │   ├── SOFTWARE_ROADMAP.md
+│   ├── STATUS.md
 │   ├── assets/
 │   │   └── .aistudio/
 │   │       └── .gitignore
@@ -392,12 +428,66 @@ a-townchain-os/
 │       ├── smart_contract_registry.atc
 │       └── smart_contracts.atc
 ├── atclang/
+│   ├── .gitignore
 │   ├── ATCLANG_SPEC.md
 │   ├── CHANGELOG.md
 │   ├── CONTRIBUTING.md
+│   ├── FILE_REGISTER.md
 │   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── __init__.py
+│   ├── atc-atclang/
+│   │   ├── .gitignore
+│   │   ├── ATCLANG_SPEC.md
+│   │   ├── CHANGELOG.md
+│   │   ├── CONTRIBUTING.md
+│   │   ├── FILE_REGISTER.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── ROADMAP.md
+│   │   ├── STATUS.md
+│   │   ├── __init__.py
+│   │   ├── compiler/
+│   │   │   ├── __init__.py
+│   │   │   ├── compiler.py
+│   │   │   ├── optimizer.py
+│   │   │   └── type_checker.py
+│   │   ├── lexer/
+│   │   │   ├── __init__.py
+│   │   │   └── lexer.py
+│   │   ├── parser/
+│   │   │   ├── __init__.py
+│   │   │   ├── ast_nodes.py
+│   │   │   └── parser.py
+│   │   ├── programs/
+│   │   │   └── atcos_main.atc
+│   │   ├── repl/
+│   │   │   ├── __init__.py
+│   │   │   └── repl.py
+│   │   ├── requirements.txt
+│   │   ├── stdlib/
+│   │   │   ├── __init__.py
+│   │   │   ├── atc_stdlib.py
+│   │   │   ├── chain.py
+│   │   │   ├── collections.py
+│   │   │   ├── collections_ext.py
+│   │   │   ├── crypto.py
+│   │   │   ├── crypto_ext.py
+│   │   │   ├── encoding.py
+│   │   │   ├── io.py
+│   │   │   ├── io_ext.py
+│   │   │   ├── math.py
+│   │   │   ├── primitives.py
+│   │   │   ├── string.py
+│   │   │   └── wallet.py
+│   │   ├── v03/
+│   │   │   ├── __init__.py
+│   │   │   └── atclang_v03_features.py
+│   │   └── vm/
+│   │       ├── __init__.py
+│   │       └── atcvm.py
 │   ├── compiler/
 │   │   ├── __init__.py
 │   │   ├── compiler.py
@@ -457,7 +547,13 @@ a-townchain-os/
 │   │   └── atcvm.py
 │   └── vm.py
 ├── atcpkg/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── docs/
 │   │   ├── ATC-24-AGENT_SCHEDULING.md
 │   │   ├── ATC-96-KERNEL_INTERFACE_PROTOCOL.md
@@ -470,7 +566,13 @@ a-townchain-os/
 │       └── manager.atc
 ├── backend/
 │   ├── .env.example
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── __init__.py
 │   ├── api/
 │   │   ├── __init__.py
@@ -496,7 +598,13 @@ a-townchain-os/
 │       ├── __init__.py
 │       └── wallet.atc
 ├── blockchain/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── __init__.py
 │   ├── atcoin/
 │   │   └── __init__.py
@@ -587,22 +695,50 @@ a-townchain-os/
 │   └── zkp/
 │       ├── __init__.py
 │       └── groth16.atc
+├── bootloader/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
+├── ci/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── ci-cd-fix/
 │   ├── README.md
 │   ├── apply-fix.sh
 │   ├── ci-cd.yml
 │   └── codeql.yml
+├── cli/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── config/
 │   ├── ai_models.json
 │   ├── kai_config.toml
 │   ├── mainnet_genesis.json
 │   └── settings.json
 ├── contracts/
+│   ├── .gitignore
 │   ├── CHANGELOG.md
 │   ├── DEPLOYMENT.md
+│   ├── FILE_REGISTER.md
 │   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
 │   ├── SECURITY.md
+│   ├── STATUS.md
 │   ├── atc8300/
 │   │   ├── atc8300.atc
 │   │   └── atc8300_token.py
@@ -631,6 +767,14 @@ a-townchain-os/
 │   └── kai_cli.atc
 ├── devnet/
 │   └── README.md
+├── dns/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── docker/
 │   ├── Dockerfile.backend
 │   ├── Dockerfile.bootstrap
@@ -648,16 +792,19 @@ a-townchain-os/
 │   ├── AGENT_COORDINATION.md
 │   ├── AGENT_POLICY.md
 │   ├── AGENT_PROTOCOL.md
+│   ├── ARCHITECTURE_TREES.md
 │   ├── ATCLANG_AGENT_BUILD_GUIDE.md
 │   ├── ATC_93_BYTECODE_SPEC.md
 │   ├── AUDIT_REPORT.md
 │   ├── CLEANUP_LOG.md
 │   ├── CLUSTER_ARCHITECTURE.md
 │   ├── COMMUNITY_ANNOUNCEMENT.md
+│   ├── COMPLETENESS_AUDIT.md
 │   ├── DECISIONS_REGISTER.md
 │   ├── DEPRECATED.md
 │   ├── DEVELOPER_ONBOARDING.md
 │   ├── ECOSYSTEM_BRAIN.md
+│   ├── FILE_NAMING_CONVENTIONS.md
 │   ├── FILE_REGISTER.md
 │   ├── FIXES.md
 │   ├── GAP_ANALYSIS_v1.0.md
@@ -942,9 +1089,13 @@ a-townchain-os/
 │   ├── whitepaper/
 │   │   ├── .github/
 │   │   │   └── FUNDING.yml
+│   │   ├── .gitignore
 │   │   ├── CHANGELOG.md
+│   │   ├── FILE_REGISTER.md
 │   │   ├── LICENSE
 │   │   ├── README.md
+│   │   ├── ROADMAP.md
+│   │   ├── STATUS.md
 │   │   └── WHITEPAPER.md
 │   └── wiki/
 │       ├── atclang/
@@ -1086,10 +1237,30 @@ a-townchain-os/
 │               ├── DEPLOYMENT.md
 │               ├── DESIGN.md
 │               └── THEME.md
-├── franchise/
+├── drivers/
+│   ├── .gitignore
 │   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
+├── explorer/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
+├── franchise/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── api/
 │   │   └── routes.py
 │   ├── contracts/
@@ -1102,7 +1273,13 @@ a-townchain-os/
 │   ├── factory.py
 │   └── requirements.txt
 ├── frontend/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── __mocks__/
 │   │   └── styleMock.js
 │   ├── admin/
@@ -1132,19 +1309,27 @@ a-townchain-os/
 │   │   └── .gitkeep
 │   ├── tsconfig.json
 │   └── ui/
+│       ├── .gitignore
 │       ├── CHANGELOG.md
 │       ├── DESIGN.md
+│       ├── FILE_REGISTER.md
 │       ├── LICENSE
 │       ├── README.md
+│       ├── ROADMAP.md
+│       ├── STATUS.md
 │       ├── assets/
 │       │   └── js/
 │       │       └── api.js
 │       └── index.html
 ├── gateway/
+│   ├── .gitignore
 │   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
 │   ├── SECURITY.md
+│   ├── STATUS.md
 │   ├── __init__.py
 │   ├── atclang/
 │   │   ├── .env.example
@@ -1187,13 +1372,19 @@ a-townchain-os/
 │   ├── router.py
 │   └── service_discovery.atc
 ├── genesis-engine/
+│   ├── .gitignore
 │   ├── ARCHITECTURE.md
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── FRANCHISE_FACTORY.md
 │   ├── FRANCHISE_FACTORY_V2.md
 │   ├── GENESIS_NEXUS_V5.md
 │   ├── GENESIS_OS_V4.md
+│   ├── LICENSE
 │   ├── METAFACTORY_V3.md
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── VISION_EVOLUTION_LOG.md
 │   └── engine/
 │       ├── MILESTONE_1.md
@@ -1205,6 +1396,14 @@ a-townchain-os/
 │       ├── requirements.txt
 │       └── tests/
 │           └── test_ecs.py
+├── ide/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── integrations/
 │   ├── README.md
 │   ├── calendar_tasks.md
@@ -1236,11 +1435,15 @@ a-townchain-os/
 │   │   ├── atcnet.atc
 │   │   └── atcnet.py
 │   ├── python/
+│   │   ├── .gitignore
 │   │   ├── ARCHITECTURE.md
 │   │   ├── CHANGELOG.md
+│   │   ├── FILE_REGISTER.md
 │   │   ├── LICENSE
 │   │   ├── README.md
+│   │   ├── ROADMAP.md
 │   │   ├── SECURITY.md
+│   │   ├── STATUS.md
 │   │   ├── consensus/
 │   │   │   ├── consensus.atc
 │   │   │   ├── poh_integration.py
@@ -1262,12 +1465,24 @@ a-townchain-os/
 │   │   └── requirements.txt
 │   └── requirements.txt
 ├── linux/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
 │   ├── Cargo.toml
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   └── src/
 │       └── main.rs
 ├── mobile/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── __init__.py
 │   ├── wallet/
 │   │   ├── __init__.py
@@ -1534,11 +1749,15 @@ a-townchain-os/
 │   ├── prometheus.yml
 │   └── prometheus_metrics.atc
 ├── network/
+│   ├── .gitignore
 │   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── LICENSE
 │   ├── PROTOCOL.md
 │   ├── README.md
+│   ├── ROADMAP.md
 │   ├── SECURITY.md
+│   ├── STATUS.md
 │   ├── atcnet.atc
 │   ├── atcnet.py
 │   ├── bootstrap_client.py
@@ -1577,9 +1796,23 @@ a-townchain-os/
 │   ├── sync-docs.sh
 │   ├── test-report.sh
 │   └── test.sh
-├── shivacore/
-│   ├── Cargo.toml
+├── sdk/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
+├── shivacore/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── Cargo.toml
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── boot/
 │   │   ├── Cargo.toml
 │   │   └── src/
@@ -1652,10 +1885,14 @@ a-townchain-os/
 │           ├── vm.rs
 │           └── vmm.rs
 ├── shivamon/
+│   ├── .gitignore
 │   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── GAME_SPEC.md
 │   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── api/
 │   │   ├── game_routes.py
 │   │   └── marketplace_routes.py
@@ -1730,6 +1967,7 @@ a-townchain-os/
 │       ├── node.py
 │       └── p2p_propagation.py
 ├── standards/
+│   ├── .gitignore
 │   ├── ATC/
 │   │   ├── ATC-0009-BRIDGE.md
 │   │   └── ATC_STANDARDS.md
@@ -1738,10 +1976,21 @@ a-townchain-os/
 │   │   └── ATS_STANDARDS.md
 │   ├── ATS_STANDARDS.md
 │   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
 │   ├── LICENSE
 │   ├── OVERVIEW.md
-│   └── README.md
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── start.atc
+├── stdlib/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── tests/
 │   ├── __init__.py
 │   ├── e2e/
@@ -1790,11 +2039,33 @@ a-townchain-os/
 │       ├── test_gateway.py
 │       └── test_kai_integration.py
 ├── tools/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
 │   ├── README.md
+│   ├── ROADMAP.md
+│   ├── STATUS.md
 │   ├── atc_issues_summary.atc
 │   ├── bigquery_pipeline.atc
 │   ├── ecdsa_impl.atc
 │   └── hf_review_pipeline.atc
+├── vm/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
+├── wallet/
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── FILE_REGISTER.md
+│   ├── LICENSE
+│   ├── README.md
+│   ├── ROADMAP.md
+│   └── STATUS.md
 ├── wiki/
 │   ├── LICENSE
 │   ├── README.md
@@ -1823,15 +2094,21 @@ a-townchain-os/
 │   ├── genesis_communication_layer_v2.md
 │   └── genesis_franchise_factory_v1.md
 └── windows/
+    ├── .gitignore
+    ├── CHANGELOG.md
     ├── Cargo.toml
+    ├── FILE_REGISTER.md
+    ├── LICENSE
     ├── README.md
+    ├── ROADMAP.md
+    ├── STATUS.md
     └── src/
         └── main.rs
 ```
 
 ## a-townchain-os-docs
 
-**Dateien:** 1902 | **Verzeichnisse:** 417 | **Tiefe:** 6 Level max
+**Dateien:** 2112 | **Verzeichnisse:** 457
 
 ```
 a-townchain-os-docs/
@@ -2278,9 +2555,11 @@ a-townchain-os-docs/
 │   ├── ATCLANG_AGENT_BUILD_GUIDE.md
 │   ├── AUDIT_REPORT.md
 │   ├── CLUSTER_ARCHITECTURE.md
+│   ├── COMPLETENESS_AUDIT.md
 │   ├── DECISIONS_REGISTER.md
 │   ├── DEPRECATED.md
 │   ├── ECOSYSTEM_BRAIN.md
+│   ├── FILE_NAMING_CONVENTIONS.md
 │   ├── FILE_REGISTER.md
 │   ├── FIXES.md
 │   ├── KAI_INTEGRATION.md
@@ -3049,7 +3328,16 @@ a-townchain-os-docs/
 │   ├── ecdsa_impl.atc
 │   └── hf_review_pipeline.atc
 └── wiki/
+    ├── aistudio-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   └── STATUS.md
     ├── atclang/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3067,7 +3355,21 @@ a-townchain-os-docs/
     │       ├── STDLIB.md
     │       ├── SYNTAX_FULL.md
     │       └── VM.md
+    ├── atclang-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── MODULES.md
+    │       └── ROADMAP.md
     ├── atcnet/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3077,7 +3379,76 @@ a-townchain-os-docs/
     │       ├── ROADMAP.md
     │       ├── SECURITY.md
     │       └── TOPOLOGY.md
+    ├── atcpkg-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
+    ├── backend-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── API.md
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
+    ├── blockchain-wiki/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── CONSENSUS.md
+    │       ├── MEMPOOL.md
+    │       ├── ROADMAP.md
+    │       └── VALIDATORS.md
+    ├── bootloader-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
+    ├── ci-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ROADMAP.md
+    │       └── WORKFLOWS.md
+    ├── cli-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── COMMANDS.md
+    │       └── ROADMAP.md
     ├── contracts/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3089,7 +3460,41 @@ a-townchain-os-docs/
     │       ├── ROADMAP.md
     │       ├── SECURITY.md
     │       └── TODO.md
+    ├── dns-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
+    ├── drivers-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── DRIVER_LIST.md
+    │       └── ROADMAP.md
+    ├── explorer-wiki/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── API.md
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
     ├── franchise/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3101,9 +3506,22 @@ a-townchain-os-docs/
     │       ├── SECURITY.md
     │       └── TOKEN_ECONOMY.md
     ├── franchise-factory/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   └── README.md
+    ├── frontend-wiki/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── COMPONENTS.md
+    │       └── ROADMAP.md
     ├── gateway/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3113,11 +3531,28 @@ a-townchain-os-docs/
     │       ├── ROADMAP.md
     │       ├── ROUTES.md
     │       └── SECURITY.md
+    ├── genesis-engine-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   └── STATUS.md
     ├── genesis_communication_layer_v2.md
     ├── genesis_franchise_factory_v1.md
+    ├── ide-wiki/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── LSP.md
+    │       └── ROADMAP.md
     ├── kai-os/
     │   ├── .github/
     │   │   └── .gitkeep
+    │   ├── .gitignore
     │   ├── AAA_ASSET_SYSTEM_v1.md
     │   ├── AGENT_MANIFEST.md
     │   ├── AGENT_MASTERRULES.md
@@ -3125,6 +3560,7 @@ a-townchain-os-docs/
     │   ├── CHANGELOG.md
     │   ├── CONNECTION_MAP.md
     │   ├── ECOSYSTEM.md
+    │   ├── FILE_REGISTER.md
     │   ├── FIXES.md
     │   ├── GENESIS_BUS_ARCHITECTURE.md
     │   ├── GENESIS_CIVILIZATION_PLATFORM_v4.md
@@ -3932,6 +4368,8 @@ a-townchain-os-docs/
     │       ├── ecdsa_impl.atc
     │       └── hf_review_pipeline.atc
     ├── kernel/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3946,7 +4384,16 @@ a-townchain-os-docs/
     │       ├── ROADMAP.md
     │       ├── SECURITY.md
     │       └── TODO.md
+    ├── linux-edition-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   └── STATUS.md
     ├── main/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3972,7 +4419,43 @@ a-townchain-os-docs/
     │       ├── SYNTAX.md
     │       ├── TODO.md
     │       └── WHITEPAPER.md
+    ├── mobile-wiki/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
+    ├── sdk-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── API.md
+    │       ├── ARCHITECTURE.md
+    │       └── ROADMAP.md
+    ├── shivacore-tools-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   └── STATUS.md
+    ├── shivacore-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   └── STATUS.md
     ├── shivamon/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3984,6 +4467,8 @@ a-townchain-os-docs/
     │       ├── ROADMAP.md
     │       └── TODO.md
     ├── standards/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
     │   ├── LICENSE
     │   ├── README.md
     │   └── docs/
@@ -3991,21 +4476,63 @@ a-townchain-os-docs/
     │       ├── ATS_STANDARDS.md
     │       ├── OVERVIEW.md
     │       └── ROADMAP.md
-    └── ui/
+    ├── stdlib-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── MODULES.md
+    │       └── ROADMAP.md
+    ├── ui/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── API.md
+    │       ├── COMPONENTS.md
+    │       ├── DEPLOYMENT.md
+    │       ├── DESIGN.md
+    │       ├── ROADMAP.md
+    │       └── THEME.md
+    ├── vm-wiki/
+    │   ├── .gitignore
+    │   ├── ARCHITECTURE.md
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── MODULES.md
+    │   ├── README.md
+    │   ├── STATUS.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── OPCODES.md
+    │       └── ROADMAP.md
+    ├── wallet-wiki/
+    │   ├── .gitignore
+    │   ├── FILE_REGISTER.md
+    │   ├── LICENSE
+    │   ├── README.md
+    │   └── docs/
+    │       ├── ARCHITECTURE.md
+    │       ├── ROADMAP.md
+    │       └── SECURITY.md
+    └── windows-edition-wiki/
+        ├── .gitignore
+        ├── ARCHITECTURE.md
         ├── LICENSE
+        ├── MODULES.md
         ├── README.md
-        └── docs/
-            ├── API.md
-            ├── COMPONENTS.md
-            ├── DEPLOYMENT.md
-            ├── DESIGN.md
-            ├── ROADMAP.md
-            └── THEME.md
+        └── STATUS.md
 ```
 
 ## a-townchain-os-wiki
 
-**Dateien:** 26 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 26 | **Verzeichnisse:** 1
 
 ```
 a-townchain-os-wiki/
@@ -4040,7 +4567,7 @@ a-townchain-os-wiki/
 
 ## atc-aistudio
 
-**Dateien:** 248 | **Verzeichnisse:** 21 | **Tiefe:** 6 Level max
+**Dateien:** 248 | **Verzeichnisse:** 21
 
 ```
 atc-aistudio/
@@ -4315,9 +4842,24 @@ atc-aistudio/
             └── GovernanceView.tsx
 ```
 
+## atc-aistudio-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-aistudio-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+└── STATUS.md
+```
+
 ## atc-atclang
 
-**Dateien:** 41 | **Verzeichnisse:** 8 | **Tiefe:** 6 Level max
+**Dateien:** 41 | **Verzeichnisse:** 8
 
 ```
 atc-atclang/
@@ -4372,9 +4914,28 @@ atc-atclang/
     └── atcvm.py
 ```
 
+## atc-atclang-wiki
+
+**Dateien:** 10 | **Verzeichnisse:** 1
+
+```
+atc-atclang-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── MODULES.md
+    └── ROADMAP.md
+```
+
 ## atc-atcpkg
 
-**Dateien:** 13 | **Verzeichnisse:** 3 | **Tiefe:** 6 Level max
+**Dateien:** 13 | **Verzeichnisse:** 3
 
 ```
 atc-atcpkg/
@@ -4396,9 +4957,27 @@ atc-atcpkg/
     └── manager.atc
 ```
 
+## atc-atcpkg-wiki
+
+**Dateien:** 9 | **Verzeichnisse:** 1
+
+```
+atc-atcpkg-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
 ## atc-backend
 
-**Dateien:** 27 | **Verzeichnisse:** 5 | **Tiefe:** 6 Level max
+**Dateien:** 27 | **Verzeichnisse:** 5
 
 ```
 atc-backend/
@@ -4436,9 +5015,28 @@ atc-backend/
     └── wallet.atc
 ```
 
+## atc-backend-wiki
+
+**Dateien:** 10 | **Verzeichnisse:** 1
+
+```
+atc-backend-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── API.md
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
 ## atc-blockchain
 
-**Dateien:** 78 | **Verzeichnisse:** 18 | **Tiefe:** 6 Level max
+**Dateien:** 78 | **Verzeichnisse:** 18
 
 ```
 atc-blockchain/
@@ -4540,9 +5138,126 @@ atc-blockchain/
     └── groth16.atc
 ```
 
+## atc-blockchain-wiki
+
+**Dateien:** 9 | **Verzeichnisse:** 1
+
+```
+atc-blockchain-wiki/
+├── .gitignore
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── CONSENSUS.md
+    ├── MEMPOOL.md
+    ├── ROADMAP.md
+    └── VALIDATORS.md
+```
+
+## atc-bootloader
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-bootloader/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-bootloader-wiki
+
+**Dateien:** 9 | **Verzeichnisse:** 1
+
+```
+atc-bootloader-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
+## atc-ci
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-ci/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-ci-wiki
+
+**Dateien:** 9 | **Verzeichnisse:** 1
+
+```
+atc-ci-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ROADMAP.md
+    └── WORKFLOWS.md
+```
+
+## atc-cli
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-cli/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-cli-wiki
+
+**Dateien:** 9 | **Verzeichnisse:** 1
+
+```
+atc-cli-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── COMMANDS.md
+    └── ROADMAP.md
+```
+
 ## atc-contracts
 
-**Dateien:** 23 | **Verzeichnisse:** 8 | **Tiefe:** 6 Level max
+**Dateien:** 23 | **Verzeichnisse:** 8
 
 ```
 atc-contracts/
@@ -4581,7 +5296,7 @@ atc-contracts/
 
 ## atc-contracts-wiki
 
-**Dateien:** 12 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 12 | **Verzeichnisse:** 1
 
 ```
 atc-contracts-wiki/
@@ -4600,9 +5315,107 @@ atc-contracts-wiki/
     └── TODO.md
 ```
 
+## atc-dns
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-dns/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-dns-wiki
+
+**Dateien:** 9 | **Verzeichnisse:** 1
+
+```
+atc-dns-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
+## atc-drivers
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-drivers/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-drivers-wiki
+
+**Dateien:** 10 | **Verzeichnisse:** 1
+
+```
+atc-drivers-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── DRIVER_LIST.md
+    └── ROADMAP.md
+```
+
+## atc-explorer
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-explorer/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-explorer-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 1
+
+```
+atc-explorer-wiki/
+├── .gitignore
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+└── docs/
+    ├── API.md
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
 ## atc-franchise
 
-**Dateien:** 15 | **Verzeichnisse:** 3 | **Tiefe:** 6 Level max
+**Dateien:** 15 | **Verzeichnisse:** 3
 
 ```
 atc-franchise/
@@ -4628,7 +5441,7 @@ atc-franchise/
 
 ## atc-franchise-wiki
 
-**Dateien:** 11 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 11 | **Verzeichnisse:** 1
 
 ```
 atc-franchise-wiki/
@@ -4648,7 +5461,7 @@ atc-franchise-wiki/
 
 ## atc-frontend
 
-**Dateien:** 12 | **Verzeichnisse:** 5 | **Tiefe:** 6 Level max
+**Dateien:** 12 | **Verzeichnisse:** 5
 
 ```
 atc-frontend/
@@ -4671,9 +5484,25 @@ atc-frontend/
 └── index.html
 ```
 
+## atc-frontend-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 1
+
+```
+atc-frontend-wiki/
+├── .gitignore
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── COMPONENTS.md
+    └── ROADMAP.md
+```
+
 ## atc-gateway
 
-**Dateien:** 43 | **Verzeichnisse:** 6 | **Tiefe:** 6 Level max
+**Dateien:** 43 | **Verzeichnisse:** 6
 
 ```
 atc-gateway/
@@ -4730,7 +5559,7 @@ atc-gateway/
 
 ## atc-gateway-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 10 | **Verzeichnisse:** 1
 
 ```
 atc-gateway-wiki/
@@ -4749,7 +5578,7 @@ atc-gateway-wiki/
 
 ## atc-genesis-engine
 
-**Dateien:** 20 | **Verzeichnisse:** 4 | **Tiefe:** 6 Level max
+**Dateien:** 20 | **Verzeichnisse:** 4
 
 ```
 atc-genesis-engine/
@@ -4779,9 +5608,55 @@ atc-genesis-engine/
         └── test_ecs.py
 ```
 
+## atc-genesis-engine-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-genesis-engine-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+└── STATUS.md
+```
+
+## atc-ide
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-ide/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-ide-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 1
+
+```
+atc-ide-wiki/
+├── .gitignore
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── LSP.md
+    └── ROADMAP.md
+```
+
 ## atc-kernel
 
-**Dateien:** 22 | **Verzeichnisse:** 6 | **Tiefe:** 6 Level max
+**Dateien:** 22 | **Verzeichnisse:** 6
 
 ```
 atc-kernel/
@@ -4817,7 +5692,7 @@ atc-kernel/
 
 ## atc-kernel-wiki
 
-**Dateien:** 15 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 15 | **Verzeichnisse:** 1
 
 ```
 atc-kernel-wiki/
@@ -4841,7 +5716,7 @@ atc-kernel-wiki/
 
 ## atc-linux-edition
 
-**Dateien:** 9 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 9 | **Verzeichnisse:** 1
 
 ```
 atc-linux-edition/
@@ -4857,9 +5732,24 @@ atc-linux-edition/
     └── main.rs
 ```
 
+## atc-linux-edition-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-linux-edition-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+└── STATUS.md
+```
+
 ## atc-mobile
 
-**Dateien:** 11 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 11 | **Verzeichnisse:** 1
 
 ```
 atc-mobile/
@@ -4877,9 +5767,58 @@ atc-mobile/
 └── wallet_api.atc
 ```
 
+## atc-mobile-wiki
+
+**Dateien:** 6 | **Verzeichnisse:** 1
+
+```
+atc-mobile-wiki/
+├── .gitignore
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+└── docs/
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
+## atc-sdk
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-sdk/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-sdk-wiki
+
+**Dateien:** 10 | **Verzeichnisse:** 1
+
+```
+atc-sdk-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── API.md
+    ├── ARCHITECTURE.md
+    └── ROADMAP.md
+```
+
 ## atc-shivacore
 
-**Dateien:** 2157 | **Verzeichnisse:** 1054 | **Tiefe:** 6 Level max
+**Dateien:** 2157 | **Verzeichnisse:** 1054
 
 ```
 atc-shivacore/
@@ -5389,7 +6328,7 @@ atc-shivacore/
 
 ## atc-shivacore-tools
 
-**Dateien:** 7 | **Verzeichnisse:** 0 | **Tiefe:** 6 Level max
+**Dateien:** 7 | **Verzeichnisse:** 0
 
 ```
 atc-shivacore-tools/
@@ -5402,9 +6341,39 @@ atc-shivacore-tools/
 └── STATUS.md
 ```
 
+## atc-shivacore-tools-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-shivacore-tools-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+└── STATUS.md
+```
+
+## atc-shivacore-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-shivacore-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+└── STATUS.md
+```
+
 ## atc-shivamon
 
-**Dateien:** 15 | **Verzeichnisse:** 3 | **Tiefe:** 6 Level max
+**Dateien:** 15 | **Verzeichnisse:** 3
 
 ```
 atc-shivamon/
@@ -5430,7 +6399,7 @@ atc-shivamon/
 
 ## atc-shivamon-wiki
 
-**Dateien:** 11 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 11 | **Verzeichnisse:** 1
 
 ```
 atc-shivamon-wiki/
@@ -5450,7 +6419,7 @@ atc-shivamon-wiki/
 
 ## atc-standards
 
-**Dateien:** 13 | **Verzeichnisse:** 2 | **Tiefe:** 6 Level max
+**Dateien:** 13 | **Verzeichnisse:** 2
 
 ```
 atc-standards/
@@ -5473,7 +6442,7 @@ atc-standards/
 
 ## atc-standards-wiki
 
-**Dateien:** 8 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 8 | **Verzeichnisse:** 1
 
 ```
 atc-standards-wiki/
@@ -5488,9 +6457,43 @@ atc-standards-wiki/
     └── ROADMAP.md
 ```
 
+## atc-stdlib
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-stdlib/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-stdlib-wiki
+
+**Dateien:** 10 | **Verzeichnisse:** 1
+
+```
+atc-stdlib-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── MODULES.md
+    └── ROADMAP.md
+```
+
 ## atc-ui
 
-**Dateien:** 10 | **Verzeichnisse:** 2 | **Tiefe:** 6 Level max
+**Dateien:** 10 | **Verzeichnisse:** 2
 
 ```
 atc-ui/
@@ -5510,7 +6513,7 @@ atc-ui/
 
 ## atc-ui-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 10 | **Verzeichnisse:** 1
 
 ```
 atc-ui-wiki/
@@ -5527,9 +6530,74 @@ atc-ui-wiki/
     └── THEME.md
 ```
 
+## atc-vm
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-vm/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-vm-wiki
+
+**Dateien:** 10 | **Verzeichnisse:** 1
+
+```
+atc-vm-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+├── STATUS.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── OPCODES.md
+    └── ROADMAP.md
+```
+
+## atc-wallet
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-wallet/
+├── .gitignore
+├── CHANGELOG.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+├── ROADMAP.md
+└── STATUS.md
+```
+
+## atc-wallet-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 1
+
+```
+atc-wallet-wiki/
+├── .gitignore
+├── FILE_REGISTER.md
+├── LICENSE
+├── README.md
+└── docs/
+    ├── ARCHITECTURE.md
+    ├── ROADMAP.md
+    └── SECURITY.md
+```
+
 ## atc-whitepaper
 
-**Dateien:** 9 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 9 | **Verzeichnisse:** 1
 
 ```
 atc-whitepaper/
@@ -5547,7 +6615,7 @@ atc-whitepaper/
 
 ## atc-windows-edition
 
-**Dateien:** 9 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 9 | **Verzeichnisse:** 1
 
 ```
 atc-windows-edition/
@@ -5563,9 +6631,24 @@ atc-windows-edition/
     └── main.rs
 ```
 
+## atc-windows-edition-wiki
+
+**Dateien:** 7 | **Verzeichnisse:** 0
+
+```
+atc-windows-edition-wiki/
+├── .gitignore
+├── ARCHITECTURE.md
+├── FILE_REGISTER.md
+├── LICENSE
+├── MODULES.md
+├── README.md
+└── STATUS.md
+```
+
 ## atclang
 
-**Dateien:** 32 | **Verzeichnisse:** 7 | **Tiefe:** 6 Level max
+**Dateien:** 32 | **Verzeichnisse:** 7
 
 ```
 atclang/
@@ -5612,7 +6695,7 @@ atclang/
 
 ## atclang-wiki
 
-**Dateien:** 18 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 18 | **Verzeichnisse:** 1
 
 ```
 atclang-wiki/
@@ -5639,7 +6722,7 @@ atclang-wiki/
 
 ## atcnet
 
-**Dateien:** 17 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 17 | **Verzeichnisse:** 1
 
 ```
 atcnet/
@@ -5665,7 +6748,7 @@ atcnet/
 
 ## atcnet-wiki
 
-**Dateien:** 10 | **Verzeichnisse:** 1 | **Tiefe:** 6 Level max
+**Dateien:** 10 | **Verzeichnisse:** 1
 
 ```
 atcnet-wiki/
@@ -5684,7 +6767,7 @@ atcnet-wiki/
 
 ## franchise-factory-wiki
 
-**Dateien:** 4 | **Verzeichnisse:** 0 | **Tiefe:** 6 Level max
+**Dateien:** 4 | **Verzeichnisse:** 0
 
 ```
 franchise-factory-wiki/
@@ -5696,7 +6779,7 @@ franchise-factory-wiki/
 
 ## kai-os-wiki
 
-**Dateien:** 739 | **Verzeichnisse:** 175 | **Tiefe:** 6 Level max
+**Dateien:** 739 | **Verzeichnisse:** 175
 
 ```
 kai-os-wiki/
