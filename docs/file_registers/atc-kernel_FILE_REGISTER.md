@@ -4,7 +4,7 @@
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
 > **Auto-generiert:** 2026-08-05 04:00 UTC | **Agent:** Aurora (MasterBrain · Base44)
-> **Letzter Commit:** `978e420 fix: unified naming conventions — ShivaCoreDev→A-TownChain-Okosystem`
+> **Letzter Commit:** `978e420 fix: unified naming conventions — A-TownChain-Okosystems→A-TownChain-Okosystem`
 
 ---
 

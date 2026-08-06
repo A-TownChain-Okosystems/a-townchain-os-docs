@@ -15,7 +15,7 @@
 | AD-006 | **ATCLang First** — keine anderen Sprachen | ✅ RESOLVED | Python/Sol = temporäre Stubs |
 | AD-007 | **EVM Registry irrelevant** | ✅ RESOLVED | Mit AD-004 zusammengeführt |
 | AD-003 | Voting-Power Snapshot (Flash-Loan-Schutz) | ⏳ Sprint 2.5 | Freigabe durch Michael erforderlich |
-| AD-005 | AIP-001 Agent Interaction Protocol | ⏳ Sprint 2.3 | Aurora arbeitet Spec aus |
+| AD-005 | ATC-97 Agent Interaction Protocol | ⏳ Sprint 2.3 | Aurora arbeitet Spec aus |
 
 ---
 
@@ -106,7 +106,7 @@
 | ATCLang Contract-System | #12 | `atc8300.atc` On-Chain |
 | ATCFS Kernel-Integration | #23 | Dezentrales Dateisystem live |
 | Gas-System aktivieren | #24 | EIP-1559-Mechanismus (Non-EVM) |
-| AIP-001 Protokoll-Spec | AD-005 | Aurora erarbeitet Spezifikation |
+| ATC-97 Protokoll-Spec | AD-005 | Aurora erarbeitet Spezifikation |
 | ATC-5100 REVIEW | — | ATCLang Language Spec freigeben |
 
 ### Sprint 2.4 — ShivaOS Syscalls + IPC 🟡 GEPLANT
@@ -114,8 +114,8 @@
 
 | Task | Issue | Ziel |
 |------|-------|------|
-| Vollständige Syscall-Tabelle | #32 | KIP-001 APPROVED |
-| IPC Bus vollständig testen | #51 | AIP-001 implementiert |
+| Vollständige Syscall-Tabelle | #32 | ATC-96 APPROVED |
+| IPC Bus vollständig testen | #51 | ATC-97 implementiert |
 | ZKP Groth16 integrieren | #49 | `blockchain/zkp/groth16.py` live |
 
 ### Sprint 2.5 — NFT + Marketplace + Explorer 🟡 GEPLANT
@@ -213,7 +213,7 @@
 | ATC-5101 | ATCLang VM Bytecode Format | DRAFT | 2.3 → REVIEW |
 | ATC-5102 | ATCLang Standard Library | DRAFT | 2.4 → REVIEW |
 | ATC-5103 | ATCLang Test Framework | DRAFT | 2.4 → REVIEW |
-| AIP-001 | Agent Interaction Protocol | DRAFT | 2.3 → SPEC |
+| ATC-97 | Agent Interaction Protocol | DRAFT | 2.3 → SPEC |
 
 ---
 
@@ -253,7 +253,7 @@
 ## Nächste Schritte (direkt nach v1.0)
 
 1. **Sprint 2.2 entblocken** — Tests T-002–T-005 (#8) implementieren
-2. **AD-005 ausarbeiten** — AIP-001 Protokoll-Spezifikation (Aurora)
+2. **AD-005 ausarbeiten** — ATC-97 Protokoll-Spezifikation (Aurora)
 3. **AD-003 freigeben** — Flash-Loan-Fix in `dao_live.py` (Michael)
 4. **ATC-5100 REVIEW** — ATCLang Language Spec zur Freigabe
 

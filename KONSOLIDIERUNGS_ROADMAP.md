@@ -377,7 +377,7 @@ Woche 9-10: K8 — Release v1.0
 | #91 | K7 | Tests & QA (≥80% Coverage) |
 | #92 | K8 | Release v1.0 |
 | #69 | Sprint 3.3 | Security-Audit |
-| #80 | Sprint 3.0 | AIP-001 Spezifikation |
+| #80 | Sprint 3.0 | ATC-97 Spezifikation |
 | #70 | Sprint 4.0 | Validator-Nodes Mainnet |
 | #71 | Sprint 4.0 | Genesis Block Mainnet |
 | #93 | Bug | 4 Sync-Warnungen beheben |

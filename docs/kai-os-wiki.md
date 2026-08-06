@@ -15915,13 +15915,13 @@ Branch-Protection blockiert API-Push von Workflow-Dateien. Fix-Dateien in `ci-cd
 
 ---
 
-## Lizenzmodell (ATC-LIC / ATS-LIC)
+## Lizenzmodell (ATC-LIC / ATC-LIC)
 
 A-TownChain nutzt ein **monetarisiertes, autonomes Open-Source-Oekosystem**.
 
 - [Lizenz-Uebersicht](LICENSING_OVERVIEW.md)
 - [ATC-LIC — Smart Contract Licenses](standards/ATC-LIC-SMART_CONTRACT_LICENSE.md)
-- [ATS-LIC — System & Hardware Licenses](standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md)
+- [ATC-LIC — System & Hardware Licenses](standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md)
 - [Compliance-Handbuch (BaFin)](compliance/COMPLIANCE_HANDBUCH.md)
 - [Smart-Contract-Richtlinie](compliance/SMART_CONTRACT_RICHTLINIE.md)
 

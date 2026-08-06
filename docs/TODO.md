@@ -200,13 +200,13 @@
 *MASTER_TODO v1.0.0 — Aurora (MasterBrain · Base44) · 05.07.2026 · 92 ATCLang-Module · 0 Python-Stubs*
 ---
 
-## 🔒 BaFin-Compliance — ATC-LIC / ATS-LIC Lizenzmodell
+## 🔒 BaFin-Compliance — ATC-LIC / ATC-LIC Lizenzmodell
 
 ### ✅ Erledigt
 - [x] Proprietary LICENSE auf 24 Repos (All Rights Reserved)
 - [x] Copyright-Header auf 760+ Source-Dateien
 - [x] ATC-LIC Spezifikation dokumentiert (12KB)
-- [x] ATS-LIC Spezifikation dokumentiert (4.4KB)
+- [x] ATC-LIC Spezifikation dokumentiert (4.4KB)
 - [x] Compliance-Handbuch erstellt (5.2KB)
 - [x] Smart-Contract-Richtlinie erstellt (21KB, BaFin-Policy)
 - [x] ATVM License Gate Spec erstellt (7.2KB)
@@ -227,10 +227,10 @@
 - [ ] License Management CRUD-Interface
 - [ ] Royalty Monitor (Echtzeit WebSocket Feed)
 - [ ] Compliance Report Export (CSV/JSON fuer BaFin-Audit)
-- [ ] Node Status & TPM-Verifikation (ATS-LIC Integration)
+- [ ] Node Status & TPM-Verifikation (ATC-LIC Integration)
 - [ ] Patent & IP Registry mit DAG-Verankerung
 
-### 📐 Geplant — ATS-LIC Hardware-Integration (Q4 2026)
+### 📐 Geplant — ATC-LIC Hardware-Integration (Q4 2026)
 - [ ] TPM-Attestation Module in ShivaOS Kernel (ATS-1000+)
 - [ ] Secure Boot Signature Verification
 - [ ] Node-Lizenzierung (VALIDATOR/COMPUTE/STORAGE/GATEWAY/FULL)

@@ -138,7 +138,7 @@ operiert unterhalb des Betriebssystems.
 SCHICHTEN-MODELL
 ├── Layer 0: Hardware (TPM, CPU, RAM)
 ├── Layer 1: ShivaOS Kernel (ATS-1000+)
-│   ├── ATS-LIC: Hardware-Zertifikat-Verifikation
+│   ├── ATC-LIC: Hardware-Zertifikat-Verifikation
 │   └── Secure Boot: Kernel-Signatur-Pruefung
 ├── Layer 2: ATVM (A-Town Virtual Machine) ← HIER
 │   ├── License Gate: Code-Hash -> Registry -> Royalty
@@ -201,11 +201,11 @@ Das License Gate ist **nicht umgehbar**:
 |----------------|--------|
 | Code ohne Lizenz ausfuehren | ATVM blockt physisch |
 | ATVM umgehen | ATVM ist im Kernel (ATS-1000+) |
-| Kernel modifizieren | Secure Boot verhindert (ATS-LIC) |
+| Kernel modifizieren | Secure Boot verhindert (ATC-LIC) |
 | Registry manipulieren | Smart Contract on-chain (ATC-01) |
 | Royalty umleiten | Atomic Transaction (kein Zwischenzustand) |
 | Ausfuehrung loggen ohne Bezahlung | Atomar — beides oder keins |
-| Node ohne TPM betreiben | ATS-LIC verweigert Netzwerk-Zugang |
+| Node ohne TPM betreiben | ATC-LIC verweigert Netzwerk-Zugang |
 
 ### 4.4 Sandbox-Isolation
 
@@ -525,7 +525,7 @@ DAO-GOVERNED LICENSE FLOW
 
 ### 7.4 Hardware-Sicherheit
 
-- [x] TPM-Attestation fuer jeden Node (ATS-LIC)
+- [x] TPM-Attestation fuer jeden Node (ATC-LIC)
 - [x] Secure Boot verhindert Kernel-Manipulation
 - [x] Tamper-Detection erkennt Hardware-Veraenderung
 - [x] Nur lizenzierte Hardware im Netzwerk
@@ -569,7 +569,7 @@ durch Netzwerk-Partition moeglich:
 | Dokument | Bezug |
 |---------|------|
 | [ATC-LIC Spezifikation](../standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | Hauptstandard |
-| [ATS-LIC Spezifikation](../standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen |
+| [ATC-LIC Spezifikation](../standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen |
 | [Compliance-Handbuch](COMPLIANCE_HANDBUCH.md) | Uebergeordnetes Handbuch |
 | [Lizenz-Uebersicht](../LICENSING_OVERVIEW.md) | Zentrale Uebersicht |
 | ATC-01 | Smart Contracts |

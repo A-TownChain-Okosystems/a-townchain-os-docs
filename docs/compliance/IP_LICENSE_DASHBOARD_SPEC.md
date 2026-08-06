@@ -4,7 +4,7 @@
 > **Version:** 1.0.0 | **Datum:** 06.07.2026
 > **Autor:** Michael Wroblewski / ShivaCore / A-TownChain-Okosystems
 > **Status:** TECHNICAL SPEC — Implementation geplant
-> **Referenz-Standard:** ATC-LIC v1.0, ATS-LIC v1.0
+> **Referenz-Standard:** ATC-LIC v1.0, ATC-LIC v1.0
 
 ---
 
@@ -67,7 +67,7 @@ ROYALTY MONITOR (Echtzeit)
     └── Export as CSV/JSON
 ```
 
-### 3.3 Hardware & Node Status (ATS-LIC)
+### 3.3 Hardware & Node Status (ATC-LIC)
 ```
 HARDWARE & NODE STATUS
 ├── Node Overview

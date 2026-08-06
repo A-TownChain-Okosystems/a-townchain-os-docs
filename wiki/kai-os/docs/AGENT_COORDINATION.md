@@ -91,7 +91,7 @@ zeitversetzt oder parallel arbeiten.
 | **Neues Artefakt** | `REALITY_STATUS.md` (Root beider Repos) — einzige Quelle mit script-verifizierten Zahlen, ersetzt verstreute/widerspruechliche Behauptungen in README/ROADMAP/STATUS/Wiki. |
 | **Wichtigster Fund — Python-Stub-Regression** | Frueherer Claim "Migration Complete, 0 Python-Stubs" (05.07.) ist **widerlegt**: 72 reale Python-Dateien aktiv (21 am 06.07. von Agent `...105b5` bewusst aus `aistudio/temp_repo/` zurueckkopiert fuer Testsuite-Kompatibilitaet, plus 51 in `aistudio/temp_repo/` selbst). Banner in `chapter-70`, `MIGRATION_MAP.md`, `STANDARDS_REGISTRY.md` gesetzt. |
 | **Fund — Wiki-Kapitelzahl unverifizierbar** | Nur 9 Dateien folgen `chapter-N-*.md` (63, 70-77). Die behaupteten "69 Kapitel" lassen sich nicht auf reale Dateien 1:1 abbilden; `docs/wiki/kai-os/` ist ein alter, verschachtelter Full-Repo-Schnappschuss (58 Dateien), kein Kapitel. Empfehlung: Kennzahl neu definieren oder streichen. |
-| **Fund — Standards-Registry-Duplikat** | `ATC-0009-BRIDGE.md` existiert zweifach (altes 4-stelliges Format), plus `ATC-LIC`/`ATS-LIC` brechen die "nur ATC-01-99"-Konvention (ATS sollte laut Session vom 05.07. eliminiert sein). 101 tatsaechliche ATC-*.md Dateien, nicht 98/99. |
+| **Fund — Standards-Registry-Duplikat** | `ATC-0009-BRIDGE.md` existiert zweifach (altes 4-stelliges Format), plus `ATC-LIC`/`ATC-LIC` brechen die "nur ATC-01-99"-Konvention (ATS sollte laut Session vom 05.07. eliminiert sein). 101 tatsaechliche ATC-*.md Dateien, nicht 98/99. |
 | **Fixes committed & gepusht** | Chain-ID 9001→9000 (5 Dateien + `config/mainnet_genesis.json`), Parser-Fix fuer String-Pfad-Importe (92→96/176 parsen), Dependency-Sicherheitsupdates (cryptography/requests/python-dotenv/pytest/flask/flask-cors), npm audit fix (11→10 Alerts). Commits: `17a4096` (code), `MILESTONES.md`-Korrektur (docs). |
 | **MILESTONES.md korrigiert** | MK10, MK12-15 von "✅ Erfuellt" auf "🔵 In Arbeit" runtergestuft — Code existiert, parst aber laut REALITY_STATUS.md nicht bzw. ist gar kein ATCLang (Asset-Module = Python-Pseudocode). Neue Bilanz: 5/15 vollstaendig (33,3%) statt vorheriger falscher "10/15 (66,7%)". |
 | **Nicht behoben (bewusst, REGEL 9)** | Parser-v1.0-Upgrade (80 Dateien, Mehrtage-Sprint), Asset-Module-Neuschreibung, 44-Issues-Reopen-Entscheidung, K3/K4-Konsolidierung, npm uuid-Breaking-Fix, Wiki-Kapitel-Neudefinition, ATC-LIC/BaFin-Doku-Status — alle in REALITY_STATUS.md Abschnitt 9 aufgelistet. |
@@ -198,7 +198,7 @@ zeitversetzt oder parallel arbeiten.
 | Roadmap | `docs/ROADMAP.md` | Phase 2 aktiv (Sprint 2.1-2.8) |
 | Konsolidierung | `KONSOLIDIERUNGS_ROADMAP.md` (a-townchain-os) | K1-K8, alle 📋 GEPLANT |
 | Decisions | `docs/DECISIONS_REGISTER.md` | AD-001 bis AD-010 |
-| Lizenz | `docs/LICENSING_OVERVIEW.md` | ATC-LIC/ATS-LIC, BaFin-Bericht draft |
+| Lizenz | `docs/LICENSING_OVERVIEW.md` | ATC-LIC/ATC-LIC, BaFin-Bericht draft |
 | Taegliche Arbeit | `docs/TODO.md` / `docs/STATUS.md` | Live-Task-Baum |
 
 ---
@@ -209,7 +209,7 @@ zeitversetzt oder parallel arbeiten.
 - **Aktueller Ist-Zustand:** 24 Repos noch verteilt, Konsolidierung (K1-K8) geplant, **nicht begonnen**
 - **Code-Sprache:** ATCLang First (AD-006) — Python/TS nur Uebergangsweise
 - **Konsensus:** Hybrid PoW+PoS+PoH (ShivaConsensus)
-- **Lizenzmodell:** ATC-LIC/ATS-LIC, durchgesetzt via ATVM ("Code is Law")
+- **Lizenzmodell:** ATC-LIC/ATC-LIC, durchgesetzt via ATVM ("Code is Law")
 - Volle Details: `docs/architecture/` Verzeichnis
 
 ---

@@ -22,7 +22,7 @@
 | Per-Repo Datei-Register im Haupt-Wiki | ✅ | docs/file_registers/ (22 Dateien + Index) |
 | Per-Repo Datei-Register in Wiki-Repos | ✅ | 10 Wiki-Repos mit FILE_REGISTER.md |
 | Per-Repo Datei-Register im Haupt-Repo | ✅ | docs/file_registers/ in a-townchain-os |
-| Namenskonventionen vereinheitlicht | ✅ | ShivaCoreDev→A-TownChain-Okosystems, v2→v1 |
+| Namenskonventionen vereinheitlicht | ✅ | A-TownChain-Okosystems→A-TownChain-Okosystems, v2→v1 |
 | Kapitelzahl konsistent | ✅ | 69 Kapitel überall |
 
 ---

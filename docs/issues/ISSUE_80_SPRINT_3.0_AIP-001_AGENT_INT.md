@@ -1,4 +1,4 @@
-# Issue #80 — [Sprint 3.0] AIP-001 Agent Interaction Protocol — Spezifikation (AD-005, ATC-97)
+# Issue #80 — [Sprint 3.0] ATC-97 Agent Interaction Protocol — Spezifikation (AD-005, ATC-97)
 
 > **Status:** OPEN | **Erstellt:** 2026-07-04 | **Labels:** enhancement, ai, priority:high, sprint:3.0, decision, roadmap:v2
 > **GitHub:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/80
@@ -11,7 +11,7 @@
 
 > **Roadmap:** v2.0 | **Sprint:** 3.0 | **Tasks:** T-801, T-802
 > **Decision:** AD-005 (DECISION, HIGH)
-> **Standard:** ATC-97 (ehemals AIP-001, DRAFT)
+> **Standard:** ATC-97 (ehemals ATC-97, DRAFT)
 
 ### Ziel
 Spezifikation und Implementation des Agent Interaction Protocol für KI-Agenten im KAI-OS.

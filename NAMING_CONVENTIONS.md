@@ -28,7 +28,7 @@ Dieses Dokument definiert die kanonische Schreibweise aller Projekt-Begriffe. Ab
 | 10 | Spiel/Universum | **Shivamon** | `shivamon` | ~~SHIVAMON~~, ~~ShivaMon~~, ~~shiva_mon~~ |
 | 11 | Betriebssystem-Komponente | **ShivaOS** | `shivaos` | ~~SHIVAOS~~, ~~Shiva OS~~, ~~shiva_os~~ |
 | 12 | Sync-Agent | **Aurora Agent** | `aurora_agent` | ~~AuroraAgent~~, ~~aurora-agent~~ |
-| 13 | Agent Protocol | **AIP-001** (Abkürzung), **Agent Interaction Protocol** (Vollname) | `aip_001` | ~~AIP001~~, ~~AIP_001~~ als Prose |
+| 13 | Agent Protocol | **ATC-97** (Abkürzung), **Agent Interaction Protocol** (Vollname) | `aip_001` | ~~AIP001~~, ~~ATC-97~~ als Prose |
 | 14 | Hauptnetz | **Mainnet** | `mainnet` | ~~MainNet~~, ~~MAINNET~~, ~~main-net~~ |
 | 15 | Testnetz | **Testnet** | `testnet` | ~~TestNet~~, ~~TESTNET~~, ~~test-net~~ |
 | 16 | Bootstrap-Knoten | **Bootstrap Node** | `bootstrap_node` | ~~BootstrapNode~~, ~~BootNode~~, ~~bootnode~~ |

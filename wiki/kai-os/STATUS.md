@@ -38,7 +38,7 @@
 | #87 | [K3] Konsolidierung — Python-Backend zusammenführen | enhancement, priority:high, sprint:K3 | 2026-07-05 |
 | #86 | [K2] Konsolidierung — Monorepo-Struktur erstellen | enhancement, priority:high, sprint:K2 | 2026-07-05 |
 | #85 | [K1] Konsolidierung — Repository Audit & Mapping | enhancement, priority:high, sprint:K1 | 2026-07-05 |
-| #80 | [Sprint 3.0] AIP-001 Agent Interaction Protocol | enhancement, ai, priority:high | 2026-07-05 |
+| #80 | [Sprint 3.0] ATC-97 Agent Interaction Protocol | enhancement, ai, priority:high | 2026-07-05 |
 | #71 | [Sprint 4.0] Genesis Block — Konfiguration & Signierung | priority:medium, mainnet, genesis | 2026-07-05 |
 | #70 | [Sprint 4.0] Validator-Nodes — 10+ Mainnet-Validator | priority:medium, mainnet, validator | 2026-07-05 |
 | #69 | [Sprint 3.3] Security-Audit — Externe Code-Review | priority:high, mainnet, security-audit | 2026-07-05 |

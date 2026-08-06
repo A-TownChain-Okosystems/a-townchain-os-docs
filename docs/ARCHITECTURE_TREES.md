@@ -959,7 +959,7 @@ a-townchain-os/
 │   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
 │   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
 │   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-│   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md
+│   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
 │   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
 │   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
 │   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
@@ -2711,7 +2711,7 @@ a-townchain-os-docs/
 │   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
 │   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
 │   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-│   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md
+│   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
 │   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
 │   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
 │   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
@@ -2831,7 +2831,7 @@ a-townchain-os-docs/
 │   │   ├── ATC-99-ATCLANG_UNIVERSAL_MANDATE.md
 │   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md
 │   │   ├── ATC_ECOSYSTEM_STANDARDS.md
-│   │   ├── ATS-LIC-SYSTEM_HARDWARE_LICENSE.md
+│   │   ├── ATC-LIC-SYSTEM_HARDWARE_LICENSE.md
 │   │   ├── OVERVIEW.md
 │   │   └── STANDARDS_REGISTRY.md
 │   ├── whitepaper/
@@ -3972,7 +3972,7 @@ a-townchain-os-docs/
     │   │   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
     │   │   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
     │   │   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-    │   │   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md
+    │   │   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
     │   │   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
     │   │   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
     │   │   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
@@ -4095,7 +4095,7 @@ a-townchain-os-docs/
     │   │   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md
     │   │   │   ├── ATC_ECOSYSTEM_STANDARDS.md
     │   │   │   ├── ATC_STANDARDS.md
-    │   │   │   ├── ATS-LIC-SYSTEM_HARDWARE_LICENSE.md
+    │   │   │   ├── ATC-LIC-SYSTEM_HARDWARE_LICENSE.md
     │   │   │   ├── ATS_STANDARDS.md
     │   │   │   ├── OVERVIEW.md
     │   │   │   └── STANDARDS_REGISTRY.md
@@ -7226,7 +7226,7 @@ kai-os-wiki/
 │   │   ├── ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md
 │   │   ├── ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md
 │   │   ├── ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md
-│   │   ├── ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md
+│   │   ├── ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md
 │   │   ├── ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md
 │   │   ├── ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md
 │   │   ├── ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md
@@ -7349,7 +7349,7 @@ kai-os-wiki/
 │   │   ├── ATC-LIC-SMART_CONTRACT_LICENSE.md
 │   │   ├── ATC_ECOSYSTEM_STANDARDS.md
 │   │   ├── ATC_STANDARDS.md
-│   │   ├── ATS-LIC-SYSTEM_HARDWARE_LICENSE.md
+│   │   ├── ATC-LIC-SYSTEM_HARDWARE_LICENSE.md
 │   │   ├── ATS_STANDARDS.md
 │   │   ├── OVERVIEW.md
 │   │   └── STANDARDS_REGISTRY.md

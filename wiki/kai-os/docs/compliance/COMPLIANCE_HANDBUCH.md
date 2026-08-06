@@ -23,7 +23,7 @@ nicht erst ausgefuehrt.
 - Lizenz-Typen: PER_CALL, SUBSCRIPTION, PERPETUAL, REVENUE_SHARE, FREEMIUM, DAO_GOVERNED
 - Durchsetzung: Kryptografisch (ATVM Gate), nicht gerichtlich
 
-### 1.2 ATS-LIC (System & Hardware Lizenzen)
+### 1.2 ATC-LIC (System & Hardware Lizenzen)
 - Blockchain fragt kryptografische Hardware-Zertifikate (TPM) ab
 - Node-Lizenzierung: VALIDATOR, COMPUTE, STORAGE, GATEWAY, FULL
 - Secure Boot und Tamper-Detection auf Kernel-Ebene
@@ -51,7 +51,7 @@ nicht erst ausgefuehrt.
 - ATVM verweigert unlizanzierte Ausfuehrung — physisch, nicht juristisch
 - Kein Diskretionsspielraum, keine versehentliche Ausfuehrung
 
-### 2.3 Hardware-Zertifikate (ATS-LIC)
+### 2.3 Hardware-Zertifikate (ATC-LIC)
 - TPM-Attestation als Hardware-Beweis
 - Secure Boot als Integritaetsnachweis
 - Tamper-Detection als Manipulationsschutz
@@ -70,7 +70,7 @@ nicht erst ausgefuehrt.
 | Standard | Beschreibung | Rolle im Compliance |
 |----------|-------------|-------------------|
 | ATC-LIC | Smart Contract Licenses | Software-Lizenzierung, Royalty |
-| ATS-LIC | System & Hardware Licenses | Hardware-Lizenzierung, TPM |
+| ATC-LIC | System & Hardware Licenses | Hardware-Lizenzierung, TPM |
 | ATC-01 | Smart Contracts | License Registry Contract |
 | ATC-03 | Decentralized Identity | Developer & Caller DID |
 | ATC-04 | DAG Consensus | Audit-Trail fuer Lizenzen |
@@ -109,7 +109,7 @@ lokal. Der DAG sorgt fuer globale Konsistenz.
 - [ ] License Registry Smart Contract deployen
 - [ ] Royalty Payment Loop mit ATC-11 implementieren
 - [ ] IP & License Dashboard in GlobusOS
-- [ ] ATS-LIC TPM-Integration in ShivaOS Kernel
+- [ ] ATC-LIC TPM-Integration in ShivaOS Kernel
 - [ ] BaFin-Compliance-Audit (rechtliche Pruefung)
 - [ ] Patent-Anmeldung fuer ATVM License-Gate
 

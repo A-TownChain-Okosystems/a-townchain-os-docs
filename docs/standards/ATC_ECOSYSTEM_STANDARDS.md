@@ -159,7 +159,7 @@ class ATC9900Proposal:
 
 ## ATS-Standards (A-TownChain Technical Standards)
 
-### ATS-001 — Block-Struktur
+### ATC-98 — Block-Struktur
 
 ```python
 class Block:
@@ -431,7 +431,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 | Version | Datum | Änderungen |
 |---------|-------|------------|
-| 1.0.0 | 2026-06-09 | Initiale Version — ATC-001, ATC-8300, ATC-9000, ATC-9900, ATS-001 bis ATS-008 |
+| 1.0.0 | 2026-06-09 | Initiale Version — ATC-001, ATC-8300, ATC-9000, ATC-9900, ATC-98 bis ATS-008 |
 
 ---
 
@@ -1155,9 +1155,9 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 **Lizenz-Typen:** PER_CALL, SUBSCRIPTION, PERPETUAL, REVENUE_SHARE, FREEMIUM, DAO_GOVERNED
 **Durchsetzung:** Kryptografisch (ATVM Gate), nicht gerichtlich
 
-### ATS-LIC — System & Hardware License Protocol DRAFT
-> **Standard-ID:** ATS-LIC v1.0 | **Status:** Draft | **Datum:** 05.07.2026
-> **Dokument:** [Vollstaendige Spezifikation](ATS-LIC-SYSTEM_HARDWARE_LICENSE.md)
+### ATC-LIC — System & Hardware License Protocol DRAFT
+> **Standard-ID:** ATC-LIC v1.0 | **Status:** Draft | **Datum:** 05.07.2026
+> **Dokument:** [Vollstaendige Spezifikation](ATC-LIC-SYSTEM_HARDWARE_LICENSE.md)
 
 **Paradigma:** Hardware-Zertifikate als Voraussetzung fuer Node-Teilnahme
 **Konzept:** TPM-Attestation, Secure Boot, Tamper-Detection auf Kernel-Ebene

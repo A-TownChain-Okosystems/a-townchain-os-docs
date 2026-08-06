@@ -58,7 +58,7 @@ Umfassende Sicherheits-Audit des A-TownChain OS Codebase, inklusive Smart Contra
 
 ## Voraussetzungen
 - ✅ Sprint 2.7 (CI/CD Pipeline) — abgeschlossen
-- 🔵 Sprint 3.0 (AIP-001) — parallel laufend
+- 🔵 Sprint 3.0 (ATC-97) — parallel laufend
 
 ## Deliverables
 1. Security Checklist & Threat Model

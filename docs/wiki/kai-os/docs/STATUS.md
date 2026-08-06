@@ -40,7 +40,7 @@
 ## Offene Issues (16)
 ### 🔴 HIGH (7)
 - #81 ATCLang Standard Library (ATC-94) — Sprint 2.1
-- #80 AIP-001 Agent Protocol (ATC-97) — Sprint 3.0
+- #80 ATC-97 Agent Protocol (ATC-97) — Sprint 3.0
 - #79 CI/CD Pipeline Fix — Sprint 2.7
 - #74 Konsens-Module → ATCLang — Sprint 2.1
 - #73 ATCLang VM Bytecode (ATC-93) — Sprint 2.1

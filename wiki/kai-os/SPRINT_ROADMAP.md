@@ -2,7 +2,7 @@
 
 > **Letztes Update:** 05.07.2026 19:16 (Europe/Berlin)
 > **Status:** 78/82 Issues geschlossen (95.1%) | 4 offen
-> **Aktiver Sprint:** Sprint 3.0 (AIP-001 Agent Protocol)
+> **Aktiver Sprint:** Sprint 3.0 (ATC-97 Agent Protocol)
 > **Nächster Sprint:** Sprint 3.3 (Security Audit)
 
 ---
@@ -132,7 +132,7 @@
 ### 📋 Todos
 
 #### Phase 1: Spezifikation (AD-005)
-- [ ] AIP-001 Architektur-Dokument erstellen (AD-005)
+- [ ] ATC-97 Architektur-Dokument erstellen (AD-005)
 - [ ] ATC-97 Standard Entwurf: Agent Interaction Protocol
 - [ ] Kommunikationsmatrix definieren (Agent ↔ Agent, Agent ↔ Kernel, Agent ↔ Bus)
 - [ ] Message-Format Spezifikation (JSON-RPC 2.0 + ATC-Erweiterungen)
@@ -148,9 +148,9 @@
 #### Phase 3: AIBus Integration
 - [ ] AIBus (AD-13) ↔ AgentRegistry Bridge
 - [ ] Agent Message Routing über AIBus
-- [ ] NPC Agent Integration (Behavior Trees → AIP-001)
-- [ ] Pathfinding Agent (A* → AIP-001 Delegation)
-- [ ] Dialog Agent (LLM Router → AIP-001 Task)
+- [ ] NPC Agent Integration (Behavior Trees → ATC-97)
+- [ ] Pathfinding Agent (A* → ATC-97 Delegation)
+- [ ] Dialog Agent (LLM Router → ATC-97 Task)
 
 #### Phase 4: Safety & Limits
 - [ ] Agent Sandbox (CPU/Memory/Time Limits)
@@ -163,7 +163,7 @@
 - [ ] Unit-Tests für AgentRegistry (≥20 Tests)
 - [ ] Integration-Tests für TaskDelegation (≥10 Tests)
 - [ ] E2E Test: 3-Agent Orchestrierung Szenario
-- [ ] Wiki-Kapitel: "AIP-001 Agent Protocol" (Kap. 75)
+- [ ] Wiki-Kapitel: "ATC-97 Agent Protocol" (Kap. 75)
 - [ ] ATC-97 Standard-Dokumentation im Wiki
 
 ### Voraussetzungen
@@ -174,7 +174,7 @@
 ### Blocker
 Keine — ready to implement
 
-**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md) | [Meilenstein MK7](ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
+**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md) | [Meilenstein MK7](ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
 
 ---
 
@@ -493,7 +493,7 @@ Sprint 2.1-2.7 ✅ → Sprint 3.0 🔵 → Sprint 3.3 🔵 → Sprint 4.0 ⬜ �
 
 ## Nächste Aktionen (Priorisiert)
 
-1. **Sprint 3.0 — #80 AIP-001 Spezifikation** (AD-005 Dokument erstellen)
+1. **Sprint 3.0 — #80 ATC-97 Spezifikation** (AD-005 Dokument erstellen)
 2. **Sprint 3.3 — #69 Security Checklist** (Interne Vorbereitung abschließen)
 3. **Sprint 4.0 — VPS + Domain** (Michael: Hetzner CX21 + .io Domain)
 4. **Sprint 3.1 — UX Polish** (Nach Sprint 3.0 Spezifikation)

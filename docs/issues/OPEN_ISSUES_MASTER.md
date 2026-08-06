@@ -7,7 +7,7 @@
 | # | Titel | Sprint | Standard | Status |
 |---|-------|--------|----------|--------|
 | #81 | ATCLang Standard Library | 2.1 | ATC-94 | ✅ Implementiert (10 Module) |
-| #80 | AIP-001 Agent Protocol | 3.0 | ATC-97 | 📋 AD-005 pending |
+| #80 | ATC-97 Agent Protocol | 3.0 | ATC-97 | 📋 AD-005 pending |
 | #79 | CI/CD Pipeline Fix | 2.7 | — | 🔴 BLOCKED (Michael) |
 | #74 | Konsens → ATCLang | 2.1 | ATC-81–86 | ✅ Migriert (v0.3) |
 | #73 | ATCLang VM Bytecode | 2.1 | ATC-93 | ✅ Implementiert (977L) |

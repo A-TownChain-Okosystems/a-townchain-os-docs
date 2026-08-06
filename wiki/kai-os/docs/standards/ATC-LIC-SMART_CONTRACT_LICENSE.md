@@ -137,7 +137,7 @@ und Hardware-Zertifikate sichtbar macht. Entwickler und Node-Betreiber koennen:
 - **Einnahmen einsehen** — Echtzeit-Royalty-Stream pro Code-Modul
 - **Ausfuehrungen tracken** — Wer hat wann welchen Code ausgefuehrt
 - **Patente verwalten** — IP-Referenzen im DAG
-- **Hardware-Zertifikate** — ATS-LIC TPM-Verifikation
+- **Hardware-Zertifikate** — ATC-LIC TPM-Verifikation
 
 ---
 
@@ -204,8 +204,8 @@ Entwickler mit hoeherer Reputation koennen hoehere Royalties verlangen.
 ATC-LIC kann als Faktor in der Ressourcen-Allokation einfliesen (lizenzierte
 Module bekommen Prioritaet).
 
-### 4.8 ATS-LIC (System & Hardware Licenses)
-ATS-LIC sichert die physikalische Ebene ab (Hardware-Zertifikate).
+### 4.8 ATC-LIC (System & Hardware Licenses)
+ATC-LIC sichert die physikalische Ebene ab (Hardware-Zertifikate).
 
 ---
 
@@ -236,7 +236,7 @@ ATS-LIC sichert die physikalische Ebene ab (Hardware-Zertifikate).
 | Developer Registration UI | Dashboard fuer Entwickler | GEPLANT |
 | IP & License Dashboard | GlobusOS Integration | GEPLANT |
 | BaFin Compliance Audit | Rechtliche Pruefung | GEPLANT |
-| ATS-LIC Integration | Hardware-Zertifikate | GEPLANT |
+| ATC-LIC Integration | Hardware-Zertifikate | GEPLANT |
 
 ---
 

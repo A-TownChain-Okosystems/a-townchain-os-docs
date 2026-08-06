@@ -149,7 +149,7 @@ Skalierbares Netzwerk mit Sharding und Monitoring.
 **Issues:** #80 (offen)
 
 ### Geplant
-- AIP-001: Agent Interaction Protocol (AD-005, ATC-97)
+- ATC-97: Agent Interaction Protocol (AD-005, ATC-97)
 - KI-Agent-Kommunikationsprotokoll
 - Agent-Discovery und Registration
 - Task-Delegation und Result-Collection
@@ -312,7 +312,7 @@ MK10 ⬜ → MK11 ⬜ ───────────────────�
 ```
 
 **Nächste Schritte:**
-1. MK7: #80 implementieren (AIP-001 Agent Protocol)
+1. MK7: #80 implementieren (ATC-97 Agent Protocol)
 2. MK8: #69 vorbereiten (Security Audit)
 3. MK9: VPS + Domain besorgen (Michael)
 

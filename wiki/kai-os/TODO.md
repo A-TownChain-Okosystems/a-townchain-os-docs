@@ -17,7 +17,7 @@
 | #87 | [K3] Konsolidierung — Python-Backend zusammenführen (10 Repo | GitHub | OPEN |
 | #86 | [K2] Konsolidierung — Monorepo-Struktur erstellen | GitHub | OPEN |
 | #85 | [K1] Konsolidierung — Repository Audit & Mapping | GitHub | OPEN |
-| #80 | [Sprint 3.0] AIP-001 Agent Interaction Protocol — Spezifikat | GitHub | OPEN |
+| #80 | [Sprint 3.0] ATC-97 Agent Interaction Protocol — Spezifikat | GitHub | OPEN |
 | #71 | [Sprint 4.0] Genesis Block — Konfiguration & Signierung (Cha | GitHub | OPEN |
 | #70 | [Sprint 4.0] Validator-Nodes — 10+ Mainnet-Validator bestäti | GitHub | OPEN |
 | #69 | [Sprint 3.3] Security-Audit — Externe Code-Review & Schwachs | GitHub | OPEN |

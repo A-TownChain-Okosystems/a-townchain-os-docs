@@ -530,7 +530,7 @@
 | `./docs/issues/ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md` | 40 | md |
 | `./docs/issues/ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md` | 39 | md |
 | `./docs/issues/ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md` | 43 | md |
-| `./docs/issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md` | 40 | md |
+| `./docs/issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md` | 40 | md |
 | `./docs/issues/ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md` | 40 | md |
 | `./docs/issues/ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md` | 40 | md |
 | `./docs/issues/ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md` | 40 | md |
@@ -646,7 +646,7 @@
 | `./docs/standards/ATC-LIC-SMART_CONTRACT_LICENSE.md` | 297 | md |
 | `./docs/standards/ATC/ATC-0009-BRIDGE.md` | 55 | md |
 | `./docs/standards/ATC_ECOSYSTEM_STANDARDS.md` | 1169 | md |
-| `./docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md` | 117 | md |
+| `./docs/standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md` | 117 | md |
 | `./docs/standards/OVERVIEW.md` | 40 | md |
 | `./docs/standards/STANDARDS_REGISTRY.md` | 207 | md |
 | `./docs/whitepaper/.github/FUNDING.yml` | 2 | yml |
@@ -1454,7 +1454,7 @@
 | `./wiki/kai-os/docs/issues/ISSUE_77_SPRINT_2.4_EVENTBUS_VS_IPCBU.md` | 40 | md |
 | `./wiki/kai-os/docs/issues/ISSUE_78_SPRINT_2.6_VOTING-POWER_SNAP.md` | 39 | md |
 | `./wiki/kai-os/docs/issues/ISSUE_79_SPRINT_2.7_CI-CD_PIPELINE_RE.md` | 43 | md |
-| `./wiki/kai-os/docs/issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md` | 40 | md |
+| `./wiki/kai-os/docs/issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md` | 40 | md |
 | `./wiki/kai-os/docs/issues/ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md` | 40 | md |
 | `./wiki/kai-os/docs/issues/ISSUE_82_SPRINT_2.2_CORE_NODE_PROTOCO.md` | 40 | md |
 | `./wiki/kai-os/docs/issues/ISSUE_83_SPRINT_2.2_INTER-NODE_LATENC.md` | 40 | md |
@@ -1572,7 +1572,7 @@
 | `./wiki/kai-os/docs/standards/ATC/ATC-0009-BRIDGE.md` | 55 | md |
 | `./wiki/kai-os/docs/standards/ATC_ECOSYSTEM_STANDARDS.md` | 447 | md |
 | `./wiki/kai-os/docs/standards/ATC_STANDARDS.md` | 233 | md |
-| `./wiki/kai-os/docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md` | 117 | md |
+| `./wiki/kai-os/docs/standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md` | 117 | md |
 | `./wiki/kai-os/docs/standards/ATS_STANDARDS.md` | 283 | md |
 | `./wiki/kai-os/docs/standards/OVERVIEW.md` | 40 | md |
 | `./wiki/kai-os/docs/standards/STANDARDS_REGISTRY.md` | 207 | md |

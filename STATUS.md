@@ -20,7 +20,7 @@
 - #88 [[K4] Konsolidierung — TypeScript Frontend zusammenführen](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/88)
 - #87 [[K3] Konsolidierung — Python-Backend zusammenführen (10 Repos → src/)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/87)
 - #86 [[K2] Konsolidierung — Monorepo-Struktur erstellen](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/86)
-- #80 [[Sprint 3.0] AIP-001 Agent Interaction Protocol — Spezifikation (AD-005, ATC-97)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/80)
+- #80 [[Sprint 3.0] ATC-97 Agent Interaction Protocol — Spezifikation (AD-005, ATC-97)](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/80)
 - #69 [[Sprint 3.3] Security-Audit — Externe Code-Review & Schwachstellen-Analyse](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/69)
 
 ### 🟡 MEDIUM  

@@ -1,5 +1,5 @@
 # BaFin-Konformitaetsbericht
-## A-TownChain Lizenzmodell (ATC-LIC / ATS-LIC)
+## A-TownChain Lizenzmodell (ATC-LIC / ATC-LIC)
 
 > **Dokument-ID:** BAFIN-ATC-LIC-2026-001
 > **Version:** 1.0.0 (Entwurf)
@@ -7,7 +7,7 @@
 > **Erstellt von:** Michael Wroblewski / ShivaCore / A-TownChain-Okosystems
 > **Unterstuertz durch:** Aurora (Superagent), Base44
 > **Klassifikation:** Vertraulich — Zur Einreichung bei der BaFin
-> **Bezug:** Smart-Contract-Richtlinie v1.0.0, ATC-LIC v1.0, ATS-LIC v1.0
+> **Bezug:** Smart-Contract-Richtlinie v1.0.0, ATC-LIC v1.0, ATC-LIC v1.0
 
 ---
 
@@ -39,7 +39,7 @@ v1.0.0 zur Vorab-Abklaerung mit der BaFin.
 
 ### 1.2 Gegenstand
 - **ATC-LIC v1.0** — Smart Contract License Protocol
-- **ATS-LIC v1.0** — System & Hardware License Protocol
+- **ATC-LIC v1.0** — System & Hardware License Protocol
 - **ATVM License Gate** — Technische Durchsetzungseinheit
 - **Royalty Payment Loop** — Automatisierte Provisionsabwicklung ueber ATC-11 Token
 
@@ -49,7 +49,7 @@ v1.0.0 zur Vorab-Abklaerung mit der BaFin.
 |---------|---------|--------|
 | Smart-Contract-Richtlinie (BaFin-Policy) | 1.0.0 | DRAFT |
 | ATC-LIC Spezifikation | 1.0.0 | DRAFT |
-| ATS-LIC Spezifikation | 1.0.0 | DRAFT |
+| ATC-LIC Spezifikation | 1.0.0 | DRAFT |
 | Compliance-Handbuch | 1.0.0 | DRAFT |
 | ATVM License Gate Spec | 1.0.0 | DRAFT |
 | IP & License Dashboard Spec | 1.0.0 | DRAFT |
@@ -64,7 +64,7 @@ v1.0.0 zur Vorab-Abklaerung mit der BaFin.
 Layer 0: Hardware (TPM 2.0, CPU, RAM)
     |
 Layer 1: ShivaOS Kernel (ATS-1000+)
-    |-- ATS-LIC: Hardware-Zertifikat-Verifikation
+    |-- ATC-LIC: Hardware-Zertifikat-Verifikation
     |-- Secure Boot: Kernel-Signatur-Pruefung
     |-- Tamper Detection: Hardware-Manipulationserkennung
     |
@@ -161,10 +161,10 @@ deterministisch und frei von manueller Intervention.
 | Anforderung | Erfuellung | Mechanismus |
 |------------|-----------|------------|
 | Urheberschutz | ✅ | ATVM License Gate (physisch) |
-| Unabanderbarkeit | ✅ | Kernel-Level, Secure Boot (ATS-LIC) |
+| Unabanderbarkeit | ✅ | Kernel-Level, Secure Boot (ATC-LIC) |
 | Keine Umgehung moeglich | ✅ | ATVM im ShivaOS Kernel |
 | Atomare Durchsetzung | ✅ | Transfer + Execution in einer Tx |
-| Hardware-Absicherung | ✅ | TPM 2.0 (ATS-LIC) |
+| Hardware-Absicherung | ✅ | TPM 2.0 (ATC-LIC) |
 
 **Bewertung: KONFORM (uebertragen)** — Die kryptografische Durchsetzung
 uebertrifft die klassische gerichtliche Durchsetzung an Sicherheit, da ein
@@ -190,9 +190,9 @@ unveraenderlichen Audit-Trail im DAG.
 | Anforderung | Erfuellung | Mechanismus |
 |------------|-----------|------------|
 | Sandbox-Isolation | ✅ | Memory/Network/Time/FS Isolation |
-| Secure Boot | ✅ | ATS-LIC, Kernel-Signatur |
-| TPM-Attestation | ✅ | ATS-LIC, Hardware-Zertifikat |
-| Tamper-Detection | ✅ | ATS-LIC, Hardware-Veraenderung |
+| Secure Boot | ✅ | ATC-LIC, Kernel-Signatur |
+| TPM-Attestation | ✅ | ATC-LIC, Hardware-Zertifikat |
+| Tamper-Detection | ✅ | ATC-LIC, Hardware-Veraenderung |
 | ECDSA-Signaturen | ✅ | ATC-03, secp256k1 |
 | Netzwerk-Sicherheit | ✅ | ATC-05 (Post-Quantum Signatures) |
 | ZK-Proofs | ✅ | ATC-21 (Zero-Knowledge Privacy) |
@@ -251,7 +251,7 @@ nachvollziehbar.
 
 | Risiko | Wahrscheinlichkeit | Auswirkung | Mitigation |
 |--------|-------------------|-----------|-----------|
-| Node-Betreiber ohne TPM | Mittel | Mittel | ATS-LIC verweigert Netzwerk-Zugang |
+| Node-Betreiber ohne TPM | Mittel | Mittel | ATC-LIC verweigert Netzwerk-Zugang |
 | Developer vergisst Lizenz-Registrierung | Mittel | Niedrig | Public Domain fallback (kostenlos) |
 | Royalty-Preis zu hoch fuer Adoption | Mittel | Mittel | DAO kann Preise anpassen (ATC-17) |
 | BaFin-Audit verzogert Mainnet-Launch | Mittel | Hoch | Fruehzeitige Einreichung |
@@ -263,7 +263,7 @@ nachvollziehbar.
 ### 6.1 Erklaerung
 
 Hiermit erklaert A-TownChain-Okosystems, vertreten durch Michael Wroblewski
-(ShivaCore), dass das in diesem Bericht beschriebene ATC-LIC/ATS-LIC
+(ShivaCore), dass das in diesem Bericht beschriebene ATC-LIC/ATC-LIC
 Lizenzmodell nach bestem Wissen und Gewissen sowie nach aktuellem Stand der
 Technik entwickelt wurde, um die Anforderungen der BaFin an Transparenz,
 Auditierbarkeit, Determinismus, Durchsetzbarkeit und IT-Sicherheit zu erfuellen.
@@ -280,7 +280,7 @@ Konformitaetserklaerung erfolgt nach:
 Die in diesem Bericht beschriebenen Mechanismen sind Teil der
 Systemarchitektur und werden durch Code erzwungen ("Code is Law"). Eine
 Abweichung von der beschriebenen Implementierung ist ohne Kernel-Modifikation
-nicht moeglich, welche wiederum durch Secure Boot (ATS-LIC) verhindert wird.
+nicht moeglich, welche wiederum durch Secure Boot (ATC-LIC) verhindert wird.
 
 ---
 
@@ -311,7 +311,7 @@ nicht moeglich, welche wiederum durch Secure Boot (ATS-LIC) verhindert wird.
 - [x] Developer-Einnahmen einsehbar
 
 ### 7.4 Hardware-Sicherheit
-- [x] TPM-Attestation fuer jeden Node (ATS-LIC)
+- [x] TPM-Attestation fuer jeden Node (ATC-LIC)
 - [x] Secure Boot verhindert Kernel-Manipulation
 - [x] Tamper-Detection erkennt Hardware-Veraenderung
 - [x] Nur lizenzierte Hardware im Netzwerk
@@ -332,8 +332,8 @@ nicht moeglich, welche wiederum durch Secure Boot (ATS-LIC) verhindert wird.
 
 ### 7.7 IT-Sicherheit
 - [x] Sandbox-Isolation (Memory/Network/Time/FS)
-- [x] Secure Boot (ATS-LIC)
-- [x] TPM 2.0 (ATS-LIC)
+- [x] Secure Boot (ATC-LIC)
+- [x] TPM 2.0 (ATC-LIC)
 - [x] ECDSA secp256k1 (ATC-03)
 - [x] Post-Quantum Signatures (ATC-05)
 - [x] ZK-Proofs (ATC-21)
@@ -349,7 +349,7 @@ nicht moeglich, welche wiederum durch Secure Boot (ATS-LIC) verhindert wird.
 | License Registry Smart Contract | Q3 2026 | 📐 Geplant |
 | Royalty Payment Loop (ATC-11) | Q3 2026 | 📐 Geplant |
 | IP & License Dashboard (GlobusOS) | Q3 2026 | 📐 Geplant |
-| ATS-LIC Hardware-Integration | Q4 2026 | 📐 Geplant |
+| ATC-LIC Hardware-Integration | Q4 2026 | 📐 Geplant |
 | Externes Security-Audit | August 2026 | 📐 Geplant |
 | Rechtliche Pruefung (Fachanwalt) | August 2026 | 📐 Geplant |
 | Patent-Anmeldung ATVM License Gate | August 2026 | 📐 Geplant |
@@ -363,7 +363,7 @@ nicht moeglich, welche wiederum durch Secure Boot (ATS-LIC) verhindert wird.
 | Anlage | Dokument | Referenz |
 |--------|---------|----------|
 | A | ATC-LIC Spezifikation | docs/standards/ATC-LIC-SMART_CONTRACT_LICENSE.md |
-| B | ATS-LIC Spezifikation | docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md |
+| B | ATC-LIC Spezifikation | docs/standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md |
 | C | Smart-Contract-Richtlinie | docs/compliance/SMART_CONTRACT_RICHTLINIE.md |
 | D | ATVM License Gate Spec | docs/compliance/ATVM_LICENSE_GATE_SPEC.md |
 | E | IP & License Dashboard Spec | docs/compliance/IP_LICENSE_DASHBOARD_SPEC.md |
@@ -379,7 +379,7 @@ nicht moeglich, welche wiederum durch Secure Boot (ATS-LIC) verhindert wird.
 |---------|-----------|
 | ATVM | A-Town Virtual Machine — Ausfuehrungsumgebung fuer Smart Contracts |
 | ATC-LIC | ATC Smart Contract License Protocol |
-| ATS-LIC | ATS System & Hardware License Protocol |
+| ATC-LIC | ATS System & Hardware License Protocol |
 | ATC-11 | Fungible Token Standard (Royalty-Zahlungsmittel) |
 | DAG | Directed Acyclic Graph (ATC-04, Konsensus-Struktur) |
 | DID | Decentralized Identity (ATC-03) |

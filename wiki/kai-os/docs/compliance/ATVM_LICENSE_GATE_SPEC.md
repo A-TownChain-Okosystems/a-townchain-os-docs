@@ -28,7 +28,7 @@ ATVM ARCHITECTURE
 │   └── Event Emitter
 └── Security Layer
     ├── ECDSA Signature Verifier (ATC-03)
-    ├── Tamper Detection (ATS-LIC)
+    ├── Tamper Detection (ATC-LIC)
     └── Secure Boot Integration (ATS-1000+)
 ```
 
@@ -213,8 +213,8 @@ enum LicenseError {
 | Replay Execution | DAG ensures immutability |
 | Double-spend Royalty | Atomic transaction prevents |
 | Sandbox Escape | Memory/CPU/Network isolation |
-| Tamper with ATVM | Secure Boot (ATS-LIC) |
-| Unauthorized Node | TPM-Attestation (ATS-LIC) |
+| Tamper with ATVM | Secure Boot (ATC-LIC) |
+| Unauthorized Node | TPM-Attestation (ATC-LIC) |
 
 ### 5.2 Key Management
 
@@ -233,7 +233,7 @@ enum LicenseError {
 | ATC-03 Identity | DID verification | ATVM -> Identity Contract |
 | ATC-17 DAO | Governance queries | ATVM -> DAO Contract |
 | ATC-37 Resource Alloc | Quota checks | ATVM -> Scheduler |
-| ATS-LIC TPM | Hardware attestation | ATVM -> Kernel -> TPM |
+| ATC-LIC TPM | Hardware attestation | ATVM -> Kernel -> TPM |
 | GlobusOS Dashboard | Read-only queries | Dashboard -> Registry |
 
 ---

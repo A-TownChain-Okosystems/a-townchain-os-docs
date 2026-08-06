@@ -159,7 +159,7 @@ class ATC9900Proposal:
 
 ## ATS-Standards (A-TownChain Technical Standards)
 
-### ATS-001 — Block-Struktur
+### ATC-98 — Block-Struktur
 
 ```python
 class Block:
@@ -431,7 +431,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 | Version | Datum | Änderungen |
 |---------|-------|------------|
-| 1.0.0 | 2026-06-09 | Initiale Version — ATC-001, ATC-8300, ATC-9000, ATC-9900, ATS-001 bis ATS-008 |
+| 1.0.0 | 2026-06-09 | Initiale Version — ATC-001, ATC-8300, ATC-9000, ATC-9900, ATC-98 bis ATS-008 |
 
 ---
 

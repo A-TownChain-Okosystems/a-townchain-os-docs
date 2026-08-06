@@ -42,7 +42,7 @@ A-Town Virtual Machine (ATVM) **physisch gar nicht erst ausgefuehrt**.
 **Durchsetzung:** ATVM License Gate — unlizenzierter Code wird nicht ausgefuehrt.
 **Zahlungsmittel:** ATC-11 Token — atomarer Transfer bei jeder Ausfuehrung.
 
-### ATS-LIC — System & Hardware Licenses
+### ATC-LIC — System & Hardware Licenses
 > Hardware-Zertifikate auf physikalischer Ebene
 
 | Lizenz-Typ | Beschreibung |
@@ -109,7 +109,7 @@ Hardware-Zertifikate:
 | Proprietary LICENSE (24 Repos) | ✅ Abgeschlossen |
 | Copyright-Header (760+ Dateien) | ✅ Abgeschlossen |
 | ATC-LIC Spezifikation | ✅ DRAFT dokumentiert |
-| ATS-LIC Spezifikation | ✅ DRAFT dokumentiert |
+| ATC-LIC Spezifikation | ✅ DRAFT dokumentiert |
 | Compliance-Handbuch | ✅ DRAFT dokumentiert |
 | Smart-Contract-Richtlinie (BaFin) | ✅ DRAFT dokumentiert |
 | ATVM License Gate Spec | ✅ DRAFT dokumentiert |
@@ -127,7 +127,7 @@ Hardware-Zertifikate:
 | Dokument | Beschreibung |
 |---------|-------------|
 | [ATC-LIC Spezifikation](standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | Hauptstandard: ATVM Gate, Lizenz-Typen, Code-Beispiele |
-| [ATS-LIC Spezifikation](standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen: TPM, Node-Lizenzierung, Secure Boot |
+| [ATC-LIC Spezifikation](standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen: TPM, Node-Lizenzierung, Secure Boot |
 | [Compliance-Handbuch](compliance/COMPLIANCE_HANDBUCH.md) | BaFin-konforme Gesamtdokumentation |
 | [BaFin-Konformitaetsbericht](compliance/BAFIN_KONFORMITAETSBERICHT.md) | Formeller Bericht BAFIN-ATC-LIC-2026-001 zur BaFin-Einreichung |
 | [Smart-Contract-Richtlinie](compliance/SMART_CONTRACT_RICHTLINIE.md) | BaFin-Policy: Provisionsabwicklung, Urheberschutz, Audit |

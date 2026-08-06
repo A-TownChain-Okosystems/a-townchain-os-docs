@@ -32,7 +32,7 @@
 | **Issues offen** | 3 (#69 Security-Audit, #70 Validator-Nodes, #71 Genesis Block) |
 | **Issues geschlossen** | 68 |
 | **Sprint aktiv** | 2.2 (80%), 2.1 startet (July) |
-| **Decisions offen** | AD-003 (Flash-Loan, Michael), AD-005 (AIP-001, Aurora) |
+| **Decisions offen** | AD-003 (Flash-Loan, Michael), AD-005 (ATC-97, Aurora) |
 | **Decisions res.** | 5/7 |
 | **Wiki** | 69 Kapitel, 488 KB |
 | **Archivierte Repos** | 22 (1.179 KB, vollständig migriert) |
@@ -104,7 +104,7 @@
 *Automatisch generiert · Täglicher Full-Sync 08:00 Europe/Berlin*
 ---
 
-## BaFin-Compliance (ATC-LIC / ATS-LIC)
+## BaFin-Compliance (ATC-LIC / ATC-LIC)
 
 **Lizenzmodell:** Monetarisiertes, autonomes Open-Source-Oekosystem ("Code is Law")
 **Dokument-ID:** BAFIN-ATC-LIC-2026-001 (Entwurf)

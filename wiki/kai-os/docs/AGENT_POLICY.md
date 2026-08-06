@@ -170,7 +170,7 @@ Diese Items werden bei **jedem** Sync-Lauf gemeldet bis sie resolved sind:
 | AD-005 | 🟠 MEDIUM | ATC-97 Agent Interaction Protocol | ⏳ DECISION — Aurora arbeitet Spec aus, Sprint 3.0 | DECISIONS_REGISTER |
 | AD-006 | ✅ RESOLVED | Python vs. Substrate → ATCLang First | Gueltig seit 12.06.2026 | DECISIONS_REGISTER |
 | AD-007 | ✅ RESOLVED | EVM Chain Registry irrelevant (Non-EVM) | Gueltig seit 14.06.2026 | DECISIONS_REGISTER |
-| AD-008 | ✅ RESOLVED | Lizenzmodell ATC-LIC/ATS-LIC etabliert | 05.07.2026 | DECISIONS_REGISTER |
+| AD-008 | ✅ RESOLVED | Lizenzmodell ATC-LIC/ATC-LIC etabliert | 05.07.2026 | DECISIONS_REGISTER |
 | AD-009 | ✅ RESOLVED | BaFin-Konformitaetsbericht erstellt | 06.07.2026 | DECISIONS_REGISTER |
 | AD-010 | ✅ RESOLVED | Proprietary Lizenz auf 24 Repos | 05.07.2026 | DECISIONS_REGISTER |
 
@@ -202,7 +202,7 @@ Diese Items werden bei **jedem** Sync-Lauf gemeldet bis sie resolved sind:
   - 24/24 Repo-READMEs verlinkt, 24/24 Repos mit proprietaerer LICENSE
   - **Naechster Schritt:** BaFin-Vorab-Abklaerung einreichen (wartet auf Menschen-Freigabe)
   - **Noch offen:** ATVM License Gate Implementation, License Registry Smart Contract,
-    IP & License Dashboard (GlobusOS), ATS-LIC Hardware-Integration — siehe TODO.md
+    IP & License Dashboard (GlobusOS), ATC-LIC Hardware-Integration — siehe TODO.md
 
 ### Fuer den naechsten Agenten wichtig
 1. **Reality-Check strikt einhalten** — jede Behauptung ueber ausgefuehrte Aktionen
@@ -262,7 +262,7 @@ MUSS folgende Dokumente vor jeder Aenderung konsultieren und einhalten:
 - Diese Datei (`AGENT_POLICY.md`) — Sync-Protokoll, Reality-Check, Release-Blocker
 - `docs/standards/STANDARDS_REGISTRY.md` — alle ATC-/ATS-Standards (aktuell 37+)
 - `docs/DECISIONS_REGISTER.md` — verbindliche Architektur-Entscheidungen (Source of Truth)
-- `docs/LICENSING_OVERVIEW.md` — ATC-LIC/ATS-LIC Lizenz-Compliance
+- `docs/LICENSING_OVERVIEW.md` — ATC-LIC/ATC-LIC Lizenz-Compliance
 
 Kein Agent darf einen Standard, ein Protokoll oder eine Richtlinie umgehen,
 ohne dies explizit als neue offene Decision im DECISIONS_REGISTER zu vermerken.

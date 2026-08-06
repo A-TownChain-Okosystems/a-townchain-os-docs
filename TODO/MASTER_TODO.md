@@ -37,7 +37,7 @@
 **Labels:** enhancement, priority:high, sprint:K2
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/86
 
-### #80 [Sprint 3.0] AIP-001 Agent Interaction Protocol — Spezifikation (AD-005, ATC-97)
+### #80 [Sprint 3.0] ATC-97 Agent Interaction Protocol — Spezifikation (AD-005, ATC-97)
 **Labels:** enhancement, ai, priority:high, sprint:3.0, decision, roadmap:v2, MK7-AI-Protocol
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/80
 

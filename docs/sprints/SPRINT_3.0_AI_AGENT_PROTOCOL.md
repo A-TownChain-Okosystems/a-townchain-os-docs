@@ -1,11 +1,11 @@
-# Sprint 3.0 — AI Agent Protocol (AIP-001)
+# Sprint 3.0 — AI Agent Protocol (ATC-97)
 
 > **Issue:** #80 | **Priorität:** HIGH | **Meilenstein:** MK7
 > **Status:** 🔵 IN ARBEIT | **Ziel:** Q3 2026
 
 ## Overview
 
-Implementierung des AIP-001 (Agent Interaction Protocol) als zentrales Kommunikationsprotokoll für KI-Agenten im A-TownChain OS. Standard: ATC-97. Architektur-Decision: AD-005.
+Implementierung des ATC-97 (Agent Interaction Protocol) als zentrales Kommunikationsprotokoll für KI-Agenten im A-TownChain OS. Standard: ATC-97. Architektur-Decision: AD-005.
 
 ## Todos
 
@@ -30,9 +30,9 @@ Implementierung des AIP-001 (Agent Interaction Protocol) als zentrales Kommunika
 ### Phase 3: AIBus Integration (Woche 6-7)
 - [ ] AIBus (AD-13) ↔ AgentRegistry Bridge
 - [ ] Agent Message Routing über AIBus
-- [ ] NPC Agent Integration (Behavior Trees → AIP-001 Wrapper)
-- [ ] Pathfinding Agent (A* → AIP-001 Delegation Pattern)
-- [ ] Dialog Agent (LLM Router → AIP-001 Task Routing)
+- [ ] NPC Agent Integration (Behavior Trees → ATC-97 Wrapper)
+- [ ] Pathfinding Agent (A* → ATC-97 Delegation Pattern)
+- [ ] Dialog Agent (LLM Router → ATC-97 Task Routing)
 - [ ] TelemetryBus Integration (Agent Metrics Stream)
 
 ### Phase 4: Safety & Limits (Woche 8-9)
@@ -47,7 +47,7 @@ Implementierung des AIP-001 (Agent Interaction Protocol) als zentrales Kommunika
 - [ ] Unit-Tests für AgentRegistry (≥20 Tests)
 - [ ] Integration-Tests für TaskDelegation (≥10 Tests)
 - [ ] E2E Test: 3-Agent Orchestrierung Szenario (NPC + Pathfinding + Dialog)
-- [ ] Wiki-Kapitel 75: "AIP-001 Agent Protocol"
+- [ ] Wiki-Kapitel 75: "ATC-97 Agent Protocol"
 - [ ] ATC-97 Standard-Dokumentation im Wiki
 - [ ] Developer Guide: "How to Write an A-TownChain Agent"
 - [ ] API-Referenz: AgentRegistry, TaskDelegation, Orchestration
@@ -66,7 +66,7 @@ Implementierung des AIP-001 (Agent Interaction Protocol) als zentrales Kommunika
 6. Wiki-Kapitel 75 + Developer Guide
 
 ## Querverweise
-- [Issue #80](../issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md)
+- [Issue #80](../issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md)
 - [Roadmap MK7](../ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
 - [Sprint Roadmap](../../SPRINT_ROADMAP.md#-sprint-30--ai-agent-protocol-in-arbeit)
 - [GCL v2.0 Architektur](../wiki/)
