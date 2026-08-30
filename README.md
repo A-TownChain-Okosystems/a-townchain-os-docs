@@ -17,7 +17,6 @@
 ## Architektur-Policy v1.0
 
 - 🔴 **ATCLang First** — Einzige Programmiersprache (ATC-99)
-- 🔴 **Non-EVM Chain** — Keine Ethereum-Kompatibilität
 - 🔴 **SHA-256** — TX-Hashing (AD-001 RESOLVED)
 - 🔴 **Chain-ID 9000** — Proprietäre Non-EVM Chain-ID (AD-004 RESOLVED)
 - ✅ **16 Dienste** — Vollständige Integration, täglicher Sync 08:00 Uhr
