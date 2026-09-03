@@ -1,6 +1,6 @@
 # atc-shivacore-wiki
 
-Wiki für [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore)
+Wiki für [atc-shivacore](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-shivacore)
 
 Dokumentation für ShivaCore Kernel (Rust)
 

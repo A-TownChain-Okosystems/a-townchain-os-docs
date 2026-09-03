@@ -1,6 +1,6 @@
 # atc-shivacore-tools-wiki
 
-Wiki für [atc-shivacore-tools](https://github.com/A-TownChain-Okosystems/atc-shivacore-tools)
+Wiki für [atc-shivacore-tools](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-shivacore-tools)
 
 Dokumentation für ShivaCore Tools
 

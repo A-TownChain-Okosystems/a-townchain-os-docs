@@ -1,6 +1,6 @@
 # 🗺️ `atcpkg` Package Manager Roadmap
 
-> **Repository:** [atc-atcpkg](https://github.com/A-TownChain-Okosystems/atc-atcpkg)  
+> **Repository:** [atc-atcpkg](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-atcpkg)  
 > **Stand:** 2026-08-05  
 
 ---

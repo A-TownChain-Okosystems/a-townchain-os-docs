@@ -4,7 +4,7 @@
 Dokumentation für Linux Edition
 
 ## Komponenten
-- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/atc-linux-edition) für Details
+- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-linux-edition) für Details
 
 ## Abhängigkeiten
 - A-TownChain OS Core

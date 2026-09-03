@@ -1,6 +1,6 @@
 # 📚 Standard Library Modules Reference
 
-> **Repository:** [atc-stdlib](https://github.com/A-TownChain-Okosystems/atc-stdlib)  
+> **Repository:** [atc-stdlib](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-stdlib)  
 > **Stand:** 2026-08-05  
 
 ---

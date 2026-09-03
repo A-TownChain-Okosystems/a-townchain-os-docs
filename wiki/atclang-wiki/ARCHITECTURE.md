@@ -4,7 +4,7 @@
 Dokumentation für ATCLang Compiler
 
 ## Komponenten
-- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/atc-atclang) für Details
+- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-atclang) für Details
 
 ## Abhängigkeiten
 - A-TownChain OS Core

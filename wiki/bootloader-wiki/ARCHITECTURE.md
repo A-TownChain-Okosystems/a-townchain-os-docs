@@ -4,7 +4,7 @@
 Dokumentation für Bootloader
 
 ## Komponenten
-- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/atc-bootloader) für Details
+- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-bootloader) für Details
 
 ## Abhängigkeiten
 - A-TownChain OS Core

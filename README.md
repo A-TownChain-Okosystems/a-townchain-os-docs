@@ -99,4 +99,4 @@ Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All 
 
 ## Verwandte Vision-Projekte
 
-- [`atc-genesis-engine`](https://github.com/A-TownChain-Okosystems/atc-genesis-engine) — separates Vision-/Konzept-Repo fuer eine potenzielle zukuenftige Game-Engine (Genesis Engine) und deren Ausbaustufen. Reines Konzeptmaterial, kein Code, kein aktueller Teil der A-TownChain-Kernentwicklung.
+- [`atc-genesis-engine`](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-genesis-engine) — separates Vision-/Konzept-Repo fuer eine potenzielle zukuenftige Game-Engine (Genesis Engine) und deren Ausbaustufen. Reines Konzeptmaterial, kein Code, kein aktueller Teil der A-TownChain-Kernentwicklung.

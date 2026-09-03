@@ -13,7 +13,7 @@ cd a-townchain-os
 python start.py
 
 # In einem neuen Terminal:
-git clone https://github.com/A-TownChain-Okosystems/atc-franchise
+git clone https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-franchise
 cd atc-franchise
 python deploy/deploy.py
 ```

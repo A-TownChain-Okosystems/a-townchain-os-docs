@@ -1,6 +1,6 @@
 # 🧩 ATCLang Extended Modules & Standard Library Reference
 
-> **Repository:** [atc-atclang](https://github.com/A-TownChain-Okosystems/atc-atclang)  
+> **Repository:** [atc-atclang](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-atclang)  
 > **Stand:** 2026-08-05  
 
 ---

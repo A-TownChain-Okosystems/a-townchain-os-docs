@@ -1,6 +1,6 @@
 # atc-genesis-engine-wiki
 
-Wiki für [atc-genesis-engine](https://github.com/A-TownChain-Okosystems/atc-genesis-engine)
+Wiki für [atc-genesis-engine](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-genesis-engine)
 
 Dokumentation für Genesis Engine
 

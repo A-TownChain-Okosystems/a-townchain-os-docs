@@ -10,4 +10,4 @@
 Alle Contracts prüfen: `python atclang/security/analyzer.py contracts/*.atc`
 
 ## ATC-SEC-Regeln (15 Checks)
-Vollständig: [ATCLang Security Analyzer](https://github.com/A-TownChain-Okosystems/atclang-wiki/blob/main/docs/SECURITY_ANALYZER.md)
+Vollständig: [ATCLang Security Analyzer](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/atclang-wiki/docs/SECURITY_ANALYZER.md)

@@ -1,6 +1,6 @@
 # atc-windows-edition-wiki
 
-Wiki für [atc-windows-edition](https://github.com/A-TownChain-Okosystems/atc-windows-edition)
+Wiki für [atc-windows-edition](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-windows-edition)
 
 Dokumentation für Windows Edition
 

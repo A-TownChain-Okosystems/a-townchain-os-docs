@@ -4,7 +4,7 @@
 Dokumentation für ATCLang Standard Library
 
 ## Komponenten
-- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/atc-stdlib) für Details
+- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-stdlib) für Details
 
 ## Abhängigkeiten
 - A-TownChain OS Core

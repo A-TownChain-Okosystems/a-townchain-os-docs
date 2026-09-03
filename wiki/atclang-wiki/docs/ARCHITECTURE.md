@@ -1,6 +1,6 @@
 # 🏛️ ATCLang Modular System Architecture
 
-> **Repository:** [atc-atclang](https://github.com/A-TownChain-Okosystems/atc-atclang)  
+> **Repository:** [atc-atclang](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-atclang)  
 > **Status:** Active / Production-Ready  
 > **Stand:** 2026-08-05  
 

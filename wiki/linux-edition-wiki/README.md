@@ -1,6 +1,6 @@
 # atc-linux-edition-wiki
 
-Wiki für [atc-linux-edition](https://github.com/A-TownChain-Okosystems/atc-linux-edition)
+Wiki für [atc-linux-edition](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-linux-edition)
 
 Dokumentation für Linux Edition
 

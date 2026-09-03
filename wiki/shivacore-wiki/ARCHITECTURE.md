@@ -4,7 +4,7 @@
 Dokumentation für ShivaCore Kernel (Rust)
 
 ## Komponenten
-- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/atc-shivacore) für Details
+- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-shivacore) für Details
 
 ## Abhängigkeiten
 - A-TownChain OS Core

@@ -1,6 +1,6 @@
 # 🗺️ ATVM (Virtual Machine) Roadmap
 
-> **Repository:** [atc-vm](https://github.com/A-TownChain-Okosystems/atc-vm)  
+> **Repository:** [atc-vm](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-vm)  
 > **Stand:** 2026-08-05  
 
 ---

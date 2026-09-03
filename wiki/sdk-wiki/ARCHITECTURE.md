@@ -4,7 +4,7 @@
 Dokumentation für Software Development Kit
 
 ## Komponenten
-- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/atc-sdk) für Details
+- Siehe [Code-Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-sdk) für Details
 
 ## Abhängigkeiten
 - A-TownChain OS Core

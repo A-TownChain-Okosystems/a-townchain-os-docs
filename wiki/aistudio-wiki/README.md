@@ -1,6 +1,6 @@
 # atc-aistudio-wiki
 
-Wiki für [atc-aistudio](https://github.com/A-TownChain-Okosystems/atc-aistudio)
+Wiki für [atc-aistudio](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-aistudio)
 
 Dokumentation für AI Studio Komponenten
 
