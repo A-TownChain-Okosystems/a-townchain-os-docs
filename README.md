@@ -93,7 +93,7 @@ physisch gar nicht erst ausgefuehrt.
 - **ATC-LIC** — System & Hardware Lizenzen mit TPM-Verifikation
 - **Compliance-Handbuch** — BaFin-konforme Dokumentation
 
-→ [Lizenz-Uebersicht](docs/LICENSING_OVERVIEW.md) | [ATC-LIC](docs/standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | [ATC-LIC](docs/standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md) | [Compliance-Handbuch](docs/compliance/COMPLIANCE_HANDBUCH.md)
+→ [Lizenz-Uebersicht](docs/LICENSING_OVERVIEW.md) | [ATC-LIC](docs/standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | [ATS-LIC](docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | [Compliance-Handbuch](docs/compliance/COMPLIANCE_HANDBUCH.md)
 
 Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.
 

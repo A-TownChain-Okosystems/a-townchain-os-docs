@@ -159,7 +159,7 @@ Eine ausgereifte Franchise Factory dient als Produktionssystem für mehrere Mark
 - [GCL v2.0 Technische Dokumentation](GENESIS_COMMUNICATION_LAYER_v2.md) — AD-00 bis AD-14
 - [Meilensteine](MILESTONES.md) — MK1 bis MK12
 - [ATCLang Spec v1.0](atclang/ATCLANG_SPEC.md) — ATC-92
-- [STATUS.md](STATUS.md) — Projekt-Status
+- [STATUS.md](docs/STATUS.md) — Projekt-Status
 
 ---
 

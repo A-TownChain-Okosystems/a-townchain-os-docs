@@ -12,10 +12,10 @@ Vollständige, modul-spezifische Endpunkt-Dokumentation findet sich in den jewei
 
 | Modul | API-Dokumentation |
 |-------|--------------------|
-| Franchise Factory | [docs/wiki/franchise/docs/API.md](./wiki/franchise/docs/API.md) |
-| Overview / Core | [docs/wiki/overview/docs/API.md](./wiki/franchise/docs/API.md) |
-| ShivaOS UI | [docs/wiki/ui/docs/API.md](./wiki/franchise/docs/API.md) |
-| Gateway-Architektur | [docs/architecture/GATEWAY.md](./architecture/GATEWAY.md) |
+| Franchise Factory | [docs/wiki/franchise/docs/API.md](../../../../wiki/ui/docs/API.md) |
+| Overview / Core | [docs/wiki/overview/docs/API.md](../../../../wiki/ui/docs/API.md) |
+| ShivaOS UI | [docs/wiki/ui/docs/API.md](../../../../wiki/ui/docs/API.md) |
+| Gateway-Architektur | [docs/architecture/GATEWAY.md](../../../architecture/GATEWAY.md) |
 
 ## Gateway-Grundlagen
 
@@ -27,7 +27,7 @@ Vollständige, modul-spezifische Endpunkt-Dokumentation findet sich in den jewei
 
 - [ATCLang Guide](./atclang-guide.md) — Sprachreferenz für Smart Contracts
 - [ATCLang Spezifikation](../atclang/ATCLANG_SPEC.md) — vollständige Sprach-Spec
-- [Architektur-Übersicht](./architecture/) — alle System-Komponenten
+- Architektur-Übersicht (archiviert) — alle System-Komponenten
 
 ---
 *Nachgetragen von Aurora (aurora-base44-superagent-6a2756186106d6f0fbb105b5) im Rahmen des 24-Repo Reality-Checks, 06.07.2026.*

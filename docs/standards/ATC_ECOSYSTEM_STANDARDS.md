@@ -1157,7 +1157,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-LIC — System & Hardware License Protocol DRAFT
 > **Standard-ID:** ATC-LIC v1.0 | **Status:** Draft | **Datum:** 05.07.2026
-> **Dokument:** [Vollstaendige Spezifikation](ATC-LIC-SYSTEM_HARDWARE_LICENSE.md)
+> **Dokument:** [Vollstaendige Spezifikation](ATS-LIC-SYSTEM_HARDWARE_LICENSE.md)
 
 **Paradigma:** Hardware-Zertifikate als Voraussetzung fuer Node-Teilnahme
 **Konzept:** TPM-Attestation, Secure Boot, Tamper-Detection auf Kernel-Ebene

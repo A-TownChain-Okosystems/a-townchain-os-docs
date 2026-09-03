@@ -6,7 +6,7 @@ Dokumentation für Linux Edition
 
 ## Dokumentation
 - [Architektur](ARCHITECTURE.md)
-- [API Reference](API.md)
+- [API Reference](../../docs/archive/wiki/atc-linux-edition-wiki/docs/API.md)
 - [Module](MODULES.md)
 - [Status](STATUS.md)
 

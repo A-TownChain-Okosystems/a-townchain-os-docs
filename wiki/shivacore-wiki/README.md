@@ -6,7 +6,7 @@ Dokumentation für ShivaCore Kernel (Rust)
 
 ## Dokumentation
 - [Architektur](ARCHITECTURE.md)
-- [API Reference](API.md)
+- [API Reference](../../docs/archive/wiki/atc-shivacore-wiki/docs/API.md)
 - [Module](MODULES.md)
 - [Status](STATUS.md)
 

@@ -474,7 +474,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-02 — Liquid State Migration & Failover Mechanics 📐 PARTIAL
 > **Standard-ID:** ATC-02 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-02.docx → [Vollständige Spezifikation](ATC-02-LIQUID_STATE_MIGRATION.md)
+> **Quelldatei:** Atc-02.docx → [Vollständige Spezifikation](../../../standards/ATC-02-LIQUID_STATE_MIGRATION.md)
 
 **Scope:** State-Snapshotting, Netzwerk-Verankerung, Resume-Point, Load-Balancing, Failover
 **Kernkonzept:** "Liquid State" — Daten sind nicht an ein Gerät gebunden, sondern im Netzwerk verankert
@@ -527,7 +527,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-04 — DAG Consensus & Propagation PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-04 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-04.docx -> [Vollstaendige Spezifikation](ATC-04-DAG_CONSENSUS.md)
+> **Quelldatei:** Atc-04.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-04-DAG_CONSENSUS.md)
 
 **Scope:** DAG-basierter Consensus, parallele Event-Verarbeitung, asynchrone Propagation
 **Konzept:** Transaktionen als Graph (DAG) statt als lineare Kette - jedes Event referenziert mehrere Vorgaenger
@@ -545,7 +545,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-05 — Quantum-Resistant Cryptographic Signatures PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-05 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-05.docx -> [Vollstaendige Spezifikation](ATC-05-QUANTUM_RESISTANT_SIGNATURES.md)
+> **Quelldatei:** Atc-05.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-05-QUANTUM_RESISTANT_SIGNATURES.md)
 
 **Scope:** Post-Quanten-Kryptografie (PQC), Hybrid-Signaturen, Algorithmen-Agilitaet
 **Konzept:** Quantenresistente Signaturen als Ergaenzung zu ECDSA (secp256k1)
@@ -562,7 +562,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-06 — Inter-Node Latency Optimization & Routing PARTIAL
 > **Standard-ID:** ATC-06 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-06.docx -> [Vollstaendige Spezifikation](ATC-06-LATENCY_OPTIMIZATION_ROUTING.md)
+> **Quelldatei:** Atc-06.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-06-LATENCY_OPTIMIZATION_ROUTING.md)
 
 **Scope:** Dijkstra-Routing, Latenz-Messung, QoS-Klassifizierung, adaptive Routen-Optimierung
 **Konzept:** Hocheffiziente Kommunikation mit minimaler Verzoegerung zwischen Nodes
@@ -597,7 +597,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-08 — Ephemeral Data Streaming Protocol PARTIAL
 > **Standard-ID:** ATC-08 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-08.docx -> [Vollstaendige Spezifikation](ATC-08-EPHEMERAL_DATA_STREAMING.md)
+> **Quelldatei:** Atc-08.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-08-EPHEMERAL_DATA_STREAMING.md)
 
 **Scope:** Nicht-persistente Datenuebertragung, dezentrales Streaming, E2E-verifizierte ephemere Pakete
 **Konzept:** Daten die nicht auf Chain gehoeren, aber sicher und verifiziert uebertragen werden muessen
@@ -614,7 +614,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-09 — Cross-Chain Interoperability Bridge Protocol OK IMPLEMENTIERT
 > **Standard-ID:** ATC-09 v1.0 | **Status:** Implementiert (ETH+SOL) | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-09.docx -> [Vollstaendige Spezifikation](ATC-09-CROSS_CHAIN_BRIDGE.md)
+> **Quelldatei:** Atc-09.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-09-CROSS_CHAIN_BRIDGE.md)
 
 **Scope:** Atomare Asset-Uebertragung, Cross-Chain Messaging, dezentrale Validierung
 **Konzept:** Bruecke zu Ethereum, Solana und anderen EVM-kompatiblen Chains
@@ -631,7 +631,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 ### ATC-10 — Global Time Synchronization & Oracles PARTIAL
 > **Standard-ID:** ATC-10 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
-> **Quelldatei:** Atc-10.docx -> [Vollstaendige Spezifikation](ATC-10-GLOBAL_TIME_SYNC_ORACLES.md)
+> **Quelldatei:** Atc-10.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-10-GLOBAL_TIME_SYNC_ORACLES.md)
 
 **Scope:** Dezentrale Konsens-Zeit, Oracle-Integration, Zeitstempel-Validierung
 **Konzept:** Gemeinsame Netzwerkzeit ohne zentrale Uhr — PoH als deterministische Zeitbasis
@@ -654,7 +654,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-11 — Fungible Asset Standard OK IMPLEMENTIERT
 > **Standard-ID:** ATC-11 v1.0 | **Status:** Implementiert (ATC-8300) | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie) — Erster Tier-2 Standard
-> **Quelldatei:** Atc-11.docx -> [Vollstaendige Spezifikation](ATC-11-FUNGIBLE_ASSET_STANDARD.md)
+> **Quelldatei:** Atc-11.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-11-FUNGIBLE_ASSET_STANDARD.md)
 
 **Scope:** Fungible Token (ERC-20-Aequivalent), Standard-Schnittstellen, OS-Integration
 **Konzept:** A-TownChain-Aequivalent zum ERC-20 mit KAI-OS-Erweiterungen
@@ -674,7 +674,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-12 — Non-Fungible & Holographic Asset Standard OK IMPLEMENTIERT
 > **Standard-ID:** ATC-12 v1.0 | **Status:** Implementiert (ATC-9000) | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie)
-> **Quelldatei:** Atc-12.docx -> [Vollstaendige Spezifikation](ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md)
+> **Quelldatei:** Atc-12.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-12-NON_FUNGIBLE_HOLOGRAPHIC.md)
 
 **Scope:** NFT Standard, Holographische Struktur, Verhaltens-Skripte, Parent-Child, Marketplace
 **Konzept:** ERC-721-Aequivalent mit "Holographic" Erweiterung — dynamische Objekte, nicht statische Bilder
@@ -693,7 +693,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-14 — Deterministic Smart Contract Execution Standard PARTIAL
 > **Standard-ID:** ATC-14 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie)
-> **Quelldatei:** Atc-14.docx -> [Vollstaendige Spezifikation](ATC-14-DETERMINISTIC_EXECUTION.md)
+> **Quelldatei:** Atc-14.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-14-DETERMINISTIC_EXECUTION.md)
 
 **Scope:** Determinismus, State-Transition-Garantie, Wasm-Sandbox, Gas-Limit, Formalverifikation
 **Konzept:** Jeder Node muss bei derselben Eingabe dasselbe Ergebnis liefern — "globaler Computer"
@@ -712,7 +712,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-15 — Decentralized Mining Protocol (Proof-of-AI) PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-15 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 2 (Bruecke zu Tier 4 KI)
-> **Quelldatei:** Atc-15.docx -> [Vollstaendige Spezifikation](ATC-15-PROOF_OF_AI_MINING.md)
+> **Quelldatei:** Atc-15.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-15-PROOF_OF_AI_MINING.md)
 
 **Scope:** Mining als Inferenz-Leistung, Proof-of-AI Verifikation, Dynamic Rewards
 **Konzept:** Statt Energie fuer Hash-Rechnen zu verschwenden -> produktive KI-Inferenz als Mining
@@ -732,7 +732,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-16 — Referral & Multi-Tier Rewards Logic PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-16 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie)
-> **Quelldatei:** Atc-16.docx -> [Vollstaendige Spezifikation](ATC-16-REFERRAL_REWARDS.md)
+> **Quelldatei:** Atc-16.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-16-REFERRAL_REWARDS.md)
 
 **Scope:** On-Chain Referral-Tracing, Multi-Tier-Belohnungslogik, Sybil-Prevention
 **Konzept:** Virales Wachstum auf der Blockchain — Parent-Child Referral-Graph mit automatischer Reward-Verteilung
@@ -751,7 +751,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-17 — DAO Governance Protocol OK IMPLEMENTIERT
 > **Standard-ID:** ATC-17 v1.0 | **Status:** Implementiert (ATC-9900) | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie)
-> **Quelldatei:** Atc-17.docx -> [Vollstaendige Spezifikation](ATC-17-DAO_GOVERNANCE.md)
+> **Quelldatei:** Atc-17.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-17-DAO_GOVERNANCE.md)
 
 **Scope:** On-Chain Governance, Token-Weighted Voting, Automatisierte Exekution, KI-Agenten-Voting
 **Konzept:** KAI-OS als selbstverwaltendes System — Community und KI-Agenten entscheiden gemeinsam
@@ -770,7 +770,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-18 — Multi-Signature Transaction Authorization OK IMPLEMENTIERT
 > **Standard-ID:** ATC-18 v1.0 | **Status:** Implementiert | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie)
-> **Quelldatei:** Atc-18.docx -> [Vollstaendige Spezifikation](ATC-18-MULTISIG_AUTH.md)
+> **Quelldatei:** Atc-18.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-18-MULTISIG_AUTH.md)
 
 **Scope:** m-of-n MultiSig, Threshold Signatures, Governance-Integration, KI-Agent-MultiSig
 **Konzept:** Vier-Augen-Prinzip auf der Blockchain — kritische Aktionen brauchen mehrere Signaturen
@@ -789,7 +789,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-19 — Automated Market Maker (AMM) Logic OK IMPLEMENTIERT
 > **Standard-ID:** ATC-19 v1.0 | **Status:** Implementiert | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie)
-> **Quelldatei:** Atc-19.docx -> [Vollstaendige Spezifikation](ATC-19-AMM_LOGIC.md)
+> **Quelldatei:** Atc-19.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-19-AMM_LOGIC.md)
 
 **Scope:** Liquiditaetspools, Constant-Product (x*y=k), LP-Token, Trading Fees
 **Konzept:** On-Chain dezentraler Handel ohne Boersen — algorithmische Preisbildung
@@ -808,7 +808,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-20 — Wrapped & Synthetic Asset Deployment PARTIAL
 > **Standard-ID:** ATC-20 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 2 (Logik & Oekonomie) — **TIER 2 ABSCHLUSS**
-> **Quelldatei:** Atc-20.docx -> [Vollstaendige Spezifikation](ATC-20-WRAPPED_SYNTHETIC.md)
+> **Quelldatei:** Atc-20.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-20-WRAPPED_SYNTHETIC.md)
 
 **Scope:** Synthetische Token, Collateralization, Liquidation-Logik, Wrapped Assets
 **Konzept:** Bruecke zu externen Maerkten — synthetische Werten + Wrapped Chain-Assets
@@ -846,7 +846,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-22 — Hardware Abstraction Layer (HAL) & Driver Sandboxing PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-22 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 3 (Operating System Infrastructure)
-> **Quelldatei:** Atc-22.docx -> [Vollstaendige Spezifikation](ATC-22-HAL_DRIVER_SANDBOX.md)
+> **Quelldatei:** Atc-22.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-22-HAL_DRIVER_SANDBOX.md)
 
 **Scope:** HAL Interface, CUDA/Metal/ROCm Backends, Driver Sandboxing, Hardware-Flags
 **Konzept:** Hardware-agnostisch — KAI-OS sieht die Welt als abstrakte Rechenressourcen
@@ -865,7 +865,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-23 — Data-Sharding & Storage Orchestration PARTIAL
 > **Standard-ID:** ATC-23 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 3 (Operating System Infrastructure)
-> **Quelldatei:** Atc-23.docx -> [Vollstaendige Spezifikation](ATC-23-DATA_SHARDING_STORAGE.md)
+> **Quelldatei:** Atc-23.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-23-DATA_SHARDING_STORAGE.md)
 
 **Scope:** Content-Addressing (CID), Dynamisches Sharding, Redundanz, IPFS-Integration
 **Konzept:** Dateisystem-Treiber — intelligente Verteilung von Daten ueber das Netzwerk
@@ -884,7 +884,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-24 — Autonomous Agent Scheduling & Task Orchestration OK IMPLEMENTIERT
 > **Standard-ID:** ATC-24 v1.0 | **Status:** Implementiert | **Datum:** 04.07.2026
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer) — **TIER 4 START**
-> **Quelldatei:** Atc-24.docx -> [Vollstaendige Spezifikation](ATC-24-AGENT_SCHEDULING.md)
+> **Quelldatei:** Atc-24.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-24-AGENT_SCHEDULING.md)
 
 **Scope:** Agenten-Registry, Task-Queuing, QoS-Priorisierung, Arbitrierung, Delegation
 **Konzept:** Das "Gehirn" des KAI-OS — KI-Agenten wissen wann, wie und durch wen Aufgaben erledigt werden
@@ -903,7 +903,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-25 — Tensor Compute Orchestration & Distribution PARTIAL
 > **Standard-ID:** ATC-25 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
-> **Quelldatei:** Atc-25.docx -> [Vollstaendige Spezifikation](ATC-25-TENSOR_COMPUTE.md)
+> **Quelldatei:** Atc-25.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-25-TENSOR_COMPUTE.md)
 
 **Scope:** Tensor-Chunking, Compute-Aware Routing, Intermediate State Sync, Model Sharding
 **Konzept:** Verteilter Supercomputer — KI-Berechnungen in Stuecke zerlegen und verteilen
@@ -922,7 +922,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-26 — Explainable AI (XAI) & Transparency Protocol PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-26 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
-> **Quelldatei:** Atc-26.docx -> [Vollstaendige Spezifikation](ATC-26-XAI_TRANSPARENCY.md)
+> **Quelldatei:** Atc-26.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-26-XAI_TRANSPARENCY.md)
 
 **Scope:** Attributions-Tracing, XAI-Metadaten, Proof-of-Explainability, Human-in-the-loop
 **Konzept:** Verantwortungsbewusstes OS — KI muss Entscheidungen rechtfertigen koennen
@@ -941,7 +941,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-27 — Decentralized AI Model Auditing & Verification PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-27 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
-> **Quelldatei:** Atc-27.docx -> [Vollstaendige Spezifikation](ATC-27-AI_MODEL_AUDITING.md)
+> **Quelldatei:** Atc-27.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-27-AI_MODEL_AUDITING.md)
 
 **Scope:** Modell-Fingerprinting, Proof-of-Model-Integrity, Audit-Intervalle, Slashing
 **Konzept:** Selbst-ueberwachendes OS — KI-Modelle muessen beweisen dass sie unmanipuliert sind
@@ -960,7 +960,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-28 — Federated Learning & On-Device Training OK IMPLEMENTIERT + PARTIAL
 > **Standard-ID:** ATC-28 v1.0 | **Status:** Implementiert + Partial | **Datum:** 04.07.2026
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer) — **TIER 4 ABSCHLUSS**
-> **Quelldatei:** Atc-28.docx -> [Vollstaendige Spezifikation](ATC-28-FEDERATED_LEARNING.md)
+> **Quelldatei:** Atc-28.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-28-FEDERATED_LEARNING.md)
 
 **Scope:** Lokales Training, Gradienten-Aggregation, Differential Privacy, Personalisierung
 **Konzept:** Intelligentes, lernendes OS — Modelle werden dezentral besser ohne Daten zu teilen
@@ -993,7 +993,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-29 — Decentralized AI Marketplace & Model Registry PARTIAL
 > **Standard-ID:** ATC-29 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 4 (Decentralized AI / Inferenz-Layer)
-> **Quelldatei:** Atc-29.docx -> [Vollstaendige Spezifikation](ATC-29-AI_MARKETPLACE.md)
+> **Quelldatei:** Atc-29.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-29-AI_MARKETPLACE.md)
 
 **Scope:** Modell-Registry, Inferenz-Gebuehren, Lizenz-Management, Service-Discovery
 **Konzept:** AI App Store — KI-Modelle als handelbare Produkte im dezentralen Marktplatz
@@ -1012,7 +1012,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-30 — Decentralized Reputation & Trust Scoring PARTIAL
 > **Standard-ID:** ATC-30 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 4/5 Uebergang (Decentralized AI -> User Experience)
-> **Quelldatei:** Atc-30.docx -> [Vollstaendige Spezifikation](ATC-30-REPUTATION_TRUST.md)
+> **Quelldatei:** Atc-30.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-30-REPUTATION_TRUST.md)
 
 **Scope:** Multi-Dimensional Scoring, Reputation Graph, Algorithmus-Agilitaet, Slashing
 **Konzept:** Mathematisches Vertrauen — Reputation als quantifizierbare, on-chain Kennzahl
@@ -1031,7 +1031,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-32 — User Experience (UX) & Interface Abstraction PARTIAL
 > **Standard-ID:** ATC-32 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 5 (User & Application Layer) — **TIER 5 START**
-> **Quelldatei:** Atc-32.docx -> [Vollstaendige Spezifikation](ATC-32-UX_INTERFACE_ABSTRACTION.md)
+> **Quelldatei:** Atc-32.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-32-UX_INTERFACE_ABSTRACTION.md)
 
 **Scope:** Universal UI, Intent-Based UX, Unified Authentication, Adaptive Rendering
 **Konzept:** Human-Centric — Blockchain-Komplexitaet verbergen, Dezentralisierung behalten
@@ -1050,7 +1050,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-33 — Decentralized AI Feedback & Reward-Reinforcement PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-33 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 5 (User & Application Layer)
-> **Quelldatei:** Atc-33.docx -> [Vollstaendige Spezifikation](ATC-33-AI_FEEDBACK_RLHF.md)
+> **Quelldatei:** Atc-33.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-33-AI_FEEDBACK_RLHF.md)
 
 **Scope:** Feedback-Collection, RLHF Reward-Loop, Governance-Gewichtung, Alignment
 **Konzept:** Menschliches Feedback als KI-Treiber — RLHF on-chain mit Token-Belohnung
@@ -1069,7 +1069,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-34 — Cross-Layer Interoperability Protocol (CLIP) PARTIAL
 > **Standard-ID:** ATC-34 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 3/5 Bruecke (Layer-Bridge)
-> **Quelldatei:** Atc-34.docx -> [Vollstaendige Spezifikation](ATC-34-CROSS_LAYER_INTEROP.md)
+> **Quelldatei:** Atc-34.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-34-CROSS_LAYER_INTEROP.md)
 
 **Scope:** Layer-Messaging, State-Proof-Verification, Cross-Layer-Event-Bus, Reentrancy-Schutz
 **Konzept:** Der "Uebersetzer" — sichere, effiziente Kommunikation zwischen allen Tiers
@@ -1088,7 +1088,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-35 — Decentralized Data Privacy & Anonymization PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-35 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 5 (User & Application Layer)
-> **Quelldatei:** Atc-35.docx -> [Vollstaendige Spezifikation](ATC-35-DATA_PRIVACY_ANONYMIZATION.md)
+> **Quelldatei:** Atc-35.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-35-DATA_PRIVACY_ANONYMIZATION.md)
 
 **Scope:** ZK-Aggregation, Local-First Privacy, k-Anonymitaet, Rausch-Injektion, DSGVO-Compliance
 **Konzept:** Datenschutz-Filter — Anonymisierung vor jeder Aggregation oder Speicherung
@@ -1107,7 +1107,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-36 — Decentralized Media Asset & Content Provenance PARTIAL
 > **Standard-ID:** ATC-36 v1.0 | **Status:** Partial | **Datum:** 04.07.2026
 > **Tier:** 5 (User & Application Layer)
-> **Quelldatei:** Atc-36.docx -> [Vollstaendige Spezifikation](ATC-36-MEDIA_ASSET_PROVENANCE.md)
+> **Quelldatei:** Atc-36.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-36-MEDIA_ASSET_PROVENANCE.md)
 
 **Scope:** Content-Hashing, AI-Generated-Tag, Provenance Tracking, Deepfake-Schutz, Urheberrecht
 **Konzept:** Echtheitsnachweis fuer Medien — Herkunft, Authentizitaet, Urheberschaft on-chain
@@ -1126,7 +1126,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 ### ATC-37 — Decentralized Reputation-Based Resource Allocation PARTIAL KONZEPTIONELL
 > **Standard-ID:** ATC-37 v1.0 | **Status:** Konzeptionell | **Datum:** 04.07.2026
 > **Tier:** 5 (User & Application Layer)
-> **Quelldatei:** Atc-37.docx -> [Vollstaendige Spezifikation](ATC-37-REPUTATION_RESOURCE_ALLOCATION.md)
+> **Quelldatei:** Atc-37.docx -> [Vollstaendige Spezifikation](../../../standards/ATC-37-REPUTATION_RESOURCE_ALLOCATION.md)
 
 **Scope:** Reputations-Quoten, Adaptive Thresholds, Governance-Allokation, DoS-Schutz, Free-Tier
 **Konzept:** Reputation -> Ressourcen. Wer vertrauenswuerdig ist, bekommt mehr.

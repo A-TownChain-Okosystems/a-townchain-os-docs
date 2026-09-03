@@ -66,7 +66,7 @@ Implementierung des ATC-97 (Agent Interaction Protocol) als zentrales Kommunikat
 6. Wiki-Kapitel 75 + Developer Guide
 
 ## Querverweise
-- [Issue #80](../issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md)
+- [Issue #80](../issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md)
 - [Roadmap MK7](../ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
 - [Sprint Roadmap](../../SPRINT_ROADMAP.md#-sprint-30--ai-agent-protocol-in-arbeit)
 - [GCL v2.0 Architektur](../wiki/)

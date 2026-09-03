@@ -1,6 +1,6 @@
 # 🗺️ Roadmap — a-townchain-os-wiki
 
-> Siehe [docs/ROADMAP.md](docs/ROADMAP.md) für die detaillierte Roadmap.
+> Siehe [docs/ROADMAP.md](./ROADMAP.md) für die detaillierte Roadmap.
 
 **Code-Repo:** [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os)
 

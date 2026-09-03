@@ -6,7 +6,7 @@ Dokumentation für Genesis Engine
 
 ## Dokumentation
 - [Architektur](ARCHITECTURE.md)
-- [API Reference](API.md)
+- [API Reference](../../docs/archive/wiki/atc-genesis-engine-wiki/docs/API.md)
 - [Module](MODULES.md)
 - [Status](STATUS.md)
 

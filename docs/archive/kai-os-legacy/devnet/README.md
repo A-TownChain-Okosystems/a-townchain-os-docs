@@ -542,7 +542,7 @@ docker-compose ps atc-prometheus
 
 ## 📚 Weitere Ressourcen
 
-- **Wiki:** [KAI-OS Complete Documentation](../docs/kai-os-wiki.md)
+- **Wiki:** [KAI-OS Complete Documentation](../../../kai-os-wiki.md)
 - **API Docs:** [API Reference](../docs/api-reference.md)
 - **Contract Guide:** [ATCLang Smart Contracts](../docs/atclang-guide.md)
 - **Issues:** [GitHub Issues](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues)

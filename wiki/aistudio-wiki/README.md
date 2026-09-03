@@ -6,7 +6,7 @@ Dokumentation für AI Studio Komponenten
 
 ## Dokumentation
 - [Architektur](ARCHITECTURE.md)
-- [API Reference](API.md)
+- [API Reference](../../docs/archive/wiki/atc-aistudio-wiki/docs/API.md)
 - [Module](MODULES.md)
 - [Status](STATUS.md)
 

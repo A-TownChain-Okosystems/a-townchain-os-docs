@@ -108,6 +108,6 @@ Phase 4 (Mainnet):    Substrate Mainnet + Cross-Chain Bridge
 - [A-TownChain OS Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os)
 - [Master To-Do Liste](../TODO.md)
 - [Performance Report](../PERFORMANCE_REPORT.md)
-- [Status Übersicht](../STATUS.md)
+- [Status Übersicht](./STATUS.md)
 
 *Auto-generiert von Superagent (KAI-OS Agent) — 2026-06-09*

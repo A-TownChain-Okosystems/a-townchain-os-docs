@@ -1,6 +1,6 @@
 # 🗺️ Roadmap — atc-kernel-wiki
 
-> Siehe [docs/ROADMAP.md](docs/ROADMAP.md) für die detaillierte Roadmap.
+> Siehe [docs/ROADMAP.md](./ROADMAP.md) für die detaillierte Roadmap.
 
 **Code-Repo:** [atc-kernel](https://github.com/A-TownChain-Okosystems/atc-kernel)
 

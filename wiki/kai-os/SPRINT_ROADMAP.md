@@ -174,7 +174,7 @@
 ### Blocker
 Keine — ready to implement
 
-**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md) | [Meilenstein MK7](ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
+**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md) | [Meilenstein MK7](ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
 
 ---
 

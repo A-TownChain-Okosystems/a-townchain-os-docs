@@ -50,7 +50,7 @@
 - 113 Unit-Tests, 113+ .atc Dateien
 - Vollständige Programmiersprache mit Spec, Bytecode, Konsens und Stdlib
 
-**Querverweise:** [Issue #72](docs/issues/ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md) | [#73](docs/issues/ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md) | [#74](docs/issues/ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md) | [#81](docs/issues/ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md)
+**Querverweise:** [Issue #72](../../issues/ISSUE_72_SPRINT_2.1_ATCLANG_LANGUAGE_.md) | [#73](../../issues/ISSUE_73_SPRINT_2.1_ATCLANG_VM_BYTECO.md) | [#74](../../issues/ISSUE_74_SPRINT_2.1_KONSENS-MODULE__.md) | [#81](../../issues/ISSUE_81_SPRINT_2.1_ATCLANG_STANDARD_.md)
 
 ---
 
@@ -174,7 +174,7 @@
 ### Blocker
 Keine — ready to implement
 
-**Querverweis:** [Issue #80](docs/issues/ISSUE_80_SPRINT_3.0_ATC-97_AGENT_INT.md) | [Meilenstein MK7](ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
+**Querverweis:** [Issue #80](../../issues/ISSUE_80_SPRINT_3.0_AIP-001_AGENT_INT.md) | [Meilenstein MK7](docs/ROADMAP.md#mk7--ai-agent-protocol--in-arbeit)
 
 ---
 
@@ -262,7 +262,7 @@ Keine — ready to implement
 - 🔴 Externe Audit-Resourcen erforderlich (Budget & Firma)
 - 🔴 Penetration Testing Tools & Expertise
 
-**Querverweis:** [Issue #69](docs/issues/ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md) | [Meilenstein MK8](ROADMAP.md#mk8--security-audit--hardening--in-arbeit)
+**Querverweis:** [Issue #69](../../issues/ISSUE_69_SPRINT_3.3_SECURITY-AUDIT__.md) | [Meilenstein MK8](docs/ROADMAP.md#mk8--security-audit--hardening--in-arbeit)
 
 ---
 
@@ -368,7 +368,7 @@ Keine — ready to implement
 - 🔴 MK7 (AI Agent Protocol) — mindestens Spezifikation abgeschlossen
 - 🔴 MK8 (Security Audit) — mindestens interne Phase abgeschlossen
 
-**Querverweise:** [Issue #70](docs/issues/ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md) | [Issue #71](docs/issues/ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md) | [Meilenstein MK9](ROADMAP.md#mk9--mainnet-launch--geplant)
+**Querverweise:** [Issue #70](../../issues/ISSUE_70_SPRINT_4.0_VALIDATOR-NODES_.md) | [Issue #71](../../issues/ISSUE_71_SPRINT_4.0_GENESIS_BLOCK__K.md) | [Meilenstein MK9](docs/ROADMAP.md#mk9--mainnet-launch--geplant)
 
 ---
 

@@ -127,7 +127,7 @@ Hardware-Zertifikate:
 | Dokument | Beschreibung |
 |---------|-------------|
 | [ATC-LIC Spezifikation](standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | Hauptstandard: ATVM Gate, Lizenz-Typen, Code-Beispiele |
-| [ATC-LIC Spezifikation](standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen: TPM, Node-Lizenzierung, Secure Boot |
+| [ATS-LIC Spezifikation](standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen: TPM, Node-Lizenzierung, Secure Boot |
 | [Compliance-Handbuch](compliance/COMPLIANCE_HANDBUCH.md) | BaFin-konforme Gesamtdokumentation |
 | [BaFin-Konformitaetsbericht](compliance/BAFIN_KONFORMITAETSBERICHT.md) | Formeller Bericht BAFIN-ATC-LIC-2026-001 zur BaFin-Einreichung |
 | [Smart-Contract-Richtlinie](compliance/SMART_CONTRACT_RICHTLINIE.md) | BaFin-Policy: Provisionsabwicklung, Urheberschutz, Audit |

@@ -91,6 +91,6 @@ curl -s https://raw.githubusercontent.com/A-TownChain-Okosystems/a-townchain-os-
 
 - [A-TownChain OS Repo](https://github.com/A-TownChain-Okosystems/a-townchain-os)
 - [Performance Report](./PERFORMANCE_REPORT.md)
-- [Status Übersicht](./STATUS.md)
+- [Status Übersicht](docs/STATUS.md)
 
 *Auto-generiert von Superagent (KAI-OS Agent) — 2026-06-09*

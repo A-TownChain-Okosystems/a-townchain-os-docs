@@ -12,11 +12,11 @@
 
 | Kap. | Titel | Datei | Scope | Status |
 |------|-------|-------|-------|--------|
-| 1 | A-TownChain OS — Architektur-Überblick | [ECOSYSTEM.md](../ECOSYSTEM.md) | System-Design, 13 Layer | ✅ PUBLISHED |
+| 1 | A-TownChain OS — Architektur-Überblick | [ECOSYSTEM.md](../../../ECOSYSTEM.md) | System-Design, 13 Layer | ✅ PUBLISHED |
 | 2 | Blockchain-Fundamentals (Konsens, PoH, PoS, PoW) | [BLOCKCHAIN_FUNDAMENTALS.md](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/blob/main/docs/) | Consensus, ATC-81/82/83 | ✅ PUBLISHED |
-| 3 | Smart Contracts & ATCLang (Sprache, Compiler, VM) | [ATCLANG_SPEC.md](../atclang/ATCLANG_SPEC.md) | Contract-Sprache, ATC-05 | ✅ PUBLISHED |
+| 3 | Smart Contracts & ATCLang (Sprache, Compiler, VM) | [ATCLANG_SPEC.md](../../../atclang/ATCLANG_SPEC.md) | Contract-Sprache, ATC-05 | ✅ PUBLISHED |
 | 4 | Blockchain Layer (Gas, DEX, Bridge, Governance) | BLOCKCHAIN_LAYER.md | Transaktionen, ATC-87/88 | 🟡 DRAFT |
-| 5 | ShivaOS Kernel (Syscalls, Memory, Scheduling) | [KERNEL_FROM_SCRATCH_PLAN.md](../KERNEL_FROM_SCRATCH_PLAN.md) | Bare-Metal Rust, no_std | ✅ PUBLISHED |
+| 5 | ShivaOS Kernel (Syscalls, Memory, Scheduling) | [KERNEL_FROM_SCRATCH_PLAN.md](../root/KERNEL_FROM_SCRATCH_PLAN.md) | Bare-Metal Rust, no_std | ✅ PUBLISHED |
 | 6 | ATCFS — Dezentrales Filesystem | ATCFS_SPEC.md | File Storage, ATC-06 | 🟡 DRAFT |
 | 7 | Node-Konfiguration & Deployment | NODE_CONFIG.md | Setup, Testnet, Mainnet | ✅ PUBLISHED |
 | 8 | API Gateway (Middleware, Auth, Routing) | GATEWAY_SPEC.md | REST API, Port :4000 | ✅ PUBLISHED |
@@ -64,15 +64,15 @@
 | Kap. | Titel | Datei | Scope | Status |
 |------|-------|-------|-------|--------|
 | 31 | **Issue-Registry & Tracking** | [Issue #85-#92](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues) | K1-K8 Consolidation, Sprints | ✅ LIVE |
-| 32 | **DECISIONS_REGISTER** | [DECISIONS_REGISTER.md](../DECISIONS_REGISTER.md) | AD-001 to AD-010 (Architektur) | ✅ PUBLISHED |
-| 33 | **STANDARDS_REGISTRY** | [docs/standards/STANDARDS_REGISTRY.md](../docs/standards/STANDARDS_REGISTRY.md) | ATC-01 to ATC-97 (37+ Standards) | ✅ PUBLISHED |
+| 32 | **DECISIONS_REGISTER** | [DECISIONS_REGISTER.md](../../DECISIONS_REGISTER.md) | AD-001 to AD-010 (Architektur) | ✅ PUBLISHED |
+| 33 | **STANDARDS_REGISTRY** | [docs/standards/STANDARDS_REGISTRY.md](../../standards/STANDARDS_REGISTRY.md) | ATC-01 to ATC-97 (37+ Standards) | ✅ PUBLISHED |
 | 34 | **KONSOLIDIERUNGS_ROADMAP** | [KONSOLIDIERUNGS_ROADMAP.md](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/blob/main/KONSOLIDIERUNGS_ROADMAP.md) | K1-K8, Sprints 1.0-4.0 | ✅ PUBLISHED |
 | 35 | **AGENT_POLICY & Sync-Protokoll** | [docs/AGENT_POLICY.md](./AGENT_POLICY.md) | Agent Rules, Reality-Check, Release-Blocker | ✅ PUBLISHED |
-| 36 | **AGENT_COORDINATION** | [AGENT_COORDINATION.md](../AGENT_COORDINATION.md) | Live Agent Status, Aurora Handoff | ✅ PUBLISHED |
+| 36 | **AGENT_COORDINATION** | [AGENT_COORDINATION.md](./AGENT_COORDINATION.md) | Live Agent Status, Aurora Handoff | ✅ PUBLISHED |
 | 37 | **NAMING_CONVENTIONS** | [NAMING_CONVENTIONS.md](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/blob/main/NAMING_CONVENTIONS.md) | Identifier Rules (19 Konzepte) | ✅ PUBLISHED |
-| 38 | **CHANGELOG & Release Notes** | [CHANGELOG.md](../CHANGELOG.md) | v1.0.0 Release, v2.0 Roadmap | ✅ PUBLISHED |
+| 38 | **CHANGELOG & Release Notes** | [CHANGELOG.md](../../../CHANGELOG.md) | v1.0.0 Release, v2.0 Roadmap | ✅ PUBLISHED |
 | 39 | **DEVELOPER_ONBOARDING** | [docs/DEVELOPER_ONBOARDING.md](./DEVELOPER_ONBOARDING.md) | Setup, First Steps, Contributing | ✅ PUBLISHED |
-| 40 | **PROJECT_VISION & KAI-OS v2.0** | [README.md](../README.md) | High-Level Vision, Features, Status | ✅ PUBLISHED |
+| 40 | **PROJECT_VISION & KAI-OS v2.0** | [README.md](standards/README.md) | High-Level Vision, Features, Status | ✅ PUBLISHED |
 
 ---
 
@@ -145,4 +145,4 @@ Vor dem Release einer neuen Kap.:
 ---
 
 **Zuletzt aktualisiert:** 2026-08-04 von Copilot (@copilot)  
-**Status:** ✅ PUBLISHED | **Vorherige Version:** [Wiki Index v1.0](./WIKI_INDEX_v1.0.md)
+**Status:** ✅ PUBLISHED | **Vorherige Version:** [Wiki Index v1.0](./WIKI_INDEX.md)

@@ -569,7 +569,7 @@ durch Netzwerk-Partition moeglich:
 | Dokument | Bezug |
 |---------|------|
 | [ATC-LIC Spezifikation](../standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | Hauptstandard |
-| [ATC-LIC Spezifikation](../standards/ATC-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen |
+| [ATC-LIC Spezifikation](../../../../docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | Hardware-Lizenzen |
 | [Compliance-Handbuch](COMPLIANCE_HANDBUCH.md) | Uebergeordnetes Handbuch |
 | [Lizenz-Uebersicht](../LICENSING_OVERVIEW.md) | Zentrale Uebersicht |
 | ATC-01 | Smart Contracts |

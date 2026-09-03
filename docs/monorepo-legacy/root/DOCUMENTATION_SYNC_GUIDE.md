@@ -164,7 +164,7 @@ Alle Kapitel müssen in `docs/WIKI_INDEX.md` gelistet sein:
 ```markdown
 | Kap. | Titel | Datei | Scope | Status |
 |------|-------|-------|-------|--------|
-| 5 | ShivaOS Kernel | [KERNEL_FROM_SCRATCH_PLAN.md](../KERNEL_FROM_SCRATCH_PLAN.md) | Bare-Metal Rust | ✅ PUBLISHED |
+| 5 | ShivaOS Kernel | [KERNEL_FROM_SCRATCH_PLAN.md](./KERNEL_FROM_SCRATCH_PLAN.md) | Bare-Metal Rust | ✅ PUBLISHED |
 ```
 
 ---
@@ -311,9 +311,9 @@ Pre-Release-Prozess:
 
 ## 🔗 **Verwandte Dokumente**
 
-- [`docs/WIKI_INDEX.md`](./docs/WIKI_INDEX.md) — Alle 40 Kapitel + Status
-- [`AGENT_POLICY.md`](./docs/AGENT_POLICY.md) — Sync-Reihenfolge (Schritt 2)
-- [`scripts/sync-docs.sh`](./scripts/sync-docs.sh) — Automatisches Sync-Script
+- [`docs/WIKI_INDEX.md`](../../project/WIKI_INDEX.md) — Alle 40 Kapitel + Status
+- [`AGENT_POLICY.md`](../../AGENT_POLICY.md) — Sync-Reihenfolge (Schritt 2)
+- ``scripts/sync-docs.sh`` (Skript im Code-Monorepo archiviert) — Automatisches Sync-Script
 - [a-townchain-os-docs](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) — Primary Docs Repo
 
 ---

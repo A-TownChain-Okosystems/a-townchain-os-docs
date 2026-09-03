@@ -1,8 +1,8 @@
 
 > ## 🤖 Fuer KI-Agenten — Pflichtlektuere vor jeder Aenderung
-> 1. [`docs/AGENT_POLICY.md`](docs/AGENT_POLICY.md) — verbindliche Regeln, Reality-Check, Konsolidierungsziel
-> 2. [`docs/AGENT_COORDINATION.md`](docs/AGENT_COORDINATION.md) — wer arbeitet gerade woran, K3/K4 Todos, Agent-IDs
-> 3. [`docs/DECISIONS_REGISTER.md`](docs/DECISIONS_REGISTER.md) — verbindliche Architektur-Entscheidungen
+> 1. [`docs/AGENT_POLICY.md`](../../../AGENT_POLICY.md) — verbindliche Regeln, Reality-Check, Konsolidierungsziel
+> 2. [`docs/AGENT_COORDINATION.md`](../../../AGENT_COORDINATION.md) — wer arbeitet gerade woran, K3/K4 Todos, Agent-IDs
+> 3. [`docs/DECISIONS_REGISTER.md`](../../../DECISIONS_REGISTER.md) — verbindliche Architektur-Entscheidungen
 
 
 > Alle Inhalte dieses Repos wurden in das **Haupt-Repository** übertragen.
