@@ -3665,7 +3665,7 @@ SECURITY-CHECK (erste 15 Minuten) — Kapitel 25.10:
 | Hash | Keccak-256 | SHA-256 | **SHA-256** | AD-001: Non-EVM, weit verbreitet, kein Patent |
 | VM | EVM | ATC-VM | **ATC-VM** | Flexibler, KI-native, kein EVM-Overhead |
 | P2P | libp2p (direkt) | Custom + libp2p | **Custom** | Mehr Kontrolle, Gossip-Optimierung |
-| Chain-ID | EVM-Registry | Eigen (658467) | **9000** | AD-004: Non-EVM, kein Registry-Eintrag nötig |
+| Chain-ID | EVM-Registry | Eigen (658467) | **658467** | AD-004 RESOLVED: 9000 (Evmos-Kollision) durch 658467 ersetzt |
 | Bridge | Wormhole | Custom Lock-and-Mint | **Custom** | Mehr Kontrolle, Solana-SPL direkt |
 
 ## 18.5 Inspirationsquellen je Layer
