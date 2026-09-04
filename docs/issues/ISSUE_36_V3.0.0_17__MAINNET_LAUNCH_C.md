@@ -1,4 +1,4 @@
-# Issue #36 — v3.0.0 #17 — Mainnet Launch (Chain-ID 9000, Genesis, Validator-Set)
+# Issue #36 — v3.0.0 #17 — Mainnet Launch (Chain-ID 658467, Genesis, Validator-Set)
 
 > **Status:** CLOSED | **Erstellt:** 2026-06-10 | **Labels:** blockchain, critical, v3.0.0
 > **GitHub:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/36
@@ -15,7 +15,7 @@ Offizieller Mainnet-Launch von A-TownChain.
 - [ ] Initialer Validator-Set (≥ 10 unabhängige Nodes)
 - [ ] ATC Token Distribution (Whitepaper-Tokenomics)
 - [ ] Externes Security-Audit (unabhängig)
-- [ ] Chain-ID 9000 finalisieren
+- [ ] Chain-ID 658467 finalisieren
 - [ ] Mainnet-Dokumentation
 - [ ] Launch-Kommunikation (Blog, Social)
 - [ ] ATCoin Listing-Vorbereitung

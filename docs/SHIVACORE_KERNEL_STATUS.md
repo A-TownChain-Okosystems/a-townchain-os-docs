@@ -600,7 +600,7 @@ Zwei Implementierungen des `CryptoProvider`-Traits:
 **`atcnet.rs`** (neu, ~800 Zeilen, 32 Tests):
 
 ATC-01 Core Node Protocol Handler mit 10 Nachrichtentypen:
-- Handshake (DID + Chain-ID 9000 + Blockhöhe)
+- Handshake (DID + Chain-ID 658467 + Blockhöhe)
 - PeerList (Peer-Austausch)
 - BlockAnn (triggert GetBlocks bei höherer Höhe)
 - TxBroadcast (Gossip an alle Peers)
@@ -641,18 +641,18 @@ ats1000::NetworkStack Trait implementiert.
 
 ## ✅ Milestone: Genesis Block Configuration (04.08.2026)
 
-> K-Sprint 26: Issue #71 — Genesis Block Konfiguration & Signierung (Chain-ID 9000)
+> K-Sprint 26: Issue #71 — Genesis Block Konfiguration & Signierung (Chain-ID 658467)
 
 **`genesis.rs`** (neu, ~750 Zeilen, 38 Tests):
 
-Genesis Block Konfiguration für A-TownChain Mainnet (Chain-ID 9000):
+Genesis Block Konfiguration für A-TownChain Mainnet (Chain-ID 658467):
 - `GenesisConfig`: Chain-ID, initiale Validator (DID + Pubkey + Stake + Commission), Token-Allokationen (mit LockType: None/Vesting/TimeLock), Konsens-Parameter (block_time=3s, threshold=66.7%, slash=10%), Netzwerk-Parameter (p2p_port=9000, rpc_port=9001, max_peers=50)
 - `GenesisBlock`: Height 0, genesis_hash, state_root, validator_set, allocations, signatur
 - `GenesisState`: Balances, Validators, Nonces, Contracts → state_root()
 - `GenesisBuilder`: build() mit Validierung, sign(), verify(), export_json()
 - Deterministischer Hash (gleiche Config = gleicher Genesis-Hash)
-- Validierung: Chain-ID 9000, 4-100 Validator, Stake ≥ 1000 ATC, ATC-Adress-Präfix, keine Duplikate
-- Integration: Chain-ID synchron mit atcnet::CHAIN_ID (9000)
+- Validierung: Chain-ID 658467, 4-100 Validator, Stake ≥ 1000 ATC, ATC-Adress-Präfix, keine Duplikate
+- Integration: Chain-ID synchron mit atcnet::CHAIN_ID (658467)
 
 **Verifiziert:** cargo test → 248/248 passed (210 bisherige + 38 neue Genesis Tests).
 
@@ -670,7 +670,7 @@ Genesis Block Konfiguration für A-TownChain Mainnet (Chain-ID 9000):
 2. **PoH-Seed**: BridgePoh wird mit echtem Genesis-Hash geseedt (nicht mehr [0x42;32])
 3. **Validator Bulk-Init**: BridgeValidatorRegistry::from_genesis() initialisiert alle Validator aus GenesisConfig
 4. **State Root**: GenesisState → BridgeBlock.state_root (nicht mehr [0;32])
-5. **Chain-ID-Validierung**: add_genesis + add_block prüfen Chain-ID 9000
+5. **Chain-ID-Validierung**: add_genesis + add_block prüfen Chain-ID 658467
 6. **Signatur-Verifikation**: Unsigned Genesis-Blocks werden abgelehnt
 
 GenesisBridge::init_from_config(): 1-Aufruf-Initialisierung der kompletten Chain aus GenesisConfig.
@@ -709,7 +709,7 @@ Multi-Node Tests: Block-Propagation (3 Nodes) + Chain-Convergence (Block-Sync ü
 **`security_audit.rs`** (neu, ~800 Zeilen, 34 Tests):
 
 7 Audit-Kategorien mit 30+ Checks:
-1. **Chain-Integrity**: Genesis height 0, Chain-ID 9000, parent-hash linkage, no duplicates
+1. **Chain-Integrity**: Genesis height 0, Chain-ID 658467, parent-hash linkage, no duplicates
 2. **Genesis Security**: Signature verifiziert, validators non-empty, allocations, state_root, validator count [4,100]
 3. **Validator Security**: Total stake > 0, active count, proposer selection, BFT threshold (66.7%), single-validator dominance (<33%)
 4. **PoH Integrity**: Genesis hash seed (not [0x42;32]), tick count, verification, advancement

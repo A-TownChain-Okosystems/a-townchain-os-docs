@@ -17,7 +17,7 @@
 2. **Sprache:** ATCLang (`.atc`-Dateien). Python (`core/`, `blockchain/`, `modules/`) ist nur
    Uebergangs-/Test-Implementierung waehrend der K3/K4-Konsolidierung — die kanonische
    Zielimplementierung jedes Standards ist immer die `.atc`-Datei.
-3. **Chain-ID:** Platzhalter `9000` (Testnet) / `9001` (Mainnet) — noch nicht final (AD-004 offen).
+3. **Chain-ID:** final `658467` (AD-004 RESOLVED 03.09.2026 — 'ATC' in ASCII).
 4. **Kein EVM/Solidity.** Alle Vertraege werden nativ in ATCLang geschrieben (AD-007 RESOLVED).
 5. **Reihenfolge einhalten:** Erst Tier 1 (Netzwerk) → Tier 2 (Contracts) → Tier 3 (OS) →
    Tier 4 (AI) → ... Nicht vorgreifen, ausser explizit von Michael angewiesen.
@@ -144,7 +144,7 @@ Kopiere die Struktur, ersetze Namen/Felder gemaess der jeweiligen `docs/standard
 ### A. Netzwerk/Konsens-Pattern (ATC-01–10, ATC-81–86)
 ```atc
 // ATC-XX — <Titel>
-// Tier 1 — Blockchain Core | Chain-ID 9000
+// Tier 1 — Blockchain Core | Chain-ID 658467
 
 const PROTOCOL_VERSION: String = "1.0.0"
 

@@ -4,7 +4,7 @@
 > **Zugehörig:** Critical Path #18 (Docker Testnet), #8 (Multi-Node Testnet)
 > *Auto-generiert von Aurora · 2026-07-08*
 
-Das System hat aktuell **zwei getrennte, unabhängige Cluster-Setups**, die nicht miteinander verwechselt werden dürfen. Beide starten unter dem Chain-ID `9000` (Testnet).
+Das System hat aktuell **zwei getrennte, unabhängige Cluster-Setups**, die nicht miteinander verwechselt werden dürfen. Beide starten unter dem Chain-ID `658467` (Testnet).
 
 ---
 
@@ -96,7 +96,7 @@ Tatsächlich implementiert im Produktions-Cluster (`docker-compose.yml`):
 1. **Konsolidierung**: Zwei parallele Compose-Setups mit überlappenden Subnetzen und unterschiedlichen Grafana-Ports (3000 vs 3001) sind eine Fehlerquelle. Empfehlung: `docker/docker-compose.testnet.yml` als "Dev/Lokal"-Variante klar kennzeichnen (Prefix `dev-` bei Volumes/Netzwerken) oder auf ein gemeinsames Overlay-Pattern (`docker-compose.yml` + `docker-compose.override.yml`) umstellen.
 2. **Secrets**: Grafana-Admin-Passwörter sind hartcodiert im Klartext in beiden Compose-Files (`atcadmin2026!`, `atcchain`) — sollten vor Mainnet-Bezug per `.env`/Docker-Secret ersetzt werden.
 3. **Dockerfile-Wildwuchs**: 4 rollen-spezifische Dockerfiles existieren, werden aber von keinem Compose-File genutzt (Root-Compose baut alles aus dem einen Root-`Dockerfile`). Entweder nutzen oder als Legacy markieren/entfernen.
-4. **Bootstrap Node Production (Mainnet)**: Für den späteren Mainnet-Start (siehe Memory #7) braucht es zusätzlich einen **öffentlich erreichbaren Bootstrap-Node-Cluster** mit fester IP und 24/7-Uptime — aktuell in keinem der beiden Compose-Files abgebildet (beide sind Testnet-only, `ATC_CHAIN_ID=9000`).
+4. **Bootstrap Node Production (Mainnet)**: Für den späteren Mainnet-Start (siehe Memory #7) braucht es zusätzlich einen **öffentlich erreichbaren Bootstrap-Node-Cluster** mit fester IP und 24/7-Uptime — aktuell in keinem der beiden Compose-Files abgebildet (beide sind Testnet-only, `ATC_CHAIN_ID=658467`).
 
 ---
 

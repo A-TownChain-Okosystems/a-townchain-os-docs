@@ -136,7 +136,7 @@ Total Wiki-Dateien: 2,116 | Total Wiki-Zeilen: 358,313
 
 | Punkt | Status | Aktion erforderlich |
 |-------|--------|---------------------|
-| AD-004: Chain-ID 9000 | ❌ OFFEN | Michael muss entscheiden |
+| AD-004: Chain-ID 658467 | ✅ RESOLVED (03.09.2026) | Entscheidung getroffen: 658467 |
 | Issue #79: CI/CD Fix | ❌ OFFEN | Michael muss manuell pushen |
 | 5 skeletal Repos | 🟠 | frontend, linux/windows-edition, shivacore-tools, whitepaper — brauchen volle Stubs |
 | 13 minimal Repos | 🟡 | Haben Stubs, brauchen Implementierung |

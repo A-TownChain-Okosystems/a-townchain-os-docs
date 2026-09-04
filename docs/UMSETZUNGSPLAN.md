@@ -87,7 +87,7 @@
 | # | Priorität | Aufgabe | Abhängigkeit | Aufwand |
 |---|-----------|---------|--------------|--------|
 | 1 | P0 | Consensus Tests: PoH, PoS, PoW, Hybrid, Fork | — | 4h |
-| 2 | P0 | AD-004: Chain-ID 9000 Klärung | Michael | — |
+| 2 | P0 | AD-004: Chain-ID 658467 Klärung | Michael | ✅ ERLEDIGT (03.09.2026, 658467) |
 | 3 | P1 | 26 .py → ATCLang migrieren | atclang | 12h |
 | 4 | P1 | Smart Contract Registry: ATCLang-Only | — | 3h |
 | 5 | P1 | Block Production: End-to-End Test | — | 6h |
@@ -488,7 +488,7 @@
 
 | ID | Blocker | Impact | Entscheidung |
 |----|---------|--------|-------------|
-| AD-004 | Chain-ID 9000 von XDC belegt | Blockiert Mainnet + L9-BRIDGE | Neue Chain-ID |
+| AD-004 | Chain-ID 658467 (9000 kollidierte) | War Mainnet-Blocker | ✅ ERLEDIGT: 658467 umgesetzt |
 | #79 | CI/CD Workflow-Push blockiert | Blockiert automatische Tests | `ci-cd-fix/apply-fix.sh` |
 | ATCLang | Parser-Coverage 198/198 | Blockiert .py→.atc Migration | 6 Parser-Fixes abschließen |
 | ATC-97 | Agent Interaction Protocol | Blockiert Sprint 3.2 | Spezifikation finalisieren |

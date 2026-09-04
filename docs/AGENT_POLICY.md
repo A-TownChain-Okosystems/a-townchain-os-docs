@@ -166,7 +166,7 @@ Diese Items werden bei **jedem** Sync-Lauf gemeldet bis sie resolved sind:
 | AD-001 | ✅ RESOLVED | SHA-256 (nicht Keccak-256) | Gueltig seit 14.06.2026 | DECISIONS_REGISTER |
 | AD-002 | 🟠 MEDIUM | EventBus vs. IPCBus | ⏳ VALIDATE — Michael entscheidet, Sprint 2.4 | DECISIONS_REGISTER |
 | AD-003 | ✅ RESOLVED | Flash-Loan Voting Snapshot | Gueltig seit 05.07.2026 | DECISIONS_REGISTER |
-| AD-004 | 🔴 OPEN (reopened 06.07.2026) | Chain-ID nicht final — 9000 ist nur Platzhalter, oeffentlich belegt (Evmos Testnet) | Michael muss entscheiden | DECISIONS_REGISTER |
+| AD-004 | ✅ RESOLVED (03.09.2026) | Chain-ID final: 658467 ('ATC' ASCII), 9000 entfernt (Evmos-Kollision) | Umgesetzt systemweit (Commits 8316604+dc1a094) | DECISIONS_REGISTER |
 | AD-005 | 🟠 MEDIUM | ATC-97 Agent Interaction Protocol | ⏳ DECISION — Aurora arbeitet Spec aus, Sprint 3.0 | DECISIONS_REGISTER |
 | AD-006 | ✅ RESOLVED | Python vs. Substrate → ATCLang First | Gueltig seit 12.06.2026 | DECISIONS_REGISTER |
 | AD-007 | ✅ RESOLVED | EVM Chain Registry irrelevant (Non-EVM) | Gueltig seit 14.06.2026 | DECISIONS_REGISTER |

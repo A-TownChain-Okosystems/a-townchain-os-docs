@@ -10,7 +10,7 @@
 > - 🔴 **ATCLang First** — Einzige Programmiersprache. Kein Python, kein Solidity, kein Rust im Produktivcode.
 > - 🔴 **Non-EVM Chain** — A-TownChain ist keine EVM-Chain. Keine Ethereum-Kompatibilität (kein MetaMask, kein ERC-20).
 > - 🔴 **SHA-256** — TX-Hashing mit SHA-256 (AD-001 RESOLVED). Keine Migration zu Keccak-256.
-> - 🔴 **Eigene Chain-ID** — Proprietäre Chain-ID 9000 (Non-EVM, kein EVM-Registry-Eintrag nötig).
+> - 🔴 **Eigene Chain-ID** — Proprietäre Chain-ID 658467 (Non-EVM, kein EVM-Registry-Eintrag nötig).
 > - ✅ **Bridge + API** — Solana/Ethereum Bridge und API-Layer bleiben erhalten.
 > - ✅ **16 Dienste** — Vollständige Integration via Aurora (Base44 Superagent), täglicher Sync 08:00 Uhr.
 
@@ -195,7 +195,7 @@ KAI-OS IST:
   ✅ Native On-Chain KI-Inferenz (L3)
   ✅ Proprietäre Blockchain mit eigener Sprache (ATCLang)
   ✅ 13-Layer-Architektur von Security (L0) bis Gamification (L12)
-  ✅ Chain-ID 9000, Non-EVM, SHA-256
+  ✅ Chain-ID 658467, Non-EVM, SHA-256
 ```
 
 ## 1.6 Technologie-Stack v1.0
@@ -211,7 +211,7 @@ KAI-OS IST:
 | Smart Contracts | ATCLang (.atc) | `modules/contracts/` |
 | Frontend | ShivaOS UI (Vanilla JS, Neon) | `frontend/` |
 | Bridge | Solana SPL-Token (Lock-and-Mint) | `blockchain/bridge/` |
-| Chain-ID | 9000 (Non-EVM, proprietär) | `blockchain/mainnet/` |
+| Chain-ID | 658467 (Non-EVM, proprietär) | `blockchain/mainnet/` |
 
 
 ---
@@ -2498,7 +2498,7 @@ kai backup restore /var/backups/kai/20260701.tar.gz
 ```bash
 # Aktuelle Version prüfen
 kai version
-# → kai-node v1.0 (ATCLang 0.3.0, Chain-ID 9000)
+# → kai-node v1.0 (ATCLang 0.3.0, Chain-ID 658467)
 
 # Update mit Canary-Strategie
 # 1. Canary-Node updaten
@@ -2631,7 +2631,7 @@ KAI-OS betreibt ein öffentliches Bug-Bounty-Programm:
 ```atclang
 // Jede Transaktion enthält:
 struct Transaction {
-    chain_id:  ChainId,    // 9000 — verhindert Cross-Chain Replay
+    chain_id:  ChainId,    // 658467 — verhindert Cross-Chain Replay
     nonce:     u64,        // Eindeutig pro Sender — verhindert TX-Replay
     timestamp: u64,        // Ablauf nach 1h
     hash:      bytes32,    // SHA-256 aller Felder
@@ -2734,7 +2734,7 @@ struct Transaction {
 | Policy | Status |
 |--------|--------|
 | ATCLang First | ✅ AD-006 RESOLVED |
-| Non-EVM (SHA-256, Chain-ID 9000) | ✅ AD-001 + AD-004 RESOLVED |
+| Non-EVM (SHA-256, Chain-ID 658467) | ✅ AD-001 + AD-004 RESOLVED |
 | EVM Registry irrelevant | ✅ AD-007 RESOLVED |
 | EventBus → IPCBus | ⏳ AD-002 (Sprint 2.4) |
 | Flash-Loan Fix | ⏳ AD-003 (Sprint 2.6, Michael) |
@@ -3665,7 +3665,7 @@ SECURITY-CHECK (erste 15 Minuten) — Kapitel 25.10:
 | Hash | Keccak-256 | SHA-256 | **SHA-256** | AD-001: Non-EVM, weit verbreitet, kein Patent |
 | VM | EVM | ATC-VM | **ATC-VM** | Flexibler, KI-native, kein EVM-Overhead |
 | P2P | libp2p (direkt) | Custom + libp2p | **Custom** | Mehr Kontrolle, Gossip-Optimierung |
-| Chain-ID | EVM-Registry | Eigen (9000) | **9000** | AD-004: Non-EVM, kein Registry-Eintrag nötig |
+| Chain-ID | EVM-Registry | Eigen (658467) | **9000** | AD-004: Non-EVM, kein Registry-Eintrag nötig |
 | Bridge | Wormhole | Custom Lock-and-Mint | **Custom** | Mehr Kontrolle, Solana-SPL direkt |
 
 ## 18.5 Inspirationsquellen je Layer
@@ -3831,7 +3831,7 @@ git commit -m "feat(atclang): neue Funktion XYZ"
 - `blockchain/bridge/solana_bridge.py` — `SolanaBridge` (SPL-Token, Wormhole, Lock-and-Mint)
 - `blockchain/dex/amm.py` — `ATCAMM` DEX (x*y=k Constant-Product, LP-Token, 0.3% Fee)
 - `blockchain/governance/dao_live.py` — `DAOGovernance` Live (FFT+ATC Voting, Quorum 10%, Timelock 48h)
-- `blockchain/mainnet/mainnet_config.py` — `MainnetLaunchManager` (Chain-ID 9000, Genesis Block)
+- `blockchain/mainnet/mainnet_config.py` — `MainnetLaunchManager` (Chain-ID 658467, Genesis Block)
 - `blockchain/consensus/gas_fee.py` — `GasFeeEngine` (EIP-1559: Base Fee + Priority Fee, Burn 50%)
 - `blockchain/consensus/fork_resolution.py` — `ForkResolver` (Longest-Chain + PoH-Score)
 - `blockchain/nodes/initial_sync.py` — `InitialSyncer` (Neue Nodes bootstrappen)
@@ -5639,13 +5639,13 @@ aa47cbe91c  2026-06-10  enterprise: .github/workflows/ci-cd.yml — CI/CD Pipeli
 d34225f09a  2026-06-10  fix(#39): DAO Governance Live — FFT+ATC Voting, Quorum 10%, Timelock
 2a8a4a1635  2026-06-10  fix(#38): Mobile Wallet — React Native, BIP39, QR, Biometric
 9cedd4d067  2026-06-10  fix(#37): DEX/AMM — x*y=k, Swap-Router, Liquidity Pools, LP-Token
-7f692c3b60  2026-06-10  fix(#36): Mainnet Launch Config — Chain-ID 9000, Genesis, Validators
+7f692c3b60  2026-06-10  fix(#36): Mainnet Launch Config — Chain-ID 658467, Genesis, Validators
 a9c89565a8  2026-06-10  fix(#35): ATCLang v0.3.0 — async/await, Generics, Closures, Modules
 9277390dd5  2026-06-10  fix(#34): Solana Bridge v1.0 — SPL-Token, Wormhole, Lock-and-Mint
 542f6a1255  2026-06-10  fix(#39): DAO Governance (alt) — On-Chain Proposals, Quorum
 10b198634   2026-06-10  fix(#38): Mobile Wallet (alt) — BIP39, QR-Code, Biometric
 75f34d4d9f  2026-06-10  fix(#37): DEX/AMM (alt) — Constant-Product x*y=k
-9fd3e848fb  2026-06-10  fix(#36): Mainnet Launch (alt) — Chain-ID 9000, Genesis Block
+9fd3e848fb  2026-06-10  fix(#36): Mainnet Launch (alt) — Chain-ID 658467, Genesis Block
 0f23c10ea3  2026-06-10  test(atclang): ATCLang v0.3.0 — 7 Tests (Closures, Generics, Module)
 c87163ccb4  2026-06-10  fix(#35): ATCLang v0.3.0 (alt) — async/await, Generics
 dbade664f9  2026-06-10  test(bridge): Solana Bridge — 4 Tests (Full Flow, Replay, Daily-Limit)
@@ -5736,9 +5736,9 @@ de5be7d1ad  2026-06-10  docs(wiki): Kap. 31 + Issues #28-30 — finaler Stand
 | **ATCFS** | A-TownChain File System — Content-addressed, dezentral, SHA-256-basiert. |
 | **ATC-VM** | Proprietäre virtuelle Maschine für ATCLang-Bytecode-Ausführung. |
 | **AD-001** | Architectural Decision: SHA-256 als einziger Hash-Algorithmus. ✅ RESOLVED. |
-| **AD-004** | Chain-ID 9000, Non-EVM-Architektur. ✅ RESOLVED. |
+| **AD-004** | Chain-ID 658467, Non-EVM-Architektur. ✅ RESOLVED. |
 | **Aurora** | MasterBrain-Agent auf Base44 — orchestriert alle 12 Agenten-Rollen täglich. |
-| **Chain-ID 9000** | Proprietäre Chain-Identität von A-TownChain (Non-EVM, kein Registry-Eintrag). |
+| **Chain-ID 658467** | Proprietäre Chain-Identität von A-TownChain (Non-EVM, kein Registry-Eintrag). |
 | **ECDSA secp256k1** | Signatur-Algorithmus für Wallets und Transaktionen. |
 | **FFT-Token** | Franchise & Governance Token — Voting-Power in DAO. |
 | **Groth16** | Zero-Knowledge Proof System — geplant für Sprint 3.0. |
@@ -9575,7 +9575,7 @@ class ShivamonBreedingEngine:
 │  Max Supply:      21.000.000 ATC                     │
 │  Initial Supply:   1.000.000 ATC (Genesis-Mint)      │
 │  Decimals:        8                                  │
-│  Chain ID:        9000                               │
+│  Chain ID:        658467                               │
 ├─────────────────────────────────────────────────────┤
 │  MINING:                                             │
 │  Initial Reward:  50 ATC/Block                       │
@@ -11948,7 +11948,7 @@ import { KAIClient, ShivamonContract, GovernanceContract } from "@atcchain/sdk";
 
 const client = new KAIClient({
   rpcUrl:    "http://localhost:4000",
-  chainId:   9000,
+  chainId:   658467,
   privateKey: process.env.PRIVATE_KEY,
 });
 
@@ -11974,7 +11974,7 @@ await gov.vote(proposals[0].id, 0); // Option 0 = "Ja"
 
 from atcchain import KAIClient, ShivamonContract, ATC Token
 
-client   = KAIClient(rpc_url="http://localhost:4000", chain_id=9000)
+client   = KAIClient(rpc_url="http://localhost:4000", chain_id=658467)
 shivamon = ShivamonContract(client)
 token    = ATC Token(client)
 
@@ -12011,7 +12011,7 @@ use atcchain_sdk::{KAIClient, ChainConfig};
 async fn main() {
     let client = KAIClient::new(ChainConfig {
         rpc_url:  "http://localhost:4000".into(),
-        chain_id: 9000,
+        chain_id: 658467,
     }).await.unwrap();
 
     let balance = client.get_balance("ATC7F3A...").await.unwrap();
@@ -12029,7 +12029,7 @@ async fn main() {
 from atc_sdk import ATCClient, Wallet
 
 # Verbindung
-client = ATCClient(rpc="http://localhost:5000", chain_id=9000)
+client = ATCClient(rpc="http://localhost:5000", chain_id=658467)
 
 # Wallet
 wallet = Wallet.from_mnemonic("word1 word2 ... word24")
@@ -12063,7 +12063,7 @@ result = client.call_contract(
 // npm install @atcchain/sdk
 import { ATCClient, Wallet } from '@atcchain/sdk';
 
-const client = new ATCClient({ rpc: 'http://localhost:5000', chainId: 9000 });
+const client = new ATCClient({ rpc: 'http://localhost:5000', chainId: 658467 });
 const wallet = Wallet.fromMnemonic('word1 word2 ... word24');
 
 // Balance
@@ -12217,7 +12217,7 @@ await tx.wait();
 | **ATCVM** | Stack-basierte Virtual Machine für ATCLang-Bytecode |
 | **atcpkg** | Package-Manager für ATC-Module (ATC-98) |
 | **Bootstrap Node** | Erster Einstiegspunkt ins P2P-Netzwerk (Issue #14) |
-| **Chain ID** | 9000 — eindeutige Identifikation der A-TownChain |
+| **Chain ID** | 658467 — eindeutige Identifikation der A-TownChain |
 | **CID** | Content Identifier — SHA-256-Hash einer ATCFS-Datei |
 | **DAO** | Decentralized Autonomous Organization — Governance-System |
 | **DID** | Decentralized Identifier — `did:kai:z6Mkh...` |
@@ -12494,7 +12494,7 @@ version: "3.9"
 x-node: &node-base
   image: atc-node:1.0
   environment:
-    - CHAIN_ID=9000
+    - CHAIN_ID=658467
     - CHAIN_TYPE=non-evm
     - HASH_ALGO=sha256
     - LOG_LEVEL=info
@@ -12561,7 +12561,7 @@ services:
 
 ```bash
 # 1. Umgebungsvariablen setzen
-export ATC_CHAIN_ID=9000
+export ATC_CHAIN_ID=658467
 export ATC_NETWORK=testnet
 export ATC_VERSION=1.0
 
@@ -12693,14 +12693,14 @@ def test_T005_node_failure_recovery():
 
 ## 55.1 Übersicht
 
-Der `MainnetLaunchManager` (Chain-ID: **9000**) koordiniert den schrittweisen Übergang von Testnet zu Mainnet.
+Der `MainnetLaunchManager` (Chain-ID: **658467**) koordiniert den schrittweisen Übergang von Testnet zu Mainnet.
 
 ## 55.2 Klassen-API
 
 ```python
 # blockchain/mainnet/mainnet_config.py
 class MainnetLaunchManager:
-    CHAIN_ID = 9000
+    CHAIN_ID = 658467
     MIN_VALIDATORS = 5
     GENESIS_SUPPLY = 1_000_000_000  # 1 Mrd. ATC
     BLOCK_TIME_TARGET = 6.0         # Sekunden
@@ -12718,7 +12718,7 @@ class MainnetLaunchManager:
 | Pre-Launch | 5+ Validators bereit | 🔴 |
 | Pre-Launch | Security Audit abgeschlossen | 🔴 |
 | Pre-Launch | Genesis-Block signiert (3-of-5) | 🔴 |
-| Launch | Chain-ID 9000 live | 🔴 |
+| Launch | Chain-ID 658467 live | 🔴 |
 | Post-Launch | Block-Explorer online | 🔴 |
 | Post-Launch | Faucet aktiv | 🔴 |
 
@@ -12726,7 +12726,7 @@ class MainnetLaunchManager:
 
 ```toml
 # config/mainnet_genesis.toml
-chain_id = 9000
+chain_id = 658467
 name = "A-TownChain Mainnet"
 symbol = "ATC"
 decimals = 18
@@ -12749,7 +12749,7 @@ validator_min_stake = "10000000000000000000000"  # 10k ATC
 ```python
 # blockchain/mainnet/mainnet_config.py
 MAINNET_CONFIG = {
-    "chain_id":     9000,
+    "chain_id":     658467,
     "chain_name":   "A-TownChain Mainnet",
     "symbol":       "ATC",
     "decimals":     18,
@@ -12932,7 +12932,7 @@ class MobileWalletManager:
         # 256-bit Entropy → 24-Wort BIP39 Mnemonic
         mnemonic = generate_mnemonic(strength=256)
         seed = mnemo.to_seed(mnemonic)
-        # BIP44: m/44'/9000'/0'/0/0 (ATC Chain-ID 9000)
+        # BIP44: m/44'/9000'/0'/0/0 (ATC Chain-ID 658467)
         private_key = derive_key(seed, path="m/44'/9000'/0'/0/0")
         address = ecdsa_to_address(private_key)
         return {"address": address, "mnemonic": mnemonic}
@@ -14611,7 +14611,7 @@ Alle Collections sind generisch und unterstützen ATCLang-Traits (`Ord`, `Eq`, `
 | `BlockHeader` | ~200 bytes | parent_hash, state_root, tx_root, height, timestamp, proposer, sig |
 | `Transaction` | ~120 bytes | from, to, value, gas, nonce, data, sig |
 
-**Utility-Funktionen:** `now()`, `epoch()`, `chain_id()` (→ 9000), `gas_left()`, `caller()`, `emit_event()`
+**Utility-Funktionen:** `now()`, `epoch()`, `chain_id()` (→ 658467), `gas_left()`, `caller()`, `emit_event()`
 
 ### Context-Isolation Matrix
 
@@ -15604,14 +15604,14 @@ Geprüft wurden: VERSION-Dateien, AGENT_MASTERRULES.md, Wiki-Kapitel, Standards-
 | 3 | `poh.py` verwendete SHA-3 statt SHA-256 | ATC-86 (SHA-256) | `hashlib.sha3_256` → `hashlib.sha256` | `48b92d` |
 | 4 | 15 ATCLang-Dateien mit alten ATC-IDs | ATC-01–98 System | ATC-89→89, 9000→90, 9900→91, 1001→82 | 15 Commits |
 | 5 | 26 Python-Dateien ohne STUB-Marker | AD-006 (ATCLang First) | STUB-Header mit Sprint-Zuweisung | 26 Commits |
-| 6 | Chain-ID 9000 | AD-004 | ✅ Bereits korrekt in `mainnet_config.py` | — |
+| 6 | Chain-ID 658467 | AD-004 | ✅ Bereits korrekt in `mainnet_config.py` | — |
 
 #### 69.3.2 — Code-Übersicht nach Audit
 
 | Typ | Dateien | Status |
 |-----|---------|--------|
 | Python (.py) | 193 | Alle mit STUB-Markern → ATCLang Migration geplant |
-| ATCLang (.atc) | 33 | Alle ATC-01–98 konform, SHA-256, Chain-ID 9000 |
+| ATCLang (.atc) | 33 | Alle ATC-01–98 konform, SHA-256, Chain-ID 658467 |
 | Solidity (.sol) | 0 | Non-EVM konform |
 | Solana | 0 | Non-EVM konform |
 | Tests | 28 | ATC-98 Test-Standard |
@@ -15898,7 +15898,7 @@ Branch-Protection blockiert API-Push von Workflow-Dateien. Fix-Dateien in `ci-cd
 
 ### 77.1 Mainnet Prep (Sprint 4.0)
 - Genesis Block (#71), 10+ Validator-Nodes (#70)
-- Mainnet Config: Chain-ID 9000, SHA-256, ATCLang
+- Mainnet Config: Chain-ID 658467, SHA-256, ATCLang
 - Hybrid Consensus: PoH → PoW → PoS
 
 ### 77.2 Mainnet Launch (Sprint 4.1)

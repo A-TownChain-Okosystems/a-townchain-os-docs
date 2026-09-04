@@ -2,7 +2,7 @@
 
 > **Version:** 2.0 | **Stand:** 03.08.2026 | **Autor:** Aurora (MasterBrain · Base44)
 > **Standards:** 99 ATC-Standards (ATC-01–99) — 94 spezifiziert mit Gas-Costs + Tests + Sprint
-> **Wiki:** 69 Kapitel | **Audit-Score:** 91/100 | **Chain-ID:** 9000 (AD-004 offen) | **Non-EVM:** SHA-256
+> **Wiki:** 69 Kapitel | **Audit-Score:** 91/100 | **Chain-ID:** 658467 (AD-004 RESOLVED) | **Non-EVM:** SHA-256
 
 ---
 
@@ -63,7 +63,7 @@
 6. 🔄 Parser-Coverage 198/198 — f-String-Lexer-Fix gepusht, 12 Restkategorien identifiziert
 
 ### Blocker (→ Michael)
-- **AD-004** Chain-ID 9000 — REOPENED, Entscheidung nötig
+- **AD-004** Chain-ID 658467 — RESOLVED (03.09.2026)
 - **AD-005** ATC-97 Protocol — Spezifikation finalisieren
 - **#79** CI/CD Pipeline Fix — Branch-Protection blockiert API-Push
 

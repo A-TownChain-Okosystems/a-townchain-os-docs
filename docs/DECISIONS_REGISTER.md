@@ -12,7 +12,7 @@
 | AD-001 | Hash-Algorithmus | ✅ RESOLVED | — | Aurora |
 | AD-002 | EventBus vs IPCBus | ⏳ VALIDATE | 2.4 | **Michael** |
 | AD-003 | Flash-Loan Voting Snapshot | ✅ RESOLVED | 2.6 | Aurora |
-| AD-004 | Chain-ID (Platzhalter 9000) | 🔴 OPEN (reopened 06.07.2026) | — | Michael |
+| AD-004 | Chain-ID 658467 | ✅ RESOLVED (03.09.2026) | 658467 | Michael |
 | AD-005 | ATC-97 Agent Protocol Spec | 📐 DRAFT_REVIEW | 3.0 | **Aurora** (Spec drafted — pending Michael review) |
 | AD-006 | Python vs Substrate | ✅ RESOLVED | — | Aurora (ATCLang First) |
 | AD-007 | EVM Registry | ✅ RESOLVED | — | Aurora (Non-EVM) |
@@ -33,11 +33,15 @@
 - **Implementierung:** dao_live.atc — Snapshot-Mechanismus implementiert
 - **Gültig seit:** 05.07.2026
 
-### AD-004 — Chain-ID NICHT final 🔴
-- **Status:** REOPENED 06.07.2026 — Michael: "Wir haben noch keine Chain-ID, 9000 ist ID von Ethereum(-Oekosystem)" (bestaetigt: 9000 = Evmos Testnet auf chainlist.org)
-- **Entscheidung:** Noch offen. 9000 ist nur Platzhalter im Code, keine echte Chain-ID vergeben
-- **Begründung:** XDC Network nutzt 9000 im EVM-Registry, aber A-TownChain ist Non-EVM → kein Konflikt
-- **Gültig seit:** 2026-06-14
+### AD-004 — Chain-ID final: 658467 ✅
+- **Status:** RESOLVED 03.09.2026 — Michael entschieden (SUPERSEDED: Platzhalter 9000)
+- **Entscheidung:** Chain-ID = **658467** ('ATC' in ASCII: 65-84-67) — systemweit umgestellt
+  (Monorepo-Commits 8316604+dc1a094, Hub-Commit dieser Änderung)
+- **Begründung:** 9000 ist öffentlich belegt (Evmos Testnet im EVM-Registry) — Kollisionsrisiko
+  für die bewusst Non-EVM A-TownChain. 658467 ist praktisch kollisionsfrei.
+- **Bewusst unverändert:** Listen-Ports 9000, ATC-9000 NFT-Standard, BIP44-Coin-Type
+  `m/44'/9000'` (Wallet-Derivation), Negativ-Testfall 9999, network_magic 0x0A0C23A0
+- **Gültig seit:** 2026-09-03
 
 ### AD-006 — Python vs Substrate ✅
 - **Entscheidung:** Weder Python noch Substrate — Alles wird ATCLang

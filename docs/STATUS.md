@@ -30,7 +30,7 @@
 
 | ID | Blocker | Status |
 |----|---------|--------|
-| AD-004 | Chain-ID 9000 | ⚠️ Michael Entscheidung offen |
+| AD-004 | Chain-ID 658467 | ✅ RESOLVED (03.09.2026) |
 | #79 | CI/CD Workflow | ⚠️ Manueller Push nötig |
 | ATCLang | Parser-Coverage | 🔄 6 Fixes ausstehend |
 
