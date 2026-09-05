@@ -1,6 +1,10 @@
 # ShivaCore Kernel-Architektur — Offizielle Spezifikation (Globus OS)
 
 > **Status:** VERBINDLICH (Architektur-Entscheidung AD-012) · **Datum:** 06.09.2026
+> **NORMATIVE SCHAERFUNG:** Siehe v0.1 Architektur-Gate (AD-013):
+> [`SHIVACORE_V01_ARCHITECTURE_GATE.md`](SHIVACORE_V01_ARCHITECTURE_GATE.md) —
+> SC-ARCH-Freeze-Regeln, CSpace-Capability-Modell, Kernel Object Model,
+> Scheduling Domains, Syscall-ABI, Boot Chain, SC-001…013-Reihenfolge.
 > **Geltungsbereich:** ShivaCore Kernel als unterliegender Systemkern von Globus OS
 > **Abgrenzung:** ShivaCore ist NICHT Aurora AI, NICHT der Globus Shell Layer, NICHT ATCLang.
 
@@ -136,6 +140,13 @@ Process A                    Process B
 
 Eine Anwendung besitzt nur die Ressourcen, die ihr explizit zugewiesen wurden.
 Dies ist die Grundlage für DefenderGPT / den Security-Core.
+
+**Normative Schärfung (AD-013):** Im Kern sind Capabilities Kernel-enforced
+Handles (CSpace-Slot → Kernel Capability Object → Object + Rights) — Unfälschbarkeit
+durch CSpace-Isolation, NICHT durch Kryptografie. Kryptografische Tokens sind
+Cross-Domain-Erweiterung (`did.rs`/`remote_caps.rs` in K29). Details im
+[Architektur-Gate](SHIVACORE_V01_ARCHITECTURE_GATE.md).
+
 
 ---
 

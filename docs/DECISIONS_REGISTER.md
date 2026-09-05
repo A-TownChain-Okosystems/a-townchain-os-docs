@@ -171,3 +171,30 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
   Spezifikation mit Delta-Analyse Ist-Stand K29 vs. Ziel).
 - **Naechster Baustein:** ShivaCore v0.1 Kernel-Spezifikation (Boot → Memory Model →
   Scheduler → IPC → Syscalls → Capability Model → Driver Model → ATCLang ABI).
+
+---
+
+### AD-013: ShivaCore v0.1 Architektur-Gate — SC-ARCH-Freeze-Regeln 🏗️ VERBINDLICH
+**Status:** ENTSCHIEDEN (Freeze) | **Datum:** 06.09.2026
+
+- **Kontext:** AD-012 definierte die Microkernel-Architektur. Vor Implementierungsbeginn
+  wurde der Entwurf normativ geschaerft, um Kernel-/OS-Vermischung zu verhindern.
+- **Kern-Gate:** ShivaCore ist ein echter Capability-Microkernel; Globus OS ist das
+  darauf aufbauende Userspace-Betriebssystem.
+- **Schaerfungen:** (1) Capabilities im Kern sind Kernel-enforced Handles
+  (CSpace-Slots, Objektverwaltung), NICHT kryptografisch — Krypto nur fuer
+  Cross-Domain (K29-remote_caps bleibt getrennte Erweiterung). (2) globus-init
+  erhaelt explizite Initial-Capabilities via Initial Task (CSpace Root, BootInfo,
+  Untyped/IRQ/Device Caps) — KEIN Unix-Root-Modell. (3) Kernel Object Model:
+  Thread/AddressSpace/PageTable/Frame/CNode/Endpoint/Notification/IRQ/Device/
+  UntypedMemory/Timer. (4) IPC als Bus des OS; Control Plane (IPC) vs. Data Plane
+  (Shared Memory/DMA/Zero-Copy). (5) Scheduling Domains (HARD/Soft RT, Interactive,
+  System, Normal, Background) statt reiner Prioritaetszahl. (6) Kernel MUSS unabhaengig
+  sein von AI/Blockchain/ATCLang/GUI (deterministisch, bootstrapping-faehig).
+  (7) DefenderGPT beobachtet/empfiehlt nur — Enforcement bleibt deterministisch im
+  Kernel. (8) Objektorientierte Syscall-ABI (TASK/MEMORY/IPC/CAPABILITY/IRQ/TIME).
+  (9) Boot Chain: UEFI→Limine→ShivaCore→globus-init→Globus OS.
+- **Freeze-Regeln:** SC-ARCH-001 bis SC-ARCH-010 (siehe Gate-Dokument, Tabelle 13).
+- **Implementierungs-Reihenfolge:** SC-001 (Kernel Object Model) bis SC-013
+  (ATCLang ABI); Aurora/A-TownChain/Genesis erst danach anbinden.
+- **Details:** `docs/architecture/SHIVACORE_V01_ARCHITECTURE_GATE.md`
