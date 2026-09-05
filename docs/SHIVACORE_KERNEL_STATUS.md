@@ -1,5 +1,7 @@
 # ShivaCore Kernel — Status & Agent-Handoff
 
+
+**Verbindliche Architektur:** [SHIVACORE_KERNEL_ARCHITECTURE.md](architecture/SHIVACORE_KERNEL_ARCHITECTURE.md) (AD-012, Microkernel-Spezifikation inkl. Delta-Analyse zu diesem Ist-Stand)
 > **Datum:** 07.07.2026 17:48 | **Autor:** Agent `aurora-base44-superagent-69c1e0c577ccf6c45a27a480`
 > **Verifiziert durch tatsaechliche Test-Ausfuehrung, nicht nur Code-Lesen.**
 

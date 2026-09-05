@@ -142,3 +142,32 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
 ---
 
 *Decisions Register v1.0.0 — Aurora (MasterBrain · Base44) · 05.07.2026*
+
+---
+
+### AD-012: ShivaCore als Microkernel/Hybrid-Microkernel von Globus OS 🏗️ VERBINDLICH
+**Status:** ENTSCHIEDEN | **Datum:** 06.09.2026
+
+- **Kontext:** ShivaCore (Rust-Kernel, K29, 674/674 Tests) ist der unterliegende Systemkern
+  von Globus OS. Bisherige Wachstumshistorie (K29) hat Blockchain-Komponenten in den
+  Kernel-Crate eingebracht. Abgrenzung zu Aurora AI, Globus Shell und ATCLang war nirgends
+  verbindlich festgeschrieben.
+- **Entscheidung:** ShivaCore wird als Microkernel/Hybrid-Microkernel konzipiert.
+  Kernel-Kontext enthaelt NUR sicherheits-/zeitkritische Primitive: Scheduler, Memory,
+  IPC, Interrupts, Capability Security, Process/Thread Core, Minimal VFS, HAL, Syscall ABI.
+  Filesystem/Network/GPU/Audio/AI/Blockchain/Container/ATCLang-Runtimes laufen im
+  User/Service Space. ATCLang erreicht den Kernel ausschliesslich ueber
+  Syscall ABI + Capability Check (kein direkter Kernel-Speicherzugriff).
+  4 Sicherheitszonen (L0 Hardware, L1 Kernel, L2 Privileged Services, L3 User/AI/Games)
+  plus Sandbox-Modell. Blockchain ist System Service (A-TownChain Node Service), AI
+  arbeitet ueber Kernel-Event-Bridge mit Capability Tokens — keine unbeschraenkte
+  Kernel-Kontrolle.
+- **Migration:** Blockchain-Komponenten im Kernel-Crate (blockchain/consensus/genesis/
+  gossip_bridge/security_audit.rs) sind in den Service-Space zu migrieren
+  (eigener Architektur-Sprint, API-kompatibel via KernelState/cross_subsystem).
+  Offene Ziel-Subsysteme: Syscall ABI, HAL, Interrupt Manager, Driver Manager,
+  Time Manager, Virtual Memory.
+- **Details:** `docs/architecture/SHIVACORE_KERNEL_ARCHITECTURE.md` (verbindliche
+  Spezifikation mit Delta-Analyse Ist-Stand K29 vs. Ziel).
+- **Naechster Baustein:** ShivaCore v0.1 Kernel-Spezifikation (Boot → Memory Model →
+  Scheduler → IPC → Syscalls → Capability Model → Driver Model → ATCLang ABI).
