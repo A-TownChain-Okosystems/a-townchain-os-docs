@@ -1628,17 +1628,7 @@ Bestimmt die Stärke der generierten Stats via `RARITY_MULTIPLIER`.
 | ATC-9000 | NFT (Shivamon) | `blockchain/contracts/shivamon/shivamon_contract.py` | ✅ |
 | ATC-9900 | Governance/DAO | geplant | ⏳ v2.1 |
 
-→ Vollständige Dokumentation: [SHIVAMON_NFT_CONTRACT.md](./SHIVAMON_
-
----
-
-## 11. Cross-Chain Bridge
-
-### Ethereum + Polygon + BSC
-# Kapitel 33 — Ethereum/EVM Integration
-
-> Version: 1.0.0 | Stand: 2026-06-09 | KAI-OS Wiki
-> Status: Geplant (Sprint 2.9, Sprint 3.11)
+→ Vollständige Dokumentation: [SHIVAMON_NFT_CONTRACT.md](../../../contracts/SHIVAMON_NFT_CONTRACT.md)
 
 ---
 
