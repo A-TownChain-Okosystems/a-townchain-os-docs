@@ -521,7 +521,7 @@
 ### LANGFRISTIG (Sprint 4.0+)
 
 13. **Kernel → ATCLang Kernel-Support** — 80h
-14. **Mainnet Launch Vorbereitung** — 40h
+14. ~~Mainnet Launch Vorbereitung~~ — AUFGEHOBEN per AD-023 (Neubewertung durch Owner)
 15. **ATCLang v1.0** (Compiler, VM, Stdlib, Tests) — 100h
 
 ---

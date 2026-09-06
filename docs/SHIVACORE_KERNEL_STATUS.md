@@ -66,7 +66,7 @@ Bewusst dokumentierte Abweichungen, Migration als eigener Sprint geplant:
 
 1. Owner-Entscheidungen SC-DEC-A…F → SC-001-Freeze → SC-002
 2. Sprint-Planung Service-Space-Migration der Blockchain-Module
-3. Mainnet-Blocker: **#69** Dependabot (69 Vulns, 3 critical) · **#70** K30 Validator-Nodes · **#71** K31 Genesis Block — Mainnet-Target: **15.09.2026**
+3. Ehemalige Mainnet-Blocker: **#69** Dependabot (69 Vulns, 3 critical) · **#70** K30 Validator-Nodes · **#71** K31 Genesis Block — Mainnet-Target: **AUFGEHOBEN per AD-023** (Launch nicht terminiert; Punkte bleiben als Qualitätsoffenliste)
 
 ## 6. Infrastruktur-Notizen
 

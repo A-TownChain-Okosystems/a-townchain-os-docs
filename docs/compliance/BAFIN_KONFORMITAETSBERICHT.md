@@ -354,7 +354,7 @@ nicht moeglich, welche wiederum durch Secure Boot (ATC-LIC) verhindert wird.
 | Rechtliche Pruefung (Fachanwalt) | August 2026 | 📐 Geplant |
 | Patent-Anmeldung ATVM License Gate | August 2026 | 📐 Geplant |
 | Finale Konformitaetserklaerung | September 2026 | 📐 Geplant |
-| **Mainnet-Launch** | **15. September 2026** | 📐 Geplant |
+| **Mainnet-Launch** | — | ❌ Aufgehoben per AD-023 (06.09.2026), kein Termin |
 
 ---
 
@@ -398,7 +398,7 @@ nicht moeglich, welche wiederum durch Secure Boot (ATC-LIC) verhindert wird.
 **Ansprechpartner:** Michael Wroblewski (ShivaCore)
 **Organisation:** A-TownChain-Okosystems
 **Projekt:** A-TownChain — Dezentrales Blockchain-Oekosystem
-**Mainnet-Launch:** 15. September 2026
+**Mainnet-Launch:** Aufgehoben per AD-023 (06.09.2026) — kein Termin; Neubewertung durch Owner
 
 ---
 

@@ -47,7 +47,7 @@
 | Sprint | Titel | Status | Standards | Issues |
 |--------|-------|--------|-----------|--------|
 | **4.0** | Mainnet Prep | 🟡 PLANNED | ATC-01, 81, 83–86 | #70, #71 |
-| **4.1** | Mainnet Launch | 🟡 PLANNED | — (Launch) | — |
+| ~~4.1~~ | ~~Mainnet Launch~~ | ❌ ENTFERNT per AD-023 (06.09.2026) — kein Datum; Neubewertung durch Owner | — | — |
 | **4.2** | Future Tiers | 🟡 PLANNED | ATC-51–80 | — |
 
 ---

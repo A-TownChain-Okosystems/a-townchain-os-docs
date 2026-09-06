@@ -18,6 +18,7 @@
 | AD-007 | EVM Registry | ✅ RESOLVED | — | Aurora (Non-EVM) |
 | AD-008 | Reality-Check: 44 Issues re-auditieren/re-open? | ⏳ DECISION | — | **Michael** |
 | AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ (kanonisch: atclang/ATCLANG_SPEC.md) / Bridge-Standards-Dedup (ATC-09/38/69/91) ⏳ | 🟡 TEIL-GELOEST | 08.07.2026 | **Michael** (nur noch Bridge-Dedup) |
+| AD-023 | Mainnet-Launch aufgehoben (kein Launch-Ziel/Deadline mehr) | ✅ RESOLVED (06.09.2026) | — | Michael |
 
 ---
 
@@ -408,3 +409,33 @@ Core → Differential Testing → Conformance → Security Audit → Freeze.
 G0 (Repository Cleanup) erledigt; G1 (Language Specification) naechstes Gate,
 specs/-Skelett angelegt. Verfeinert AD-019/AD-021.
 Doku: atclang docs/ATCLANG_BASELINE_V1.md (Commit a7e1bd4).
+
+---
+
+## AD-023: Mainnet-Launch aufgehoben — kein Launch-Ziel, keine Deadline
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (Michael) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Der Mainnet-Launch ist als Ziel und als Deadline **aufgehoben**.
+Das Datum 15.09.2026 ist kein Launch-Termin mehr. Es gibt **kein Datum** für
+einen Mainnet-Launch — ein späterer Launch ist nicht terminiert und wird erst
+durch eine neue Owner-Entscheidung festgelegt.
+
+**Was das bedeutet:**
+1. AD-018/AD-020-Reihenfolge wird **nicht** mehr durch die Mainnet-Deadline
+   getrieben. Der Launch-Stack wird aus dem Vault restauriert, wenn es
+   gebraucht wird (Testnet/Integration), nicht als Mainnet-Vorbereitung.
+2. Die Rebuild-Priorität verschiebt sich auf **Qualität statt Termin**:
+   atc-shivacore SC-001…SC-013 und die ATCLang-Gates G0-G19 (AD-022) ohne
+   Zeitdruck — insbesondere G18 (Security Audit) vor jedem Freeze.
+3. Roadmap-Milestone 4.0/4.1 („Mainnet Launch") ist **entfernt**; ein
+   künftiger Launch erhält eine neue Milestone-Nummer und ein neues Datum,
+   sobald der Owner es beschließt.
+4. Historische Erwähnungen (Issues #36/#52/#69–71, AD-018-Text, Wiki-Kapitel,
+   BaFin-Bericht) bleiben als Historie unangetastet; sie sind durch AD-023
+   **superseded**, was den Launch-Zeitpunkt betrifft.
+
+**Bewusst unverändert:** Testnet (5 Nodes, Docker) bleibt vollständiges Ziel;
+Chain-ID 658467 (AD-004) bleibt final und wird beim künftigen Launch genutzt.
+
+**Gültig seit:** 06.09.2026 (21:25 UTC+2)

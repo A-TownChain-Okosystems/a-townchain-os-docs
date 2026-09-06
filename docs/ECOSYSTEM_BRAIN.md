@@ -97,7 +97,7 @@
 | 2.5 | NFT + Marketplace | 🟡 GEPLANT | 0% | #11,#13,#31,#45 |
 | 2.8 | Testnet Live | 🟡 GEPLANT | 0% | #8 |
 | 3.0 | Alpha Release | 🟡 GEPLANT | 0% | #46-#50,#10,#27 |
-| 4.0 | Mainnet Launch | 🟡 GEPLANT | 0% | #52,#69,#70,#71 |
+| 4.0 | ~~Mainnet Launch~~ | ❌ AUFGEHOBEN per AD-023 (06.09.2026) — kein Datum | — | — |
 
 ---
 
@@ -117,4 +117,4 @@
 | Konformitaetsbericht | ✅ 7 Kategorien KONFORM, 32 Audit-Items |
 | ATVM License Gate | 📐 Implementation Q3 2026 |
 | BaFin-Einreichung | ⏳ Bereit zur Vorab-Abklaerung |
-| Mainnet-Launch | 📐 15.09.2026 |
+| Mainnet-Launch | ❌ AUFGEHOBEN per AD-023 — kein Datum |

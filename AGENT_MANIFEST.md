@@ -13,8 +13,8 @@
 | [aurora-ai](https://github.com/A-TownChain-Okosystems/aurora-ai) | Produkt | 🔴 geleert |
 | [genesis-engine](https://github.com/A-TownChain-Okosystems/genesis-engine) | Produkt | 🔴 geleert |
 
-> **Rebuild-Reihenfolge (AD-020):** Launch-Stack aus Vault → atc-shivacore SC-001+ → übrige Produkt-Repos.
-> **Chain-ID:** 658467 (AD-004 RESOLVED). **Mainnet-Deadline: 15.09.2026.**
+> **Rebuild-Reihenfolge (AD-020):** atc-shivacore SC-001+ → übrige Produkt-Repos (Launch-Stack bei Bedarf aus Vault).
+> **Chain-ID:** 658467 (AD-004 RESOLVED). **Mainnet-Launch: per AD-023 AUFGEHOBEN — kein Datum.**
 
 ## Integrationen (17 aktiv)
 | Integration | Status | Zweck |

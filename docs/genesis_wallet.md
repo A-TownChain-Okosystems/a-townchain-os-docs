@@ -87,7 +87,7 @@ python3 scripts/generate_validators.py --count 5 --chain-id 658467
 - [ ] Validator-Bonds funded (5 × 10.000 ATC)
 - [ ] SSL-Zertifikate installiert
 - [ ] Security-Audit abgeschlossen
-- [ ] Mainnet Launch 🚀
+- [ ] ~~Mainnet Launch~~ (aufgehoben per AD-023 — Neuentscheidung durch Owner erforderlich)
 
 ---
 
