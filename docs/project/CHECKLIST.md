@@ -1,8 +1,8 @@
 # A-TownChain — Mainnet Launch Checklist
 
 > Target: September 15, 2026 (40 Tage)
-> Last Updated: 2026-08-06
-> Kernel: K29 | 30 Module | 367/367 Tests ✅
+> Last Updated: 2026-09-06
+> Kernel: ShivaCore K29 | 30 Module | 674/674 Kernel-Tests ✅ · 731/731 Workspace-Tests ✅ (STABLE)
 
 ---
 
@@ -166,3 +166,34 @@
 - [ ] Mobile App (iOS/Android)
 - [ ] Governance — DAO Voting
 - [ ] AIP-001 Agent Interaction Protocol — Issue #80
+
+---
+
+## September 2026 — Konsolidierung & Architektur-Freeze (Update 06.09.2026)
+
+**Erreicht seit 06.08.:**
+- **128→2 Konsolidierung OFFIZIELL** (03.09.): Alle 126 Alt-Repos archiviert;
+  kanonisch: `a-townchain-os` (Code-Monorepo) + `a-townchain-os-docs` (Docs-Hub).
+  Volldokumentation: 2.237 Dateien auditiert, 0 Fehler, 0 Datenverlust
+  (Content-Hash-Verifikation), 575/575 Hub-Links grün, 93/93 Monorepo-Links grün.
+- **Unified Cargo Workspace** (04.09.): 19 Rust-Crates in EINEM Build-System,
+  Workspace-Tests **731/731 grün**, Kernel **674/674 auf STABLE**.
+  Modul-Registry: 60 Module in `src/modules/registry.py`.
+- **Chain-ID 658467** systemweit migriert (04.09., AD-004 RESOLVED; GitHub-Metadaten
+  verifiziert). Bewusst unverändert: Ports, ATC-9000-NFT, BIP44 m/44'/9000'.
+- **Konsistenz-Audit** (05.09., Commit 6a162da): CodeQL-Workflow repariert
+  (Auto-Übersetzung hatte YAML-Keywords eingedeutscht — lief nie), READMEs auf
+  Konsolidierungs-Stand.
+- **ShivaCore-Architektur VERBINDLICH** (06.09.): AD-012 Microkernel-Spezifikation
+  + AD-013 Architektur-Gate v1.1 (SC-ARCH-001…010 Freeze-Regeln,
+  SC-001…013-Reihenfolge, Scheduling Domains, Syscall-ABI, Boot Chain).
+- **SC-001 Kernel Object Model** — Spezifikations-ENTWURF v0.1.0-draft1
+  (29 MUST-Regeln, 11 Objekttypen, Testvektoren). Status DRAFT_REVIEW —
+  wartet auf Owner-Entscheidungen SC-DEC-A…F.
+
+**Offen bis Mainnet 15.09.2026:**
+- 🔴 Issue #69: Dependabot — 69 Schwachstellen (3 critical, 27 high, 32 moderate, 7 low)
+- 🔴 Issue #70 (K30): 10+ Mainnet-Validator-Nodes deployen
+- 🔴 Issue #71 (K31): Genesis Block finalisieren (Chain-ID 658467)
+- ⏳ SC-001-Freeze (nach SC-DEC-A…F) → SC-002 Capability Model
+- ⏳ Service-Space-Migration der Blockchain-Module aus dem Kernel-Crate (eigener Sprint)
