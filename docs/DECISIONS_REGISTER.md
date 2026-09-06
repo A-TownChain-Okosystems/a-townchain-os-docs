@@ -19,6 +19,7 @@
 | AD-008 | Reality-Check: 44 Issues re-auditieren/re-open? | ⏳ DECISION | — | **Michael** |
 | AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ (kanonisch: atclang/ATCLANG_SPEC.md) / Bridge-Standards-Dedup (ATC-09/38/69/91) ⏳ | 🟡 TEIL-GELOEST | 08.07.2026 | **Michael** (nur noch Bridge-Dedup) |
 | AD-023 | Mainnet-Launch aufgehoben (kein Launch-Ziel/Deadline mehr) | ✅ RESOLVED (06.09.2026) | — | Michael |
+| AD-024 | Zielarchitektur Repository-Landkarte (vertikale Produkte, P0-P2) | 📐 DRAFT_REVIEW | — | **Michael** (Entwurf dokumentiert, Feedback aus Architektur-Analyse 06.09.) |
 
 ---
 
@@ -439,3 +440,52 @@ durch eine neue Owner-Entscheidung festgelegt.
 Chain-ID 658467 (AD-004) bleibt final und wird beim künftigen Launch genutzt.
 
 **Gültig seit:** 06.09.2026 (21:25 UTC+2)
+
+---
+
+## AD-024: Zielarchitektur Repository-Landkarte — vertikale Produktgrenzen (ENTWURF)
+
+**Datum:** 06.09.2026 · **Status:** 📐 DRAFT_REVIEW — **wartet auf Owner-Entscheidung (Michael)** · **Eingereicht durch:** Architektur-Analyse (extern), aufbereitet durch Agent Aurora
+
+**Vorschlag:** Wachstum der Organisation **vertikal entlang konkreter Produkte/Protokolle**
+(Protocol → Node → SDK → Wallet/Explorer/Contracts → Applications), nicht horizontal
+über weitere Core-Repos. Bestehende 8 Repos bleiben (🟢); neue vertikale Repos in Phasen:
+
+- **Phase 1 (P0):** `atc-sdk` (Developer-Plattform), `atc-node` (Node-Binary getrennt vom
+  Protocol-Core), `atc-contracts` (Standards + Contracts, NICHT im Core), `atc-wallet`
+  (eigene Security Boundary: Keys/Seed/Signing/Recovery/Hardware)
+- **Phase 2 (P1):** `atc-explorer` + `atc-indexer`, `atc-mining`, `atc-interop`
+  (Bridges/IBC = eigene Sicherheitsdomäne), `shivamon` (Game getrennt von genesis-engine:
+  Engine = Technologie, Shivamon = Produkt)
+- **Phase 3 (P2):** `atc-oracle`, `atc-storage`, `atc-launchpad`, `atc-marketplace`,
+  `atc-compute`
+
+**Abgleich mit bestehender Struktur (AD-014–AD-020) — WICHTIG:**
+1. Die meisten „neuen" Repos **existieren bereits als Vault-Module** in den Produkt-Repos:
+   `a-townchain` enthält lt. REPOSITORY_MAP bereits atc-blockchain, atcnet, atc-wallet,
+   atc-contracts, atc-bridge, atc-dex, atc-explorer, atc-assets, atc-zkp, atc-governance,
+   atc-dns, atc-testnet (369 Dateien). atc-sdk, atc-contracts, atc-wallet, atc-explorer,
+   atc-shivamon sind im Vault (`docs/archive/monorepo-full/`) nachweislich vorhanden.
+   NEU ohne Vault-Bestand: atc-node, atc-indexer, atc-mining, atc-interop, atc-oracle,
+   atc-storage.
+2. **Rollen-Korrekturen zur Analyse:** `atc-shivacore` ist der **Microkernel** (AD-012/013,
+   SC-001…SC-013), KEINE AI-/Runtime-Schicht. `a-townchain` ist bereits als Blockchain-Produkt-Repo
+   zugewiesen (Chain-ID 658467). AI liegt bei `aurora-ai`.
+3. **Konflikt mit AD-016:** AD-016 stellte auf „exakt 8 aktive Repos" ab (nach Löschung
+   von 124 Alt-Repos wegen Wartungs-Overflow). AD-024 würde die Org mittelfristig wieder
+   auf ~20 Repos wachsen lassen — mit saubereren Grenzen, aber mehr Wartungsoverhead.
+4. **Timing per AD-023:** Kein Termin-Druck. Empfehlung: Repos erst anlegen, wenn der
+   Rebuild den jeweiligen Bereich erreicht (Qualitäts-Gates), und dann als
+   **Abspaltung aus dem Vault** (Restore), nicht als Neuentwicklung.
+
+**Vorgeschlagene Promotion-Kriterien (statt fixer Phasen-Termine):**
+- `atc-sdk`: sobald ATCLang Rust-ABI/Artifact-Stabilisierung erreicht ist (AD-022-Gates)
+- `atc-node`: sobald Protocol-Core-Interface (AD-013-Kette) eingefroren ist
+- `atc-wallet`: sobald atclang-Runtime Signing/HD-Wallet-Referenz (BIP44 m/44'/9000') stabil
+- `atc-contracts`: sobald ATVM-Contract-Kontext (AD-019/022) verifiziert ausführt
+- Shivamon-Split: sobald genesis-engine den ECS-/World-Kern stabil liefert
+
+**Entscheidung offen:** (a) P0-Repos SOFORT als eigenständige Repos anlegen (widerruft
+AD-016-„exakt 8") oder (b) vertikale Grenzen als Modulgrenzen in den bestehenden
+Produkt-Repos führen und Repos erst bei Erreichen der Promotion-Kriterien abspalten.
+Empfehlung des Agents: (b) — qualitätsgetrieben per AD-023, keine Repos vor Content.

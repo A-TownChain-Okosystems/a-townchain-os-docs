@@ -62,3 +62,25 @@ Modul-Code nie direkt im Monorepo bearbeiten. Details: DECISIONS_REGISTER AD-017
 | a-townchain-os, atc-shivacore, a-townchain, globus-os, aurora-ai, genesis-engine | Geleert — Redirect-README, Wiederaufbau aus Vault |
 
 Git-Historien aller Repos bleiben erhalten (Reversibilität).
+
+## Zielarchitektur-Landkarte (AD-024-ENTWURF, 06.09.2026 — Owner-Review offen)
+
+Vertikales Wachstum entlang konkreter Produkte; die heutigen Produkt-Repo-Module sind
+die künftigen Abspalt-Kandidaten (Restore aus Vault bei Promotion-Kriterien-Erreichung):
+
+| Ziel-Repo | Heutiger Ort (Modul im Produkt-Repo/Vault) | Priorität | Promotion-Kriterium |
+|---|---|---|---|
+| atc-sdk | Monorepo-Plattformmodul atc-sdk (Vault) | P0 | ATCLang Rust-ABI stabil (AD-022-Gates) |
+| atc-node | NEU (kein Vault-Bestand) — aus a-townchain/Protocol-Core | P0 | Protocol-Interface-Freeze (AD-013) |
+| atc-contracts | a-townchain-Modul atc-contracts (Vault) | P0/P1 | ATVM-Contract-Kontext verifiziert |
+| atc-wallet | a-townchain-Modul atc-wallet (Vault) | P0/P1 | Runtime-Signing/HD-Referenz stabil |
+| atc-explorer + atc-indexer | a-townchain-Modul atc-explorer (Vault); Indexer NEU | P1 | Chain-RPC stabil |
+| atc-mining | NEU (Core definiert PoW-Regeln; Mining-Stack separat) | P1 | Consensus-Rebuild fertig |
+| atc-interop | a-townchain-Modul atc-bridge (Vault); IBC/Relayer NEU | P1 | Bridge-Security-Konzept (eigene Sicherheitsdomäne) |
+| shivamon | genesis-engine-Modul atc-shivamon (Vault) | P1 | ECS-/World-Kern stabil |
+| atc-oracle | NEU (Lücke „Oracle & External Data Binding") | P2 | Bedarfsfall DeFi/AI-Feeds |
+| atc-storage | NEU | P2 | Asset-/NFT-Metadaten-Bedarf |
+| atc-launchpad / atc-marketplace | a-townchain-Module atc-dex/atc-assets (Vault) | P2 | TGE-/Produkt-Entscheidung |
+
+> Regel: KEIN neues Repo ohne Content — Abspaltung immer als Restore/Ableitung aus dem
+> Vault bzw. Produkt-Repo, nie als leeres Skeleton (Lehre aus der 70-Repo-Ära).
