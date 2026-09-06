@@ -280,3 +280,20 @@ Produkt-Repos (atc-shivacore 181 Commits, atclang 91 Commits Historie);
 der Mainnet-Launch am 15.09. benoetigt den Monorepo als Workspace-Zentrale.
 Damit ist die im Cross-Repo-Audit identifizierte Luecke (kein Sync-Mechanismus
 -> Divergenz ab erstem produktseitigen Commit) geschlossen.
+
+---
+
+## AD-018: Gesamtvault im Wiki-Repository — Neuaufbau der Repositories
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Der komplette Stand des Monorepos a-townchain-os (Commit
+8606e50: Launch-Stack, 60 Module, 2.500+ Dateien) wurde strukturgetreu nach
+`docs/archive/monorepo-full/` in diesem Wiki-Repository verschoben. Der
+Monorepo wurde daraufhin geleert (Redirect-README). Die uebrigen Repositories
+(Monorepo + Produkt-Repos) werden neu aufgebaut; dieser Vault ist die
+kanonische Quelle dafuer. Git-Historien bleiben als Reversibilitaetsnetz.
+
+**Mainnet-Hinweis:** Der Launch-Stack (docker-compose, 10 Dienste) liegt
+jetzt ausschließlich hier; fuer den 15.09.2026 muss der Rebuild ihn als
+ersten Schritt restaurieren (Kopie aus dem Vault, nicht Neuentwicklung).
