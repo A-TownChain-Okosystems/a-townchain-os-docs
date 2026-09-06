@@ -232,3 +232,23 @@ Blockchain-Module aus dem Kernel-Crate bleibt eigener Sprint (unverändert).
 
 API-Verifikation 06.09.: atc-shivacore aktiv (HEAD gepusht), globus-os Rückbau
 gepusht, Beschreibungen/Topics aktualisiert.
+
+---
+
+## AD-016: Löschung der 124 archivierten Alt-Repos
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Nach vollständiger Daten-Sicherung wurden alle 124 archivierten
+Alt-Repos (Namenspräfix `archiviert-`) aus der Organisation gelöscht.
+Vorgehen: (1) SHA-256-Verifikation über alle 2.966 Dateien gegen Monorepo+Hub,
+(2) Rettung von 527 Original-Ständen mit abweichendem Hash nach
+docs/archive/repos-rescue/ (Commits 53a6a41, 51d949f), (3) Issues-Dump des
+einzigen Issues führenden Alt-Repos (atc-genesis-engine, 9 Issues),
+(4) API-Löschung 124/124, 0 Fehler (delete_repo-Scope, vom Owner autorisiert).
+
+**Ergebnis:** Organisation umfasst exakt 8 aktive Repos: a-townchain-os
+(Integration/Monorepo), a-townchain-os-docs (Wiki/Hub), atc-shivacore (Kernel),
+atclang, a-townchain, globus-os, aurora-ai, genesis-engine (Produkte).
+Git-Commit-Historien der gelöschten Repos sind mit ihnen entfernt; der finale
+Datei-Stand jedes Repos ist vollständig erhalten (Hub-Rescue bzw. Monorepo).

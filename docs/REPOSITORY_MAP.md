@@ -36,14 +36,14 @@ Unified Cargo Workspace, Docker-Stack, Tests.
 
 *Live-Stand API-verifiziert am 06.09.2026: alle 5 Produkt-Repos aktiv, HEAD-Commits bestätigt.*
 
-## Namenskonvention der Alt-Repos (06.09.2026)
+## Alt-Repos: GELÖSCHT (06.09.2026)
 
-Alle 124 archivierten Alt-Repos tragen seit dem 06.09.2026 den Namenspräfix
-`archiviert-` (z.B. `archiviert-kai-os-wiki`, `archiviert-atc-blockchain`).
-GitHub-Redirects leiten alte URLs automatisch auf die neuen Namen weiter.
-Die Präfix-Vergabe erfolgte pro Repo über: reaktivieren → umbenennen →
-neu archivieren (archivierte Repos sind ansonsten API-seitig read-only).
+Alle 124 archivierten Alt-Repos wurden am 06.09.2026 endgültig gelöscht
+(Owner-Entscheidung). Vor der Löschung wurde JEDE der 2.966 Dateien per
+SHA-256 gegen Monorepo + Hub verifiziert: 527 Dateien mit abweichendem
+Original-Stand (pristin vor Copyright-/Link-Fixes) wurden nach
+`docs/archive/repos-rescue/` gerettet, der Rest war byte-identisch in
+`a-townchain-os` (src/modules/) bzw. hier im Hub vorhanden — 0 Datenverlust.
+Die 9 Issues des Alt-Repos atc-genesis-engine liegen als
+`docs/archive/repos-rescue/_ISSUES_DUMP.json`. Details: AD-016.
 
-Aktive Repos ohne Präfix (8): a-townchain-os (Monorepo), a-townchain-os-docs
-(Docs-Hub), atc-shivacore (Kernel), atclang, a-townchain, globus-os, aurora-ai,
-genesis-engine.
