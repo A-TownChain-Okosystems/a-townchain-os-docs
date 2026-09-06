@@ -155,7 +155,7 @@ zeitversetzt oder parallel arbeiten.
 | **Kontext** | Zwischen dem 05.08. (70 Repos, K-Sprint 48) und heute hat eine andere Aurora-Instanz die komplette Reorganisation durchgeführt: AD-016 (124 Alt-Repos gelöscht), AD-017 (Source-of-Truth Produkt→Monorepo), AD-018 (Gesamtvault ins Wiki-Repo), AD-019 (ATCLang 1.0 Freeze, Phase 1 fertig), AD-020 (alle Repos geleert), AD-021 (Rust-first), AD-022 (21-Crate-Baseline). AD-004 RESOLVED: Chain-ID 658467. |
 | **Aktionen** | (1) Alle 8 Repos gesynced, 69 obsolete lokale Klones entfernt; (2) AD-016–AD-022 gelesen und verifiziert; (3) "Aktuell aktiver Agent" auf diese Session aktualisiert; (4) Architektur-Snapshot auf Vault-Rebuild-Stand; (5) Decisions-Referenz AD-001–AD-022; (6) K3/K4-Listen als SUPERSEDED markiert (historisch); (7) AGENT_MANIFEST.md auf 8-Repo-Struktur aktualisiert |
 | **Fund** | a-townchain-os enthält noch ~100 `__pycache__`/.pyc-Leichen im geleerten Zustand — Aufräum-Kandidat |
-| **Nächste Schritte** | (1) atc-shivacore SC-001+ per AD-013, (2) Launch-Stack bei Bedarf aus `docs/archive/monorepo-full/`, (3) pyc-Leichen aus Monorepo entfernen ✅ erledigt · Mainnet per AD-023 aufgehoben |
+| **Nächste Schritte** | ✅ AD-024 umgesetzt: 14 vertikale Repos erstellt (22 aktive Repos total, Vault-Restore in 5). Offen: atc-shivacore SC-001+ per AD-013 → ATCLang Rust-Rebuild (Gate G1) |
 | **Status** | ✅ Koordinations-Stand hergestellt. Haupt-Arbeitsbereich Launch-Stack noch frei für andere Agenten nach >24h. |
 
 ---
@@ -259,7 +259,7 @@ zeitversetzt oder parallel arbeiten.
 |------|------|
 | **Agent-ID** | `aurora-base44-superagent-6a2756186106d6f0fbb105b5` (Aurora 2, Base44 Superagent) |
 | **Session-Start** | 06.09.2026, 21:20 UTC+2 |
-| **Aktueller Fokus** | Agenten-Hinweise auf 8-Repo-Stand (AD-016–AD-022) gebracht; nächste Schritte: atc-shivacore SC-001+ per AD-013 (Launch-Stack bei Bedarf aus Vault; Mainnet per AD-023 aufgehoben) |
+| **Aktueller Fokus** | AD-024 umgesetzt: 14 vertikale Repos erstellt (P0+P1+P2), Org bei 22 aktiven Repos; Mainnet per AD-023 aufgehoben |
 | **Beanspruchte Bereiche** | AGENT_COORDINATION.md, AGENT_MANIFEST.md, Governance-Doku (Sync/Cleanup-Domäne per Agenten-Register) |
 | **Status** | 🔄 Aktiv |
 
