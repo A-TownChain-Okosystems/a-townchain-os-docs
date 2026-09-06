@@ -198,3 +198,19 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
 - **Implementierungs-Reihenfolge:** SC-001 (Kernel Object Model) bis SC-013
   (ATCLang ABI); Aurora/A-TownChain/Genesis erst danach anbinden.
 - **Details:** `docs/architecture/SHIVACORE_V01_ARCHITECTURE_GATE.md`
+---
+
+## AD-014: 5-Produkt-Repo-Struktur
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Neben dem Dual-Repo-Modell (Monorepo + Docs-Hub) werden 5 eigenständige
+Produkt-Repos eingerichtet: `atclang` (ATCLang), `a-townchain` (Blockchain),
+`globus-os` (Betriebssystem/ShivaCore-Kernel), `aurora-ai` (KI), `genesis-engine` (Game-Engine).
+Module wurden aus `src/modules/` in die Produkt-Repos kopiert (Monorepo unverändert,
+bleibt Integrations-/Deployment-Zentrale). `atclang` als vormals archiviertes Repo
+reaktiviert (Historie erhalten, Inhalt aus Monorepo-Audits verlustfrei gesichert).
+
+**Pflichten:** Produkt-Entwicklung im Produkt-Repo; Integration/Deployment im Monorepo;
+Doku im Docs-Hub. Details & Mapping: [REPOSITORY_MAP.md](REPOSITORY_MAP.md).
+API-Verifikation: 5/5 Repos aktiv, HEAD-Commits bestätigt (06.09.).
