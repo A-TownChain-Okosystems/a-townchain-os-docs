@@ -1,5 +1,7 @@
 # 📋 File Register — atc-mobile
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-mobile/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-mobile`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -28,8 +30,8 @@
 |------|--------|-----|
 | `README.md` | 2 | md |
 | `__init__.py` | 2 | py |
-| `wallet/__init__.py` | 2 | py |
-| `wallet/biometric_auth.atc` | 179 | atc |
+| `src/modules/atc-mobile/wallet/__init__.py` | 2 | py |
+| `src/modules/atc-mobile/wallet/biometric_auth.atc` | 179 | atc |
 | `wallet_api.atc` | 171 | atc |
 
 ---

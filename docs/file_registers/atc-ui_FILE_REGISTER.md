@@ -1,5 +1,7 @@
 # 📋 File Register — atc-ui
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-ui/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-ui`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -30,7 +32,7 @@
 | `DESIGN.md` | 33 | md |
 | `LICENSE` | 22 | /tmp/repos/atc-ui/LICENSE |
 | `README.md` | 69 | md |
-| `assets/js/api.js` | 99 | js |
+| `src/modules/atc-ui/assets/js/api.js` | 99 | js |
 | `index.html` | 2306 | html |
 
 ---

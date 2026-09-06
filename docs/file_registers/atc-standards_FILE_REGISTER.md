@@ -1,5 +1,7 @@
 # 📋 File Register — atc-standards
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-standards/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-standards`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -26,10 +28,10 @@
 
 | Datei | Zeilen | Typ |
 |------|--------|-----|
-| `ATC/ATC-0009-BRIDGE.md` | 55 | md |
-| `ATC/ATC_STANDARDS.md` | 233 | md |
+| `src/modules/atc-standards/ATC/ATC-0009-BRIDGE.md` | 55 | md |
+| `src/modules/atc-standards/ATC/ATC_STANDARDS.md` | 233 | md |
 | `ATC_STANDARDS.md` | 200 | md |
-| `ATS/ATS_STANDARDS.md` | 283 | md |
+| `src/modules/atc-standards/ATS/ATS_STANDARDS.md` | 283 | md |
 | `ATS_STANDARDS.md` | 198 | md |
 | `CHANGELOG.md` | 20 | md |
 | `LICENSE` | 22 | /tmp/repos/atc-standards/LICENSE |

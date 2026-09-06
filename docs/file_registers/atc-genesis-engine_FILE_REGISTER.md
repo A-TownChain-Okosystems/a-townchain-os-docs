@@ -1,5 +1,7 @@
 # 📋 File Register — atc-genesis-engine
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-genesis-engine/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-genesis-engine`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -34,12 +36,12 @@
 | `METAFACTORY_V3.md` | 83 | md |
 | `README.md` | 84 | md |
 | `VISION_EVOLUTION_LOG.md` | 157 | md |
-| `engine/MILESTONE_1.md` | 44 | md |
-| `engine/core/ecs.py` | 98 | py |
-| `engine/main.py` | 48 | py |
-| `engine/render/renderer2d.py` | 45 | py |
-| `engine/requirements.txt` | 1 | txt |
-| `engine/tests/test_ecs.py` | 63 | py |
+| `src/modules/atc-genesis-engine/engine/MILESTONE_1.md` | 44 | md |
+| `src/modules/atc-genesis-engine/engine/core/ecs.py` | 98 | py |
+| `src/modules/atc-genesis-engine/engine/main.py` | 48 | py |
+| `src/modules/atc-genesis-engine/engine/render/renderer2d.py` | 45 | py |
+| `src/modules/atc-genesis-engine/engine/requirements.txt` | 1 | txt |
+| `src/modules/atc-genesis-engine/engine/tests/test_ecs.py` | 63 | py |
 
 ---
 

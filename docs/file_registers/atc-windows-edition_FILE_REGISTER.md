@@ -1,5 +1,7 @@
 # 📋 File Register — atc-windows-edition
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-windows-edition/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-windows-edition`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -28,7 +30,7 @@
 |------|--------|-----|
 | `Cargo.toml` | 13 | toml |
 | `README.md` | 37 | md |
-| `src/main.rs` | 16 | rs |
+| `src/modules/atc-windows-edition/src/main.rs` | 16 | rs |
 
 ---
 

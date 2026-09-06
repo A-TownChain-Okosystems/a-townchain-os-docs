@@ -1,6 +1,7 @@
 # 📂 File Registers — Übersicht
 
-> Vollständige Datei-Register für alle 22 Code-Repos des A-TownChain Ökosystems.
+> Datei-Register der Module — Pfade auf Monorepo-Struktur regeneriert (06.09.2026).
+> Das Register des Monorepos selbst wird kanonisch im Code-Repo geführt: `a-townchain-os/FILE_REGISTER.md`.
 > Jedes Register listet alle physisch existierenden Dateien mit Zeilenzahl und Typ.
 
 ---
@@ -9,7 +10,6 @@
 
 | Code-Repo | Wiki-Repo | Datei-Register |
 |-----------|-----------|-----------------|
-| a-townchain-os | a-townchain-os-wiki | [📄](a-townchain-os_FILE_REGISTER.md) |
 | atc-kernel | atc-kernel-wiki | [📄](atc-kernel_FILE_REGISTER.md) |
 | atcnet | atcnet-wiki | [📄](atcnet_FILE_REGISTER.md) |
 | atc-standards | atc-standards-wiki | [📄](atc-standards_FILE_REGISTER.md) |

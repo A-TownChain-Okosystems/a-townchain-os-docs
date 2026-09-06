@@ -1,5 +1,7 @@
 # 📋 File Register — atc-atcpkg
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-atcpkg/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-atcpkg`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -27,12 +29,10 @@
 | Datei | Zeilen | Typ |
 |------|--------|-----|
 | `README.md` | 39 | md |
-| `docs/ATC-24-AGENT_SCHEDULING.md` | 236 | md |
-| `docs/ATC-96-KERNEL_INTERFACE_PROTOCOL.md` | 72 | md |
-| `docs/ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md` | 50 | md |
-| `docs/ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md` | 47 | md |
-| `kernel/manager.atc` | 208 | atc |
-| `tools/manager.atc` | 145 | atc |
+| `src/modules/atc-atcpkg/docs/ATC-24-AGENT_SCHEDULING.md` | 236 | md |
+| `src/modules/atc-atcpkg/docs/ATC-96-KERNEL_INTERFACE_PROTOCOL.md` | 72 | md |
+| `src/modules/atc-atcpkg/docs/ISSUE_27__ATCPKG__PLUGIN__MODUL-SYST.md` | 50 | md |
+| `src/modules/atc-atcpkg/docs/ISSUE_30__WIKI_KAP._43__ATCPKG_REGIST.md` | 47 | md |
 
 ---
 

@@ -1,5 +1,7 @@
 # 📋 File Register — atc-kernel
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-kernel/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-kernel`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -31,18 +33,13 @@
 | `LICENSE` | 22 | /tmp/repos/atc-kernel/LICENSE |
 | `README.md` | 69 | md |
 | `SECURITY.md` | 14 | md |
-| `consensus/consensus.atc` | 144 | atc |
-| `consensus/poh_integration.py` | 29 | py |
-| `consensus/shiva_consensus.py` | 641 | py |
-| `docs/ATS_STANDARDS.md` | 283 | md |
-| `fs/atcfs.atc` | 142 | atc |
-| `fs/atcfs.py` | 331 | py |
-| `ipc/ipc_bus.py` | 94 | py |
+| `src/modules/atc-kernel/docs/ATS_STANDARDS.md` | 283 | md |
+| `src/modules/atc-kernel/fs/atcfs.atc` | 142 | atc |
+| `src/modules/atc-kernel/fs/atcfs.py` | 331 | py |
+| `src/modules/atc-kernel/ipc/ipc_bus.py` | 94 | py |
 | `kernel.py` | 105 | py |
-| `kernel/kernel.atc` | 148 | atc |
-| `kernel/kernel.py` | 382 | py |
-| `net/atcnet.atc` | 135 | atc |
-| `net/atcnet.py` | 17 | py |
+| `src/modules/atc-kernel/kernel/kernel.atc` | 148 | atc |
+| `src/modules/atc-kernel/kernel/kernel.py` | 382 | py |
 | `requirements.txt` | 7 | txt |
 
 ---

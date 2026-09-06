@@ -1,5 +1,7 @@
 # 📋 File Register — atclang
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atclang/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atclang`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -32,28 +34,19 @@
 | `LICENSE` | 22 | /tmp/repos/atclang/LICENSE |
 | `README.md` | 69 | md |
 | `compiler.py` | 101 | py |
-| `compiler/compiler.py` | 471 | py |
+| `src/modules/atclang/compiler/compiler.py` | 471 | py |
 | `lexer.py` | 114 | py |
-| `lexer/lexer.py` | 563 | py |
+| `src/modules/atclang/lexer/lexer.py` | 563 | py |
 | `parser.py` | 94 | py |
-| `parser/ast_nodes.py` | 265 | py |
-| `parser/parser.py` | 399 | py |
-| `programs/atc8300.atc` | 96 | atc |
-| `programs/atcfs.atc` | 142 | atc |
-| `programs/atcnet.atc` | 135 | atc |
-| `programs/atcos_main.atc` | 1154 | atc |
-| `programs/consensus.atc` | 144 | atc |
-| `programs/event_bus.atc` | 75 | atc |
-| `programs/gateway.atc` | 138 | atc |
-| `programs/governance.atc` | 113 | atc |
-| `programs/kernel.atc` | 148 | atc |
-| `programs/shivamon.atc` | 162 | atc |
-| `programs/wallet.atc` | 124 | atc |
-| `repl/repl.py` | 185 | py |
+| `src/modules/atclang/parser/ast_nodes.py` | 265 | py |
+| `src/modules/atclang/parser/parser.py` | 399 | py |
+| `src/modules/atclang/programs/atc8300.atc` | 96 | atc |
+| `src/modules/atclang/programs/atcos_main.atc` | 1154 | atc |
+| `src/modules/atclang/programs/event_bus.atc` | 75 | atc |
+| `src/modules/atclang/programs/kernel.atc` | 148 | atc |
+| `src/modules/atclang/programs/shivamon.atc` | 162 | atc |
 | `requirements.txt` | 4 | txt |
-| `stdlib/atc_stdlib.py` | 69 | py |
 | `vm.py` | 97 | py |
-| `vm/atcvm.py` | 887 | py |
 
 ---
 

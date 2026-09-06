@@ -1,5 +1,7 @@
 # 📋 File Register — atc-franchise
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-franchise/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-franchise`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -29,12 +31,10 @@
 | `CHANGELOG.md` | 5 | md |
 | `LICENSE` | 22 | /tmp/repos/atc-franchise/LICENSE |
 | `README.md` | 69 | md |
-| `api/routes.py` | 67 | py |
-| `contracts/registry.atc` | 120 | atc |
-| `contracts/revenue.atc` | 93 | atc |
-| `contracts/token.atc` | 72 | atc |
-| `docs/ARCHITECTURE.md` | 23 | md |
-| `docs/SECURITY.md` | 57 | md |
+| `src/modules/atc-franchise/contracts/registry.atc` | 120 | atc |
+| `src/modules/atc-franchise/contracts/revenue.atc` | 93 | atc |
+| `src/modules/atc-franchise/docs/ARCHITECTURE.md` | 23 | md |
+| `src/modules/atc-franchise/docs/SECURITY.md` | 57 | md |
 | `factory.py` | 138 | py |
 | `requirements.txt` | 6 | txt |
 

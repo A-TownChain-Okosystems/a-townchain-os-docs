@@ -1,5 +1,7 @@
 # 📋 File Register — atcnet
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atcnet/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atcnet`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -38,7 +40,7 @@
 | `node.py` | 100 | py |
 | `p2p_propagation.py` | 381 | py |
 | `requirements.txt` | 6 | txt |
-| `tests/test_atcnet.py` | 41 | py |
+| `src/modules/atcnet/tests/test_atcnet.py` | 41 | py |
 
 ---
 

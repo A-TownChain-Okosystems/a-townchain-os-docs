@@ -1,5 +1,7 @@
 # 📋 File Register — atc-contracts
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-contracts/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-contracts`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -31,20 +33,13 @@
 | `LICENSE` | 22 | /tmp/repos/atc-contracts/LICENSE |
 | `README.md` | 70 | md |
 | `SECURITY.md` | 13 | md |
-| `atc8300/atc8300.atc` | 96 | atc |
-| `atc8300/atc8300_token.py` | 126 | py |
-| `atcoin/atcoin.py` | 139 | py |
-| `base/base_contract.py` | 87 | py |
-| `bridge/bridge_contract.py` | 133 | py |
-| `governance/governance.atc` | 113 | atc |
-| `governance/governance_contract.py` | 299 | py |
-| `marketplace/marketplace_contract.py` | 301 | py |
+| `src/modules/atc-contracts/atc8300/atc8300.atc` | 96 | atc |
+| `src/modules/atc-contracts/atc8300/atc8300_token.py` | 126 | py |
+| `src/modules/atc-contracts/atcoin/atcoin.py` | 139 | py |
+| `src/modules/atc-contracts/base/base_contract.py` | 87 | py |
+| `src/modules/atc-contracts/bridge/bridge_contract.py` | 133 | py |
+| `src/modules/atc-contracts/governance/governance_contract.py` | 299 | py |
 | `requirements.txt` | 5 | txt |
-| `shivamon/shivamon.atc` | 162 | atc |
-| `shivamon/shivamon_contract.py` | 270 | py |
-| `wallet/ecdsa.py` | 72 | py |
-| `wallet/keygen.py` | 140 | py |
-| `wallet/wallet.atc` | 124 | atc |
 
 ---
 

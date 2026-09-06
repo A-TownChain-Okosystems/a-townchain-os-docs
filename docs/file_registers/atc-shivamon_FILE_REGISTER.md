@@ -1,5 +1,7 @@
 # 📋 File Register — atc-shivamon
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-shivamon/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-shivamon`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -30,12 +32,11 @@
 | `GAME_SPEC.md` | 43 | md |
 | `LICENSE` | 22 | /tmp/repos/atc-shivamon/LICENSE |
 | `README.md` | 69 | md |
-| `api/game_routes.py` | 59 | py |
-| `api/marketplace_routes.py` | 93 | py |
-| `contracts/marketplace_contract.py` | 301 | py |
-| `contracts/shivamon.atc` | 162 | atc |
-| `contracts/shivamon_contract.py` | 270 | py |
-| `engine/battle_engine.py` | 147 | py |
+| `src/modules/atc-shivamon/api/marketplace_routes.py` | 93 | py |
+| `src/modules/atc-shivamon/contracts/marketplace_contract.py` | 301 | py |
+| `src/modules/atc-shivamon/contracts/shivamon.atc` | 162 | atc |
+| `src/modules/atc-shivamon/contracts/shivamon_contract.py` | 270 | py |
+| `src/modules/atc-shivamon/engine/battle_engine.py` | 147 | py |
 | `requirements.txt` | 7 | txt |
 
 ---

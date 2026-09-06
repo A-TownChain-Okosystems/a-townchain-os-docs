@@ -1,5 +1,7 @@
 # 📋 File Register — atc-shivacore-tools
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-shivacore-tools/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-shivacore-tools`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >

@@ -1,5 +1,7 @@
 # 📋 File Register — atc-frontend
 
+> **Regeneriert 06.09.2026:** Pfade zeigen auf `src/modules/atc-frontend/` im Monorepo `a-townchain-os` (nach 128→2-Konsolidierung).
+
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `atc-frontend`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
 >
@@ -27,10 +29,10 @@
 | Datei | Zeilen | Typ |
 |------|--------|-----|
 | `README.md` | 24 | md |
-| `assets/css/variables.css` | 30 | css |
-| `assets/js/api.js` | 136 | js |
-| `battle/index.html` | 302 | html |
-| `bootscreen/README.md` | 48 | md |
+| `src/modules/atc-frontend/assets/css/variables.css` | 30 | css |
+| `src/modules/atc-frontend/assets/js/api.js` | 136 | js |
+| `src/modules/atc-frontend/battle/index.html` | 302 | html |
+| `src/modules/atc-frontend/bootscreen/README.md` | 48 | md |
 | `index.html` | 2088 | html |
 
 ---
