@@ -373,3 +373,38 @@ Kurzform: ATCLang -> Rust-first. Aurora -> Rust-Core + Python-AI-Layer.
 Skriptsprache: Smart Contracts erfordern Memory Safety, Determinismus,
 Geschwindigkeit, geringe Overheads, sichere Concurrency, Ressourcen-
 Kontrolle und eine harte Host/VM-Security-Boundary.
+
+---
+
+## AD-022: ATCLang Architecture Baseline v1.0 — Rust Canonical Core, 21-Crate-Layout, Gates G0-G19
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** ATCLang 1.0 = Rust Canonical Core + Python Reference/Tooling +
+formal spezifizierte Bytecode/ABI/Artifact/VM-Schichten. Zielstruktur: crates/
+mit 21 Rust-Crates (atclang-lexer, -parser, -ast, -semantics, -ir,
+-ir-verifier, -compiler, -bytecode, -bytecode-verifier, -abi, -artifact, -vm,
+-runtime, -host, -security, -profiles, -contracts, -gas, -state, -package,
+-cli), python/ (sdk, reference, testing, fuzzing, tools), specs/ (language,
+bytecode, abi, artifact, vm, gas, security, profiles), tests/ (conformance,
+determinism, differential, …).
+
+**Kernsatz:** Der Compiler erzeugt Code. Der Verifier entscheidet, ob Code
+gueltig ist. Die ATVM fuehrt ausschliesslich verifizierten Code
+deterministisch aus.
+
+**Kernpunkte:** ATC-IR als zentrale Schicht (Typen, Kontroll-/Datenfluss,
+Calls, Storage, Capabilities, Gas, Entry Points, ABI) · Independent Verifier
+als Trust Boundary (vertraut nie dem Compiler) · ATCA-Artifact als Deployment
+Unit (Magic…Signature) · Profiles CONTRACT/APPLICATION/SYSTEM/UNRESTRICTED ·
+Capability-Security Deny-by-Default · Determinismus als Protokollregel ·
+Konsensus-Grenze Transaction→…→Consensus · Differential Testing
+Rust-vs-Python (Abweichung = FAIL) · Security Gates G0-G19, KEIN FREEZE vor
+G18 (Security Audit) · Python kontrolliert NIE die Konsensus-Ausfuehrung.
+
+**Migration:** KEIN zweiter Rewrite — Python-Referenz bleibt erhalten;
+Pfad: preserve → specification extraction → formal Spec → Rust Canonical
+Core → Differential Testing → Conformance → Security Audit → Freeze.
+G0 (Repository Cleanup) erledigt; G1 (Language Specification) naechstes Gate,
+specs/-Skelett angelegt. Verfeinert AD-019/AD-021.
+Doku: atclang docs/ATCLANG_BASELINE_V1.md (Commit a7e1bd4).
