@@ -344,3 +344,32 @@ Monorepos sind identisch in docs/archive/monorepo-full/ gesichert (0 fehlen).
 **Reihenfolge des Wiederaufbaus:** Empfohlen zuerst Launch-Stack-Restauration
 aus dem Vault (Mainnet 15.09.), dann atc-shivacore gem. AD-013 (SC-001…),
 danach die uebrigen Produkt-Repos.
+
+---
+
+## AD-021: Sprachstrategie — ATCLang Rust-first, Python Referenz; Aurora Rust-Core + Python-AI-Layer
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** ATCLang wird Rust-first: Compiler (Lexer/Parser/AST/Semantics/
+ATC-IR/Optimizer/Codegen), Bytecode-Verifier, ATVM, Runtime, ABI/Artifact-
+Validator, Security/Sandbox und CLI kanonisch in Rust. Python bleibt als
+(1) Referenz-Implementierung — bestehender Code wird NICHT weggeworfen
+(kein Rebuild), (2) SDK, (3) Test-/Fuzzing-Tooling, (4) AI-Integration.
+
+**Phasen:** Phase 1: Python-Referenz weiterentwickeln (Sprachentwicklung).
+Phase 2: Rust-Kernkomponenten (atclang-core/-ir/-bytecode/-verifier/-vm/
+-runtime/-abi). Phase 3: Rust = kanonische Produktionsimplementierung.
+
+**Dual-Stack-Differential-Modell:** Rust-Stack und Python-Referenz muessen
+fuer identische Programme identische ASTs, IR, Bytecode und State-Transitions
+erzeugen — Differential Testing wird zum verbindlichen Conformance-Kriterium.
+
+**Aurora AI:** Rust Core (Model Manager, Scheduler, HAL, Security, IPC,
+Plugin-Runtime) + Python AI-Layer (PyTorch/ONNX/LLM auf ROCm).
+Kurzform: ATCLang -> Rust-first. Aurora -> Rust-Core + Python-AI-Layer.
+
+**Begruendung:** Compiler != Runtime, beides Rust. ATCLang ist keine
+Skriptsprache: Smart Contracts erfordern Memory Safety, Determinismus,
+Geschwindigkeit, geringe Overheads, sichere Concurrency, Ressourcen-
+Kontrolle und eine harte Host/VM-Security-Boundary.
