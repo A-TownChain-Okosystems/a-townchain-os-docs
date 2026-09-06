@@ -321,3 +321,26 @@ modules/atclang -> src/atclang (kanonisch), frontend/-Zusammenfuehrung,
 OK; pytest 74/106 gruen, 32 rot (Bytecode-API-Konformanz = Phase 2).
 Reihenfolge geloeschter Mehrfachquellen: MULTIPLE SOURCES OF TRUTH →
 aufgeloest (eine Implementierung je Verantwortlichkeit).
+
+---
+
+## AD-020: Rebuild-Startzustand — alle Repos geleert, Wiki-Vault ist Quelle
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Alle Repositories (ausser Wiki-Hub und atclang) wurden geleert;
+der Neuaufbau startet aus dem Wiki-Vault. Vor der Leerung wurde byte-Identitaet
+verifiziert: 1.239 Modul-Dateien der 5 Produkt-Repos + 2.157 Dateien des
+Monorepos sind identisch in docs/archive/monorepo-full/ gesichert (0 fehlen).
+
+**Endzustand der 8 Repos:**
+- a-townchain-os-docs: WIKI-VAULT (alles Wissen: monorepo-full, monorepo-legacy,
+  wiki-Archive, repos-rescue, Standards, Architektur-Entscheidungen)
+- atclang: REBUILD PHASE 1 abgeschlossen (AD-019: 1.0-Struktur, 044604f)
+- a-townchain-os, atc-shivacore, a-townchain, globus-os, aurora-ai,
+  genesis-engine: GELEERT (Redirect-README; Git-Historien bleiben als
+  Reversibilitaetsnetz erhalten)
+
+**Reihenfolge des Wiederaufbaus:** Empfohlen zuerst Launch-Stack-Restauration
+aus dem Vault (Mainnet 15.09.), dann atc-shivacore gem. AD-013 (SC-001…),
+danach die uebrigen Produkt-Repos.

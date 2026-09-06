@@ -52,3 +52,13 @@ Die 9 Issues des Alt-Repos atc-genesis-engine liegen als
 Produkt-Repos = kanonische Modul-Quelle; Monorepo = Integrationsziel.
 Einspielen nur via `a-townchain-os/scripts/sync_modules.py` (`--check`/`--sync`).
 Modul-Code nie direkt im Monorepo bearbeiten. Details: DECISIONS_REGISTER AD-017.
+
+## Rebuild-Stand (AD-020, 06.09.2026)
+
+| Repo | Zustand |
+|---|---|
+| a-townchain-os-docs | Wiki-VAULT (alle Inhalte, 15 MB Archive) |
+| atclang | Neu aufgebaut (AD-019 Phase 1) |
+| a-townchain-os, atc-shivacore, a-townchain, globus-os, aurora-ai, genesis-engine | Geleert — Redirect-README, Wiederaufbau aus Vault |
+
+Git-Historien aller Repos bleiben erhalten (Reversibilität).
