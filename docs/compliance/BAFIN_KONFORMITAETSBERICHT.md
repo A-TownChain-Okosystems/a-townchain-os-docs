@@ -254,7 +254,7 @@ nachvollziehbar.
 | Node-Betreiber ohne TPM | Mittel | Mittel | ATC-LIC verweigert Netzwerk-Zugang |
 | Developer vergisst Lizenz-Registrierung | Mittel | Niedrig | Public Domain fallback (kostenlos) |
 | Royalty-Preis zu hoch fuer Adoption | Mittel | Mittel | DAO kann Preise anpassen (ATC-17) |
-| BaFin-Audit verzogert Mainnet-Launch | Mittel | Hoch | Fruehzeitige Einreichung |
+| BaFin-Audit vor künftigem Launch (Termin per AD-023 offen) | Mittel | Mittel | Fruehzeitige Einreichung bei Launch-Neubewertung |
 
 ---
 
