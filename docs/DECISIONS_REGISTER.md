@@ -214,3 +214,21 @@ reaktiviert (Historie erhalten, Inhalt aus Monorepo-Audits verlustfrei gesichert
 **Pflichten:** Produkt-Entwicklung im Produkt-Repo; Integration/Deployment im Monorepo;
 Doku im Docs-Hub. Details & Mapping: [REPOSITORY_MAP.md](REPOSITORY_MAP.md).
 API-Verifikation: 5/5 Repos aktiv, HEAD-Commits bestätigt (06.09.).
+---
+
+## AD-015: ShivaCore-Kernel-Repo-Trennung
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Der ShivaCore-Kernel erhält ein eigenständiges Repository: `atc-shivacore`
+(reaktiviertes Archiv-Repo, 181-Commit-K29-Entwicklungshistorie erhalten).
+Inhalt: `modules/atc-shivacore` (Kernel-Crate, K29, 674/674 Tests, Chain-ID 658467)
++ `modules/atc-shivacore-tools` — Stand Monorepo 06.09.2026.
+Entsprechend AD-012/AD-013 (Kernel ≠ OS): GlobusOS-Repo behält nur den Userspace
+(Shell, Desktop, FS, Net, Registry, Bootloader, Drivers, Editionen); Kernel-Referenz
+im globus-os-README. Monorepo bleibt Integrations-Zentrale (Unified Cargo Workspace).
+Kernel-Entwicklung künftig im Kernel-Repo; Service-Space-Migration der
+Blockchain-Module aus dem Kernel-Crate bleibt eigener Sprint (unverändert).
+
+API-Verifikation 06.09.: atc-shivacore aktiv (HEAD gepusht), globus-os Rückbau
+gepusht, Beschreibungen/Topics aktualisiert.
