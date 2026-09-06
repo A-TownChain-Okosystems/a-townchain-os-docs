@@ -80,7 +80,7 @@ Organisation jetzt: 22 aktive Repos.
 | atc-explorer + atc-indexer | a-townchain-Modul atc-explorer (Vault); Indexer NEU | P1 | Chain-RPC stabil |
 | atc-mining | NEU (Core definiert PoW-Regeln; Mining-Stack separat) | P1 | Consensus-Rebuild fertig |
 | atc-interop | a-townchain-Modul atc-bridge (Vault); IBC/Relayer NEU | P1 | Bridge-Security-Konzept (eigene Sicherheitsdomäne) |
-| shivamon | genesis-engine-Modul atc-shivamon (Vault) | P1 | ECS-/World-Kern stabil |
+| genesis-chronicles (ex-`shivamon`, umbenannt per AD-025) | Vault-Restore atc-shivamon | P1 | ECS-/World-Kern stabil |
 | atc-oracle | NEU (Lücke „Oracle & External Data Binding") | P2 | Bedarfsfall DeFi/AI-Feeds |
 | atc-storage | NEU | P2 | Asset-/NFT-Metadaten-Bedarf |
 | atc-launchpad / atc-marketplace | a-townchain-Module atc-dex/atc-assets (Vault) | P2 | TGE-/Produkt-Entscheidung |

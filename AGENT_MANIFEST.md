@@ -25,7 +25,7 @@
 | [atc-indexer](https://github.com/A-TownChain-Okosystems/atc-indexer) | P1 | Indexing Pipeline |
 | [atc-mining](https://github.com/A-TownChain-Okosystems/atc-mining) | P1 | Mining-Stack (PoW-Regeln bleiben im Core) |
 | [atc-interop](https://github.com/A-TownChain-Okosystems/atc-interop) | P1 | Bridges/IBC — eigene Sicherheitsdomäne |
-| [shivamon](https://github.com/A-TownChain-Okosystems/shivamon) | P1 | NFT-Game (auf genesis-engine) — Vault-Restore |
+| [genesis-chronicles](https://github.com/A-TownChain-Okosystems/genesis-chronicles) | P1 | NFT-Game „Genesis Chronicles" (ex-shivamon, AD-025) — Vault-Restore |
 | [atc-oracle](https://github.com/A-TownChain-Okosystems/atc-oracle) | P2 | External Data Binding |
 | [atc-storage](https://github.com/A-TownChain-Okosystems/atc-storage) | P2 | Dezentrale Storage-Schicht |
 | [atc-launchpad](https://github.com/A-TownChain-Okosystems/atc-launchpad) | P2 | Token/NFT-Launchpad |

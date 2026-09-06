@@ -20,6 +20,7 @@
 | AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ (kanonisch: atclang/ATCLANG_SPEC.md) / Bridge-Standards-Dedup (ATC-09/38/69/91) ⏳ | 🟡 TEIL-GELOEST | 08.07.2026 | **Michael** (nur noch Bridge-Dedup) |
 | AD-023 | Mainnet-Launch aufgehoben (kein Launch-Ziel/Deadline mehr) | ✅ RESOLVED (06.09.2026) | — | Michael |
 | AD-024 | Zielarchitektur Repository-Landkarte — ALLE Repositories erstellen (P0+P1+P2) | ✅ RESOLVED (06.09.2026, 21:30) | — | Michael |
+| AD-025 | Spiel umbenannt: Shivamon → Genesis Chronicles | ✅ RESOLVED (06.09.2026, 21:40) | — | Michael |
 
 ---
 
@@ -497,3 +498,26 @@ professionelle Grundstruktur (README/Architektur/LICENSE/STATUS).
 AD-016-„exakt 8") oder (b) vertikale Grenzen als Modulgrenzen in den bestehenden
 Produkt-Repos führen und Repos erst bei Erreichen der Promotion-Kriterien abspalten.
 Empfehlung des Agents: (b) — qualitätsgetrieben per AD-023, keine Repos vor Content.
+
+---
+
+## AD-025: Spiel umbenannt — Shivamon → Genesis Chronicles
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (Michael) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Das Spiel „Shivamon" heißt ab sofort **„Genesis Chronicles"**.
+Umbenannt wurden: GitHub-Repo (`shivamon` → `genesis-chronicles`, Alte URL
+leitet automatisch um), Spiel-Titel und NFT-Bezeichnung in der gesamten Doku,
+Contract-Identifier (`ShivamonContract` → `GenesisChroniclesContract`,
+`ShivamonNFT` → `GenesisChroniclesNFT`, `ShivamonStats` →
+`GenesisChroniclesStats`), Datei-/Verzeichnisnamen (snake_case) und der
+Package-Name (`genesis-chronicles`).
+
+**Bewusst unverändert:** Das Wiki-Vault-Archiv
+(`docs/archive/monorepo-full/.../atc-shivamon/`) als historische Quelle;
+AD-024-Entscheidungstext (Historie); Genesis-Engine-Repo-Name. Die ATC-9000
+NFT-Standard-Nummer bleibt. Git-Historie des Repos bewahrt alle alten Namen.
+
+**Kontext:** Repo war am 06.09. per AD-024 aus Vault-Inhalt (atc-shivamon)
+restauriert und als eigenständiges Produkt-Repo neben genesis-engine angelegt
+(Engine = Technologie, Spiel = Produkt). Keine Live-Systeme betroffen.
