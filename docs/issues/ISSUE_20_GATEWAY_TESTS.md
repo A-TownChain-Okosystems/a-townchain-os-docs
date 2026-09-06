@@ -13,12 +13,12 @@ Vollständige Test-Suite für das A-TownChain API-Gateway (Port 4000).
 
 | Modul | Test-Datei | Status |
 |---|---|---|
-| `gateway/main.py` | `tests/test_gateway.py` | 🔄 In Progress |
-| `gateway/router.py` | `tests/test_gateway.py` | 🔄 In Progress |
-| `gateway/middleware/auth.py` | `tests/test_gateway.py` | 🔄 In Progress |
-| `gateway/middleware/rate_limit.py` | `tests/test_gateway.py` | 🔄 In Progress |
-| `gateway/middleware/logger.py` | `tests/test_gateway.py` | 🔄 In Progress |
-| `gateway/middleware/signature_verify.py` | `tests/test_gateway.py` | 🔄 In Progress |
+| `gateway/main.py` | `tests/unit/test_gateway.py` | 🔄 In Progress |
+| `gateway/router.py` | `tests/unit/test_gateway.py` | 🔄 In Progress |
+| `gateway/middleware/auth.py` | `tests/unit/test_gateway.py` | 🔄 In Progress |
+| `gateway/middleware/rate_limit.py` | `tests/unit/test_gateway.py` | 🔄 In Progress |
+| `gateway/middleware/logger.py` | `tests/unit/test_gateway.py` | 🔄 In Progress |
+| `gateway/middleware/signature_verify.py` | `tests/unit/test_gateway.py` | 🔄 In Progress |
 
 ## Test-Cases (15 gesamt)
 

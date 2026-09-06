@@ -1,4 +1,7 @@
 # 🧠⛓️ A-TownChain OS / KAI-OS — Offizielle Dokumentation v1.0
+> ⚠️ **Historisches Dokument (Snapshot 06.07.2026):** Beschreibt den Repository-Stand VOR der 128→2-Konsolidierung (03.09.2026). Alle Pfade entsprechen der damals gültigen Struktur und sind bewusst nicht umgeschrieben — aktuelle Struktur: Monorepo `src/modules/` (siehe `ARCHITECTURE.md`).
+
+
 
 > Vollständiges technisches Nachschlagewerk für das dezentrale, KI-gesteuerte Blockchain-Betriebssystem.
 > **A-TownChain OS** (technisch) · **KAI-OS** (Produktname)

@@ -1,4 +1,7 @@
 # 🔍 Reality-Check-Report — Geschlossene Issues vs. tatsächliche Dateien
+> ⚠️ **Historisches Dokument (Snapshot 06.07.2026):** Beschreibt den Repository-Stand VOR der 128→2-Konsolidierung (03.09.2026). Alle Pfade entsprechen der damals gültigen Struktur und sind bewusst nicht umgeschrieben — aktuelle Struktur: Monorepo `src/modules/` (siehe `ARCHITECTURE.md`).
+
+
 
 > **Durchgeführt von:** Aurora (Base44 Superagent, App-ID `6a2756186106d6f0fbb105b5`)
 > **Stand:** 06.07.2026, 17:00 UTC+2

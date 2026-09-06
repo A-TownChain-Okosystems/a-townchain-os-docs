@@ -1,4 +1,7 @@
 # 📋 File Register — a-townchain-os
+> ⚠️ **Historischer Snapshot (06.07.2026):** Inventar des Monorepos VOR der 128→2-Konsolidierung (03.09.2026). Pfade entsprechen der damaligen Struktur und werden bewusst nicht umgeschrieben (Historie = Historie). Aktuelle Struktur: Monorepo `ARCHITECTURE.md`.
+
+
 
 > **Zweck:** Vollständige Liste aller existierenden Dateien in `a-townchain-os`.
 > Dient als Nachweis, welche Dateien tatsächlich existieren.
