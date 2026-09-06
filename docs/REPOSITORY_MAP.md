@@ -35,3 +35,15 @@ Unified Cargo Workspace, Docker-Stack, Tests.
 5. `atclang` behält seine alte Git-Historie (91 Commits); alte Inhalte sind via Datenverlust-Audit (03.09., 0 Verluste) im Monorepo + Hub-Archiv gesichert.
 
 *Live-Stand API-verifiziert am 06.09.2026: alle 5 Produkt-Repos aktiv, HEAD-Commits bestätigt.*
+
+## Namenskonvention der Alt-Repos (06.09.2026)
+
+Alle 124 archivierten Alt-Repos tragen seit dem 06.09.2026 den Namenspräfix
+`archiviert-` (z.B. `archiviert-kai-os-wiki`, `archiviert-atc-blockchain`).
+GitHub-Redirects leiten alte URLs automatisch auf die neuen Namen weiter.
+Die Präfix-Vergabe erfolgte pro Repo über: reaktivieren → umbenennen →
+neu archivieren (archivierte Repos sind ansonsten API-seitig read-only).
+
+Aktive Repos ohne Präfix (8): a-townchain-os (Monorepo), a-townchain-os-docs
+(Docs-Hub), atc-shivacore (Kernel), atclang, a-townchain, globus-os, aurora-ai,
+genesis-engine.
