@@ -1,9 +1,20 @@
 # AGENT_MANIFEST.md
-> Letzte Aktualisierung: 2026-08-04 06:05 UTC | Aurora Master Sync v3.0
+> Letzte Aktualisierung: 2026-09-06 19:25 UTC | Aurora Master Sync v3.0 | 8-Repo-Stand (AD-016–AD-022)
 
-## Repositories
-- **Code:** https://github.com/A-TownChain-Okosystems/a-townchain-os
-- **Docs:** https://github.com/A-TownChain-Okosystems/a-townchain-os-docs
+## Repositories (8 aktive — AD-016)
+| Repo | Rolle | Zustand (AD-020) |
+|------|-------|------------------|
+| [a-townchain-os-docs](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) | **WIKI-VAULT** — alles Wissen inkl. `docs/archive/monorepo-full/` | ✅ gefüllt |
+| [atclang](https://github.com/A-TownChain-Okosystems/atclang) | ATCLang 1.0 (Rust-first, AD-021/022) | ✅ Rebuild Phase 1 COMPLETE |
+| [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os) | Monorepo — NUR Integration (AD-017: `scripts/sync_modules.py`) | 🔴 geleert |
+| [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore) | Kernel — Rebuild per AD-013 (SC-001…SC-013) | 🔴 geleert |
+| [a-townchain](https://github.com/A-TownChain-Okosystems/a-townchain) | Produkt | 🔴 geleert |
+| [globus-os](https://github.com/A-TownChain-Okosystems/globus-os) | Produkt | 🔴 geleert |
+| [aurora-ai](https://github.com/A-TownChain-Okosystems/aurora-ai) | Produkt | 🔴 geleert |
+| [genesis-engine](https://github.com/A-TownChain-Okosystems/genesis-engine) | Produkt | 🔴 geleert |
+
+> **Rebuild-Reihenfolge (AD-020):** Launch-Stack aus Vault → atc-shivacore SC-001+ → übrige Produkt-Repos.
+> **Chain-ID:** 658467 (AD-004 RESOLVED). **Mainnet-Deadline: 15.09.2026.**
 
 ## Integrationen (17 aktiv)
 | Integration | Status | Zweck |

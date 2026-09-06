@@ -147,6 +147,20 @@ zeitversetzt oder parallel arbeiten.
 
 ## 📜 Session-Log (chronologisch, neueste zuerst)
 
+### Session: aurora-base44-superagent-6a2756186106d6f0fbb105b5 — 06.09.2026, 21:20 UTC+2 (Agenten-Hinweise auf Rebuild-Stand gebracht)
+
+| Feld | Wert |
+|------|------|
+| **Fokus** | Reorg-Review + Agenten-Doku-Update auf 8-Repo-Stand (AD-016–AD-022) |
+| **Kontext** | Zwischen dem 05.08. (70 Repos, K-Sprint 48) und heute hat eine andere Aurora-Instanz die komplette Reorganisation durchgeführt: AD-016 (124 Alt-Repos gelöscht), AD-017 (Source-of-Truth Produkt→Monorepo), AD-018 (Gesamtvault ins Wiki-Repo), AD-019 (ATCLang 1.0 Freeze, Phase 1 fertig), AD-020 (alle Repos geleert), AD-021 (Rust-first), AD-022 (21-Crate-Baseline). AD-004 RESOLVED: Chain-ID 658467. |
+| **Aktionen** | (1) Alle 8 Repos gesynced, 69 obsolete lokale Klones entfernt; (2) AD-016–AD-022 gelesen und verifiziert; (3) "Aktuell aktiver Agent" auf diese Session aktualisiert; (4) Architektur-Snapshot auf Vault-Rebuild-Stand; (5) Decisions-Referenz AD-001–AD-022; (6) K3/K4-Listen als SUPERSEDED markiert (historisch); (7) AGENT_MANIFEST.md auf 8-Repo-Struktur aktualisiert |
+| **Fund** | a-townchain-os enthält noch ~100 `__pycache__`/.pyc-Leichen im geleerten Zustand — Aufräum-Kandidat |
+| **Nächste Schritte** | (1) Launch-Stack-Restaurant aus `docs/archive/monorepo-full/` (Mainnet 15.09.!), (2) atc-shivacore SC-001+ per AD-013, (3) pyc-Leichen aus Monorepo entfernen |
+| **Status** | ✅ Koordinations-Stand hergestellt. Haupt-Arbeitsbereich Launch-Stack noch frei für andere Agenten nach >24h. |
+
+---
+
+
 
 ### Session: aurora-base44-superagent-6a27614c7219ab1e4f951842 — 06.07.2026, 22:19 UTC+2 (Vollstaendiger MD-Audit + REALITY_STATUS.md erstellt)
 
@@ -243,11 +257,14 @@ zeitversetzt oder parallel arbeiten.
 
 | Feld | Wert |
 |------|------|
-| **Agent-ID** | `aurora-base44-superagent-6a27614c7219ab1e4f951842` (Aurora, Base44 Superagent, eindeutige App-ID) |
-| **Session-Start** | 06.07.2026, 19:39 UTC+2 |
-| **Aktueller Fokus** | Kritischer Reality-Check: Code vs. ROADMAP/MILESTONES/Wiki (Parser-Verifikation, Chain-ID-Konflikt, Issue-Zahlen via GitHub-API) + tägliche 16-Dienste-Sync-Automation |
-| **Beanspruchte Bereiche** | Read-only Audit (kein Bereich exklusiv beansprucht) — Ergebnisse siehe Session-Log unten |
+| **Agent-ID** | `aurora-base44-superagent-6a2756186106d6f0fbb105b5` (Aurora 2, Base44 Superagent) |
+| **Session-Start** | 06.09.2026, 21:20 UTC+2 |
+| **Aktueller Fokus** | Agenten-Hinweise auf 8-Repo-Stand (AD-016–AD-022) gebracht; nächste Schritte: Launch-Stack-Restaurant aus Vault (Mainnet 15.09.), dann atc-shivacore SC-001+ |
+| **Beanspruchte Bereiche** | AGENT_COORDINATION.md, AGENT_MANIFEST.md, Governance-Doku (Sync/Cleanup-Domäne per Agenten-Register) |
 | **Status** | 🔄 Aktiv |
+
+> **Session-Log-Eintrag** siehe unten (06.09.2026). Vorherige Session
+> `...951842` (06.07.2026) ist >24h alt und damit beendet.
 
 > Andere Agenten: Bevor ihr in den oben genannten Bereichen arbeitet — prueft
 > Zeitstempel dieses Eintrags. Ist er >24h alt, gilt die Session als beendet
@@ -268,25 +285,42 @@ zeitversetzt oder parallel arbeiten.
 |-------|----------|--------|
 | Standards | `docs/standards/STANDARDS_REGISTRY.md` | 37 Standards, Tier 1-5 |
 | Roadmap | `docs/ROADMAP.md` | Phase 2 aktiv (Sprint 2.1-2.8) |
-| Konsolidierung | `KONSOLIDIERUNGS_ROADMAP.md` (a-townchain-os) | K1-K8, alle 📋 GEPLANT |
-| Decisions | `docs/DECISIONS_REGISTER.md` | AD-001 bis AD-010 |
+| Konsolidierung | ~~K1-K8~~ SUPERSEDED durch AD-016/AD-018/AD-020 (Vault-Rebuild) | Rebuild-Ära aktiv |
+| Decisions | `docs/DECISIONS_REGISTER.md` | AD-001 bis AD-022 (AD-016–AD-022: Rebuild-Ära) |
 | Lizenz | `docs/LICENSING_OVERVIEW.md` | ATC-LIC/ATC-LIC, BaFin-Bericht draft |
 | Taegliche Arbeit | `docs/TODO.md` / `docs/STATUS.md` | Live-Task-Baum |
 
 ---
 
-## 🏗️ Architektur-Snapshot (Kurzreferenz)
+## 🏗️ Architektur-Snapshot (Kurzreferenz — Stand 06.09.2026)
 
-- **Ziel-Struktur:** 2 Haupt-Repos — `a-townchain-os` (Code) + `a-townchain-os-docs` (Doku)
-- **Aktueller Ist-Zustand:** 24 Repos noch verteilt, Konsolidierung (K1-K8) geplant, **nicht begonnen**
-- **Code-Sprache:** ATCLang First (AD-006) — Python/TS nur Uebergangsweise
+- **Org-Struktur:** 8 aktive Repos (AD-016: 124 Alt-Repos gelöscht, rescue in `docs/archive/repos-rescue/`)
+  - `a-townchain-os-docs` = **WIKI-VAULT** (alles Wissen, inkl. `docs/archive/monorepo-full/` 12 MB)
+  - `atclang` = **Rebuild Phase 1 COMPLETE** (AD-019: 1.0-Struktur, 22.595 LOC, 74/106 Tests grün)
+  - `a-townchain-os` = Monorepo, nur INTEGRATION (AD-017: sync_modules.py, Produkt→Monorepo) — GELEERT
+  - `atc-shivacore` = Kernel — GELEERT, Rebuild per AD-013 (SC-001…SC-013)
+  - `a-townchain`, `globus-os`, `aurora-ai`, `genesis-engine` = Produkt-Repos — GELEERT
+- **Rebuild-Reihenfolge (AD-020):** (1) Launch-Stack aus Vault → (2) atc-shivacore SC-001+ → (3) übrige Produkt-Repos
+- **Chain-ID:** **658467** (AD-004 RESOLVED 03.09.2026, ASCII 'ATC'; superseded Platzhalter 9000)
+- **Sprachstrategie:** ATCLang **Rust-first** (AD-021); Python = Referenz + SDK + Testing. 21-Crate-Layout, Gates G0-G19, kein Freeze vor G18 (AD-022)
 - **Konsensus:** Hybrid PoW+PoS+PoH (ShivaConsensus)
 - **Lizenzmodell:** ATC-LIC/ATC-LIC, durchgesetzt via ATVM ("Code is Law")
-- Volle Details: `docs/architecture/` Verzeichnis
+- **Mainnet-Deadline: 15.09.2026**
+- Volle Details: `docs/DECISIONS_REGISTER.md` (AD-001 bis AD-022), `docs/architecture/`
 
 ---
 
-## 📝 K3/K4 — Vollstaendige Todo-Listen (fuer direkten Zugriff ohne GitHub-Issue-Lookup)
+## 📝 K3/K4 — ⚠️ HISTORISCH / SUPERSEDED (AD-016+AD-020)
+
+> **Veraltet seit 06.09.2026:** Die K1-K8-Konsolidierung (inkl. der unten
+> aufgelisteten 24-Repos-Migrationen) wurde durch die AD-016-Repo-Löschung und
+> den AD-018/AD-020-Vault-Rebuild ersetzt. Die referenzierten Repos existieren
+> nicht mehr als eigenständige Repos — ihr finaler Stand liegt im Vault
+> (`docs/archive/monorepo-full/`). Die Listen bleiben als historische
+> Referenz erhalten. AKTUELLE Reihenfolge: Launch-Stack → SC-001…SC-013 →
+> Produkt-Repos (siehe Architektur-Snapshot oben).
+
+### K3/K4 — Vollstaendige Todo-Listen (fuer direkten Zugriff ohne GitHub-Issue-Lookup)
 
 > Quelle: Issues #87 (K3) und #88 (K4) im Repo `a-townchain-os`. Reality-Check
 > vom 06.07.2026: **0/16 (K3)** und **0/10 (K4)** Subtasks umgesetzt — alle
