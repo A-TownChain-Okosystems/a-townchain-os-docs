@@ -47,3 +47,8 @@ Original-Stand (pristin vor Copyright-/Link-Fixes) wurden nach
 Die 9 Issues des Alt-Repos atc-genesis-engine liegen als
 `docs/archive/repos-rescue/_ISSUES_DUMP.json`. Details: AD-016.
 
+## Sync-Regel (AD-017, 06.09.2026)
+
+Produkt-Repos = kanonische Modul-Quelle; Monorepo = Integrationsziel.
+Einspielen nur via `a-townchain-os/scripts/sync_modules.py` (`--check`/`--sync`).
+Modul-Code nie direkt im Monorepo bearbeiten. Details: DECISIONS_REGISTER AD-017.

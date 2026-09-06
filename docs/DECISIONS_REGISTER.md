@@ -252,3 +252,31 @@ einzigen Issues führenden Alt-Repos (atc-genesis-engine, 9 Issues),
 atclang, a-townchain, globus-os, aurora-ai, genesis-engine (Produkte).
 Git-Commit-Historien der gelöschten Repos sind mit ihnen entfernt; der finale
 Datei-Stand jedes Repos ist vollständig erhalten (Hub-Rescue bzw. Monorepo).
+
+---
+
+## AD-017: Source-of-Truth & Modul-Sync (Produkt-Repos -> Monorepo)
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (ShivaCore, Entscheidung an Agent Aurora delegiert) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Kanonische Entwicklungsquelle fuer Modul-Code sind die
+Produkt-Repos (atc-shivacore, atclang, a-townchain, globus-os, aurora-ai,
+genesis-engine). Der Monorepo a-townchain-os ist ausschliesslich
+INTEGRATIONSZIEL (Cargo-Workspace, Launch-Stack, Docker, CI, Gesamttests).
+
+**Regeln:**
+1. Modul-Code wird nie mehr direkt im Monorepo bearbeitet — nur ueber
+   `scripts/sync_modules.py` einspielen (strikte Richtung: Produkt -> Monorepo).
+2. Modi: `--check` = SHA-256-Divergenz-Bericht, `--sync` = einspielen
+   (Produkt-Stand gewinnt). Sync-Punkte: vor Releases, Integration-Builds,
+   Mainnet-Freeze, bei CI-Abweichung.
+3. Monorepo-Integrationsdateien (Workspace-Files, docker/, scripts/, .github/,
+   Meta-Files) bleiben vom Sync unberuehrt.
+4. Dateien, die nur im Monorepo existieren, werden vom Sync NIE geloescht.
+5. Startzustand 06.09.: 1.377 Dateien geprueft, 0 divergent, 0 neu (sauber).
+
+**Rationale:** AD-014/AD-015 verlagern die Produkt-Entwicklung in die
+Produkt-Repos (atc-shivacore 181 Commits, atclang 91 Commits Historie);
+der Mainnet-Launch am 15.09. benoetigt den Monorepo als Workspace-Zentrale.
+Damit ist die im Cross-Repo-Audit identifizierte Luecke (kein Sync-Mechanismus
+-> Divergenz ab erstem produktseitigen Commit) geschlossen.
