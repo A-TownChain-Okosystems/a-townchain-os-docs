@@ -1,0 +1,12 @@
+// ATCLang v0.3 — atc-ide :: Syntax Highlighter
+// tokenizer, themes, ATCLang grammar
+// STUB: Wird in Sprint implementiert
+// ATC-Standard: ATC-24
+
+module syntax_highlight {
+    // Public API — TBD
+    
+    fn init() {
+        // Initialization — TBD
+    }
+}

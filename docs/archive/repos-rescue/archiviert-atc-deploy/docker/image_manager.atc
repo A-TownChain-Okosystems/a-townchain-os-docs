@@ -1,0 +1,21 @@
+// ATCLang v0.3 — Image Manager
+// Docker-Image-Verwaltung: Build, Tag, Push, Pull
+// ATC-Standard: ATC-24
+
+module image_manager {
+    fn build_image(tag: string, dockerfile: string) {
+        // Image bauen
+    }
+    
+    fn tag_image(source: string, target: string) {
+        // Image taggen
+    }
+    
+    fn push_image(tag: string, registry: string) {
+        // Image zu Registry pushen
+    }
+    
+    fn pull_image(tag: string) {
+        // Image pullen
+    }
+}

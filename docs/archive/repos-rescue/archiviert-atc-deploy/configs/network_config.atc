@@ -1,0 +1,27 @@
+// ATCLang v0.3 — Network Configuration
+// Netzwerkkonfiguration für verschiedene Umgebungen
+// ATC-Standard: ATC-24
+
+module network_config {
+    struct NodeConfig {
+        chain_id: int,
+        network: string,
+        bootnodes: List[string],
+        max_peers: int,
+        enable_discovery: bool,
+        data_dir: string,
+        log_level: string,
+    }
+    
+    fn mainnet_config() {
+        // Mainnet-Node-Konfiguration
+    }
+    
+    fn testnet_config() {
+        // Testnet-Node-Konfiguration
+    }
+    
+    fn devnet_config() {
+        // Devnet-Node-Konfiguration
+    }
+}

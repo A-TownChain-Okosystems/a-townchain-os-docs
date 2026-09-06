@@ -1,0 +1,15 @@
+// ATCLang v0.3 — Reputation System
+// Score, badges, endorsements
+// ATC-Standard: ATC-45
+
+module reputation_system {
+    struct ReputationScore {
+        user_id: string,
+        score: int,
+        badge_count: int
+    }
+    
+    fn calculate_reputation() {
+        // Computes peer-weighted social reputation score
+    }
+}

@@ -1,0 +1,30 @@
+// ATCLang v0.3 — Helm Chart Builder
+// Generiert Helm-Charts für Kubernetes-Deployments
+// ATC-Standard: ATC-24
+
+module helm_chart {
+    struct ChartConfig {
+        name: string,
+        replicas: int,
+        image: string,
+        chain_id: int,
+        storage_class: string,
+        resources: Map[string, string],
+    }
+    
+    fn generate_chart(config: ChartConfig) {
+        // Helm-Chart generieren (Chart.yaml, values.yaml, templates/)
+    }
+    
+    fn full_node_chart() {
+        // Chart für Full-Node-Deployment
+    }
+    
+    fn validator_chart() {
+        // Chart für Validator-Deployment
+    }
+    
+    fn monitoring_chart() {
+        // Chart für Monitoring-Stack (Prometheus + Grafana)
+    }
+}

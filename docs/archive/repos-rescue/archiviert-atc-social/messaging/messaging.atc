@@ -1,0 +1,16 @@
+// ATCLang v0.3 — Messaging
+// Notifications, announcements, DM routing
+// ATC-Standard: ATC-45
+
+module messaging {
+    struct Notification {
+        notif_id: string,
+        recipient: string,
+        category: string,
+        read: int
+    }
+    
+    fn push_notification() {
+        // Dispatches system or social notification to target account
+    }
+}

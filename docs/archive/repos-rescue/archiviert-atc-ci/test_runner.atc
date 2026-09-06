@@ -1,0 +1,12 @@
+// ATCLang v0.3 — atc-ci :: Test Runner
+// unit, integration, e2e, coverage
+// STUB: Wird in Sprint implementiert
+// ATC-Standard: ATC-24
+
+module test_runner {
+    // Public API — TBD
+    
+    fn init() {
+        // Initialization — TBD
+    }
+}

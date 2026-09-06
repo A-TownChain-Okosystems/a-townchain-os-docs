@@ -1,0 +1,15 @@
+// ATCLang v0.3 — Debugger
+// Breakpoints, step, watch, stack trace
+// ATC-Standard: ATC-92
+
+module debugger {
+    struct Breakpoint {
+        file: string,
+        line: int,
+        enabled: int
+    }
+    
+    fn step_over() {
+        // Advances execution frame by one instruction during debug session
+    }
+}

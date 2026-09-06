@@ -1,0 +1,15 @@
+// ATCLang v0.3 — Source Viewer
+// Browse, search, annotate source code
+// ATC-Standard: ATC-92
+
+module source_viewer {
+    struct ViewerState {
+        repo_id: string,
+        active_path: string,
+        line_number: int
+    }
+    
+    fn render_source() {
+        // Renders line-numbered interactive source code browser view
+    }
+}

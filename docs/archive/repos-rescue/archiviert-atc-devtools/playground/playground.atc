@@ -1,0 +1,15 @@
+// ATCLang v0.3 — ATCLang Playground
+// Live execution, REPL, examples
+// ATC-Standard: ATC-92
+
+module playground {
+    struct PlaygroundSession {
+        session_id: string,
+        code: string,
+        exec_time_ms: int
+    }
+    
+    fn execute_snippet() {
+        // Executes ATCLang code snippet in isolated sandbox REPL
+    }
+}

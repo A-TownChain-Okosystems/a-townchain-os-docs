@@ -1,0 +1,12 @@
+// ATCLang v0.3 — atc-ci :: Deploy Tool
+// staging, production, rollback, health check
+// STUB: Wird in Sprint implementiert
+// ATC-Standard: ATC-24
+
+module deploy {
+    // Public API — TBD
+    
+    fn init() {
+        // Initialization — TBD
+    }
+}

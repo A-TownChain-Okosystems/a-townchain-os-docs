@@ -1,0 +1,12 @@
+// ATCLang v0.3 — atc-ide :: Debugger
+// breakpoints, step, inspect, stack trace, watch
+// STUB: Wird in Sprint implementiert
+// ATC-Standard: ATC-24
+
+module debugger {
+    // Public API — TBD
+    
+    fn init() {
+        // Initialization — TBD
+    }
+}

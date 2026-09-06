@@ -1,0 +1,15 @@
+// ATCLang v0.3 — Code Editor
+// Syntax highlighting, autocomplete, LSP
+// ATC-Standard: ATC-92
+
+module code_editor {
+    struct EditorConfig {
+        theme: string,
+        lsp_enabled: int,
+        tab_size: int
+    }
+    
+    fn highlight_syntax() {
+        // Parses ATCLang tokens and applies syntax highlighting themes
+    }
+}

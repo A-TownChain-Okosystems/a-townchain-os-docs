@@ -1,0 +1,30 @@
+// ATCLang v0.3 — Docker Builder
+// Generiert Dockerfiles für verschiedene Node-Typen
+// ATC-Standard: ATC-24
+
+module docker_builder {
+    struct DockerConfig {
+        base_image: string,
+        node_type: string,  // full, validator, light, seed
+        chain_id: int,
+        network: string,  // mainnet, testnet, devnet
+        ports: List[int],
+        volumes: List[string],
+    }
+    
+    fn build_full_node(config: DockerConfig) {
+        // Dockerfile für Full-Node generieren
+    }
+    
+    fn build_validator_node(config: DockerConfig) {
+        // Dockerfile für Validator-Node
+    }
+    
+    fn build_light_node(config: DockerConfig) {
+        // Dockerfile für Light-Node
+    }
+    
+    fn build_docker_compose(network: string, node_count: int) {
+        // docker-compose.yml für Multi-Node-Setup
+    }
+}

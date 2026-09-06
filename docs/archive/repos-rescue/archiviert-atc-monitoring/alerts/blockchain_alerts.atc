@@ -1,0 +1,29 @@
+// ATCLang v0.3 — Blockchain Alert Rules
+// Vordefinierte Alert-Regeln für Blockchain-Gesundheit
+// ATC-Standard: ATC-24
+
+module blockchain_alerts {
+    fn block_time_alert() {
+        // Alert wenn Block-Time > 10s
+    }
+    
+    fn gas_price_spike() {
+        // Alert bei Gas-Price-Spike > 200% Durchschnitt
+    }
+    
+    fn validator_dropout() {
+        // Alert wenn Validator offline > 3 Epochs
+    }
+    
+    fn peer_count_low() {
+        // Alert wenn Peer-Count < 10
+    }
+    
+    fn fork_detected() {
+        // Alert bei Fork-Ereignis
+    }
+    
+    fn mempool_backlog() {
+        // Alert bei Mempool > 10K pending txs
+    }
+}

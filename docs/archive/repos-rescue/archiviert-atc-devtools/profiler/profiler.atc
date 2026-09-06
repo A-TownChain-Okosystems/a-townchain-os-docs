@@ -1,0 +1,15 @@
+// ATCLang v0.3 — Profiler
+// CPU, memory, call graph, hotspots
+// ATC-Standard: ATC-92
+
+module profiler {
+    struct ProfileSample {
+        function_name: string,
+        cpu_cycles: int,
+        mem_bytes: int
+    }
+    
+    fn capture_profile() {
+        // Samples CPU cycles and memory allocations per function execution
+    }
+}

@@ -1,0 +1,25 @@
+// ATCLang v0.3 — Node Exporter
+// Exportiert Low-Level Node-Metriken für Prometheus
+// ATC-Standard: ATC-24
+
+module node_exporter {
+    fn export_cpu() {
+        // CPU-Auslastung per Core
+    }
+    
+    fn export_memory() {
+        // Memory: used, free, cached, swap
+    }
+    
+    fn export_disk() {
+        // Disk: I/O, space, inodes
+    }
+    
+    fn export_network() {
+        // Network: bandwidth, connections, errors
+    }
+    
+    fn export_filesystem() {
+        // ATCFS: size, inodes, mount status
+    }
+}

@@ -1,0 +1,16 @@
+// ATCLang v0.3 — P2P Chat
+// Direct messages, group chat, encrypted channels
+// ATC-Standard: ATC-45
+
+module chat_system {
+    struct ChatMessage {
+        msg_id: string,
+        sender: string,
+        recipient: string,
+        enc_payload: string
+    }
+    
+    fn send_message() {
+        // Routes end-to-end encrypted message through P2P network overlay
+    }
+}

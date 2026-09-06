@@ -1,0 +1,16 @@
+// ATCLang v0.3 — Moderation
+// Content policies, reports, appeals, bans
+// ATC-Standard: ATC-45
+
+module moderation {
+    struct ModerationReport {
+        report_id: string,
+        target_id: string,
+        reason: string,
+        status: string
+    }
+    
+    fn review_report() {
+        // Evaluates community content reports and updates moderation status
+    }
+}

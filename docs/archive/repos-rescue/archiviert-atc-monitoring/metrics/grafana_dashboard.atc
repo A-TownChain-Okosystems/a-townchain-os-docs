@@ -1,0 +1,31 @@
+// ATCLang v0.3 — Grafana Dashboard Builder
+// Generiert Grafana-Dashboard-JSON aus Metrik-Definitionen
+// ATC-Standard: ATC-24
+
+module grafana_dashboard {
+    struct Panel {
+        title: string,
+        metric: string,
+        panel_type: string,  // graph, stat, table, heatmap
+        datasource: string,
+    }
+    
+    struct Dashboard {
+        title: string,
+        panels: List[Panel],
+        refresh_rate: int,
+        time_range: string,
+    }
+    
+    fn build_dashboard(title: string, panels: List[Panel]) {
+        // Dashboard-JSON generieren
+    }
+    
+    fn default_overview() {
+        // Standard-Overview: TPS, Block Time, Gas, Peers, Validators
+    }
+    
+    fn validator_dashboard() {
+        // Validator-spezifisches Dashboard
+    }
+}

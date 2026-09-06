@@ -1,0 +1,12 @@
+// ATCLang v0.3 — atc-ide :: Code Editor
+// buffer management, syntax highlighting, auto-indent
+// STUB: Wird in Sprint implementiert
+// ATC-Standard: ATC-24
+
+module editor {
+    // Public API — TBD
+    
+    fn init() {
+        // Initialization — TBD
+    }
+}
