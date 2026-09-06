@@ -19,7 +19,7 @@
 | AD-008 | Reality-Check: 44 Issues re-auditieren/re-open? | ⏳ DECISION | — | **Michael** |
 | AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ (kanonisch: atclang/ATCLANG_SPEC.md) / Bridge-Standards-Dedup (ATC-09/38/69/91) ⏳ | 🟡 TEIL-GELOEST | 08.07.2026 | **Michael** (nur noch Bridge-Dedup) |
 | AD-023 | Mainnet-Launch aufgehoben (kein Launch-Ziel/Deadline mehr) | ✅ RESOLVED (06.09.2026) | — | Michael |
-| AD-024 | Zielarchitektur Repository-Landkarte (vertikale Produkte, P0-P2) | 📐 DRAFT_REVIEW | — | **Michael** (Entwurf dokumentiert, Feedback aus Architektur-Analyse 06.09.) |
+| AD-024 | Zielarchitektur Repository-Landkarte — ALLE Repositories erstellen (P0+P1+P2) | ✅ RESOLVED (06.09.2026, 21:30) | — | Michael |
 
 ---
 
@@ -443,9 +443,17 @@ Chain-ID 658467 (AD-004) bleibt final und wird beim künftigen Launch genutzt.
 
 ---
 
-## AD-024: Zielarchitektur Repository-Landkarte — vertikale Produktgrenzen (ENTWURF)
+## AD-024: Zielarchitektur Repository-Landkarte — ALLE Repositories erstellen (RESOLVED)
 
-**Datum:** 06.09.2026 · **Status:** 📐 DRAFT_REVIEW — **wartet auf Owner-Entscheidung (Michael)** · **Eingereicht durch:** Architektur-Analyse (extern), aufbereitet durch Agent Aurora
+**Datum:** 06.09.2026 · **Status:** ✅ RESOLVED/UMGESETZT · **Entscheider:** Owner (Michael, 21:30 UTC+2: „Alle repository erstellen") · **Umsetzung:** Agent Aurora
+
+**Beschluss (Variante a — erweitert):** SÄMTLICHE Repos der Landkarte werden JETZT
+angelegt (P0+P1+P2 = 14 neue Repos). AD-016-Regel „exakt 8 aktive Repos" ist damit
+fortgeschrieben: Ziel sind 22 aktive Repos mit vertikalen Produktgrenzen.
+Wobei möglich wird Vault-Inhalt restauriert (atc-sdk, atc-contracts, atc-wallet,
+atc-explorer, shivamon); neue Repos (atc-node, atc-indexer, atc-mining, atc-interop,
+atc-oracle, atc-storage, atc-launchpad, atc-marketplace, atc-compute) erhalten
+professionelle Grundstruktur (README/Architektur/LICENSE/STATUS).
 
 **Vorschlag:** Wachstum der Organisation **vertikal entlang konkreter Produkte/Protokolle**
 (Protocol → Node → SDK → Wallet/Explorer/Contracts → Applications), nicht horizontal

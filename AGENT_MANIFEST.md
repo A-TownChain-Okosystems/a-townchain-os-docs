@@ -1,17 +1,36 @@
 # AGENT_MANIFEST.md
-> Letzte Aktualisierung: 2026-09-06 19:25 UTC | Aurora Master Sync v3.0 | 8-Repo-Stand (AD-016–AD-022)
+> Letzte Aktualisierung: 2026-09-06 21:45 UTC | Aurora Master Sync v3.0 | 22-Repo-Stand (AD-016–AD-024)
 
-## Repositories (8 aktive — AD-016)
+## Repositories (22 aktive — AD-016 + AD-024)
+### Kern-Plattform (8, AD-016)
 | Repo | Rolle | Zustand (AD-020) |
 |------|-------|------------------|
 | [a-townchain-os-docs](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) | **WIKI-VAULT** — alles Wissen inkl. `docs/archive/monorepo-full/` | ✅ gefüllt |
 | [atclang](https://github.com/A-TownChain-Okosystems/atclang) | ATCLang 1.0 (Rust-first, AD-021/022) | ✅ Rebuild Phase 1 COMPLETE |
 | [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os) | Monorepo — NUR Integration (AD-017: `scripts/sync_modules.py`) | 🔴 geleert |
-| [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore) | Kernel — Rebuild per AD-013 (SC-001…SC-013) | 🔴 geleert |
-| [a-townchain](https://github.com/A-TownChain-Okosystems/a-townchain) | Produkt | 🔴 geleert |
-| [globus-os](https://github.com/A-TownChain-Okosystems/globus-os) | Produkt | 🔴 geleert |
-| [aurora-ai](https://github.com/A-TownChain-Okosystems/aurora-ai) | Produkt | 🔴 geleert |
-| [genesis-engine](https://github.com/A-TownChain-Okosystems/genesis-engine) | Produkt | 🔴 geleert |
+| [atc-shivacore](https://github.com/A-TownChain-Okosystems/atc-shivacore) | Microkernel — Rebuild per AD-013 (SC-001…SC-013) | 🔴 geleert |
+| [a-townchain](https://github.com/A-TownChain-Okosystems/a-townchain) | Blockchain-Produkt (Chain-ID 658467) | 🔴 geleert |
+| [globus-os](https://github.com/A-TownChain-Okosystems/globus-os) | OS-Produkt (Userspace) | 🔴 geleert |
+| [aurora-ai](https://github.com/A-TownChain-Okosystems/aurora-ai) | AI-Produkt | 🔴 geleert |
+| [genesis-engine](https://github.com/A-TownChain-Okosystems/genesis-engine) | Game-Engine-Produkt | 🔴 geleert |
+
+### Vertikale Repos (14, AD-024 — 06.09.2026 erstellt)
+| Repo | Priorität | Inhalt |
+|------|-----------|--------|
+| [atc-sdk](https://github.com/A-TownChain-Okosystems/atc-sdk) | P0 | Developer Platform (rust/ts/python/cli) — Vault-Restore |
+| [atc-node](https://github.com/A-TownChain-Okosystems/atc-node) | P0 | Executable Node (Networking/RPC/Storage/Consensus) |
+| [atc-contracts](https://github.com/A-TownChain-Okosystems/atc-contracts) | P0 | Smart-Contract-Standards — Vault-Restore |
+| [atc-wallet](https://github.com/A-TownChain-Okosystems/atc-wallet) | P0 | Wallet, eigene Security Boundary — Vault-Restore |
+| [atc-explorer](https://github.com/A-TownChain-Okosystems/atc-explorer) | P1 | Block Explorer — Vault-Restore |
+| [atc-indexer](https://github.com/A-TownChain-Okosystems/atc-indexer) | P1 | Indexing Pipeline |
+| [atc-mining](https://github.com/A-TownChain-Okosystems/atc-mining) | P1 | Mining-Stack (PoW-Regeln bleiben im Core) |
+| [atc-interop](https://github.com/A-TownChain-Okosystems/atc-interop) | P1 | Bridges/IBC — eigene Sicherheitsdomäne |
+| [shivamon](https://github.com/A-TownChain-Okosystems/shivamon) | P1 | NFT-Game (auf genesis-engine) — Vault-Restore |
+| [atc-oracle](https://github.com/A-TownChain-Okosystems/atc-oracle) | P2 | External Data Binding |
+| [atc-storage](https://github.com/A-TownChain-Okosystems/atc-storage) | P2 | Dezentrale Storage-Schicht |
+| [atc-launchpad](https://github.com/A-TownChain-Okosystems/atc-launchpad) | P2 | Token/NFT-Launchpad |
+| [atc-marketplace](https://github.com/A-TownChain-Okosystems/atc-marketplace) | P2 | NFT/Asset-Marktplatz |
+| [atc-compute](https://github.com/A-TownChain-Okosystems/atc-compute) | P2 | Dezentrale Compute-Schicht |
 
 > **Rebuild-Reihenfolge (AD-020):** atc-shivacore SC-001+ → übrige Produkt-Repos (Launch-Stack bei Bedarf aus Vault).
 > **Chain-ID:** 658467 (AD-004 RESOLVED). **Mainnet-Launch: per AD-023 AUFGEHOBEN — kein Datum.**

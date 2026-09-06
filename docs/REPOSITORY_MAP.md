@@ -63,10 +63,13 @@ Modul-Code nie direkt im Monorepo bearbeiten. Details: DECISIONS_REGISTER AD-017
 
 Git-Historien aller Repos bleiben erhalten (Reversibilität).
 
-## Zielarchitektur-Landkarte (AD-024-ENTWURF, 06.09.2026 — Owner-Review offen)
+## Zielarchitektur-Landkarte (AD-024 UMGESETZT, 06.09.2026 — alle 14 Repos erstellt)
 
-Vertikales Wachstum entlang konkreter Produkte; die heutigen Produkt-Repo-Module sind
-die künftigen Abspalt-Kandidaten (Restore aus Vault bei Promotion-Kriterien-Erreichung):
+Alle 14 Repos wurden am 06.09.2026 (21:30–21:45 UTC+2) erstellt und initialisiert.
+Vault-Restore: atc-sdk, atc-contracts, atc-wallet, atc-explorer, shivamon (Bestand aus
+monorepo-full). Neu angelegt (Grundstruktur): atc-node, atc-indexer, atc-mining,
+atc-interop, atc-oracle, atc-storage, atc-launchpad, atc-marketplace, atc-compute.
+Organisation jetzt: 22 aktive Repos.
 
 | Ziel-Repo | Heutiger Ort (Modul im Produkt-Repo/Vault) | Priorität | Promotion-Kriterium |
 |---|---|---|---|
