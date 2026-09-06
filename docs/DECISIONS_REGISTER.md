@@ -297,3 +297,27 @@ kanonische Quelle dafuer. Git-Historien bleiben als Reversibilitaetsnetz.
 **Mainnet-Hinweis:** Der Launch-Stack (docker-compose, 10 Dienste) liegt
 jetzt ausschließlich hier; fuer den 15.09.2026 muss der Rebuild ihn als
 ersten Schritt restaurieren (Kopie aus dem Vault, nicht Neuentwicklung).
+
+---
+
+## AD-019: ATCLang 1.0 Master-Architektur verbindlich — Rebuild Phase 1
+
+**Datum:** 06.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** ATCLang-Zielarchitektur 1.0.0 EINGEFROREN (ARCHITECTURE
+FREEZE: GO): Trennung nach Verantwortlichkeit, nicht nach Schlagworten —
+frontend/semantics/ir/compiler/bytecode/artifact/vm/runtime/contracts/abi/
+host/security/profiles/stdlib/package/cli. Kernentscheidungen: runtime
+statt execution (VM = wie, Runtime = in welchem Zustand), artifact
+Singular, security zentral (determinism dort, nicht in profiles),
+Konsensgrenze mit Verbotsliste fuer Contract-Kontext, Source-of-Truth:
+specs/ -> Implementierung -> Conformance.
+
+**Konsolidierung (atclang 044604f):** Duplikate entfernt (atc-vm: 116-LOC-
+Stub vs 978 LOC kanonisch; atc-stdlib 4/9 identisch; atc-atclang: kleinere
+Parallel-Implementierungen) — bewahrt im Monorepo-Vault + Git-Historie.
+modules/atclang -> src/atclang (kanonisch), frontend/-Zusammenfuehrung,
+1.0-Subsystem-Platzhalter. Pipeline: Import + compile_source End-to-End
+OK; pytest 74/106 gruen, 32 rot (Bytecode-API-Konformanz = Phase 2).
+Reihenfolge geloeschter Mehrfachquellen: MULTIPLE SOURCES OF TRUTH →
+aufgeloest (eine Implementierung je Verantwortlichkeit).
