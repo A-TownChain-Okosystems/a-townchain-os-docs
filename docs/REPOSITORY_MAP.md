@@ -87,3 +87,36 @@ Organisation jetzt: 22 aktive Repos.
 
 > Regel: KEIN neues Repo ohne Content — Abspaltung immer als Restore/Ableitung aus dem
 > Vault bzw. Produkt-Repo, nie als leeres Skeleton (Lehre aus der 70-Repo-Ära).
+
+## Bau-Hierarchie: Repos bauen aufeinander auf (AD-026, 07.09.2026 — VERBINDLICH)
+
+Die 22 Repos werden SEQUENZIELL aufeinander aufgebaut. Ein Layer startet erst,
+wenn der vorherige sein Gate/Freeze erreicht hat (Ausnahme: Wiki-Hub, parallel).
+
+    [L0] atclang — Sprache, ATC-IR, Bytecode, ATVM (Gates G0-G19; Phase 1 fertig, G1 offen)
+      └─> [L1] atc-shivacore — Kernel (SC-001…SC-013, AD-012/013)
+            └─> [L2] aurora-ai — Rust Core + Python AI-Layer (AD-021; Kernel-Event-Bridge)
+                  └─> [L3] a-townchain — Blockchain L1, Chain-ID 658467 (ATCLang-Verträge + Kernel-Service)
+                        └─> [L4] globus-os — Userspace-OS auf ShivaCore (Bootchain AD-013)
+                              └─> [L5] Blockchain-Services: atc-node, atc-contracts, atc-wallet,
+                                  atc-sdk, atc-storage, atc-compute, atc-oracle, atc-indexer,
+                                  atc-explorer, atc-interop, atc-mining, atc-marketplace, atc-launchpad
+                                    └─> [L6] genesis-engine → genesis-chronicles (Engine → Spiel)
+                                          └─> [L7] a-townchain-os — Monorepo: INTEGRATION aller Layer (AD-017)
+    [Hub] a-townchain-os-docs — Wiki/Vault, kontinuierlich parallel
+
+| Layer | Repos | Baut auf | Rebuild-Gate |
+|---|---|---|---|
+| L0 | atclang | — | G1…G19 (AD-022) |
+| L1 | atc-shivacore | L0 (Priorität) | SC-001…SC-013 (AD-013) |
+| L2 | aurora-ai | L1 Kernel-Event-Bridge | Rust Core stabil (AD-021) |
+| L3 | a-townchain | L0 Verträge + L1 System-Service | Chain-ID 658467, ATVM grün |
+| L4 | globus-os | L1 Bootchain | globus-init + Services (AD-013) |
+| L5 | 13 Blockchain-Services | L3, teils L4 | je Service-spezifisch |
+| L6 | genesis-engine, genesis-chronicles | L4 + L3 Contracts | Engine-Core stabil |
+| L7 | a-townchain-os (Monorepo) | ALLE Layer | Integration per AD-017 |
+| Hub | a-townchain-os-docs | — | kontinuierlich |
+
+**Hinweis:** AD-026 ersetzt die AD-020-Empfehlung „Launch-Stack zuerst"
+(Launch per AD-023 aufgehoben — keine Deadline mehr; Monorepo-Integration
+erfolgt als LETZTER Schritt statt zuerst).

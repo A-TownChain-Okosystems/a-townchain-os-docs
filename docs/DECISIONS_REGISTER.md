@@ -521,3 +521,22 @@ NFT-Standard-Nummer bleibt. Git-Historie des Repos bewahrt alle alten Namen.
 **Kontext:** Repo war am 06.09. per AD-024 aus Vault-Inhalt (atc-shivamon)
 restauriert und als eigenständiges Produkt-Repo neben genesis-engine angelegt
 (Engine = Technologie, Spiel = Produkt). Keine Live-Systeme betroffen.
+
+---
+
+## AD-026: Repository-Bauhierarchie — sequenzieller Aufbau nach Abhängigkeit
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (ShivaCore: „erst atclang, dann Kernel, KI, Blockchain, Betriebssystem usw.") · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Die 22 Repos bauen in fester Reihenfolge aufeinander auf:
+L0 atclang → L1 atc-shivacore → L2 aurora-ai → L3 a-townchain → L4 globus-os
+→ L5 Blockchain-Services (node, contracts, wallet, sdk, storage, compute,
+oracle, indexer, explorer, interop, mining, marketplace, launchpad) →
+L6 genesis-engine → genesis-chronicles → L7 a-townchain-os (Integration).
+Wiki-Hub parallel. Ein Layer startet erst nach Gate-Erreichung des
+vorherigen. AD-020-Empfehlung (Launch-Stack zuerst) damit ersetzt —
+AD-023 hat die Launch-Deadline aufgehoben.
+
+**GitHub-seitig umgesetzt:** Layer-Tags [L0]…[L7]/[Hub] in allen 22
+Repo-Beschreibungen, Topics build-layer-N, verbindliche Tabelle in
+REPOSITORY_MAP.md, AGENT_MANIFEST im Monorepo gespiegelt.
