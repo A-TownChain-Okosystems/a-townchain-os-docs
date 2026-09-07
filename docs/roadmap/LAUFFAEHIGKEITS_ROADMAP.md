@@ -1,5 +1,7 @@
 # Lauffähigkeits-Roadmap M1-M8 (AD-027, 07.09.2026 — VERBINDLICH)
 
+> **M1-Status (07.09.2026, verifiziert):** G1 ✅ Language Specification (specs/language/SPEC.md + registry.json, atclang abb3262) · G2 ✅ Semantics (src/atclang/semantics/ TypeChecker SEM-001…012, specs/semantics/SPEC.md + registry.json, semantisches Gate in compile_source, Parser-Fix parse_type — atclang e249a40, 20/20 Tests, Korpus CLEAN, 0 Regressionen). Nächstes Gate: **G3 (ATC-IR)**. 
+
 **Ziel:** Das Ökosystem wird STÜCK FÜR STÜCK lauffähig. Nach jeder Meile läuft
 ein echtes, verifizierbares Inkrement — kein Big-Bang (AD-023: Launch-Termin
 offen). Jede Meile hat ein hartes Lauffähigkeits-Kriterium (Reality-Check:
