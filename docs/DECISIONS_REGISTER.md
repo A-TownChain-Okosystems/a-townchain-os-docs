@@ -1052,3 +1052,17 @@ Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
 - **Offen (Migrations-Punkt):** Modul-Migration des Python-Referenz-Moduls `atc-vm` aus atclang nach hier, sobald Rust-Baseline steht (AD-021 Rust-first; Python bleibt Referenz).
 - **Registry:** atc-standards/registry/repositories.yaml erweitert; Manifest v3.1.4 (24-Repo-Stand).
 - **Gueltig seit:** 2026-09-07
+
+---
+
+## AD-044: ATC-Algorithmus (Hybrid Consensus) als eigenstaendiges Repo (atc-algorithm)
+
+**Status:** ✅ RESOLVED/UMGESETZT | **Datum:** 2026-09-07 | **Entscheider:** Owner-Anforderung (Michael), Struktur-Festlegung Aurora | **Repo:** [atc-algorithm](https://github.com/A-TownChain-Okosystems/atc-algorithm)
+
+- **Anforderung:** „Erstelle ein Repository fuer meinen eigenen Algorithmus ATC-Algorithmus" (Owner, 07.09.).
+- **Beschluss:** Der ATC-Algorithmus — der proprietaere Hybrid Consensus der A-TownChain (PoH + PoS + PoW, Wiki-Glossar „Hybrid Consensus") — wird als eigenstaendiges Repo `atc-algorithm` (Classification CORE, Layer L3, Security S4, R1-Skeleton nach ATC-STD-201) gefuehrt.
+- **Begruendung:** Der Konsens ist die Kern-Innovation der Chain und S4-kritisch (G18 Security-Audit vor jedem Freeze, AD-023); bislang war die PoH-Implementierung nur als Modul in a-townchain verortet — Konsens-Logik verdient eigene Governance, eigene Tests und eigene Security-Reviews, analog AD-043 (atc-vm).
+- **Festlegungen:** SHA-256 als einziger Hash-Algorithmus (AD-001); Rust-first (AD-021); Chain-ID 658467 (AD-004).
+- **Offen (Migrations-Punkt):** Konsolidierung und Modul-Migration der PoH-Referenz-Implementierung aus a-townchain nach atc-algorithm, sobald Rust-Baseline steht.
+- **Registry:** atc-standards/registry/repositories.yaml erweitert; Manifest v3.1.5 (25-Repo-Stand).
+- **Gueltig seit:** 2026-09-07

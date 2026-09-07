@@ -5745,7 +5745,7 @@ de5be7d1ad  2026-06-10  docs(wiki): Kap. 31 + Issues #28-30 — finaler Stand
 | **ECDSA secp256k1** | Signatur-Algorithmus für Wallets und Transaktionen. |
 | **FFT-Token** | Franchise & Governance Token — Voting-Power in DAO. |
 | **Groth16** | Zero-Knowledge Proof System — geplant für Sprint 3.0. |
-| **Hybrid Consensus** | PoH + PoS + PoW — proprietärer Konsens-Algorithmus von A-TownChain. |
+| **Hybrid Consensus** | PoH + PoS + PoW — proprietärer Konsens-Algorithmus von A-TownChain. Eigenes Repo: [atc-algorithm](https://github.com/A-TownChain-Okosystems/atc-algorithm) (AD-044). |
 | **IPC Bus** | Inter-Process Communication Bus — Nachrichtensystem zwischen Kernel-Komponenten. |
 | **Non-EVM** | Keine Ethereum Virtual Machine — vollständig proprietäre Architektur. |
 | **PoH** | Proof of History — kryptografische Zeitstempel-Kette (Solana-inspiriert). |
@@ -13969,13 +13969,13 @@ contract ATC8300 {
 
 ## Überblick
 
-Die GitHub-Organisation `A-TownChain-Okosystems` umfasst **24 aktive Repositories**
-(Stand 07.09.2026, AD-024 + AD-043):
-- **24 aktive Repos** — 2 Hubs (a-townchain-os Code, a-townchain-os-docs Wiki-Vault)
-  + 22 vertikale Produkt-/Governance-Repos (atc-standards = Governance Root,
-  atc-vm = A-TownChain Virtual Machine, AD-043)
+Die GitHub-Organisation `A-TownChain-Okosystems` umfasst **25 aktive Repositories**
+(Stand 07.09.2026, AD-024 + AD-043/044):
+- **25 aktive Repos** — 2 Hubs (a-townchain-os Code, a-townchain-os-docs Wiki-Vault)
+  + 23 vertikale Produkt-/Governance-Repos (atc-standards = Governance Root,
+  atc-vm = A-TownChain Virtual Machine AD-043, atc-algorithm = Hybrid Consensus AD-044)
 - Historische Konsolidierungen: 13.–14.06.2026 (24→2+Archiv, Kapitel 63),
-  06.09.2026 (AD-016: 124→8, Vault-Rettung), 07.09.2026 (AD-024: 8→23; AD-043: +atc-vm → 24).
+  06.09.2026 (AD-016: 124→8, Vault-Rettung), 07.09.2026 (AD-024: 8→23; AD-043: +atc-vm → 24; AD-044: +atc-algorithm → 25).
 
 ---
 
