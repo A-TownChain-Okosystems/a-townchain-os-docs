@@ -111,6 +111,6 @@ debug/, personenbezogene Daten. Erlaubt: `.env.example` als Vorlage.
 
 ## 7. Zentrale Standard-Datei
 
-Jedes Repository fuehtdocs/REPOSITORY_STANDARD.md mit: Standard-ID + Version,
+Jedes Repository fuehrt docs/REPOSITORY_STANDARD.md mit: Standard-ID + Version,
 Repository-Klassifizierung (ATC-STD-REPO-002), Required-/Optional-Bestandteile,
 Struktur-Mapping und Compliance-Level.
