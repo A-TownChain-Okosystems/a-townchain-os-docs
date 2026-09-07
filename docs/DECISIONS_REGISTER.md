@@ -597,3 +597,35 @@ AST-Knoten, Semantik-Regeln (Scopes, Typ-Checks, 13 Builtins), 9 Stdlib-Modulen
 und dem Fehlermodell (45 Klassen). Maschinenlesbares Extrakt specs/language/
 registry.json fuer Conformance-/Differential-Tooling (G19). Normativitaet:
 SPEC folgt Referenz a7e1bd4, Abweichung = Fehler. Naechstes Gate: G2 (Semantics).
+
+---
+
+## AD-029: ATC Repository Governance Standards (ATC-STD-REPO-001/002/003)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (Vorgabe), Agent Aurora (Ausformulierung + Harmonisierung)
+
+Der Owner hat die Repository-Governance-Schicht definiert; ausformuliert als drei
+Standards (Status PROPOSED v1.0.0, verbindlich fuer NEUE Repos sofort, Bestand
+mit Migrationspflicht bis M8 fuer R2+):
+
+1. **ATC-STD-REPO-001** (docs/standards/): Top-Level-Struktur, Verantwortlichkeits-
+   Trennung, Domain-Strukturen (Blockchain/ATCLang/Wallet), Doku-Mindeststandard
+   (12 README-Abschnitte), ADR-Standard, Repository-Hygiene, zentrale Datei
+   docs/REPOSITORY_STANDARD.md je Repo.
+2. **ATC-STD-REPO-002**: Namensregeln (atc-<domain> + Produktlinien), 8 Repository-
+   Typen, Compliance-Level R0-R4, NORMATIVE Klassifizierung aller 22 aktiven
+   Repos (atc-shivacore CORE/OS R4, atclang CORE R4, a-townchain CORE R4, Hub
+   SPEC R3, Monorepo INFRA R3, Skelette R1 ...), Monorepo-Grenzen, Abhaengigkeits-
+   richtungen (keine Zyklen; AD-026 L0-L7 ist die konkrete Auspraegung).
+3. **ATC-STD-REPO-003**: SECURITY.md-Pflicht ab R2, Blockchain-Testkategorien
+   (consensus/cryptography/state-transition/replay/serialization/adversarial),
+   CI/CD-Minimum (ci/test/security/release), Pipeline mit Release-Gate
+   (GATE: PASS / NO-GO), organisationsweiter SemVer + Trennung Protocol/
+   Implementation/Specification, Secrets-Verbot.
+
+**Harmonisierungen (Abweichungen vom Owner-Entwurf, der Realitaet AD-025/026/028
+angepasst):** kein atc-standards-Repo (Standards kanonisch im Hub, .atc-Refs in
+atc-contracts per AD-028); shivamon = genesis-chronicles (AD-025); atc-core-Rolle
+= a-townchain; ADR-Zwei-Ebenen-Modell (zentrales DECISIONS_REGISTER bleibt
+autoritativ fuer Organisations-Entscheidungen, Repo-ADRs fuer Lokal-Entscheidungen);
+Bestands-Repos mit modules/-Layout dokumentieren Mapping statt Zwangs-Migration.

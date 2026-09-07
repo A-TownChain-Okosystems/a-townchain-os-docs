@@ -132,6 +132,13 @@ wenn der vorherige sein Gate/Freeze erreicht hat (Ausnahme: Wiki-Hub, parallel).
 (Launch per AD-023 aufgehoben — keine Deadline mehr; Monorepo-Integration
 erfolgt als LETZTER Schritt statt zuerst).
 
+## Governance-Klassifizierung (AD-029, 07.09.2026)
+
+Alle Repos sind nach ATC-STD-REPO-002 klassifiziert (Typ + Level R0-R4):
+atc-shivacore CORE/OS R4 · atclang CORE R4 · a-townchain CORE R4 · Hub SPEC R3 ·
+Monorepo INFRA R3 · globus-os OS R3 · aurora-ai AI R3 · atc-contracts SPEC/CORE R3 ·
+Dienste R2 · Skelette R1. Volltabelle: docs/standards/ATC-STD-REPO-002.md.
+
 ## Tiefenanalyse (07.09.2026)
 
 Vollstaendige Zuordnungs-Analyse (Inventar, Quer-Abhaengigkeiten, AD-012-Delta,
