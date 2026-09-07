@@ -863,3 +863,36 @@ Regel beibehalten: ATC-STD-000 bleibt CANDIDATE, Approval BLOCKED beim Owner;
 SCR-Entscheidungen sind Owner-Vorbehalt. Verifikation: 4/4 Standards
 COMPLIANT, Repo-Audit R3 GATE PASS (Score 97; einziger WARN = historisches
 Conventional-Commits-Verhaeltnis).
+
+---
+
+## AD-036: Naming Convention verbindlich (ATC-STD-000 §36)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (Vorgabe), Agent Aurora (Verankerung, Schema, Validator) · **Commit:** atc-standards 824528b
+
+Zentrale Benennungsnorm des ATC-Standardsystems, per Owner-Mandat als §36 in
+ATC-STD-000 verankert (Candidate-Revision vor Approval — keine SCR-Pflicht,
+da nicht STABLE):
+
+1. **ID-Tabelle:** ATC-STD-NNN, REQ-<DOMAENE>-NNN, F-NNN, SCR-NNN, ADR-NNN
+   (zentrales Register behaelt AD-NNN, Bestand unveraendert), ATC-SA-NNN,
+   TC-/TS-/GATE-NNN, ATC-SCHEMA/-PROTO/-SPEC/-DOC-NNN, ATC-REL-X.Y.Z,
+   ATC-DOC-NNN. Mindestens dreistellig, fuehrende Nullen erlaubt.
+2. **Repository-Namen:** Neue Repos atc-<domain>-<component>; Bestand-Brand-
+   Repos (atclang, a-townchain, globus-os, aurora-ai, genesis-engine,
+   genesis-chronicles, a-townchain-os, a-townchain-os-docs) immutable.
+3. **Dateinamen:** ATC-STD-NNN.md, <name>.schema.json, ATC-STD-NNN.integrity/
+   review/compliance.yaml (aktuelle Realisierung ueber approval/ + registry/).
+4. **ID-Immutabilitaet:** IDs werden nie umbenannt/wiederverwendet; nur
+   Version/Status/Titel/Kategorie aendern sich (Version-Pinning §29).
+5. **Maschinenpruefbarkeit (MUST):** schemas/naming-conventions.schema.json
+   (valides JSON) + atc-std-validator v0.1.1 Regel S-16 (Dateiname==ID,
+   3-stellige Mindest-IDs, Schema-Existenz) — CI lehnt ungueltige Namen ab.
+6. **Findings-Registry:** registry/findings.yaml mit kanonischen F-001…F-005
+   (Aliases T-F01/S-F01…/A-F01 als Herkunftsverweis, SCR-Verweise).
+7. **GATE-Migration:** ATC-STD-203 Release-Gates auf GATE-001…GATE-010
+   umgestellt (Naming-konform).
+
+Verifikation: 4/4 Standards COMPLIANT (S-16 aktiv), Repo-Audit R3 GATE PASS,
+Requirement-Matrix 17/17 PASS, Snapshot aktualisiert. Die offene Owner-
+Approval fuer ATC-STD-000 deckt die erweiterte 36-Abschnitt-Fassung ab.
