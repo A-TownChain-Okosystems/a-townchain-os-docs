@@ -131,3 +131,11 @@ wenn der vorherige sein Gate/Freeze erreicht hat (Ausnahme: Wiki-Hub, parallel).
 **Hinweis:** AD-026 ersetzt die AD-020-Empfehlung „Launch-Stack zuerst"
 (Launch per AD-023 aufgehoben — keine Deadline mehr; Monorepo-Integration
 erfolgt als LETZTER Schritt statt zuerst).
+
+## Tiefenanalyse (07.09.2026)
+
+Vollstaendige Zuordnungs-Analyse (Inventar, Quer-Abhaengigkeiten, AD-012-Delta,
+20 unzugeordnete Vault-Module mit Urteilen, Fundament-Check der 6 leeren
+Service-Repos): [docs/audits/REPO_ZUORDNUNGS_ANALYSE.md](audits/REPO_ZUORDNUNGS_ANALYSE.md)
+— Ergebnis: Zuordnung korrekt; 3 offene Owner-Entscheidungen (atc-security,
+atc-monitoring, atc-standards-.atc).
