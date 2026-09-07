@@ -238,7 +238,7 @@ K27 (GenesisBridge) → K28 (GossipBridge) → K29 (SecurityAudit)
   Workspace-Tests **731/731 grün**, Kernel **674/674 auf STABLE**.
   Modul-Registry: 60 Module in `src/modules/registry.py`.
 - **Chain-ID 658467** systemweit migriert (04.09., AD-004 RESOLVED; GitHub-Metadaten
-  verifiziert). Bewusst unverändert: Ports, ATC-9000-NFT, BIP44 m/44'/9000'.
+  verifiziert). Bewusst unverändert: Ports, ATC-9000-NFT. BIP44-Coin-Type seit AD-042 (07.09.): m/44'/658467'.
 - **Konsistenz-Audit** (05.09., Commit 6a162da): CodeQL-Workflow repariert
   (Auto-Übersetzung hatte YAML-Keywords eingedeutscht — lief nie), READMEs auf
   Konsolidierungs-Stand.

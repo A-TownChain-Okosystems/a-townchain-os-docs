@@ -317,7 +317,7 @@ address = base58.b58encode_check(b'\x41' + ripemd160_hash).decode()
 **BIP-39 Mnemonic:**
 - 12 oder 24 Wörter (englische Wordlist)
 - PBKDF2-HMAC-SHA512 (2048 Iterationen)
-- Derivation Path: `m/44'/9000'/0'/0/0`
+- Derivation Path: `m/44'/658467'/0'/0/0`
 
 **Signatur-Format:**
 - Algorithmus: secp256k1 ECDSA

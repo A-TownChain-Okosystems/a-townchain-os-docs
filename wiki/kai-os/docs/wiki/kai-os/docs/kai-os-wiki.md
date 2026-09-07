@@ -9835,7 +9835,7 @@ TURN-Server: turn.testnet.kai-os.io:3479
 ```python
 # blockchain/wallet/keygen.py
 
-HD_PATH = "m/44'/9000'/0'/0/{index}"
+HD_PATH = "m/44'/658467'/0'/0/{index}"
 # 44'    = BIP-44 Purpose
 # 9000'  = ATC Coin Type (Chain ID)
 # 0'     = Account 0

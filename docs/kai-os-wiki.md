@@ -10288,7 +10288,7 @@ TURN-Server: turn.testnet.kai-os.io:3479
 ```python
 # blockchain/wallet/keygen.py
 
-HD_PATH = "m/44'/9000'/0'/0/{index}"
+HD_PATH = "m/44'/658467'/0'/0/{index}"
 # 44'    = BIP-44 Purpose
 # 9000'  = ATC Coin Type (Chain ID)
 # 0'     = Account 0
@@ -12935,8 +12935,8 @@ class MobileWalletManager:
         # 256-bit Entropy → 24-Wort BIP39 Mnemonic
         mnemonic = generate_mnemonic(strength=256)
         seed = mnemo.to_seed(mnemonic)
-        # BIP44: m/44'/9000'/0'/0/0 (ATC Chain-ID 658467)
-        private_key = derive_key(seed, path="m/44'/9000'/0'/0/0")
+        # BIP44: m/44'/658467'/0'/0/0 (Coin-Type = Chain-ID, AD-042)
+        private_key = derive_key(seed, path="m/44'/658467'/0'/0/0")
         address = ecdsa_to_address(private_key)
         return {"address": address, "mnemonic": mnemonic}
 ```

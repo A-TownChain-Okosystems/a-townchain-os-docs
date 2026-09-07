@@ -22,7 +22,7 @@ Kernel-Implementierung. Die Python-Kernel (`core/kernel.py`,
 | Kernel-Tests (atc-shivacore) | **674/674 grün auf STABLE** (Boot-Teile hinter Feature `x86-boot`) |
 | Workspace-Tests (19 Crates, unified Cargo) | **731/731 grün** (38 Suiten) |
 | Rust-Toolchain | Stable (keine Nightly-Abhängigkeit) |
-| Chain-ID | **658467** (systemweit migriert 04.09.; Ports/ATC-9000-NFT/BIP44 `m/44'/9000'` bewusst unverändert) |
+| Chain-ID | **658467** (systemweit migriert 04.09.; Ports/ATC-9000-NFT/BIP44 `m/44'/658467'` bewusst unverändert) |
 | Kernel-Module | 30 (capability, process, scheduler, ipc, memory_manager, atcfs, did, remote_caps, knowledge_graph, atcnet, genesis, genesis_bridge, gossip_bridge, consensus, blockchain, security_audit, cross_subsystem, kernel_init, …) |
 | Infrastruktur | Unified Cargo Workspace (04.09.), rust-kernel-Service im docker-compose CI-Profil, Modul-Registry `src/modules/registry.py` (60 Module) |
 

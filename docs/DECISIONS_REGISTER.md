@@ -490,7 +490,7 @@ professionelle Grundstruktur (README/Architektur/LICENSE/STATUS).
 **Vorgeschlagene Promotion-Kriterien (statt fixer Phasen-Termine):**
 - `atc-sdk`: sobald ATCLang Rust-ABI/Artifact-Stabilisierung erreicht ist (AD-022-Gates)
 - `atc-node`: sobald Protocol-Core-Interface (AD-013-Kette) eingefroren ist
-- `atc-wallet`: sobald atclang-Runtime Signing/HD-Wallet-Referenz (BIP44 m/44'/9000') stabil
+- `atc-wallet`: sobald atclang-Runtime Signing/HD-Wallet-Referenz (BIP44 m/44'/658467', AD-042) stabil
 - `atc-contracts`: sobald ATVM-Contract-Kontext (AD-019/022) verifiziert ausführt
 - Shivamon-Split: sobald genesis-engine den ECS-/World-Kern stabil liefert
 
@@ -1026,3 +1026,16 @@ NET-001…008 (candidate, normativ per §33) inkl. Genesis-, Upgrade-,
 Security- und Recovery-Standard; Chain-ID-Allokation zentral in
 registry/networks.yaml (Devnet 658469, Testnet 658468, Mainnet 658467).
 Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
+
+---
+
+## AD-042: BIP44-Coin-Type 9000 → 658467 (SLIP-44-Kollision mit AVAX)
+
+**Status:** ✅ RESOLVED/UMGESETZT | **Datum:** 2026-09-07 | **Entscheider:** Aurora (KI-Entscheidung per Owner-Delegation 07.09.2026: „KI wählt die beste Entscheidung") | **Verfahren:** Registry-Recherche SLIP-44 (satoshilabs/slips, Stand 01.09.2026)
+
+- **Kontext:** Am 04.09. wurde der BIP44-Coin-Type `m/44'/9000'` bei der Chain-ID-Migration bewusst unverändert gelassen („offener Punkt" für eine Owner-Entscheidung). Der Owner hat diese Entscheidungsklasse an die KI delegiert.
+- **Befund:** Coin-Type 9000 ist in SLIP-44 **an Avalanche (AVAX) registriert** — dieselbe Kollisionsklasse wie die damals aufgelöste Chain-ID-9000/Evmos-Kollision. Hardware-Wallets (Trezor & Co.) würden ATC-Keys unter AVAX-Pfaden ableiten.
+- **Beschluss:** BIP44-Coin-Type wird auf **658467** geändert (Derivation `m/44'/658467'/0'/0/0`). 658467 ist in SLIP-44 nicht registriert und folgt derselben Identitäts-Logik wie die Chain-ID (ASCII 'ATC', praktisch kollisionsfrei).
+- **Bewusst unverändert (wie 04.09.):** Listen-Ports 9000, ATC-9000 NFT-Standard-ID, Negativ-Testfall 9999, network_magic 0x0A0C23A0.
+- **Migrationsaufwand:** Null — der Coin-Type existiert bislang nur in Dokumentation/Manifesten, keine Wallet-Implementierung im Einsatz (atc-wallet = restaurierter Vault-Stand, keine produktiven Keys).
+- **Gültig seit:** 2026-09-07
