@@ -148,3 +148,39 @@ Vollstaendige Zuordnungs-Analyse (Inventar, Quer-Abhaengigkeiten, AD-012-Delta,
 Service-Repos): [docs/audits/REPO_ZUORDNUNGS_ANALYSE.md](audits/REPO_ZUORDNUNGS_ANALYSE.md)
 — Ergebnis: Zuordnung korrekt; 3 offene Owner-Entscheidungen (atc-security,
 atc-monitoring, atc-standards-.atc).
+
+
+---
+
+## Technology Profiles (ATC-STD-100 §4, REQ-STD-104)
+
+Soll-/Ist-Vergleich aller 25 Repos gegen die [Language Policy (ATC-STD-100)](https://github.com/A-TownChain-Okosystems/atc-standards/blob/main/standards/architecture/ATC-STD-100.md):
+vollstaendiger Audit unter [audits/TECHNOLOGY_PROFILE_AUDIT_2026-09-07.md](audits/TECHNOLOGY_PROFILE_AUDIT_2026-09-07.md).
+
+| Repo | Layer | Soll-Sprache | Ist (Code-LOC) | Status |
+|---|---|---|---|---|
+| a-townchain | L1 | Rust (Chain-Orchestrierung) | Rust 544 + Py 3,052 + TS 769 | ECHT |
+| a-townchain-os | L4 | Rust (Integrations-Hub) | — (Skelett/Doku) | SKELETT |
+| a-townchain-os-docs | L5 | Markdown | Py 43,259 + TS 652 | ECHT |
+| atc-algorithm | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-compute | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-contracts | L1 | ATCLang/ABI: Rust | Py 3,300 + TS 548 | ECHT |
+| atc-explorer | L2 | TypeScript | TS 248 | KLEIN |
+| atc-indexer | L1 | Rust | — (Skelett/Doku) | KLEIN |
+| atc-interop | L1 | Rust | Rust 173 | KLEIN |
+| atc-launchpad | L2 | TypeScript | — (Skelett/Doku) | SKELETT |
+| atc-marketplace | L2 | TypeScript | Rust 139 + TS 147 | KLEIN |
+| atc-mining | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-node | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-oracle | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-sdk | L1 | Rust SDK/CLI | Py 207 | KLEIN |
+| atc-shivacore | L1 | Rust | Rust 49,481 | ECHT |
+| atc-standards | L5 | Markdown/YAML | Py 808 | KLEIN |
+| atc-storage | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-vm | L1 | Rust | — (Skelett/Doku) | SKELETT |
+| atc-wallet | L2/L1 | Rust + TS-UI | Py 446 | KLEIN |
+| atclang | L1 | Rust (AD-021); Python=Referenz | Py 23,279 | ECHT |
+| aurora-ai | L3 | Rust Core + Python AI | Rust 713 | ECHT |
+| genesis-chronicles | L5 | Doku/Lore + ATCLang | Rust 132 + Py 1,668 | ECHT |
+| genesis-engine | L4/L1 | Rust | Py 281 | KLEIN |
+| globus-os | L4 | Rust | Rust 1,941 + TS 399 | ECHT |
