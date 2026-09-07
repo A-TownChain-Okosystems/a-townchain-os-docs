@@ -58,7 +58,7 @@ Modul-Code nie direkt im Monorepo bearbeiten. Details: DECISIONS_REGISTER AD-017
 | Repo | Zustand |
 |---|---|
 | atclang [L0] | Aufgebaut (AD-019/022; G1 offen) |
-| atc-shivacore [L1] | AUS VAULT RESTAURIERT 07.09. (K29-Rust-Crate + Tools, M2-Basis) |
+| atc-shivacore [L1] | RESTAURIERT + AD-028: Service-Space-Migration (Kernel 394/394 + Service 280/280 = 674/674, Boot gruen) + atc-security-Tooling |
 | aurora-ai [L2] | AUS VAULT RESTAURIERT 07.09. (6 Module, M3-Basis) |
 | a-townchain [L3] | AUS VAULT RESTAURIERT 07.09. (6 Module, Chain-ID 658467, M4-Basis) |
 | globus-os [L4] | AUS VAULT RESTAURIERT 07.09. (10 Module, M5-Basis) |

@@ -29,10 +29,10 @@ KORREKT und erwartet; die Pfade existieren im aufgebauten atclang-Repo.
 
 11 Service-Space-Dateien liegen NOCH im Rust-Kernel-Crate (blockchain.rs,
 consensus.rs, genesis.rs, genesis_bridge.rs, gossip_bridge.rs, atcnet.rs, net.rs,
-did.rs, remote_caps.rs, knowledge_graph.rs, security_audit.rs). Das ist das
-dokumentierte AD-012-Delta: Service-Space-Migration ist ein EIGENER Sprint
-(nicht Teil der Restauration) — Verschiebung erst nach SC-001-Freeze, da die
-674-Test-Einheit (K26-K29-Integration) sonst bricht. Status: bewusst offen.
+did.rs, remote_caps.rs, knowledge_graph.rs, security_audit.rs). Das war das
+dokumentierte AD-012-Delta. **BEHOBEN am 07.09. (AD-028):** Migration in den
+Crate service_space/ mit voller Test-Verifikation (Kernel 394/394 + Service
+280/280 = 674/674, Boot L0-L10 gruen, Rust 1.98.1 stable).
 
 ## 3) Urteile fuer die 20 unzugeordneten Vault-Module
 
@@ -49,13 +49,10 @@ sind kanonisch in docs/whitepaper/; der TSX-Viewer ist M8-Frontend),
 atc-standards (Standards sind kanonisch in docs/standards/; die .atc-Referenz-
 implementierungen sind Kandidat fuer atc-contracts — Details unten).
 
-**OFFENE OWNER-ENTSCHEIDUNGEN (3):**
-1. **atc-security** (22 Dateien: audit/scanner/sandbox/rate_limit/encryption) —
-   Kernel-Sandbox-Zustandigkeit ODER M8-Tooling?
-2. **atc-monitoring** (25 Dateien: Prometheus/Grafana-Regeln) — atc-node
-   (Node-Telemetrie) ODER M8-Launch-Stack?
-3. **atc-standards/.atc-Referenzimplementierungen** (registry.atc u.a.) —
-   nach atc-contracts verschieben ODER im Vault bis M8?
+**ENTSCHEIDUNGEN GETROFFEN (AD-028, 07.09. — delegiert):**
+1. **atc-security** → atc-shivacore-Repo (Security-Tooling-Cluster, Commit bbbd9f1)
+2. **atc-monitoring** → verbleibt im Vault bis M8
+3. **atc-standards-.atc** → atc-contracts (modules/atc-standards-refs/, Commit dafd38d)
 
 ## 4) Die 6 leeren Service-Repos: Fundament vorhanden oder Neuland?
 

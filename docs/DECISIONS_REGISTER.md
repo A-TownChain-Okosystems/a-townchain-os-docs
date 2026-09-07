@@ -557,3 +557,29 @@ Chain) → M8 Ökosystem läuft (Monorepo-Launch-Stack, docker-compose healthy).
 Meile hat ein Run-Kriterium mit Test-/Boot-/Run-Nachweis (Reality-Check-Regel).
 Vault-Restaurationen statt Neubau (AD-020). Volltext:
 docs/roadmap/LAUFFAEHIGKEITS_ROADMAP.md.
+
+---
+
+## AD-028: Service-Space-Migration ausgefuehrt + Platzierungsentscheidungen
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (ShivaCore: „Korrigiere die Fehler") · **Umsetzung:** Agent Aurora
+
+**1) AD-012-Delta BEHOBEN:** Die 10 Service-Module (blockchain, consensus,
+genesis, genesis_bridge, gossip_bridge, atcnet, did, remote_caps,
+knowledge_graph, security_audit) sind aus dem Rust-Kernel-Crate in den neuen
+Crate service_space/ (shivacore-service-space) migriert — Abhaengigkeit
+ausschliesslich abwaerts (Service -> Kernel). net.rs verbleibt als K12-Netz-
+Primitive (HAL-Ebene) im Kernel. kernel_init.rs vom Blockchain-Stack befreit
+(L9 = Mempool + VM + Contracts). allocator.rs: global_allocator nur im
+echten Boot-Binary (x86-boot). Verifikation Rust 1.98.1 stable: Kernel
+394/394 + Service-Space 280/280 = 674/674 wie Baseline, Boot L0-L10 gruen.
+Commits: atc-shivacore 02c6845 (Migration), bbbd9f1 (atc-security-Restauration).
+
+**2) Platzierungsentscheidungen (Tiefenanalyse-Fragen, delegiert entschieden):**
+- atc-security (22 Dateien) -> atc-shivacore-Repo (Security-Tooling-Cluster
+  beim Kernel, nicht im M8 begraben).
+- atc-monitoring -> verbleibt im Vault bis M8 (Prometheus-Regeln zielen auf
+  den Launch-Stack; atc-node-Monitoring entsteht bei dessen M6-Neubau).
+- atc-standards-.atc-Referenzimplementierungen -> atc-contracts-Repo
+  (modules/atc-standards-refs/, Commit dafd38d); die MD-Standards bleiben
+  kanonisch im Hub (docs/standards/).

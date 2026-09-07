@@ -30,8 +30,9 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 - **Vault-Restauration:** docs/archive/monorepo-full/src/modules/atc-shivacore
   (60 .rs-Dateien, K29-Stand) → atc-shivacore-Repo. Byte-exakt im Vault
   gesichert (AD-020) — Restauration statt Neubau.
-- **Kriterium:** cargo test 674/674 grün + KernelState::boot() durchläuft
-  L0-L10 im Userspace-Harness (Scheduler, IPC, Capability, Memory).
+- **Kriterium:** 674/674 + Boot L0-L10. **STATUS 07.09. (AD-028):** Verifiziert —
+  Kernel-Crate 394/394 + Service-Space-Crate 280/280 = 674/674, Boot gruen,
+  Rust 1.98.1 stable. Kernel ist AD-012-konform (nur noch Primitive im Crate).
 - Danach Ausbau per AD-013 (SC-001…SC-013: echte Microkernel-Objekte).
 
 ## M3 — KI läuft (L2 aurora-ai)
@@ -96,4 +97,4 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
    statt teuren Neubauten — die ersten lauffähigen Stufen kommen schnell.
 4. Konsistent mit AD-026 (Layer L0-L7) und AD-022 (ATCLang-Gates G0-G19).
 
-**Status-Übersicht (07.09.2026):** M1 in Arbeit (G1 offen) · M2-M7: Basisstaende aus dem Vault restauriert (L1-L6, 13 Repos) — Gate-Verifikationen (674/674 Kernel-Tests, Boot, Node-Sync) im Rebuild-Lauf ausstehend · M8-Stack (Kernstack, docker, scripts, config, tests) verbleibt bis zur Integration im Vault.
+**Status-Übersicht (07.09.2026):** M2-GATE VERIFIZIERT (394+280=674/674, AD-028) · M1 in Arbeit (G1 offen) · M2-M7: Basisstaende aus dem Vault restauriert (L1-L6, 13 Repos) — Gate-Verifikationen (674/674 Kernel-Tests, Boot, Node-Sync) im Rebuild-Lauf ausstehend · M8-Stack (Kernstack, docker, scripts, config, tests) verbleibt bis zur Integration im Vault.
