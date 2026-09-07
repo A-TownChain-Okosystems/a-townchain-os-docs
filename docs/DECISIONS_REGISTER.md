@@ -583,3 +583,17 @@ Commits: atc-shivacore 02c6845 (Migration), bbbd9f1 (atc-security-Restauration).
 - atc-standards-.atc-Referenzimplementierungen -> atc-contracts-Repo
   (modules/atc-standards-refs/, Commit dafd38d); die MD-Standards bleiben
   kanonisch im Hub (docs/standards/).
+
+---
+
+## G1-PASSED (ATCLang Language Specification, 07.09.2026)
+
+Gate G1 der AD-022-Baseline erreicht (atclang Commit abb3262): Die vollstaendige
+Sprach-Spezifikation wurde aus der Python-Referenz extrahiert — specs/language/
+SPEC.md mit 63 Tokens, 76 Keywords, 84 Typ-Bezeichnern, 31 ATC-Namespaces,
+28 Parser-Produktionen als EBNF (inkl. Praezedenztabelle, normativem Compound-
+Desugar x+=y → x=x+y, lexikalischer Besonderheit let/reservierte Namen), 50
+AST-Knoten, Semantik-Regeln (Scopes, Typ-Checks, 13 Builtins), 9 Stdlib-Modulen
+und dem Fehlermodell (45 Klassen). Maschinenlesbares Extrakt specs/language/
+registry.json fuer Conformance-/Differential-Tooling (G19). Normativitaet:
+SPEC folgt Referenz a7e1bd4, Abweichung = Fehler. Naechstes Gate: G2 (Semantics).

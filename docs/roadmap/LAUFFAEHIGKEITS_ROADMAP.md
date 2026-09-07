@@ -18,7 +18,7 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 - **Status:** Python-Referenz läuft bereits (compile_source → CompiledModule,
   Pipeline grün). Kein Vault-Bedarf — das Repo steht als einziges aufgebaut.
-- **Restschritte (Gates, AD-022):** G1 Language Spec → G2 AST/Semantics →
+- **Restschritte (Gates, AD-022):** ~~G1 Language Spec~~ (PASSED 07.09., SPEC.md + registry.json, Commit abb3262) → G2 AST/Semantics →
   G3 ATC-IR → G5 Bytecode Spec → G6 Independent Bytecode Verifier.
 - **Kriterium:** Ein ATCLang-Programm wird zu einem ATCA-Artifact kompiliert,
   der Independent Verifier akzeptiert es, die ATVM führt es deterministisch
@@ -97,4 +97,4 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
    statt teuren Neubauten — die ersten lauffähigen Stufen kommen schnell.
 4. Konsistent mit AD-026 (Layer L0-L7) und AD-022 (ATCLang-Gates G0-G19).
 
-**Status-Übersicht (07.09.2026):** M2-GATE VERIFIZIERT (394+280=674/674, AD-028) · M1 in Arbeit (G1 offen) · M2-M7: Basisstaende aus dem Vault restauriert (L1-L6, 13 Repos) — Gate-Verifikationen (674/674 Kernel-Tests, Boot, Node-Sync) im Rebuild-Lauf ausstehend · M8-Stack (Kernstack, docker, scripts, config, tests) verbleibt bis zur Integration im Vault.
+**Status-Übersicht (07.09.2026):** G1 PASSED (M1) ·  M2-GATE VERIFIZIERT (394+280=674/674, AD-028) · M1 in Arbeit (G1 offen) · M2-M7: Basisstaende aus dem Vault restauriert (L1-L6, 13 Repos) — Gate-Verifikationen (674/674 Kernel-Tests, Boot, Node-Sync) im Rebuild-Lauf ausstehend · M8-Stack (Kernstack, docker, scripts, config, tests) verbleibt bis zur Integration im Vault.
