@@ -53,16 +53,27 @@ Produkt-Repos = kanonische Modul-Quelle; Monorepo = Integrationsziel.
 Einspielen nur via `a-townchain-os/scripts/sync_modules.py` (`--check`/`--sync`).
 Modul-Code nie direkt im Monorepo bearbeiten. Details: DECISIONS_REGISTER AD-017.
 
-## Rebuild-Stand (AD-020, 06.09.2026)
+## Rebuild-Stand (AD-026/027, 07.09.2026)
 
 | Repo | Zustand |
 |---|---|
-| a-townchain-os-docs | Wiki-VAULT (alle Inhalte, 15 MB Archive) |
-| atclang | Neu aufgebaut (AD-019 Phase 1) |
-| a-townchain-os, atc-shivacore, a-townchain, globus-os, aurora-ai, genesis-engine | Geleert — Redirect-README, Wiederaufbau aus Vault |
+| atclang [L0] | Aufgebaut (AD-019/022; G1 offen) |
+| atc-shivacore [L1] | AUS VAULT RESTAURIERT 07.09. (K29-Rust-Crate + Tools, M2-Basis) |
+| aurora-ai [L2] | AUS VAULT RESTAURIERT 07.09. (6 Module, M3-Basis) |
+| a-townchain [L3] | AUS VAULT RESTAURIERT 07.09. (6 Module, Chain-ID 658467, M4-Basis) |
+| globus-os [L4] | AUS VAULT RESTAURIERT 07.09. (10 Module, M5-Basis) |
+| 7 L5-Dienste (contracts, wallet, sdk, explorer, indexer, interop, marketplace) | AUS VAULT RESTAURIERT 07.09. (M6-Basen) |
+| 6 L5-Dienste (node, storage, compute, oracle, mining, launchpad) | Skelette — Neuentwicklung (kein Vault-Gegenstueck) |
+| genesis-engine [L6] | AUS VAULT RESTAURIERT 07.09. (4 Module, M7-Basis) |
+| genesis-chronicles [L6] | AUS VAULT RESTAURIERT 07.09. (AD-025-Korrektur Shivamon→Genesis Chronicles, M7-Basis) |
+| a-townchain-os [L7] | Leer — Integration als LETZTER Schritt (M8): Kernstack, docker/, scripts/, config/, tests/ liegen bis dahin im Vault |
+| a-townchain-os-docs [Hub] | Wiki-VAULT, parallel |
 
-Git-Historien aller Repos bleiben erhalten (Reversibilität).
-
+Im Vault verbleiben bis M8: Kernstack (gateway/backend/frontend/core), Module
+atc-backend/-frontend/-gateway/-ui/-ide/-devtools/-ci/-deploy/-monitoring/-social/
+-franchise/-security/-standards/-whitepaper, atc-kernel (Python-Legacy), sowie die
+ATCLang-Legacy-Module (atc-atclang, atclang, atc-vm, atc-stdlib — bewusst NICHT
+restauriert, da vom L0-Rebuild abgeloest).
 ## Zielarchitektur-Landkarte (AD-024 UMGESETZT, 06.09.2026 — alle 14 Repos erstellt)
 
 Alle 14 Repos wurden am 06.09.2026 (21:30–21:45 UTC+2) erstellt und initialisiert.
