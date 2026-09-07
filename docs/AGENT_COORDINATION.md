@@ -154,7 +154,7 @@ zeitversetzt oder parallel arbeiten.
 | **Fokus** | Formaler ATC Standards Governance Audit im Governance Root atc-standards (Owner-Auftrag; Kette ATC-STD-000→Registry→Spec→REQ→Schemas→Validator→Compliance→CI→Gates) |
 | **Aktionen** | (1) Kette gliedweise geprüft; (2) F-006 (S1): registry/standards.yaml Zeile 4 korrupt (Merge-Artefakt, YAML unparbar) — repariert auf status: candidate; (3) F-007 (S2): Validator las Registry nur per Regex — S-18 Registry-Parse-Check in validate_all.py ergänzt (yaml.safe_load + Pflichtfelder, Fallback), PASS; (4) F-008 (S3): versions.yaml um 12 BUG/NET-Standards ergänzt; (5) Findings F-006/007/008 registriert; (6) Bericht docs/AUDIT_GOVERNANCE_2026-09-07.md; (7) bestätigt: keine Branch-Protection, 0 Tags/0 Releases (SCR-0003-Basis) |
 | **Open fuer Owner** | ATC-STD-000-Approval PENDING (3/3 PASS, 20/20 REQ), SCR-0003 (§34-Integritaet), SCR-0004 (Rollenmodell), V-16 Conventional Commits 75% |
-| **Status** | ✅ Audit abgeschlossen, 3 Fix-Commits gepusht (atc-standards d6722fa) |
+| **Status** | ✅ Audit abgeschlossen (d6722fa) + Owner-Entscheidungen umgesetzt: ATC-STD-000 v1.0.0 APPROVED, SCR-0004 (Rollenmodell §14.1, v1.1.0), SCR-0003 (Option B: Branch-Protection, Tag v1.1.0 + Ruleset, Secret-Scanning, Release). Offen: F-001, F-004, F-005; GPG-Signierung bis Release-Key |
 
 ---
 
