@@ -540,3 +540,20 @@ AD-023 hat die Launch-Deadline aufgehoben.
 **GitHub-seitig umgesetzt:** Layer-Tags [L0]…[L7]/[Hub] in allen 22
 Repo-Beschreibungen, Topics build-layer-N, verbindliche Tabelle in
 REPOSITORY_MAP.md, AGENT_MANIFEST im Monorepo gespiegelt.
+
+---
+
+## AD-027: Lauffähigkeits-Roadmap M1-M8 — Ökosystem Stück für Stück lauffähig
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (ShivaCore) · **Umsetzung:** Agent Aurora
+
+**Beschluss:** Die AD-026-Bauhierarchie wird mit harten Lauffähigkeits-Meilensteinen
+unterlegt: M1 Sprache läuft (atclang, Gates G1-G6, End-to-End hello.atc) → M2 Kernel
+läuft (Vault-Restauration atc-shivacore, 674/674 Tests + boot L0-L10) → M3 KI läuft
+(aurora-ai via Kernel-Event-Bridge) → M4 Blockchain läuft (2 Nodes sync, Chain-ID
+658467, Contract auf ATVM) → M5 OS läuft (globus-init-Bootchain) → M6 Dienste laufen
+(node→wallet→sdk→explorer→…) → M7 Spiel läuft (Engine→Genesis Chronicles, NFT auf
+Chain) → M8 Ökosystem läuft (Monorepo-Launch-Stack, docker-compose healthy). Jede
+Meile hat ein Run-Kriterium mit Test-/Boot-/Run-Nachweis (Reality-Check-Regel).
+Vault-Restaurationen statt Neubau (AD-020). Volltext:
+docs/roadmap/LAUFFAEHIGKEITS_ROADMAP.md.
