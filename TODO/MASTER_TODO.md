@@ -41,7 +41,7 @@
 **Labels:** enhancement, ai, priority:high, sprint:3.0, decision, roadmap:v2, MK7-AI-Protocol
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/80
 
-### #71 [Sprint 4.0] Genesis Block — Konfiguration & Signierung (Chain-ID 9000)
+### #71 [Sprint 4.0] Genesis Block — Konfiguration & Signierung (Chain-ID 658467) — per AD-023 superseded, geschlossen 07.09.
 **Labels:** priority:medium, mainnet, genesis, sprint:4.0, roadmap:v2, MK9-Mainnet
 **URL:** https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/71
 

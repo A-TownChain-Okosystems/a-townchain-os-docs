@@ -199,7 +199,7 @@ contract MyToken : ATC-8300 {
 
 ### 5.2 Standards
 - **ATC-8300**: Fungible Token Standard
-- **ATC-9000**: NFT Standard (Shivamon)
+- **ATC-9000**: NFT Standard (Genesis Chronicles, ehem. Shivamon per AD-025)
 - **ATC-9900**: Governance Standard
 
 ---

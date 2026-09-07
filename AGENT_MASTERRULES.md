@@ -273,9 +273,9 @@ Entscheidung dokumentiert und an den Owner (Michael/ShivaCore) gemeldet.
 
 | ID | Impact | Thema | Wo dokumentiert |
 |----|--------|-------|-----------------|
-| ATC-STD-000 Approval | 🔴 CRITICAL | Verfassung v1.0.0: APPROVE → APPROVED → STABLE / REQUEST CHANGES / REJECT | atc-standards/approval/APPROVAL-DECISION.md (Review-Chain 3/3 PASS, 0 Blocker) |
+| ATC-STD-000 Approval | ✅ RESOLVED (07.09.) | Verfassung v1.1.0 APPROVED; v1.2.0 CANDIDATE (§37 ID-Allokation, §38 Security) wartet auf Owner-§9-Freigabe | atc-standards/approval/APPROVAL-DECISION.md + governance/ATC-STD-000.md |
 | SCR-0003 Option | 🔴 CRITICAL | Branch-Absicherung: A = Agent auf PR-Flow / B = dokumentierte Ausnahme | atc-standards/change-requests/SCR-0003.md |
-| SCR-0001 | 🟡 HIGH | ID-Allokationsprozess (nächste freie Nummer je Bereich) | atc-standards/change-requests/SCR-0001.md |
+| SCR-0001 | ✅ RESOLVED (07.09.) | ID-Allokationsprozess akzeptiert + umgesetzt in ATC-STD-000 v1.2.0 §37 | atc-standards/change-requests/SCR-0001.md |
 | SCR-0004 | 🟡 HIGH | Rollen- und Berechtigungsmodell | atc-standards/change-requests/SCR-0004.md |
 | Mainnet-Termin | 🟠 MEDIUM | Launch-Datum offen (AD-023) — M8 folgt Roadmap, nicht Datum | DECISIONS_REGISTER AD-023 |
 

@@ -277,9 +277,9 @@ in den **zwei Haupt-Repositories** zusammengefuehrt:
 | **a-townchain-os** | Code / Runtime | Konsolidierter Monorepo-Code: Kernel, Consensus, ATCLang, Contracts, UI, Gateway, Standards-Referenz-Implementierung |
 | **a-townchain-os-docs** | Dokumentation / Wiki | Konsolidierte Wiki: alle Standards, Compliance, Roadmap, Decisions, Agent-Policy |
 
-Die uebrigen 22 Repositories bleiben als historische/spezialisierte
-Einzel-Module bestehen, werden aber **nicht** mehr als primaere
-Entwicklungsziele behandelt — neue Features und Fixes fliessen direkt in die
+Die uebrigen Repositories blieben damals als historische/spezialisierte
+Einzel-Module bestehen (Stand Juli 2026, K1-K8-Plan) — **durch AD-024 (07.09.)
+superseded**: die vertikalen Produkt-Repos sind wieder primaere Entwicklungsziele — neue Features und Fixes fliessen direkt in die
 zwei Haupt-Repos ein. Bestehende Spezial-Repos werden schrittweise in die
 Haupt-Repos gemergt (Issue #87 Backend, #88 Frontend).
 

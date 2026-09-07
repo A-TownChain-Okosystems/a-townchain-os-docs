@@ -104,7 +104,7 @@ Organisation jetzt: 22 aktive Repos.
 
 ## Bau-Hierarchie: Repos bauen aufeinander auf (AD-026, 07.09.2026 — VERBINDLICH)
 
-Die 22 Repos werden SEQUENZIELL aufeinander aufgebaut. Ein Layer startet erst,
+Die 26 Repos werden SEQUENZIELL aufeinander aufgebaut. Ein Layer startet erst,
 wenn der vorherige sein Gate/Freeze erreicht hat (Ausnahme: Wiki-Hub, parallel).
 
     [L0] atclang — Sprache, ATC-IR, Bytecode, ATVM (Gates G0-G19; Phase 1 fertig, G1 offen)
