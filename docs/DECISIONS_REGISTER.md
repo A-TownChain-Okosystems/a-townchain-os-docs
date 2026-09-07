@@ -822,3 +822,13 @@ als SCR-Empfehlungen T-F01/T-F02/S-F01/S-F02/A-F01 dokumentiert in
 governance/APPROVAL_PACKAGE_ATC-STD-000.md). ATC-STD-000 v1.0.0 steht auf
 CANDIDATE und wartet auf die formale Owner-Approval → APPROVED/STABLE.
 Sammel-Empfehlung im Paket: Co-Approval ATC-STD-201/202/203 nachziehen.
+
+**AD-034-Nachtrag 2 (07.09., atc-standards 45e3d7d):** Owner-Formalfassung
+ATC-STD-000 v1.0.0 (35 Abschnitte) als verbindlicher Text angenommen —
+ersetzt den Agent-Entwurf. Erweitert um Governance-Hierarchy, Review-
+Kataloge, Approval/STABLE-Regeln, Konflikt-Resolution (§30), Emergency
+Changes (§31), Standard-Integrity (§33), Meta-Compliance (§34). Review-
+Chain gegen DIESE Fassung durchlaufen: Technical/Security/Architecture
+3/3 PASS, 0 Blocker, 16/16 REQ PASS → CANDIDATE. Approval BLOCKED beim
+Owner (APPROVE/REQUEST CHANGES/REJECT). Damit laeuft die Verfassung durch
+die eigene Kette — keine Ausnahme von den Regeln, die sie definiert.
