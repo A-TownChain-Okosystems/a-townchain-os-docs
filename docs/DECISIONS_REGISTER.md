@@ -959,3 +959,22 @@ frühere AD-Einträge beziehen sich auf die Vorfassung. Verifikation: 4/4
 Standards COMPLIANT, S-17 PASS, Repo-Audit R3 GATE PASS, Requirement-Matrix
 20/20 PASS. Owner-Approval für ATC-STD-000 weiterhin BLOCKED/PENDING und
 deckt die erweiterte Struktur ab.
+
+---
+
+## AD-039: Repository-Landschaft auf ATC-STD-201/202/203 gebracht (Governance-Sweep)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (Auftrag), Agent Aurora (Ausfuehrung) · **Umfang:** 22/22 aktiven Repos (ausser atc-standards, das bereits compliant ist)
+
+Alle 22 Repos der AD-024-Landschaft sind nach den Vorgaben des
+atc-standards-Repos ueberarbeitet: Vorher 22/22 GATE NO-GO (Scores 25-44),
+nachher 22/22 GATE PASS auf ihrem registry-eigenen R-Level. Je Repo errichtet:
+.atc-Metadaten (repository/ownership/lifecycle/compliance.yaml), SECURITY.md,
+CODEOWNERS, docs/REPOSITORY_STANDARD.md (Zwei-Ebenen-ADR-Modell), CHANGELOG,
+tests/TESTPLAN.md (Skelette), governance-ci.yml (Audit bei jedem Push/PR
+gegen atc-standards + repositories.yaml), README ATC-COMPLIANCE-Anhang
+(11 Abschnitte, Badge, DECISIONS_REGISTER-Referenz). Bestehende Inhalte
+wurden nie ueberschrieben — nur ergaenzt. CI-Verifikation auf GitHub:
+Stichprobe 4/4 SUCCESS. Restpunkte: V-16 heilt mit konventionellen Commits;
+Build-/Test-Pipelines je Meilenstein M1-M8; Branch-Absicherung SCR-0003
+bleibt Owner-Option A/B. Bericht: docs/audits/REPO_GOVERNANCE_SWEEP.md.
