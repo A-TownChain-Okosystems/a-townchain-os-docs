@@ -1,13 +1,13 @@
-# Shivamon — NFT Gaming Module
+# Genesis Chronicles — NFT Gaming Module (ehem. Shivamon, AD-025)
 
 **Version:** v2.1.0 | **Status:** Aktiv
 
 ## Ubersicht
-Shivamon ist das NFT-Gaming-Modul des A-TownChain OS.
+Genesis Chronicles (ehem. Shivamon) ist das NFT-Gaming-Modul des A-TownChain OS.
 Digitale Sammelkarten / Kampf-NFTs auf ATC-Blockchain.
 
 ## Features
-- Shivamon NFT Minting (ATC-9000)
+- Genesis Chronicles NFT Minting (ATC-9000)
 - Breeding-System (2 NFTs -> 1 neues NFT)
 - Battle-System (On-Chain Zufallszahlen)
 - Marketplace-Integration

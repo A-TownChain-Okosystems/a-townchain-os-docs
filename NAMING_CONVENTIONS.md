@@ -25,7 +25,7 @@ Dieses Dokument definiert die kanonische Schreibweise aller Projekt-Begriffe. Ab
 | 7 | Communication Layer | **Genesis Communication Layer (GCL)** | `gcl` | ~~GenesisComm~~ |
 | 8 | Civilization Platform | **Genesis Civilization Platform (GCP)** | `gcp` | ~~CivilizationPlatform~~ |
 | 9 | MetaFactory | **MetaFactory** | `metafactory` | ~~Meta Factory~~, ~~meta-factory~~ |
-| 10 | Spiel/Universum | **Shivamon** | `shivamon` | ~~SHIVAMON~~, ~~ShivaMon~~, ~~shiva_mon~~ |
+| 10 | Spiel/Universum | **Genesis Chronicles** | `genesis-chronicles` | ~~Shivamon~~ (AD-025), ~~SHIVAMON~~, ~~ShivaMon~~ |
 | 11 | Betriebssystem-Komponente | **ShivaOS** | `shivaos` | ~~SHIVAOS~~, ~~Shiva OS~~, ~~shiva_os~~ |
 | 12 | Sync-Agent | **Aurora Agent** | `aurora_agent` | ~~AuroraAgent~~, ~~aurora-agent~~ |
 | 13 | Agent Protocol | **ATC-97** (Abkürzung), **Agent Interaction Protocol** (Vollname) | `aip_001` | ~~AIP001~~, ~~ATC-97~~ als Prose |
@@ -76,7 +76,7 @@ Dieses Dokument definiert die kanonische Schreibweise aller Projekt-Begriffe. Ab
 | A-TownChain OS | "atc-os", "atcos" | → Korrigieren zu "A-TownChain OS" |
 | KAI-OS | "KAI OS", "kai_os", "KAI_OS" | → Korrigieren zu "KAI-OS" |
 | ATCLang | "ATCLANG" (all caps) | → Korrigieren zu "ATCLang" |
-| Shivamon | "SHIVAMON", "ShivaMon" | → Korrigieren zu "Shivamon" |
+| Shivamon (alt) | "SHIVAMON", "ShivaMon", "Shivamon" | → Korrigieren zu "Genesis Chronicles" (AD-025) |
 | ShivaOS | "shivaos" in Prosa | → Korrigieren zu "ShivaOS" |
 | Testnet | "TESTNET" in Prosa | → Korrigieren zu "Testnet" |
 | Validator | "VALIDATOR" in Prosa | → Korrigieren zu "Validator" |

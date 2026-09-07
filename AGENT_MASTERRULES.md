@@ -378,8 +378,8 @@ Diese Regel gilt absolut und hat keine Ausnahmen.
 | Monorepo-Workspace-Tests | 731/731 |
 | Boot-Chain | L0-L10 grün (M2-Gate erfüllt, AD-028) |
 | Chain-ID | 658467 |
-| Standards | ATC-01…99 + ATS-1000…1007 (Legacy-Serien, atc-standards) + ATC-STD-000…203 |
-| ATC-STD-000 (Verfassung) | v1.0.0 CANDIDATE — Approval beim Owner |
+| Standards | ATC-01…99 + ATS-1000…1007 (Legacy-Serien, atc-standards) + ATC-STD-000…203 + ATC-STD-300 (DTC) |
+| ATC-STD-000 (Verfassung) | v1.1.0 APPROVED (07.09.2026, Release+Tag v1.1.0) |
 | Repository-Governance | 22/22 GATE PASS (AD-039), CI je Push/PR |
 | Offene GitHub-Issues | #69 (Dependabot 14 Vulns), #70 (Validators), #71 (Genesis Block) |
 | Roadmap | M1 (G1 ✅, G2 offen) → M8 (AD-027) |

@@ -42,7 +42,7 @@
 | AD-001 | Hash-Algorithmus | ✅ RESOLVED (SHA-256) |
 | AD-002 | EventBus vs IPCBus | ⏳ VALIDATE (Sprint 2.4) |
 | AD-003 | Flash-Loan Fix | ✅ RESOLVED |
-| AD-004 | Chain-ID 9000 | ✅ RESOLVED (Non-EVM) |
+| AD-004 | Chain-ID 658467 (ehem. 9000) | ✅ RESOLVED (Non-EVM) |
 | AD-005 | ATC-97 Protocol | ⏳ DECISION (Sprint 3.0) |
 | AD-006 | Python vs Substrate | ✅ RESOLVED (ATCLang) |
 | AD-007 | EVM Registry | ✅ RESOLVED (irrelevant) |

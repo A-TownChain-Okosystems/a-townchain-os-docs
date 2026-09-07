@@ -11,7 +11,7 @@ Dokumentation für Genesis Engine
 - [Status](STATUS.md)
 
 ## Übersicht
-Dieses Wiki dokumentiert das `atc-genesis-engine`-Repo, Teil des A-TownChain OS Ökosystems (70 Repos).
+Dieses Wiki dokumentiert das `atc-genesis-engine`-Repo, Teil des A-TownChain OS Ökosystems (23 Repos, AD-024).
 
 Org: [A-TownChain-Okosystems](https://github.com/A-TownChain-Okosystems)
 

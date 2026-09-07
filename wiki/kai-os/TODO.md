@@ -9,7 +9,7 @@
 
 | # | Aufgabe | Quelle | Status |
 |---|---------|--------|--------|
-| #92 | [K8] Konsolidierung — Release v1.0 (24 Repos → 1 Software) | GitHub | OPEN |
+| #92 | [K8] Konsolidierung — Release v1.0 (24 Repos → 1 Software) — superseded per AD-016/AD-023 | GitHub | OPEN |
 | #91 | [K7] Konsolidierung — Tests & QA (≥80% Coverage) | GitHub | OPEN |
 | #90 | [K6] Konsolidierung — CI/CD Pipeline (Build → Test → Release | GitHub | OPEN |
 | #89 | [K5] Konsolidierung — Build-System & Docker (Ein-Klick-Build | GitHub | OPEN |

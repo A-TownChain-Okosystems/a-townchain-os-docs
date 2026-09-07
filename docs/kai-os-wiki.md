@@ -13969,11 +13969,12 @@ contract ATC8300 {
 
 ## Überblick
 
-Die GitHub-Organisation `A-TownChain-Okosystems` umfasst **24 Repositories**:
-- **2 aktive Repos** — alle Entwicklung und Dokumentation
-- **22 archivierte Repos** — vollständig migriert in die beiden Haupt-Repos
-
-Die Konsolidierung wurde am 13.–14.06.2026 durchgeführt (siehe Kapitel 63). Alle Code-Komponenten, Wiki-Dokumentation, Standards und Spezifikationen wurden in die zwei Haupt-Repos zusammengeführt.
+Die GitHub-Organisation `A-TownChain-Okosystems` umfasst **23 aktive Repositories**
+(Stand 07.09.2026, AD-024 vertikale Repository-Struktur):
+- **23 aktive Repos** — 2 Hubs (a-townchain-os Code, a-townchain-os-docs Wiki-Vault)
+  + 21 vertikale Produkt-/Governance-Repos (atc-standards = Governance Root)
+- Historische Konsolidierungen: 13.–14.06.2026 (24→2+Archiv, Kapitel 63),
+  06.09.2026 (AD-016: 124→8, Vault-Rettung), 07.09.2026 (AD-024: 8→23).
 
 ---
 

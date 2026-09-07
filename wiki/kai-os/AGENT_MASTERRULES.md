@@ -264,7 +264,7 @@ Sie werden als `DECISION` im Register erfasst und an Michael gemeldet.
 
 | ID | Impact | Thema | Deadline |
 |----|--------|-------|---------|
-| AD-004 | 🔴 CRITICAL | Chain-ID 9000 vs. XDC Network | 20.06.2026 |
+| AD-004 | ✅ RESOLVED | Chain-ID 658467 (ASCII 'ATC'); 9000 war Evmos-Kollision | 20.06.2026 |
 | AD-001 | 🟡 HIGH | SHA-256 vs. Keccak-256 | Sprint 3.0 |
 | AD-003 | 🟡 HIGH | Voting-Power Snapshot (Flash-Loan) | vor Mainnet |
 | AD-002 | 🟠 MEDIUM | EventBus vs. IPCBus Redundanz? | Sprint 2.4 |
@@ -400,7 +400,7 @@ Diese Regel gilt absolut und hat keine Ausnahmen.
 | ATC-87 | Gas Fee EIP-1559 | ✅ ACCEPTED |
 | ATC-88 | AMM x·y=k | ✅ ACCEPTED |
 | ATC-89 | Fungible Token (FFT) | ✅ ACCEPTED |
-| ATC-90 | NFT Standard (Shivamon) | ✅ ACCEPTED |
+| ATC-90 | NFT Standard (Genesis Chronicles, ehem. Shivamon — AD-025) | ✅ ACCEPTED |
 | ATC-91 | Cross-Chain Bridge | 🔄 REVIEW |
 | ATC-92 | ATCLang Language Spec | 📝 DRAFT |
 | ATC-93 | ATCLang VM Bytecode | 📝 DRAFT |

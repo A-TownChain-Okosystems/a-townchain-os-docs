@@ -24,7 +24,7 @@
 | 4.0-4.2 | Mainnet + Future | 🟡 PLANNED | 0% | #70,71 | — | — |
 
 ## Blocker (→ Michael)
-- **AD-004** Chain-ID 9000 — REOPENED, Entscheidung nötig
+- **AD-004** Chain-ID 658467 — RESOLVED (ASCII 'ATC'); ehem. 9000 war Evmos-Kollision
 - **AD-005** ATC-97 Agent Protocol — Spezifikation unvollständig
 - **#79** CI/CD Pipeline Fix — Branch-Protection blockiert API-Push
 

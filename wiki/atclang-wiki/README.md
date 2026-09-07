@@ -38,7 +38,7 @@ Alle Repos des Ökosystems auf einen Blick:
 | [atc-atcpkg](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-atcpkg) | `L3` | ATCLang Package Manager & Registry |
 | [atc-contracts](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-contracts) | `L4/L11` | Smart Contracts: ATC-8300, ATC-9000, ATC-9900 |
 | [atc-franchise](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-franchise) | `L10/L8` | Business DAO, Vault, Revenue Share |
-| [atc-ui](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-ui) | `L10` | Neon Dashboard, Wallet, Explorer, Shivamon |
+| [atc-ui](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-ui) | `L10` | Neon Dashboard, Wallet, Explorer, Genesis Chronicles |
 | [atc-standards](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-standards) | `L0` | Protokoll-Standards: ATC-0001–0009 + ATS-1000–1007 |
 
 ---

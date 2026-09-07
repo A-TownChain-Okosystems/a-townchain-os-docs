@@ -30,7 +30,7 @@
 
 | # | Titel | Labels | Updated |
 |---|-------|--------|---------|
-| #92 | [K8] Konsolidierung — Release v1.0 (24 Repos → 1 Software) | enhancement, priority:high, sprint:K8 | 2026-07-05 |
+| #92 | [K8] Konsolidierung — Release v1.0 (24 Repos → 1 Software) — superseded per AD-016/AD-023 | enhancement, priority:high, sprint:K8 | 2026-07-05 |
 | #91 | [K7] Konsolidierung — Tests & QA (≥80% Coverage) | enhancement, priority:medium, sprint:K7 | 2026-07-05 |
 | #90 | [K6] Konsolidierung — CI/CD Pipeline (Build → Test → Release) | enhancement, priority:medium, sprint:K6 | 2026-07-05 |
 | #89 | [K5] Konsolidierung — Build-System & Docker | enhancement, priority:medium, sprint:K5 | 2026-07-05 |
@@ -64,7 +64,7 @@
 
 ## 🚫 Offene Blocker
 
-- **AD-004** Chain-ID 9000 — REOPENED, 9000 überschneidet sich mit Evmos Testnet
+- **AD-004** Chain-ID 658467 — RESOLVED (ehem. 9000 war Evmos-Kollision)
 - **AD-005** ATC-97 Agent Protocol — Spezifikation unvollständig
 - **AD-008** 44 Issues mit defekten File-Referenzen — Michael muss entscheiden
 - **AD-010** WHITEPAPER.md beschreibt alte Solidity-Architektur — Rewrite nötig

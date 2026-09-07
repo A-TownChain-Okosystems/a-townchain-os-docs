@@ -1,4 +1,4 @@
-# shivamon — L12: Shivamon NFT Gaming — Battle Engine, Breeding, Marketplace
+# genesis-chronicles — L12: Genesis Chronicles NFT Gaming (ehem. Shivamon, AD-025) — Battle Engine, Breeding, Marketplace
 
 Part of [A-TownChain OS Monorepo](../../README.md)
 

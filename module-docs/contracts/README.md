@@ -1,4 +1,4 @@
-# contracts — L6: Smart Contracts — ATC-8300 Token, Governance, Bridge, Shivamon
+# contracts — L6: Smart Contracts — ATC-8300 Token, Governance, Bridge, Genesis Chronicles (ehem. Shivamon)
 
 Part of [A-TownChain OS Monorepo](../../README.md)
 

@@ -19,7 +19,7 @@ Dies ist der **kanonische Dokumentations-Hub** des A-TownChain-Ökosystems.
 
 - 🔴 **ATCLang First** — Kern-Logik in ATCLang (ATC-99)
 - 🔴 **SHA-256** — TX-Hashing (AD-001 RESOLVED)
-- 🔴 **Chain-ID 9000** — Proprietäre Non-EVM Chain-ID (AD-004 RESOLVED)
+- 🔴 **Chain-ID 658467** — Proprietäre Non-EVM Chain-ID, ASCII 'ATC' (AD-004 RESOLVED)
 - 🔴 **Dual-Repo-Modell** — Code in `a-townchain-os`, Doku hier (Mandat AGENT_POLICY/AD-89)
 
 ## Metriken (Stand 03.09.2026)
@@ -32,7 +32,7 @@ Dies ist der **kanonische Dokumentations-Hub** des A-TownChain-Ökosystems.
 | ShivaCore Rust-Kernel | K29 abgeschlossen — 30 Module, 367/367 Tests grün |
 | Monorepo | 2.237 Dateien, 60 Module, VERSION 1.0.0, 0 Audit-Fehler |
 | Interne Links | 873 geprüft, 0 kaputt |
-| Mainnet-Launch | 15.09.2026 |
+| Mainnet-Launch | per AD-023 kein Termin (qualitaetsgetrieben) |
 
 ## K-Sprint-Status
 
@@ -78,7 +78,7 @@ a-townchain-os-docs/  # Doku-Hub (dieses Repo): Standards, Wiki, Whitepaper, Arc
 
 ---
 
-*A-TownChain OS / KAI-OS · v1.0.0 · Non-EVM · SHA-256 · Chain-ID 9000 · ATCLang First*
+*A-TownChain OS / KAI-OS · v1.0.0 · Non-EVM · SHA-256 · Chain-ID 658467 · ATCLang First*
 
 ## Lizenzmodell
 
