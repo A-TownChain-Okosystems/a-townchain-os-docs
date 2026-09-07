@@ -978,3 +978,26 @@ wurden nie ueberschrieben — nur ergaenzt. CI-Verifikation auf GitHub:
 Stichprobe 4/4 SUCCESS. Restpunkte: V-16 heilt mit konventionellen Commits;
 Build-/Test-Pipelines je Meilenstein M1-M8; Branch-Absicherung SCR-0003
 bleibt Owner-Option A/B. Bericht: docs/audits/REPO_GOVERNANCE_SWEEP.md.
+
+---
+
+## AD-040: Bug- & Konsistenz-Lebenszyklus verbindlich (ATC-STD-BUG-001…004)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (Mandat) · **Ort:** atc-standards (kanonisch)
+
+Der Owner hat einen 4-stufigen Bug- und Konsistenzstandard als verbindlich
+mandatiert. Kernprinzip: Trennung Finding → Dokumentation → Fix →
+Synchronitätsprüfung. Errichtet als vier Standards (candidate, normativ
+per Owner-Mandat, §33): BUG-001 Finding (Pflichtprozess, 14 Pflichtfelder,
+Severity S0-S4), BUG-002 Documentation (F-NNN-Pflichtstruktur),
+BUG-003 Fix-Lifecycle (12 Stufen, SCR-Pflicht, DoD 10 Punkte),
+BUG-004 Repository Sync & Merge Gate (Konsistenzmatrix 11 Beziehungen,
+SYNC-Statusmodell OK/DRIFT/MISSING/STALE/CONFLICT/BLOCKED, normatives
+Merge-Gate: kein Change vollständig ohne Synchronitäts-Nachweis über
+Wiki/Spec/Architecture/Tests). Neue ID-Formen per Schema-Erweiterung:
+ATC-STD-BUG-NNN, TEST-NNN, SYNC-NNN, AUD-NNN. Validator auf vollständige
+Schema-Leitung gebracht (S-02/S-16 — behebt §7.11-Verstoss), CI-Modus
+jetzt registry-getrieben: 8/8 Standards COMPLIANT, Duplikat-Check PASS,
+Repo-Gate PASS. Beispiel-Kette: F-017 → SCR-021 → TEST-044 → SYNC-012 →
+AUD-031. Ab sofort gilt: Jeder Fix eines Agenten dokumentiert F-NNN, SCR,
+TEST-NNN, SYNC-NNN und AUD-NNN.
