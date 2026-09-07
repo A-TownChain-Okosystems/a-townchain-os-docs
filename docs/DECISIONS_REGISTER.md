@@ -921,3 +921,41 @@ Aurora AI = Action/Process (deterministisch, konsistent mit AD-021/022
 Differential-Testing), KAI = Process + Review-Pflicht, Genesis AI = Schema
 (kreativ). Promotion-Pfad zu ATC-STD-701 (AI 700-799) nach
 Praxisvalidierung.
+
+---
+
+## AD-038: Normatives Naming-Hardening §7 + CI-Enforcement
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (Vorgabe 'normative Fassung'), Agent Aurora (Umsetzung) · **Commit:** atc-standards 5a17d59
+
+Die Naming Convention (AD-036) ist per Owner-Mandat zur normativen
+Governance-Regel gehärtet — ATC-STD-000 erhaelt §7 'ATC Naming,
+Identification and Namespace Convention' mit 7.1-7.11:
+
+1. **7.1-7.2:** ASCII-only, Status niemals in der ID, 14 Identifier-Klassen
+   (ATC-STD-NNN, REQ-STD-NNN, F-NNN, SCR-NNN, ADR-NNN, ATC-SA-NNN, TC-/TS-/
+   GATE-NNN, ATC-SCHEMA/-PROTO/-SPEC/-DOC-NNN, ATC-REL-X.Y.Z); NNN >= 3
+   Stellen (ATC-STD-1/-01 ungueltig).
+2. **7.3-7.4:** ID-Immutability-MUST ('The canonical object identifier MUST
+   remain immutable throughout the complete lifecycle'), Version getrennt,
+   Pinning via ID@version.
+3. **7.5-7.6:** Repository-Namen atc-<domain>-<component>; Familien-
+   Namespaces atc-*/atclang-*/globus-*/aurora-*; Brand-Bestand grandfathered.
+   Dateinamen-Schema inkl. verbotener Varianten (atc_std_000.md,
+   standard-final-v2.md).
+4. **7.7-7.9:** Registry = Allokations-Autoritaet; Duplicate Prevention
+   (gleiches Objekt gueltig / anderes Objekt FAIL); Reserved Identifiers
+   (Platzhalter, Status-Marker, ATC-STD-000 selbst, Legacy-Serien, AD-NNN
+   als grandfathered Legacy-Form von ADR-NNN).
+5. **7.10-7.11:** naming-conventions.schema.json = zentrale Regeldefinition
+   (additionalProperties: false, 6 Regelgruppen); Validator/CI leiten Regeln
+   NUR daraus ab; CI-Workflow naming-governance.yml validiert bei push/PR
+   (S-01…S-16 je Standard, S-17 Duplicate Detection, Repo-Audit R3) —
+   FAIL blockiert.
+
+Abschnitts-Renumbering: 7-35 → 8-36 (alte §36-Vorversion in §7 aufgegangen).
+Mapping für Alt-Referenzen: N → N+1 (N=7…35), 36 → 7. Review-Berichte und
+frühere AD-Einträge beziehen sich auf die Vorfassung. Verifikation: 4/4
+Standards COMPLIANT, S-17 PASS, Repo-Audit R3 GATE PASS, Requirement-Matrix
+20/20 PASS. Owner-Approval für ATC-STD-000 weiterhin BLOCKED/PENDING und
+deckt die erweiterte Struktur ab.
