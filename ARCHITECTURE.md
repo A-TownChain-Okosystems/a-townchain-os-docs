@@ -8,8 +8,6 @@ a-townchain-os-docs/
 ├── tsconfig.json             # TypeScript configuration
 ├── README.md                 # Documentation portal overview
 ├── REALITY_STATUS.md         # Comprehensive reality status checklist
-├── KONSOLIDIERUNGS_MATRIX.md # Consolidation matrix for ecosystem modules
-├── KONSOLIDIERUNGS_ROADMAP.md# Ecosystem migration and consolidation roadmap
 ├── docs/                     # Full technical documentation and standard specs
 ├── src/                      # Documentation site UI components and renderer
 │   ├── components/           # Navigation, markdown renderers, and search
@@ -22,8 +20,6 @@ a-townchain-os-docs/
 - tsconfig.json — TypeScript options for doc site renderer
 - README.md — Entry point explaining documentation structure
 - REALITY_STATUS.md — Consolidated status of all ATC repositories and standards
-- KONSOLIDIERUNGS_MATRIX.md — System-wide consolidation mapping across repos
-- KONSOLIDIERUNGS_ROADMAP.md — Timeline and milestones for monorepo consolidation
 - docs/ — Markdown documentation tree covering architecture, protocols, and standards
 - src/components/ — React / TypeScript components for interactive doc navigation
 - src/pages/ — Page templates and routing structure

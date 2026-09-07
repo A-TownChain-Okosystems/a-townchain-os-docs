@@ -21,6 +21,7 @@
 | AD-023 | Mainnet-Launch aufgehoben (kein Launch-Ziel/Deadline mehr) | ✅ RESOLVED (06.09.2026) | — | Michael |
 | AD-024 | Zielarchitektur Repository-Landkarte — ALLE Repositories erstellen (P0+P1+P2) | ✅ RESOLVED (06.09.2026, 21:30) | — | Michael |
 | AD-025 | Spiel umbenannt: Shivamon → Genesis Chronicles | ✅ RESOLVED (06.09.2026, 21:40) | — | Michael |
+| AD-047 | Legacy-Löschung: 416 nichtgebrauchte Dateien (Müll, 14 verwaiste Module, supersede Reports) | ✅ RESOLVED (07.09.2026) | Löschungs-Manifest + Git-Historie | Michael |
 
 ---
 
@@ -202,6 +203,13 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
   (ATCLang ABI); Aurora/A-TownChain/Genesis erst danach anbinden.
 - **Details:** `docs/architecture/SHIVACORE_V01_ARCHITECTURE_GATE.md`
 ---
+
+
+### AD-047 — Löschung nichtgebrauchter Legacy-Bestände ✅
+- **Status:** RESOLVED 07.09.2026 — Michael entschieden (Mandat „Nichtgebrauchte Legacy Dateien löschen")
+- **Beschluss:** Auf Basis des Legacy-Audits 07.09. werden gelöscht: (1) Test-/Demo-Müll, (2) die 14 verwaisten Module ohne Nachfolge-Repo (atc-ui, atc-ci, atc-mobile, atc-monitoring, atc-shivacore-tools, atc-deploy, atc-assets, atc-dns, atc-social, atc-ide, atc-devtools, atc-atcpkg, atc-analytics, atc-linux-edition; je aus monorepo-full UND repos-rescue), (3) 13 supersede Plan-/Audit-Reports der 70-Repo-Ära. Gesamt 416 Dateien.
+- **Sicherheit:** Vollständiges Löschungs-Manifest unter `docs/archive/DELETIONS_2026-09-07.md`; Wiederherstellung jederzeit über die Git-Historie. Nicht gelöscht: wartende Vault-Bestände (atc-node-Stack, atc-vm, atc-zkp-Legacy), atc-shivamon (AD-025), REALITY_CHECK_2026-07-06 (offene Entscheidung AD-008).
+- **Umsetzung:** Agent Aurora
 
 ## AD-014: 5-Produkt-Repo-Struktur
 

@@ -68,7 +68,6 @@
 - `docs/whitepaper/ — Whitepaper & Architektur-Docs`
 - `docs/file_registers/ — Per-Repo Datei-Register (22 Code-Repos)`
 - `docs/FILE_REGISTER.md — Globales Datei-Register (alle 36 Repos)`
-- `docs/ARCHITECTURE_TREES.md — Architekturbäume aller 36 Repos`
 - `docs/FILE_NAMING_CONVENTIONS.md — Dieses Dokument`
 
 **Namenskonvention:** chapter-XX-name.md (Wiki) | ATC-XX-NAME.md (Standards) | ISSUE_XX_NAME.md (Issues)
