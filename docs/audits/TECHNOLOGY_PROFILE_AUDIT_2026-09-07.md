@@ -180,7 +180,7 @@ auditor: "Aurora (Superagent), Owner-Anregung Michael Wroblewski"
 
 | Paar | Befund | Empfehlung |
 |---|---|---|
-| a-townchain ↔ atc-node | a-townchain haelt Chain-Code (ATCLang/Python), atc-node ist leeres R1-Skelett mit derselben Ziel-Rolle (Node) | Rollen TRENNEN und festlegen: a-townchain = Chain-Protokoll/Bibliothek, atc-node = Full-Node-Binary (vereinfacht Distribution). Alternativ atc-node nach a-townchain zusammenlegen. → Owner-Entscheidung noetig (SCR vorschlagen) |
+| a-townchain ↔ atc-node | a-townchain haelt Chain-Code (ATCLang/Python), atc-node ist leeres R1-Skelett mit derselben Ziel-Rolle (Node) | **SCR-0005 ausgearbeitet** (Finding F-011): Option A Rollen-Trennung (empfohlen: a-townchain = Chain-Protokoll/Bibliothek, atc-node = Full-Node-Binary) vs. Option B Merge → Owner-Entscheidung |
 | atc-vm ↔ atclang | atc-vm-Modul (Python-Referenz) liegt physisch in atclang; atc-vm-Repo ist Skelett | Bereits als AD-043-Migrationspunkt gefuehrt — keine Doppelstruktur, konsolidieren bei Rust-Baseline |
 | atc-algorithm ↔ a-townchain | PoH-Referenz-Implementierung liegt in a-townchain; atc-algorithm ist Skelett | Bereits als AD-044-Migrationspunkt gefuehrt — analog atc-vm |
 | genesis-engine ↔ genesis-chronicles | Engine (Laufzeit) vs. Chronicles (Lore/Welt + Spiel-Logik) — inhaltlich getrennt, aber Spiel-Logik (Python 1.668 LOC) liegt in Chronicles statt Engine | Behalten; Spiel-Logik-Verortung (Engine vs. Chronicles) bei Engine-Rebuild entscheiden |
@@ -204,7 +204,7 @@ auditor: "Aurora (Superagent), Owner-Anregung Michael Wroblewski"
 
 ## 6. Offene Punkte / Follow-ups
 
-1. **SCR an Owner:** Rollen-Trennung a-townchain vs. atc-node (Protokoll vs. Node-Binary) oder Merge.
+1. **SCR-0005 (ausgearbeitet, PENDING):** Rollenfrage a-townchain vs. atc-node — [SCR-0005](https://github.com/A-TownChain-Okosystems/atc-standards/blob/main/change-requests/SCR-0005.md) mit Option A (Rollen-Trennung: Chain-Protokoll/-Bibliothek vs. Full-Node-Binary, empfohlen) und Option B (Merge); Finding F-011.
 2. **Gaming-Kategorie ergaenzen:** ATC-STD-100 §2 hat keine Zeile fuer Game-Logik (Genesis Chronicles) — Ergaenzung als REQ-STD-102-Vorschlag bei Approval.
 3. **CI-Sprach-Gate (Zukunft):** atc-std-validator-Erweiterung, die policy-widrige neue Codepfade (z.B. Python in L1-Repos ausser reference/) als Finding meldet.
 
