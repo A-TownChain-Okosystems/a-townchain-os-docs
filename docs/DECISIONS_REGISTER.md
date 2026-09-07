@@ -1,6 +1,6 @@
 # A-TownChain Ecosystem — Decisions Register
 
-> **Stand:** 05.07.2026 13:55 | **Autor:** Aurora (MasterBrain)
+> **Stand:** 08.09.2026 01:05 | **Autor:** Aurora (MasterBrain)
 > **Agenten-Rolle:** GovernanceAgent (via MasterBrain)
 
 ---
@@ -22,6 +22,7 @@
 | AD-024 | Zielarchitektur Repository-Landkarte — ALLE Repositories erstellen (P0+P1+P2) | ✅ RESOLVED (06.09.2026, 21:30) | — | Michael |
 | AD-025 | Spiel umbenannt: Shivamon → Genesis Chronicles | ✅ RESOLVED (06.09.2026, 21:40) | — | Michael |
 | AD-047 | Legacy-Löschung: 416 nichtgebrauchte Dateien (Müll, 14 verwaiste Module, supersede Reports) | ✅ RESOLVED (07.09.2026) | Löschungs-Manifest + Git-Historie | Michael |
+| AD-048 | Standards Governance Core normativ: Registry 81→121, Meta-Governance TAXONOMY-001 + STDDEV/REGISTRY/CHANGE, verbindliche Change-Pipeline SCR→VERSION→UPDATE→COMPAT→AUDIT→REGISTRY | ✅ RESOLVED (08.09.2026, 00:36) | atc-standards Registry/SCR-0016..0025 + AUD-2026-0003 | Michael |
 
 ---
 
@@ -209,6 +210,26 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
 - **Status:** RESOLVED 07.09.2026 — Michael entschieden (Mandat „Nichtgebrauchte Legacy Dateien löschen")
 - **Beschluss:** Auf Basis des Legacy-Audits 07.09. werden gelöscht: (1) Test-/Demo-Müll, (2) die 14 verwaisten Module ohne Nachfolge-Repo (atc-ui, atc-ci, atc-mobile, atc-monitoring, atc-shivacore-tools, atc-deploy, atc-assets, atc-dns, atc-social, atc-ide, atc-devtools, atc-atcpkg, atc-analytics, atc-linux-edition; je aus monorepo-full UND repos-rescue), (3) 13 supersede Plan-/Audit-Reports der 70-Repo-Ära. Gesamt 416 Dateien.
 - **Sicherheit:** Vollständiges Löschungs-Manifest unter `docs/archive/DELETIONS_2026-09-07.md`; Wiederherstellung jederzeit über die Git-Historie. Nicht gelöscht: wartende Vault-Bestände (atc-node-Stack, atc-vm, atc-zkp-Legacy), atc-shivamon (AD-025), REALITY_CHECK_2026-07-06 (offene Entscheidung AD-008).
+- **Umsetzung:** Agent Aurora
+
+### AD-048 — Standards Governance Core normativ (Meta-Governance) ✅
+- **Status:** RESOLVED 08.09.2026, 00:36 UTC+2 — Michael (§9-Freigaben 07.09. 22:37 bis 08.09. 00:36)
+- **Beschluss:** Die ATC-Standards-Registry (atc-standards) wird von 81 auf 121
+  Standards erweitert — alle APPROVED, normativ, §30-eingefroren. Der Standards
+  Governance Core wird vollständig in Kraft gesetzt: TAXONOMY-001 (Meta-Governance:
+  vierstufige Taxonomie, Familien-/Kategorien nur via ATC-FAM-REQ/ATC-CAT-REQ mit
+  8-Punkte-Pflichtprüfung + Owner-Human-Gate, ID-Vergabe über siebenstufige Kette),
+  STDDEV-001 (Erstellungsprozess, §9-Human-Gate, 365-Tage-Review-Zyklus),
+  REGISTRY-001 (SSOT-Inventar, Generator-Pflicht, Konsistenz-Gates je CI-Lauf),
+  CHANGE-001 (Dachnorm: Änderungsarten-Matrix, eine Pipeline, Gate-Landkarte, RACI,
+  Emergency mit 48h-Nachholpflicht, 13 Change-Nachweis-Fragen je Änderung) —_CHANGE-001
+  ordnet zu und ersetzt keine Fachnorm (lex specialis).
+- **Verbindliche Ketten:** SCR→VERSION→UPDATE→COMPAT→AUDIT→REGISTRY für jede
+  Änderung; Validator S-18..S-25 + Agent-Manifest-Gate (121/121 gebunden);
+  FRAMEWORK-001-Katalog: 43 Familien, 433 Slots, FAM-43 komplett BELEGT
+  (10 BELEGT, 3 GEPLANT: REPO-AUDIT-003, PROTOCOL-002/003).
+- **Nachweis:** SCR-0016..0025 mit versions.yaml-Approval-Einträgen; Selbst-Audit
+  AUD-2026-0003 (Health 86→91/100 projiziert); REALITY_STATUS.md Abschnitt 5.
 - **Umsetzung:** Agent Aurora
 
 ## AD-014: 5-Produkt-Repo-Struktur

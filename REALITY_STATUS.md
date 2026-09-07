@@ -60,4 +60,72 @@ Kein Sprachversions-Konflikt mehr — alle 19 Fehler sind konkrete Parser-Lücke
 | 3.0 | 20% | 14 Gateway/Backend Module |
 
 ---
-*Aurora · 03.08.2026 15:30 (Europe/Berlin) · Commit de175b0*
+
+## 5. Standards-Governance (07./08.09.2026 — verifiziert)
+
+**Kern-Aussage:** Die ATC-Standards-Registry (Repo `atc-standards`) ist von 81 auf
+**121 Standards** gewachsen — **121 APPROVED, 0 DRAFT/offen, alle normativ und
+§30-eingefroren** (maschinell verifiziert: Validator ALL COMPLIANT 121/121,
+Gates S-18..S-25 PASS, Agent-Manifest-Gate 121/121). Die Change-Control-Kette
+SCR→VERSION→UPDATE→COMPAT→AUDIT→REGISTRY ist vollständig normativ in Kraft.
+
+### 5.1 Neue Standards der Nacht (SCR-0016..SCR-0026, alle §9-freigegeben)
+
+| Standard | Thema | Nr. |
+|---|---|---|
+| ATC-STD-COMPAT-001 | Ökosystem-Kompatibilität bei MAJOR (6 Klassen, UPD-G04-Pflicht) | 109. |
+| ATC-STD-UPDATE-001 | Change Control: PATCH/MINOR/MAJOR, 13-Stufen-Lifecycle, UPD-G01..G09 | 110. |
+| ATC-STD-MILESTONE-001 | Meilenstein-Governance, ATC-M-001..008 (AD-027-Roadmap) | 111. |
+| ATC-STD-FRAMEWORK-001 | 43-Familien-Katalog, 433 Slots (Registry framework.yaml, S-21) | 112. |
+| ATC-STD-REPO-AUDIT-001 | Repository-Audit, 16 Prüfbereiche, 21-Schritte-Pipeline, AUD-Records | 113. |
+| ATC-STD-REPO-AUDIT-002 | CHECK-Katalog 64 Checks + Health Score A–E (S-22) | 114. |
+| ATC-STD-AOS-001 | Agent Operating Standard (Session-Mandat, Session-Records) | 115. |
+| ATC-STD-999 | Master-Audit (13 Change-Nachweis-Fragen, MAUD-Records) | 116. |
+| ATC-STD-PROTOCOL-001 | Protokoll-Dachstandard (26 Protokoll-Familien, S-23) | 117. |
+| ATC-STD-TAXONOMY-001 | Meta-Governance: Taxonomie, FAM-REQ/CAT-REQ/TCR-Ketten (S-24) | 118. |
+| ATC-STD-STDDEV-001 | Standards Development: 10-Schritte-Prozess, §9-Human-Gate | 119. |
+| ATC-STD-REGISTRY-001 | Registry Management: SSOT-Inventar, Generator-Pflicht | 120. |
+| ATC-STD-CHANGE-001 | Change-Control-Dachnorm (ordnet zu, ersetzt keine Fachnorm) | 121. |
+
+**Standards Governance Core (FAM-43) vollständig in Kraft:** TAXONOMY + STDDEV +
+REGISTRY + CHANGE + bestehendes AUDIT. Familien-/Kategorie-Erstellung nur noch mit
+8-Punkte-Pflichtprüfung und Owner-Human-Gate; ID-Vergabe nur über die siebenstufige
+Kette; TAX-CHECK-001..018 je Request (S-24 je CI-Lauf).
+
+### 5.2 Audits
+
+- **AUD-2026-0002 (Org-Audit, 07.09.):** 26 Repos klassifiziert (4 ACTIVE / 12
+  DEVELOPMENT / 10 EXPERIMENTAL, 0 Duplikate), Governance-Hygiene 26/26, 0 Secrets,
+  Chain-ID konsistent, Dependabot in 16 Manifest-Repos gefixt. CONDITIONAL_PASS;
+  offene Punkte als Issues #94–98 (a-townchain-os). Report:
+  atc-standards/docs/AUD-2026-0002_ORG_AUDIT.md.
+- **AUD-2026-0003 (Selbst-Audit atc-standards, 08.09. 00:39):** Hält das Standards-Repo
+  seine eigenen Standards ein? Ergebnis: überwiegend JA (Generator-Disziplin 100 %,
+  Registry↔Datei 121/121, SCR-Kette lückenlos, 0 Version-Drift, 0 Secrets,
+  Branch-Protection aktiv), Health Score **86/100 → B**; nach Fixes im selben SCR
+  **91/100 → A (projiziert)**. Gefunden+gefixt: CI rot seit 22:19 (PyYAML undeklariert
+  + Validator-Fallback-Crash — CI jetzt wieder grün auf beiden Workflows),
+  CHANGE-001-Frontmatter brach strictes YAML (v1.0.1-PATCH), Validator-Gap geschlossen
+  durch NEU S-25 (Strict-Frontmatter-Gate, Negativtest verifiziert). Findings
+  F-032..F-040 in registry/findings.yaml (jetzt 40 Einträge). Report:
+  atc-standards/docs/AUD-2026-0003_SELF_AUDIT.md.
+
+### 5.3 Offene Punkte (Owner-Entscheidung/aktion)
+
+| # | Punkt | Wo |
+|---|---|---|
+| 1 | Altbau-Frontmatter-Backfill: 107/119 APPROVED-Standards ohne review_date/approved_by/effective_date (STDDEV-001 in Kraft seit 08.09. 00:36) — Massen-PATCH vorgeschlagen (F-034, P2) | atc-standards |
+| 2 | Verwaister GitHub-Release/Tag v1.1.0 vs. CHANGELOG v1.4.x (F-036, P2) — Release anheben oder entfernen | atc-standards |
+| 3 | Workflow-Härtung naming-governance.yml (pip install) — Agent-Token ohne workflow-Scope (GH013), analog Org-Audit-#94-Klasse | atc-standards Issue #1 |
+| 4 | Issues #94–98 aus dem Org-Audit (governance-ci 3 Repos, CodeQL-Rollout, Version-Baseline, verwaister Tag v2.0.0, ATC-STD-202 v1.2.0) | a-townchain-os |
+
+### 5.4 Nächste Züge (Roadmap ATC-M-001..008)
+
+1. **REPO-AUDIT-003** (Auditor-Agent, letzter Audit-Fam-Slot) + **PROTOCOL-002/003**
+   (Conformance-Tests, Threat-Model) — letzte GEPLANT-Slots des 433-Slot-Katalogs
+2. **ATC-PROTO-P2P-001** — erste formale Protokoll-Spezifikation unter dem Dachstandard
+   (P2P-Consensus-Foundation aus ShivaCore K12/K14 als Fundament)
+3. **ATC-M-003 / K-Sprint 41** — aurora-ai via Kernel-Event-Bridge (AD-027-Roadmap)
+
+---
+*Aurora · 08.09.2026 01:05 (Europe/Berlin) · Standards-Governance-Nacht SCR-0016..0026 · Commit (folgt)*
