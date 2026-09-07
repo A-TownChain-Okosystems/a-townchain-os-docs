@@ -629,3 +629,25 @@ atc-contracts per AD-028); shivamon = genesis-chronicles (AD-025); atc-core-Roll
 = a-townchain; ADR-Zwei-Ebenen-Modell (zentrales DECISIONS_REGISTER bleibt
 autoritativ fuer Organisations-Entscheidungen, Repo-ADRs fuer Lokal-Entscheidungen);
 Bestands-Repos mit modules/-Layout dokumentieren Mapping statt Zwangs-Migration.
+
+---
+
+## AD-030: atc-standards — kanonisches Standards-Repository errichtet
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner („Erstelle ein Repository fuer alle meine definierten Standards") · **Umsetzung:** Agent Aurora (Repo-ID 1360175048, Commit 0eea944)
+
+Das Repository **A-TownChain-Okosystems/atc-standards** ist ab sofort DIE
+kanonische Heimat aller definierten Standards: 102 ATC-Standards (ATC-01…99,
+ATC-LIC, ATC_ECOSYSTEM_STANDARDS), ATS-LIC, Governance-Standards
+(ATC-STD-REPO-001/002/003), Master-Registry (STANDARDS_REGISTRY + OVERVIEW) und
+die .atc-Referenzimplementierungen (registry.atc + 4 Standards-Vertraege).
+Typ SPEC, Level R3, self-compliant nach ATC-STD-REPO-001 (12-Abschnitte-README,
+LICENSE, SECURITY.md, CHANGELOG, docs/REPOSITORY_STANDARD.md). Topics gesetzt.
+
+**Regeln:** (1) Kuenftige Standard-Aenderungen NUR im atc-standards-Repo —
+die Hub-Kopie (docs/standards/) ist ab jetzt ARCHIV-SNAPSHOT (CANONICAL.md
+weist dorthin). (2) Die AD-029-Harmonisierung „kein atc-standards-Repo,
+Standards kanonisch im Hub" ist HIERMIT ERSETZT. (3) Repo-Landschaft: 22 → 23
+aktive Repos. (4) Die .atc-Referenzen bleiben zusaetzlich in atc-contracts
+ausfuehrbar (Dublette bewusst: Standards-Repo = Norm, atc-contracts =
+Contract-Ausfuehrung).

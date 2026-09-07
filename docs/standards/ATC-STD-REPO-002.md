@@ -46,6 +46,7 @@ genesis-chronicles, a-townchain, atc-shivacore (Kernel-Marke), a-townchain-os
 | a-townchain-os | INFRA | R3 | L7 | Integration/Launch-Stack (Monorepo per AD-017) |
 | a-townchain-os-docs | SPEC | R3 | parallel | Governance-Hub: Standards, DECISIONS_REGISTER, Vault |
 | atc-contracts | SPEC/CORE | R3 | L5 | Referenzvertraege + ATC-Standards-.atc (AD-028) |
+| atc-standards | SPEC | R3 | parallel | KANONISCHES Standards-Repo (AD-030, Commit 0eea944) |
 | globus-os | OS | R3 | L4 | Userspace-OS |
 | aurora-ai | AI | R3 | L2 | Rust Core + Python AI-Layer (AD-021) |
 | atc-sdk | SDK | R2 | L5 | inkl. CLI + atcpkg |
@@ -63,9 +64,10 @@ genesis-chronicles, a-townchain, atc-shivacore (Kernel-Marke), a-townchain-os
 | atc-mining | CORE | R1 | L5 | Skelett (PoW-Auslagerung) |
 | atc-launchpad | APPLICATION | R1 | L5 | Skelett (Neuland) |
 
-**Abweichungsnotiz zu frueheren Vorschlaegen:** Es existiert kein separates
-atc-standards-Repo — Standards leben kanonisch im Hub (docs/standards/), die
-.atc-Referenzimplementierungen in atc-contracts. shivamon heisst seit AD-025
+**Abweichungsnotiz zu frueheren Vorschlaegen:** Seit AD-030 (07.09.) existiert
+doch ein separates atc-standards-Repo als KANONISCHE Standards-Heimat; die
+Hub-Kopie docs/standards/ ist Archiv-Snapshot. shivamon heisst seit AD-025
+genesis-chronicles. Die Chain-Core-Rolle von atc-core uebernimmt a-townchain. shivamon heisst seit AD-025
 genesis-chronicles. Die Chain-Core-Rolle von atc-core uebernimmt a-townchain.
 
 ## 4. Compliance-Level
