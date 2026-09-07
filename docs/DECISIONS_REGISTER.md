@@ -651,3 +651,46 @@ Standards kanonisch im Hub" ist HIERMIT ERSETZT. (3) Repo-Landschaft: 22 → 23
 aktive Repos. (4) Die .atc-Referenzen bleiben zusaetzlich in atc-contracts
 ausfuehrbar (Dublette bewusst: Standards-Repo = Norm, atc-contracts =
 Contract-Ausfuehrung).
+
+---
+
+## AD-031: ATC Repository Governance Specification — aus Empfehlungen werden verbindliche Regeln
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/NORMATIV · **Entscheider:** Owner (Erweiterungs-Mandat Abschnitte 16-35), Agent Aurora (Spezifikation + Validator-Implementierung) · **Commits:** atc-standards 0211d29
+
+Die ATC-STD-REPO-Serie wurde von der Ordnerstruktur-Empfehlung zur FORMALEN
+GOVERNANCE SPEZIFIKATION erweitert (kanonisch: atc-standards-Repo, AD-030):
+
+1. **ATC-STD-REPO-001 v1.0.0 (FORMAL):** RFC-2119-MUST/SHOULD/MAY-Regeln,
+   Metadaten-Standard (.atc/repository|ownership|lifecycle|compliance.yaml),
+   Compliance-Matrix M-01…M-16 je Level R0-R4, Validator-Regeln V-01…V-16
+   (maschinenpruefbar), Compliance-Badge-Pflicht ab R3.
+2. **ATC-STD-REPO-002 v1.0.1:** Ownership-Standard (CODEOWNERS aus ownership.yaml
+   abgeleitet), Lifecycle-Zustandsmaschine (experimental→…→archived, Springen
+   UNZULAESSIG), Security-Klassen S0-S4 (S4 = Protocol-Critical mit
+   Reproducible-Build-Pflicht), zentraler Dependency Graph, Registry-Pflicht.
+3. **ATC-STD-REPO-003 v1.0.1:** Branching-Standard, Conventional Commits,
+   PR-Standard (ab S3/S4 mit Threat-Model/Consensus/State-Transition-Impact),
+   Release-Gates GATE-01…GATE-10 (ein fehlgeschlagenes Gate = NO-GO),
+   Dependency Policy (Approved/Restricted/Deprecated/Blocked), Third-Party-
+   Dokumentation, API-Stability-Levels, Breaking-Change-Disziplin,
+   Reproducible Builds, Artifact Management (SHA-256/512 + Signaturen),
+   Health-Score-Verfahren (Schwellen 95/85/70/50, GATE: PASS ab 85 + 0 FAILs).
+
+4. **Infrastruktur (physisch im atc-standards-Repo):** registry/repositories.yaml
+   als ZENTRALE maschinenlesbare Registry (23 Repos mit Klassifizierung,
+   R-Maturity, S-Security, Lifecycle-Status, Layer), teams.yaml,
+   dependencies.yaml (L0-L7-Graph nach AD-026), 4 Metadaten-Schemas,
+   Templates (.atc-Vorlagen, PR-Template, CI-Vorlage).
+
+5. **tools/atc-repo-audit v0.1.0:** ECHTER, lauffaehiger Validator (Python
+   stdlib-only, 16 Pruefregeln, 8 Score-Kategorien, GATE: PASS/NO-GO,
+   Exit-Code CI-tauglich). Self-Compliance: atc-standards auditiert sich
+   selbst (16/16 PASS, Score 100/100, GATE: PASS; .atc-Metadaten, CODEOWNERS,
+   Governance-CI-Workflow). Bestands-Realitaet ehrlich vermessen: Demo-Audit
+   atc-shivacore (R4) = 12 MUST-FAILs → dokumentierter Migrations-Backlog
+   (Bestand R2+ erfuellt MUST-Regeln bis M8, gemaess 001 §0).
+
+Governance Chain aktiv: Standards → Schema → Template → Repository Creation →
+atc-repo-audit → PASS (Development → CI → Security → Architecture → Release →
+Production) / FAIL (NO-GO).
