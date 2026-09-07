@@ -101,3 +101,22 @@ Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All 
 ---
 
 **Last Updated:** 2026-09-03 by Aurora (Base44 Superagent)
+
+---
+
+## ATC Compliance & Governance (ATC-STD-201 / 202 / 203)
+
+**ATC COMPLIANCE: R3** — auditiert am 2026-09-07 (atc-repo-audit; R-Level aus `.atc/repository.yaml`).
+Architekturentscheidungen: zentral im [DECISIONS_REGISTER](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/blob/main/docs/DECISIONS_REGISTER.md) (AD-Nummern verbindlich; lokale Entscheidungen in `docs/decisions/`).
+
+- **Purpose:** Dokumentations-Hub des Oekosystems (parallel zu L0-L7).
+- **Scope:** Layer parallel, Domain documentation — a-townchain-os-docs als SPEC in der 23-Repo-Landschaft (AD-024/026).
+- **Architecture:** DECISIONS_REGISTER (AD-001…), Roadmaps (M1-M8, AD-027), Audits, Projekt-Doku; Standards: kanonisch im atc-standards-Repo (AD-030), Hub docs/standards = Archiv-Snapshot.
+- **Features:** Wiki, Whitepaper, Compliance-Handbuch, BaFin-Bericht, REPOSITORY_MAP.
+- **Installation:** Modul-Build je Sprache (markdown); Integration via Monorepo-Workspace (a-townchain-os, sync_modules.py).
+- **Development:** Conventional Commits; Governance-Regeln aus atc-standards; Naming gemaess ATC-STD-000 §7.
+- **Testing:** Interne Link-Audits (873+94 Links geprueft, 0 kaputt); Governance-CI.
+- **Security:** SECURITY.md; S-Klasse S3; ATC-STD-203 Release-Gates; Emergency-Prozess ATC-STD-000 §32.
+- **Roadmap:** Einordnung in die Lauffaehigkeits-Roadmap M1-M8 (AD-027) und Bauhierarchie L0-L7 (AD-026).
+- **Version:** CHANGELOG.md; SemVer; Releases als ATC-REL-X.Y.Z.
+- **License:** Proprietaer — All Rights Reserved, Michael Wroblewski / ShivaCore / A-TownChain-Okosystems (ATC-LIC/ATS-LIC).
