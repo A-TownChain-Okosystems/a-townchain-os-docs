@@ -814,3 +814,11 @@ COMPLIANT. CI im Standards-Repo validiert ab jetzt beide: Repository-Audit
 
 **Naechster Schritt fuer STABLE:** Durchlauf der Review-Chain (§15) und
 formale Approval durch den Owner.
+
+**AD-034-Nachtrag (07.09., atc-standards 8eda21a):** Review-Chain nach
+ATC-STD-000 §15 fuer die Verfassung durchgefuehrt — Technical, Security und
+Architecture Review alle PASS (0 blockierende, 5 nicht-blockierende Befunde
+als SCR-Empfehlungen T-F01/T-F02/S-F01/S-F02/A-F01 dokumentiert in
+governance/APPROVAL_PACKAGE_ATC-STD-000.md). ATC-STD-000 v1.0.0 steht auf
+CANDIDATE und wartet auf die formale Owner-Approval → APPROVED/STABLE.
+Sammel-Empfehlung im Paket: Co-Approval ATC-STD-201/202/203 nachziehen.
