@@ -222,7 +222,7 @@ der Wahrheit. Alle WHITEPAPER.md-Referenzen entsprechend korrigiert.
   STDDEV-001 (Erstellungsprozess, §9-Human-Gate, 365-Tage-Review-Zyklus),
   REGISTRY-001 (SSOT-Inventar, Generator-Pflicht, Konsistenz-Gates je CI-Lauf),
   CHANGE-001 (Dachnorm: Änderungsarten-Matrix, eine Pipeline, Gate-Landkarte, RACI,
-  Emergency mit 48h-Nachholpflicht, 13 Change-Nachweis-Fragen je Änderung) —_CHANGE-001
+  Emergency mit 48h-Nachholpflicht, 13 Change-Nachweis-Fragen je Änderung) — CHANGE-001
   ordnet zu und ersetzt keine Fachnorm (lex specialis).
 - **Verbindliche Ketten:** SCR→VERSION→UPDATE→COMPAT→AUDIT→REGISTRY für jede
   Änderung; Validator S-18..S-25 + Agent-Manifest-Gate (121/121 gebunden);

@@ -128,4 +128,4 @@ Kette; TAX-CHECK-001..018 je Request (S-24 je CI-Lauf).
 3. **ATC-M-003 / K-Sprint 41** — aurora-ai via Kernel-Event-Bridge (AD-027-Roadmap)
 
 ---
-*Aurora · 08.09.2026 01:05 (Europe/Berlin) · Standards-Governance-Nacht SCR-0016..0026 · Commit (folgt)*
+*Aurora · 08.09.2026 01:05 (Europe/Berlin) · Standards-Governance-Nacht SCR-0016..0026 · Commit cf9bf5a*
