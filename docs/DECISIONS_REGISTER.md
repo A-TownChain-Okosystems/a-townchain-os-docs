@@ -765,3 +765,52 @@ Tracking der Boot-Phase.
 
 **GitHub-Status:** Lokal implementiert und getestet (32/32 gruen), Push in
 atc-shivacore steht aus. AD-028 gilt unveraendert (Service-Space-Trennung).
+
+---
+
+## AD-034: ATC-STD-000 — Standards Governance & Specification Standard (Verfassung)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (Meta-Spezifikation vorgegeben), Agent Aurora (Ausformulierung, Validator, Umnummerierung) · **Commit:** atc-standards 4f318f0
+
+ATC-STD-000 v1.0.0 (Status DRAFT gemaess Owner-Vorgabe; Approval-Chain nach
+§15 ist der offene Schritt zu APPROVED/STABLE) ist ab sofort die VERFASSUNG
+des gesamten ATC-Standardsystems — der Standard fuer Standards:
+
+1. **ID-System mit Domain-Raedern:** 000 Governance (ATC-STD-000 selbst),
+   100-199 Architecture, 200-299 Repository & Git, 300-399 Development,
+   400-499 Security, 500-599 Protocol, 600-699 Blockchain, 700-799 AI,
+   800-899 OS/Runtime, 900-999 Infrastructure, 1000+ Applications.
+2. **Lifecycle-Zustandsmaschine:** IDEA→PROPOSED→DRAFT→REVIEW→CANDIDATE→
+   APPROVED→STABLE→DEPRECATED→RETIRED — sequenziell, Springen unzulaessig
+   (Ausnahme Rueckstufung nach abgelehntem Review).
+3. **Metadaten-Pflicht:** Jeder Standard hat einen maschinenlesbaren YAML-
+   Header (id/title/version/status/category/owner/created/updated/normative
+   + supersedes/superseded_by).
+4. **REQ-System:** Eindeutige REQ-IDs mit Klassifizierung MANDATORY/
+   RECOMMENDED/OPTIONAL/CONDITIONAL; Compliance je REQ: PASS/FAIL/PARTIAL/N-A;
+   Compliance-Level L0-L4.
+5. **Versionierung:** SemVer; MAJOR = Breaking (MUST→MUST NOT, SHOULD→MUST,
+   Semantik-/Compliance-Aenderung); Change Control an STABLE nur via SCR
+   (SCR-0001-Schema); Review-Chain Technical→Security→Architecture→Approval;
+   Evidence-Requirement; Supersession + Migration-Guide-Pflicht.
+6. **Registry-Pflicht (§19):** registry/standards.yaml ist das Herzstueck —
+   KEIN EINTRAG = KEIN STANDARD. Ergaenzt: categories.yaml, versions.yaml,
+   lifecycle.yaml; dependencies.yaml um Standard-Graph (Zyklenerkennung).
+7. **Governance-Grundsatz (§21, REQ-STD-000):** 'No ATC Standard is normative
+   unless it is registered, versioned, reviewed and explicitly approved
+   according to this specification.' — Registry + Repo schlagen bei
+   Widerspruch README, Wiki, Issues, Chat und Code.
+
+**Vollzogene Umnummerierung:** ATC-STD-REPO-001/002/003 → ATC-STD-201/202/203
+(v1.0.1, supersedes-Vermerke, 14 Dateien umgestellt; atc-repo-audit,
+.atc-Metadaten, Schemas, README, Registry referenzieren die neuen IDs).
+Legacy-Serien (ATC-01…99, ATC-0001…0008, ATS-1000…1007) behalten ihre
+Nummerierung, sind aber fuer alle Aenderungen durch ATC-STD-000 regiert.
+
+**Validator:** tools/atc-std-validator v0.1.0 (15 Regeln S-01…S-15, inkl.
+Zyklenerkennung, stdlib-only). Selbsttest: ATC-STD-000/201/202/203 alle
+COMPLIANT. CI im Standards-Repo validiert ab jetzt beide: Repository-Audit
+(16/16 PASS, Score 100) und Standard-Validation.
+
+**Naechster Schritt fuer STABLE:** Durchlauf der Review-Chain (§15) und
+formale Approval durch den Owner.
