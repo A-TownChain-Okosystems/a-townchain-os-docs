@@ -723,3 +723,45 @@ Compliance-DOKUMENTATION, keine Standards. ATCLang-Gates-Spezifikationen leben
 in atclang (AD-022). Hub-Kopien der uebertragenen Standards bleiben als
 Archiv-Snapshot (AD-030-Regel), kanonische Pflege nur im atc-standards-Repo.
 Registry-Sektion 'Aus dem Wiki konsolidiert' dokumentiert Herkunft je Dokument.
+
+---
+
+## AD-033: ShivaCore Memory Management & Interface-Protokolle (J-K09/J-K10)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/NORMATIV · **Entscheider:** Owner (Vorgabe), Agent Aurora (Dokumentation) · **Lokaler Stand:** Commit 4b04cd3 (noch nicht auf GitHub gepusht)
+
+### J-K09: Memory Management (KOMPLETT, 32/32 Tests: 18 Memory + 14 Capability)
+
+1. **Kernel owns Block-Allokator (J-K09.2 Phase 3):** Der Block-Allokator ist
+   EIGENTUM des Kernels — nicht Userspace. Minimaler Default-Kernel-Heap,
+   max. Block-Groesse 48 MiB.
+2. **Memcheck-Standard:** (a) Memory-Audit bei Kernel-Boot — der Kernel
+   durchlaeuft alle internen Speicherstrukturen (Frame-Allokator, Page-Tables,
+   Slub-Caches) und prueft auf Korruption. (b) Slub-Allokator fuer kleine
+   Objekte (Speicherverschnitt minimieren). (c) Rolling Updates NUR nach
+   successful Memcheck — kein Update-Pfad ohne verifizierten Speicherzustand.
+3. **Frame-Allokator-Integration:** Virtual Memory und Memcheck arbeiten
+   direkt mit dem physischen Frame-Allokator — keine abstrakte
+   Zwischenschicht.
+
+### J-K10: Interface-Protokolle Kernel ↔ Userspace (SKELETT, Projektion 21:00)
+
+4. **Objektmodell:** Prozess-, Kanal-, Thread-Objekte mit Thread-Gruppen
+   fuer Gruppen-Scheduling.
+5. **POSIX-FREI:** KEINE File-Deskriptoren (fd 0/1/2 entfernt), KEINE POSIX-
+   Systemaufrufe. Stattdessen: ServerPort/S1/S2 in CSpace; RelayPort
+   (Hardware-facing) auf Level 0 in CSpace. KEIN Nameserver.
+6. **IPC:** Ring-Buffer mit Zero-Copy + Capability-Check. Direct Kernel
+   Calls nur mit Capability. Shared Memory / Direct Map / unmapped
+   Physical RAM NUR fuer Base-Drivers.
+7. **VFS-Trennung:** H2/v4/v5-Inhalt in libvfs ab Tag 1 (Kernel haelt NUR
+   Minimal-VFS, gemaess AD-012).
+
+### Vergleich zu Linux (explizite Nicht-Ziele)
+
+KEINE syscalls/fd/mmap/ioctl/signal/fork/exec — das Objektmodell ist
+eigenstaendig. ~50% des Kernel-Codes betroffen. Fastboot-Ziel: Tick-Count-
+Tracking der Boot-Phase.
+
+**GitHub-Status:** Lokal implementiert und getestet (32/32 gruen), Push in
+atc-shivacore steht aus. AD-028 gilt unveraendert (Service-Space-Trennung).
