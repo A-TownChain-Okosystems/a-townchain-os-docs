@@ -896,3 +896,28 @@ da nicht STABLE):
 Verifikation: 4/4 Standards COMPLIANT (S-16 aktiv), Repo-Audit R3 GATE PASS,
 Requirement-Matrix 17/17 PASS, Snapshot aktualisiert. Die offene Owner-
 Approval fuer ATC-STD-000 deckt die erweiterte 36-Abschnitt-Fassung ab.
+
+---
+
+## AD-037: Prompt Engineering Theory verankert (ATC-SPEC-001)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:**
+Owner (Quellenmaterial APOS/ACE), Agent Aurora (Ausarbeitung) · **Commit:**
+a-townchain-os-docs (dieser Stand)
+
+Das vom Owner gelieferte lerntheoretische Material (APOS-Theorie nach
+Dubinsky, ACE-Lehrzyklus, Instruktionsdesign-Strategien, kognitive Leiter)
+ist zur kanonischen Prompt-Engineering-Theorie des Oekosystems ausgearbeitet:
+**docs/ai/ATC-SPEC-001-PROMPT_ENGINEERING_THEORY.md** (v1.0.0, DRAFT,
+normative: false — erste reale Nutzung der ATC-SPEC-NNN-Nomenklatur aus
+ATC-STD-000 §36).
+
+Kern: Prompt Engineering = Steuerung kognitiver Strukturen (APOS: Action →
+Process → Object → Schema), geschlossene kognitive Schleife (Lernen →
+Ausfuehren → Verifizieren → Schema), 12 Instruktionsdesign-Templates,
+6-Kriterien-Validierungs-Framework (Stufen-Zuordnung, Mechanismus, Inhalt,
+Transfer, Verifizierbarkeit, Determinismus). Oekosystem-Integration:
+Aurora AI = Action/Process (deterministisch, konsistent mit AD-021/022
+Differential-Testing), KAI = Process + Review-Pflicht, Genesis AI = Schema
+(kreativ). Promotion-Pfad zu ATC-STD-701 (AI 700-799) nach
+Praxisvalidierung.
