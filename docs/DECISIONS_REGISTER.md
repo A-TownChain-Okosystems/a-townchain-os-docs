@@ -694,3 +694,32 @@ GOVERNANCE SPEZIFIKATION erweitert (kanonisch: atc-standards-Repo, AD-030):
 Governance Chain aktiv: Standards → Schema → Template → Repository Creation →
 atc-repo-audit → PASS (Development → CI → Security → Architecture → Release →
 Production) / FAIL (NO-GO).
+
+---
+
+## AD-032: Wiki-Konsolidierung II — weitere Standards ins atc-standards-Repo uebertragen
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner („Pruefe die wiki auf weitere Standards und verschiebe sie") · **Commits:** atc-standards 76e2c5e
+
+Systematische Wiki-Durchsuchung nach nicht uebertragenen Standards. 6 weitere
+Dokumente kanonisch ins atc-standards-Repo uebernommen (Repo-Total: 115):
+
+1. **ats/ATS_STANDARDS.md** — ATS-1000…1007 (ShivaOS Kernel/Stack-Standards).
+   Von 4 Hub-Kopien die vollstaendigste Fassung (283 Zeilen, wiki/standards/docs
+   + module-docs/kernel identisch) gewaehlt; aeltere 198/199-Zeilen-Entwuerfe
+   verworfen.
+2. **atc/ATC_STANDARDS.md** — ATC-0001…0008 (Core-Protokolle: Identity, Token,
+   Consensus, Network, ...). Vollstaendige 233-Zeilen-Fassung (inkl. ATC-9000-
+   Sektion); die module-docs-Variante war am Ende abgebrochen (201 Zeilen,
+   mitten in der Zeile).
+3. **atc/ATC_TOKEN_STANDARD.md** — Kurzreferenz ATC-001/8300/9000/9900.
+4. **licensing/ATVM_LICENSE_GATE_SPEC.md** — ATC-LIC-Enforcement-Spezifikation.
+5. **licensing/IP_LICENSE_DASHBOARD_SPEC.md** — IP & License Registry (GlobusOS).
+6. **licensing/SMART_CONTRACT_RICHTLINIE.md** — BaFin-Richtlinie (21KB, normativ).
+
+**Abgrenzung (bewusst NICHT uebertragen):** COMPLIANCE_HANDBUCH.md und
+BAFIN_KONFORMITAETSBERICHT.md bleiben im Hub — Handbuch/Report sind
+Compliance-DOKUMENTATION, keine Standards. ATCLang-Gates-Spezifikationen leben
+in atclang (AD-022). Hub-Kopien der uebertragenen Standards bleiben als
+Archiv-Snapshot (AD-030-Regel), kanonische Pflege nur im atc-standards-Repo.
+Registry-Sektion 'Aus dem Wiki konsolidiert' dokumentiert Herkunft je Dokument.
