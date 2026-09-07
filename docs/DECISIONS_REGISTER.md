@@ -1066,3 +1066,19 @@ Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
 - **Offen (Migrations-Punkt):** Konsolidierung und Modul-Migration der PoH-Referenz-Implementierung aus a-townchain nach atc-algorithm, sobald Rust-Baseline steht.
 - **Registry:** atc-standards/registry/repositories.yaml erweitert; Manifest v3.1.5 (25-Repo-Stand).
 - **Gueltig seit:** 2026-09-07
+
+---
+
+## AD-045: ATC ZKP-Layer — Repo atc-zkp + Standards-Serie ATC-STD-ZKP-001…010
+
+**Status:** ✅ RESOLVED/UMGESETZT | **Datum:** 2026-09-07 | **Entscheider:** Owner-Entwurf (Michael), Umsetzung Aurora | **Repo:** [atc-zkp](https://github.com/A-TownChain-Okosystems/atc-zkp)
+
+- **Anforderung:** ZKP-Layer (Zero-Knowledge Proof Layer) als eigenstaendige Protokollschicht zwischen Core/L1 und Anwendungen/Rollups (Owner-Architekturentwurf 07.09., vollstaendig dokumentiert in atc-zkp/docs/ZKP_ARCHITECTURE.md).
+- **Beschluss 1 (Repo):** `atc-zkp` (CORE, L1, S4, R1-Skeleton nach ATC-STD-201) mit 7-Crate-Layout: zkp-core, zkp-verifier, zkp-prover, zkp-circuits, zkp-crypto, zkp-vm, zkp-sdk. Canonical Implementation: Rust (ATC-STD-100, Kryptografie-Bindung).
+- **Beschluss 2 (Standards):** Zehn Standards als Serie ATC-STD-ZKP-001…010 (Architektur, Proof-System-Interface, Circuits, On-Chain-Verifikation, Commitments/Nullifier, ZK-Identity, Private Transactions, ZK-Rollup, ZKVM, Security/Audit) — Status v1.0.0 CANDIDATE (28 Standards in Registry; APPROVED wartet auf Owner-Freigabe per ATC-STD-000 §9).
+- **ID-Korrektur:** Owner-Entwurf nannte „ATC-ZKP-STD-001…010"; korrigiert auf ATC-STD-ZKP-001…010 gemaess §7-IDLandschaft (Vorbild BUG-/NET-Serie, analog ID-Korrektur 204→300).
+- **Wichtigste Designentscheidung (verbindlich):** Die ZKP-Layer ist zunaechst eine kryptografische Infrastruktur- und Verifikationsschicht INNERHALB der A-TownChain — kein eigenes Netzwerk, kein eigener Konsens-/State-Layer. Pluggable Proof Architecture (Groth16, PLONK, Halo2, STARK, zukuenftige) — kein hard coupling an ein Beweissystem.
+- **Anwendungsfaelle (in Standards gefuehrt):** Private Transaktionen, private Token-Balances, GameFi-Beweise (Genesis Chronicles), ATC-ZK-Identity Protocol, zkRollup/zkVM/zkApp.
+- **Offen:** Implementierung im qualitaetsgetriebenen Rebuild (AD-023, G18 Security-Audit vor jedem Freeze); Reihenfolge-Pflicht ZKP-001…007 vor Rollup (ZKP-008).
+- **Registry:** atc-standards/registry erweitert (repositories.yaml 26 Repos, standards.yaml 28 Standards, categories.yaml zkp-Serie); Manifest v3.1.6.
+- **Gueltig seit:** 2026-09-07

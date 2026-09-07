@@ -5744,7 +5744,7 @@ de5be7d1ad  2026-06-10  docs(wiki): Kap. 31 + Issues #28-30 — finaler Stand
 | **Chain-ID 658467** | Proprietäre Chain-Identität von A-TownChain (Non-EVM, kein Registry-Eintrag). |
 | **ECDSA secp256k1** | Signatur-Algorithmus für Wallets und Transaktionen. |
 | **FFT-Token** | Franchise & Governance Token — Voting-Power in DAO. |
-| **Groth16** | Zero-Knowledge Proof System — geplant für Sprint 3.0. |
+| **Groth16** | Zero-Knowledge Proof System — Teil der pluggable Proof Architecture der [ATC ZKP-Layer](https://github.com/A-TownChain-Okosystems/atc-zkp) (AD-045, ATC-STD-ZKP-001…010). |
 | **Hybrid Consensus** | PoH + PoS + PoW — proprietärer Konsens-Algorithmus von A-TownChain. Eigenes Repo: [atc-algorithm](https://github.com/A-TownChain-Okosystems/atc-algorithm) (AD-044). |
 | **IPC Bus** | Inter-Process Communication Bus — Nachrichtensystem zwischen Kernel-Komponenten. |
 | **Non-EVM** | Keine Ethereum Virtual Machine — vollständig proprietäre Architektur. |
@@ -5755,7 +5755,7 @@ de5be7d1ad  2026-06-10  docs(wiki): Kap. 31 + Issues #28-30 — finaler Stand
 | **Snapshot-Block** | Block zum Zeitpunkt der Proposal-Erstellung — schützt vor Flash-Loan-Angriffen (AD-003). |
 | **Sprint 2.2** | Aktuell aktiver Sprint: P2P + Multi-Node Testnet (35% abgeschlossen). |
 | **TGE** | Token Generation Event — 21M ATC Token, geplant für Mainnet (Sprint 4.0). |
-| **Zero-Knowledge Proof (ZKP)** | Beweis einer Information ohne die Information selbst preiszugeben. |
+| **Zero-Knowledge Proof (ZKP)** | Beweis einer Information ohne die Information selbst preiszugeben. Eigenes Repo: [atc-zkp](https://github.com/A-TownChain-Okosystems/atc-zkp), Standards ATC-STD-ZKP-001…010 (AD-045). |
 | **Zero Trust** | Sicherheitsmodell: kein automatisches Vertrauen, jede Aktion wird verifiziert. |
 
 ---
@@ -13969,13 +13969,13 @@ contract ATC8300 {
 
 ## Überblick
 
-Die GitHub-Organisation `A-TownChain-Okosystems` umfasst **25 aktive Repositories**
-(Stand 07.09.2026, AD-024 + AD-043/044):
-- **25 aktive Repos** — 2 Hubs (a-townchain-os Code, a-townchain-os-docs Wiki-Vault)
-  + 23 vertikale Produkt-/Governance-Repos (atc-standards = Governance Root,
-  atc-vm = A-TownChain Virtual Machine AD-043, atc-algorithm = Hybrid Consensus AD-044)
+Die GitHub-Organisation `A-TownChain-Okosystems` umfasst **26 aktive Repositories**
+(Stand 07.09.2026, AD-024 + AD-043/044/045):
+- **26 aktive Repos** — 2 Hubs (a-townchain-os Code, a-townchain-os-docs Wiki-Vault)
+  + 24 vertikale Produkt-/Governance-Repos (atc-standards = Governance Root,
+  atc-vm AD-043, atc-algorithm AD-044, atc-zkp = ZKP-Layer AD-045)
 - Historische Konsolidierungen: 13.–14.06.2026 (24→2+Archiv, Kapitel 63),
-  06.09.2026 (AD-016: 124→8, Vault-Rettung), 07.09.2026 (AD-024: 8→23; AD-043: +atc-vm → 24; AD-044: +atc-algorithm → 25).
+  06.09.2026 (AD-016: 124→8, Vault-Rettung), 07.09.2026 (AD-024: 8→23; AD-043: +atc-vm → 24; AD-044: +atc-algorithm → 25; AD-045: +atc-zkp → 26).
 
 ---
 
