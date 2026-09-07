@@ -832,3 +832,34 @@ Chain gegen DIESE Fassung durchlaufen: Technical/Security/Architecture
 3/3 PASS, 0 Blocker, 16/16 REQ PASS → CANDIDATE. Approval BLOCKED beim
 Owner (APPROVE/REQUEST CHANGES/REJECT). Damit laeuft die Verfassung durch
 die eigene Kette — keine Ausnahme von den Regeln, die sie definiert.
+
+---
+
+## AD-035: Standards-Governance-Komponenten vervollstaendigt
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/UMGESETZT · **Entscheider:** Owner (Auftrag 'Fehlende Komponenten erstellen'), Agent Aurora (Ausfuehrung) · **Commit:** atc-standards ed3d048
+
+Die gegenueber der Soll-Struktur (Owner-§27-Layout) und dem SCR-Backlog aus
+dem ATC-STD-000-Approval-Paket fehlenden Komponenten sind errichtet:
+
+1. **governance/CHANGE_CONTROL.md:** SCR-Verfahren operationalisiert
+   (Lebenszyklus PROPOSED→REVIEW→DECIDED→IMPLEMENTED→CLOSED, SCR-Registry
+   SCR-0001…0004, Emergency-Rueckkopplung gemaess §31).
+2. **governance/APPROVAL_PROCESS.md:** Freigabe-Ablauf CANDIDATE→STABLE mit
+   Pflichten je Entscheidung; Uebergangs-Rollenregelung (Owner = Approver,
+   Agent = Autor/Reviewer/Executor, nie Approver) bis SCR-0004.
+3. **change-requests/:** SCR-0001 (ID-Allokation, PENDING), SCR-0002
+   (OBSOLETE — L↔R-Doppelskala durch Formalfassung §22 aufgeloest; Nachweis,
+   dass der Prozess auch Schliessungen abbildet), SCR-0003 (§33-Integritaets-
+   umsetzung, PENDING; Teilumsetzung CODEOWNERS; Branch-Absicherung wartet
+   auf Owner-Option A: Agent auf PR-Flow / B: dokumentierte Ausnahme),
+   SCR-0004 (Rollenmodell, PENDING).
+4. **CODEOWNERS** (§33-Teilumsetzung).
+5. **Root-Metadateien** (§27-Soll): ARCHITECTURE.md (Governance-Fluss),
+   STATUS.md (Standard-/SCR-Status), ROADMAP.md (Q3/2026 + Ausbau 100/400/
+   800er-Bereich nach Baulogik AD-026/027).
+
+Regel beibehalten: ATC-STD-000 bleibt CANDIDATE, Approval BLOCKED beim Owner;
+SCR-Entscheidungen sind Owner-Vorbehalt. Verifikation: 4/4 Standards
+COMPLIANT, Repo-Audit R3 GATE PASS (Score 97; einziger WARN = historisches
+Conventional-Commits-Verhaeltnis).
