@@ -19,7 +19,7 @@ Max 10.000.000 Gas/TX. Verhindert DoS durch Endlosschleifen.
 Statisch typisiert. `u64`, `u128`, `u256` — kein implizites Casting.
 
 ### ECDSA-Signatur
-Alle TXs: secp256k1, SHA3-256. Replay-Schutz via Nonce + Chain-ID 9000.
+Alle TXs: secp256k1, SHA3-256. Replay-Schutz via Nonce + Chain-ID 658467.
 
 ### Adress-Validierung
 `is_valid_address()` — Pflicht für alle externen Adressen.

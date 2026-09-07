@@ -94,7 +94,7 @@
 
 | Component | Repo | Language | Size | Description |
 |-----------|------|----------|------|-------------|
-| ShivaMon | `atc-shivamon` | Python | 62KB | Monster battle game |
+| ShivaMon | `genesis-chronicles` | Python | 62KB | Monster battle game |
 | ATC Game | `atc-game` | Rust | — | Game framework |
 
 ## 10. Languages (3)
@@ -139,7 +139,7 @@
 | Status | Count | Repos |
 |--------|-------|-------|
 | **Active Development** | 3 | atc-shivacore, a-townchain-os, atc-genesis-engine |
-| **Implemented** | 15 | atc-blockchain, atc-contracts, atc-ui, atc-gateway, atc-kernel, atcnet, atc-wallet, atc-vm, atc-cli, atc-franchise, atc-aistudio, atc-whitepaper, atc-shivamon, atclang, atc-stdlib |
+| **Implemented** | 15 | atc-blockchain, atc-contracts, atc-ui, atc-gateway, atc-kernel, atcnet, atc-wallet, atc-vm, atc-cli, atc-franchise, atc-aistudio, atc-whitepaper, genesis-chronicles, atclang, atc-stdlib |
 | **Skeleton/Stub** | 12 | atc-bridge, atc-zkp, atc-dex, atc-explorer, atc-ide, atc-social, atc-devtools, atc-game, atc-globus-os, atc-monitoring, atc-testnet, atc-deploy |
 | **Placeholder** | 10 | atc-bootloader, atc-dns, atc-drivers, atc-linux-edition, atc-windows-edition, atc-security, atc-governance, atc-assets, atc-aurora-ai, atc-sdk |
 | **Empty** | 5 | atc-atcpkg, atc-standards, atc-mobile, atc-backend, atc-ci |

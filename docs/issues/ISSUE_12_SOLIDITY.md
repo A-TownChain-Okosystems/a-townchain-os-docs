@@ -59,7 +59,7 @@ contract ATC Token is ERC20, Ownable, Pausable {
 }
 ```
 
-### Shivamon.sol (ATC-9000)
+### Genesis Chronicles.sol (ATC-9000)
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -68,14 +68,14 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Shivamon is ERC721 {
+contract Genesis Chronicles is ERC721 {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
     uint256 public constant MAX_SUPPLY  = 9900;
     uint256 public          mintingFee  = 10 * 10**18; // 10 ATC
 
-    struct ShivamonData {
+    struct Genesis ChroniclesData {
         uint8   element;    // 0=Fire 1=Water 2=Earth 3=Air 4=Shadow 5=Neon 6=Quantum
         uint8   rarity;     // 0=Common ... 5=Genesis
         uint8   level;
@@ -86,11 +86,11 @@ contract Shivamon is ERC721 {
         uint256 mintedAt;
     }
 
-    mapping(uint256 => ShivamonData) public shivamonData;
+    mapping(uint256 => Genesis ChroniclesData) public genesis-chroniclesData;
 
     ATC Token public atcToken;
 
-    constructor(address _atcToken) ERC721("Shivamon", "SHV") {
+    constructor(address _atcToken) ERC721("Genesis Chronicles", "SHV") {
         atcToken = ATC Token(_atcToken);
     }
 
@@ -107,7 +107,7 @@ contract Shivamon is ERC721 {
         bytes32 dna = keccak256(abi.encodePacked(to, newId, block.timestamp));
         uint256 d   = uint256(dna);
 
-        shivamonData[newId] = ShivamonData({
+        genesis-chroniclesData[newId] = Genesis ChroniclesData({
             element: element, rarity: rarity, level: 1, generation: 1,
             hp:      uint32(50 + (d & 0xFF) % 100),
             attack:  uint32(40 + ((d >> 8) & 0xFF) % 80),
@@ -128,7 +128,7 @@ contract Shivamon is ERC721 {
 
 - [ ] `blockchain/contracts/solidity/` Verzeichnis anlegen
 - [ ] `ATC Token.sol` schreiben + Tests
-- [ ] `Shivamon.sol` schreiben + Tests
+- [ ] `Genesis Chronicles.sol` schreiben + Tests
 - [ ] `ATCGovernance.sol` schreiben + Tests
 - [ ] Hardhat-Projekt einrichten (`hardhat.config.js`)
 - [ ] Deployment-Script für Testnet
@@ -142,6 +142,6 @@ contract Shivamon is ERC721 {
 
 - [ ] Alle Contracts deployen auf Sepolia Testnet
 - [ ] ATC Token: Transfer, Mint, Burn, Halving korrekt
-- [ ] Shivamon: Mint, Transfer, DNA korrekt
+- [ ] Genesis Chronicles: Mint, Transfer, DNA korrekt
 - [ ] ABI im Backend integriert
 - [ ] Test Coverage > 90%

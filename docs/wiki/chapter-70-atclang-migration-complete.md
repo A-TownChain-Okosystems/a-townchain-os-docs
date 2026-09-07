@@ -49,7 +49,7 @@ Die ATCLang-Migration ist abgeschlossen. Alle 0 Python-Stubs in der Produktion. 
 - base_contract (68L), atcoin (175L), bridge_contract (171L)
 - keygen (74L), ecdsa (59L), atc8300_token (177L)
 - smart_contract_registry (87L), smart_contracts (485L)
-- marketplace_contract (235L), shivamon_contract (289L)
+- marketplace_contract (235L), genesis_chronicles_contract (289L)
 
 ### Sprint 2.6 — Governance (6 .atc)
 - dao_live (234L), treasury (219L), timelock (149L)

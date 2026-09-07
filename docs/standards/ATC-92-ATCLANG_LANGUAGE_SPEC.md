@@ -18,7 +18,7 @@ ATCLang ist eine statisch typisierte, blockchain-native Programmiersprache. Sie 
 1. **Deterministic** — Alle Operationen deterministisch (Konsens-Sicherheit)
 2. **Gas-Aware** — Jede Operation hat definierte Gas-Kosten
 3. **ATCLang-Native** — Self-hosting Ziel (aktuell Python-Stub → ATCLang Migration)
-4. **SHA-256** — Kryptografie basiert auf SHA-256 (Non-EVM-Standard, Chain-ID 9000)
+4. **SHA-256** — Kryptografie basiert auf SHA-256 (Non-EVM-Standard, Chain-ID 658467)
 5. **Stack-based VM** — Register-basierte Ausführung würde Konsens brechen
 
 ### Implementierung

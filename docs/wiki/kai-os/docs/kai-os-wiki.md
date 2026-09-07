@@ -69,7 +69,7 @@
     - 26.7 Payment Channels (Mikrozahlungen)
     - 26.8 MEV-Schutz
 27. [Gamification Layer — L12](#27-gamification-layer)
-    - 27.1 Shivamon NFT-System
+    - 27.1 Genesis Chronicles NFT-System
     - 27.2 Quest-Engine
     - 27.3 Achievement-System
     - 27.4 Soul-Bound Tokens
@@ -1716,7 +1716,7 @@ class ATC Token:
 | Datei | Standard | Beschreibung |
 |-------|---------|-------------|
 | `ATC Token.sol` | ATC-8300 | ERC-20 Token mit PoH/PoW/PoS-Hooks |
-| `Shivamon.sol` | ATC-9000 | NFT-Kollektible, Battle, Breeding |
+| `Genesis Chronicles.sol` | ATC-9000 | NFT-Kollektible, Battle, Breeding |
 | `ATCGovernance.sol` | ATC-9900 | DAO-Governance, Proposals, Voting |
 | `ATCMarketplace.sol` | ATC-9500 | NFT-Marktplatz, Escrow, Royalties |
 | `ATCBridge.sol` | ATC-8800 | Cross-Chain Bridge, Multi-Sig, Lock/Release |
@@ -3532,11 +3532,11 @@ class DAOGovernance:
 - `blockchain/bridge/solana_bridge.py` — `SolanaBridge` (SPL-Token, Wormhole, Lock-and-Mint)
 - `blockchain/dex/amm.py` — `ATCAMM` DEX (x*y=k Constant-Product, LP-Token, 0.3% Fee)
 - `blockchain/governance/dao_live.py` — `DAOGovernance` Live (FFT+ATC Voting, Quorum 10%, Timelock 48h)
-- `blockchain/mainnet/mainnet_config.py` — `MainnetLaunchManager` (Chain-ID 9000, Genesis Block)
+- `blockchain/mainnet/mainnet_config.py` — `MainnetLaunchManager` (Chain-ID 658467, Genesis Block)
 - `blockchain/consensus/gas_fee.py` — `GasFeeEngine` (EIP-1559: Base Fee + Priority Fee, Burn 50%)
 - `blockchain/consensus/fork_resolution.py` — `ForkResolver` (Longest-Chain + PoH-Score)
 - `blockchain/nodes/initial_sync.py` — `InitialSyncer` (Neue Nodes bootstrappen)
-- `blockchain/contracts/shivamon/breeding.py` — `BreedingEngine` (DNA-Vererbung, Element-Fusion, Gen 2)
+- `blockchain/contracts/genesis-chronicles/breeding.py` — `BreedingEngine` (DNA-Vererbung, Element-Fusion, Gen 2)
 - `blockchain/atcoin/atcoin.py` — `ATCoin` (dezimale Präzision, ERC-20 kompatibel)
 - `mobile/wallet_api.py` — `MobileWalletManager` (React Native, BIP39, QR, Biometrie)
 - `shivaos/kernel/syscalls.py` — `ShivaOSSyscallTable` (20 Syscalls: Prozess, ATCFS, Chain, KI)
@@ -5307,13 +5307,13 @@ aa47cbe91c  2026-06-10  enterprise: .github/workflows/ci-cd.yml — CI/CD Pipeli
 d34225f09a  2026-06-10  fix(#39): DAO Governance Live — FFT+ATC Voting, Quorum 10%, Timelock
 2a8a4a1635  2026-06-10  fix(#38): Mobile Wallet — React Native, BIP39, QR, Biometric
 9cedd4d067  2026-06-10  fix(#37): DEX/AMM — x*y=k, Swap-Router, Liquidity Pools, LP-Token
-7f692c3b60  2026-06-10  fix(#36): Mainnet Launch Config — Chain-ID 9000, Genesis, Validators
+7f692c3b60  2026-06-10  fix(#36): Mainnet Launch Config — Chain-ID 658467, Genesis, Validators
 a9c89565a8  2026-06-10  fix(#35): ATCLang v0.3.0 — async/await, Generics, Closures, Modules
 9277390dd5  2026-06-10  fix(#34): Solana Bridge v3.0.0 — SPL-Token, Wormhole, Lock-and-Mint
 542f6a1255  2026-06-10  fix(#39): DAO Governance (alt) — On-Chain Proposals, Quorum
 10b198634   2026-06-10  fix(#38): Mobile Wallet (alt) — BIP39, QR-Code, Biometric
 75f34d4d9f  2026-06-10  fix(#37): DEX/AMM (alt) — Constant-Product x*y=k
-9fd3e848fb  2026-06-10  fix(#36): Mainnet Launch (alt) — Chain-ID 9000, Genesis Block
+9fd3e848fb  2026-06-10  fix(#36): Mainnet Launch (alt) — Chain-ID 658467, Genesis Block
 0f23c10ea3  2026-06-10  test(atclang): ATCLang v0.3.0 — 7 Tests (Closures, Generics, Module)
 c87163ccb4  2026-06-10  fix(#35): ATCLang v0.3.0 (alt) — async/await, Generics
 dbade664f9  2026-06-10  test(bridge): Solana Bridge — 4 Tests (Full Flow, Replay, Daily-Limit)
@@ -5326,7 +5326,7 @@ e03c437404  2026-06-10  fix(#30): atcpkg Registry API — list, info, install, s
 26e694c87e  2026-06-10  fix(#7): Build System — Docker, Linux AppImage, Windows EXE, .deb
 4f3fcab5ff  2026-06-10  fix(#13): ATC Marketplace — Festpreis+Auktion, 2.5% Fee, 5% Royalty
 d0b9ba9525  2026-06-10  fix(#10): Cross-Chain Bridge — Lock-and-Mint, ATC↔ETH/POLYGON/BSC
-37cad2a2a8  2026-06-10  fix(#11): Shivamon Breeding Engine — DNA-Vererbung, Element-Fusion
+37cad2a2a8  2026-06-10  fix(#11): Genesis Chronicles Breeding Engine — DNA-Vererbung, Element-Fusion
 636aa98c6d  2026-06-10  fix(#32): ShivaOS Syscall-Tabelle — 20 Syscalls
 f0b9ce290b  2026-06-10  fix(#33): Gas-Fee Engine — EIP-1559, Base Fee, Priority Fee, 50% Burn
 64515fb8b8  2026-06-10  fix(#26): Integration Tests ATCFS + MultiSig + ATCLang + Gateway (9T)
@@ -7617,7 +7617,7 @@ enum LeaderboardCategory {
 |---|---|---|---|---|
 | **Konsensus** | PoH→PoW→PoS ⭐⭐ | GRANDPA/BABE ⭐⭐⭐ | **Wiki** | Sprint 2.1 |
 | **Token-Standard** | ATC-8300 (vollständig) ⭐⭐⭐ | $KAI-Pallet ⭐⭐⭐ | **MERGE** | Sprint 2.5 |
-| **Shivamon/Gamifi** | DNA+Battle+Rarity ⭐⭐⭐ | SoulBound+KI-Quest ⭐⭐⭐ | **MERGE** ⭐ | Sprint 3.7 |
+| **Genesis Chronicles/Gamifi** | DNA+Battle+Rarity ⭐⭐⭐ | SoulBound+KI-Quest ⭐⭐⭐ | **MERGE** ⭐ | Sprint 3.7 |
 | **Wallet/Crypto** | secp256k1+BIP-39 ⭐⭐ | Ed25519+SR25519+PQ ⭐⭐⭐ | **Wiki** | K-Sec 1 |
 | **Kernel/Core** | EventBus+ModuleLoader ⭐⭐ | Rust Micro-Kernel ⭐⭐⭐ | **Wiki** | Sprint 2.3 |
 | **P2P-Netzwerk** | TCP+Handshake+Filter ⭐⭐⭐ | libp2p GossipSub ⭐⭐⭐ | **Wiki** | Sprint 2.2 |
@@ -7673,9 +7673,9 @@ pub struct KaiToken {
 }
 ```
 
-### 28.2.3 Shivamon ↔ L12 — Stärkster Merge ⭐
+### 28.2.3 Genesis Chronicles ↔ L12 — Stärkster Merge ⭐
 
-Das Shivamon-System ist das wertvollste Asset im Repo — es enthält fertige Spielmechanik-Logik, die die Wiki noch nicht hat. Ziel: `ShivamonNFT.ink` = bestes aus beiden Welten.
+Das Genesis-Chronicles-System ist das wertvollste Asset im Repo — es enthält fertige Spielmechanik-Logik, die die Wiki noch nicht hat. Ziel: `Genesis ChroniclesNFT.ink` = bestes aus beiden Welten.
 
 **Was bleibt vom Repo:**
 ```python
@@ -7699,12 +7699,12 @@ Das Shivamon-System ist das wertvollste Asset im Repo — es enthält fertige Sp
 - On-Chain Quest-System (L12/quests)
 ```
 
-**Merge-Ergebnis — ShivamonNFT.ink (vollständig):**
+**Merge-Ergebnis — Genesis ChroniclesNFT.ink (vollständig):**
 ```rust
 #![cfg_attr(not(feature = "std"), no_std, no_main)]
 
 #[ink::contract]
-mod shivamon_nft {
+mod genesis-chronicles_nft {
     use ink::storage::Mapping;
     use ink::prelude::{string::String, vec::Vec};
 
@@ -7730,7 +7730,7 @@ mod shivamon_nft {
     // ── Stats (aus Repo) ───────────────────────────────
     #[derive(Debug, Clone)]
     #[ink::scale_derive(Encode, Decode, TypeInfo)]
-    pub struct ShivamonStats {
+    pub struct Genesis ChroniclesStats {
         pub hp:      u32,
         pub attack:  u32,
         pub defense: u32,
@@ -7741,13 +7741,13 @@ mod shivamon_nft {
     // ── NFT-Datensatz (Merge) ──────────────────────────
     #[derive(Debug)]
     #[ink::scale_derive(Encode, Decode, TypeInfo)]
-    pub struct ShivamonData {
+    pub struct Genesis ChroniclesData {
         pub name:        String,
         pub element:     Element,
         pub rarity:      Rarity,
         pub owner:       AccountId,
         pub dna_hash:    [u8; 32],   // BLAKE2b (L0/S1) statt SHA-256
-        pub stats:       ShivamonStats,
+        pub stats:       Genesis ChroniclesStats,
         pub level:       u32,
         pub xp:          u32,
         pub wins:        u32,
@@ -7760,8 +7760,8 @@ mod shivamon_nft {
     }
 
     #[ink(storage)]
-    pub struct ShivamonNFT {
-        tokens:       Mapping<u32, ShivamonData>,
+    pub struct Genesis ChroniclesNFT {
+        tokens:       Mapping<u32, Genesis ChroniclesData>,
         owner_tokens: Mapping<AccountId, Vec<u32>>,
         total_supply: u32,
         // Wiki: Soul-Bound Guard
@@ -7782,7 +7782,7 @@ mod shivamon_nft {
         InsufficientXP,         // Repo: Level-Up braucht XP-Minimum
     }
 
-    impl ShivamonNFT {
+    impl Genesis ChroniclesNFT {
         #[ink(constructor)]
         pub fn new() -> Self {
             Self {
@@ -7795,7 +7795,7 @@ mod shivamon_nft {
             }
         }
 
-        /// Shivamon minten — prüft Soul-Bound bei Genesis
+        /// Genesis Chronicles minten — prüft Soul-Bound bei Genesis
         #[ink(message)]
         pub fn mint(
             &mut self,
@@ -7818,7 +7818,7 @@ mod shivamon_nft {
             let stats    = self.derive_stats(&dna_hash, &rarity, generation);
             let soul_bound = rarity == Rarity::Genesis;
             let token_id = self.total_supply + 1;
-            let data = ShivamonData {
+            let data = Genesis ChroniclesData {
                 name, element, rarity, owner: caller, dna_hash, stats,
                 level: 1, xp: 0, wins: 0, losses: 0, generation,
                 minted_at: self.env().block_timestamp(),
@@ -7874,7 +7874,7 @@ mod shivamon_nft {
 
         /// Stats deterministisch aus DNA (Repo-Logik, Rust-Port)
         fn derive_stats(&self, dna: &[u8; 32],
-                        rarity: &Rarity, gen: u32) -> ShivamonStats {
+                        rarity: &Rarity, gen: u32) -> Genesis ChroniclesStats {
             let mult = match rarity {
                 Rarity::Common    => 100u32,
                 Rarity::Uncommon  => 120,
@@ -7884,7 +7884,7 @@ mod shivamon_nft {
                 Rarity::Genesis   => 500,
             };
             let base = 50 + gen * 5;
-            ShivamonStats {
+            Genesis ChroniclesStats {
                 hp:      base * mult / 100 + dna[0] as u32,
                 attack:  base * mult / 100 + dna[1] as u32,
                 defense: base * mult / 100 + dna[2] as u32,
@@ -7945,7 +7945,7 @@ LayerRegistry.ink (L10)    — dApps, L10-Contracts, allgemeine Contracts
 | **Sprint 2.2** | P2P libp2p | Message-Typen + Duplikat-Filter | GossipSub Topics |
 | **Sprint 2.3** | L2 Micro-Kernel | EventBus+ModuleLoader Konzept | Rust IPC+EDF |
 | **Sprint 2.5** | Ink!-Contracts | ATC-8300 (Allowances+Snapshot) | $KAI-Pallet+DeFiRegistry |
-| **Sprint 3.7** | Shivamon→L12 | DNA+Rarity+Battle (Python→Rust) | ShivamonNFT.ink (Merge) |
+| **Sprint 3.7** | Genesis Chronicles→L12 | DNA+Rarity+Battle (Python→Rust) | Genesis ChroniclesNFT.ink (Merge) |
 
 ## 28.4 Was aus dem Repo dauerhaft erhalten bleibt
 
@@ -7955,7 +7955,7 @@ Diese Python-Implementierungen bleiben als **Referenz-Code** im Repository — s
 |---|---|---|
 | `blockchain/consensus/hybrid_consensus.py` | `legacy/consensus_ref.py` | PoH-Logik-Referenz |
 | `blockchain/contracts/atc8300/` | `legacy/token_ref.py` | Snapshot-Feature-Spec |
-| `blockchain/contracts/shivamon/` | `legacy/shivamon_ref.py` | DNA+Battle-Algorithmen |
+| `blockchain/contracts/genesis-chronicles/` | `legacy/genesis-chronicles_ref.py` | DNA+Battle-Algorithmen |
 | `blockchain/wallet/ecdsa.py` | `legacy/ecdsa_ref.py` | Signatur-Test-Vektoren |
 | `blockchain/wallet/keygen.py` | `legacy/keygen_ref.py` | BIP-39-Referenz |
 | `core/event_bus.py` | `legacy/eventbus_ref.py` | IPC-Konzept-Referenz |
@@ -7965,7 +7965,7 @@ Diese Python-Implementierungen bleiben als **Referenz-Code** im Repository — s
 
 > 🔗 **Security Layer S5** (Kapitel 25.7): Der Deploy-Log aus dem Repo-SmartContractRegistry wird als On-Chain-Audit-Trail in DeFiRegistry.ink und LayerRegistry.ink integriert.
 
-> 🔗 **L12 Gamification** (Kapitel 27): Das Shivamon-Merge-Ergebnis (ShivamonNFT.ink) ist der primäre L12-NFT-Contract — er ersetzt und erweitert beide Ausgangsdokumente.
+> 🔗 **L12 Gamification** (Kapitel 27): Das Genesis-Chronicles-Merge-Ergebnis (Genesis ChroniclesNFT.ink) ist der primäre L12-NFT-Contract — er ersetzt und erweitert beide Ausgangsdokumente.
 
 
 
@@ -8089,7 +8089,7 @@ MERGE: Conviction-Faktor aus Repo → als Custom-Pallet-Parameter in L8
 | **Sprint 3.1** | L3 KI | FederatedLearning + ZKP | L3 Federated Subsystem |
 | **Sprint 3.3** | L11 DeFi | ResourceMarket (Compute-Auction) | L11 Compute-Marketplace |
 | **Sprint 3.5** | L11 DeFi | PaymentChannel | L11 Payment Channels |
-| **Sprint 3.7** | L12 Shivamon | shivamon_contract.py (DNA+Battle) | ShivamonNFT.ink |
+| **Sprint 3.7** | L12 Genesis Chronicles | genesis_chronicles_contract.py (DNA+Battle) | Genesis ChroniclesNFT.ink |
 
 
 
@@ -8192,7 +8192,7 @@ MERGE: Conviction-Faktor aus Repo → als Custom-Pallet-Parameter in L8
 | 4.03 | Aktive Entwickler (letzten 30 Tage) | ≥ 500 Devs | — | DevRel | — |
 | 4.04 | dApps auf Testnet deployed | ≥ 20 dApps | — | Ecosystem | Kap. 5 |
 | 4.05 | TVL (Total Value Locked, Testnet) | > $1 Mio (simuliert) | — | L11-Team | Kap. 26 |
-| 4.06 | Shivamon-NFTs geminted (Testnet) | ≥ 1.000 NFTs | — | L12-Team | Kap. 27 |
+| 4.06 | Genesis-Chronicles-NFTs geminted (Testnet) | ≥ 1.000 NFTs | — | L12-Team | Kap. 27 |
 | 4.07 | Agent-Registry befüllt (Testnet) | ≥ 100 Agents | — | L9-Team | Kap. 24 |
 | 4.08 | Governance-Proposal erfolgreich durchlaufen | ≥ 3 Proposals | — | L8-Team | Kap. 19 |
 | 4.09 | Exchange-Listing gesichert (mind. 1 DEX) | ≥ 1 DEX | — | Business | — |
@@ -8291,7 +8291,7 @@ FINAL GO/NO-GO CHECKLIST:
 | `v1.0.1` | Okt 2027 | Hotfixes, erste Community-Patches |
 | `v1.1.0` | Jan 2028 | SR25519-Batch-Verifikation, Performance-Tuning L2 |
 | `v1.2.0` | Apr 2028 | Kyber-1024 in P2P (Post-Quantum produktiv) |
-| `v1.3.0` | Jul 2028 | L12 Gamification vollständig (Shivamon PvP-Turniere) |
+| `v1.3.0` | Jul 2028 | L12 Gamification vollständig (Genesis Chronicles PvP-Turniere) |
 | `v1.0.0` | 2029 | L13+ Erweiterungen, Cross-Chain-Bridges |
 
 
@@ -8837,7 +8837,7 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | `ea5175ea` | 2026-06-10 | test(solidity): ATC Token.test.js — 22 Tests |
 | `8a3574e8` | 2026-06-10 | feat(core): ATCFS, Gateway, MultiSig hinzugefügt |
 | `25ed5c31` | 2026-06-10 | test(solidity): 4 neue Test-Suites — 70 Tests |
-| `0d6af139` | 2026-06-10 | feat(solidity): 5 Contracts — Shivamon, Governance, Marketplace, Bridge, Genesis |
+| `0d6af139` | 2026-06-10 | feat(solidity): 5 Contracts — Genesis Chronicles, Governance, Marketplace, Bridge, Genesis |
 | `026bed2b` | 2026-06-10 | docs(wiki): Wiki-Audit — Code-Abgleich, 25/25 Checks OK |
 
 ---
@@ -8850,7 +8850,7 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 |---|-------|-------|-----------|---------|
 | [#1](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/1) | 🔗 Smart Contract Implementation — ATC Token Standards | L3 | 🔴 High | Kap. 11, 33 |
 | [#2](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/2) | 🤖 Gemini AI Integration — Live AI-Chat im Dashboard | L9 KI | 🔴 High | Kap. 3, 44 |
-| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Shivamon Battle UI — Animierte Kämpfe im Browser | L12 Game | 🔴 High | Kap. 27, 32 |
+| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Genesis Chronicles Battle UI — Animierte Kämpfe im Browser | L12 Game | 🔴 High | Kap. 27, 32 |
 | [#4](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/4) | 💾 NFT Persistenz — SQLite statt In-Memory Storage | L7 Backend | 🔴 High | Kap. 49 |
 | [#5](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/5) | 🌐 ATC Blockchain Explorer — Block & TX Browser | L3 Chain | 🟡 Medium | Kap. 4, 8 |
 | [#6](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/6) | 🔐 ECDSA Signatur — Sichere TX-Autorisierung | L4 Security | 🔴 High | Kap. 25, 38 |
@@ -8870,9 +8870,9 @@ Docusaurus-Setup (einmalig, lokal ausführen):
 | [#7](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/7) | 📦 Build System — EXE / AppImage Installer | L1 OS | 🟡 Medium | Kap. 15 | Sprint 3.1 |
 | [#8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) | 🌐 Multi-Node Testnet — P2P Netzwerk live schalten | L5 Net | 🔴 High | Kap. 49 | Sprint 2.2 |
 | [#10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10) | 🌉 Cross-Chain Bridge — ATC ↔ EVM Interoperabilität | L3 Chain | 🟢 Low | Kap. 39 | Sprint 2.3 |
-| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Shivamon Breeding — Gen 2 NFT Züchtung | L12 Game | 🟡 Medium | Kap. 32 | Sprint 2.8 |
+| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Genesis Chronicles Breeding — Gen 2 NFT Züchtung | L12 Game | 🟡 Medium | Kap. 32 | Sprint 2.8 |
 | [#12](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/12) | ⛓ Solidity Smart Contracts — On-Chain ATC Token | L3 Chain | 🟡 Medium | Kap. 11, 33 | Sprint 2.3 |
-| [#13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13) | 🛒 ATC Marketplace — Shivamon kaufen & verkaufen | L11 DeFi | 🟡 Medium | Kap. 26, 48 | Sprint 2.5 |
+| [#13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13) | 🛒 ATC Marketplace — Genesis Chronicles kaufen & verkaufen | L11 DeFi | 🟡 Medium | Kap. 26, 48 | Sprint 2.5 |
 | [#18](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/18) | 🐳 [Testnet] Docker Compose — 5-Node lokales Netzwerk | DevOps | 🟡 Medium | Kap. 49 | Sprint 2.2 |
 | [#19](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/19) | 📊 [Testnet] Node-Monitoring Dashboard | L7 Frontend | 🟡 Medium | Kap. 49 | Sprint 2.2 |
 | [#23](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/23) | 🗂️ ATCFS — Integration in Kernel & ShivaOS | L6 Storage | 🟡 Medium | Kap. 45 | Sprint 2.6 |
@@ -8948,22 +8948,22 @@ Fortschrittsbalken:
 
 ---
 
-# 32. Shivamon — Vollständige NFT-Spezifikation
+# 32. Genesis Chronicles — Vollständige NFT-Spezifikation
 
 > 🎫 **Verknüpfte Issues:** [🥚 #11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11)
 
 ## 32.0 Python-Implementierung
 
-> **Datei:** `blockchain/contracts/shivamon/shivamon_contract.py`
+> **Datei:** `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py`
 
 ```python
-class ShivamonContract:
-    """Shivamon NFT-Contract — ATC-9000 Standard."""
+class Genesis ChroniclesContract:
+    """Genesis Chronicles NFT-Contract — ATC-9000 Standard."""
     MAX_SUPPLY = 9900   # ATC-9900 kompatibel
 
     def mint(self, owner: str, element: str = None,
              rarity: str = None, name: str = None) -> dict:
-        """Shivamon minten, DNA & Stats generieren."""
+        """Genesis Chronicles minten, DNA & Stats generieren."""
 
     def battle(self, attacker_id: str,
                defender_id: str) -> dict:
@@ -8971,7 +8971,7 @@ class ShivamonContract:
 
     def breed(self, parent1_id: str, parent2_id: str,
               owner: str) -> dict:
-        """Gen-2 Shivamon züchten (BREED_COOLDOWN = 48h)."""
+        """Gen-2 Genesis Chronicles züchten (BREED_COOLDOWN = 48h)."""
 
     def transfer(self, token_id: str,
                  from_addr: str, to_addr: str) -> dict: ...
@@ -8981,11 +8981,11 @@ class ShivamonContract:
 ```
 
 > **Layer:** L12 — Gamification | **Standard:** ATC-9000 | **Status:** ✅ Deployed
-> **Dateien:** `modules/shivamon/` · `blockchain/contracts/shivamon/shivamon_contract.py`
+> **Dateien:** `modules/genesis-chronicles/` · `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py`
 
 ## 32.1 Überblick
 
-Shivamon ist das native NFT-Battle-RPG des A-TownChain Ökosystems.
+Genesis Chronicles ist das native NFT-Battle-RPG des A-TownChain Ökosystems.
 
 | Eigenschaft | Wert |
 |-------------|------|
@@ -8998,7 +8998,7 @@ Shivamon ist das native NFT-Battle-RPG des A-TownChain Ökosystems.
 
 ## 32.2 DNA-System
 
-Jedes Shivamon erhält beim Mint einen einzigartigen DNA-Hash:
+Jedes Genesis Chronicles erhält beim Mint einen einzigartigen DNA-Hash:
 
 ```python
 import hashlib, time, random
@@ -9065,9 +9065,9 @@ Quantum     1.0x  0.5x   1.0x  2.0x  0.5x  0.5x    —
 ## 32.6 Battle-Engine
 
 ```python
-# modules/shivamon/engine/battle_engine.py
+# modules/genesis-chronicles/engine/battle_engine.py
 
-# Konzept-Klasse (vollständig implementiert in Shivamon.sol + blockchain/contracts/shivamon/shivamon_contract.py)
+# Konzept-Klasse (vollständig implementiert in Genesis Chronicles.sol + blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py)
 class BattleEngine:
     """Turn-based Battle mit Typ-Schwächen und VRF-RNG."""
 
@@ -9138,30 +9138,30 @@ def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
                      stats_override=stats)
 ```
 
-## 32.8 API-Endpunkte (Shivamon)
+## 32.8 API-Endpunkte (Genesis Chronicles)
 
 | Methode | Pfad | Beschreibung |
 |---------|------|-------------|
-| `POST` | `/api/game/shivamon/mint` | Neues Shivamon minten |
-| `GET` | `/api/game/shivamon/{id}` | Token-Details |
-| `POST` | `/api/game/shivamon/battle` | Battle starten |
-| `POST` | `/api/game/shivamon/breed` | Breeding (Gen 2) |
-| `GET` | `/api/game/shivamon/owner/{address}` | Alle Token eines Wallets |
-| `GET` | `/api/game/shivamon/stats` | Gesamt-Statistiken |
+| `POST` | `/api/game/genesis-chronicles/mint` | Neues Genesis Chronicles minten |
+| `GET` | `/api/game/genesis-chronicles/{id}` | Token-Details |
+| `POST` | `/api/game/genesis-chronicles/battle` | Battle starten |
+| `POST` | `/api/game/genesis-chronicles/breed` | Breeding (Gen 2) |
+| `GET` | `/api/game/genesis-chronicles/owner/{address}` | Alle Token eines Wallets |
+| `GET` | `/api/game/genesis-chronicles/stats` | Gesamt-Statistiken |
 
 ---
 
 ## 32.10 BreedingEngine — Gen 2 Züchtung
 
-> **Datei:** `blockchain/contracts/shivamon/breeding.py` · Fixes: #11
+> **Datei:** `blockchain/contracts/genesis-chronicles/breeding.py` · Fixes: #11
 
 ```python
 class ElementType(Enum):
     FIRE = "fire"; WATER = "water"; EARTH = "earth"
     AIR  = "air";  DARK  = "dark";  LIGHT = "light"; QUANTUM = "quantum"
 
-class ShivamonDNA:
-    """Genetischer Code eines Shivamon (unveränderlich nach Mint)."""
+class Genesis ChroniclesDNA:
+    """Genetischer Code eines Genesis Chronicles (unveränderlich nach Mint)."""
     element:  str      # ElementType
     rarity:   str      # COMMON|RARE|EPIC|LEGENDARY
     hp_base:  int      # 50–150
@@ -9175,13 +9175,13 @@ class ShivamonDNA:
 
     @classmethod
     def generate(cls, seed: str, element: ElementType,
-                 gen: int = 1) -> 'ShivamonDNA': ...
+                 gen: int = 1) -> 'Genesis ChroniclesDNA': ...
 
-class ShivamonBreedingEngine:
+class Genesis ChroniclesBreedingEngine:
     BREED_COOLDOWN = 48 * 3600  # 48 Stunden (ATC-9000)
     MAX_GEN        = 10          # Max. Generationstiefe
 
-    def register(self, shivamon_id: str, dna: ShivamonDNA): ...
+    def register(self, genesis-chronicles_id: str, dna: Genesis ChroniclesDNA): ...
 
     def breed(self, parent1_id: str, parent2_id: str,
               owner: str) -> dict:
@@ -9190,7 +9190,7 @@ class ShivamonBreedingEngine:
         Stats: Durchschnitt beider Eltern ± 10% Mutation.
         Rarity: Vererbt vom selteneren Elternteil."""
 
-    def can_breed(self, shivamon_id: str) -> dict: ...
+    def can_breed(self, genesis-chronicles_id: str) -> dict: ...
 ```
 
 
@@ -9209,7 +9209,7 @@ class ShivamonBreedingEngine:
 │  Max Supply:      21.000.000 ATC                     │
 │  Initial Supply:   1.000.000 ATC (Genesis-Mint)      │
 │  Decimals:        8                                  │
-│  Chain ID:        9000                               │
+│  Chain ID:        658467                               │
 ├─────────────────────────────────────────────────────┤
 │  MINING:                                             │
 │  Initial Reward:  50 ATC/Block                       │
@@ -9246,7 +9246,7 @@ TOKEN-FLOW ÜBERSICHT:
 User A ──TX-Fee: 0.001 ATC──→ Validator Pool
       ──Transfer Amount──→ User B
 
-Shivamon Mint:
+Genesis Chronicles Mint:
   User ──0.1 ATC Mint-Fee──→ Treasury
   Minter erhält: neues NFT
 
@@ -9487,8 +9487,8 @@ class APIOrchestrator:
 ReAct (Reason → Act → Observe) je Agenten-Task:
 
 ITERATION 1:
-  Reason:   "Ich soll Shivamon-Statistiken analysieren."
-  Act:      GET /api/game/shivamon/stats
+  Reason:   "Ich soll Genesis-Chronicles-Statistiken analysieren."
+  Act:      GET /api/game/genesis-chronicles/stats
   Observe:  {"total_minted": 42, "top_element": "Neon"}
 
 ITERATION 2:
@@ -10251,7 +10251,7 @@ frontend/bootscreen/         — Ladebildschirm-Animation
 const PANELS = {
   "dashboard":   { icon: "📊", title: "Dashboard",   api: "/api/status" },
   "blockchain":  { icon: "⛓",  title: "Blockchain",  api: "/api/blockchain/info" },
-  "shivamon":    { icon: "🎮", title: "Shivamon",    api: "/api/game/shivamon/stats" },
+  "genesis-chronicles":    { icon: "🎮", title: "Genesis Chronicles",    api: "/api/game/genesis-chronicles/stats" },
   "marketplace": { icon: "🛒", title: "Marketplace", api: "/api/marketplace/listings" },
   "governance":  { icon: "🏛", title: "Governance",  api: "/api/governance/proposals" },
   "wallet":      { icon: "💰", title: "Wallet",      api: "/api/wallet/balance" },
@@ -10297,9 +10297,9 @@ async function apiCall(endpoint, method="GET", body=null) {
   return data;
 }
 
-// Shivamon minten
+// Genesis Chronicles minten
 const mint = (owner, element) =>
-  apiCall("/api/game/shivamon/mint", "POST", { owner, element });
+  apiCall("/api/game/genesis-chronicles/mint", "POST", { owner, element });
 
 // Governance abstimmen
 const vote = (voter, proposal_id, option) =>
@@ -10467,19 +10467,19 @@ PERMISSIONS = [
 
 ```bash
 # Modul installieren
-atcpkg install shivamon@1.0.0
+atcpkg install genesis-chronicles@1.0.0
 
 # Modul verifizieren (Hash-Check)
-atcpkg verify shivamon --hash a3f9b2c1...
+atcpkg verify genesis-chronicles --hash a3f9b2c1...
 
 # Modul ausführen
-atcpkg run shivamon mint --owner ATC7F3A... --element Fire
+atcpkg run genesis-chronicles mint --owner ATC7F3A... --element Fire
 
 # Alle installierten Module
 atcpkg list
 
 # Modul entfernen
-atcpkg remove shivamon
+atcpkg remove genesis-chronicles
 
 # Modul publizieren (benötigt Stake)
 atcpkg publish ./my-module/ --stake 100
@@ -10495,7 +10495,7 @@ modules/
 ├── atclang/      L1: Compiler + VM
 ├── atcnet/       L5: P2P Netzwerk
 ├── ui/           L10: Dashboard
-├── shivamon/     L12: NFT-Game
+├── genesis-chronicles/     L12: NFT-Game
 ├── franchise/    L8: Franchise DAO
 └── standards/    L0: Protokoll-Standards
 
@@ -11130,17 +11130,17 @@ open http://localhost:3001
 ```typescript
 // npm install @atcchain/sdk
 
-import { KAIClient, ShivamonContract, GovernanceContract } from "@atcchain/sdk";
+import { KAIClient, Genesis ChroniclesContract, GovernanceContract } from "@atcchain/sdk";
 
 const client = new KAIClient({
   rpcUrl:    "http://localhost:4000",
-  chainId:   9000,
+  chainId:   658467,
   privateKey: process.env.PRIVATE_KEY,
 });
 
-// Shivamon minten
-const shivamon = new ShivamonContract(client);
-const token    = await shivamon.mint({
+// Genesis Chronicles minten
+const genesis-chronicles = new Genesis ChroniclesContract(client);
+const token    = await genesis-chronicles.mint({
   element: "Neon",
   rarity:  "Rare",
 });
@@ -11158,10 +11158,10 @@ await gov.vote(proposals[0].id, 0); // Option 0 = "Ja"
 # pip install atcchain-sdk  (geplant, noch nicht veröffentlicht)
 # Direkte API-Nutzung: http://localhost:5000 (Backend) / http://localhost:4000 (Gateway)
 
-from atcchain import KAIClient, ShivamonContract, ATC Token
+from atcchain import KAIClient, Genesis ChroniclesContract, ATC Token
 
-client   = KAIClient(rpc_url="http://localhost:4000", chain_id=9000)
-shivamon = ShivamonContract(client)
+client   = KAIClient(rpc_url="http://localhost:4000", chain_id=658467)
+genesis-chronicles = Genesis ChroniclesContract(client)
 token    = ATC Token(client)
 
 # ATC-Balance abfragen
@@ -11169,7 +11169,7 @@ balance = token.balance_of("ATC7F3A...")
 print(f"Balance: {balance} ATC")
 
 # Battle starten
-result = shivamon.battle(
+result = genesis-chronicles.battle(
     attacker_id = "SHIV-0001",
     defender_id = "SHIV-0002",
 )
@@ -11197,7 +11197,7 @@ use atcchain_sdk::{KAIClient, ChainConfig};
 async fn main() {
     let client = KAIClient::new(ChainConfig {
         rpc_url:  "http://localhost:4000".into(),
-        chain_id: 9000,
+        chain_id: 658467,
     }).await.unwrap();
 
     let balance = client.get_balance("ATC7F3A...").await.unwrap();
@@ -11265,7 +11265,7 @@ async fn main() {
 |------|-------|-------|--------|
 | 🔴 | #8 | Multi-Node Testnet live | 2.5–2.8 |
 | 🟡 | #7 | Build System EXE/AppImage | 2.10 |
-| 🟡 | #11 | Shivamon Breeding Gen 2 | 2.5 |
+| 🟡 | #11 | Genesis Chronicles Breeding Gen 2 | 2.5 |
 | 🟡 | #12 | Solidity On-Chain Contracts | 2.9 |
 | 🟡 | #13 | ATC Marketplace | 2.3 ✅ |
 | 🟡 | #18 | Docker Compose Testnet | 2.8 |
@@ -11285,7 +11285,7 @@ async fn main() {
 | **ATC** | A-Town Coin — Haupt-Währung des Ökosystems (max. 21M) |
 | **ATC-001** | Genesis Token — symbolischer Ursprungs-Token (Menge: 1) |
 | **ATC-8300** | Fungible Token Standard (analog ERC-20) |
-| **ATC-9000** | NFT Standard (analog ERC-721) — Shivamon |
+| **ATC-9000** | NFT Standard (analog ERC-721) — Genesis Chronicles |
 | **ATC-9900** | Governance-Token / DAO-Standard |
 | **ATCFS** | A-TownChain File System — dezentrales Dateisystem (ATS-1002) |
 | **ATCLang** | Native Smart-Contract-Sprache des Ökosystems |
@@ -11293,11 +11293,11 @@ async fn main() {
 | **ATCVM** | Stack-basierte Virtual Machine für ATCLang-Bytecode |
 | **atcpkg** | Package-Manager für ATC-Module (ATS-1001) |
 | **Bootstrap Node** | Erster Einstiegspunkt ins P2P-Netzwerk (Issue #14) |
-| **Chain ID** | 9000 — eindeutige Identifikation der A-TownChain |
+| **Chain ID** | 658467 — eindeutige Identifikation der A-TownChain |
 | **CID** | Content Identifier — SHA-256-Hash einer ATCFS-Datei |
 | **DAO** | Decentralized Autonomous Organization — Governance-System |
 | **DID** | Decentralized Identifier — `did:kai:z6Mkh...` |
-| **DNA-Hash** | Einzigartiger genetischer Fingerabdruck eines Shivamon |
+| **DNA-Hash** | Einzigartiger genetischer Fingerabdruck eines Genesis Chronicles |
 | **ECDSA** | Elliptic Curve Digital Signature Algorithm (secp256k1) |
 | **FedAvg** | Federated Averaging — Aggregationsalgorithmus für FL |
 | **Gas** | Rechengebühr in ATC für Blockchain-Operationen |
@@ -11321,7 +11321,7 @@ async fn main() {
 | **ReAct** | Reason-Act-Observe Loop für KI-Agenten |
 | **Relayer** | Service, der Bridge-Events zwischen Chains überträgt |
 | **RPC** | Remote Procedure Call — Blockchain-API |
-| **Shivamon** | NFT-basiertes Battle-Wesen (ATC-9000, max. 9.900) |
+| **Genesis Chronicles** | NFT-basiertes Battle-Wesen (ATC-9000, max. 9.900) |
 | **ShivaOS** | Browser-basiertes OS-Dashboard (ATS-1007) |
 | **Slashing** | Strafe für Validator-Fehlverhalten (10% Stake-Verlust) |
 | **Snapshot** | Eingefrorene Token-Balances für Governance-Abstimmung |
@@ -11339,7 +11339,7 @@ async fn main() {
 | Komponente | Code | Tests | Doku | Issue |
 |-----------|------|-------|------|-------|
 | ATC-8300 Token | `blockchain/contracts/atc8300/` | `tests/test_smart_contracts.py` | `docs/contracts/ATC_TOKEN_STANDARD.md` | #1 |
-| Shivamon NFT | `modules/shivamon/` | `tests/test_smart_contracts.py` | `docs/contracts/SHIVAMON_NFT_CONTRACT.md` | #3, #11 |
+| Genesis Chronicles NFT | `modules/genesis-chronicles/` | `tests/test_smart_contracts.py` | `docs/contracts/GENESIS_CHRONICLES_NFT_CONTRACT.md` | #3, #11 |
 | Governance | `blockchain/contracts/governance/` | `tests/test_smart_contracts.py` | `docs/issues/ISSUE_09_GOVERNANCE.md` | #9 |
 | Marketplace | `modules/contracts/marketplace/` | `tests/test_smart_contracts.py` | `docs/issues/ISSUE_13_MARKETPLACE.md` | #13 |
 | Bridge | `modules/contracts/bridge/` | — | `docs/issues/ISSUE_10_BRIDGE.md` | #10 |

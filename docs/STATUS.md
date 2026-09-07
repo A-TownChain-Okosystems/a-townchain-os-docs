@@ -21,7 +21,7 @@
 
 | Status | Anzahl | Repos |
 |--------|--------|-------|
-| 🟢 AKTIV | 14 | a-townchain-os, atc-shivacore, atc-blockchain, atc-aistudio, atclang, atc-atclang, atc-contracts, atc-gateway, atc-backend, atcnet, atc-kernel, atc-shivamon, atc-franchise, atc-mobile |
+| 🟢 AKTIV | 14 | a-townchain-os, atc-shivacore, atc-blockchain, atc-aistudio, atclang, atc-atclang, atc-contracts, atc-gateway, atc-backend, atcnet, atc-kernel, genesis-chronicles, atc-franchise, atc-mobile |
 | 🟡 GERÜST | 12 | atc-atcpkg, atc-genesis-engine, atc-frontend, atc-ui, atc-standards, atc-whitepaper, atc-linux-edition, atc-windows-edition, ... |
 | ⚪ EMPTY | 8 | atc-bootloader, atc-ci, atc-cli, atc-dns, atc-drivers, atc-explorer, atc-ide, atc-sdk, atc-stdlib, atc-vm, atc-wallet, atc-shivacore-tools |
 | 🔵 WIKI | 36 | Alle Wiki-Repos |

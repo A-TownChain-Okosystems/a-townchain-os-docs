@@ -42,9 +42,9 @@ POST /api/ai/explain-contract    Contract erklären
 POST /api/ai/analyze-tx          TX analysieren
 ```
 
-### NFT / Shivamon
+### NFT / Genesis Chronicles
 ```
-POST /api/game/mint              Shivamon minten
+POST /api/game/mint              Genesis Chronicles minten
 GET  /api/game/tokens/:addr      Tokens nach Adresse
 POST /api/game/battle            Battle starten
 GET  /api/marketplace/listings   Aktive Listings

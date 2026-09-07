@@ -32,5 +32,5 @@ A-TownChain OS
 │   └── Signature-Verify    ECDSA
 │
 └── Frontend                 Neon Dashboard
-    └── index.html           Wallet, Explorer, Shivamon, AI
+    └── index.html           Wallet, Explorer, Genesis Chronicles, AI
 ```

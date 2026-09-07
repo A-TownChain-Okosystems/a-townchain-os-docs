@@ -30,7 +30,7 @@ Anzahl kleiner, fungibler Anteile (ATC-11-Token) zu zerlegen. Dies macht teure
 Assets fuer ein breiteres Publikum handelbar.
 
 **Aktueller Stand:** Nicht implementiert. Die Basis-Komponenten sind da:
-- ATC-12 NFTs (`shivamon_contract.py`) als fraktionierbare Assets
+- ATC-12 NFTs (`genesis_chronicles_contract.py`) als fraktionierbare Assets
 - ATC-11 Fungible Tokens (`atc8300_token.py`) als Anteils-Token
 - Marketplace (`marketplace_contract.py`) als Handelsplattform
 - **Geplant:** Vault-Smart-Contract fuer Fraktionierung
@@ -99,7 +99,7 @@ diese Token aus einem ATC-12-Asset entstehen und wie die Rueckabwicklung
 (Defraktionierung) funktioniert.
 
 ### 3.2 ATC-12 (Non-Fungible Assets)
-Das Original-Asset, das fraktioniert wird, ist ein ATC-12-NFT (z. B. Shivamon,
+Das Original-Asset, das fraktioniert wird, ist ein ATC-12-NFT (z. B. Genesis Chronicles,
 KI-Modell, digitales Grundstueck).
 
 ### 3.3 ATC-19 (AMM)
@@ -141,7 +141,7 @@ als Erweiterung geplant.
 | Issue | Titel | Status | Verbindung |
 |-------|-------|--------|------------|
 | #1 | Smart Contracts (Base) | Done | ATC-13 Vault-Contract Basis |
-| #11 | Shivamon Breeding | Done | ATC-13 fraktionierbare NFTs |
+| #11 | Genesis Chronicles Breeding | Done | ATC-13 fraktionierbare NFTs |
 | #13 | Marketplace | Done | ATC-13 Handel mit Fraktionen |
 | #34 | DEX/AMM | Done | ATC-13 Liquidity Provision |
 | Sprint 2.5 | Vault Contract | Geplant | ATC-13 Fraktionierung |

@@ -45,7 +45,7 @@
 | ATC-09 | Cross-Chain Interop Bridge | ✅ FINAL | bridge_contract.atc | ✅ Netzwerk/P2P-Pattern (siehe Abschnitt A) |
 | ATC-10 | Global Time Sync & Oracles | ✅ FINAL | atc-10_global_time_sync_oracles.atc | ✅ implementiert (Grundgeruest) Netzwerk/P2P-Pattern (siehe Abschnitt A) |
 | ATC-11 | Fungible Asset Standard | ✅ FINAL | atc8300_token.atc | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
-| ATC-12 | Non-Fungible & Holographic Asset | ✅ FINAL | shivamon_contract.atc | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
+| ATC-12 | Non-Fungible & Holographic Asset | ✅ FINAL | genesis_chronicles_contract.atc | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-13 | Fractional Asset Ownership | ✅ FINAL | atc-13_fractional_asset_ownership.atc | ✅ implementiert (Grundgeruest) Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-14 | Deterministic Smart Contract Exec | ✅ FINAL | smart_contracts.atc (485L) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-15 | Proof of AI Mining | ✅ FINAL | atc-15_proof_of_ai_mining.atc | ✅ implementiert (Grundgeruest) Smart-Contract-Pattern (siehe Abschnitt B) |
@@ -123,7 +123,7 @@
 | ATC-87 | Gas Fee (EIP-1559) | ✅ ACCEPTED | gas_fee.atc (129L v0.3) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-88 | AMM DEX | ✅ ACCEPTED | amm.atc (276L) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-89 | Fungible Token | ✅ ACCEPTED | atc8300_token.atc (177L), atcoin.atc (175L) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
-| ATC-90 | NFT / Shivamon | ✅ ACCEPTED | shivamon_contract.atc (289L), marketplace_contract.atc (235L) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
+| ATC-90 | NFT / Genesis Chronicles | ✅ ACCEPTED | genesis_chronicles_contract.atc (289L), marketplace_contract.atc (235L) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-91 | Cross-Chain Bridge | 📐 REVIEW | bridge_contract.atc (171L) | ✅ Smart-Contract-Pattern (siehe Abschnitt B) |
 | ATC-92 | ATCLang Language Spec | ✅ ACCEPTED | lexer.py (571L), parser.py (889L), ast_nodes.py (330L) | ✅ Compiler/VM-Pattern (siehe Abschnitt F) |
 | ATC-93 | ATCLang VM Bytecode | ✅ ACCEPTED | atcvm.py (977L), optimizer.py (557L) | ✅ Compiler/VM-Pattern (siehe Abschnitt F) |

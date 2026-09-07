@@ -1,9 +1,12 @@
 # 📋 Master-Komponenten-Plan — A-TownChain Ecosystem
 
+> **Stand 06.09.2026:** Die Komponenten-Zahlen beziehen sich auf die PRE-REBUILD-Landschaft (AD-020/AD-024). Aktuelle Struktur: 22 vertikale Repos; Implementierungen liegen im Vault (docs/archive/monorepo-full/) bis zu ihrem Rebuild.
+
+
 > **Aktualisiert:** 2026-08-09 | **Agent:** Aurora (Base44)
 > **Scope:** 127 Repositories | 62 Code + 65 Wiki (12 neue Code-Repos am 08.08. hinzugefügt)
 > **Total Components:** 954 (885 existing + 69 new)
-> **Mainnet Target:** September 15, 2026
+> **Mainnet Target:** Launch-Termin offen (AD-023)
 
 ---
 
@@ -75,7 +78,7 @@
 | Repo | Komponenten | Beschreibung |
 |------|:-----------:|-------------|
 | `atc-genesis-ecs` | 5 | Entity Component System, Scheduler |
-| `atc-genesis-creatures` | 5 | Spawner, DNA System, Shivamon Link |
+| `atc-genesis-creatures` | 5 | Spawner, DNA System, Genesis Chronicles Link |
 | `atc-genesis-world` | 6 | Terrain, Biome, Erosion, Vegetation |
 
 **Komponenten-Detail:**
@@ -92,7 +95,7 @@
 2. `dna_system.atc` — DNA System
 3. `creature_ai.atc` — Creature AI
 4. `ecosystem.atc` — Ecosystem Dynamics
-5. `shivamon_link.atc` — Shivamon Chain Link
+5. `genesis-chronicles_link.atc` — Genesis Chronicles Chain Link
 
 #### atc-genesis-world (6)
 1. `terrain_generator.atc` — Terrain Generator
@@ -164,7 +167,7 @@
 | `atc-atcpkg` | None | 6 | 6 | PLANNED |
 | `a-townchain-os-docs` | TypeScript | 0 | 522 | NO_PLAN |
 
-### Kernel / OS (8 Repos, 167 Komponenten)
+### Kernel / OS (vor Rebuild: 8 Repos, 167 Komponenten)
 
 | Repo | Sprache | Komponenten | Source Files | Status |
 |------|---------|-------------|-------------|--------|
@@ -177,7 +180,7 @@
 | `atc-linux-edition` | Rust | 5 | 6 | PLANNED |
 | `atc-windows-edition` | Rust | 5 | 6 | PLANNED |
 
-### Blockchain / Consensus (8 Repos, 119 Komponenten)
+### Blockchain / Consensus (vor Rebuild: 8 Repos, 119 Komponenten)
 
 | Repo | Sprache | Komponenten | Source Files | Status |
 |------|---------|-------------|-------------|--------|
@@ -239,7 +242,7 @@
 
 | Repo | Sprache | Komponenten | Source Files | Status |
 |------|---------|-------------|-------------|--------|
-| `atc-shivamon` | Python | 6 | 12 | PLANNED |
+| `genesis-chronicles` | Python | 6 | 12 | PLANNED |
 | `atc-game` | Rust | 6 | 7 | PLANNED |
 | `atc-genesis-world` | None | 6 | 6 | PLANNED |
 | `atc-genesis-ecs` | None | 5 | 5 | PLANNED |

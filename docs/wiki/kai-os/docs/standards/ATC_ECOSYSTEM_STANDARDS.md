@@ -78,7 +78,7 @@ class ATC8300Token:
 
 ---
 
-### ATC-9000 — NFT Standard (Shivamon)
+### ATC-9000 — NFT Standard (Genesis Chronicles)
 
 **Zweck:** Standard für nicht-fungible Token (vergleichbar mit ERC-721).
 
@@ -103,9 +103,9 @@ class ATC9000NFT:
 - `total_supply()` → int
 - `tokens_of_owner(address)` → list[int]
 
-**Shivamon-spezifische Attribute:**
+**Genesis-Chronicles-spezifische Attribute:**
 ```python
-SHIVAMON_ATTRIBUTES = {
+GENESIS_CHRONICLES_ATTRIBUTES = {
     "name": str,          # "Flamara", "Aquarix", etc.
     "element": str,       # "Fire", "Water", "Earth", "Air", "Lightning"
     "level": int,         # 1–100

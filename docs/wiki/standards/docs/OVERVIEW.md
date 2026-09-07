@@ -3,7 +3,7 @@
 ## ATC-Blockchain Standards
 | Standard | Name | Beschreibung |
 |----------|------|-------------|
-| ATC-0001 | Core | Basisprotokoll, Chain-ID 9000 |
+| ATC-0001 | Core | Basisprotokoll, Chain-ID 658467 |
 | ATC-0002 | Wallet | ECDSA secp256k1, ATC-Prefix |
 | ATC-0003 | Transaction | TX-Format, Nonce, Gebühren |
 | ATC-0004 | Block | Block-Header, Merkle-Tree |

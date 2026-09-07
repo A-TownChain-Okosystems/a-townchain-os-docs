@@ -87,7 +87,7 @@ ohne die gesamte Applikationslogik im Tier 5 neu schreiben zu muessen.
 ### 2.2 Performance
 Da ATC-34 hochgradig optimiert ist, vermeidet es unnoetige "Context-Switches"
 zwischen der Wasm-Sandbox und dem Host-OS. Das ist entscheidend fuer
-Anwendungen, die eine niedrige Latenz benoetigen, wie z. B. das Shivamon-
+Anwendungen, die eine niedrige Latenz benoetigen, wie z. B. das Genesis-Chronicles-
 Battle-UI (Issue #3).
 
 **Bezug:** ATC-06 (Latency Optimization) — Low-Latenz Cross-Layer-Communication.

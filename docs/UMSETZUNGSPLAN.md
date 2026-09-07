@@ -137,7 +137,7 @@
 
 ---
 
-### atc-shivamon — 🟢 AKTIV
+### genesis-chronicles — 🟢 AKTIV
 
 **Layer:** L12 | **Sprint:** 2.5 | **Zeilen:** 1,223 | .atc=1 .py=5 .rs=0 .ts=0 | Tests: 0 | Stubs: 0
 
@@ -187,7 +187,7 @@
 | 2 | P1 | Backend Integration: Blockchain/P2P/Wallet | atc-backend | 12h |
 | 3 | P1 | ATCLang Editor: Syntax-Highlighting | atc-ide | 6h |
 | 4 | P2 | 3D Render Engine Tab | — | 16h |
-| 5 | P2 | Game Engine Tab | atc-shivamon | 16h |
+| 5 | P2 | Game Engine Tab | genesis-chronicles | 16h |
 
 ---
 
@@ -210,7 +210,7 @@
 | # | Priorität | Aufgabe | Abhängigkeit | Aufwand |
 |---|-----------|---------|--------------|--------|
 | 1 | P2 | Frontend-Komponenten: BootScreen, Dashboard, WalletView | atc-ui | 12h |
-| 2 | P2 | Battle-UI: Shivamon Kampf-Interface | atc-shivamon | 8h |
+| 2 | P2 | Battle-UI: Genesis Chronicles Kampf-Interface | genesis-chronicles | 8h |
 
 ---
 
@@ -445,7 +445,7 @@
 | atc-kernel-wiki | atc-kernel | 13 | 🟡 Basis |
 | atc-contracts-wiki | atc-contracts | 10 | 🔴 Minimal |
 | atc-franchise-wiki | atc-franchise | 9 | 🔴 Minimal |
-| atc-shivamon-wiki | atc-shivamon | 9 | 🔴 Minimal |
+| genesis-chronicles-wiki | genesis-chronicles | 9 | 🔴 Minimal |
 | atc-atclang-wiki | atc-atclang | 8 | 🔴 Minimal |
 | atc-backend-wiki | atc-backend | 8 | 🔴 Minimal |
 | atc-drivers-wiki | atc-drivers | 8 | 🔴 Minimal |

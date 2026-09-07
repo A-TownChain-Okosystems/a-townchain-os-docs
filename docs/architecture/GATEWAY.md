@@ -81,7 +81,7 @@ def rate_limit(ip):
 | `/api/blockchain` | Chain | 5001 | `POST /api/blockchain/mine` |
 | `/api/wallet` | Wallet | 5002 | `POST /api/wallet/create` |
 | `/api/ai` | AI | 5003 | `POST /api/ai/query` |
-| `/api/game` | Game | 5004 | `POST /api/game/shivamon/mint` |
+| `/api/game` | Game | 5004 | `POST /api/game/genesis-chronicles/mint` |
 | `/api/nodes` | Nodes | 5005 | `GET /api/nodes/` |
 
 ---

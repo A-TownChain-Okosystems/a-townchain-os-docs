@@ -205,7 +205,7 @@ INTERFACE ATC8300 {
 
 ---
 
-## ATC-9000 — NFT Standard (Shivamon)
+## ATC-9000 — NFT Standard (Genesis Chronicles)
 
 ```
 INTERFACE ATC9000 {

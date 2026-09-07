@@ -62,7 +62,7 @@ Die neu hinzugefügten Kapitel 36–50 sind **nicht im TOC** gelistet:
 ❌ 41. Hybrid-Konsens — PoW + PoS + PoH
 ❌ 42. Wallet & Kryptographie
 ❌ 43. Smart Contracts — System-Contracts
-❌ 44. Shivamon NFT — ATC-9000 Standard
+❌ 44. Genesis Chronicles NFT — ATC-9000 Standard
 ❌ 45. ATCLang — Sprachspezifikation
 ❌ 46. API-Gateway — Technische Dokumentation
 ❌ 47. Testnet — Setup & Betrieb
@@ -159,7 +159,7 @@ Game:    :5004
 - Kap. 1–20: Inhalt korrekt, Struktur okay
 - Kap. 24–31: Inhalt korrekt, Struktur okay
 - Konsens-Parameter (PoH/PoW/PoS): stimmen mit Code überein
-- ATC-9000 Shivamon: 9.900 Max Supply korrekt (stimmt mit Contract überein)
+- ATC-9000 Genesis Chronicles: 9.900 Max Supply korrekt (stimmt mit Contract überein)
 - ATCLang Toolchain-Beschreibung: stimmt mit Dateigrößen überein
 - Docker-Ports (4001, 9933, 9944): stimmen mit docker-compose.yml überein
 - GitHub Actions Workflows (4 Dateien): korrekt dokumentiert

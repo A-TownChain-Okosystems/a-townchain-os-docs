@@ -14,7 +14,7 @@ Erweiterte ATCLang-Features für v3.0.0.
 - [ ] `async fn` / `await` für nicht-blockierende Calls
 - [ ] Generics: `fn foo<T>(x: T) -> T`
 - [ ] Closures: `let f = |x: u128| x * 2`
-- [ ] Module-System: `import ATC::Gaming::Shivamon`
+- [ ] Module-System: `import ATC::Gaming::Genesis Chronicles`
 - [ ] Type Inference: `let x = 42` (kein expliziter Typ)
 - [ ] String-Interpolation: `f"Balance: {self.balance}"`
 - [ ] Verbesserter Error-Reporter (Zeile+Spalte+Context)

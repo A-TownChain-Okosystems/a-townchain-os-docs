@@ -11,7 +11,7 @@
 |-------|-------|------|-----------|------|
 | [#1](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/1) | 🔗 Smart Contract Implementation | 🔴 High | v2.1 | [→](./ISSUE_01_SMART_CONTRACTS.md) |
 | [#2](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/2) | 🤖 Gemini AI Integration | 🔴 High | v2.1 | [→](./ISSUE_02_GEMINI_AI.md) |
-| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Shivamon Battle UI | 🔴 High | v2.1 | [→](./ISSUE_03_BATTLE_UI.md) |
+| [#3](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/3) | ⚔️ Genesis Chronicles Battle UI | 🔴 High | v2.1 | [→](./ISSUE_03_BATTLE_UI.md) |
 | [#4](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/4) | 💾 NFT Persistenz (SQLite) | 🔴 High | v2.1 | [→](./ISSUE_04_PERSISTENZ.md) |
 | [#5](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/5) | 🔍 ATC Blockchain Explorer | 🟡 Medium | v2.1 | [→](./ISSUE_05_EXPLORER.md) |
 | [#6](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/6) | 🔐 ECDSA Signatur | 🔴 High | v2.1 | [→](./ISSUE_06_ECDSA.md) |
@@ -19,7 +19,7 @@
 | [#8](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/8) | 🌐 Multi-Node Testnet | 🔴 High | v2.2 | [→](./ISSUE_08_TESTNET.md) |
 | [#9](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/9) | 🏛 Governance Contract ATC-9900 | 🟡 Medium | v2.2 | [→](./ISSUE_09_GOVERNANCE.md) |
 | [#10](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/10) | 🌉 Cross-Chain Bridge | 🟢 Low | v3.0 | [→](./ISSUE_10_BRIDGE.md) |
-| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Shivamon Breeding Gen 2 | 🟡 Medium | v2.2 | [→](./ISSUE_11_BREEDING.md) |
+| [#11](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/11) | 🥚 Genesis Chronicles Breeding Gen 2 | 🟡 Medium | v2.2 | [→](./ISSUE_11_BREEDING.md) |
 | [#12](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/12) | ⛓ Solidity On-Chain Contracts | 🟡 Medium | v2.2 | [→](./ISSUE_12_SOLIDITY.md) |
 | [#13](https://github.com/A-TownChain-Okosystems/a-townchain-os/issues/13) | 🛒 ATC Marketplace | 🟡 Medium | v2.2 | [→](./ISSUE_13_MARKETPLACE.md) |
 

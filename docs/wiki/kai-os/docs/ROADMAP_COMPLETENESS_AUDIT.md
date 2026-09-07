@@ -35,14 +35,14 @@ Das Wiki erwaehnt Solana nur 2x (Glossar + Vergleich) — keine Architektur, kei
 
 **Empfohlene Nutzungs-Strategie:**
 - Substrate (KAI-OS Native): Governance, Agent-Registry, System-Contracts
-- Solana (High-Performance): Shivamon NFTs (Metaplex), Mikro-Zahlungen, Gaming-Events
+- Solana (High-Performance): Genesis Chronicles NFTs (Metaplex), Mikro-Zahlungen, Gaming-Events
 - Bridge (Wormhole): ATC (Substrate) <-> ATC-SPL (Solana)
 
 **Fehlende Dokumente:**
 - docs/blockchain/SOLANA_INTEGRATION.md (Kap. 32) — NEU ERSTELLT
 - Solana-Wallet-Support (Phantom, Solflare)
 - SPL-Token Standard fuer ATC auf Solana
-- Metaplex NFT Standard (Shivamon auf Solana)
+- Metaplex NFT Standard (Genesis Chronicles auf Solana)
 - Wormhole Bridge: ATC (Substrate) <-> ATC-SPL (Solana)
 
 **Fehlende Roadmap-Eintraege:**
@@ -67,7 +67,7 @@ Issue #12 (Solidity Contracts) offen — aber kein Deployment-Plan, keine Layer-
 - Frontier-Pallet Setup
 - Hardhat-Konfiguration
 - MetaMask-Kompatibilitaet
-- Solidity Contracts: ATC Token.sol, ShivamonNFT.sol, KAIGovernance.sol
+- Solidity Contracts: ATC Token.sol, Genesis ChroniclesNFT.sol, KAIGovernance.sol
 
 **Fehlende Roadmap-Eintraege:**
 - Sprint 2.9: Frontier EVM-Pallet Integration

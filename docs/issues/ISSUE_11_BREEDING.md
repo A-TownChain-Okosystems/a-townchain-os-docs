@@ -1,4 +1,4 @@
-# 📄 Issue #11 — Shivamon Breeding (Gen 2 NFTs)
+# 📄 Issue #11 — Genesis Chronicles Breeding (Gen 2 NFTs)
 
 > **Labels:** enhancement · game · nft · priority:medium
 > **Priorität:** 🟡 Medium · **Milestone:** v2.2.0
@@ -8,7 +8,7 @@
 
 ## Ziel
 
-Zwei Shivamon NFTs können gezüchtet werden und erzeugen ein einzigartiges Kind-NFT der **Generation 2** mit gemischten Stats, Hybrid-DNA und vererbter Rarity.
+Zwei Genesis Chronicles NFTs können gezüchtet werden und erzeugen ein einzigartiges Kind-NFT der **Generation 2** mit gemischten Stats, Hybrid-DNA und vererbter Rarity.
 
 ---
 
@@ -30,7 +30,7 @@ def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
     ).hexdigest()
 
     # 3. Stats vererben (50/50 Mix + ±10% Mutation)
-    child_stats = ShivamonStats(
+    child_stats = Genesis ChroniclesStats(
         hp      = int((p1.stats.hp + p2.stats.hp) / 2 * random.uniform(0.9, 1.1)),
         attack  = int((p1.stats.attack + p2.stats.attack) / 2 * random.uniform(0.9, 1.1)),
         defense = int((p1.stats.defense + p2.stats.defense) / 2 * random.uniform(0.9, 1.1)),
@@ -66,22 +66,22 @@ def breed(self, parent1_id: str, parent2_id: str, owner: str) -> dict:
 
 ## Aufgaben
 
-- [ ] `ShivamonContract.breed()` implementieren
-- [ ] Cooldown-Tracking pro Shivamon (24h)
+- [ ] `Genesis ChroniclesContract.breed()` implementieren
+- [ ] Cooldown-Tracking pro Genesis Chronicles (24h)
 - [ ] DNA-Mixing Algorithmus
 - [ ] Stat-Vererbung mit Mutations-Faktor
 - [ ] Rarity-Vererbungsmatrix
 - [ ] Breeding-Kosten: 25 ATC abziehen
 - [ ] Max Generation: 10 (kein weiteres Breeding)
-- [ ] `POST /api/game/shivamon/breed` API-Route
-- [ ] Frontend Breeding-Interface im Shivamon-Tab
+- [ ] `POST /api/game/genesis-chronicles/breed` API-Route
+- [ ] Frontend Breeding-Interface im Genesis-Chronicles-Tab
 - [ ] Parent-Preview: geschätzte Kind-Stats anzeigen
 
 ---
 
 ## Akzeptanzkriterien
 
-- [ ] Breeding erzeugt valides Gen-2 Shivamon
+- [ ] Breeding erzeugt valides Gen-2 Genesis Chronicles
 - [ ] Stats sind Mix beider Eltern (±10%)
 - [ ] Cooldown von 24h wird korrekt durchgesetzt
 - [ ] Breeding-Kosten von 25 ATC werden abgezogen

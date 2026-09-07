@@ -10,8 +10,8 @@
 - TX-Suche nach Hash/Adresse
 - Node-Map
 
-## ShivamonGallery
-- Grid-View aller eigenen Shivamon
+## Genesis ChroniclesGallery
+- Grid-View aller eigenen Genesis Chronicles
 - Rarity-Filter
 - Battle starten
 

@@ -26,7 +26,7 @@
 | atc-cli | 4 | 623 |
 | atc-frontend | 3 | 405 |
 | atc-mobile | 2 | 350 |
-| atc-shivamon | 2 | — |
+| genesis-chronicles | 2 | — |
 | atc-blockchain | 1 | 151 |
 | atclang | 1 | — |
 
@@ -41,7 +41,7 @@
 | atc-atclang | atc-cli | 1 | repl.py |
 | atc-blockchain | atc-contracts | 2 | smart_contracts |
 | atc-blockchain | atcnet | 5 | network modules |
-| atc-contracts | atc-shivamon | 3 | shivamon + marketplace contracts |
+| atc-contracts | genesis-chronicles | 3 | genesis-chronicles + marketplace contracts |
 | atc-contracts | atc-mobile | 3 | wallet modules (keygen, ecdsa) |
 | atc-contracts | atc-blockchain | 1 | governance.atc |
 | atc-kernel | atc-blockchain | 3 | consensus modules |
@@ -51,7 +51,7 @@
 | atc-gateway | atcnet | 2 | service_discovery |
 | atc-gateway | atclang | 1 | main.atc |
 | atc-backend | atc-mobile | 1 | wallet.atc |
-| atc-shivamon | atc-backend | 1 | game_routes.py |
+| genesis-chronicles | atc-backend | 1 | game_routes.py |
 | atclang | atc-vm | 2 | vm modules |
 | atclang | atc-stdlib | 1 | atc_stdlib.py |
 | atclang | atc-cli | 1 | repl.py |

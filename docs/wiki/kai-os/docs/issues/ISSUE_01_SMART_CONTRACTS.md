@@ -29,7 +29,7 @@ blockchain/contracts/
 ├── atc8300/
 │   └── atc_token.py              # ATC-8300: Fungible Token (ERC20)
 ├── atc9000/
-│   └── shivamon_contract.py      # ATC-9000: NFT ✅ bereits implementiert
+│   └── genesis_chronicles_contract.py      # ATC-9000: NFT ✅ bereits implementiert
 ├── atc9900/
 │   └── governance_contract.py    # ATC-9900: DAO/Governance (→ Issue #9)
 └── base/
@@ -137,5 +137,5 @@ class BaseContract:
 ## Referenzen
 
 - `blockchain/atcoin/atcoin.py` — bestehende ATC-8300 Basis
-- `blockchain/contracts/shivamon/shivamon_contract.py` — Referenz-Implementierung
+- `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py` — Referenz-Implementierung
 - ATC Token Referenzmatrix (ATC-001 bis ATC-9900)

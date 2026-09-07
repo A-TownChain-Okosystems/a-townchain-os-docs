@@ -1,6 +1,6 @@
 > **Status (05.07.2026):** Implementiert in ATCLang (.atc). Siehe STANDARDS_REGISTRY.md für Details.
 
-# 📄 Issue #13 — ATC Marketplace (Shivamon kaufen & verkaufen)
+# 📄 Issue #13 — ATC Marketplace (Genesis Chronicles kaufen & verkaufen)
 
 > **Labels:** enhancement · game · marketplace · priority:medium
 > **Priorität:** 🟡 Medium · **Milestone:** v2.2.0
@@ -10,14 +10,14 @@
 
 ## Ziel
 
-Dezentraler NFT-Marktplatz im ShivaOS Dashboard — Shivamon listen, kaufen, verkaufen und Angebote machen. Alle Trades werden in ATC abgewickelt.
+Dezentraler NFT-Marktplatz im ShivaOS Dashboard — Genesis Chronicles listen, kaufen, verkaufen und Angebote machen. Alle Trades werden in ATC abgewickelt.
 
 ---
 
 ## Marketplace-Mechanismus
 
 ```
-Seller listet Shivamon für 500 ATC
+Seller listet Genesis Chronicles für 500 ATC
   └─→ NFT wird im Contract gesperrt (escrow)
   └─→ Listing erscheint im Marketplace
 
@@ -68,7 +68,7 @@ class Listing:
     token_id:    str        # SHV-...
     seller:      str        # ATC-Adresse
     price_atc:   float
-    shivamon:    dict       # Snapshot des NFT zum Listing-Zeitpunkt
+    genesis-chronicles:    dict       # Snapshot des NFT zum Listing-Zeitpunkt
     listed_at:   int
     expires_at:  int        # Optional: 30 Tage
     status:      str        # "active" | "sold" | "cancelled"

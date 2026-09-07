@@ -90,7 +90,7 @@ Layer 4: Anwendungen (DApps, KI-Agenten, Marketplace, GlobusOS)
 ### 2.3 Token
 - **ATC-11** — Fungible Token Standard,用作 Royalty-Zahlungsmittel
 - **ATC-8300** — Fungible Token (allgemein)
-- **ATC-9000** — NFT Standard (Shivamon)
+- **ATC-9000** — NFT Standard (Genesis Chronicles)
 - **ATC-001** — Genesis Token
 
 ---

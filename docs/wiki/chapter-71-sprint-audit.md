@@ -33,7 +33,7 @@
 
 ### Sprint 2.5 — NFT + Marketplace [100% ✅]
 - ✅ Alle 10 Module vorhanden
-- ✅ Base, Atcoin, Bridge, Token, Registry, Smart Contracts, Marketplace, Shivamon
+- ✅ Base, Atcoin, Bridge, Token, Registry, Smart Contracts, Marketplace, Genesis Chronicles
 - ⚠️ 3 Aufgaben pending: Proof of AI Mining, Test Framework, UI
 
 ### Sprint 2.6 — Governance + Security [80%]
@@ -57,7 +57,7 @@
 
 ### Leere Verzeichnisse (5)
 - modules/kernel/atcfs/
-- modules/shivamon/contracts/
+- modules/genesis-chronicles/contracts/
 - blockchain/contracts/marketplace/
 - blockchain/contracts/bridge/
 - blockchain/contracts/base/

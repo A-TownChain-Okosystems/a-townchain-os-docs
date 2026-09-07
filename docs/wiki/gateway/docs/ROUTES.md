@@ -22,10 +22,10 @@
 | POST | /api/ai/generate-atclang | ATCLang generieren |
 | POST | /api/ai/explain-contract | Contract erklären |
 
-## NFT / Shivamon
+## NFT / Genesis Chronicles
 | Method | Path | Beschreibung |
 |--------|------|-------------|
-| POST | /api/game/mint | Shivamon minten |
+| POST | /api/game/mint | Genesis Chronicles minten |
 | GET | /api/game/tokens/:addr | Tokens nach Adresse |
 
 ## Auth

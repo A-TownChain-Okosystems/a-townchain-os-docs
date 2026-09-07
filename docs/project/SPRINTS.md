@@ -91,7 +91,7 @@ K27 (GenesisBridge) ─→ K28 (GossipBridge) ─→ K29 (SecurityAudit)
   (29 MUST-Regeln, 11 Objekttypen, Testvektoren). Status DRAFT_REVIEW —
   wartet auf Owner-Entscheidungen SC-DEC-A…F.
 
-**Offen bis Mainnet 15.09.2026:**
+**Offen bis Mainnet — Launch-Termin offen (AD-023):**
 - 🔴 Issue #69: Dependabot — 69 Schwachstellen (3 critical, 27 high, 32 moderate, 7 low)
 - 🔴 Issue #70 (K30): 10+ Mainnet-Validator-Nodes deployen
 - 🔴 Issue #71 (K31): Genesis Block finalisieren (Chain-ID 658467)

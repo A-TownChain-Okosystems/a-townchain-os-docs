@@ -16,7 +16,7 @@ Deployment-Zentrale, inkl. Unified Cargo Workspace und Kernel-Build).
 | [`globus-os`](https://github.com/A-TownChain-Okosystems/globus-os) | Betriebssystem (Userspace) | atc-kernel, atc-globus-shell/desktop/fs/net/registry/os, atc-bootloader, atc-drivers, atc-linux/windows-edition, atc-mobile | 361 Dateien / 86.395 Zeilen |
 | [`atc-shivacore`](https://github.com/A-TownChain-Okosystems/atc-shivacore) | **ShivaCore-Kernel** (Microkernel, AD-012/013) | atc-shivacore (Kernel-Crate, 674/674 Tests), atc-shivacore-tools | 61 .rs-Dateien |
 | [`aurora-ai`](https://github.com/A-TownChain-Okosystems/aurora-ai) | KI-System | atc-aurora-core/agents/memory/runtime/ai, atc-aistudio | 377 Dateien / 80.170 Zeilen |
-| [`genesis-engine`](https://github.com/A-TownChain-Okosystems/genesis-engine) | Game-Engine | atc-genesis-engine/ecs/creatures/world, atc-game, atc-shivamon | 115 Dateien / 5.350 Zeilen |
+| [`genesis-engine`](https://github.com/A-TownChain-Okosystems/genesis-engine) | Game-Engine | atc-genesis-engine/ecs/creatures/world, atc-game, genesis-chronicles | 115 Dateien / 5.350 Zeilen |
 
 ## Verbleib im Monorepo (`a-townchain-os`)
 
@@ -66,7 +66,7 @@ Git-Historien aller Repos bleiben erhalten (Reversibilität).
 ## Zielarchitektur-Landkarte (AD-024 UMGESETZT, 06.09.2026 — alle 14 Repos erstellt)
 
 Alle 14 Repos wurden am 06.09.2026 (21:30–21:45 UTC+2) erstellt und initialisiert.
-Vault-Restore: atc-sdk, atc-contracts, atc-wallet, atc-explorer, shivamon (Bestand aus
+Vault-Restore: atc-sdk, atc-contracts, atc-wallet, atc-explorer, genesis-chronicles (Bestand aus
 monorepo-full). Neu angelegt (Grundstruktur): atc-node, atc-indexer, atc-mining,
 atc-interop, atc-oracle, atc-storage, atc-launchpad, atc-marketplace, atc-compute.
 Organisation jetzt: 22 aktive Repos.
@@ -80,7 +80,7 @@ Organisation jetzt: 22 aktive Repos.
 | atc-explorer + atc-indexer | a-townchain-Modul atc-explorer (Vault); Indexer NEU | P1 | Chain-RPC stabil |
 | atc-mining | NEU (Core definiert PoW-Regeln; Mining-Stack separat) | P1 | Consensus-Rebuild fertig |
 | atc-interop | a-townchain-Modul atc-bridge (Vault); IBC/Relayer NEU | P1 | Bridge-Security-Konzept (eigene Sicherheitsdomäne) |
-| genesis-chronicles (ex-`shivamon`, umbenannt per AD-025) | Vault-Restore atc-shivamon | P1 | ECS-/World-Kern stabil |
+| genesis-chronicles (ex-`genesis-chronicles`, umbenannt per AD-025) | Vault-Restore genesis-chronicles | P1 | ECS-/World-Kern stabil |
 | atc-oracle | NEU (Lücke „Oracle & External Data Binding") | P2 | Bedarfsfall DeFi/AI-Feeds |
 | atc-storage | NEU | P2 | Asset-/NFT-Metadaten-Bedarf |
 | atc-launchpad / atc-marketplace | a-townchain-Module atc-dex/atc-assets (Vault) | P2 | TGE-/Produkt-Entscheidung |

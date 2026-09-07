@@ -381,29 +381,29 @@
 ---
 
 
-### atc-shivamon
+### genesis-chronicles
 
-**Typ:** Shivamon NFT-Game-Modul
+**Typ:** Genesis Chronicles NFT-Game-Modul
 
 **Verzeichnisstruktur:**
 - `Root: README, ROADMAP, STATUS`
-- `contracts/ — Shivamon-Contract`
+- `contracts/ — Genesis-Chronicles-Contract`
 
-**Namenskonvention:** snake_case: shivamon_contract.atc, marketplace_contract.atc
+**Namenskonvention:** snake_case: genesis_chronicles_contract.atc, marketplace_contract.atc
 
 **Pflichtdateien:** README.md, ROADMAP.md, STATUS.md, CHANGELOG.md, FILE_REGISTER.md, .gitignore, LICENSE
 
 ---
 
 
-### atc-shivamon-wiki
+### genesis-chronicles-wiki
 
-**Typ:** Shivamon-Wiki
+**Typ:** Genesis-Chronicles-Wiki
 
 **Verzeichnisstruktur:**
 - `Root: README, FILE_REGISTER`
 
-**Namenskonvention:** shivamon-XX-name.md
+**Namenskonvention:** genesis-chronicles-XX-name.md
 
 **Pflichtdateien:** README.md, FILE_REGISTER.md, .gitignore, LICENSE
 
@@ -614,8 +614,8 @@
 | atc-mobile | Mobile-Modul | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | atc-shivacore | ShivaCore Kernel | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | atc-shivacore-tools | ShivaCore Tools | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| atc-shivamon | Shivamon NFT-Game-Modul | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| atc-shivamon-wiki | Shivamon-Wiki | ✅ | ✅ | ➖ | ➖ | ➖ | ✅ | ✅ |
+| genesis-chronicles | Genesis Chronicles NFT-Game-Modul | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| genesis-chronicles-wiki | Genesis-Chronicles-Wiki | ✅ | ✅ | ➖ | ➖ | ➖ | ✅ | ✅ |
 | atc-standards | Standards-Repository | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | atc-standards-wiki | Standards-Wiki | ✅ | ✅ | ➖ | ➖ | ➖ | ✅ | ✅ |
 | atc-ui | UI-Modul | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |

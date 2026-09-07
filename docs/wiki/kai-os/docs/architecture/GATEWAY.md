@@ -101,7 +101,7 @@ def verify_tx_signature(tx: dict) -> bool:
 | `/api/blockchain` | `:5000/api/blockchain` | Chain-Daten |
 | `/api/wallet` | `:5000/api/wallet` | Wallet-Operationen |
 | `/api/ai` | `:5000/api/ai` | Gemini AI |
-| `/api/game` | `:5000/api/game` | Shivamon Spiellogik |
+| `/api/game` | `:5000/api/game` | Genesis Chronicles Spiellogik |
 | `/api/governance` | `:5000/api/governance` | DAO-Abstimmungen |
 | `/api/marketplace` | `:5000/api/marketplace` | NFT-Marketplace |
 | `/api/nodes` | `:5000/api/nodes` | P2P-Nodes |

@@ -35,7 +35,7 @@ Delivered:
 **Tests**: 333/333
 
 Delivered:
-- Genesis Block Configuration (Chain-ID 9000, validators, allocations)
+- Genesis Block Configuration (Chain-ID 658467, validators, allocations)
 - Genesis Bridge (genesis ↔ blockchain ↔ consensus, 6 integration gaps closed)
 - P2P Gossip Integration (block-gossip, sync, vote-gossip, chain-ID validation)
 
@@ -53,7 +53,7 @@ Delivered:
 ## Milestone 5: Mainnet Launch (K30–K33) ⬜
 
 **Status**: IN PROGRESS
-**Target**: September 15, 2026
+**Target**: Launch-Termin offen (AD-023)
 
 Remaining:
 - K30: Validator Node Setup (10+ nodes)
@@ -96,7 +96,7 @@ Planned:
   (29 MUST-Regeln, 11 Objekttypen, Testvektoren). Status DRAFT_REVIEW —
   wartet auf Owner-Entscheidungen SC-DEC-A…F.
 
-**Offen bis Mainnet 15.09.2026:**
+**Offen bis Mainnet — Launch-Termin offen (AD-023):**
 - 🔴 Issue #69: Dependabot — 69 Schwachstellen (3 critical, 27 high, 32 moderate, 7 low)
 - 🔴 Issue #70 (K30): 10+ Mainnet-Validator-Nodes deployen
 - 🔴 Issue #71 (K31): Genesis Block finalisieren (Chain-ID 658467)

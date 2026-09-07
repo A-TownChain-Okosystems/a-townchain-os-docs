@@ -8,7 +8,7 @@
 
 ## Ziel
 
-Shivamon NFTs, ATC-Wallets und Transaktionen persistent in einer **SQLite-Datenbank** speichern. Aktuell gehen alle Daten bei Server-Neustart verloren — das ist ein Production-Blocker.
+Genesis Chronicles NFTs, ATC-Wallets und Transaktionen persistent in einer **SQLite-Datenbank** speichern. Aktuell gehen alle Daten bei Server-Neustart verloren — das ist ein Production-Blocker.
 
 ---
 
@@ -37,8 +37,8 @@ CREATE TABLE transactions (
     block_height INTEGER
 );
 
--- Shivamon NFTs
-CREATE TABLE shivamon (
+-- Genesis Chronicles NFTs
+CREATE TABLE genesis-chronicles (
     token_id    TEXT PRIMARY KEY,          -- SHV-...
     name        TEXT NOT NULL,
     element     TEXT NOT NULL,
@@ -91,11 +91,11 @@ class WalletRepository:
     def find(self, address) -> dict: ...
     def update_balance(self, address, new_balance): ...
 
-class ShivamonRepository:
-    def save(self, nft: ShivamonNFT): ...
-    def find(self, token_id) -> ShivamonNFT: ...
+class Genesis ChroniclesRepository:
+    def save(self, nft: Genesis ChroniclesNFT): ...
+    def find(self, token_id) -> Genesis ChroniclesNFT: ...
     def find_by_owner(self, owner) -> list: ...
-    def update(self, nft: ShivamonNFT): ...
+    def update(self, nft: Genesis ChroniclesNFT): ...
 
 class BlockRepository:
     def save(self, block: dict): ...
@@ -110,7 +110,7 @@ class BlockRepository:
 def migrate_from_memory(wallet_instance, contract_instance, consensus_instance):
     """Einmalige Migration beim ersten Start."""
     repo_w = WalletRepository()
-    repo_s = ShivamonRepository()
+    repo_s = Genesis ChroniclesRepository()
     repo_b = BlockRepository()
 
     for address, data in wallet_instance.accounts.items():
@@ -130,10 +130,10 @@ def migrate_from_memory(wallet_instance, contract_instance, consensus_instance):
 
 - [ ] `data/` Verzeichnis anlegen + `.gitignore` (DB-Dateien nicht committen)
 - [ ] `backend/db/__init__.py` + `backend/db/schema.sql`
-- [ ] `backend/db/repository.py` — WalletRepository, ShivamonRepository, BlockRepository, TxRepository
+- [ ] `backend/db/repository.py` — WalletRepository, Genesis ChroniclesRepository, BlockRepository, TxRepository
 - [ ] `backend/db/migrate.py` — Migration-Script
 - [ ] `ATCWallet` — Persistenz-Layer einbinden
-- [ ] `ShivamonContract` — Persistenz-Layer einbinden
+- [ ] `Genesis ChroniclesContract` — Persistenz-Layer einbinden
 - [ ] `HybridConsensus` — Blocks persistent speichern
 - [ ] Tägliches Backup-Script (`build/backup.py`)
 - [ ] Tests: `tests/test_persistence.py`

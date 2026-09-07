@@ -57,7 +57,7 @@
 }
 ```
 
-## Rarity-Farben (Shivamon)
+## Rarity-Farben (Genesis Chronicles)
 ```css
 .rarity-common    { color: #aaaaaa; }
 .rarity-uncommon  { color: #00ff88; }

@@ -37,9 +37,9 @@
 | [atc-gateway](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-gateway) | `L7` | API Gateway :4000, Circuit-Breaker, Rate-Limit |
 | [atclang](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atclang) | `L2–L4` | ATCLang v0.3.0, proprietäre Sprache (Lexer, Parser, VM) |
 | [atc-contracts](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-contracts) | `L4/L11` | Smart Contracts: ATC-8300, ATC-9000, ATC-9900, Bridge |
-| [atc-shivamon](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-shivamon) | `L12` | NFT Gaming: Battle Engine, Breeding, Marketplace |
+| [genesis-chronicles](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/genesis-chronicles) | `L12` | NFT Gaming: Battle Engine, Breeding, Marketplace |
 | [atc-franchise](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-franchise) | `L10/L8` | Business DAO: Vault, Revenue-Share, Royalty (ATC-9900) |
-| [atc-ui](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-ui) | `L10` | Neon Dashboard: Wallet, Explorer, Shivamon, AI Chat |
+| [atc-ui](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-ui) | `L10` | Neon Dashboard: Wallet, Explorer, Genesis Chronicles, AI Chat |
 | [atc-standards](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-standards) | `L0` | Protokoll-Standards: ATC-0001–0009 + ATS-1000–1007 |
 | [atc-whitepaper](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-whitepaper) | `L0` | Offizielles Whitepaper v2.1.0 |
 

@@ -73,7 +73,7 @@ Da ATC-41 dezentral funktioniert, können Agenten, die sich noch nie zuvor „be
 
 ### 2.3 Effiziente Inferenz-Ketten
 
-Komplexe KI-Pipelines (z. B. ein Bild generieren → es animieren → es in das Shivamon-Battle integrieren) laufen flüssig ab, da die Agenten ihre Zusammenarbeit nach ATC-41 selbst steuern.
+Komplexe KI-Pipelines (z. B. ein Bild generieren → es animieren → es in das Genesis-Chronicles-Battle integrieren) laufen flüssig ab, da die Agenten ihre Zusammenarbeit nach ATC-41 selbst steuern.
 
 ---
 

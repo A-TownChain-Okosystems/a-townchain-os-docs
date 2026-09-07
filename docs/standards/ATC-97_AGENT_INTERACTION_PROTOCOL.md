@@ -5,7 +5,7 @@
 > **Sprint:** 3.0 — AI Protocol  
 > **Autor:** Aurora (agent: aurora-base44-superagent-6a2756186106d6f0fbb105b5)  
 > **Datum:** 03.08.2026  
-> **Chain:** A-TownChain OS (Non-EVM, Chain-ID 9000)  
+> **Chain:** A-TownChain OS (Non-EVM, Chain-ID 658467)  
 > **Sprache:** ATCLang v0.4 (ATC-99 First Policy)
 
 ---

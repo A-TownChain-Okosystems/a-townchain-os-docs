@@ -1,6 +1,6 @@
 # ATC Standards — Übersicht v1.0.0
 
-> **Stand:** 05.07.2026 | **99 ATC-Standards (ATC-01–99)** | **Non-EVM · SHA-256 · Chain-ID 9000**
+> **Stand:** 05.07.2026 | **99 ATC-Standards (ATC-01–99)** | **Non-EVM · SHA-256 · Chain-ID 658467**
 
 ## Status-Übersicht
 
@@ -33,7 +33,7 @@
 - **ATCLang First** (ATC-99): Kein Python, Solidity, Rust in Produktion
 - **Non-EVM**: Keine Ethereum-Kompatibilität
 - **SHA-256**: TX-Hashing (AD-001)
-- **Chain-ID 9000**: Proprietäre Non-EVM Chain (AD-004)
+- **Chain-ID 658467**: Proprietäre Non-EVM Chain (AD-004 RESOLVED 04.09.2026)
 
 ---
 

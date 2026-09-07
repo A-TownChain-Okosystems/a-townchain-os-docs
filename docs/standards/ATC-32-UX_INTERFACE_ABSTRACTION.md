@@ -37,13 +37,13 @@ diese lokal auf dem Endgeraet des Nutzers.
 **Implementation:** PARTIAL — Basis da
 - ATC-UI (`atc-ui/index.html`) — Web-basiertes Frontend implementiert
 - API Gateway (`gateway/`) auf Port 4000 — Frontend-to-Backend Routing
-- Battle UI (Issue #3) — Shivamon Battle Interface als erste DApp
+- Battle UI (Issue #3) — Genesis Chronicles Battle Interface als erste DApp
 - **Geplant:** Universal UI Framework mit adaptivem Rendering
 
 ### 1.2 Intent-Based UX (Absichtsbasiert)
 Der Nutzer interagiert nicht mehr direkt mit "Transaktionen" oder "Gas-
 Gebuehren". Stattdessen gibt er eine Absicht (Intent) ein (z. B. "Kaufe
-Shivamon-Eier"). Das System (ATC-32) uebersetzt diese Absicht im Hintergrund
+Genesis-Chronicles-Eier"). Das System (ATC-32) uebersetzt diese Absicht im Hintergrund
 automatisch in die notwendigen Smart-Contract-Aufrufe (ATC-01), schlaegt die
 beste Gebuehr vor und fuehrt die Transaktion aus.
 
@@ -51,9 +51,9 @@ beste Gebuehr vor und fuehrt die Transaktion aus.
 
 ```python
 # GEPLANT: Intent-Based UX
-# User: "Kaufe Shivamon-Eier"
+# User: "Kaufe Genesis-Chronicles-Eier"
 # ATC-32 Solver:
-#   1. Parse Intent -> {action: "buy", item: "shivamon_egg", qty: 1}
+#   1. Parse Intent -> {action: "buy", item: "genesis_chronicles_egg", qty: 1}
 #   2. Find best Smart Contract path (ATC-01)
 #   3. Calculate optimal gas/fee
 #   4. Execute via ATC-03 identity
@@ -114,7 +114,7 @@ Intent-Based UX uebersetzt Nutzer-Absichten in Smart-Contract-Aufrufe (ATC-01).
 Adaptive UI-Renderung basierend auf Hardware-Faehigkeiten (ATC-22 Flags).
 
 ### 3.5 Issue #3 (Battle UI)
-Die im Issue #3 beschriebene Battle-UI fuer Shivamon ist eine erste Umsetzung
+Die im Issue #3 beschriebene Battle-UI fuer Genesis Chronicles ist eine erste Umsetzung
 der ATC-32-Prinzipien — die Komplexitaet der Battle-Logik wird hinter einer
 benutzerfreundlichen, animierten Oberflaeche versteckt.
 
@@ -185,10 +185,10 @@ folgen.
 ```
 NUTZER                      ATC-32                    BACKEND
   |                           |                         |
-  | "Kaufe Shivamon-Eier"     |                         |
+  | "Kaufe Genesis-Chronicles-Eier"     |                         |
   |-------------------------->|                         |
   |                           | Intent Parser           |
-  |                           | -> {buy, shivamon_egg}  |
+  |                           | -> {buy, genesis_chronicles_egg}  |
   |                           |                         |
   |                           | Solver Engine           |
   |                           | -> Find best contract   |

@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/Version-2.0.0-a259ff?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Genesis_Release-00ffcc?style=for-the-badge)
-![Chain ID](https://img.shields.io/badge/Chain_ID-9000-7b61ff?style=for-the-badge)
+![Chain ID](https://img.shields.io/badge/Chain_ID-658467-7b61ff?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-ff6b35?style=for-the-badge)
 
 **Autonomous Franchise Factory · ShivaOS v2.0 · KAI-OS Layer Architecture**
@@ -28,7 +28,7 @@
 | [5](#5-blockchain--konsens) | Blockchain & Konsens | `blockchain` `consensus` `poi` `pos` |
 | [6](#6-atc-token-ökonomie) | ATC Token-Ökonomie | `tokenomics` `atc8300` `supply` |
 | [7](#7-smart-contracts) | Smart Contracts | `contracts` `solidity` `python` `atc9000` |
-| [8](#8-shivamon--nft-gaming) | Shivamon & NFT Gaming | `nft` `gaming` `atc9000` `battle` |
+| [8](#8-genesis-chronicles--nft-gaming) | Genesis Chronicles & NFT Gaming | `nft` `gaming` `atc9000` `battle` |
 | [9](#9-governance--dao) | Governance & DAO | `governance` `dao` `atc9900` `voting` |
 | [10](#10-cross-chain-bridge) | Cross-Chain Bridge | `bridge` `ethereum` `solana` |
 | [11](#11-ki-orchestrator) | KI-Orchestrator | `ai` `gemini` `agents` `llm` |
@@ -44,9 +44,9 @@
 
 A-TownChain OS ist ein vollständiges, modular aufgebautes Technologie-Ökosystem, das vier Industrien in einem dezentralen Stack vereint:
 
-- **Blockchain** — Eigene Layer-1 Chain mit PoI+PoS Konsens (Chain ID: 9000)
+- **Blockchain** — Eigene Layer-1 Chain mit PoI+PoS Konsens (Chain ID: 658467)
 - **Artificial Intelligence** — Gemini 2.0 + dezentrale KI-Agenten (KAI-OS)
-- **Gaming** — NFT-basiertes Battle-RPG (Shivamon, ATC-9000 Standard)
+- **Gaming** — NFT-basiertes Battle-RPG (Genesis Chronicles, ATC-9000 Standard)
 - **Operating System** — Browser-basiertes dezentrales OS (ShivaOS v2.0)
 
 Das Ökosystem baut auf der **KAI-OS Layer-Architektur** auf — 13 Schichten (L0–L12) von Hardware-Abstraktion bis Gamification, jede repräsentiert als eigenständiges NFT.
@@ -56,13 +56,13 @@ Das Ökosystem baut auf der **KAI-OS Layer-Architektur** auf — 13 Schichten (L
 **Kennzahlen:**
 | Metrik | Wert |
 |--------|------|
-| Chain ID | 9000 |
+| Chain ID | 658467 |
 | Konsens | Hybrid PoI + PoS + PoH |
 | Block Time | ~4 Sekunden |
 | Max Supply ATC | 21.000.000 |
 | Token-Standards | ATC-001, ATC-8300, ATC-9000, ATC-9900 |
 | Smart Contract Sprachen | Python (Native) + Solidity (EVM) + ATCLang |
-| Shivamon Max Supply | 9.900 NFTs |
+| Genesis Chronicles Max Supply | 9.900 NFTs |
 | Governance Quorum | 10% der zirkulierenden Supply |
 
 ---

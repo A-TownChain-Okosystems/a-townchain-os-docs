@@ -128,7 +128,7 @@ praktische Umsetzung dieses ATC-14-Standards. Alle darauf aufbauenden Vertrage
 erben diese deterministischen Eigenschaften.
 
 **Status:** Issue #1 abgeschlossen. `base_contract.py` als Basis-Contract,
-darauf aufbauend: Governance, Marketplace, Shivamon, ATC-89, ATC-90.
+darauf aufbauend: Governance, Marketplace, Genesis Chronicles, ATC-89, ATC-90.
 
 ---
 

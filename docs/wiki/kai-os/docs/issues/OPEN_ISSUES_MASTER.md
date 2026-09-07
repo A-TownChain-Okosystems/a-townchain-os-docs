@@ -117,11 +117,11 @@
 
 ---
 
-### #3 ⚔️ Shivamon Battle UI — Animierte Kämpfe im Browser
+### #3 ⚔️ Genesis Chronicles Battle UI — Animierte Kämpfe im Browser
 **Dateien:** `frontend/index.html`, `frontend/assets/js/battle.js` (neu)
 
 - [ ] Battle-Seite in `frontend/index.html` (Sidebar: `⚔️ Battle`)
-- [ ] Shivamon-Auswahl: eigene Collection vs. Gegner-Token-ID
+- [ ] Genesis-Chronicles-Auswahl: eigene Collection vs. Gegner-Token-ID
 - [ ] Animierter Kampfablauf — Runde für Runde mit HP-Bars
 - [ ] Angriffs-Animationen per CSS/Canvas
 - [ ] Battle-Log: Aktionen als Text-Stream
@@ -183,7 +183,7 @@
 
 ---
 
-### #13 🛒 ATC Marketplace — Shivamon kaufen & verkaufen
+### #13 🛒 ATC Marketplace — Genesis Chronicles kaufen & verkaufen
 **Datei:** `blockchain/contracts/marketplace/marketplace_contract.py`
 
 - [ ] `list_for_sale(token_id, seller, price_atc)`
@@ -204,7 +204,7 @@
 - [ ] Tests: `test_marketplace.py`
 - [ ] Dokumentation: Marketplace-Guide
 - [ ] Gas-Fee Kalkulator
-- [ ] Batch-Listing: mehrere Shivamon auf einmal listen
+- [ ] Batch-Listing: mehrere Genesis Chronicles auf einmal listen
 - [ ] Rabatt-System für ATC-Staker
 - [ ] Notification: Kauf-Bestätigung per Event
 
@@ -214,7 +214,7 @@
 **Datei:** `blockchain/contracts/solidity/`
 
 - [ ] `ATC Token.sol` — ERC20 (ATC-8300)
-- [ ] `Shivamon.sol` — ERC721 NFT (ATC-9000)
+- [ ] `Genesis Chronicles.sol` — ERC721 NFT (ATC-9000)
 - [ ] `ATCGovernance.sol` — DAO Voting (ATC-9900)
 - [ ] `GenesisToken.sol` — ATC-001 Genesis
 - [ ] `Marketplace.sol` — ERC721 Marketplace
@@ -227,8 +227,8 @@
 
 ---
 
-### #11 🥚 Shivamon Breeding — Gen 2 NFT Züchtung
-**Datei:** `blockchain/contracts/shivamon/shivamon_contract.py`
+### #11 🥚 Genesis Chronicles Breeding — Gen 2 NFT Züchtung
+**Datei:** `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py`
 
 - [ ] `breed(parent1_id, parent2_id, owner)` implementieren
 - [ ] DNA-Mixing: Stats 50/50 + zufällige Mutation (5% Chance)

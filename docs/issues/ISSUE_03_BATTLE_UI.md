@@ -1,4 +1,4 @@
-# 📄 Issue #3 — Shivamon Battle UI
+# 📄 Issue #3 — Genesis Chronicles Battle UI
 
 > **Labels:** enhancement · frontend · priority:high
 > **Priorität:** 🔴 High · **Milestone:** v2.1.0
@@ -8,7 +8,7 @@
 
 ## Ziel
 
-Visuelles, animiertes Battle-System im ShivaOS Dashboard. Shivamon kämpfen Runde für Runde mit HP-Bars, Schadensanzeigen und XP-Gewinn — vollständig im Browser, verdrahtet mit dem bestehenden `ShivamonContract.battle()`.
+Visuelles, animiertes Battle-System im ShivaOS Dashboard. Genesis Chronicles kämpfen Runde für Runde mit HP-Bars, Schadensanzeigen und XP-Gewinn — vollständig im Browser, verdrahtet mit dem bestehenden `Genesis ChroniclesContract.battle()`.
 
 ---
 
@@ -16,7 +16,7 @@ Visuelles, animiertes Battle-System im ShivaOS Dashboard. Shivamon kämpfen Rund
 
 ```
 ┌──────────────────────────────────────────────────┐
-│  ⚔️  Shivamon BATTLE ARENA                        │
+│  ⚔️  Genesis Chronicles BATTLE ARENA                        │
 ├──────────────────┬────────┬─────────────────────┤
 │  ATTACKER        │   VS   │  DEFENDER            │
 │  🔥 Ignarex-001  │        │  💧 Aquarix-007      │
@@ -45,7 +45,7 @@ Visuelles, animiertes Battle-System im ShivaOS Dashboard. Shivamon kämpfen Rund
   <!-- Auswahl-Phase -->
   <div id="battle-select">
     <div class="battle-slot" id="slot-attacker">
-      <!-- Dropdown: eigene Shivamon -->
+      <!-- Dropdown: eigene Genesis Chronicles -->
     </div>
     <div class="vs-divider">⚔️ VS</div>
     <div class="battle-slot" id="slot-defender">
@@ -72,7 +72,7 @@ Visuelles, animiertes Battle-System im ShivaOS Dashboard. Shivamon kämpfen Rund
 
 ```javascript
 async function runBattle(attackerId, defenderId) {
-  const result = await ATC_API.battleShivamon(attackerId, defenderId);
+  const result = await ATC_API.battleGenesis Chronicles(attackerId, defenderId);
   const rounds = result.rounds;
 
   // Runden animiert durchspielen
@@ -120,7 +120,7 @@ function updateHPBar(side, currentHp) {
 ## Aufgaben
 
 - [ ] Battle-Seite in `frontend/index.html` — Sidebar `⚔️ Battle`
-- [ ] Shivamon-Auswahl aus eigener Collection (Dropdown)
+- [ ] Genesis-Chronicles-Auswahl aus eigener Collection (Dropdown)
 - [ ] Gegner-Eingabe (Token-ID oder eigene Collection)
 - [ ] Animierter Kampfablauf Runde für Runde (800ms Delay)
 - [ ] HP-Bar Echtzeit-Update mit Farbwechsel (Grün → Orange → Rot)
@@ -128,7 +128,7 @@ function updateHPBar(side, currentHp) {
 - [ ] Level-Up Animation nach XP-Gewinn
 - [ ] Battle-Log als scrollbares Protokoll
 - [ ] Battle-History Tabelle (letzte 20 Kämpfe via API)
-- [ ] API-Call `POST /api/game/shivamon/battle` verdrahten
+- [ ] API-Call `POST /api/game/genesis-chronicles/battle` verdrahten
 
 ---
 

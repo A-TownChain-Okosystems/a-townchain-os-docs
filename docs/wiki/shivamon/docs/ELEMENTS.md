@@ -1,4 +1,4 @@
-# Shivamon — Element-System
+# Genesis Chronicles — Element-System
 
 ## 8 Elemente
 | Element | Symbol | Stärke gegen | Schwäche gegen |
@@ -25,7 +25,7 @@
 | **Ice** | 0.5 | 1.0 | 1.0 | 1.5 | 1.0 | 1.0 | 1.5 | 1.0 |
 
 ## Seltene Dual-Typen (v2.2.0)
-Legendary-Shivamon können zwei Elemente haben:
+Legendary-Genesis Chronicles können zwei Elemente haben:
 - Fire+Dark = Void Flame
 - Water+Light = Crystal Wave
 - Lightning+Plant = Storm Forest

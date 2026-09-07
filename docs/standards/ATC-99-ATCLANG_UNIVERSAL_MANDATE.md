@@ -25,7 +25,7 @@ ATC-99 gilt verbindlich für:
 
 | Bereich | Betroffene Komponenten |
 |---------|----------------------|
-| Smart Contracts | `bridge.atc`, `dao.atc`, `dex.atc`, `governance.atc`, `marketplace.atc`, `shivamon.atc`, `wallet.atc`, `registry.atc`, `revenue.atc`, `token.atc` |
+| Smart Contracts | `bridge.atc`, `dao.atc`, `dex.atc`, `governance.atc`, `marketplace.atc`, `genesis-chronicles.atc`, `wallet.atc`, `registry.atc`, `revenue.atc`, `token.atc` |
 | Kernel & OS | `kernel.atc`, `consensus.atc`, `atcfs.atc`, `atcnet.atc`, `atcos_main.atc` |
 | Gateway & Backend | `gateway.atc`, `event_bus.atc` |
 | Compiler & VM | ATCLang Compiler (ATC-92), ATCLang VM (ATC-93), ATCLang Stdlib (ATC-94) |
@@ -56,7 +56,7 @@ Alle aktuellen Python-Dateien sind als **temporäre Stubs** markiert und müssen
 | 2.1 | ATCLang Compiler, VM, Lexer, Parser, Stdlib, ECDSA, Keygen | 6+ Kernkomponenten |
 | 2.2 | Bootstrap, Discovery | 2 P2P-Komponenten |
 | 2.3 | PoH, PoS, PoW, Hybrid Consensus, Fork Resolution, Gas, AMM, Token | 8 Konsens+Contract |
-| 2.5 | Marketplace, Shivamon Contract | 2 NFT/Marketplace |
+| 2.5 | Marketplace, Genesis Chronicles Contract | 2 NFT/Marketplace |
 | 2.6 | Bridge, Governance, DAO, Multisig | 4 Governance+Bridge |
 | 3.0 | Server, Gateway, KAI-CLI | 3 Backend+Gateway |
 | 4.0 | Mainnet Config | 1 Mainnet-Konfiguration |
@@ -106,7 +106,7 @@ ATCLang ist definiert durch:
 
 - **Typsystem:** Statisch, mit Type-Inference
 - **Kryptografie:** SHA-256 (ATC-86), ECDSA secp256k1 (ATC-86)
-- **Chain-ID:** 9000 (AD-004, Non-EVM)
+- **Chain-ID:** 658467 (AD-004 RESOLVED 04.09.2026, Non-EVM)
 - **Ausführung:** ATCLang VM (ATC-93) — Bytecode-basiert
 - **Standardbibliothek:** 6 Module (crypto, collections, io, math, encoding, primitives)
 - **Gas-Modell:** Jede Operation hat definierte Gas-Kosten (ATC-87)
@@ -131,7 +131,7 @@ Die ATC-99-Konformität wird durch folgende Prüfungen sichergestellt:
 2. **STUB-Marker-Check:** Alle Python-Dateien haben `# STUB:`-Header
 3. **Non-EVM-Check:** Keine `.sol`-Dateien, keine Solana/Substrate-Abhängigkeiten
 4. **Hash-Algorithm-Check:** Kein Keccak-256, kein SHA-3, nur SHA-256
-5. **Chain-ID-Check:** Chain-ID 9000 in allen Konfigurationen
+5. **Chain-ID-Check:** Chain-ID 658467 in allen Konfigurationen
 
 ### 4.2 Automatisierung
 
@@ -178,7 +178,7 @@ ATC-99 selbst ist ein Meta-Standard und definiert keine eigenen Gas-Kosten. Die 
 |------|-------------|
 | Extension-Test | Alle `.py`-Dateien haben STUB-Marker, alle `.sol`-Dateien sind 0 |
 | Hash-Test | Kein `sha3` oder `keccak` in der Codebasis |
-| Chain-ID-Test | `9000` in allen Konfigurationsdateien |
+| Chain-ID-Test | `658467` in allen Konfigurationsdateien |
 | ATC-ID-Test | Keine alten ATC-IDs (1000er, KIP, AIP, ATS) in ATCLang-Dateien |
 | STUB-Sprint-Test | Jeder STUB hat eine gültige Sprint-Zuweisung |
 

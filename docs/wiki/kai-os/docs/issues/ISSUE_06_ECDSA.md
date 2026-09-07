@@ -17,8 +17,8 @@ Alle Transaktionen und NFT-Transfers müssen mit dem **Private Key des Senders s
 | Endpoint | Aktuell | Soll |
 |----------|---------|------|
 | `POST /api/wallet/send` | Keine Signatur-Prüfung | ECDSA Signatur required |
-| `POST /api/game/shivamon/transfer` | Keine Signatur-Prüfung | ECDSA Signatur required |
-| `POST /api/game/shivamon/battle` | Keine Auth | Owner-Signatur required |
+| `POST /api/game/genesis-chronicles/transfer` | Keine Signatur-Prüfung | ECDSA Signatur required |
+| `POST /api/game/genesis-chronicles/battle` | Keine Auth | Owner-Signatur required |
 | `POST /api/governance/vote` | — (noch nicht impl.) | ECDSA required |
 
 ---
@@ -125,7 +125,7 @@ def require_signature(f):
 - [ ] `ATCKeyGenerator` auf echtes ECDSA umstellen
 - [ ] `gateway/middleware/signature_verify.py` — Signatur-Middleware
 - [ ] `POST /api/wallet/send` — Signatur-Prüfung aktivieren
-- [ ] `POST /api/game/shivamon/transfer` — Signatur-Prüfung aktivieren
+- [ ] `POST /api/game/genesis-chronicles/transfer` — Signatur-Prüfung aktivieren
 - [ ] Nonce-System (verhindert Replay-Attacks)
 - [ ] Frontend: Signatur im Wallet-UI generieren
 - [ ] `cryptography` zu `requirements.txt` hinzufügen

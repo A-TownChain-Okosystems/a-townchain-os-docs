@@ -11,7 +11,7 @@
 |---|-------------|--------|------------|
 | AD-001 | **SHA-256** — kein Keccak-256 | ✅ RESOLVED | Non-EVM Krypto-Identität |
 | AD-002 | **IPCBus** — kein EventBus Shim | ✅ RESOLVED | `core/event_bus.py` entfernt |
-| AD-004 | **Chain-ID nicht final** — 9000 nur Platzhalter | 🔴 REOPENED 06.07.2026 | Michael muss echte Chain-ID waehlen |
+| AD-004 | **Chain-ID final** — 658467 | ✅ RESOLVED 04.09.2026 | Echte Chain-ID gewaehlt: 658467 (Hub+Code umgestellt, GitHub desc verifiziert) |
 | AD-006 | **ATCLang First** — keine anderen Sprachen | ✅ RESOLVED | Python/Sol = temporäre Stubs |
 | AD-007 | **EVM Registry irrelevant** | ✅ RESOLVED | Mit AD-004 zusammengeführt |
 | AD-003 | Voting-Power Snapshot (Flash-Loan-Schutz) | ⏳ Sprint 2.5 | Freigabe durch Michael erforderlich |
@@ -42,7 +42,7 @@
 | MK1 | Node Bootstrap | Erster ATCLang-Node produziert Blöcke | 🟡 PLANNED | Jul 2026 |
 | MK3 | Testnet Live | 5-Node öffentliches Testnet | 🟡 PLANNED | Dez 2026 |
 | MK4 | Alpha Release | Externer Audit, ZKP, ATCLang v1.0 | 🟡 PLANNED | Apr 2027 |
-| MK8 | Mainnet Launch | Genesis-Block, TGE, Chain-ID 9000 | 🟡 PLANNED | Dez 2027 |
+| MK8 | Mainnet Launch | Genesis-Block, TGE, Chain-ID 658467 | 🟡 PLANNED | Dez 2027 |
 
 ---
 
@@ -58,7 +58,7 @@
 - ✅ Hybrid Consensus — PoH + PoS + PoW + ForkResolver + Gas Engine
 - ✅ P2P Netzwerk — Bootstrap, Discovery, Gossip, Block Propagation
 - ✅ Wallet + ECDSA + Keygen + MultiSig + DID (SHA-256, Non-EVM)
-- ✅ ATC Smart Contracts (Python Stubs) — Token, Governance, Marketplace, Shivamon
+- ✅ ATC Smart Contracts (Python Stubs) — Token, Governance, Marketplace, Genesis Chronicles
 - ✅ DEX/AMM — x·y=k, SwapRouter, LP-Token
 - ✅ Cross-Chain Bridge — Solana Bridge API + ATCBridge.sol
 - ✅ 64-Kapitel-Wiki (468KB, 13.873 Zeilen)
@@ -123,7 +123,7 @@
 
 | Task | Issue | Ziel |
 |------|-------|------|
-| Shivamon Gen2 Breeding (ATCLang) | #11 | `shivamon.atc` deployed |
+| Genesis Chronicles Gen2 Breeding (ATCLang) | #11 | `genesis-chronicles.atc` deployed |
 | ATC Marketplace ATCLang-Migration | #13 | Marketplace live |
 | Block Explorer | #31 | Öffentliche TX-Ansicht |
 | Governance Flash-Loan-Fix | AD-003/#45 | Snapshot bei Proposal-Erstellung |
@@ -147,7 +147,7 @@
 |------|-------|------|
 | 5-Node öffentliches Testnet | #69 | Security-Audit extern |
 | 10+ Validator-Nodes | #70 | Mainnet-Validator bestätigt |
-| Genesis-Block Konfiguration | #71 | Chain-ID 9000 signiert |
+| Genesis-Block Konfiguration | #71 | Chain-ID 658467 signiert |
 
 
 ## Phase 3 — Alpha Release (Jan–Apr 2027)
@@ -176,7 +176,7 @@
 | Task | Issue | Ziel |
 |------|-------|------|
 | Genesis-Wallet + Validator-Set | #52 | 5 Genesis-Validators |
-| Mainnet Genesis-Block | — | Chain-ID 9000, Non-EVM |
+| Mainnet Genesis-Block | — | Chain-ID 658467, Non-EVM |
 | Token Generation Event (TGE) | — | 21M ATC Token |
 | Mainnet Live | — | MK8 Milestone erfüllt |
 
@@ -199,7 +199,7 @@
 | 2.1 | Consensus | `blockchain/consensus/*.py` | `consensus.atc` |
 | 2.3 | Smart Contracts | `blockchain/contracts/atc*/` | `atc8300.atc`, `governance.atc` |
 | 2.4 | Kernel/Syscalls | `modules/kernel/syscalls.py` | `kernel.atc` |
-| 2.5 | NFT/Marketplace | `contracts/shivamon/`, `marketplace/` | `shivamon.atc` |
+| 2.5 | NFT/Marketplace | `contracts/genesis-chronicles/`, `marketplace/` | `genesis-chronicles.atc` |
 | 3.0 | Backend/Gateway | `backend/api/`, `gateway/` | ATCLang Backend |
 | 3.0 | Wallet | `blockchain/wallet/` | `wallet.atc` |
 

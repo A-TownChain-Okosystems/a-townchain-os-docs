@@ -1,4 +1,4 @@
-# Shivamon NFT Spezifikation
+# Genesis Chronicles NFT Spezifikation
 
 ## Attribute
 - `token_id`: u64 (unique)
@@ -25,11 +25,11 @@
 
 ## Contract Auszug
 ```python
-# blockchain/contracts/shivamon/shivamon_contract.py
-# Shivamon NFT Contract — ATC-9000 Standard
+# blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py
+# Genesis Chronicles NFT Contract — ATC-9000 Standard
 #
-# Shivamon sind NFT-Battle-Kreaturen im A-TownChain Ökosystem.
-# Jedes Shivamon ist einzigartig (NFT) mit:
+# Genesis Chronicles sind NFT-Battle-Kreaturen im A-TownChain Ökosystem.
+# Jedes Genesis Chronicles ist einzigartig (NFT) mit:
 #   - Element (Feuer/Wasser/Erde/Luft/Shadow/Neon/Quantum)
 #   - Stats (HP, Attack, Defense, Speed, Special)
 #   - Rarity (Common → Legendary → Genesis)

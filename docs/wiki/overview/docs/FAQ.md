@@ -37,12 +37,12 @@ python atclang/security/analyzer.py my_contract.atc
 **Was bedeutet `safe_add(a, b)`?**
 Overflow-geschützte Addition. Wirft einen Fehler bei Integer-Overflow statt still zu wrappen.
 
-## Shivamon
+## Genesis Chronicles
 
-**Wie viele Shivamon gibt es maximal?**
+**Wie viele Genesis Chronicles gibt es maximal?**
 Max Supply: 10.000.000 (ATC-9000 Standard).
 
-**Was kostet ein Shivamon zu minten?**
+**Was kostet ein Genesis Chronicles zu minten?**
 0,1 ATC Gas + Mint-Fee (je nach Rarity).
 
 **Wann kommt Breeding?**

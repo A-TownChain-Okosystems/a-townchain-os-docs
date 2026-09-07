@@ -27,7 +27,7 @@
 | 2.2 | ✅ FERTIG | 100% | 9 .atc | P2P, Discovery, Gossip, NAT, Bootstrap, Testnet |
 | 2.3 | 🔵 AKTIV | 90% | 10 .atc | Hybrid, PoH, PoS, PoW, Fork, Gas, AMM, Atcoin, PoH-Integration |
 | 2.4 | 🔵 AKTIV | 90% | 11 .atc | Kernel, IPC, ATCFS, Net, Process, Shell, Pkg, ECDSA, Keygen, Wordlist |
-| 2.5 | ✅ FERTIG | 100% | 10 .atc | Base, Atcoin, Bridge, Wallet, Token, Registry, Smart Contracts, Marketplace, Shivamon |
+| 2.5 | ✅ FERTIG | 100% | 10 .atc | Base, Atcoin, Bridge, Wallet, Token, Registry, Smart Contracts, Marketplace, Genesis Chronicles |
 | 2.6 | 🔵 AKTIV | 80% | 6 .atc | DAO, Treasury, Timelock, Governance x2, Multisig |
 | 2.7 | 🟡 GEPLANT | 0% | — | Testing, CI/CD Fix |
 | 2.8 | 🟡 GEPLANT | 0% | — | Multi-Node Testnet Live |
@@ -71,7 +71,7 @@
 | v0.3 Features | ✅ 90% | async/await, generics, closures, module system |
 | Consensus | ✅ 90% | PoH, PoW, PoS, Fork, Gas, Hybrid (v0.3) |
 | P2P/Network | ✅ 100% | Discovery, Gossip, NAT, Bootstrap, Propagation, Testnet |
-| Smart Contracts | ✅ 100% | Base, Token, Bridge, Marketplace, Shivamon, Registry |
+| Smart Contracts | ✅ 100% | Base, Token, Bridge, Marketplace, Genesis Chronicles, Registry |
 | Kernel | ✅ 90% | Kernel, IPC, FS, Net, Process, Shell, Pkg |
 | Governance | 🔵 80% | DAO, Treasury, Timelock, Multisig |
 | Backend/Gateway | ✅ 95% | Server, Routes, DB, Wallet, Gateway, Monitor |
@@ -82,4 +82,4 @@
 
 ---
 
-*A-TownChain OS / KAI-OS · v1.0.0 · Non-EVM · SHA-256 · Chain-ID 9000 · ATCLang First*
+*A-TownChain OS / KAI-OS · v1.0.0 · Non-EVM · SHA-256 · Chain-ID 658467 · ATCLang First*

@@ -66,8 +66,8 @@
 | atc-shivacore-tools | 7 | 5 | 0 | 0 | 0 | 0 | 2 | `39c3288` |
 | atc-shivacore-tools-wiki | 7 | 5 | 0 | 0 | 0 | 0 | 2 | `0596551` |
 | atc-shivacore-wiki | 7 | 5 | 0 | 0 | 0 | 0 | 2 | `09d8176` |
-| atc-shivamon | 15 | 6 | 5 | 1 | 0 | 0 | 3 | `3218a94` |
-| atc-shivamon-wiki | 11 | 9 | 0 | 0 | 0 | 0 | 2 | `6e6c841` |
+| genesis-chronicles | 15 | 6 | 5 | 1 | 0 | 0 | 3 | `3218a94` |
+| genesis-chronicles-wiki | 11 | 9 | 0 | 0 | 0 | 0 | 2 | `6e6c841` |
 | atc-standards | 13 | 11 | 0 | 0 | 0 | 0 | 2 | `46099c9` |
 | atc-standards-wiki | 8 | 6 | 0 | 0 | 0 | 0 | 2 | `4e4b0b2` |
 | atc-stdlib | 7 | 5 | 0 | 0 | 0 | 0 | 2 | `b12c1ae` |

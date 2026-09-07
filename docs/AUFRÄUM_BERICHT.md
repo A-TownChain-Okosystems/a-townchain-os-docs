@@ -42,7 +42,7 @@
 | atc-vm | 7 | 5 | ✅ |
 | atc-ci | 6 | 4 | ✅ |
 | atc-genesis-engine | 6 | 4 | ✅ |
-| atc-shivamon | 5 | 3 | ✅ |
+| genesis-chronicles | 5 | 3 | ✅ |
 | atc-stdlib | 4 | 2 | ✅ |
 
 ---
@@ -77,7 +77,7 @@ atc-mobile                          17     5     3     0     0      1,151    e8e
 atc-sdk                             15     6     0     0     0        487    24485f8
 atc-shivacore                       67     0     0    53     0     50,663    9d30a32
 atc-shivacore-tools                 10     1     0     0     0        492    e9a41c3
-atc-shivamon                        22     7     4     0     0      1,974    731cf2f
+genesis-chronicles                        22     7     4     0     0      1,974    731cf2f
 atc-standards                       21     6     0     0     0      1,781    d177b8f
 atc-stdlib                          20     2     9     0     0      1,804    d961661
 atc-ui                              24     0     0     0    13      4,336    9e64dd5
@@ -163,7 +163,7 @@ A-TownChain Ökosystem (70 Repos)
 │   │   ├── atc-contracts        — Smart Contracts (4K Zeilen)
 │   │   ├── atc-gateway          — API Gateway (1K Zeilen)
 │   │   ├── atc-backend          — Backend API (2K Zeilen)
-│   │   ├── atc-shivamon         — NFT Game (2K Zeilen)
+│   │   ├── genesis-chronicles         — NFT Game (2K Zeilen)
 │   │   └── atc-atclang          — Compiler Sync (3K Zeilen)
 │   ├── 🟡 MINIMAL (13) — Stubs vorhanden, Implementierung ausstehend
 │   │   ├── atc-atcpkg, atc-bootloader, atc-dns, atc-explorer

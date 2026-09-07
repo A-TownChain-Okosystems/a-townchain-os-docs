@@ -7,13 +7,13 @@
 
 ## Smart Contract deployen
 ```python
-from blockchain.smart_contracts import atc_token, shivamon, governance
+from blockchain.smart_contracts import atc_token, genesis-chronicles, governance
 
 # Token-Balance prüfen
 balance = atc_token.balance_of("ATC...")
 
-# Shivamon minten
-result = shivamon.mint(caller="ATC...", to="ATC...", name="FireDragon", element="fire")
+# Genesis Chronicles minten
+result = genesis-chronicles.mint(caller="ATC...", to="ATC...", name="FireDragon", element="fire")
 
 # Governance-Proposal
 proposal_id = governance.create_proposal(

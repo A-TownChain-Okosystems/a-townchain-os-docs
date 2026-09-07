@@ -145,7 +145,7 @@ Reihenfolge (harte Abhängigkeiten):
 ### Sprint 2.8 — Gaming + Battle (Dez 2026) `#11 #3`
 **→ MK3: Multi-Node Testnet live**
 
-- [ ] **#11** Shivamon Breeding (DNA-Mixing, 7-Tage-Cooldown, 100 KAI Breeding-Fee)
+- [ ] **#11** Genesis Chronicles Breeding (DNA-Mixing, 7-Tage-Cooldown, 100 KAI Breeding-Fee)
 - [ ] **#3** Battle UI (Animationen, HP-Bars, Battle-Log, On-Chain Event)
 
 ---
@@ -154,7 +154,7 @@ Reihenfolge (harte Abhängigkeiten):
 **(parallel zu Sprint 2.3)**
 
 - [ ] `pallet-evm` + `pallet-ethereum` + `pallet-base-fee` in Substrate-Runtime
-- [ ] Chain-ID 9000 konfigurieren
+- [ ] Chain-ID 658467 konfigurieren
 - [ ] EVM-RPC: Port 9933 HTTP, 9944 WebSocket
 - [ ] MetaMask-Verbindung: `wallet_addEthereumChain`
 - [ ] Basis-ERC-20 deployen + testen
@@ -193,7 +193,7 @@ Reihenfolge (harte Abhängigkeiten):
 
 | Sprint | Datum | Thema | Meilenstein |
 |--------|-------|-------|-------------|
-| 4.5 | Sep 2027 | Solana Mainnet (ATC-SPL, Shivamon NFTs, Marketplace) | MK7: 100 Agenten |
+| 4.5 | Sep 2027 | Solana Mainnet (ATC-SPL, Genesis Chronicles NFTs, Marketplace) | MK7: 100 Agenten |
 | 4.6 | Okt 2027 | Ethereum Bridge Mainnet + Bug-Bounty $50k | MK5: Multi-Chain |
 | 4.7 | Nov 2027 | Post-Quantum Kryptographie (Dilithium, Kyber) | — |
 | 4.8 | Dez 2027 | AI Safety Audit (Trail of Bits / OpenMined) | MK6: AI Safety |

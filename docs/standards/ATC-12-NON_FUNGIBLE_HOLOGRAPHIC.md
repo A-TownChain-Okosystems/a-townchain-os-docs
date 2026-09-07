@@ -2,7 +2,7 @@
 > **Status:** 📐 FINAL — Spezifikation vollständig, Implementation geplant in Sprint 2.5 | **Version:** 1.0.0 | **Datum:** 04.07.2026> **Autor:** Michael Wroblewski, Aurora (Superagent)
 > **Standard-ID:** ATC-12
 > **Tier:** 2 (Logik & Oekonomie)
-> **Referenzen:** ATC-11 (Fungible Assets), ATC-14 (Deterministic Exec, geplant), Issue #11 (Shivamon Breeding), Issue #13 (Marketplace)
+> **Referenzen:** ATC-11 (Fungible Assets), ATC-14 (Deterministic Exec, geplant), Issue #11 (Genesis Chronicles Breeding), Issue #13 (Marketplace)
 > **Quelldatei:** Atc-12.docx (urspruengliche Spezifikation)
 > **Kategorie:** Economy & Assets  
 
@@ -27,12 +27,12 @@ klassischen NFT-Standard (wie ERC-721) hinausgeht.
 ### 1.1 Einzigartigkeit (Non-Fungible)
 Jedes Asset hat eine weltweit eindeutige ID (TokenID) und kann nicht durch ein
 anderes gleiches Asset ersetzt werden. Dies ist die Grundlage fuer digitale
-Sammlerstuecke, In-Game-Items (wie die Shivamon-NFTs) oder spezifische
+Sammlerstuecke, In-Game-Items (wie die Genesis-Chronicles-NFTs) oder spezifische
 Nutzungsrechte.
 
 **Implementation:** OK Implementiert
-- `blockchain/contracts/shivamon/shivamon_contract.py` — Shivamon NFT Contract
-  - Eindeutige TokenID pro Shivamon
+- `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py` — Genesis Chronicles NFT Contract
+  - Eindeutige TokenID pro Genesis Chronicles
   - Metadaten: Name, Level, Attribute, Genetik
   - ATC-90 Standard (NFT)
 - `blockchain/contracts/marketplace/marketplace_contract.py` — NFT Marketplace
@@ -50,8 +50,8 @@ Haustier, das "waechst" oder "agiert").
 "in sich tragen" (Parent-Child-Relationship).
 
 **Implementation:** Teilweise implementiert
-- Shivamon NFTs haben dynamische Metadaten (Level, XP, Attribute)
-- Shivamon Breeding (Issue #11) generiert neue NFTs mit geerbten Genen
+- Genesis Chronicles NFTs haben dynamische Metadaten (Level, XP, Attribute)
+- Genesis Chronicles Breeding (Issue #11) generiert neue NFTs mit geerbten Genen
 - **Geplant:** Wasm-basierte Verhaltens-Skripte innerhalb von NFTs
 - **Geplant:** Parent-Child-Relationship (NFT enthaelt andere NFTs/Token)
 
@@ -80,13 +80,13 @@ aktives Objekt im KAI-OS zu behandeln, das mit anderen Objekten interagieren kan
 **Bezug:** AI-Kernel (`ai_kernel.py`) mit DecisionEngine. KI-Agenten als
 ATC-12 NFTs mit Verhaltens-Skripten — konzeptionell fuer Zukunft.
 
-### 2.2 Shivamon-Oekosystem
-Das in der Roadmap erwaehnte Shivamon-Breeding (Issue #11) nutzt ATC-12, um neue,
-einzigartige Shivamon-NFTs zu generieren, die ihre genetischen Merkmale
+### 2.2 Genesis-Chronicles-Oekosystem
+Das in der Roadmap erwaehnte Genesis-Chronicles-Breeding (Issue #11) nutzt ATC-12, um neue,
+einzigartige Genesis-Chronicles-NFTs zu generieren, die ihre genetischen Merkmale
 (Metadaten) aus den Eltern-Assets erben und dauerhaft im Ledger verankern.
 
 **Implementation:** OK Implementiert
-- `shivamon_contract.py` — Shivamon NFT Contract mit Genetik-System
+- `genesis_chronicles_contract.py` — Genesis Chronicles NFT Contract mit Genetik-System
 - Breeding: Eltern-NFTs -> Kind-NFT mit geerbten Attributen
 - Issue #11 abgeschlossen
 
@@ -105,7 +105,7 @@ muss diese Logik auf allen Nodes deterministisch ablaufen.
 
 > ATC-14 ist ein zukuenftiger Standard — sichert ATC-12 Verhaltens-Skripte.
 
-### 3.2 Issue #11 (Shivamon Breeding) & #13 (Marketplace)
+### 3.2 Issue #11 (Genesis Chronicles Breeding) & #13 (Marketplace)
 Diese Features sind direkte Anwendungen des ATC-12-Standards. Der Marktplatz
 nutzt die ATC-12-Interface-Methoden (ownerOf, transferFrom), um den Handel
 dieser Unikate sicher abzuwickeln.
@@ -121,8 +121,8 @@ ATC-12 ist die technologische Erweiterung von ATC-11 fuer Unikate.
 
 | Komponente | Spezifikation (docx) | Implementation | Status |
 |------------|---------------------|----------------|--------|
-| Non-Fungible Token | ERC-721-Aequivalent | ATC-90 Standard, Shivamon | OK Implementiert |
-| Eindeutige TokenID | Weltweit eindeutige ID | Shivamon Contract mit TokenID | OK Implementiert |
+| Non-Fungible Token | ERC-721-Aequivalent | ATC-90 Standard, Genesis Chronicles | OK Implementiert |
+| Eindeutige TokenID | Weltweit eindeutige ID | Genesis Chronicles Contract mit TokenID | OK Implementiert |
 | Metadaten-Referenzen | Links zu On-Chain/IPFS | Metadaten in NFT (Name, Level, Gene) | OK Implementiert |
 | Verhaltens-Skripte | Wasm-Logik im NFT | Statische Metadaten (noch kein Wasm) | PARTIAL Geplant |
 | Status-Container | Parent-Child Relationship | Noch nicht implementiert | PARTIAL Geplant |
@@ -130,7 +130,7 @@ ATC-12 ist die technologische Erweiterung von ATC-11 fuer Unikate.
 | transferFrom() | Uebertragung | Implementiert | OK Implementiert |
 | tokenURI() | Metadaten-URI | Metadaten direkt on-chain | OK Implementiert |
 | Marketplace Integration | Handel mit Unikaten | marketplace_contract.py (Issue #13) | OK Implementiert |
-| Shivamon Breeding | Genetische Vererbung | shivamon_contract.py (Issue #11) | OK Implementiert |
+| Genesis Chronicles Breeding | Genetische Vererbung | genesis_chronicles_contract.py (Issue #11) | OK Implementiert |
 | Holographische Logik | Dynamisches Objekt | Dynamische Metadaten (Level/XP) | PARTIAL Basis da |
 
 > **Fazit:** Die Kern-Funktionalitaet (NFT-Minting, Metadaten, Breeding,
@@ -143,8 +143,8 @@ ATC-12 ist die technologische Erweiterung von ATC-11 fuer Unikate.
 
 | Issue | Titel | Status | Verbindung |
 |-------|-------|--------|------------|
-| #3 | Battle UI | Done | ATC-12 Shivamon Darstellung |
-| #11 | Shivamon Breeding | Done | ATC-12 Genetik-Vererbung |
+| #3 | Battle UI | Done | ATC-12 Genesis Chronicles Darstellung |
+| #11 | Genesis Chronicles Breeding | Done | ATC-12 Genetik-Vererbung |
 | #13 | Marketplace | Done | ATC-12 NFT-Handel |
 | #69 | Security-Audit | Open | ATC-12 NFT-Sicherheit |
 | Sprint 2.5 | Wasm-Verhaltens-Skripte | Geplant | ATC-12 Holographische Logik |

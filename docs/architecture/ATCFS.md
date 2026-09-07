@@ -33,7 +33,7 @@ ATCFS (A-TownChain File System) ist das proprietäre Dateisystem von ShivaOS. Es
 │   └── config/
 ├── contracts/       ← Deployed Smart Contracts
 │   ├── atc8300/
-│   └── shivamon/
+│   └── genesis-chronicles/
 ├── data/            ← Blockchain-Daten
 │   ├── blocks/
 │   ├── txpool/

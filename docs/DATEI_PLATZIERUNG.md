@@ -31,7 +31,7 @@
 | atcnet | 12 | 2.440 | bootstrap_client.atc, discovery.atc, gossip.atc |
 | atc-backend | 11 | 1.821 | kai_routes.atc, orchestrator.atc, ai_routes.atc |
 | atc-frontend | 10 | 739 | api.js, package.json, tsconfig.json |
-| atc-shivamon | 6 | 1.032 | game_routes.py, marketplace_routes.py |
+| genesis-chronicles | 6 | 1.032 | game_routes.py, marketplace_routes.py |
 | atc-cli | 4 | 623 | ecdsa_impl.atc, bigquery_pipeline.atc |
 | atc-atcpkg | 3 | 498 | manager.atc |
 | atc-mobile | 2 | 350 | biometric_auth.atc, wallet_api.atc |
@@ -42,7 +42,7 @@
 - server.ts → atc-backend
 - src/DesktopApp.tsx → atc-frontend
 - src/standardsData.ts → atc-standards
-- src/marketplaceApps.ts → atc-shivamon
+- src/marketplaceApps.ts → genesis-chronicles
 - workspace/*.ts → atc-cli
 - +24 weitere
 
@@ -60,8 +60,8 @@
 - +23 weitere
 
 ### atc-contracts (7 falsch)
-- shivamon/*.py → atc-shivamon
-- marketplace/*.py → atc-shivamon
+- genesis-chronicles/*.py → genesis-chronicles
+- marketplace/*.py → genesis-chronicles
 - wallet/*.py → atc-mobile
 - governance.atc → atc-blockchain
 
@@ -80,7 +80,7 @@
 - atc-gateway: service_discovery.atc → atcnet
 - atc-atcpkg: tools/manager.atc → atc-shivacore-tools
 - atc-backend: wallet.atc → atc-mobile
-- atc-shivamon: game_routes.py → atc-backend
+- genesis-chronicles: game_routes.py → atc-backend
 
 ## C. Verbleibende Duplikate (247 Dateien)
 

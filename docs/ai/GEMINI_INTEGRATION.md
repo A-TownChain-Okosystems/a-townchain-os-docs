@@ -123,10 +123,10 @@ Kontext:
 - ATCLang v0.2.0: Proprietäre SC-Sprache mit eigener VM
 - ATCNet: Kademlia-DHT P2P Netzwerk
 - ATC-8300: Fungible Token (18 Decimals)
-- ATC-9000: NFT Standard (Shivamon)
+- ATC-9000: NFT Standard (Genesis Chronicles)
 - ATC-9900: Governance DAO (in Development)
 - Wallet: ATC + 32 Zeichen, ECDSA secp256k1
-- Chain ID: 9000 | Testnet aktiv
+- Chain ID: 658467 | Testnet aktiv
 Antworte immer technisch präzise und auf Deutsch.
 ```
 

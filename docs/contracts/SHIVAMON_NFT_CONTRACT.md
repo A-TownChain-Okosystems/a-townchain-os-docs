@@ -1,7 +1,7 @@
-# 🐉 Shivamon NFT Contract — Technische Dokumentation
+# 🐉 Genesis Chronicles NFT Contract — Technische Dokumentation
 
 > **Standard:** ATC-9000 · **Chain:** A-TownChain · **Version:** 2.0.0
-> **Datei:** `blockchain/contracts/shivamon/shivamon_contract.py`
+> **Datei:** `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py`
 
 ---
 
@@ -24,7 +24,7 @@
 
 ## 1. Überblick
 
-Der **Shivamon NFT Contract** implementiert den **ATC-9000 Standard** — das NFT-Protokoll des A-TownChain Ökosystems. Jedes Shivamon ist ein einzigartiges, nicht-fungibles Token (NFT) mit genetisch bestimmten Eigenschaften, Kampfwerten und einer unveränderlichen DNA.
+Der **Genesis Chronicles NFT Contract** implementiert den **ATC-9000 Standard** — das NFT-Protokoll des A-TownChain Ökosystems. Jedes Genesis Chronicles ist ein einzigartiges, nicht-fungibles Token (NFT) mit genetisch bestimmten Eigenschaften, Kampfwerten und einer unveränderlichen DNA.
 
 ### Kernprinzipien
 
@@ -56,14 +56,14 @@ from dataclasses import dataclass, asdict
 ## 2. Architektur
 
 ```
-ShivamonContract
+Genesis ChroniclesContract
 │
-├── ShivamonNFT          ← Einzelnes NFT-Objekt
-│   ├── ShivamonStats    ← HP/ATK/DEF/SPD/SPC Werte
+├── Genesis ChroniclesNFT          ← Einzelnes NFT-Objekt
+│   ├── Genesis ChroniclesStats    ← HP/ATK/DEF/SPD/SPC Werte
 │   ├── Element (Enum)   ← 7 Elementtypen
 │   └── Rarity (Enum)    ← 6 Seltenheitsstufen
 │
-├── Token Registry       ← tokens: Dict[token_id → ShivamonNFT]
+├── Token Registry       ← tokens: Dict[token_id → Genesis ChroniclesNFT]
 ├── Owner Index          ← owner_tokens: Dict[address → List[token_id]]
 └── Battle Log           ← battle_log: List[Dict]
 
@@ -77,16 +77,16 @@ ShivamonContract
 ### Integration im Gesamtsystem
 
 ```
-Frontend (Shivamon UI)
-  └─→ api.js → POST /api/game/shivamon/mint
+Frontend (Genesis Chronicles UI)
+  └─→ api.js → POST /api/game/genesis-chronicles/mint
                     │
               Gateway :4000
                     │
           backend/api/routes/game_routes.py
                     │
-          ShivamonContract.mint()
+          Genesis ChroniclesContract.mint()
                     │
-          ShivamonNFT (Objekt erstellt)
+          Genesis ChroniclesNFT (Objekt erstellt)
                     │
           tokens[token_id] = nft  ← persistiert im RAM
 ```
@@ -95,11 +95,11 @@ Frontend (Shivamon UI)
 
 ## 3. Datenmodell
 
-### ShivamonNFT — Vollständiges Schema
+### Genesis ChroniclesNFT — Vollständiges Schema
 
 ```python
 @dataclass
-class ShivamonNFT:
+class Genesis ChroniclesNFT:
     # ── Identität ──────────────────────────────────────
     token_id:   str       # "SHV-" + 12 hex chars (z.B. "SHV-A3F9B2C1D4E5")
     name:       str       # z.B. "Voltrix-0042"
@@ -119,15 +119,15 @@ class ShivamonNFT:
     minted_at:  int       # Unix-Timestamp
 
     # ── Kampfwerte ─────────────────────────────────────
-    stats:      ShivamonStats   # Generiert aus DNA-Hash
+    stats:      Genesis ChroniclesStats   # Generiert aus DNA-Hash
     moves:      List[str]       # 4 Angriffe (Element-spezifisch)
 ```
 
-### ShivamonStats — Kampfwerte
+### Genesis ChroniclesStats — Kampfwerte
 
 ```python
 @dataclass
-class ShivamonStats:
+class Genesis ChroniclesStats:
     hp:      int   # Trefferpunkte   (Basis: 25–150 × Rarity-Multiplier)
     attack:  int   # Angriffsstärke  (Basis: 20–120 × Rarity-Multiplier)
     defense: int   # Verteidigung    (Basis: 20–120 × Rarity-Multiplier)
@@ -173,7 +173,7 @@ class ShivamonStats:
 
 ### Element
 
-Bestimmt das Element des Shivamon, seine Moves und die optische Darstellung.
+Bestimmt das Element des Genesis Chronicles, seine Moves und die optische Darstellung.
 
 | Enum-Wert | Anzeige | Emoji | Moves |
 |-----------|---------|-------|-------|
@@ -205,21 +205,21 @@ RARITY_MULTIPLIER = {
 }
 ```
 
-> **Hinweis:** Ein Genesis-Shivamon hat bis zu **5× stärkere Stats** als ein Common.
+> **Hinweis:** Ein Genesis-Genesis Chronicles hat bis zu **5× stärkere Stats** als ein Common.
 > Bei einer Drop-Rate von 0.5% ist alle ~200 Mints eines zu erwarten.
 
 ---
 
 ## 5. Klassen
 
-### `ShivamonNFT`
+### `Genesis ChroniclesNFT`
 
 Repräsentiert ein einzelnes NFT-Objekt. Wird vom Contract verwaltet, **nicht direkt instanziiert**.
 
 #### Konstruktor
 
 ```python
-ShivamonNFT(
+Genesis ChroniclesNFT(
     token_id:   str,
     name:       str,
     element:    Element,
@@ -241,7 +241,7 @@ def _generate_dna(self) -> str:
                  macht jeden DNA-Hash einzigartig.
     """
 
-def _generate_stats(self) -> ShivamonStats:
+def _generate_stats(self) -> Genesis ChroniclesStats:
     """
     Generiert Stats deterministisch aus dem DNA-Hash.
     Liest verschiedene Byte-Positionen des DNA-Hashes aus:
@@ -281,7 +281,7 @@ def to_dict(self) -> dict:
 
 ---
 
-### `ShivamonContract`
+### `Genesis ChroniclesContract`
 
 Der Haupt-Contract. Verwaltet alle NFTs, Eigentumsrechte und Kämpfe.
 
@@ -295,7 +295,7 @@ MAX_SUPPLY: int = 9900         # Absolutes Minting-Limit
 #### Instanz-Attribute
 
 ```python
-self.tokens:       Dict[str, ShivamonNFT]      # token_id → NFT-Objekt
+self.tokens:       Dict[str, Genesis ChroniclesNFT]      # token_id → NFT-Objekt
 self.owner_tokens: Dict[str, List[str]]        # ATC-Adresse → [token_ids]
 self.total_minted: int                         # Zähler aller geminteten NFTs
 self.battle_log:   List[Dict]                  # Protokoll aller Kämpfe
@@ -325,18 +325,18 @@ def mint(
 3. Rarity wählen (Parameter oder gewichtet random via weights=[50,25,15,7,2.5,0.5])
 4. Name generieren: NAMES[element][random] + "-" + zero-padded(total_minted+1, 4)
 5. Token-ID: "SHV-" + SHA-256(owner + name + time.time())[:12].upper()
-6. ShivamonNFT instanziieren → DNA + Stats + Moves werden automatisch generiert
+6. Genesis ChroniclesNFT instanziieren → DNA + Stats + Moves werden automatisch generiert
 7. tokens[token_id] = nft
 8. owner_tokens[owner].append(token_id)
 9. total_minted += 1
-10. Return: {"success": True, "shivamon": nft.to_dict()}
+10. Return: {"success": True, "genesis-chronicles": nft.to_dict()}
 ```
 
 **Rückgabe (Erfolg):**
 ```json
 {
   "success": true,
-  "shivamon": { ...ShivamonNFT.to_dict()... }
+  "genesis-chronicles": { ...Genesis ChroniclesNFT.to_dict()... }
 }
 ```
 
@@ -430,8 +430,8 @@ Beispiel: ATK=88, DEF=74 → `max(1, 88 - 37 + rand) = 46–56 Schaden`
 ```json
 {
   "success":   true,
-  "winner":    { ...ShivamonNFT... },
-  "loser":     { ...ShivamonNFT... },
+  "winner":    { ...Genesis ChroniclesNFT... },
+  "loser":     { ...Genesis ChroniclesNFT... },
   "rounds":    [
     { "round": 1, "attacker": "Voltrix-0042", "damage": 52, "defender_hp": 60 },
     { "round": 1, "attacker": "Aquarix-0007", "damage": 31, "defender_hp": 81 },
@@ -568,11 +568,11 @@ Service-Status.
 { "service": "game", "status": "online" }
 ```
 
-### `GET /api/game/shivamon/stats`
+### `GET /api/game/genesis-chronicles/stats`
 Contract-Gesamtstatistiken.
 
-### `POST /api/game/shivamon/mint`
-Neues Shivamon minting.
+### `POST /api/game/genesis-chronicles/mint`
+Neues Genesis Chronicles minting.
 
 **Request Body:**
 ```json
@@ -589,7 +589,7 @@ Alle Felder außer `owner` sind optional.
 ```json
 {
   "success": true,
-  "shivamon": {
+  "genesis-chronicles": {
     "token_id": "SHV-A3F9B2C1D4E5",
     "name": "Voltrix-0001",
     "element": "⚡ Neon",
@@ -601,13 +601,13 @@ Alle Felder außer `owner` sind optional.
 }
 ```
 
-### `GET /api/game/shivamon/{token_id}`
+### `GET /api/game/genesis-chronicles/{token_id}`
 Einzelnes NFT abfragen.
 
-### `GET /api/game/shivamon/owner/{address}`
+### `GET /api/game/genesis-chronicles/owner/{address}`
 Alle NFTs eines Owners.
 
-### `POST /api/game/shivamon/transfer`
+### `POST /api/game/genesis-chronicles/transfer`
 **Request Body:**
 ```json
 {
@@ -617,7 +617,7 @@ Alle NFTs eines Owners.
 }
 ```
 
-### `POST /api/game/shivamon/battle`
+### `POST /api/game/genesis-chronicles/battle`
 **Request Body:**
 ```json
 {
@@ -626,7 +626,7 @@ Alle NFTs eines Owners.
 }
 ```
 
-### `GET /api/game/shivamon/battle/log`
+### `GET /api/game/genesis-chronicles/battle/log`
 Letzte 20 Kämpfe.
 
 ---
@@ -668,7 +668,7 @@ Letzte 20 Kämpfe.
 ### Python — Wallet + Mint + Battle
 
 ```python
-from blockchain.contracts.shivamon.shivamon_contract import ShivamonContract
+from blockchain.contracts.genesis-chronicles.genesis_chronicles_contract import Genesis ChroniclesContract
 from blockchain.wallet.keygen import ATCKeyGenerator
 
 # Wallets erstellen
@@ -677,14 +677,14 @@ wallet1 = keygen.generate_wallet()
 wallet2 = keygen.generate_wallet()
 
 # Contract initialisieren
-contract = ShivamonContract()
+contract = Genesis ChroniclesContract()
 
-# Shivamon minting
+# Genesis Chronicles minting
 result1 = contract.mint(owner=wallet1["address"], element="Neon",   rarity="Rare")
 result2 = contract.mint(owner=wallet2["address"], element="Shadow", rarity="Epic")
 
-shv1 = result1["shivamon"]
-shv2 = result2["shivamon"]
+shv1 = result1["genesis-chronicles"]
+shv2 = result2["genesis-chronicles"]
 
 print(f"Geminted: {shv1['name']} ({shv1['rarity']}) — Total Stats: {shv1['total_stats']}")
 print(f"Geminted: {shv2['name']} ({shv2['rarity']}) — Total Stats: {shv2['total_stats']}")
@@ -698,38 +698,38 @@ print(f"XP gewonnen: {battle['xp_gained']}")
 ### cURL — Via Gateway
 
 ```bash
-# Shivamon minting
-curl -X POST http://localhost:4000/api/game/shivamon/mint \
+# Genesis Chronicles minting
+curl -X POST http://localhost:4000/api/game/genesis-chronicles/mint \
   -H "Content-Type: application/json" \
   -H "X-API-Key: atc-dev-key-2025" \
   -d '{"owner":"ATC7F3A9B2C1D4E5F6A7B8C9D0E1F2A3B4C5","element":"Quantum","rarity":"Legendary"}'
 
 # Battle starten
-curl -X POST http://localhost:4000/api/game/shivamon/battle \
+curl -X POST http://localhost:4000/api/game/genesis-chronicles/battle \
   -H "Content-Type: application/json" \
   -H "X-API-Key: atc-dev-key-2025" \
   -d '{"attacker":"SHV-A3F9B2C1D4E5","defender":"SHV-B4E8C3D2A1F6"}'
 
 # Collection abfragen
-curl http://localhost:4000/api/game/shivamon/owner/ATC7F3A9B2C1D4E5F6A7B8C9D0E1F2A3B4C5 \
+curl http://localhost:4000/api/game/genesis-chronicles/owner/ATC7F3A9B2C1D4E5F6A7B8C9D0E1F2A3B4C5 \
   -H "X-API-Key: atc-dev-key-2025"
 ```
 
 ### JavaScript — Frontend (api.js)
 
 ```javascript
-// Shivamon minting
-const result = await ATC_API.mintShivamon({
+// Genesis Chronicles minting
+const result = await ATC_API.mintGenesis Chronicles({
   owner:   walletAddress,
   element: "Neon",
   rarity:  "Rare"
 });
 
-console.log(result.shivamon.name);    // "Voltrix-0042"
-console.log(result.shivamon.stats);   // { hp: 112, attack: 88, ... }
+console.log(result.genesis-chronicles.name);    // "Voltrix-0042"
+console.log(result.genesis-chronicles.stats);   // { hp: 112, attack: 88, ... }
 
 // Battle
-const battle = await ATC_API.battleShivamon(token1, token2);
+const battle = await ATC_API.battleGenesis Chronicles(token1, token2);
 console.log("Sieger:", battle.winner.name);
 ```
 
@@ -766,13 +766,13 @@ self.services = {
 
 - [ ] **Persistenz:** SQLite / PostgreSQL statt in-memory
 - [ ] **ECDSA Signatur:** Transfer erfordert Private-Key Signatur
-- [ ] **Breeding:** Zwei Shivamon → Kind-NFT (Gen 2)
+- [ ] **Breeding:** Zwei Genesis Chronicles → Kind-NFT (Gen 2)
 - [ ] **Solidity Contract:** On-Chain Version für echte Blockchain
 - [ ] **Marketplace:** Buy / Sell für ATC Token
 - [ ] **Battle UI:** Animierte Kämpfe im Dashboard
 
 ---
 
-> **Dokument:** `docs/contracts/SHIVAMON_NFT_CONTRACT.md`
+> **Dokument:** `docs/contracts/GENESIS_CHRONICLES_NFT_CONTRACT.md`
 > **Version:** 2.0.0 · **Datum:** 2026-05-19
 > **Autor:** A-TownChain-Okosystems × Aurora AI Agent

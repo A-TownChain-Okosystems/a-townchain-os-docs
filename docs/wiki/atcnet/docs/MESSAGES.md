@@ -5,7 +5,7 @@
 {
   "type": "NEW_BLOCK",
   "version": "2.1.0",
-  "chain_id": 9000,
+  "chain_id": 658467,
   "timestamp": 1717948800,
   "nonce": 42,
   "payload": { ... },

@@ -78,7 +78,7 @@ class ATC8300Token:
 
 ---
 
-### ATC-9000 — NFT Standard (Shivamon)
+### ATC-9000 — NFT Standard (Genesis Chronicles)
 
 **Zweck:** Standard für nicht-fungible Token (vergleichbar mit ERC-721).
 
@@ -103,9 +103,9 @@ class ATC9000NFT:
 - `total_supply()` → int
 - `tokens_of_owner(address)` → list[int]
 
-**Shivamon-spezifische Attribute:**
+**Genesis-Chronicles-spezifische Attribute:**
 ```python
-SHIVAMON_ATTRIBUTES = {
+GENESIS_CHRONICLES_ATTRIBUTES = {
     "name": str,          # "Flamara", "Aquarix", etc.
     "element": str,       # "Fire", "Water", "Earth", "Air", "Lightning"
     "level": int,         # 1–100
@@ -680,11 +680,11 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 **Konzept:** ERC-721-Aequivalent mit "Holographic" Erweiterung — dynamische Objekte, nicht statische Bilder
 
 **Kernkonzepte:**
-1. **Non-Fungible** — Eindeutige TokenID, nicht ersetzbar (Shivamon NFTs)
+1. **Non-Fungible** — Eindeutige TokenID, nicht ersetzbar (Genesis Chronicles NFTs)
 2. **Holographisch** — Metadaten-Referenzen, Verhaltens-Skripte, Status-Container
 3. **Interoperabilitaet** — Standardisierte ABI (ownerOf, transferFrom, tokenURI, mint)
 
-**Implementiert:** ATC-9000 Standard, Shivamon NFTs (Issue #11), Marketplace (Issue #13)
+**Implementiert:** ATC-9000 Standard, Genesis Chronicles NFTs (Issue #11), Marketplace (Issue #13)
 **Geplant:** Wasm-Verhaltens-Skripte, Parent-Child-Relationship, KI-Avatar als NFT, IPFS-Metadaten
 **Roadmap:** Issue #3 Done, #11 Done, #13 Done, #69 Open | TBD (Wasm, Parent-Child, KI-Avatar)
 
@@ -1038,7 +1038,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 
 **Kernkonzepte:**
 1. **Interface-Abstraktion** — Universal UI, einmal definieren, ueberall rendern
-2. **Intent-Based UX** — "Kaufe Shivamon-Eier" statt raw Transaction
+2. **Intent-Based UX** — "Kaufe Genesis-Chronicles-Eier" statt raw Transaction
 3. **Unified Authentication** — OS als Session-Manager, einmal autorisieren
 
 **Implementiert:** ATC-UI (index.html), Gateway (Port 4000), Wallet, Battle UI (#3), Neon/Dark Theme

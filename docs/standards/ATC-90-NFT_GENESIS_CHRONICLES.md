@@ -1,4 +1,4 @@
-# ATC-90 — NFT / Shivamon Standard
+# ATC-90 — NFT / Genesis Chronicles Standard
 
 > **Standard-ID:** ATC-90 (ehemals ATC-)
 > **Status:** ACCEPTED — Spezifikation vollständig, Implementation geplant in Sprint 2.5
@@ -12,7 +12,7 @@
 
 ## 1. Überblick
 
-Non-Fungible Token Standard für Shivamon — ATCLang-natives NFT-Interface analog ERC-721. Mint, Transfer, Owner-Of, Token-URI, Metadata. Shivamon-spezifisch: Rarity, Attributes, Evolution.
+Non-Fungible Token Standard für Genesis Chronicles — ATCLang-natives NFT-Interface analog ERC-721. Mint, Transfer, Owner-Of, Token-URI, Metadata. Genesis-Chronicles-spezifisch: Rarity, Attributes, Evolution.
 
 ### Design-Prinzipien
 
@@ -24,7 +24,7 @@ Non-Fungible Token Standard für Shivamon — ATCLang-natives NFT-Interface anal
 ### Module
 
 ```
-modules/contracts/shivamon.atc — NFT-Contract
+modules/contracts/genesis-chronicles.atc — NFT-Contract
 modules/contracts/nft_metadata.atc — Metadata-Management
 ```
 
@@ -34,11 +34,11 @@ modules/contracts/nft_metadata.atc — Metadata-Management
 
 | Funktion | Beschreibung | Gas-Cost |
 |----------|--------------|----------|
-| `mint_shivamon(to: Address, attributes: &ShivamonAttributes) -> TokenId` | Mintet neues Shivamon-NFT | 50000 |
+| `mint_genesis_chronicles(to: Address, attributes: &GenesisChroniclesAttributes) -> TokenId` | Mintet neues Genesis-Chronicles-NFT | 50000 |
 | `transfer_nft(to: Address, token_id: TokenId) -> bool` | Transferiert NFT | 25000 |
 | `owner_of(token_id: TokenId) -> Address` | Gibt Owner zurück | 100 |
-| `get_attributes(token_id: TokenId) -> ShivamonAttributes` | Gibt Shivamon-Attribute zurück | 200 |
-| `evolve(token_id: TokenId, new_form: u8) -> bool` | Evolution des Shivamon | 30000 |
+| `get_attributes(token_id: TokenId) -> GenesisChroniclesAttributes` | Gibt Genesis-Chronicles-Attribute zurück | 200 |
+| `evolve(token_id: TokenId, new_form: u8) -> bool` | Evolution des Genesis Chronicles | 30000 |
 | `token_uri(token_id: TokenId) -> String` | Metadata-URI | 100 |
 
 ---

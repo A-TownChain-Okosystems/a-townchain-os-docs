@@ -4,7 +4,7 @@
 **Erstellt:** 09. Juni 2026  
 **Autor:** ShivaCore  
 **Organisation:** A-TownChain-Okosystems  
-**Chain-ID:** 9000  
+**Chain-ID:** 658467  
 **Status:** v1.0.0 RELEASE ✅
 
 ---
@@ -27,7 +27,7 @@
 9. [Smart Contract System](#9-smart-contract-system)
 10. [ATC Token Standards (8300/9000/9900)](#10-atc-token-standards)
 11. [API Gateway & Netzwerk](#11-api-gateway--netzwerk)
-12. [Shivamon — NFT Gaming Ökosystem](#12-shivamon--nft-gaming-ökosystem)
+12. [Genesis Chronicles — NFT Gaming Ökosystem](#12-genesis-chronicles--nft-gaming-ökosystem)
 13. [Franchise Factory](#13-atc-franchise)
 14. [Gemini AI Integration](#14-gemini-ai-integration)
 15. [Multi-Node Testnet](#15-multi-node-testnet)
@@ -54,8 +54,8 @@ A-TownChain ist ein **vollständig proprietäres, dezentrales Blockchain-Ökosys
 | **ATCLang** | v0.3.0 | Proprietäre Blockchain-Programmiersprache |
 | **ShivaOS** | v1.0.0 | Dezentrales proprietäres Betriebssystem |
 | **ShivaConsensus** | v1.0.0 | Hybrid PoH + PoS + PoW |
-| **ATCoin** | v1.0.0 | Native Währung, Chain-ID 9000 |
-| **Shivamon** | v1.0.0 | NFT Gaming Ökosystem |
+| **ATCoin** | v1.0.0 | Native Währung, Chain-ID 658467 |
+| **Genesis Chronicles** | v1.0.0 | NFT Gaming Ökosystem |
 | **Franchise Factory** | v1.0.0 | Dezentrales Business-Protokoll |
 | **Gemini AI** | v1.0.0 | KI-Orchestrator (BYOK) |
 | **API Gateway** | v1.0.0 | Port 4000, Rate-Limit, ECDSA-Auth |
@@ -111,7 +111,7 @@ Eine dezentrale, KI-gestützte Wirtschafts-Infrastruktur schaffen, die Blockchai
 │ REPL          │ EventBus         │ ATCoin (Native) │ Rate-Limit     │
 │ Stdlib (25+)  │ ModuleLoader     │ ECDSA Wallet    │ ECDSA-Auth     │
 │ Security Anal │ ProcessManager   │ Smart Contracts │                │
-│               │                  │ ATC-8300 Token  │ Shivamon NFT   │
+│               │                  │ ATC-8300 Token  │ Genesis Chronicles NFT   │
 │               │                  │ ATC-9000 NFT    │ Battle/Breed   │
 │               │                  │ ATC-9900 DAO    │ Marketplace    │
 │               │                  │ Bridge          │                │
@@ -130,7 +130,7 @@ Eine dezentrale, KI-gestützte Wirtschafts-Infrastruktur schaffen, die Blockchai
 ![Python](https://img.shields.io/badge/Python-3.10+-00d1ff?style=for-the-badge&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-3.0-00ffb3?style=for-the-badge&logo=flask)
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.20-7b61ff?style=for-the-badge&logo=solidity)
-![Chain ID](https://img.shields.io/badge/Chain_ID-9000-ff6b35?style=for-the-badge)
+![Chain ID](https://img.shields.io/badge/Chain_ID-658467-ff6b35?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-ff2d78?style=for-the-badge)
 
 **Autonomous Franchise Factory — ShivaOS v2.0 — KAI-OS Layer Architecture**
@@ -168,7 +168,7 @@ A-TownChain OS ist ein vollständiges, modulares Technologie-Ökosystem:
 | 🏠 **ShivaOS** | Futuristisches Browser-OS Dashboard | ATS-1007 | ✅ v2.0 |
 | ⛓ **A-TownChain** | Eigene Layer-1 Chain (PoI+PoS+PoH) | ATC-0004 | 🔨 Phase 1 |
 | 🧠 **KAI-OS AI** | Gemini 2.0 + dezentrale KI-Agenten | ATS-1005 | 🔨 Phase 2 |
-| 🎮 **Shivamon** | NFT-Battle-RPG (9.900 unique NFTs) | ATC-9000 | 🔨 Phase 2 |
+| 🎮 **Genesis Chronicles** | NFT-Battle-RPG (9.900 unique NFTs) | ATC-9000 | 🔨 Phase 2 |
 | 🏛 **Governance** | Dezentrale DAO (ATC-9900) | ATC-9900 | ✅ Deployed |
 | 🛒 **Marketplace** | NFT-Handelsplatz (2.5% Royalty) | — | ✅ Deployed |
 | 💰 **ATC Wallet** | BIP-39 Wallet (24 Wörter, ECDSA) | ATC-0002 | ✅ v2.1 |
@@ -186,7 +186,7 @@ A-TownChain OS ist ein vollständiges, modulares Technologie-Ökosystem:
 ╠═══════════════════════════════════════════════════════╣
 ║  L12  Gamification  Soul-Bound NFTs · Quests           ║
 ║  L11  DeFi          AMM · Lending · Oracle             ║
-║  L10  dApps         Shivamon · Marketplace · Gov       ║
+║  L10  dApps         Genesis Chronicles · Marketplace · Gov       ║
 ║  L9   Agenten       KI-Agents · Federated Learning     ║
 ║  L8   Governa
 
@@ -480,7 +480,7 @@ Input: transactions[], miner_address
 ### ATCoin
 - **Max Supply:** 21.000.000 ATC
 - **Dezimalen:** 18 (1 ATC = 10¹⁸ Wei)
-- **Chain-ID:** 9000
+- **Chain-ID:** 658467
 - **Block-Reward:** halbiert alle 210.000 Blöcke
 - **Genesis-Hash:** SHA3-256("A-TownChain Genesis Block 2026")
 
@@ -644,7 +644,7 @@ Länge:   35 Zeichen (3 Prefix + 32 Hex)
 ### ECDSA
 - Kurve: secp256k1
 - Hash-Algorithmus: SHA3-256
-- Replay-Schutz: Nonce (strikt monoton steigend) + Chain-ID 9000
+- Replay-Schutz: Nonce (strikt monoton steigend) + Chain-ID 658467
 - Library: Python `cryptography` (FIPS-konform)
 
 ---
@@ -658,7 +658,7 @@ Länge:   35 Zeichen (3 Prefix + 32 Hex)
 | ATCoin | ATC-8300 | Native Währung |
 | GenesisToken | ATC-8300 | Initiales Token-Supply |
 | ATC8300Token | ATC-8300 | Generischer Fungible Token |
-| ShivamonNFT | ATC-9000 | NFT Gaming Token |
+| Genesis ChroniclesNFT | ATC-9000 | NFT Gaming Token |
 | GovernanceDAO | ATC-9900 | On-Chain Governance |
 | MarketplaceContract | ATC-8300/9000 | NFT Marktplatz |
 | BridgeContract | Custom | Cross-Chain Bridge |
@@ -699,10 +699,10 @@ class BaseContract(ABC):
 |----------|-----|-------|--------|
 | ATC-001 | Genesis Token | `blockchain/smart_contracts.py` | ✅ |
 | ATC-8300 | Fungible Token | `blockchain/atcoin/atcoin.py` | ✅ |
-| ATC-9000 | NFT (Shivamon) | `blockchain/contracts/shivamon/shivamon_contract.py` | ✅ |
+| ATC-9000 | NFT (Genesis Chronicles) | `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py` | ✅ |
 | ATC-9900 | Governance/DAO | geplant | ⏳ v2.1 |
 
-→ Vollständige Dokumentation: [SHIVAMON_NFT_CONTRACT.md](../contracts/SHIVAMON_NFT_CONTRACT.md)
+→ Vollständige Dokumentation: [GENESIS_CHRONICLES_NFT_CONTRACT.md](../contracts/GENESIS_CHRONICLES_NFT_CONTRACT.md)
 
 
 ### ATC-8300 Interface (vollständig)
@@ -840,7 +840,7 @@ def rate_limit(ip):
 | `/api/blockchain` | Chain | 5001 | `POST /api/blockchain/mine` |
 | `/api/wallet` | Wallet | 5002 | `POST /api/wallet/create` |
 | `/api/ai` | AI | 5003 | `POST /api/ai/query` |
-| `/api/game` | Game | 5004 | `POST /api/game/shivamon/mint` |
+| `/api/game` | Game | 5004 | `POST /api/game/genesis-chronicles/mint` |
 | `/api/nodes` | Nodes | 5005 | `GET /api/nodes/` |
 
 ---
@@ -912,9 +912,9 @@ POST /api/ai/explain-contract        Contract erklären
 POST /api/ai/analyze-tx              TX analysieren
 ```
 
-**NFT / Shivamon**
+**NFT / Genesis Chronicles**
 ```
-POST /api/game/mint                  Shivamon minten
+POST /api/game/mint                  Genesis Chronicles minten
 GET  /api/game/tokens/:addr          Tokens nach Adresse
 POST /api/game/battle                Battle starten
 GET  /api/marketplace/listings       Aktive Listings
@@ -930,12 +930,12 @@ POST /api/governance/vote            Abstimmen
 
 ---
 
-## 12. Shivamon — NFT Gaming Ökosystem
+## 12. Genesis Chronicles — NFT Gaming Ökosystem
 
-# 🐉 Shivamon NFT Contract — Technische Dokumentation
+# 🐉 Genesis Chronicles NFT Contract — Technische Dokumentation
 
 > **Standard:** ATC-9000 · **Chain:** A-TownChain · **Version:** 2.0.0
-> **Datei:** `blockchain/contracts/shivamon/shivamon_contract.py`
+> **Datei:** `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py`
 
 ---
 
@@ -958,7 +958,7 @@ POST /api/governance/vote            Abstimmen
 
 ## 1. Überblick
 
-Der **Shivamon NFT Contract** implementiert den **ATC-9000 Standard** — das NFT-Protokoll des A-TownChain Ökosystems. Jedes Shivamon ist ein einzigartiges, nicht-fungibles Token (NFT) mit genetisch bestimmten Eigenschaften, Kampfwerten und einer unveränderlichen DNA.
+Der **Genesis Chronicles NFT Contract** implementiert den **ATC-9000 Standard** — das NFT-Protokoll des A-TownChain Ökosystems. Jedes Genesis Chronicles ist ein einzigartiges, nicht-fungibles Token (NFT) mit genetisch bestimmten Eigenschaften, Kampfwerten und einer unveränderlichen DNA.
 
 ### Kernprinzipien
 
@@ -990,14 +990,14 @@ from dataclasses import dataclass, asdict
 ## 2. Architektur
 
 ```
-ShivamonContract
+Genesis ChroniclesContract
 │
-├── ShivamonNFT          ← Einzelnes NFT-Objekt
-│   ├── ShivamonStats    ← HP/ATK/DEF/SPD/SPC Werte
+├── Genesis ChroniclesNFT          ← Einzelnes NFT-Objekt
+│   ├── Genesis ChroniclesStats    ← HP/ATK/DEF/SPD/SPC Werte
 │   ├── Element (Enum)   ← 7 Elementtypen
 │   └── Rarity (Enum)    ← 6 Seltenheitsstufen
 │
-├── Token Registry       ← tokens: Dict[token_id → ShivamonNFT]
+├── Token Registry       ← tokens: Dict[token_id → Genesis ChroniclesNFT]
 ├── Owner Index          ← owner_tokens: Dict[address → List[token_id]]
 └── Battle Log           ← battle_log: List[Dict]
 
@@ -1011,16 +1011,16 @@ ShivamonContract
 ### Integration im Gesamtsystem
 
 ```
-Frontend (Shivamon UI)
-  └─→ api.js → POST /api/game/shivamon/mint
+Frontend (Genesis Chronicles UI)
+  └─→ api.js → POST /api/game/genesis-chronicles/mint
                     │
               Gateway :4000
                     │
           backend/api/routes/game_routes.py
                     │
-          ShivamonContract.mint()
+          Genesis ChroniclesContract.mint()
                     │
-          ShivamonNFT (Objekt erstellt)
+          Genesis ChroniclesNFT (Objekt erstellt)
                     │
           tokens[token_id] = nft  ← persistiert im RAM
 ```
@@ -1029,11 +1029,11 @@ Frontend (Shivamon UI)
 
 ## 3. Datenmodell
 
-### ShivamonNFT — Vollständiges Schema
+### Genesis ChroniclesNFT — Vollständiges Schema
 
 ```python
 @dataclass
-class ShivamonNFT:
+class Genesis ChroniclesNFT:
     # ── Identität ──────────────────────────────────────
     token_id:   str       # "SHV-" + 12 hex chars (z.B. "SHV-A3F9B2C1D4E5")
     name:       str       # z.B. "Voltrix-0042"
@@ -1053,15 +1053,15 @@ class ShivamonNFT:
     minted_at:  int       # Unix-Timestamp
 
     # ── Kampfwerte ─────────────────────────────────────
-    stats:      ShivamonStats   # Generiert aus DNA-Hash
+    stats:      Genesis ChroniclesStats   # Generiert aus DNA-Hash
     moves:      List[str]       # 4 Angriffe (Element-spezifisch)
 ```
 
-### ShivamonStats — Kampfwerte
+### Genesis ChroniclesStats — Kampfwerte
 
 ```python
 @dataclass
-class ShivamonStats:
+class Genesis ChroniclesStats:
     hp:      int   # Trefferpunkte   (Basis: 25–150 × Rarity-Multiplier)
     attack:  int   # Angriffsstärke  (Basis: 20–120 × Rarity-Multiplier)
     defense: int   # Verteidigung    (Basis: 20–120 × Rarity-Multiplier)
@@ -1107,7 +1107,7 @@ class ShivamonStats:
 
 ### Element
 
-Bestimmt das Element des Shivamon, seine Moves und die optische Darstellung.
+Bestimmt das Element des Genesis Chronicles, seine Moves und die optische Darstellung.
 
 | Enum-Wert | Anzeige | Emoji | Moves |
 |-----------|---------|-------|-------|
@@ -1415,7 +1415,7 @@ print(generate_report(source, "my_contract.atc"))
 - **Max Supply:** 21.000.000 ATC (analog Bitcoin)
 - **Dezimalen:** 18
 - **Block-Reward:** Halbiert alle 210.000 Blöcke
-- **Chain-ID:** 9000
+- **Chain-ID:** 658467
 
 ### Gebühren-Struktur
 | Operation | Gebühr |
@@ -1423,7 +1423,7 @@ print(generate_report(source, "my_contract.atc"))
 | ATC senden | 0,001 ATC |
 | Contract deployen | 1,0 ATC |
 | NFT minten | 0,1 ATC |
-| Shivamon Breeding | 500 ATC |
+| Genesis Chronicles Breeding | 500 ATC |
 | Governance Proposal | 10 ATC |
 | Franchise Starter | 500 ATC |
 | Franchise Standard | 1.000 ATC |
@@ -1447,7 +1447,7 @@ print(generate_report(source, "my_contract.atc"))
 | `atcnet` | P2P Stack | 6+ |
 | `atc-standards` | ATC/ATS Protokoll-Standards | 5+ |
 | `atc-contracts` | Smart Contracts | 22+ |
-| `shivamon` | NFT Gaming | 8+ |
+| `genesis-chronicles` | NFT Gaming | 8+ |
 | `atc-gateway` | API Gateway | 9+ |
 | `atc-ui` | Frontend Dashboard | 2+ |
 | `atc-franchise` | Franchise Contracts | 8+ |
@@ -1462,7 +1462,7 @@ print(generate_report(source, "my_contract.atc"))
 | `atc-contracts-wiki` | 5 | ATC-8300, ATC-9000, ATC-9900, Security Audit, Deployment |
 | `atc-standards-wiki` | 4 | ATC-Standards, ATS-Standards, Übersicht |
 | `atc-gateway-wiki` | 4 | Routen, Middleware, Auth, Security |
-| `shivamon-wiki` | 5 | NFT-Spec, Battle, Breeding, Marketplace, Roadmap |
+| `genesis-chronicles-wiki` | 5 | NFT-Spec, Battle, Breeding, Marketplace, Roadmap |
 | `atc-ui-wiki` | 4 | Design-System, Komponenten, API, Deployment |
 | `a-townchain-os-wiki` | 7 | Quickstart, Architektur, Roadmap, Security, API, Whitepaper |
 | `franchise-factory-wiki` | 7 | Konzept, Contracts, Security, API, Deployment, Token Economy |
@@ -1683,7 +1683,7 @@ INTERFACE ATC8300 {
 
 ---
 
-## ATC-9000 — NFT Standard (Shivamon)
+## ATC-9000 — NFT Standard (Genesis Chronicles)
 
 ```
 INTERFACE ATC9000 {
@@ -2037,7 +2037,7 @@ blockchain/contracts/
 ├── atc8300/
 │   └── atc_token.py              # ATC-8300: Fungible Token (ERC20)
 ├── atc9000/
-│   └── shivamon_contract.py      # ATC-9000: NFT ✅ bereits implementiert
+│   └── genesis_chronicles_contract.py      # ATC-9000: NFT ✅ bereits implementiert
 ├── atc9900/
 │   └── governance_contract.py    # ATC-9900: DAO/Governance (→ Issue #9)
 └── base/
@@ -2114,8 +2114,8 @@ Alle Transaktionen und NFT-Transfers müssen mit dem **Private Key des Senders s
 | Endpoint | Aktuell | Soll |
 |----------|---------|------|
 | `POST /api/wallet/send` | Keine Signatur-Prüfung | ECDSA Signatur required |
-| `POST /api/game/shivamon/transfer` | Keine Signatur-Prüfung | ECDSA Signatur required |
-| `POST /api/game/shivamon/battle` | Keine Auth | Owner-Signatur required |
+| `POST /api/game/genesis-chronicles/transfer` | Keine Signatur-Prüfung | ECDSA Signatur required |
+| `POST /api/game/genesis-chronicles/battle` | Keine Auth | Owner-Signatur required |
 | `POST /api/governance/vote` | — (noch nicht impl.) | ECDSA required |
 
 ---
@@ -2312,10 +2312,10 @@ Für Release fehlt nur noch: **#2 Gemini AI Key-Integration**
 
 | # | Feature | Notion-Status | GitHub-Beweis | Sync-Status |
 |---|---------|:---:|---|:---:|
-| #3 | Shivamon Battle UI | 📋 Todo | `blockchain/contracts/shivamon/shivamon_contract.py` `frontend/index.html` `backend/api/routes/game_routes.py` | ⚠️ **Contract + Backend da — UI fehlt** |
+| #3 | Genesis Chronicles Battle UI | 📋 Todo | `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py` `frontend/index.html` `backend/api/routes/game_routes.py` | ⚠️ **Contract + Backend da — UI fehlt** |
 | #5 | Blockchain Explorer | 📋 Todo | `backend/api/routes/blockchain.py` `frontend/index.html` `docs/issues/ISSUE_05_EXPLORER.md` | ⚠️ **API vorhanden — Frontend-Dashboard fehlt** |
 | #9 | ATC-9900 Governance (DAO) | 📋 Todo | `backend/api/routes/governance_routes.py` `docs/issues/ISSUE_09_GOVERNANCE.md` | ⚠️ **Route da — DAO-Logic fehlt** |
-| #11 | Shivamon Breeding | 📋 Todo | `docs/issues/ISSUE_11_BREEDING.md` | ❌ **Nur Doku, kein Code** |
+| #11 | Genesis Chronicles Breeding | 📋 Todo | `docs/issues/ISSUE_11_BREEDING.md` | ❌ **Nur Doku, kein Code** |
 | #13 | NFT Marketplace | 📋 Todo | `backend/api/routes/marketplace_routes.py` `docs/issues/ISSUE_13_MARKETPLACE.md` | ⚠️ **Route da — Marketplace-Logic fehlt** |
 
 ---
@@ -2394,8 +2394,8 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 | Python Smart Contract Basis | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`ISSUE_01`](../issues/ISSUE_01_SMART_CONTRACTS.md) |
 | ATC-001 Genesis Token | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`genesis_token.py`](../../blockchain/contracts/atc001/genesis_token.atc) |
 | ATC-8300 Fungible Token | [#1](../issues/ISSUE_01_SMART_CONTRACTS.md) | ✅ | [`atc8300_token.py`](../../modules/contracts/atc8300/atc8300_token.atc) |
-| ATC-9000 Shivamon NFT | [#3](../issues/ISSUE_03_BATTLE_UI.md) | ✅ | [`SHIVAMON_NFT_CONTRACT.md`](../contracts/SHIVAMON_NFT_CONTRACT.md) |
-| Shivamon Battle System | [#3](../issues/ISSUE_03_BATTLE_UI.md) | ✅ | [`ISSUE_03`](../issues/ISSUE_03_BATTLE_UI.md) |
+| ATC-9000 Genesis Chronicles NFT | [#3](../issues/ISSUE_03_BATTLE_UI.md) | ✅ | [`GENESIS_CHRONICLES_NFT_CONTRACT.md`](../contracts/GENESIS_CHRONICLES_NFT_CONTRACT.md) |
+| Genesis Chronicles Battle System | [#3](../issues/ISSUE_03_BATTLE_UI.md) | ✅ | [`ISSUE_03`](../issues/ISSUE_03_BATTLE_UI.md) |
 | ECDSA Wallet Implementierung | [#6](../issues/ISSUE_06_ECDSA.md) | ✅ | [`WALLET_KEYGEN.md`](../architecture/WALLET_KEYGEN.md) |
 | Blockchain Explorer UI | [#5](../issues/ISSUE_05_EXPLORER.md) | ✅ | [`ISSUE_05`](../issues/ISSUE_05_EXPLORER.md) |
 | NFT Persistenz (SQLite) | [#4](../issues/ISSUE_04_PERSISTENZ.md) | ✅ | [`ISSUE_04`](../issues/ISSUE_04_PERSISTENZ.md) |
@@ -2419,7 +2419,7 @@ Mai 2026    Jun 2026      Sep 2026       Jan 2027     Okt 2027
 | Marketplace Contract (Python) | [#13](../issues/ISSUE_13_MARKETPLACE.md) | ✅ | [`marketplace_contract.py`](../../modules/contracts/marketplace/marketplace_contract.atc) |
 | Bridge Contract (Python) | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`bridge_contract.py`](../../modules/contracts/bridge/bridge_contract.atc) |
 | Solidity ATC Token.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`KAI-OS Solidity README`](README.md) |
-| Solidity ShivamonNFT.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`ISSUE_12`](../issues/ISSUE_12_SOLIDITY.md) |
+| Solidity Genesis ChroniclesNFT.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`ISSUE_12`](../issues/ISSUE_12_SOLIDITY.md) |
 | Solidity KAIGovernance.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`governance_contract.atc`](../../blockchain/contracts/governance/governance_contract.atc) |
 | Solidity KAIMarketplace.sol | [#12](../issues/ISSUE_12_SOLIDITY.md) | ✅ | [`marketplace_contract.atc`](../../modules/contracts/marketplace/marketplace_contract.atc) |
 | Solidity KAIBridge.sol | [#10](../issues/ISSUE_10_BRIDGE.md) | ✅ | [`bridge_contract.atc`](../../modules/contracts/bridge/bridge_contract.atc) |

@@ -3,7 +3,7 @@
 ## v2.1.0 — ABGESCHLOSSEN ✅
 - ✅ Gemini AI Integration
 - ✅ Smart Contracts (ATC-8300/9000/9900)
-- ✅ Shivamon NFT + Battle
+- ✅ Genesis Chronicles NFT + Battle
 - ✅ ECDSA Wallet + KeyGen
 - ✅ Bootstrap Node
 - ✅ API Gateway

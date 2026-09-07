@@ -8,7 +8,7 @@
 
 ## Ziel
 
-Eigener Blockchain-Explorer im ShivaOS Dashboard — Blöcke, Transaktionen, Adressen und Shivamon-Token durchsuchen und visualisieren.
+Eigener Blockchain-Explorer im ShivaOS Dashboard — Blöcke, Transaktionen, Adressen und Genesis-Chronicles-Token durchsuchen und visualisieren.
 
 ---
 
@@ -18,7 +18,7 @@ Eigener Blockchain-Explorer im ShivaOS Dashboard — Blöcke, Transaktionen, Adr
 ┌────────────────────────────────────────────────────┐
 │  🔍 ATC EXPLORER                  [Suche...]       │
 ├──────────┬──────────┬──────────┬───────────────────┤
-│ Blöcke   │   TXs   │ Adressen │ Shivamon          │
+│ Blöcke   │   TXs   │ Adressen │ Genesis Chronicles          │
 │ 1.247    │ 38.902  │ 412      │ 9.042 geminted    │
 ├──────────┴──────────┴──────────┴───────────────────┤
 │ LETZTE BLÖCKE                                      │
@@ -37,7 +37,7 @@ Eigener Blockchain-Explorer im ShivaOS Dashboard — Blöcke, Transaktionen, Adr
 ### Frontend-Komponenten
 
 ```javascript
-// Explorer-Tabs: Blocks | Transactions | Addresses | Shivamon
+// Explorer-Tabs: Blocks | Transactions | Addresses | Genesis Chronicles
 // Auto-Refresh: alle 10 Sekunden
 
 async function loadExplorer() {
@@ -69,7 +69,7 @@ function renderBlockRow(block) {
 async function explorerSearch(query) {
   query = query.trim();
   if (query.startsWith("ATC"))       return showAddressDetail(query);
-  if (query.startsWith("SHV-"))      return showShivamonDetail(query);
+  if (query.startsWith("SHV-"))      return showGenesis ChroniclesDetail(query);
   if (query.startsWith("TX-"))       return showTxDetail(query);
   if (!isNaN(query))                 return showBlockDetail(parseInt(query));
   showNotif("❌ Unbekanntes Format");
@@ -81,13 +81,13 @@ async function explorerSearch(query) {
 ## Aufgaben
 
 - [ ] Explorer-Seite in `frontend/index.html` (Sidebar: `🔍 Explorer`)
-- [ ] Stats-Header: Chain-Height, TXs, Adressen, Shivamon-Count
+- [ ] Stats-Header: Chain-Height, TXs, Adressen, Genesis-Chronicles-Count
 - [ ] Block-Liste (letzte 20, auto-refresh alle 10s)
 - [ ] Block-Detail-Ansicht (Hash, Miner, Validator, TXs, PoH-Hash)
 - [ ] TX-Liste mit Von/An/Betrag/Status
 - [ ] TX-Detail-Ansicht
-- [ ] Adress-Suche: Balance + TX-History + Shivamon-Collection
-- [ ] Shivamon-Token-Tracker
+- [ ] Adress-Suche: Balance + TX-History + Genesis-Chronicles-Collection
+- [ ] Genesis-Chronicles-Token-Tracker
 - [ ] Globale Suchleiste (Block-Nr, TX-ID, ATC-Adresse, SHV-Token-ID)
 - [ ] Live-Updates via Polling (10s Interval)
 - [ ] Verlinkung: Block → TXs → Adressen

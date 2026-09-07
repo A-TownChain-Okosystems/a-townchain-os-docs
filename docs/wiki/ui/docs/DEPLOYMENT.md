@@ -35,7 +35,7 @@ server {
 window.ATC_CONFIG = {
     apiBase:    'https://api.atownchain.io',
     wsBase:     'wss://ws.atownchain.io',
-    chainId:    9000,
+    chainId:    658467,
     version:    '2.1.0',
     theme:      'neon-dark'
 };
@@ -46,4 +46,4 @@ window.ATC_CONFIG = {
 |----------|-------------|
 | `ATC_API_URL` | API Gateway URL |
 | `ATC_WS_URL` | WebSocket URL |
-| `ATC_CHAIN_ID` | Chain-ID (Standard: 9000) |
+| `ATC_CHAIN_ID` | Chain-ID (Standard: 658467) |

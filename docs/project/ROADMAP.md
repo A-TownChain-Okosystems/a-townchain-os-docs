@@ -1,6 +1,6 @@
 # A-TownChain — Roadmap to Mainnet
 
-> Target: September 15, 2026 (40 Tage)
+> Target: Launch-Termin offen (AD-023, 06.09.2026)
 > Last Updated: 2026-09-06
 > Kernel: ShivaCore K29 ✅ | 30 Module | 674/674 Kernel-Tests · 731/731 Workspace-Tests (STABLE)
 > Architektur: AD-012/AD-013 VERBINDLICH (Microkernel + Gate v1.1)
@@ -19,7 +19,7 @@ Aug 3 ─── K3-K29 COMPLETED ────────── Aug 6 ── TOD
  Aug 20 ── K31 Genesis Deployment ───────── Issue #71
  Sep  1 ── K32 Pre-Launch Verification ───── (internal)
  Sep  8 ── K33 External Audit ───────────── Issue #69
- Sep 15 ── MAINNET LAUNCH ───────────────── 🚀
+ Termin offen ── MAINNET LAUNCH (AD-023) ───────────────── 🚀
 ```
 
 ---
@@ -121,7 +121,7 @@ K27 (GenesisBridge) → K28 (GossipBridge) → K29 (SecurityAudit)
 - Finale GenesisConfig (Validatoren, Allokationen, Chain-Params)
 - Genesis-Block Generierung + Signierung
 - Genesis-Hash-Verteilung
-- Chain-ID 9000 Aktivierung
+- Chain-ID 658467 Aktivierung
 - Genesis-Verification auf allen Nodes
 
 **Aufgaben**:
@@ -129,7 +129,7 @@ K27 (GenesisBridge) → K28 (GossipBridge) → K29 (SecurityAudit)
 2. [ ] Finale Token-Allokationen (ATC-8300)
 3. [ ] Genesis-Block Signierung (Ed25519)
 4. [ ] Genesis-Hash Distribution (ATCNet)
-5. [ ] Chain-ID 9000 Verifikation (alle Nodes)
+5. [ ] Chain-ID 658467 Verifikation (alle Nodes)
 6. [ ] State-Root Verifikation
 7. [ ] Genesis-Export (JSON + Binary)
 
@@ -167,17 +167,17 @@ K27 (GenesisBridge) → K28 (GossipBridge) → K29 (SecurityAudit)
 
 | Datum | Event | Issue |
 |------|-------|-------|
-| Sep 15 | Genesis Block Live | #71 |
-| Sep 15 | Validator Network Online | #70 |
-| Sep 15 | Public API Live (port 4000) | — |
-| Sep 15 | Block Explorer Live | — |
-| Sep 15 | Status Page Live | — |
+| offen | Genesis Block Live | #71 |
+| offen | Validator Network Online | #70 |
+| offen | Public API Live (port 4000) | — |
+| offen | Block Explorer Live | — |
+| offen | Status Page Live | — |
 
 ### Launch Sequence
 
 1. Genesis-Block auf allen Validator-Nodes deployen
 2. ATCNet P2P Verbindung aufbauen (alle Validatoren)
-3. Chain-ID 9000 aktivieren
+3. Chain-ID 658467 aktivieren
 4. Erster Block: Proposer #1 → propose → gossip → verify
 5. Chain-Höhe advancing (Block-Zeit ~400ms)
 6. Monitoring-Dashboards aktivieren
@@ -208,7 +208,7 @@ K27 (GenesisBridge) → K28 (GossipBridge) → K29 (SecurityAudit)
 | K3 | Python Backend | 7/12 | In Progress | Sep 2026 |
 | K4 | Frontend | 0/10 | Not Started | Sep 2026 |
 | K5-K6 | Pipeline/CI | 0/8 | Not Started | Sep 2026 |
-| K8 | Release v1.0 | 0/5 | Not Started | Sep 15 |
+| K8 | Release v1.0 | 0/5 | Not Started | offen |
 
 ---
 
@@ -249,7 +249,7 @@ K27 (GenesisBridge) → K28 (GossipBridge) → K29 (SecurityAudit)
   (29 MUST-Regeln, 11 Objekttypen, Testvektoren). Status DRAFT_REVIEW —
   wartet auf Owner-Entscheidungen SC-DEC-A…F.
 
-**Offen bis Mainnet 15.09.2026:**
+**Offen bis Mainnet — Launch-Termin offen (AD-023):**
 - 🔴 Issue #69: Dependabot — 69 Schwachstellen (3 critical, 27 high, 32 moderate, 7 low)
 - 🔴 Issue #70 (K30): 10+ Mainnet-Validator-Nodes deployen
 - 🔴 Issue #71 (K31): Genesis Block finalisieren (Chain-ID 658467)

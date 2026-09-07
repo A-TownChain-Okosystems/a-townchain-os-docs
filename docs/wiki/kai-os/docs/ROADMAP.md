@@ -2,7 +2,7 @@
 
 > **Version:** 1.0.0 | **Stand:** 05.07.2026 13:45 | **Autorität:** Michael Wroblewski
 > **Standards:** 99 ATC-Standards (ATC-01–99) — 80 FINAL + 10 ACCEPTED + 7 DRAFT + 1 REVIEW + 1 MANDATE
-> **Audit-Score:** 94/100 | **Architektur:** 36 Tiers | **Chain-ID:** 9000 (Non-EVM, SHA-256)
+> **Audit-Score:** 94/100 | **Architektur:** 36 Tiers | **Chain-ID:** 658467 (Non-EVM, SHA-256)
 > **ATCLang:** 92 .atc Dateien, 15.936 Zeilen, 60 Tests GRÜN, 0 Python-Stubs
 
 ---
@@ -88,11 +88,11 @@
 > **11 .atc Module:** kernel (147L), ipc_bus (101L), atcfs (141L), atcnet (134L), process_mgr (160L), shell (295L), pkg/manager (207L), ecdsa (66L), keygen (62L), wordlist (111L), ecdsa_impl (118L)
 
 ### Sprint 2.5 — NFT + Marketplace [100% ✅]
-**Milestone:** MK2 · **Ziel:** NFT, Marketplace, Shivamon
+**Milestone:** MK2 · **Ziel:** NFT, Marketplace, Genesis Chronicles
 
 | Task | Standard | Beschreibung | Status |
 |------|----------|--------------|--------|
-| T-401 | ATC-90 | Shivamon NFT Standard → ATCLang | ✅ |
+| T-401 | ATC-90 | Genesis Chronicles NFT Standard → ATCLang | ✅ |
 | T-402 | ATC-12 | Non-Fungible & Holographic Asset | ✅ |
 | T-403 | ATC-15 | Proof of AI Mining | 📋 |
 | T-404 | ATC-16 | Referral & Multi-Tier Rewards | 📋 |
@@ -100,7 +100,7 @@
 | T-406 | — | Block Explorer Web-UI | 📋 |
 | T-407 | — | NFT Marketplace UI | 📋 |
 
-> **10 .atc Module:** base_contract (68L), atcoin (175L), bridge_contract (171L), keygen (74L), ecdsa (59L), atc8300_token (177L), smart_contract_registry (87L), smart_contracts (485L), marketplace_contract (235L), shivamon_contract (289L)
+> **10 .atc Module:** base_contract (68L), atcoin (175L), bridge_contract (171L), keygen (74L), ecdsa (59L), atc8300_token (177L), smart_contract_registry (87L), smart_contracts (485L), marketplace_contract (235L), genesis_chronicles_contract (289L)
 
 ### Sprint 2.6 — Governance + Security [80% 🔵]
 **Milestone:** MK3 · **Ziel:** DAO, Multisig, Treasury, Timelock

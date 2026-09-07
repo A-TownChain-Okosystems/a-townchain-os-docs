@@ -53,7 +53,7 @@
 | `src/modules/atc-blockchain/contracts/base/__init__.py` | 0 | py |
 | `src/modules/atc-blockchain/contracts/contract_engine_atc14.atc` | 309 | atc |
 | `src/modules/atc-blockchain/contracts/governance/governance_contract.atc` | 202 | atc |
-| `src/modules/atc-blockchain/contracts/shivamon/__init__.py` | 2 | py |
+| `src/modules/atc-blockchain/contracts/genesis-chronicles/__init__.py` | 2 | py |
 | `src/modules/atc-blockchain/dex/__init__.py` | 2 | py |
 | `src/modules/atc-blockchain/dex/amm.atc` | 277 | atc |
 | `src/modules/atc-blockchain/governance/__init__.py` | 2 | py |

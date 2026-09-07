@@ -1,4 +1,4 @@
-# Shivamon Roadmap
+# Genesis Chronicles Roadmap
 
 ## v2.1.0 — ABGESCHLOSSEN ✅
 - ✅ NFT-Mint (ATC-9000)
@@ -17,8 +17,8 @@
 - 🔄 Fusion zweier NFTs
 
 ## v3.0.0 — GEPLANT
-- Shivamon World Map (on-chain Territorien)
+- Genesis Chronicles World Map (on-chain Territorien)
 - Gilden (DAO-Governance pro Gilde)
-- Cross-Chain Shivamon (Bridge)
+- Cross-Chain Genesis Chronicles (Bridge)
 - Mobile App (iOS/Android)
 - Season-System mit Rangliste

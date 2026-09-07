@@ -191,8 +191,8 @@ zeitversetzt oder parallel arbeiten.
 | **Ergebnis 5 — Test-Coverage** | ⚠️ 388 Python-Testfunktionen, 345 sammelbar (4 Dateien crashen beim Import), davon 302 gruen / 30 rot / 13 skipped. **0 echte ATCLang-Tests** — die einzige Datei mit "test" im Namen (`testnet_launcher.atc`) ist keine Testdatei. Deckt sich mit dem Sync-Report von heute ("0,6% ATCLang Coverage"). |
 | **Ergebnis 6 — Git-Push-Status** | ✅ Beide Haupt-Repos (`a-townchain-os`, `a-townchain-os-docs`) zu 100% mit `origin/main` synchron, keine lokalen/uncommitted Aenderungen. |
 | **Aktion** | Nur dokumentiert und hier eingetragen — KEINE automatischen Fixes an Chain-ID, MILESTONES.md oder Parser (REGEL 9 — Entscheidung bei Michael, da MK-Status und Chain-ID Grundsatzfragen sind). |
-| **Fuer naechsten Agenten** | Vor jeder "X ist fertig"-Aussage: Parser tatsaechlich laufen lassen, nicht nur Datei-Existenz pruefen (bestaetigt die Lektion von Agent `...105b5` oben — Existenz ≠ Funktionsfaehigkeit). Chain-ID-Konflikt (9000 vs 9001) und MILESTONES.md/ROADMAP.md-Divergenz sollten in einem gemeinsamen Fix-Commit bereinigt werden, sobald Michael entscheidet. |
-| **Status** | ✅ Audit abgeschlossen, Ergebnisse an Michael berichtet. Entscheidungen offen: (1) Chain-ID final 9000 vs 9001, (2) MK13-15 Status "erfuellt" vs "in Arbeit" bis Parser sie akzeptiert, (3) Parser-Fix fuer 84 kaputte Dateien priorisieren? |
+| **Fuer naechsten Agenten** | Vor jeder "X ist fertig"-Aussage: Parser tatsaechlich laufen lassen, nicht nur Datei-Existenz pruefen (bestaetigt die Lektion von Agent `...105b5` oben — Existenz ≠ Funktionsfaehigkeit). Chain-ID-Konflikt (658467 vs 9001) und MILESTONES.md/ROADMAP.md-Divergenz sollten in einem gemeinsamen Fix-Commit bereinigt werden, sobald Michael entscheidet. |
+| **Status** | ✅ Audit abgeschlossen, Ergebnisse an Michael berichtet. Entscheidungen offen: (1) Chain-ID final 658467 vs 9001, (2) MK13-15 Status "erfuellt" vs "in Arbeit" bis Parser sie akzeptiert, (3) Parser-Fix fuer 84 kaputte Dateien priorisieren? |
 
 ---
 
@@ -301,7 +301,7 @@ zeitversetzt oder parallel arbeiten.
   - `atc-shivacore` = Kernel — GELEERT, Rebuild per AD-013 (SC-001…SC-013)
   - `a-townchain`, `globus-os`, `aurora-ai`, `genesis-engine` = Produkt-Repos — GELEERT
 - **Rebuild-Reihenfolge (AD-020):** (1) Launch-Stack aus Vault → (2) atc-shivacore SC-001+ → (3) übrige Produkt-Repos
-- **Chain-ID:** **658467** (AD-004 RESOLVED 03.09.2026, ASCII 'ATC'; superseded Platzhalter 9000)
+- **Chain-ID:** **658467** (AD-004 RESOLVED 03.09.2026, ASCII 'ATC'; superseded Platzhalter 658467)
 - **Sprachstrategie:** ATCLang **Rust-first** (AD-021); Python = Referenz + SDK + Testing. 21-Crate-Layout, Gates G0-G19, kein Freeze vor G18 (AD-022)
 - **Konsensus:** Hybrid PoW+PoS+PoH (ShivaConsensus)
 - **Lizenzmodell:** ATC-LIC/ATC-LIC, durchgesetzt via ATVM ("Code is Law")
@@ -334,7 +334,7 @@ zeitversetzt oder parallel arbeiten.
 | K3.2 | `atcnet` → `src/network/` migrieren | 📋 offen |
 | K3.3 | `atc-gateway` → `src/gateway/` migrieren | 📋 offen |
 | K3.4 | `atc-contracts` → `src/contracts/` migrieren | 📋 offen |
-| K3.5 | `atc-shivamon` → `src/game/` migrieren | 📋 offen |
+| K3.5 | `genesis-chronicles` → `src/game/` migrieren | 📋 offen |
 | K3.6 | `atc-franchise` → `src/franchise/` migrieren | 📋 offen |
 | K3.7 | `atclang` → `src/atclang/` migrieren | 📋 offen |
 | K3.8 | `core/` bestehend → `src/core/` mergen (Konflikte auflösen) | 📋 offen |

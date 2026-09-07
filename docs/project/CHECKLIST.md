@@ -1,6 +1,6 @@
 # A-TownChain — Mainnet Launch Checklist
 
-> Target: September 15, 2026 (40 Tage)
+> Target: Launch-Termin offen (AD-023, 06.09.2026)
 > Last Updated: 2026-09-06
 > Kernel: ShivaCore K29 | 30 Module | 674/674 Kernel-Tests ✅ · 731/731 Workspace-Tests ✅ (STABLE)
 
@@ -49,10 +49,10 @@
 
 - [ ] **K31: Genesis Block Deployment** — Issue #71 (Sprint 4.0)
   - [ ] Finale GenesisConfig (Validatoren, Allokationen, Chain-Params)
-  - [ ] Genesis-Block Generierung + Signierung (Chain-ID 9000)
+  - [ ] Genesis-Block Generierung + Signierung (Chain-ID 658467)
   - [ ] Distribution an alle Validator-Nodes
   - [ ] Genesis-Hash-Verifikation auf allen Nodes
-  - [ ] Chain-ID 9000 Aktivierung
+  - [ ] Chain-ID 658467 Aktivierung
   - **Ziel**: 20. August 2026
   - **Geschätzte Tests**: ~20
 
@@ -108,7 +108,7 @@
 |-------|------|--------|-------|----------|
 | #69 | a-townchain-os | 3.3 | Security-Audit (extern) | High |
 | #70 | a-townchain-os | 4.0 | Validator-Nodes (10+) | Medium |
-| #71 | a-townchain-os | 4.0 | Genesis Block (Chain-ID 9000) | Medium |
+| #71 | a-townchain-os | 4.0 | Genesis Block (Chain-ID 658467) | Medium |
 | #80 | a-townchain-os | 3.0 | AIP-001 Agent Interaction Protocol | High |
 | #93 | a-townchain-os | — | Sync-Integration: 4 Warnungen | Bug |
 
@@ -119,7 +119,7 @@
 | # | Check | Status | Verifiziert durch |
 |---|-------|--------|------------------|
 | 1 | cargo tests (367/367) | ✅ | `cargo test` |
-| 2 | Chain-ID = 9000 | ✅ | security_audit.rs CHAIN-002 |
+| 2 | Chain-ID = 658467 | ✅ | security_audit.rs CHAIN-002 |
 | 3 | Genesis block signed | ✅ | security_audit.rs GEN-001 |
 | 4 | Validators ≥ 4, ≤ 100 | ✅ | security_audit.rs GEN-005 |
 | 5 | BFT threshold = 66.7% | ✅ | security_audit.rs VAL-004 |
@@ -143,7 +143,7 @@
 
 ---
 
-## Phase 4: Launch Day (Sep 15, 2026)
+## Phase 4: Launch Day (Launch-Termin offen, AD-023)
 
 - [ ] Genesis-Block auf allen Validator-Nodes deployed
 - [ ] Alle Validatoren via ATCNet P2P verbunden
@@ -191,7 +191,7 @@
   (29 MUST-Regeln, 11 Objekttypen, Testvektoren). Status DRAFT_REVIEW —
   wartet auf Owner-Entscheidungen SC-DEC-A…F.
 
-**Offen bis Mainnet 15.09.2026:**
+**Offen bis Mainnet — Launch-Termin offen (AD-023):**
 - 🔴 Issue #69: Dependabot — 69 Schwachstellen (3 critical, 27 high, 32 moderate, 7 low)
 - 🔴 Issue #70 (K30): 10+ Mainnet-Validator-Nodes deployen
 - 🔴 Issue #71 (K31): Genesis Block finalisieren (Chain-ID 658467)

@@ -34,7 +34,7 @@
 | atc-sdk | 60/100 | 🟡 FAST | 173 | 0 | 0 | 0 | 0 | 0 | 0 Tests |
 | atc-shivacore | 80/100 | ✅ FERTIG | 57,254 | 0 | 0 | 61 | 0 | 0 | 0 Tests |
 | atc-shivacore-tools | 60/100 | 🟡 FAST | 130 | 0 | 0 | 0 | 0 | 0 | 0 Tests |
-| atc-shivamon | 65/100 | 🟡 FAST | 1,223 | 1 | 5 | 0 | 0 | 0 | 0 Tests, 5 .py→ATCLang |
+| genesis-chronicles | 65/100 | 🟡 FAST | 1,223 | 1 | 5 | 0 | 0 | 0 | 0 Tests, 5 .py→ATCLang |
 | atc-standards | 80/100 | ✅ FERTIG | 1,148 | 0 | 0 | 0 | 0 | 0 | 0 Tests |
 | atc-stdlib | 60/100 | 🟡 FAST | 157 | 0 | 0 | 0 | 0 | 0 | 0 Tests |
 | atc-ui | 60/100 | 🟡 FAST | 301 | 0 | 0 | 0 | 0 | 0 | 0 Tests |
@@ -74,7 +74,7 @@
 | atc-sdk-wiki | 90/100 | ✅ FERTIG | 9 | 185 |
 | atc-shivacore-tools-wiki | 90/100 | ✅ FERTIG | 9 | 183 |
 | atc-shivacore-wiki | 90/100 | ✅ FERTIG | 9 | 322 |
-| atc-shivamon-wiki | 90/100 | ✅ FERTIG | 13 | 447 |
+| genesis-chronicles-wiki | 90/100 | ✅ FERTIG | 13 | 447 |
 | atc-standards-wiki | 95/100 | ✅ FERTIG | 10 | 731 |
 | atc-stdlib-wiki | 90/100 | ✅ FERTIG | 9 | 185 |
 | atc-ui-wiki | 90/100 | ✅ FERTIG | 11 | 349 |
@@ -171,7 +171,7 @@ Empfehlung: TypeScript-Komponenten aus `a-townchain-os/aistudio/` entfernen — 
 | atc-sdk-wiki | ROADMAP.md |
 | atc-shivacore-tools-wiki | ROADMAP.md |
 | atc-shivacore-wiki | ROADMAP.md |
-| atc-shivamon-wiki | ROADMAP.md |
+| genesis-chronicles-wiki | ROADMAP.md |
 | atc-standards-wiki | ROADMAP.md |
 | atc-stdlib-wiki | ROADMAP.md |
 | atc-ui-wiki | ROADMAP.md |

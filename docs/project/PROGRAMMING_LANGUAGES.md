@@ -23,7 +23,7 @@
 - **Package**: pip, requirements.txt
 
 ### Repos
-`atc-atclang`, `atc-aurora-ai`, `atc-backend`, `atc-blockchain`, `atc-cli`, `atc-contracts`, `atc-deploy`, `atc-gateway`, `atc-genesis-engine`, `atc-mobile`, `atc-monitoring`, `atc-shivamon`, `atc-stdlib`, `atc-testnet`, `atc-vm`, `atc-wallet`, `atclang`, `atcnet`
+`atc-atclang`, `atc-aurora-ai`, `atc-backend`, `atc-blockchain`, `atc-cli`, `atc-contracts`, `atc-deploy`, `atc-gateway`, `atc-genesis-engine`, `atc-mobile`, `atc-monitoring`, `genesis-chronicles`, `atc-stdlib`, `atc-testnet`, `atc-vm`, `atc-wallet`, `atclang`, `atcnet`
 
 ### Conventions
 - Wallet addresses: `ATC` prefix + 32 chars (SHA-256 derivation)
@@ -48,7 +48,7 @@
 - PID type: `ats1000::Pid` (Newtype struct, unified)
 - Capability system: Rights bitfield, CapabilityTable with spin::Mutex
 - Memory: HEAP_START=0x444444440000, USERSPACE_BASE=0x555555550000
-- Chain-ID: 9000 (constant in all modules)
+- Chain-ID: 658467 (constant in all modules)
 - no POSIX dependencies — fully from-scratch
 
 ## 3. TypeScript (13 repos)

@@ -26,7 +26,7 @@
 | #8+#9 | `hybrid_consensus.py` | `poh_entry["hash"]` KeyError — PoHEntry ist @dataclass | `.hash` / `.seq` Attributzugriff | `bc0b106d` |
 | #10 | `hybrid_consensus.py` | validate_chain() prüfte PoH nicht | PoH-Sequenz-Monotonie geprüft | `bc0b106d` |
 | #18 | `syscalls.py` | ATC_BALANCE=3 kollidiert mit EXEC=3 | ATC_BALANCE=33 | gepusht |
-| #17 | `shivamon_contract.py` | DNA-Kollision möglich bei schnellem Minting | `os.urandom(8)` in DNA-Seed | gepusht |
+| #17 | `genesis_chronicles_contract.py` | DNA-Kollision möglich bei schnellem Minting | `os.urandom(8)` in DNA-Seed | gepusht |
 | #2 | `wiki` Kap. 37 | "BLAKE2b" im Wiki, sha3_256 im Code | Wiki korrigiert | gepusht |
 | #11 | `wiki` Kap. 56 | Gas-Target 15M im Wiki, 5M im Code | Wiki auf 5M/10M korrigiert | gepusht |
 
@@ -74,7 +74,7 @@
 | MultiSigWallet | Kap. 38 | ✅ 100% |
 | DEX/AMM | Kap. 26 | ✅ 100% |
 | DAOGovernance | Kap. 47 | ✅ 95% (Snapshot fehlt) |
-| ShivamonNFT | Kap. 32 | ✅ 100% |
+| Genesis ChroniclesNFT | Kap. 32 | ✅ 100% |
 | ShivaOS Syscalls | Kap. 24 | ✅ 100% (nach Fix #18) |
 | IPCBus | Kap. 58 | ✅ 100% |
 | ATCFSNode | Kap. 45 | ✅ 100% |

@@ -28,7 +28,7 @@
 | Datei | Zeilen | Sprint | Modul |
 |-------|--------|--------|-------|
 | contract_registry.atc | 97 | 2.5 | Smart Contract Registry |
-| contracts/shivamon/breeding.atc | 138 | 2.5 | Shivamon Breeding |
+| contracts/genesis-chronicles/breeding.atc | 138 | 2.5 | Genesis Chronicles Breeding |
 | dex/amm.atc | 276 | 2.3 | AMM DEX |
 | governance/dao.atc | 167 | 2.6 | DAO Governance |
 | mainnet/launch_manager.atc | 104 | 4.0 | Mainnet Launch |
@@ -56,7 +56,7 @@
 | fs/atcfs_module.atc | 125 | 2.4 | ATCFS Module |
 | kernel/syscalls.atc | 117 | 2.4 | System Calls |
 
-### modules/shivamon/ (1 Datei)
+### modules/genesis-chronicles/ (1 Datei)
 | Datei | Zeilen | Sprint | Modul |
 |-------|--------|--------|-------|
 | engine/battle_engine.atc | 0 | 2.5 | Battle Engine (empty) |

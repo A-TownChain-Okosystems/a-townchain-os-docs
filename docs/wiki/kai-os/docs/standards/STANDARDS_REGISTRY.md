@@ -3,7 +3,7 @@
 > **Stand:** 05.07.2026 13:55 | **Version:** 1.0.0 | **Roadmap:** v2.0
 > **99 ATC-Standards (ATC-01 bis ATC-99)** — 80 FINAL + 10 ACCEPTED + 7 DRAFT + 1 REVIEW + 1 MANDATE
 > **Gepflegt von:** StandardsAgent (Aurora Ecosystem Brain)
-> **Non-EVM · SHA-256 · Chain-ID 9000**
+> **Non-EVM · SHA-256 · Chain-ID 658467**
 
 ---
 
@@ -27,7 +27,7 @@
 | ID | Titel | Status | Sprint | Implementierung |
 |----|-------|--------|--------|-----------------|
 | ATC-11 | Fungible Asset Standard | ✅ FINAL | 2.3 | atc8300_token.atc |
-| ATC-12 | Non-Fungible & Holographic Asset | ✅ FINAL | 2.5 | shivamon_contract.atc |
+| ATC-12 | Non-Fungible & Holographic Asset | ✅ FINAL | 2.5 | genesis_chronicles_contract.atc |
 | ATC-13 | Fractional Asset Ownership | ✅ FINAL | 2.3 | — (pending) |
 | ATC-14 | Deterministic Smart Contract Exec | ✅ FINAL | 2.3 | smart_contracts.atc (485L) |
 | ATC-15 | Proof of AI Mining | ✅ FINAL | 2.5 | — (pending) |
@@ -160,7 +160,7 @@
 | ATC-87 | Gas Fee (EIP-1559) | ✅ ACCEPTED | 2.3 | gas_fee.atc (129L v0.3) |
 | ATC-88 | AMM DEX | ✅ ACCEPTED | 2.3 | amm.atc (276L) |
 | ATC-89 | Fungible Token | ✅ ACCEPTED | 2.3/2.5 | atc8300_token.atc (177L), atcoin.atc (175L) |
-| ATC-90 | NFT / Shivamon | ✅ ACCEPTED | 2.5 | shivamon_contract.atc (289L), marketplace_contract.atc (235L) |
+| ATC-90 | NFT / Genesis Chronicles | ✅ ACCEPTED | 2.5 | genesis_chronicles_contract.atc (289L), marketplace_contract.atc (235L) |
 | ATC-91 | Cross-Chain Bridge | 📐 REVIEW | 2.6 | bridge_contract.atc (171L) |
 
 ## ATCLang (ATC-92–95) — DRAFT/ACCEPTED
@@ -203,7 +203,7 @@
 ## Architektur-Policy
 
 - **Hash:** SHA-256 (AD-001 RESOLVED, kein Keccak)
-- **Chain-ID:** 9000 (AD-004 RESOLVED, Non-EVM)
+- **Chain-ID:** 658467 (AD-004 RESOLVED, Non-EVM)
 - **Sprache:** ATCLang only (AD-006 RESOLVED, ATC-99)
 - **EVM:** Nicht unterstützt (AD-007 RESOLVED)
 

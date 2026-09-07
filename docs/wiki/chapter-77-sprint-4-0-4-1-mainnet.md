@@ -10,13 +10,13 @@
 |------|--------------|--------|
 | T-1301 | Genesis Block Konfiguration (#71) | 📋 |
 | T-1302 | 10+ Validator-Nodes (#70) | 📋 |
-| T-1303 | Mainnet Config (Chain-ID 9000, SHA-256) | 📋 |
+| T-1303 | Mainnet Config (Chain-ID 658467, SHA-256) | 📋 |
 | T-1304 | Mainnet Launch Checklist | 📋 |
 
 **Standards:** ATC-01 (Core Node), ATC-81 (PoH), ATC-83–86 (PoS, Fork, Sync, ECDSA)
 
 **Mainnet Konfiguration:**
-- Chain-ID: 9000 (Non-EVM, AD-004 RESOLVED)
+- Chain-ID: 658467 (Non-EVM, AD-004 RESOLVED)
 - Hash: SHA-256 (AD-001 RESOLVED)
 - Sprache: ATCLang (ATC-99)
 - Consensus: Hybrid PoH → PoW → PoS

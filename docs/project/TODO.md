@@ -3,7 +3,7 @@
 > Generated: 2026-09-06 (Update)
 > Sorted by priority
 
-## 🔴 Critical — Mainnet Block (Sep 15, 2026)
+## 🔴 Critical — Mainnet Block (Launch-Termin offen, AD-023)
 
 - [ ] **Issue #69: Security Audit** — 69 Dependabot-Schwachstellen (3 critical, 27 high) bis 15.09. beheben
 - [ ] **K30: Validator Node Setup** — Deploy 10+ Mainnet validator nodes (Issue #70)
@@ -17,7 +17,7 @@
   - [ ] Final GenesisConfig (validators, allocations, chain params)
   - [ ] Genesis block generation and signing
   - [ ] Distribution to all validator nodes
-  - [ ] Chain-ID 9000 activation
+  - [ ] Chain-ID 658467 activation
 
 - [ ] **K32: Pre-Launch Verification**
   - [ ] Full test suite run (367 tests)
@@ -85,7 +85,7 @@
 - [x] K29: Security Audit — 7 categories, 30+ checks, 5 attack simulations (Aug 4)
 - [x] K28: P2P Gossip Integration — block-gossip, sync, vote-gossip (Aug 4)
 - [x] K27: Genesis Bridge — 6 integration gaps closed (Aug 4)
-- [x] K26: Genesis Block Configuration — Chain-ID 9000 (Aug 4)
+- [x] K26: Genesis Block Configuration — Chain-ID 658467 (Aug 4)
 - [x] K25: Type-Mismatch Fix — unified Pid (Aug 4)
 - [x] K24: ATCNet Protocol — 10 message types (Aug 4)
 - [x] K23: Cross-Subsystem Tests — 15 flows (Aug 4)
@@ -116,7 +116,7 @@
   (29 MUST-Regeln, 11 Objekttypen, Testvektoren). Status DRAFT_REVIEW —
   wartet auf Owner-Entscheidungen SC-DEC-A…F.
 
-**Offen bis Mainnet 15.09.2026:**
+**Offen bis Mainnet — Launch-Termin offen (AD-023):**
 - 🔴 Issue #69: Dependabot — 69 Schwachstellen (3 critical, 27 high, 32 moderate, 7 low)
 - 🔴 Issue #70 (K30): 10+ Mainnet-Validator-Nodes deployen
 - 🔴 Issue #71 (K31): Genesis Block finalisieren (Chain-ID 658467)

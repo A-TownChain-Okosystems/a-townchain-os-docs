@@ -1,7 +1,7 @@
-# Shivamon Breeding System
+# Genesis Chronicles Breeding System
 
 ## Übersicht
-Zwei Shivamon können gepaart werden um ein neues Kind-Shivamon zu erzeugen.
+Zwei Genesis Chronicles können gepaart werden um ein neues Kind-Genesis Chronicles zu erzeugen.
 Die DNA des Kindes erbt Eigenschaften beider Eltern.
 
 ## Breeding-Regeln

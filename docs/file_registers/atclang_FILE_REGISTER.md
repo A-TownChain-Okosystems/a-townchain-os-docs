@@ -44,7 +44,7 @@
 | `src/modules/atclang/programs/atcos_main.atc` | 1154 | atc |
 | `src/modules/atclang/programs/event_bus.atc` | 75 | atc |
 | `src/modules/atclang/programs/kernel.atc` | 148 | atc |
-| `src/modules/atclang/programs/shivamon.atc` | 162 | atc |
+| `src/modules/atclang/programs/genesis-chronicles.atc` | 162 | atc |
 | `requirements.txt` | 4 | txt |
 | `vm.py` | 97 | py |
 

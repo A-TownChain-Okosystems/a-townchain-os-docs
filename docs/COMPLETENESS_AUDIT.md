@@ -47,7 +47,7 @@
 ## Repo-Klassifizierung
 
 ### Code-Repos (34)
-a-townchain-os, atc-aistudio, atc-atclang, atc-atcpkg, atc-backend, atc-blockchain, atc-bootloader, atc-ci, atc-cli, atc-contracts, atc-dns, atc-drivers, atc-explorer, atc-frontend, atc-franchise, atc-gateway, atc-genesis-engine, atc-ide, atc-kernel, atc-linux-edition, atc-mobile, atc-sdk, atc-shivacore, atc-shivacore-tools, atc-shivamon, atc-standards, atc-stdlib, atc-ui, atc-vm, atc-wallet, atc-whitepaper, atc-windows-edition, atclang, atcnet
+a-townchain-os, atc-aistudio, atc-atclang, atc-atcpkg, atc-backend, atc-blockchain, atc-bootloader, atc-ci, atc-cli, atc-contracts, atc-dns, atc-drivers, atc-explorer, atc-frontend, atc-franchise, atc-gateway, atc-genesis-engine, atc-ide, atc-kernel, atc-linux-edition, atc-mobile, atc-sdk, atc-shivacore, atc-shivacore-tools, genesis-chronicles, atc-standards, atc-stdlib, atc-ui, atc-vm, atc-wallet, atc-whitepaper, atc-windows-edition, atclang, atcnet
 
 ### Wiki-Repos (36)
 a-townchain-os-docs (Haupt-Wiki), a-townchain-os-wiki, kai-os-wiki, franchise-factory-wiki + 32 Modul-Wikis

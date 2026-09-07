@@ -60,7 +60,7 @@ Bevor Daten ausgetauscht werden, müssen sich zwei Nodes gemäß ATC-01 "begrü�
 Dabei prüfen sie:
 - **Protokollversion** (aktuell: v2.1.0+)
 - **Rolle im Netzwerk** (FULL, LIGHT, VALIDATOR, MINER)
-- **Kompatibilität mit dem KAI-OS-Genesis-Block** (Chain-ID 9000)
+- **Kompatibilität mit dem KAI-OS-Genesis-Block** (Chain-ID 658467)
 
 **Nachrichten:** `HELLO` → `HELLO_ACK`
 
@@ -68,7 +68,7 @@ Dabei prüfen sie:
 {
   "type": "HELLO",
   "version": "2.1.0",
-  "chain_id": 9000,
+  "chain_id": 658467,
   "node_type": "VALIDATOR",
   "timestamp": 1717948800,
   "signature": "ecdsa_sig_hex",

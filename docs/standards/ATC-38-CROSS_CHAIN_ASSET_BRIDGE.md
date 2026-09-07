@@ -68,7 +68,7 @@ Der Standard stellt sicher, dass eine Brücken-Transaktion „atomar" ist. Das b
 
 ### 2.1 Interoperabilität
 
-Nutzer können ihre bestehenden Krypto-Assets (z. B. Stablecoins oder Governance-Token anderer Chains) direkt in das KAI-OS-Ökosystem bringen und sie dort als „Inferenz-Credits" oder für „Shivamon-NFTs" verwenden.
+Nutzer können ihre bestehenden Krypto-Assets (z. B. Stablecoins oder Governance-Token anderer Chains) direkt in das KAI-OS-Ökosystem bringen und sie dort als „Inferenz-Credits" oder für „Genesis-Chronicles-NFTs" verwenden.
 
 ### 2.2 Liquiditätszufluss
 

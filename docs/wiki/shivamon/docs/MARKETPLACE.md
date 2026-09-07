@@ -2,8 +2,8 @@
 
 ## Endpunkte
 ```
-POST /api/marketplace/list    Shivamon zum Verkauf stellen
-POST /api/marketplace/buy     Shivamon kaufen
+POST /api/marketplace/list    Genesis Chronicles zum Verkauf stellen
+POST /api/marketplace/buy     Genesis Chronicles kaufen
 GET  /api/marketplace/listings  Aktive Listings
 GET  /api/marketplace/history   Kaufhistorie
 ```

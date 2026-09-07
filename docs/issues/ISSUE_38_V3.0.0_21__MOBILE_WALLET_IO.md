@@ -15,7 +15,7 @@ Native Mobile-App für A-TownChain Wallet.
 - [ ] Wallet Create/Import (BIP39 Mnemonic)
 - [ ] ATC Send/Receive
 - [ ] QR-Code Scanner
-- [ ] Shivamon Gallery
+- [ ] Genesis Chronicles Gallery
 - [ ] Push-Notifications (neue TXs)
 - [ ] Biometric-Auth (FaceID/Fingerprint)
 - [ ] App Store + Google Play Release

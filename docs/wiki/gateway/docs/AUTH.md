@@ -18,13 +18,13 @@ Header: X-Nonce: <uint64>
 ## Replay-Schutz
 - Nonce muss strikt monoton steigen
 - Nonce wird 24h gecacht
-- Chain-ID 9000 in Nachricht enthalten
+- Chain-ID 658467 in Nachricht enthalten
 
 ## Beispiel (Python)
 ```python
 from blockchain.wallet.ecdsa import ECDSASigner
 signer = ECDSASigner()
-msg = f'{{"to":"ATC...","amount":1000,"nonce":42,"chain_id":9000}}'
+msg = f'{{"to":"ATC...","amount":1000,"nonce":42,"chain_id":658467}}'
 sig = signer.sign(msg, private_key)
 headers = {
     "X-API-Key":    api_key,

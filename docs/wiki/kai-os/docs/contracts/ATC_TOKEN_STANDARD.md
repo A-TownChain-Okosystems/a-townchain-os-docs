@@ -1,6 +1,6 @@
 # 🪙 ATC Token Standards — Vollständige Dokumentation
 **Stand:** 09.06.2026 | **Version:** v2.1.0
-**Dateien:** `blockchain/contracts/atc8300/` + `blockchain/contracts/shivamon/`
+**Dateien:** `blockchain/contracts/atc8300/` + `blockchain/contracts/genesis-chronicles/`
 
 ---
 
@@ -79,7 +79,7 @@ class ATCoin(ATC8300Token):
       Symbol:        ATC
       Decimals:      18
       Total Supply:  21.000.000 ATC (wie Bitcoin, in Wei)
-      Chain ID:      9000
+      Chain ID:      658467
     """
     NAME         = "A-TownCoin"
     SYMBOL       = "ATC"
@@ -90,19 +90,19 @@ class ATCoin(ATC8300Token):
 
 ---
 
-## ATC-9000 — NFT Standard (Shivamon)
+## ATC-9000 — NFT Standard (Genesis Chronicles)
 
-**Datei:** `blockchain/contracts/shivamon/shivamon_contract.py` (269 Zeilen)
+**Datei:** `blockchain/contracts/genesis-chronicles/genesis_chronicles_contract.py` (269 Zeilen)
 
-ATC-9000 ist der proprietäre Standard für Non-Fungible Token — speziell für Shivamon (Gaming NFTs).
+ATC-9000 ist der proprietäre Standard für Non-Fungible Token — speziell für Genesis Chronicles (Gaming NFTs).
 
 ### Interface
 
 ```python
-class ShivamonContract:
+class Genesis ChroniclesContract:
     """
-    ATC-9000 NFT Standard — Shivamon Gaming NFTs.
-    Jedes Shivamon ist einzigartig mit Eigenschaften:
+    ATC-9000 NFT Standard — Genesis Chronicles Gaming NFTs.
+    Jedes Genesis Chronicles ist einzigartig mit Eigenschaften:
       - Element (Feuer, Wasser, Erde, Luft, Blitz, Eis)
       - Level (1-100)
       - Kampfwerte (HP, ATK, DEF, SPD)
@@ -112,7 +112,7 @@ class ShivamonContract:
 
     def mint(self, owner: str, metadata: dict) -> int:
         """
-        Neues Shivamon erzeugen.
+        Neues Genesis Chronicles erzeugen.
         Returns: token_id (eindeutige u64)
         metadata: {
           "name": "Pyravox",
@@ -143,13 +143,13 @@ class ShivamonContract:
         """Alle Token-IDs eines Eigentümers."""
 
     def level_up(self, token_id: int) -> bool:
-        """Shivamon leveln (nur Eigentümer)."""
+        """Genesis Chronicles leveln (nur Eigentümer)."""
 
     def evolve(self, token_id: int) -> bool:
-        """Shivamon entwickeln (Level 20/40/60 erforderlich)."""
+        """Genesis Chronicles entwickeln (Level 20/40/60 erforderlich)."""
 ```
 
-### Shivamon-Elemente & Typen
+### Genesis-Chronicles-Elemente & Typen
 
 | Element | Stärke gegen | Schwäche gegen | Farbe |
 |---------|------------|----------------|-------|
@@ -172,10 +172,10 @@ class ShivamonContract:
 
 ### Events
 ```
-ShivamonMinted(owner: Address, token_id: u64, element: string, rarity: string)
-ShivamonTransferred(from: Address, to: Address, token_id: u64)
-ShivamonLevelUp(token_id: u64, new_level: u64)
-ShivamonEvolved(token_id: u64, new_form: string)
+Genesis ChroniclesMinted(owner: Address, token_id: u64, element: string, rarity: string)
+Genesis ChroniclesTransferred(from: Address, to: Address, token_id: u64)
+Genesis ChroniclesLevelUp(token_id: u64, new_level: u64)
+Genesis ChroniclesEvolved(token_id: u64, new_form: string)
 ```
 
 ---

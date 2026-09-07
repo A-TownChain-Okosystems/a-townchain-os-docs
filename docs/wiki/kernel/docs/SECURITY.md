@@ -9,7 +9,7 @@
 
 ### ✅ P2P Signatur-Validierung
 - ECDSA-Signatur auf allen Block/TX-Messages
-- Replay-Schutz via Nonce + Chain-ID 9000
+- Replay-Schutz via Nonce + Chain-ID 658467
 
 ### ✅ Kernel Reentrancy-Schutz
 - Alle Contract-Aufrufe durch `_nonreentrant_enter/exit` geschützt

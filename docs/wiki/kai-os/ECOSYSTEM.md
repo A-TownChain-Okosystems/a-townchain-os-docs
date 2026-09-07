@@ -11,7 +11,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│  L12  shivamon              NFT Gaming, Battle, Breeding            │
+│  L12  genesis-chronicles              NFT Gaming, Battle, Breeding            │
 │  L11  atc-contracts         DeFi: Token, Staking, Bridge, Oracle   │
 │  L10  atc-ui / franchise    Dashboard, Business DAO                │
 │  L9   a-townchain-os        KI-Agenten, Orchestrator               │
@@ -56,7 +56,7 @@
 
 | Repo | Layer | Beschreibung |
 |------|-------|-------------|
-| [shivamon](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-shivamon) | `L12` | Battle Engine, Breeding, Marketplace |
+| [genesis-chronicles](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/genesis-chronicles) | `L12` | Battle Engine, Breeding, Marketplace |
 | [atc-franchise](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-franchise) | `L10/L8` | Business DAO, Vault, Revenue-Share |
 | [atc-ui](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-ui) | `L10` | Neon Dashboard (Wallet, Explorer, AI) |
 
@@ -73,7 +73,7 @@
 | [atc-gateway-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/atc-gateway-wiki) | atc-gateway | L7 |
 | [atclang-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/atclang-wiki) | atclang | L2–L4 |
 | [atc-contracts-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/atc-contracts-wiki) | atc-contracts | L4/L11 |
-| [shivamon-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/shivamon-wiki) | shivamon | L12 |
+| [genesis-chronicles-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/genesis-chronicles-wiki) | genesis-chronicles | L12 |
 | [franchise-factory-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/franchise-factory-wiki) | atc-franchise | L10/L8 |
 | [atc-ui-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/atc-ui-wiki) | atc-ui | L10 |
 | [atc-standards-wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/tree/main/docs/archive/wiki/atc-standards-wiki) | atc-standards | L0 |
@@ -105,7 +105,7 @@ atc-gateway (L7) ◄────────────────────
        │                              │               │
        ├──────────────────────────────┤               │
        ▼                              ▼               │
-atc-ui (L10)                    shivamon (L12)         │
+atc-ui (L10)                    genesis-chronicles (L12)         │
 atc-franchise (L10/L8)      marketplace            │
        │                              │               │
        └──────────────────────────────┘               │

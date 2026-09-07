@@ -96,7 +96,7 @@ Diese Issues betreffen ATCLang-Sprachkern, Konsens, Smart-Contract-Engine — ab
 - **#24** 🔐 MultiSig Wallet — Bridge & Franchise Vault (Kap. 38)
   - Fehlend: `blockchain/wallet/test_multisig.py`, `modules/contracts/bridge/bridge_contract.py`, `blockchain/wallet/multisig.py`
 - **#12** ⛓ Solidity Smart Contracts — On-Chain ATC Token
-  - Fehlend: `blockchain/contracts/solidity/ATCGovernance.sol`, `blockchain/contracts/solidity/GenesisToken.sol`, `blockchain/contracts/solidity/Shivamon.sol`
+  - Fehlend: `blockchain/contracts/solidity/ATCGovernance.sol`, `blockchain/contracts/solidity/GenesisToken.sol`, `blockchain/contracts/solidity/Genesis Chronicles.sol`
 - **#64** v3.2.1 — Docs: HuggingFace Pipeline GitHub Actions Workflow
   - Fehlend: `tools/hf_review_pipeline.py`, `.github/workflows/hf_code_review.yml`
 - **#43** docs: Dezentraler Nutzer-Nachweis & Architektur-Doku
@@ -125,7 +125,7 @@ Diese Issues betreffen ATCLang-Sprachkern, Konsens, Smart-Contract-Engine — ab
   - Fehlend: `config/checkpoints.json`
 - **#15** 📡 [Testnet] Block Propagation — P2P Block Broadcasting
   - Fehlend: `blockchain/nodes/p2p.py`
-- **#13** 🛒 ATC Marketplace — Shivamon kaufen & verkaufen
+- **#13** 🛒 ATC Marketplace — Genesis Chronicles kaufen & verkaufen
   - Fehlend: `blockchain/contracts/marketplace/marketplace_contract.py`
 - **#9** 🏛 Governance Contract (ATC-9900) — DAO Voting
   - Fehlend: `blockchain/contracts/governance/governance_contract.py`

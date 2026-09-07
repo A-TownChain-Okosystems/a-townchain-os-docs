@@ -367,7 +367,7 @@ Das persönliche Repository enthält die vollständige Google AI Studio Anwendun
 | `Testnet.md` | `temp_repo/docs/architecture/TESTNET.md` | 21,439 bytes |
 | `WALLET_KEYGEN.md` | `temp_repo/docs/architecture/WALLET_KEYGEN.md` | 2,292 bytes |
 | `ATC_TOKEN_STANDARD.md` | `temp_repo/docs/contracts/ATC_TOKEN_STANDARD.md` | 534 bytes |
-| `SHIVAMON_NFT_CONTRACT.md` | `temp_repo/docs/contracts/SHIVAMON_NFT_CONTRACT.md` | 20,661 bytes |
+| `GENESIS_CHRONICLES_NFT_CONTRACT.md` | `temp_repo/docs/contracts/GENESIS_CHRONICLES_NFT_CONTRACT.md` | 20,661 bytes |
 | `ISSUE_01_SMART_CONTRACTS.md` | `temp_repo/docs/issues/ISSUE_01_SMART_CONTRACTS.md` | 4,215 bytes |
 | `ISSUE_02_GEMINI_AI.md` | `temp_repo/docs/issues/ISSUE_02_GEMINI_AI.md` | 3,929 bytes |
 | `ISSUE_03_BATTLE_UI.md` | `temp_repo/docs/issues/ISSUE_03_BATTLE_UI.md` | 5,041 bytes |

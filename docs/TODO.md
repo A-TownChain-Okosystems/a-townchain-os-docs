@@ -52,7 +52,7 @@
 - [ ] T-009: Testnet Health-Check Automation (pending)
 
 ### Sprint 2.5 — NFT + Marketplace [100% ✅]
-- [x] T-401: Shivamon NFT Standard (289L) (ATC-90)
+- [x] T-401: Genesis Chronicles NFT Standard (289L) (ATC-90)
 - [x] T-402: Non-Fungible Asset (base_contract 68L, atcoin 175L) (ATC-12)
 - [x] T-406: Marketplace (235L) ✅
 - [x] Token Standard (atc8300 177L, atcoin 175L, genesis 101L) ✅
@@ -174,7 +174,7 @@
 | Datei | Zeilen | Sprint | Aktion |
 |-------|--------|--------|--------|
 | blockchain/contract_registry.atc | 97 | 2.5 | v0.3 Upgrade |
-| blockchain/contracts/shivamon/breeding.atc | 138 | 2.5 | v0.3 Upgrade |
+| blockchain/contracts/genesis-chronicles/breeding.atc | 138 | 2.5 | v0.3 Upgrade |
 | blockchain/dex/amm.atc | 276 | 2.3 | v0.3 Upgrade |
 | blockchain/governance/dao.atc | 167 | 2.6 | v0.3 Upgrade |
 | blockchain/mainnet/launch_manager.atc | 104 | 4.0 | v0.3 Upgrade |
@@ -191,7 +191,7 @@
 | modules/kernel/ipc/ipc_bus.atc | 101 | 2.4 | v0.3 Upgrade |
 | modules/kernel/net/atcnet.atc | 134 | 2.4 | v0.3 Upgrade |
 | modules/kernel/process/process_mgr.atc | 160 | 2.4 | v0.3 Upgrade |
-| modules/shivamon/engine/battle_engine.atc | 0 | 2.5 | v0.3 Upgrade |
+| modules/genesis-chronicles/engine/battle_engine.atc | 0 | 2.5 | v0.3 Upgrade |
 | shivaos/fs/atcfs_module.atc | 125 | 2.4 | v0.3 Upgrade |
 | shivaos/kernel/syscalls.atc | 117 | 2.4 | v0.3 Upgrade |
 
