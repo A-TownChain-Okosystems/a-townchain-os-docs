@@ -11,7 +11,8 @@ Deployment-Zentrale, inkl. Unified Cargo Workspace und Kernel-Build).
 
 | Repo | Produkt | Module | Umfang |
 |---|---|---|---|
-| [`atclang`](https://github.com/A-TownChain-Okosystems/atclang) | ATCLang (Programmiersprache) | atclang, atc-atclang, atc-vm, atc-stdlib | 138 Dateien / 32.347 Zeilen |
+| [`atclang`](https://github.com/A-TownChain-Okosystems/atclang) | ATCLang (Programmiersprache) | atclang, atc-atclang, atc-stdlib | 138 Dateien / 32.347 Zeilen |
+| [`atc-vm`](https://github.com/A-TownChain-Okosystems/atc-vm) | **A-TownChain Virtual Machine** (ATVM, AD-043) | Bytecode-Verifikation + Ausfuehrung + Runtime (Rust-first; Python-Referenz-Modul folgt aus atclang) | R1-Skeleton |
 | [`a-townchain`](https://github.com/A-TownChain-Okosystems/a-townchain) | Blockchain (Chain-ID 658467) | atc-blockchain, atcnet, atc-wallet, atc-contracts, atc-bridge, atc-dex, atc-explorer, atc-assets, atc-zkp, atc-governance, atc-dns, atc-testnet | 369 Dateien / 21.604 Zeilen |
 | [`globus-os`](https://github.com/A-TownChain-Okosystems/globus-os) | Betriebssystem (Userspace) | atc-kernel, atc-globus-shell/desktop/fs/net/registry/os, atc-bootloader, atc-drivers, atc-linux/windows-edition, atc-mobile | 361 Dateien / 86.395 Zeilen |
 | [`atc-shivacore`](https://github.com/A-TownChain-Okosystems/atc-shivacore) | **ShivaCore-Kernel** (Microkernel, AD-012/013) | atc-shivacore (Kernel-Crate, 674/674 Tests), atc-shivacore-tools | 61 .rs-Dateien |

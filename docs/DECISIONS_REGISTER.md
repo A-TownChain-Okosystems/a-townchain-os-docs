@@ -1039,3 +1039,16 @@ Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
 - **Bewusst unverändert (wie 04.09.):** Listen-Ports 9000, ATC-9000 NFT-Standard-ID, Negativ-Testfall 9999, network_magic 0x0A0C23A0.
 - **Migrationsaufwand:** Null — der Coin-Type existiert bislang nur in Dokumentation/Manifesten, keine Wallet-Implementierung im Einsatz (atc-wallet = restaurierter Vault-Stand, keine produktiven Keys).
 - **Gültig seit:** 2026-09-07
+
+---
+
+## AD-043: A-TownChain Virtual Machine als eigenstaendiges Repo (atc-vm)
+
+**Status:** ✅ RESOLVED/UMGESETZT | **Datum:** 2026-09-07 | **Entscheider:** Owner-Anforderung (Michael), Struktur-Festlegung Aurora | **Repo:** [atc-vm](https://github.com/A-TownChain-Okosystems/atc-vm)
+
+- **Anforderung:** „Erstelle ein repository fuer Die A-TownChain Virtual Machine" (Owner, 07.09.).
+- **Beschluss:** Die ATVM — verifizierte Bytecode-Ausfuehrung fuer ATCLang-Vertraege — wird als eigenstaendiges Repo `atc-vm` (Classification CORE, Layer L0, Security S4, R1-Skeleton nach ATC-STD-201) gefuehrt. Sprache und Ausfuehrung werden entkoppelt: `atclang` = Compiler-Toolchain (Bytecode-Erzeugung), `atc-vm` = Bytecode-Verifikation + Ausfuehrung + Runtime.
+- **Begruendung:** ATVM ist Trust Boundary (ATC-STD-NET-001/002/003: „ATVM-Verifier + License Gate als Trust Boundary") und hat S4-Sicherheitsklasse — eigenstaendige Governance, eigenes Security-Audit (G18, AD-023). Bisher war ATVM nur Crate/Modul im atclang-21-Crate-Plan (AD-022) bzw. Python-Modul in atclang.
+- **Offen (Migrations-Punkt):** Modul-Migration des Python-Referenz-Moduls `atc-vm` aus atclang nach hier, sobald Rust-Baseline steht (AD-021 Rust-first; Python bleibt Referenz).
+- **Registry:** atc-standards/registry/repositories.yaml erweitert; Manifest v3.1.4 (24-Repo-Stand).
+- **Gueltig seit:** 2026-09-07
