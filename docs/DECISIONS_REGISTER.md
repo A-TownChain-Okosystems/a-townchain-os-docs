@@ -1082,3 +1082,14 @@ Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
 - **Offen:** Implementierung im qualitaetsgetriebenen Rebuild (AD-023, G18 Security-Audit vor jedem Freeze); Reihenfolge-Pflicht ZKP-001…007 vor Rollup (ZKP-008).
 - **Registry:** atc-standards/registry erweitert (repositories.yaml 26 Repos, standards.yaml 28 Standards, categories.yaml zkp-Serie); Manifest v3.1.6.
 - **Gueltig seit:** 2026-09-07
+
+---
+
+## AD-046: Rollenfestlegung Chain-Komponenten — SCR-0005 Option A
+
+**Status:** ✅ RESOLVED/UMGESETZT | **Datum:** 2026-09-07 | **Entscheider:** Michael Wroblewski (Owner) | **SCR:** [SCR-0005](https://github.com/A-TownChain-Okosystems/atc-standards/blob/main/change-requests/SCR-0005.md)
+
+- **Beschluss:** Option A (Rollen-Trennung): **a-townchain** = Chain-Protokoll & Bibliothek (State-Modell, Tx-Struktur, Chain-Orchestrierung, Konsens-Anbindung); **atc-node** = Full-Node-Binary & Runtime (Distribution-Ziel `git clone && cargo build`, Bootstrap, Discovery, Validator-Betrieb). atc-node baut auf a-townchain + atc-algorithm + atc-vm auf und implementiert selbst keine Chain-Semantik.
+- **Begruendung:** Folgt AD-024/AD-013-Intention („atc-node aus a-townchain/Protocol-Core, P0"); Industriemuster Protokoll vs. Node; unterstuetzt K1-K8-Build-Ziel; Option B (Merge) haette AD-024-Vertikalarchitektur umgekehrt.
+- **Umsetzung:** ATC-STD-202 v1.1.0 §3a (REQ-STD-2021/2022), atc-node S3→S4 (Netzwerk-Angriffsflaeche), Rollen in REPOSITORY_MAP, Finding F-011 RESOLVED.
+- **Gueltig seit:** 2026-09-07

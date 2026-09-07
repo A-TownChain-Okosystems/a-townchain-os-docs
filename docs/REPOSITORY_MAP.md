@@ -88,7 +88,7 @@ Organisation jetzt: 22 aktive Repos.
 | Ziel-Repo | Heutiger Ort (Modul im Produkt-Repo/Vault) | Priorität | Promotion-Kriterium |
 |---|---|---|---|
 | atc-sdk | Monorepo-Plattformmodul atc-sdk (Vault) | P0 | ATCLang Rust-ABI stabil (AD-022-Gates) |
-| atc-node | NEU (kein Vault-Bestand) — aus a-townchain/Protocol-Core | P0 | Protocol-Interface-Freeze (AD-013) |
+| atc-node | NEU (kein Vault-Bestand) — aus a-townchain/Protocol-Core | P0 | **Rolle (SCR-0005 Option A, AD-046):** Full-Node-Binary & Runtime — Distribution-Ziel (git clone && cargo build -> Node); baut auf a-townchain + atc-algorithm + atc-vm auf; S4 |
 | atc-contracts | a-townchain-Modul atc-contracts (Vault) | P0/P1 | ATVM-Contract-Kontext verifiziert |
 | atc-wallet | a-townchain-Modul atc-wallet (Vault) | P0/P1 | Runtime-Signing/HD-Referenz stabil |
 | atc-explorer + atc-indexer | a-townchain-Modul atc-explorer (Vault); Indexer NEU | P1 | Chain-RPC stabil |
