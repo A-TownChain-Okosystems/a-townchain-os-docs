@@ -1001,3 +1001,28 @@ jetzt registry-getrieben: 8/8 Standards COMPLIANT, Duplikat-Check PASS,
 Repo-Gate PASS. Beispiel-Kette: F-017 → SCR-021 → TEST-044 → SYNC-012 →
 AUD-031. Ab sofort gilt: Jeder Fix eines Agenten dokumentiert F-NNN, SCR,
 TEST-NNN, SYNC-NNN und AUD-NNN.
+
+---
+
+## AD-041: Netzwerk-Umgebungen Devnet → Testnet → Mainnet verbindlich (ATC-STD-NET-001…008)
+
+**Datum:** 07.09.2026 · **Status:** RESOLVED/VERBINDLICH · **Entscheider:** Owner (Mandat) · **Ort:** atc-standards (kanonisch)
+
+Der Owner hat drei strikt getrennte Netzwerkstufen als Release-, Security-
+und Governance-Gate mandatiert: Devnet (ATC-DEVNET, DEV-ATC wertlos,
+Experimentierfreiheit, jeder Build reproduzierbar), Testnet (ATC-TESTNET,
+TEST-ATC wertlos, 24-Gebiete-Testpflicht, Consensus Mainnet-kompatibel,
+„nicht Mainnet-ready weil Devnet-ok"), Mainnet (ATC-MAINNET, Chain-ID
+658467 permanent, realer Wert, Reset VERBOTEN, Genesis immutable,
+Consensus frozen, Änderungen nur nach Governance). Promotion strikt
+sequenziell über Gates GATE-011 (Devnet), GATE-012 (Testnet, mit
+Security/Load/Recovery), GATE-013 (Mainnet, 11-stufig inkl.
+Governance-Approval) — Fortführung der GATE-001…010. Umgebungstrennung:
+EIN Code, DREI Konfigurationen (.atc/network/{devnet,testnet,mainnet}.yaml,
+schema-validiert mit Tier-Zwangsbedingungen); Testnet und Mainnutz nutzen
+dieselbe Protokollarchitektur — Unterschiede nur Genesis, Chain-ID, Keys,
+Infrastruktur, Tokenwert, Governance-Status. Errichtet als 8 Standards
+NET-001…008 (candidate, normativ per §33) inkl. Genesis-, Upgrade-,
+Security- und Recovery-Standard; Chain-ID-Allokation zentral in
+registry/networks.yaml (Devnet 658469, Testnet 658468, Mainnet 658467).
+Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
