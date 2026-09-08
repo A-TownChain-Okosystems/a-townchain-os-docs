@@ -224,3 +224,20 @@ von SPDX-Standardlizenzen (Repos behalten Apache-2.0 als Basisschicht, SCR-0036)
 
 Backlog: ATC-LICENSE.yaml-Manifeste je Repo (26), License Scanner (S-26),
 5 PLANNED-Typen spezifizieren, externer OSI-/Rechts-Review (Owner-Aktion).
+
+---
+
+## 10. INDEX.md — zentraler Master-Index (08.09.2026, 04:45 UTC+2, Agent Aurora, SCR-0038)
+
+Owner-Mandat: INDEX.md als Single Entry Point / Registry-Navigation des
+Standards-Systems. Entscheidung: **generiert statt hand-gepflegt** — zu 100 % aus
+den SSOT-Registern (registry/*.yaml) via tools/index/gen_index.py; manuelle
+Änderungen verboten, keine zweite driftende Wahrheit. Der Struktur-Entwurf des
+Owner-Inputs wurde übernommen; konfligierende Eigenwahrheiten (22-Familien-Modell,
+DRAFT-Statusse, docs/standards-Pfade, „fehlende" Standards wie COMPAT-001 — alles
+durch Registry-Ist widerlegt) bewusst NICHT übernommen. Inhalt: 16 Register, 44
+Familien mit Slot-Statistik, Master-Tabelle aller 396 Standards, Status-/
+Prioritätsmodell, offene Punkte, Integrität via Validator S-01..S-25, SSOT-Kaskade
+Governance > Standard > Registry > INDEX > Implementierung. ATC-STD-INDEX-001 =
+Dokument-ID, kein Registry-Standard. Commit 4df88dd, CI grün, Validator ALL
+COMPLIANT (396 Standards).
