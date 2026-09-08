@@ -182,3 +182,18 @@ a-townchain-os/-docs offen. P0-002 (Lizenz NOASSERTION) VERIFIZIERT: 26/26 Repos
 F-046, Owner-Entscheidung SPDX vs. Proprietär erforderlich. P0-003 durch bestehende
 RR-/CONF-/MILESTONE-/COMPAT-Gates abgedeckt. Abgleich dokumentiert:
 docs/AUD-2026-0003_ORG_MASTER_AUDIT.md §6. Findings-Stand: F-001..F-047.
+
+---
+
+## 8. Lizenz-Entscheidung Apache-2.0 org-weit (08.09.2026, 03:45 UTC+2, Agent Aurora)
+
+Owner-Delegation der F-046-Entscheidung an Aurora (SCR-0036, atc-standards):
+**Apache-2.0 (SPDX) für alle 26 Repos** — 26/26 LICENSE-Dateien ersetzt und
+gepusht (je Repo eigener Commit mit SCR-0036-Referenz); GitHub-Lizenz-Detektion
+von NOASSERTION (26/26) auf Apache-2.0 verifiziert. Begründung: SPDX-erkannt,
+expliziter Patent-Grant (wesentlich für Blockchain-/ZKP-Stack), Attributions-
+Pflicht hält „Copyright (c) 2026 Michael Wroblewski" verbindlich; kommerzielle
+Später-Optionen offen (Proprietär-Umstieg nur als MAJOR via COMPAT-001).
+F-046 RESOLVED. Abgewogen und abgelehnt: MIT (kein Patent-Grant), Proprietär
+(kein bewusster Entschluss; Org public-by-design), CC-BY-4.0-Dual-Lizenz für
+Standards-Texte (Komplexität; als MINOR-Dual später ergänzbar).
