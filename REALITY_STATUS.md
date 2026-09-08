@@ -162,3 +162,23 @@ Protokoll-Familienspezifikationen BLOCK/TX/CONSENSUS, SBOM/Runbooks.
 
 DECISIONS_REGISTER-Referenz: AD-048 (Governance Core normativ) gilt fort für den
 voll besetzten Katalog; Registry-Endstand 387 Standards, 387 APPROVED, 0 offen.
+
+---
+
+## 7. Fremd-Audit-Abgleich + Standards-Fertigbau (08.09.2026, 03:15–03:30 UTC+2, Agent Aurora)
+
+**Slot-Fertigbau (SCR-0034, Commit 9ce80bb, CI grün):** Alle 263 Batch-Standards
+v1.1.0 → v1.2.0 — je Standard §6 Slot-Spezifikation mit 5-8 verbindlichen, aus dem
+Slot-Gegenstand abgeleiteten Prüfkriterien (je mit Nachweisangabe), eigene
+REQ-STD-011..0NN-Menge, M4-Abdeckungsmetrik. Normative Regelhülle je Slot komplett;
+Engineering-Bindung bei Slot-Aktivierung via SCR/MINOR.
+
+**Fremd-Audit-Abgleich (SCR-0035, Commit c917333, CI grün):** Externer Agent
+(P0–P3-Audit) live verifiziert: P0-001 (ATC-STD-000-„Versionskonflikt") WIDERLEGT —
+Registry überall konsistent v1.2.0 approved; echter Kern war die STALE
+GOVERNANCE-STAND-Sektion im AGENT_MANIFEST (Stand 07.09.) → als Archiv markiert +
+SSOT-Klarstellung (Registry = einzige Versions-Quelle); F-047 für die Manifests von
+a-townchain-os/-docs offen. P0-002 (Lizenz NOASSERTION) VERIFIZIERT: 26/26 Repos →
+F-046, Owner-Entscheidung SPDX vs. Proprietär erforderlich. P0-003 durch bestehende
+RR-/CONF-/MILESTONE-/COMPAT-Gates abgedeckt. Abgleich dokumentiert:
+docs/AUD-2026-0003_ORG_MASTER_AUDIT.md §6. Findings-Stand: F-001..F-047.
