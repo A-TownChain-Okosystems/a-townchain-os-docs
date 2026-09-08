@@ -197,3 +197,30 @@ Später-Optionen offen (Proprietär-Umstieg nur als MAJOR via COMPAT-001).
 F-046 RESOLVED. Abgewogen und abgelehnt: MIT (kein Patent-Grant), Proprietär
 (kein bewusster Entschluss; Org public-by-design), CC-BY-4.0-Dual-Lizenz für
 Standards-Texte (Komplexität; als MINOR-Dual später ergänzbar).
+
+---
+
+## 9. ATC-LICENSE-System v1.0.0 (08.09.2026, 03:55–04:20 UTC+2, Agent Aurora, SCR-0037)
+
+Owner-Direktive: eigenes ATC-Lizenzsystem als Standardfamilie etablieren — klar getrennt
+von SPDX-Standardlizenzen (Repos behalten Apache-2.0 als Basisschicht, SCR-0036).
+
+- **FAM-44 „ATC License System"** im Katalog: 44 Familien, 442 Slots, 285 BELEGT
+- **9 Standards ATC-STD-LICENSE-001..009 v1.0.0 APPROVED** (§9 via Owner-Direktive,
+  §30-eingefroren): Governance, Specification, Registry, Manifest, Third-Party,
+  Compliance, Audit, Trademark Separation, Versioning (REQ-LIC-001..028)
+- **License-Registry licenses/ (SSOT):** 10 Lizenztypen (ATC-LIC-CORE-000 + OSS-001,
+  SOURCE-002, PROTOCOL-003, COMMERCIAL-004, PROPRIETARY-005, ASSET-006, AI-007,
+  DATA-008, EXPERIMENTAL-009); Ebenen OPEN/RESTRICTED/PROPRIETARY; 5 voll spezifiziert
+  (CORE/OSS/PROTOCOL/ASSET/AI mit LICENSE.md-Volltexten + SPEC.md + Metadaten),
+  5 ehrlich PLANNED; MANIFEST.schema.json (ATC-LICENSE-MANIFEST-1.0)
+- **Kein Pseudo-Open-Source:** ATC-OSS-1.0 nur bei OSD-Kompatibilität als OPEN;
+  OSI-/Rechts-Review ehrlich als AUSSTEHEND dokumentiert (keine Rechtsberatung)
+- **Trademark Separation:** Code ≠ Marke ≠ Asset (A-TownChain/ATC/ShivaCore/Globus OS/
+  Aurora/Shivamon/Logos); trademark_use restricted
+- Registry-Endstand: **396 Standards, 396 APPROVED**; Taxonomie 35 Familien,
+  396 zugeordnet (license = LIC, Domain GOV); Validator ALL COMPLIANT;
+  Agent-Manifest 396 gebunden. Commits: a7c3d12 → ac2bebe → 2c281ef → f35c2d7 (CI grün).
+
+Backlog: ATC-LICENSE.yaml-Manifeste je Repo (26), License Scanner (S-26),
+5 PLANNED-Typen spezifizieren, externer OSI-/Rechts-Review (Owner-Aktion).
