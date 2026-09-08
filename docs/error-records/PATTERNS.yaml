@@ -12,3 +12,4 @@ patterns:
   ATC-ERR-PATTERN-007: {title: "Repository-Strukturfehler",       examples: "fehlende Dateien, kaputte Struktur, fehlende Manifeste"}
   ATC-ERR-PATTERN-008: {title: "Security-Konfigurationsfehler",   examples: "offene Rechte, fehlende Scans, unsichere Defaults"}
   ATC-ERR-PATTERN-009: {title: "Fehlende abstrakte Methoden-Implementierung", examples: "Subklasse implementiert @abstractmethod der Basisklasse nicht (ABC-Verstoss, Instanziierung unmoeglich)", added: "2026-09-08 via ATC-ERR-0001 (ERR-010 REQ-ER-100: offener Katalog)"}
+  ATC-ERR-PATTERN-010: {title: "Undeklarierte CI-Dependency / Workflow ohne Dependency-Installation", examples: "Workflow fuehrt Werkzeuge aus, deren externe Abhaengigkeiten weder deklariert (requirements.txt) noch installiert (pip install) sind; Erfolg haengt vom Runner-Zufallszustand ab", added: "2026-09-08 via ATC-ERR-0002 (ERR-010 REQ-ER-100: offener Katalog)"}

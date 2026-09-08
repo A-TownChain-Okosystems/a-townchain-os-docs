@@ -20,6 +20,7 @@ ATC-ERR-PATTERN-001..008 (SCR-0044) + Erweiterungen über Fehlerfälle.
 | error_id | Titel | Schwere | Pattern | Repos geprüft | Treffer | Status |
 |---|---|---|---|---|---|---|
 | [ATC-ERR-0001](ATC-ERR-0001.yaml) | GovernanceContract implementierte abstrakte BaseContract.name() nicht | P1 | 009 | 4 | 1 | CLOSED (08.09.2026) |
+| [ATC-ERR-0002](ATC-ERR-0002.yaml) | Undeklarierte CI-Dependency: Workflows ohne Dependency-Installation | P1 | 010 | 26 | 27 | OPEN (08.09.2026, SCR-0054) |
 
 ## Metriken (ERR-014, je Wartungszyklus)
 
