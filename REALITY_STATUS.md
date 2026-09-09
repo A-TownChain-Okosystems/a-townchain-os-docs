@@ -241,3 +241,32 @@ Prioritätsmodell, offene Punkte, Integrität via Validator S-01..S-25, SSOT-Kas
 Governance > Standard > Registry > INDEX > Implementierung. ATC-STD-INDEX-001 =
 Dokument-ID, kein Registry-Standard. Commit 4df88dd, CI grün, Validator ALL
 COMPLIANT (396 Standards).
+
+---
+
+## 11. ATC Org-weites Agent-Governance-System (09.09.2026, 09:00–09:45 UTC+2, Agent Aurora, SCR-0057)
+
+Owner-Mandat: zentraler, vererbbarer Organisationsstandard für GitHub-Agentenanweisungen.
+
+- **Neues Org-Repo `.github`** (GitHub-Konvention für Org-weite Dateien; dokumentierte
+  Ausnahme von der atc--Namensregel — GitHub-reserviert; Org jetzt 27 Repos): AGENTS.md-
+  Master (12-Schritte-Arbeits-Sequenz, Hierarchie-Kaskade Org-Policy → AGENT_MANIFEST →
+  Org-AGENTS.md → Repo-AGENTS.md → Task; spezifischere Regeln ergänzen, hebeln nie höhere
+  aus), agent-instructions/00-11 (identity, mission, audit, coding, security, testing,
+  docs, git, change, error-prevention, compliance, release), ai/policies.yaml (AP-001..016
+  normativ), ai/capabilities.yaml (8 Rollen ATC-AI-ARCH/AUDIT/SEC/CI/DOC/TEST/RELEASE/
+  GOV-001, ehrliche Abdeckung: 4× Aurora, 4× Profil ohne Instanz), ai/agent.yaml (43
+  Kernstandards verpflichtend). Aufgebaut auf den bestehenden Standards (AI-DEV, AAS,
+  AOS-001, REPO-AUDIT, CHANGE, LICENSE) statt Duplikat.
+- **26/26 Produkt-Repos angebunden** per Pflicht-Verweisblock in AGENTS.md (Remote-API
+  verifiziert; Repos ohne AGENTS.md erhielten ein minimales).
+- **Nummerierungs-Vorfall (RCA, ehrlich):** Rollout startete als „SCR-0039" von ~40 SCRs
+  veraltetem Lokalstand — SCR-0039 war zwischenzeitlich durch Parallel-Sessions vergeben
+  (Org zwischenzeitlich bei SCR-0056, 433 Standards: 395 approved, 37 candidate, 1 draft
+  IMPROVEMENT-001 §9 ausstehend). Bereinigt auf SCR-0057 + RCA; Hub-Zahlen auf Registry-Ist.
+- **Geerbtes rotes Naming-CI aufgedeckt:** naming-governance.yml läuft ohne pip install
+  (Issue #1, E-5/CI-001) — rot seit 23be2d4/dbe3751, nicht durch SCR-0057 verursacht.
+  Bereitgetesteter Patch als Kommentar in Issue #1 hinterlegt; GH013 bestätigt (Workflow-
+  Push durch Agent blockiert) — Owner-Aktion.
+- **F-055 (P1) neu:** a-townchain-os meldet 14 Dependabot-Schwachstellen (4 high,
+  7 moderate, 3 low) — Behebung/Sichtung ausstehend.
