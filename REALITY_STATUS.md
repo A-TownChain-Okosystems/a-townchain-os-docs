@@ -306,3 +306,36 @@ Owner-Audit-P1 vollständig umgesetzt — nicht redaktionell, sondern maschinenp
 - Offene Owner-Aktionen (kumuliert): Issue #1 (Naming-CI pip-Patch, Kommentar
   bereit), Workflow-Permissions-Bundle (26 Repos), F-056-Entscheidung.
   Validator: 1 geerbter FAIL (E-5/Issue #1, GH013) — nicht durch SCR-0058/0059.
+
+---
+
+## 13. Integration & Readiness Control Plane (09.09.2026, 10:15 UTC+2, Aurora, SCR-0060)
+
+Owner-Strategie „Phase 4 → 5: von Governance zu nachweisbar funktionierenden
+integrierten Systemen" operativ umgesetzt — als ausführbares Tool
+(tools/readiness_check.py im .github-Hub), kein neuer Standard:
+
+- **Implementation Matrix** (aus registry/standard-implementation.yaml):
+  432 erfasst — enforced 62 (14.4 %) · implemented 129 (29.9 %) ·
+  specification_only 240 (55.6 %) · reference 1. Kern: 191/432 Standards
+  code-backed — bestätigt quantitativ die Owner-Diagnose „Governance schneller
+  als Produkt"; REQ-IMP-007-Zielvektor (enforce-Anteil steigend) damit
+  erstmals maschinell messbar.
+- **Integration Matrix** (aus registry/interfaces.yaml): 10 IFC-Verträge
+  (IFC-0001..0010), alle Status `seed`; IFC-0009 (ATVM-Execution) und
+  IFC-0010 (OS-Build-Stack) ohne Consumer. P0-Rückstand Interface-Test-Suiten
+  bestätigt.
+- **System Readiness**: M-001 (atclang) + M-002 (Kernel 674/674+Boot)
+  ACCEPTED, 4 VERIFIED-Evidenzen; offene P0: 0; offene P1: F-044 (Zeitstempel-
+  Konsistenz), F-055 (14 Dependabot-Alerts a-townchain-os), F-056 (DRAFT-
+  Bindung IMPROVEMENT-001 — Owner-Entscheidung); rote CI: atc-standards
+  (Issue #1, GH013), atc-shivacore + a-townchain (Ursachenprüfung offen).
+  Ehrliches Ergebnis: DEVNET/TESTNET/MAINNET = NO-GO (Registry-Status planned)
+  mit benannter Blocker-Liste.
+- **Maintenance Queue**: Dependabot-PRs org-weit + 14 Alerts — bewusst von
+  Governance-Arbeit getrennt ausgewiesen (Owner-Triage), wie Owner gefordert.
+- Offene Owner-Aktionen (kumuliert): Issue #1 (Naming-CI pip), Workflow-
+  Permissions-Bundle (26 Repos), F-056-Entscheidung, Dependabot-Triage;
+  Agent folgt mit: IFC-Test-Suiten (P0), Ursachenanalyse der 2 unbekannten
+  roten CIs, Umwandlung specification_only → implemented nach Improvements-
+  Zyklus.
