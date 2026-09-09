@@ -270,3 +270,39 @@ Owner-Mandat: zentraler, vererbbarer Organisationsstandard für GitHub-Agentenan
   Push durch Agent blockiert) — Owner-Aktion.
 - **F-055 (P1) neu:** a-townchain-os meldet 14 Dependabot-Schwachstellen (4 high,
   7 moderate, 3 low) — Behebung/Sichtung ausstehend.
+
+---
+
+## 12. AGOV-Prüfsystem & Governance-Härtung (09.09.2026, 09:20–10:05 UTC+2, Aurora, SCR-0058/0059)
+
+Owner-Audit-P1 vollständig umgesetzt — nicht redaktionell, sondern maschinenprüfbar:
+
+- **SCR-0058 (.github-Hub v1.1.0):** ATC-AI-GOV-MANIFEST-001 v1.1.0 (Identity-
+  Pflichtfelder, Statusmodell PROPOSED→RETIRED, Capability-Model explizit/nicht
+  rollen-abgeleitet, Scope-Ebenen, Handoff-Schema, ehrliches Zielbild-Mapping
+  AGOV-001..008 auf Bestehendes), ai/policies.yaml mit ATC-POL-001..010
+  maschinenprüfbar + MUST/SHOULD/MAY-Verdict-Map (FAIL/WARN/N-A), ai/checks.yaml
+  (AGOV-CHECK-001..020 v1.0.0), **ausführbarer Org-Checker tools/agov_check.py**:
+  Erstlauf über 27 Repos — ehrliches Ergebnis 26/27 blockiert, Hauptblocker
+  AGOV-CHECK-009 (Workflows ohne permissions-Block, GH013-Owner-Aktion; Bundle
+  tools/owner_fix_workflow_permissions.sh vorbereitet); 14 Repos Block-Platzierung
+  (H1 zuerst) durch Agent gefixt; Hub selbst-konform (tools/test_agov.py).
+- **SCR-0059 (Hub v1.2.0):** Registry-Snapshot & dynamische Bindung (compliance-
+  Block; erster echter Snapshot-Record ai/audit/SNAPSHOT-2026-09-09.json mit
+  Registry-Commit e814408 + SHA-256 — beweist künftig den verbindlichen Scope je
+  Task), MERGE-GATE (10 obligatorische Gates, FAIL/PENDING ⇒ NO MERGE; F-045-
+  Bypass-Lücke ehrlich benannt), EXCEPTION RULE (6 Schritte; ohne genehmigte
+  Ausnahme Validation=FAIL, Merge=BLOCKED), STANDARD CONFLICT RULE (ATC-STD-000 →
+  Governance → spezialisiert → Repo → Task; unauflösbar ⇒ Human Review),
+  fehlende Tool-/CI-Fähigkeit (kein stiller SKIP). Alles normativ maschinenlesbar
+  in ai/governance-rules.yaml.
+- **Binding-Checker tools/check_binding.py** (Owner-Auftrag „Registry gegen
+  AGENTS.md maschinell abgleichen"): Registry 433 (395 approved/37 candidate/
+  1 draft) × alle agent.yaml-Bindungen. Erstlauf: **P0: 0 · P1: 1 · P2: 26**.
+  F-056 (P1, OPEN): atc-standards bindet DRAFT ATC-STD-IMPROVEMENT-001 —
+  Owner-Entscheidung nötig (unbind bis §9 / §9-Freigabe / genehmigte Ausnahme).
+  F-057 (P2, OPEN): 16 Repos ohne agent.yaml-Bindung; 37 CANDIDATE-Bindungen
+  (SCR-0056-Design der Parallel-Session). Report: Hub docs/BINDING-2026-09-09.md.
+- Offene Owner-Aktionen (kumuliert): Issue #1 (Naming-CI pip-Patch, Kommentar
+  bereit), Workflow-Permissions-Bundle (26 Repos), F-056-Entscheidung.
+  Validator: 1 geerbter FAIL (E-5/Issue #1, GH013) — nicht durch SCR-0058/0059.
