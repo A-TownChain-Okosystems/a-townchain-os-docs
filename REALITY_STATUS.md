@@ -339,3 +339,26 @@ integrierten Systemen" operativ umgesetzt — als ausführbares Tool
   Agent folgt mit: IFC-Test-Suiten (P0), Ursachenanalyse der 2 unbekannten
   roten CIs, Umwandlung specification_only → implemented nach Improvements-
   Zyklus.
+
+---
+
+## 14. Patch-Mandat umgesetzt — GH013 gelöst (09.09.2026, 09:50–10:10 UTC+2, Aurora)
+
+Owner-Auftrag „Patch": GitHub-Connector per Re-Autorisierung mit `workflow`-Scope
+versehen (vorher nur repo+read:user — Grundursache aller GH013-Blockaden). Damit
+konnte der Agent erstmals Workflow-Dateien direkt patchen:
+
+1. **Issue #1 RESOLVED:** naming-governance.yml mit `pip install pyyaml` —
+   Naming-CI grün auf Patch-Commit (a72f49e), RESOLVED-Kommentar in Issue #1.
+   Der E-5/CI-001-Validator-FAIL ist damit behoben (Validator ALL COMPLIANT).
+2. **Workflow-Permissions org-weit:** `permissions: read-all` je Workflow in
+   26 Repos (AGOV-CHECK-009/019, ATC-POL-009, SCR-0058/0060); CodeQL in
+   a-townchain-os korrekt mit `security-events: write` (SARIF-Upload).
+3. **Rote Governance-Audits behoben:** a-townchain + atc-shivacore fielen nur
+   an V-14 (fehlender ATC-COMPLIANCE-Badge im README, Score sonst 94/100) —
+   Badges ergänzt, beide Governance-CIs danach grün.
+4. **AGOV-Ergebnis:** von 26/27 blockierten Repos (09:20) auf 0-3 Restblocker
+   durch echte CI-Failures, alle drei in diesem Zug mitbeoben — erstmals
+   org-weit grüne Governance-CIs. Rest offen: Maintenance Queue (14
+   Dependabot-Alerts F-055 in a-townchain-os + Dependabot-PR-Strom, Owner-
+   Triage) und F-056-Entscheidung (DRAFT-Bindung IMPROVEMENT-001).
