@@ -856,12 +856,17 @@ export const WIKI_CONTENT = [
     category: "System Updates",
     subcategory: "Maintenance",
     title: "24. System Audits & Continuous Updates",
-    text: "Eine Übersicht der zuletzt eingeführten Patches, Workflow-Verbesserungen und behobenen Systemfehler innerhalb der UI Module und CI/CD Pipelines von A-Town OS.\n\n**1. Behebung von Vite Asset-Mapping Issues**\nProduktions-Builds erzeugten aufgrund einer Übergröße von Chunks teilweise Exit Code 1. Durch Implementierung von Output-manualChunks in `vite.config.ts`, sowie Auslagerung von Vendor- und UI-Libraries (`recharts`, `lucide-react`) wurde die Chunk Size stabilisiert.\n\n**2. Code Refactoring & Security Cleanup**\nUngeschlossene Tags und fehlerhafte atc-lang-Code Fragments (wie Mixed-Import-Errors und eval Usage Warnungen) in Komponenten wurden behoben oder dokumentarisch isoliert. Alle System-Tests und Integrationen laufen erfolgreich fehlerfrei durch.\n\n**3. Dashboard Navigation & Lücken-Erweiterung**\nDie Notion-Synchronisierungslogik verfügt jetzt über ein vollständiges Sync-Data Terminal inklusive visuellem Logs System in den Settings. Das Metriks-Dashboard wurde durch automatisierte Build-Log-Verifizierer und Test-Tabulatoren (Vitest core module suite) erweitert. Die System-Erweiterung \"Hardware Treiber-Datenbank\" wurde integriert, wodurch KI-Agenten nun in der Lage sind, fehlende Treiber für neue Hardware (Bsp. ATC Quantum Neural Coprozessor) automatisch zu identifizieren und zu generieren.\n\n**4. Constraints Active**\nDie Constraints der autonomen Arbeitsagenten (AGENTS.md & GEMINI.md) wurden integriert und im GUI visuell aktiviert.",
+    text: "Eine Übersicht der zuletzt eingeführten Patches, Workflow-Verbesserungen und behobenen Systemfehler innerhalb der UI Module und CI/CD Pipelines von A-Town OS.\n\n**1. Behebung von Vite Asset-Mapping Issues**\nProduktions-Builds erzeugten aufgrund einer Übergröße von Chunks teilweise Exit Code 1. Durch Implementierung von Output-manualChunks in `vite.config.ts`, sowie Auslagerung von Vendor- und UI-Libraries (`recharts`, `lucide-react`) wurde die Chunk Size stabilisiert.\n\n**2. Code Refactoring & Security Cleanup**\nUngeschlossene Tags und fehlerhafte atc-lang-Code Fragments (wie Mixed-Import-Errors und eval Usage Warnungen) in Komponenten wurden behoben oder dokumentarisch isoliert. Alle System-Tests und Integrationen laufen erfolgreich fehlerfrei durch.\n\n**3. Dashboard Navigation & Lücken-Erweiterung**\nDie Notion-Synchronisierungslogik verfügt jetzt über ein vollständiges Sync-Data Terminal inklusive visuellem Logs System in den Settings. Das Metriks-Dashboard wurde durch automatisierte Build-Log-Verifizierer und Test-Tabulatoren (Vitest core module suite) erweitert. Die System-Erweiterung \"Hardware Treiber-Datenbank\" wurde integriert, wodurch KI-Agenten nun in der Lage sind, fehlende Treiber für neue Hardware (Bsp. ATC Quantum Neural Coprozessor) automatisch zu identifizieren und zu generieren.\n\n**4. Constraints Active**\nDie Constraints der autonomen Arbeitsagenten (AGENTS.md & GEMINI.md) wurden integriert und im GUI visuell aktiviert.\n\n**5. Stand 10.09.2026 — Governance-Reorganisation & Evidence-System (SCR-0057 bis SCR-0082)**\nDie Organisation wurde auf exakt 27 Repositories konsolidiert (Layer L0 bis L7). Der .github-Hub ist die zentrale Governance-Control-Plane, atc-standards das normative SSOT mit 444 Standards (395 APPROVED, 37 CANDIDATE) und maschinell generierten Kennzahlen (registry.lock; Views-Drift-Gate in der CI verhindert handgepflegte Zahlen).\n\n**Ehrlichkeits-Pivot: CLAIMED ungleich PASS** — jedes Repository fuehrt .atc/evidence/evidence.yaml mit Statusleiter (SPECIFIED, IMPLEMENTED, TESTED, VERIFIED, AUDITED, RELEASED); 13 Test-Suiten binden bound_commit und test_run automatisch an den getesteten Commit (Pilot atc-wallet verifiziert).\n\n**Wartung:** Die Dependabot-Warteschlange (99 PRs) wurde vollstaendig abgearbeitet (0 offene Alerts); CodeQL ist in 14 Repos aktiviert; Mainnet-Kommunikation wurde auf Evidence-Ehrlichkeit bereinigt.\n\n**Compliance:** 27/27-Matrix nach 12 Dimensionen — 93,3 Prozent gruen, 0 rot, 21 ehrliche N/A (COMPLIANCE-MATRIX-2026-09-10b.md in atc-standards/docs/compliance/).\n\n**Kernel:** ShivaCore K-Sprint 0 bis 39 abgeschlossen — 1235/1235 Tests gruen, 50 Rust-Module; naechste Stufe Memory-Pool und Tx-Validation.\n\n**Mainnet-Ehrlichkeit:** Kein Mainnet-Claim vor Conformance- und Audit-Gates (release: development; security: not_audited). Kanonische Quelle: REALITY_STATUS.md (Abschnitte 1-28) in a-townchain-os-docs.",
     revisions: [
       {
         timestamp: "2026-06-11T12:00:00Z",
         editor: "System Architect",
         message: "Added missing continuous update and vulnerability fixes.",
+      },
+      {
+        timestamp: "2026-09-10T13:35:00Z",
+        editor: "Aurora (Governance Agent)",
+        message: "History-Update: Governance-Reorganisation SCR-0057-0082 (27 Repos, Evidence-System, 93,3% Compliance, ShivaCore K0-K39).",
       },
     ],
     table: [
@@ -874,6 +879,21 @@ export const WIKI_CONTENT = [
         component: "JSX / TSX Error Fixes",
         desc: "All syntax warnings suppressed / fixed",
         status: "Abgeschlossen",
+      },
+      {
+        component: "Evidence-System (SCR-0080/0081)",
+        desc: ".atc/evidence/ + bound_commit-Automatisierung, 13 Suiten",
+        status: "Abgeschlossen",
+      },
+      {
+        component: "27/27-Compliance-Matrix",
+        desc: "93,3 % gruen, 0 rot (SCR-0082)",
+        status: "Abgeschlossen",
+      },
+      {
+        component: "CodeQL-Rollout",
+        desc: "14 Repos aktiv, security-events:write",
+        status: "Active",
       },
     ]
   },

@@ -656,3 +656,14 @@ anwendbare Zellen grün (93,3 %), 0 rot, 21 N/A (Ehrlichkeit, keine Lücken).**
 F-099/F-101/F-103/F-104 RESOLVED; F-110 neu (CodeQL-Erstläufe verifizieren).
 Stand: Konformität ≠ Fertigstellung — F-108 (Rust-Canonical-Core fehlt),
 F-105 (Konsens-Refactor), F-102 (Portfolio 0-Code-Repos) bleiben Produkt-Arbeit.
+
+
+## 29. Wiki-History-Update (10.09.2026 13:35 UTC+2)
+
+AI-Studio-Wiki (aistudio/src/wikiData.ts), Kapitel 24 »System Audits & Continuous
+Updates«: History auf Stand 10.09.2026 gebracht — Governance-Reorganisation SCR-0057–0082
+(27 Repos, .github-Hub + atc-standards-SSOT 444 Standards), Ehrlichkeits-Pivot
+(CLAIMED ≠ PASS, Evidence-Statusleiter, bound_commit-Automatisierung 13 Suiten),
+Dependabot 0, CodeQL ×14, 27/27-Matrix 93,3 %/0 rot, ShivaCore K0-K39 (1235 Tests).
+Revisions-Eintrag ehrlich datiert (Aurora, 10.09.2026). Kapitel-1-24-Inhalte der
+Monorepo-Ära bleiben als Historie erhalten (append-only-Prinzip auch hier).
