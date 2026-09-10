@@ -514,3 +514,22 @@ F-090 (4 fehlende STATUS.md: atc-compute/atc-marketplace/atc-node/globus-os nach
 (Governance 75-90 %, Implementation 0-30 %). Scan maschinenlesbar:
 atc-standards/docs/compliance/ORG-COMPLIANCE-SCAN-2026-09-10.json. Offen: F-091 (Scan als
 Org-Tool im .github-Hub verankern).
+
+---
+
+## 22. Org-Compliance-Scan als dauerhaftes Tool (10.09.2026, SCR-0075)
+
+**F-091 RESOLVED** (Owner-Direktive): Der SCR-0074-Ad-hoc-Scan ist jetzt als
+`tools/org_compliance_scan.py` im `.github`-Hub verankert — API-getrieben,
+ohne lokale Klone lauffähig. Prüft je Produkt-Repo: 11 MUST-Artefakte,
+Governance-CI, Compliance-Badge, Lizenz-Konsistenz (inkl. Subtree-package.json),
+Claim-Ehrlichkeit, Spec-Abdeckung. Ausgabe JSON+MD+Tabelle, `--strict` für Gates.
+
+- **Verankerung:** wöchentlicher GitHub-Action-Lauf (Mo 05:00 UTC) + Pflicht-Check
+  bei jedem SCR-Abschluss (Hub-AGENTS.md).
+- **Erstlauf:** vor Fixes 13/25 COMPLIANT (12 Findings: 11 fehlende Compliance-Badges
+  in älteren Repos + 1 Lizenz-Rest in atc-shivacore/modules-README). Beides sofort
+  gefixt — **Nachlauf: 25/25 COMPLIANT, 0 Findings.**
+- **Tool-Liegt auf Hub-Branch `feat/org-compliance-scan`, Merge via PR #3**
+  (Branch-Protection F-045-Regime; Owner-Review G12, analog PR #1/#2).
+- Reports: `.github/docs/compliance/ORG-COMPLIANCE-SCAN-2026-09-10.{json,md}`.
