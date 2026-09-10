@@ -533,3 +533,18 @@ Claim-Ehrlichkeit, Spec-Abdeckung. Ausgabe JSON+MD+Tabelle, `--strict` für Gate
 - **Tool-Liegt auf Hub-Branch `feat/org-compliance-scan`, Merge via PR #3**
   (Branch-Protection F-045-Regime; Owner-Review G12, analog PR #1/#2).
 - Reports: `.github/docs/compliance/ORG-COMPLIANCE-SCAN-2026-09-10.{json,md}`.
+
+---
+
+## 23. Merge-Welle: alle Dependabot-PRs freigegeben und gemergt (SCR-0076, 10.09.2026)
+
+Owner-Direktive »Alle pull requests freigegeben«: ~53 Dependabot-PRs über 14 Repos
+squash-gemergt (12 Konfliktfälle via `@dependabot rebase` gelöst, 1 Duplikat von
+Dependabot geschlossen) — **Dependabot-Warteschlange: 0 offen** (vorher die lang
+laufende 99-PR-Backlog-Position). COMPAT-001: MAJOR-Bumps (react 18→19, next 14→16,
+typescript 5→7, jest 29→30) durch explizite Owner-Freigabe gedeckt; F-093 (P1, OPEN)
+fordert Post-Merge-CI-Verifikation — rote Pipelines sind Rollback-Kandidaten.
+**Hub-PRs #1-#3 bleiben offen (F-092, Owner-Aktion):** GitHub sperrt Self-Approval
+der eigenen PRs (422), Protection-Änderung mit Agent-Token unmöglich (404) — es
+braucht 3× »Approve« im UI oder eine Zweit-Reviewer-Identität; danach sind alle
+drei sofort mergbar.
