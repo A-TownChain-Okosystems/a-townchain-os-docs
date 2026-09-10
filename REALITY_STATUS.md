@@ -384,3 +384,32 @@ Owner-Externaudit (aurora-ai/.github/atc-standards) — P0-Befunde direkt umgese
 4. Repo-Anzahl verbindlich geklärt: 27 governed Repos (127-Angabe verworfen).
    Offene Hub-PRs: #1 (SCR-0067 Phase 2) + #2 (SCR-0068 Org-Scope) — beide
    warten auf Owner-Review (G12 Human Gate).
+
+---
+
+## 16. Audit-Welle umgesetzt — Org-weite Lizenz- + Status-Konsistenz (10.09.2026, 10:15–10:35 UTC+2, Aurora, SCR-0069)
+
+Owner-Repo-Audits (atc-wallet, atc-storage, atc-shivacore, atc-marketplace,
+atc-launchpad) direkt umgesetzt — Fortsetzung von Abschnitt 15:
+
+1. **F-065 (P0) RESOLVED — Org-weite Lizenz-Konsistenz:** Der Proprietary-vs-
+   Apache-2.0-Widerspruch (zuerst in aurora-ai gefunden) war systemisch: 26 Repos
+   trugen „proprietary" in .atc/repository.yaml bzw. „ALL RIGHTS RESERVED" in
+   Cargo.toml gegen die Apache-2.0-LICENSE. Batch-Fix gem. verbindlicher Org-
+   Einheitslizenz (AD-F-046): 26/26 Repos synchronisiert, Copyright „Michael
+   Wroblewski" unverändert. Historischer Vault (docs/archive/) bewusst nicht
+   modifiziert. .github-Hub folgt via PR-Regime.
+2. **F-066 (P0) RESOLVED — ehrliche STATUS-Claims:** atc-storage + atc-launchpad
+   wiesen „Build: passing / Tests: PASS" aus bei null Implementierungsdateien
+   (verifiziert: 0 .rs/.py/Cargo.toml). Korrigiert auf NOT APPLICABLE / NOT RUN.
+   Implementierungs-Lücke bleibt bestehen und ist explizit dokumentiert —
+   Implementation-Pivot vor weiterer Doku.
+3. **F-061..F-064 (offen) registriert:** shivacore Test-Evidence-Inkonsistenz
+   (423/674/703 — kanonisches test-report.json fehlt), atc-wallet Signatur-
+   algorithmus-Red-Flag (ed25519-dalek vs. secp256k1 + Trust Boundary),
+   atc-marketplace Security-Criticality (S1/low für DEX+Assets) + Conformance-
+   Gates, Documentation Drift in READMEs.
+4. Die Architektur-Roadmaps der Audits (WAL-KEY/SIGN/REPLAY, ATC-STOR-001..010,
+   MKT-G01..G12, SHIVACORE-ASSURANCE-001, Launchpad M1-M5-Engines) sind als
+   P1/P2-Backlog aufgenommen — Maßgabe: Specification → Rust Workspace →
+   minimale funktionsfähige Basis → Tests → Evidence, nicht weitere Doku.
