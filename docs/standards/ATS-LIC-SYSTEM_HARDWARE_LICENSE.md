@@ -113,5 +113,5 @@ ATC-LIC wird im ShivaOS-Kernel erzwungen (ATS-1000 Boot, ATS-1003 Security).
 ---
 
 *Dieses Dokument ist Teil des A-TownChain Compliance-Handbuchs.*
-*Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.*
+*Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. Apache-2.0 lizenziert — siehe LICENSE*
 *Letzte Aktualisierung: 05.07.2026 23:18 | Aurora (Superagent)*

@@ -34,7 +34,7 @@ Unified Cargo Workspace, Docker-Stack, Tests.
 1. **Produkt-Entwicklung** (neue Features eines Produkts) läuft im jeweiligen Produkt-Repo.
 2. **Integration/Deployment** (Workspace-Build, Docker, Mainnet-Stack) bleibt im Monorepo.
 3. **Dokumentation** kanonisch im Docs-Hub (Architektur AD-012/AD-013, Standards, Entscheidungen).
-4. Produkt-Repos: Modulpfad `modules/<modulname>/`, README + LICENSE nach Ökosystem-Standard (All Rights Reserved).
+4. Produkt-Repos: Modulpfad `modules/<modulname>/`, README + LICENSE nach Ökosystem-Standard (Apache-2.0 lizenziert — siehe LICENSE).
 5. `atclang` behält seine alte Git-Historie (91 Commits); alte Inhalte sind via Datenverlust-Audit (03.09., 0 Verluste) im Monorepo + Hub-Archiv gesichert.
 
 *Live-Stand API-verifiziert am 06.09.2026: alle 5 Produkt-Repos aktiv, HEAD-Commits bestätigt.*

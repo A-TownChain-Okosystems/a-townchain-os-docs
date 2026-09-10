@@ -85,7 +85,7 @@ Layer 4: Anwendungen (DApps, KI-Agenten, Marketplace, GlobusOS)
 - **P2P Mesh** (ATC-01) — Dezentral, keine zentrale Instanz
 - **DAG Consensus** (ATC-04) — Deterministische Ereignis-Reihenfolge
 - **Hybrid Consensus** — PoW (SHA-256) + PoS + PoH
-- **24 GitHub Repositories** — Alle mit proprietärer Lizenz (All Rights Reserved)
+- **24 GitHub Repositories** — Alle mit proprietärer Lizenz (Apache-2.0 lizenziert — siehe LICENSE)
 
 ### 2.3 Token
 - **ATC-11** — Fungible Token Standard,用作 Royalty-Zahlungsmittel
@@ -245,7 +245,7 @@ nachvollziehbar.
 | BaFin-Klassifizierung als Kryptowert | Mittel | Mittel | Vorab-Abklaerung (dieses Dokument) |
 | DSGVO-Verfahren | Niedrig | Mittel | Privacy by Design (ATC-35) |
 | Urheberrechtsklage (trotz ATC-LIC) | Sehr niedrig | Niedrig | Kryptografische Durchsetzung > Gerichtlich |
-| Quellcode-Offenlegung | Niedrig | Niedrig | Proprietäre Lizenz (All Rights Reserved) |
+| Quellcode-Offenlegung | Niedrig | Niedrig | Proprietäre Lizenz (Apache-2.0 lizenziert — siehe LICENSE) |
 
 ### 5.3 Betriebliche Risiken
 
@@ -403,6 +403,6 @@ nicht moeglich, welche wiederum durch Secure Boot (ATC-LIC) verhindert wird.
 ---
 
 *Dieser Bericht ist vertraulich und ausschliesslich fuer die Einreichung bei der BaFin bestimmt.*
-*Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.*
+*Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. Apache-2.0 lizenziert — siehe LICENSE*
 *Dokument-ID: BAFIN-ATC-LIC-2026-001 | Version: 1.0.0 (Entwurf) | Datum: 06.07.2026*
 *Erstellt durch: Aurora (Superagent), Base44*

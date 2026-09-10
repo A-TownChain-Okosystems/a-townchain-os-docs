@@ -96,7 +96,7 @@ qemu-system-x86_64 -drive file=atc-bootloader.bin,format=raw -m 2048
 
 ## Lizenz
 
-Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. **All Rights Reserved.**
+Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. **Apache-2.0 lizenziert — siehe LICENSE**
 
 Dieses Projekt nutzt das **ATC-LIC Lizenzmodell** — ein monetarisiertes, autonomes
 Open-Source-Oekosystem. Unlizenzierter Code wird von der ATVM physisch nicht ausgefuehrt.

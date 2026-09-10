@@ -1,7 +1,7 @@
 # REPO_ARCHITECTURE.md — A-TownChain-Ökosystem Repository-Architektur
 
 > **Stand:** 05.08.2026 | **Total Repos:** 70 | **Org:** A-TownChain-Okosystems
-> **Copyright:** Michael Wroblewski / A-TownChain-Okosystems. All Rights Reserved.
+> **Copyright:** Michael Wroblewski / A-TownChain-Okosystems. Apache-2.0 lizenziert — siehe LICENSE
 
 ---
 
@@ -374,4 +374,4 @@ atc-ci ──→ alle Repos (CI/CD)
 
 ---
 
-Copyright © Michael Wroblewski / A-TownChain-Okosystems. All Rights Reserved.
+Copyright © Michael Wroblewski / A-TownChain-Okosystems. Apache-2.0 lizenziert — siehe LICENSE

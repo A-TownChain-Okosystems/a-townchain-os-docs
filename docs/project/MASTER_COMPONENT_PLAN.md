@@ -382,7 +382,7 @@ Alle 50 bestehenden Repos haben sprachspezifische Build-Files ✅.
 
 ## Nächste Schritte
 
-1. **LICENSE** für 12 neue Repos erstellen (All Rights Reserved Template)
+1. **LICENSE** für 12 neue Repos erstellen (Apache-2.0 lizenziert — siehe LICENSE Template)
 2. **atc-test-delete-me-wiki** löschen
 3. **K30: Validator Node Setup** (Issue #70) starten
 4. **K31: Genesis Block Deploy** (Issue #71)

@@ -203,7 +203,7 @@
 ## 🔒 BaFin-Compliance — ATC-LIC / ATC-LIC Lizenzmodell
 
 ### ✅ Erledigt
-- [x] Proprietary LICENSE auf 24 Repos (All Rights Reserved)
+- [x] Proprietary LICENSE auf 24 Repos (Apache-2.0 lizenziert — siehe LICENSE)
 - [x] Copyright-Header auf 760+ Source-Dateien
 - [x] ATC-LIC Spezifikation dokumentiert (12KB)
 - [x] ATC-LIC Spezifikation dokumentiert (4.4KB)
