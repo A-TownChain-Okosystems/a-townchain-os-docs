@@ -667,3 +667,21 @@ Updates«: History auf Stand 10.09.2026 gebracht — Governance-Reorganisation S
 Dependabot 0, CodeQL ×14, 27/27-Matrix 93,3 %/0 rot, ShivaCore K0-K39 (1235 Tests).
 Revisions-Eintrag ehrlich datiert (Aurora, 10.09.2026). Kapitel-1-24-Inhalte der
 Monorepo-Ära bleiben als Historie erhalten (append-only-Prinzip auch hier).
+
+## 30. Implementierungs-Welle SCR-0083: MVP-Kerne für alle Code-losen Repos (10.09.2026 14:05 UTC+2)
+
+Owner-Direktiven »Fehlende Code-Dateien ergänzen« + »Weiter implementieren«. 10 Repos
+haben jetzt kompilierende Rust-MVP-Kerne (std-only, Apache-2.0, Unit-Tests, je
+test-suite.yml mit Evidence-Bindung): atc-algorithm (PoH-Tick-Kette FNV-1a +
+Stake-gewichtete Hybrid-Selektion — ehrlich: SHA-256 erst nach Spec-Freeze F-067),
+atc-vm (Stack-Maschine mit Underflow/Jump-Schutz), atc-node (NodeConfig Chain-ID
+658467 + PeerTable-Lifecycle), atc-oracle (Median + Deviation-Gate), atc-mining
+(FIFO-Executor, definiert nie Konsens), atc-storage (KV-Store + Root-Hash),
+atc-launchpad (Sale-Accounting Hard-Cap), atc-compute (Job-Scheduler Slots),
+atc-zkp (7 Crate-Kerne + Workspace), atclang (Rust-Canonical-Core-START F-108:
+Lexer-MVP + cargo-Job in der Suite). QA: 9/10 Suiten sofort grün, 1 Compile-Fix
+(atc-oracle E0574), danach grün; STATUS.md 12 stale NOT-APPLICABLE-Claims ehrlich
+gehoben; Evidence implementation→partial, tests→pass_with_evidence nur wo CI
+grün. F-102 RESOLVED (Portfolio: implementieren statt reduzieren); F-108 bleibt
+OPEN (Parser + Differential-Tests); F-111 neu (Produkttiefe). Ehrlichkeits-Grenze:
+MVPs = Start-Kerne, keine Produktionstriebwerke.
