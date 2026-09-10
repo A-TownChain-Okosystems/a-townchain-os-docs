@@ -500,3 +500,17 @@ atc-node, atc-explorer, atc-contracts. Umgesetzt in 16 Repos:
   Snapshot-Modell + Documentation-Release-Gate), F-086 (Manifest-Scope),
   F-087 (M5/M7-Evidence-Pakete). 18 der 20 Org-Repos auditiert; Muster stabil:
   Governance 75-90%, Implementation 0-30%.
+
+---
+
+## 21. Org-Standards-Umsetzungscheck (SCR-0074, 10.09.2026)
+
+Owner-Direktive: jedes Repository auf Standards-Umsetzung geprüft (26 Produkt-Repos + .github-Exempt).
+**SOLL-Seite (Governance) = 26/26 konform:** alle 11 ATC-STD-201-Pflichtartefakte, Governance-CI,
+Compliance-Badge, Apache-2.0-Lizenz, ehrliche Status-Claims. Fixes: F-088 (AOS 731/731-Claim +
+atc-vm PASS ohne Implementierungsbaum → ehrlich), F-089 (3 versteckte UNLICENSED-package.json),
+F-090 (4 fehlende STATUS.md: atc-compute/atc-marketplace/atc-node/globus-os nachgezogen).
+**IST-Seite unverändert:** Implementierungs-/Evidence-Tiefe wie in Audit-Wellen 1-4 dokumentiert
+(Governance 75-90 %, Implementation 0-30 %). Scan maschinenlesbar:
+atc-standards/docs/compliance/ORG-COMPLIANCE-SCAN-2026-09-10.json. Offen: F-091 (Scan als
+Org-Tool im .github-Hub verankern).
