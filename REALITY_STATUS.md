@@ -685,3 +685,20 @@ gehoben; Evidence implementation→partial, tests→pass_with_evidence nur wo CI
 grün. F-102 RESOLVED (Portfolio: implementieren statt reduzieren); F-108 bleibt
 OPEN (Parser + Differential-Tests); F-111 neu (Produkttiefe). Ehrlichkeits-Grenze:
 MVPs = Start-Kerne, keine Produktionstriebwerke.
+
+## 31. atclang Canonical Core Stage 2: Parser + Differential-Tests (10.09.2026 14:15 UTC+2)
+
+Owner-Direktive »atc-lang-Parser als Stage 2, dann Differential-Tests gegen die
+Python-Referenz«. Live in crates/atc-core: (1) Lexer Stage-2-Ausbau (Const/Return/
+Percent/Colon, Token-Modell an Referenz-Lexer); (2) AST mit KANONISCHER JSON-
+Serialisierung (bytgleich zum json.dumps der Referenz — der Differential-Kontrakt);
+(3) Recursive-Descent-Parser nach frontend/parser/parser.py (Programmebene
+let/const, Ausdrücke + - * /, unäres Minus, Parens, Call-Postfix, links-assoz.);
+(4) Differential-Harness tools/differential/dump_reference.py + Corpus 8 Dateien;
+(5) CI differential-Job: Referenz-Regeneration + git-diff-Drift-Check + cargo test.
+ERGEBNIS: 8/8 Corpus-Dateien BYTGLEICH, CI grün (rust-core/differential/pytest/npm/
+CodeQL/Governance). Echter Differential-Befund vor Landung: %-Operator wird vom
+Referenz-Parser nicht akzeptiert (SyntaxError) — aus Subset entfernt, genau der
+Zweck des Tests. F-108 RESOLVED (Core-Start mit verifizierter Referenz-Bindung);
+F-112 neu (Stage 3: fn/Kontrollfluss/Structs). Ehrlich: Python bleibt Referenz,
+Rust-Core im Aufbau — Parität wird über wachsendes Corpus erzwungen, nicht behauptet.
