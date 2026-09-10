@@ -702,3 +702,11 @@ Referenz-Parser nicht akzeptiert (SyntaxError) — aus Subset entfernt, genau de
 Zweck des Tests. F-108 RESOLVED (Core-Start mit verifizierter Referenz-Bindung);
 F-112 neu (Stage 3: fn/Kontrollfluss/Structs). Ehrlich: Python bleibt Referenz,
 Rust-Core im Aufbau — Parität wird über wachsendes Corpus erzwungen, nicht behauptet.
+
+### RCA zu §32 (gleicher Tag, 15:35 UTC+2)
+Der EB-Patch der 24 Suiten enthielt einen unquoteten Doppelpunkt im Step-Namen → YAML-
+Bruch → Suiten liefen gar nicht (Dispatch-422 war Symptom). Gefixt in derselben Stunde,
+alle 24 Workflows remote-validiert. BEWEIS der neuen Pipeline: atc-algorithm-Suite grün
+(12:59Z) → Evidence automatisch auf bound_commit 4a6c525a + neue run_id aktualisiert —
+idempotentes test_run-Replace funktioniert end-to-end. Lektion: Workflow-Patches vor Push
+IMMER lokal YAML-validieren; EB-Logik-Patches zusätzlich per Stichproben-Dispatch testen.
