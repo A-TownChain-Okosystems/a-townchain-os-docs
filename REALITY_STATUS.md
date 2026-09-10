@@ -362,3 +362,25 @@ konnte der Agent erstmals Workflow-Dateien direkt patchen:
    org-weit grüne Governance-CIs. Rest offen: Maintenance Queue (14
    Dependabot-Alerts F-055 in a-townchain-os + Dependabot-PR-Strom, Owner-
    Triage) und F-056-Entscheidung (DRAFT-Bindung IMPROVEMENT-001).
+
+---
+
+## 15. Audit-P0-Umsetzung (10.09.2026, 09:45–10:10 UTC+2, Aurora, SCR-0068)
+
+Owner-Externaudit (aurora-ai/.github/atc-standards) — P0-Befunde direkt umgesetzt:
+1. **F-058 (P0) RESOLVED:** aurora-ai README behauptete „Proprietary / All Rights
+   Reserved" bei LICENSE=Apache-2.0. README auf Apache-2.0 korrigiert (verbindliche
+   Org-Einheitslizenz per F-046/SCR-0036), Copyright Michael Wroblewski unverändert.
+2. **Org-Scope-SSOT:** ai/org-scope.yaml v1.1.0 jetzt API-generiert
+   (tools/gen_org_scope.py) — Zählungen können nicht mehr veralten. Erstlauf:
+   28 Repos, 27 governed, 1 ungoverned → demo-repository (Namensregel-Verstoß,
+   GitHub-Demo-Template von ShivaCoreDev 09.09. 11:21) = F-059 (P2, OPEN —
+   Owner-Entscheidung Archiv/Löschung). Über **PR #2** im .github-Hub: das
+   F-045-Regime blockiert jetzt Direktpushs im Hub — PR-Pflicht + Review greifen
+   nachweisbar (Zielzustand aus dem Enforcement-Audit ist erreicht).
+3. **F-060 (P1, OPEN):** aurora-ai Compliance-Claims („R3 COMPLIANT",
+   Standard-Checks) ohne maschinenprüfbare Evidence — Roadmap: Evidence-Gate
+   (CLAIM→COMMAND→RESULT→ARTIFACT→COMMIT SHA→TIMESTAMP→STATUS).
+4. Repo-Anzahl verbindlich geklärt: 27 governed Repos (127-Angabe verworfen).
+   Offene Hub-PRs: #1 (SCR-0067 Phase 2) + #2 (SCR-0068 Org-Scope) — beide
+   warten auf Owner-Review (G12 Human Gate).
