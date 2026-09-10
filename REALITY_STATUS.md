@@ -413,3 +413,29 @@ atc-launchpad) direkt umgesetzt — Fortsetzung von Abschnitt 15:
    MKT-G01..G12, SHIVACORE-ASSURANCE-001, Launchpad M1-M5-Engines) sind als
    P1/P2-Backlog aufgenommen — Maßgabe: Specification → Rust Workspace →
    minimale funktionsfähige Basis → Tests → Evidence, nicht weitere Doku.
+
+---
+
+## 17. Audit-Welle 2 — compute/algorithm/a-townchain/genesis/atclang (10.09.2026, 10:40–10:55 UTC+2, Aurora, SCR-0070)
+
+Owner-Repo-Audits Welle 2 direkt umgesetzt:
+1. **F-068 (P1) RESOLVED:** a-townchain README widersprach sich selbst („Blockchain
+   L1" vs. 3× „Layer-3-Blockchain"). Kanonisch: L3 (Org-Schichten: L0 atclang,
+   L1 atc-shivacore, L3 a-townchain). Fix gepusht.
+2. **F-073 (P0) RESOLVED:** atc-algorithm STATUS behauptete „Build passing /
+   Tests passing / Security clear" bei leeren src/-/tests-Verzeichnissen (nur
+   .gitkeep, kein Cargo.toml). Ehrlicher Status: NOT APPLICABLE / NOT RUN /
+   NOT AUDITED.
+3. **Lizenz-Befunde bereits erledigt:** Alle 5 Repos waren schon im SCR-0069-
+   Batch (F-065) auf Apache-2.0 synchronisiert (verifiziert: 0 Proprietary-
+   Vorkommen) — die Audits basierten auf dem Vor-Stand.
+4. **Backlog registriert (offen):** F-067 (P0: atc-algorithm Konsens-Kern
+   unimplementiert/unspezifiziert — Specification-Freeze vor Rust), F-069
+   (P0, Owner: a-townchain Mainnet-Termin 15.09. vs. NO-GO + fehlende
+   Evidence-Gates), F-070 (atclang Version 1.0.0-vs-0.1.0-alpha +
+   Rust-Canonical-Core unbewiesen), F-071 (atc-compute Protokoll-Spec
+   ATC-STD-500..509), F-072 (genesis-engine Runtime-Evidence).
+5. **Leitlinie bestätigt:** Alle 10 geprüften Repos zeigen Governance 80–90 %,
+   Implementation 0–30 %. Implementation-Pivot bleibt Maßgabe: Specification →
+   Rust → Tests → Evidence. Wichtigste offene Owner-Entscheidung: Mainnet-
+   Termin (F-069).
