@@ -484,3 +484,19 @@ Findings: F-074/075/076 RESOLVED; F-077 (Interop-Security-Gate), F-078
 waren bereits via SCR-0069/F-065 behoben. Org-weites Muster unverändert:
 Governance 75–90 %, Implementation 0–30 % — Spec-Pakete liegen bereit,
 Implementierung ist der nächste Hebel.
+
+## 20. Audit-Welle 4 + Lizenz-Stufe 2 (SCR-0073, 10.09.2026 10:55-11:05 UTC+2)
+
+Owner-Externaudits: a-townchain-os-docs, globus-os, genesis-chronicles, atc-sdk,
+atc-node, atc-explorer, atc-contracts. Umgesetzt in 16 Repos:
+- **Lizenz-Stufe 2 (F-080 RESOLVED):** 12 package.json „UNLICENSED" → Apache-2.0;
+  ~375 „All Rights Reserved"-MD-Header → Apache-2.0-Hinweis (SCR-0069 erfasste nur
+  README/.atc/Cargo.toml — Restebene jetzt geschlossen; Archive unangetastet).
+- **Ehrliche M-Claims (F-081 RESOLVED):** globus-os M5, genesis-chronicles M7,
+  atc-sdk/atc-explorer M6 „Dienste laufen" → CLAIMED/GEPLANT mit Evidence-Hinweis.
+- atc-node S3→S4 (F-082), atc-contracts .atc primary python (F-083),
+  REALITY_STATUS-Standzeile zeitlich konsistent gemacht.
+- Offen: F-084 (CONTRACT-EXEC-Gate .atc→VM→Receipt), F-085 (Docs-Hub:
+  Snapshot-Modell + Documentation-Release-Gate), F-086 (Manifest-Scope),
+  F-087 (M5/M7-Evidence-Pakete). 18 der 20 Org-Repos auditiert; Muster stabil:
+  Governance 75-90%, Implementation 0-30%.
