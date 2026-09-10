@@ -641,3 +641,18 @@ Umsetzung P0-01 bis P0-08 (SCR-0081, atc-standards):
 Nachfix: Checker urllib (CI-001/T1) — in abgebrochener Kette nie gelandet, Naming-CI
 rot; gefixt. F-094 RESOLVED; F-108/F-109 neu. Owner offen: PR #4-Approve,
 ATC-STD-LAYER-001 §9 (F-096), Rust-Canonical-Core (F-108), F-105-Refactor.
+
+## 28. Org-Konformitäts-Welle SCR-0082: 0 rot, 93,3 % grün (10.09.2026 13:20-13:50 UTC+2)
+
+Owner-Direktive »Alle Repositories Standards konform machen«. Ausgang: SCR-0079-Matrix
+81,5 % grün / 56 Rot-Zellen. Umgesetzt: (1) CodeQL-Aktivierung ×14 (alle js/py-Repos,
+security-events:write; Rust/0-Code ehrlich N/A — CodeQL unterstützt kein Rust);
+(2) Test-Suiten: atc-interop cargo + atc-standards Tools-Smoke + 2 ehrliche
+Smoke-Suiten (atc-zkp Skeleton-YAML-Gate, os-docs Governance+REALITY_STATUS-Guard);
+a-townchain-os tests not_applicable (0 Code auf main); (3) FILE_REGISTER ×20
+generiert (Trees-API); (4) ROADMAP ×5 evidence-gebunden; (5) Collector
+tools/compliance/matrix_collect.py dauerhaft archiviert. ENDBILANZ: **291/312
+anwendbare Zellen grün (93,3 %), 0 rot, 21 N/A (Ehrlichkeit, keine Lücken).**
+F-099/F-101/F-103/F-104 RESOLVED; F-110 neu (CodeQL-Erstläufe verifizieren).
+Stand: Konformität ≠ Fertigstellung — F-108 (Rust-Canonical-Core fehlt),
+F-105 (Konsens-Refactor), F-102 (Portfolio 0-Code-Repos) bleiben Produkt-Arbeit.
