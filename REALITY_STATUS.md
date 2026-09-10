@@ -589,3 +589,28 @@ Layer-Taxonomie fehlt (F-096 P0), Status-Claims ohne Evidence-Bindung (F-098 P0)
 Master-Backlog F-094–F-104: `atc-standards/docs/compliance/MASTER-BACKLOG-2026-09-10.md`,
 Matrix: `COMPLIANCE-MATRIX-2026-09-10.md`. Owner-Aktionen: PR #4-Approve (.github),
 CodeQL-Rollout (Issue #95), Portfolio-Entscheidung 0-Code-Repos, §9-Freigaben Evidence-/Layer-/Statusmodell.
+
+## 26. Enforcement-Welle SCR-0080: Evidence-SSOT + Canonical Ownership (10.09.2026 12:25–13:15 UTC+2)
+
+Owner-Re-Prüfung (12:21): Governance stark, Implementation heterogen (R1-Skeletons bei
+atc-node/atc-algorithm/atc-zkp/atc-vm, atc-contracts M6 nur SPEC) — Direktive: nicht mehr
+Standards erfinden, sondern erzwingen. Umgesetzt (SCR-0080, Validator/Checker grün,
+Registry-Check als CI-Gate in der ATC Governance CI):
+
+1. **Evidence-SSOT (Owner-P0-01):** `.atc/evidence/evidence.yaml` in 26/27 governed Repos
+   (Hub folgt via PR #4). Maschinenlesbar + ehrlich nach Statusleiter SPECIFIED →
+   IMPLEMENTED → TESTED → VERIFIED → AUDITED → RELEASED; Dimensionen implementation/
+   tests/security/conformance/release; Reifeklassen A/B/C + R-Level aus dem Owner-Deep-Dive.
+   Verbindliche Statusphilosophie: CLAIMED ≠ PASS · DOCUMENTED ≠ IMPLEMENTED ·
+   IMPLEMENTED ≠ VERIFIED.
+2. **Canonical Ownership (Owner-P0-02):** `registry/repositories.yaml` (SSOT, 27 Einträge:
+   id/domain/layer/criticality/security_class/maturity_class/canonical/evidence) +
+   Capability-Map: Konsens KANONISCH bei atc-algorithm — a-townchain orchestriert NUR
+   (F-105, Dualimplementierung verboten). Layer-Taxonomie L0–L7 als DRAFT (F-096).
+3. **Status-Bindung (Owner-P0-03):** atc-contracts-M6-Claim auf CLAIMED zurückgestuft
+   (README-Klarstellung, ATC-STD-MILESTONE-001, F-106 RESOLVED).
+4. **CI-Gate:** `tools/repo_registry_check.py` (27 GitHub == 27 Registry == 27 Evidence,
+   Offline-Kern + optional --github) in der ATC Governance CI verankert; Ausrollung auf
+   alle Produkt-Governance-CIs = F-107 (P1). F-100 PARTIALLY_RESOLVED, F-096/F-098
+   PARTIALLY_RESOLVED. Neue Realität: 13 Repos mit grüner Test-Evidence, 10 ohne
+   testbaren Code, Evidence-Stand 10.09. in jeder Datei maschinenlesbar.
