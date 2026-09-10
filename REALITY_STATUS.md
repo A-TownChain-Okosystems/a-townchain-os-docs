@@ -729,3 +729,21 @@ statischem 444-Pin auf Kollaps-Schutz (>=446) umgestellt — statische Zahlen-Pi
 P1-02-Antimuster aus dem Deep-Dive; Wachstum deckt der Views-Drift-Gate ab.
 Implementation-Backlog (getrennt vom Standard): gen_artifacts.py/audit_artifacts.py (WARN-
 Modus), Erst-Klassifizierung des Bestands, Phase-2-FAIL-Gate erst nach Owner-Freigabe.
+
+## 34. SCR-0088 — Security & Technology Assurance Familie 018/019/020 (10.09.2026 16:15 UTC+2)
+
+Owner-Direktive: Technologieaktualität/Vulnerability Management/Security Hardening als EIGENE
+verbindliche Standardfamilie. Live: ATC-STD-018 (Technology Currency, Vulnerability & Security
+Assurance — Grundsatz »Latest suitable technology, not blindly latest«; Inventar-Pflicht, EOL-
+Verbot mit ADR-Ausnahme, SLA-Modell, Attack-Klassen inkl. Blockchain-spezifisch, Security
+Baseline, CI-Security-Gate mit MERGE=BLOCKED, Technology Review, TCS-Score mit unabhängiger
+Security-Behandlung, No-Evidence=No-Security-Claim, 10-Phasen-Lifecycle, Statusfelder, org-
+weites Assurance-Gate), ATC-STD-019 (Dependency & Supply Chain Security, bewusst getrennt),
+ATC-STD-020 (Incident & Vulnerability Response, SEV-1..4, Human-Gates). Alle APPROVED v1.0.0,
+§30-eingefroren via Owner-Direktive. Struktur: FAM-01 Range 001..020; FAM-02 auf 021..033
+verschoben (Slot 020 war VERWEIST-Zeiger, keine Kollision). Registry-Endstand: 449 Standards
+(400 APPROVED/37 CANDIDATE), 448 Dateien, Views+INDEX regeneriert, Validator ALL COMPLIANT.
+Implementation-Backlog bewusst getrennt: Inventar-Collector, TCS-Berechnung, Security-Gate-
+Stufe 2 erst nach Stabilisierung + Owner-Freigabe (gleiche Phasen-Logik wie ATC-STD-017 §8).
+Vorheriger Stand (SCR-0087): 016/017 live; Issues abgebaut (offen: nur noch a-townchain-os#80
+AIP-001 mit SPEC-DRAFT); CodeQL 26/27; F-114-PR-Promotion-Pilot in atc-standards.
