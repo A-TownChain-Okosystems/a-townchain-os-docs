@@ -469,3 +469,18 @@ Muster der 263er-Batches, aber mit echten Fachinhalten je Domäne:
   Implementierungs-Status wird behauptet** (No status without evidence).
 - Nächste Stufe: Spec-Freeze-Reviews je Paket (Owner §9) — Empfehlung:
   Konsens zuerst (S4, Mainnet-Gate), dann Wallet, dann Chain-Evidence.
+
+## 19. Audit-Welle 3 + SCR-0072 (10.09.2026, 11:35 UTC+2)
+
+Owner-Audits atc-oracle/atc-mining/atc-interop/atc-indexer/a-townchain-os umgesetzt.
+Ehrliche STATUS-Korrekturen (mining/oracle: unbelegte PASS-Claims entfernt — 0
+Implementierungsdateien verifiziert). a-townchain-os: Version-SSOT
+(.atc/repository.yaml, 0.1.0) + About bereinigt (VERSION 1.0.0, Mainnet-Target
+15.09.2026, „60 Module/K29" entfernt — unbelegt/stale; F-069 Owner-Entscheidung
+bleibt offen). 26 SPEC-DRAFTs in 5 Repos (Oracle-Konsens, PoW/Consens-Grenze,
+Interop-Security, Indexer-Reorg, AOS-Evidence/Provenance/Version-Policy).
+Findings: F-074/075/076 RESOLVED; F-077 (Interop-Security-Gate), F-078
+(Indexer-Runtime), F-079 (AOS-Evidence) OPEN. Lizenz-Widersprüche der Welle 3
+waren bereits via SCR-0069/F-065 behoben. Org-weites Muster unverändert:
+Governance 75–90 %, Implementation 0–30 % — Spec-Pakete liegen bereit,
+Implementierung ist der nächste Hebel.
