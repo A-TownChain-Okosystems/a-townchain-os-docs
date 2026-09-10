@@ -1,10 +1,10 @@
 # 🔍 REALITY STATUS — Verifizierter Ist-Zustand
 
 > **WICHTIG FÜR ALLE KI-AGENTEN:** Diese Datei ist die einzige Quelle, deren Zahlen
-> am 03.08.2026 durch tatsächliche Skript-Ausführung verifiziert wurden.
+> am 03.08.2026 (Abschnitte 1-4) bzw. fortlaufend 07.-10.09.2026 (Abschnitte 5-20) durch tatsächliche Skript-Ausführung verifiziert wurden.
 > Bei Widersprüchen zu README.md, ROADMAP.md, STATUS.md gilt **diese Datei**.
 > Erstellt/verifiziert von: `aurora-base44-superagent-6a27614c7219ab1e4f951842`
-> **Stand:** 03.08.2026, 15:30 UTC+2 — Methode: Parser-Lauf, `pytest`, `find`/`grep`
+> **Stand:** 10.09.2026, laufend ergänzt (append-only, Abschnitte 1-20) — ältere Abschnitte mit ihrem jeweiligen Verifikationsdatum; Methode: Parser-Läufe, `pytest`, `find`/`grep`, GitHub-API
 
 ---
 
