@@ -710,3 +710,22 @@ alle 24 Workflows remote-validiert. BEWEIS der neuen Pipeline: atc-algorithm-Sui
 (12:59Z) → Evidence automatisch auf bound_commit 4a6c525a + neue run_id aktualisiert —
 idempotentes test_run-Replace funktioniert end-to-end. Lektion: Workflow-Patches vor Push
 IMMER lokal YAML-validieren; EB-Logik-Patches zusätzlich per Stichproben-Dispatch testen.
+
+## 33. SCR-0087 — ATC-STD-016/017: Artifact Inventory + Obsolete & Orphaned Artifact Management (10.09.2026 15:45 UTC+2)
+
+Owner-Direktive (~15:05): veraltete/verwaiste Dateien als EIGENER VERBINDLICHER STANDARD (P1).
+Live: ATC-STD-017 (Obsolete & Orphaned Artifact Management) — 9-Klassen-Modell, verbindliche
+Entscheidungslogik, Mindestzuordnung zu 11 Objekten, DUALE Verwaist-Bestimmung (Referenzen +
+semantische Governance-Zuordnung), 6-Kriterien-Löschschutz, REMOVE nur mit Git-Historie +
+AUD-Record + optional CHANGELOG, CI-Gate 2-stufig (erst WARN, P0/P1-FAIL erst nach Owner-
+Freigabe). Kerngrundsatz normativ: »Nicht referenziert« ist ein Audit-Signal, KEIN Löschkriterium.
+Dazu ATC-STD-016 (Repository Artifact & File Inventory): generiertes Inventar-SSOT (Phase 1
+registry/artifacts.yaml), Manifest-Schema, Generator-Pflicht, Drift-Check — 016 beantwortet
+»Welche Dateien existieren?«, 017 »Welche sind noch gültig?«. Beide APPROVED v1.0.0, §30-
+eingefroren, §9 via Owner-Direktive (Owner-Entwurf inhaltlich übernommen); FAM-01-Range
+001..017 erweitert; Registry 446 Standards (397 APPROVED/37 CANDIDATE), 445 Dateien; Views +
+INDEX.md regeneriert; Validator ALL COMPLIANT. Tool-Nachweis: Tools-Smoke-Assertion von
+statischem 444-Pin auf Kollaps-Schutz (>=446) umgestellt — statische Zahlen-Pins sind das
+P1-02-Antimuster aus dem Deep-Dive; Wachstum deckt der Views-Drift-Gate ab.
+Implementation-Backlog (getrennt vom Standard): gen_artifacts.py/audit_artifacts.py (WARN-
+Modus), Erst-Klassifizierung des Bestands, Phase-2-FAIL-Gate erst nach Owner-Freigabe.
