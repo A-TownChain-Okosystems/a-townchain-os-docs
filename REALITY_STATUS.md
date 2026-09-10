@@ -614,3 +614,30 @@ Registry-Check als CI-Gate in der ATC Governance CI):
    alle Produkt-Governance-CIs = F-107 (P1). F-100 PARTIALLY_RESOLVED, F-096/F-098
    PARTIALLY_RESOLVED. Neue Realität: 13 Repos mit grüner Test-Evidence, 10 ohne
    testbaren Code, Evidence-Stand 10.09. in jeder Datei maschinenlesbar.
+
+## 27. Evidence-Closure-Welle SCR-0081 (10.09.2026 13:20-13:55 UTC+2)
+
+Owner-Re-Prüfung: SCR-0080 konzeptionell richtig, Evidence-Layer selbst noch offen.
+Umsetzung P0-01 bis P0-08 (SCR-0081, atc-standards):
+1. **27./27 Evidence:** .github-Evidence-Datei auf PR-#4-Branch bereitgestellt
+   (feat/consolidated-governance); Registry-Kommentar ehrlich: 27 Registry · 26 Evidence
+   auf main · 27. via PR #4 (Owner-Approve).
+2. **blockchain_orchestration = a-townchain** (canonical: true); consensus bleibt
+   atc-algorithm (F-105 Dual-Verbot verankert).
+3. **bound_commit-Automatisierung:** 13/13 Test-Suite-Workflows binden nach grünem Lauf
+   bound_commit (GITHUB_SHA) + test_run-Block in .atc/evidence/evidence.yaml und pushen
+   per contents:write + [skip ci]. Pilot atc-wallet VERIFIZIERT: bound_commit 7cecffa auf
+   main, test_run PASS. Workflow-Pushes durchlaufen Branch-Protection.
+4. **atclang verschärft:** Rust-Canonical-Core existiert NICHT (0 Rust-Dateien) —
+   Evidence ehrlich partial (F-108, P0); cargo-CI + Differential-Tests erst mit
+   Rust-Bestand.
+5. **Mainnet-Kommunikation bereinigt:** a-townchain-Description (war "Layer-1 …
+   Mainnet 15.09.2026") → "Orchestration · development · Consensus canonical:
+   atc-algorithm". Consensus-Boundary-Check-Tool in a-townchain-CI (Report, strict
+   nach F-105-Refactor).
+6. **Registry-Zähler generiert:** gen_views läuft (444 Standards, 395 APPROVED, 37
+   CANDIDATE, 50 Familien, registry.lock); Views-Drift-Gate in der Governance-CI
+   (Registry-Änderung ohne Regeneration = FAIL; 447 aus SCR-0080 war Zählartefakt).
+Nachfix: Checker urllib (CI-001/T1) — in abgebrochener Kette nie gelandet, Naming-CI
+rot; gefixt. F-094 RESOLVED; F-108/F-109 neu. Owner offen: PR #4-Approve,
+ATC-STD-LAYER-001 §9 (F-096), Rust-Canonical-Core (F-108), F-105-Refactor.
