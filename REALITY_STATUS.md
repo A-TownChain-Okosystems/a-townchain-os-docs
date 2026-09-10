@@ -563,3 +563,29 @@ den Org-Owner lesbar (404). Gewollte Gewaltenteilung, keine Umgehung.
 Merge-Commit-PR (SCR-Histories bleiben erhalten); #1/#2/#3 geschlossen mit Verweis.
 **Restaktion: 1× Approve auf PR #4** — danach mergt der Agent per API (Schutzregel
 durch die Approving-Review erfüllt). F-092 → PARTIALLY_RESOLVED.
+
+## 25. Test-Verifikations-Welle + 27/27 Compliance Matrix (SCR-0078/0079, 10.09.2026 12:15–13:00 UTC+2)
+
+**SCR-0078 (F-093 RESOLVED, F-055 RESOLVED):** Die vermeintlich grünen Post-Merge-Pipelines
+logten nicht — die Dependabot-Läufe sind nur Updater-Jobs, die Governance-CIs prüfen nur
+Artefakte. Org-weite echte Test-Verifikation aufgebaut (13 × `.github/workflows/test-suite.yml`,
+cargo+nightly/npm/pytest): 13/13 Repos grün (Kernel, Wallet, GlobusOS, Explorer, Indexer,
+Marketplace, Contracts, SDK, ATCLang, A-TownChain, Genesis ×2, Aurora). Behobene Folgefehler
+der MAJOR-Welle: Peer-Konflikte (react 19/next 16/react-dom 19), ts-jest-Relikte, nie
+lauffähige tsc-Builds (devDeps+tsconfig), lucide-`Github`-Entfernung (→GitFork), 19 fehlende
+Views + AtsSuite (24 Exporte) + AtcBlockchainEngine-Stub in aurora-ai (ehrliche
+NOT-IMPLEMENTED-Platzhalter), eframe-0.36-API (`App::ui`), atcnet-timeout-Parameter,
+boot-Crate dokumentiert übersprungen (0 Unit-Tests, Cross-Compile). **F-055:** Alle 14
+Dependabot-Alerts in a-townchain-os waren verwaist (Manifest 404 + 0 Commits, vor
+History-Reset) — 14/14 dokumentiert dismissed, org-weit 0 offene Alerts. 0 Rollbacks der
+~53 Bumps nötig.
+
+**SCR-0079 (27/27 Compliance Matrix):** 12 Dimensionen × 27 Repos, API-getrieben
+reproduzierbar. Bilanz: 246/302 anwendbare Zellen grün (81,5 %). Kernbefunde: Registry-Zahlen
+divergieren über 4 Quellen (447/431/432/433/443 — F-094 P0), CodeQL org-weit inaktiv
+(code-scanning 404 — F-099 P1), `.evidence/` in 0/27 Repos (F-100 P1), 8 Repos mit exakt
+0 Code-Dateien (F-102 P1, Portfolio-Entscheidung), ATCLang-Rollenwiderspruch (F-097 P0),
+Layer-Taxonomie fehlt (F-096 P0), Status-Claims ohne Evidence-Bindung (F-098 P0).
+Master-Backlog F-094–F-104: `atc-standards/docs/compliance/MASTER-BACKLOG-2026-09-10.md`,
+Matrix: `COMPLIANCE-MATRIX-2026-09-10.md`. Owner-Aktionen: PR #4-Approve (.github),
+CodeQL-Rollout (Issue #95), Portfolio-Entscheidung 0-Code-Repos, §9-Freigaben Evidence-/Layer-/Statusmodell.
