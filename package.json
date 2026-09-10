@@ -2,7 +2,7 @@
   "name": "atc-docs",
   "version": "0.1.0",
   "description": "A-TownChain OS Documentation Hub",
-  "license": "All Rights Reserved",
+  "license": "Apache-2.0",
   "author": "Michael Wroblewski / ShivaCore / A-TownChain-Okosystems",
   "scripts": {
     "dev": "vite",

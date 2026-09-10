@@ -2,7 +2,7 @@
   "name": "atownchain-os",
   "private": true,
   "version": "0.0.0",
-  "license": "Proprietary",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
