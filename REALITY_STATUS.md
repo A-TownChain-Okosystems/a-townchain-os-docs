@@ -439,3 +439,33 @@ Owner-Repo-Audits Welle 2 direkt umgesetzt:
    Implementation 0–30 %. Implementation-Pivot bleibt Maßgabe: Specification →
    Rust → Tests → Evidence. Wichtigste offene Owner-Entscheidung: Mainnet-
    Termin (F-069).
+
+---
+
+## 18. Spezifikations-Backlog org-weit geschlossen (10.09.2026, 11:00–11:20 UTC+2, Aurora, SCR-0071)
+
+Owner-Direktive „Alle fehlenden Spezifikationen in alle Repository nachholen"
+umgesetzt: **91 SPEC-DRAFT-Dateien in 23 Repositories**, generatorbasiert im
+Muster der 263er-Batches, aber mit echten Fachinhalten je Domäne:
+
+- **Konsens (atc-algorithm, 9):** ATC-CONSENSUS-301..307 (PoH-Tick-Hash-Kette,
+  PoS-Gewichtung/Selection, PoW-Difficulty-EMA, Hybrid-Score-Formel,
+  Fork-Choice-Totalordnung, 2/3-Finality, Validator-Lifecycle inkl.
+  „5-Validator-Key = Bootstrap"-Klarstellung) + Determinismus-Contract
+  (Integer-only, kanonische Sortierung, kein Float) + Canonical Encoding.
+- **Krypto-Kernentscheidungen als Draft:** WAL-SIGN-001 legt secp256k1
+  (RFC 6979, Low-S, Domain-Separation) als KANONISCHEN TX-Algorithmus fest —
+  ed25519-dalek gilt ausschließlich für P2P/DID (F-062-Klärung);
+  ATC-CRYPTO-001 zentralisiert Primitive + PQC-MAJOR-Roadmap (ehrlich:
+  Migration NICHT behauptet).
+- **Compute (10), Wallet (14), Storage (10), Marketplace (10), Launchpad (5),
+  Genesis (5), ATCLang-Pipeline (5), Chain (5: Crypto/Network-ID/State/VM-
+  Conformance/Evidence), Aurora (4: Capability-Tokens, Memory-Security, Trust
+  Boundary, S2-Controls), Shivacore (2: test-report.json-Standard,
+  Dependency-Policy ohne Auto-Merge).**
+- **12 weitere Repos:** SPEC-OVERVIEW.md als ehrliche Gap-Inventur.
+- Jede Datei: 0.1.0-DRAFT, MUST-Anforderungen mit REQ-IDs + Nachweisangabe,
+  Invarianten, Conformance-Testkategorien, Status-Gates. **Kein einziger
+  Implementierungs-Status wird behauptet** (No status without evidence).
+- Nächste Stufe: Spec-Freeze-Reviews je Paket (Owner §9) — Empfehlung:
+  Konsens zuerst (S4, Mainnet-Gate), dann Wallet, dann Chain-Evidence.
