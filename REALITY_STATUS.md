@@ -548,3 +548,18 @@ fordert Post-Merge-CI-Verifikation — rote Pipelines sind Rollback-Kandidaten.
 der eigenen PRs (422), Protection-Änderung mit Agent-Token unmöglich (404) — es
 braucht 3× »Approve« im UI oder eine Zweit-Reviewer-Identität; danach sind alle
 drei sofort mergbar.
+
+---
+
+## 24. Hub-PR-Blockade alternativ gelöst: PR #4 (SCR-0077, 10.09.2026)
+
+RCA zur Blockade von Hub-PRs #1-#3: Agent-Identität ShivaCoreDev ist Repo-Admin, aber
+PR-**Autor** — GitHub sperrt Self-Approval (422); klassische Protection-Writes mit dem
+OAuth-Token (repo, workflow) schreibseitig gesperrt (PUT 404); Org-Rulesets nur für
+den Org-Owner lesbar (404). Gewollte Gewaltenteilung, keine Umgehung.
+
+**Lösung (Owner-Direktive »Anders lösen«):** Alle drei Branches konfliktfrei zu
+`feat/consolidated-governance` gemergt (25 Dateien, +1066/-35) → **PR #4** als
+Merge-Commit-PR (SCR-Histories bleiben erhalten); #1/#2/#3 geschlossen mit Verweis.
+**Restaktion: 1× Approve auf PR #4** — danach mergt der Agent per API (Schutzregel
+durch die Approving-Review erfüllt). F-092 → PARTIALLY_RESOLVED.
