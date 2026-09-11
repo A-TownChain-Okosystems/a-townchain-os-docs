@@ -1047,3 +1047,18 @@ Gossip/Blockproduktion bleiben Stufe 3; Wallet/Explorer/SDK-Anbindung und die
 IFC-0009/0010-Consumer folgen darauf. F-140 PARTIALLY_RESOLVED. Damit ist die
 Devnet-Kaskade Genesis (SCR-0106) -> Peer-Join -> RPC-Erreichbarkeit zweistufig
 CI-verifiziert.
+
+## 52. SCR-0109 — Devnet-RPC Stufe 3: JSON-RPC-Subset ueber den Socket (11.09.2026)
+
+Stufe 3 abgeschlossen: atc-node spricht auf demselben TCP-Port jetzt auch
+JSON-RPC 2.0-Teilmenge — Methoden chain_id, boot_hash, peers, ping mit
+deterministischen Antworten, Fehlercode -32601 fuer unbekannte Methoden,
+Auto-Erkennung am Socket (Zeilenprotokoll fuer Zeilen-Requests, JSON fuer
+Objekt-Requests). Ehrlich dokumentiert: bewusst minimale Feldextraktion
+("method"/"id"), kein voller JSON-Parser, keine Batch-Requests, keine
+Notifications. Verifikation: 5 Unit-Tests im rpc-Modul, davon 2 echte
+TCP-Roundtrips (Zeile und JSON) — Test Suite GRUEN (5b0af587).
+Zwischenfall ehrlich: Der erste Stufe-3-Commit enthielt den Impl ohne Tests
+(Patcher starb an falschem Anchor vor dem Test-Einfuegen); der Nachzug brachte
+Auto-Erkennung + 3 Tests. Offen (F-140): Auth/TLS, echte Consumer-Anbindung
+(Wallet/Explorer/SDK, IFC-0009/0010), Gossip, Blockproduktion.
