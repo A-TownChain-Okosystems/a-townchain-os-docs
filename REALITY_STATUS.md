@@ -864,3 +864,13 @@ Claim. Cross-Registry-Test und Validator ALL COMPLIANT; Nachlauf-Sweep 25/25 COM
 Damit ist die Kette nach Owner-Merges von PR #7 + #8 vollstaendig: Alle 27 Repos
 flaechendeckend mit Pflichtartefakten, Hub-Artefakte komplett, Scanner haertungs- und
 Symlink-tolerant, Repository-Gate der Audits geschlossen.
+
+## 42. F-059-Entscheidung: demo-repository löschen (11.09.2026)
+
+Owner hat die offene F-059-Entscheidung getroffen: demo-repository (ungoverned, Namensverstoß,
+2 KB, von ShivaCoreDev 09.09. versehentlich angelegt) wird GELÖSCHT. Ausführung: Der API-Delete
+lief auf 403 "Must have admin rights" — das OAuth-Agent-Token hat repo-/workflow-Scope, aber
+Löschungen erfordern den separaten delete_repo-Scope (gewollte Gewaltenteilung). Löschung daher
+als Owner-Ein-Klick-Aktion: GitHub → A-TownChain-Okosystems/demo-repository → Settings →
+Danger Zone → "Delete this repository". Nach Ausführung: Org 27 Repos, 27/27 governed,
+0 ungoverned — F-059 auf RESOLVED zu setzen (Agent erledigt Nachdokumentation).
