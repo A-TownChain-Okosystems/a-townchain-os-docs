@@ -1106,3 +1106,19 @@ Prozess ist der Baustein fuer Docker-Compose-Devnets und echte Mehr-Prozess-
 Setups (Stufe offen). Damit ist die Devnet-Kette vom Genesis-Objekt bis zur
 laufenden Prozess-Instanz geschlossen: Genesis -> Boot -> Peer-Tabelle ->
 RPC-Dienst -> startbarer Node.
+
+## 56. SCR-0113 — Zwei-Node-Devnet-Smoke: die Kerninvariante lebt (11.09.2026)
+
+Der Devnet-Gedanke ist jetzt mehrgliedrig verifiziert: tests/two_node_devnet.rs
+in atc-node startet ZWEI lebende Node-Dienste — je eigener Thread mit eigener
+Genesis-Instanz und eigener Peer-Tabelle, aber derselben Genesis-Definition —
+und ein Client verifiziert ueber echte TCP-Sockets, dass beide Nodes die
+Chain-ID 658467 liefern und denselben deterministischen Boot-Hash, in beiden
+Protokollen (Zeile aus SCR-0108, JSON-RPC aus SCR-0109). CI-verifiziert:
+Test Suite GRUEN (d841bb9c). Ehrlich: Thread-Simulation zweier Prozesse, kein
+Docker, kein Node-zu-Node-Gossip — die beiden Dienste kennen sich nicht
+gegenseitig, sie teilen nur die Genesis-Wahrheit. Damit ist die Devnet-
+Kerninvariante (gleiche Genesis -> gleicher Boot-Hash -> gleiche Chain-ID)
+zum ersten Mal UEBER MEHRERE LEBENDE NODE-INSTANZEN erzwungen. Restoffen
+(F-139): Docker-Compose mit echten Prozessen, Genesis-File-Bindung via
+serde, P2P-Gossip, Blockproduktion.
