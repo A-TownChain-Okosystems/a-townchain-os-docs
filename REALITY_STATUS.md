@@ -1062,3 +1062,18 @@ Zwischenfall ehrlich: Der erste Stufe-3-Commit enthielt den Impl ohne Tests
 (Patcher starb an falschem Anchor vor dem Test-Einfuegen); der Nachzug brachte
 Auto-Erkennung + 3 Tests. Offen (F-140): Auth/TLS, echte Consumer-Anbindung
 (Wallet/Explorer/SDK, IFC-0009/0010), Gossip, Blockproduktion.
+
+## 53. SCR-0110 — Erster Consumer: atc-sdk spricht JSON-RPC mit dem Node (11.09.2026)
+
+Die Access-Luecke (F-140) ist beidseitig geschlossen: atc-sdk hat mit
+modules/atc-cli/src/rpc_client.rs den ersten echten Chain-Access-Consumer —
+einen minimalen JSON-RPC-2.0-Client (chain_id, boot_hash, peers, ping) gegen
+das in SCR-0109 definierte Devnet-RPC-Protokoll des atc-node. Verifikation:
+3 Unit-Tests inkl. Mock-Node-Roundtrip (Server-Thread antwortet im
+atc-node-Protokoll) und ein ehrlicher Verbindungsfehler-Fall — atc-sdk
+Test Suite GRUEN (9a237047). Ehrlich dokumentiert: std::net ohne TLS, keine
+Verbindungs-Wiederverwendung, keine Retry-Logik, Mock statt echtem Node —
+die echte Node-Anbindung als Cross-Repo-Integrationstest sowie Explorer/Wallet
+(IFC-0009/0010-Consumer), Gossip und Blockproduktion folgen. Damit hat die
+IFC-Kette erstmals zwei Seiten: Node-Dienst (atc-node) und SDK-Client (atc-sdk),
+beide CI-verifiziert gegen dasselbe Protokoll.
