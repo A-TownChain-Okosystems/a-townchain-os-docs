@@ -938,3 +938,31 @@ ab sofort bei Generatoren verboten), ATC-STD-020-Nachhall aus der FAM-02-Kollisi
 aufgeklärt (Incident-Standard lebt kanonisch als ATC-STD-012). Checker R1-R14 +
 Validator + Repo-Registry-Check ALL COMPLIANT, alles gepusht. F-128 bleibt OPEN bis
 Org-Scan-Profile-Check (Hub-PR) die Vertragserfüllung je Repo laufend verifiziert.
+
+## 46. SCR-0102 — Legacy-Restaurierung: 25 CANDIDATE-Standards in Kraft gesetzt (11.09.2026)
+
+Owner-Direktive „Legacy Daten restaurieren und implementieren" (11.09. 16:15 UTC+2) =
+par.9-Freigabe für alle 25 geparkten CANDIDATE-Standards aus den Wellen SCR-0093..0099:
+Security/Assurance-Familie ATC-STD-020..043 (Incident Response, Monitoring, Patch, Bug,
+Regression, Attack Surface, Threat Modeling, Health, Update, Vuln-Intelligenz, Zero-Day,
+Emergency, Config-Baseline, Secrets, Crypto-Agility, Reproducible Builds, Artifact
+Integrity) + ATC-GATE-SEC-001 (Assurance-Meta-Gate) + ATC-STD-002 (Family-ID-Architektur)
++ ATC-STD-220 (File Admission) + ATC-GOV-001 (Level-0-Org-Verfassung — trägt ATC-STD-000
+als Level-2-Ausführungsnorm, ersetzt sie nicht) + ATC-STD-100 v2.0.0 (Language
+Architecture L0-L8, MAJOR mit dokumentierter Migration §7, COMPAT-001-konform).
+Registry jetzt: 474 Standards — 462 APPROVED, 12 DRAFT (ehrlich NICHT freigegeben, F-131),
+0 CANDIDATE. versions.yaml: 25 par.9-Approval-Einträge; Frontmatter, Titelzeilen und
+Kopf-Statuszeilen aller 25 Dateien synchron (S-19-grün). Approval-Decision-Doc:
+approval/APPROVAL-DECISION-2026-09-11-001-Legacy-Restaurierung-25.md. F-130 (P1) =
+Implementierungs-Mapping-Programm je restauriertem Standard (existierende Tooling-Evidence
+zuerst; No-Evidence-No-Claim unberührt).
+
+Ehrliche Zwischenfälle im Zuge (3 Anläufe, alle behoben): (1) versions.yaml-Textschnitt
+klebte Approval-Einträge an Vorderzeilen (Einfügeposition vor statt nach dem Zeilenumbruch)
+— der Cross-Registry-Checker lädt versions.yaml nicht, der Validator-S-18-Strict-Parse
+fing es; (2) zweiter Versuch mit dynamischer Indent-Erkennung scheiterte an historisch
+gemischten Blockformaten (2-/4-/6-Space-Einträge); (3) Endlösung: deterministischer
+Rebuild per YAML-Library (Git-Restore + strukturgetreue Modifikation) — jetzt S-18 PASS
+über alle 26 Registry-Dateien. Korrektur einer eigenen Fehlaussage: ATC-STD-020 EXISTIERT
+im Registry (CANDIDATE v1.1.0, nicht „verschwunden") — jetzt APPROVED. Endzustand:
+Checker R1-R14 + Validator + Repo-Registry-Check ALL COMPLIANT, alles auf main gepusht.
