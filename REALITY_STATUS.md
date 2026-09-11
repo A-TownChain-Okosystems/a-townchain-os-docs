@@ -1122,3 +1122,19 @@ Kerninvariante (gleiche Genesis -> gleicher Boot-Hash -> gleiche Chain-ID)
 zum ersten Mal UEBER MEHRERE LEBENDE NODE-INSTANZEN erzwungen. Restoffen
 (F-139): Docker-Compose mit echten Prozessen, Genesis-File-Bindung via
 serde, P2P-Gossip, Blockproduktion.
+
+## 57. SCR-0114 — Genesis-File-Bindung: Drift ist jetzt ein Buildfehler (11.09.2026)
+
+Die Genesis war bislang ein Doppelleben: config/devnet/genesis.json als
+erklaertes Devnet-Artefakt, das Rust-Modell als Code, der es "spiegelt" —
+Vertrauen statt Erzwungensein. SCR-0114 schliesst das: Genesis::from_file()
+laedt die Datei per serde_json, und ein CI-Test vergleicht das geladene
+Objekt gegen die Code-Genesis — volle Gleichheit inklusive Boot-Hash. Seit
+diesem Commit laeuft main ROT, sobald Artefakt und Modell auseinanderdriften.
+CI-verifiziert: atc-node Test Suite GRUEN (e3088555). Ehrlichkeit: keine
+Schema-Pruefung ueber die Feldtypen hinaus, keine YAML/TOML-Varianten —
+erst wenn eine echte Genesis-Datei-Hierarchie (mainnet/testnet) entsteht,
+wird das Bindungsmodell erweitert. Devnet-Kette damit sechsstufig erzwungen:
+Genesis -> Boot-Hash -> Peer-Join -> RPC (Zeile+JSON) -> startbarer Node ->
+zwei Nodes -> File-Bindung. Restoffen (F-139): Docker-Compose mit echten
+Prozessen, P2P-Gossip, Blockproduktion.
