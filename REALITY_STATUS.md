@@ -769,3 +769,24 @@ Sprachkorrekturen (a-townchain-os ohne scannbaren Code → ehrlich entfernt; gen
 python), Stale-CI-Diagnose (24 »rote« Suiten waren Bug-Phase-Artefakte; Neuverifikation 25/25).
 Offen: .github-README-Zahlenfix via PR (Owner-Approve), P1-Backlog (Layer-Zuständigkeiten
 a-townchain/atc-node/atc-vm, Repository-Taxonomie, Dependency-DAG).
+
+## 36. SCR-0091 — Generator-SSOT-Härtung (11.09.2026, CIs grün)
+
+Owner-Bereinigungsplan umgesetzt: »Nicht die README manuell korrigieren, sondern die Generatoren
+und die SSOT-Verkettung reparieren.« **registry/standards.yaml ist die einzige autoritative
+Quelle** — alle Versionen/Statusse/Zahlen in Views sind jetzt abgeleitet, 0 Hartcodes:
+generate_views.py (std_index-Registry-Lookup: ATC-STD-000 → **v1.3.0 CANDIDATE** statt
+hartcodiert v1.2.0 APPROVED; Compliance-Tabelle, registry.lock-Version, Repository-Version
+dynamisch), README.template.md (0 Hartcodes, @@TOKENS@@), gen_taxonomy.py (Governance-Core per
+reg_lookup aus Registry — vorher DRAFT/GEPLANT-Hartcodes trotz APPROVED; **Hartfehler** bei
+Taxonomie-Einträgen ohne Registry-Eintrag), AGENT_MANIFEST (Verfassungs-Version dynamisch).
+**Cross-Registry-Konsistenztest** tools/consistency/check_cross_registry.py (R1-R10: Eindeutigkeit,
+Registry↔Datei-Relation inkl. Master-Dokumenten außerhalb standards/ — ATC-STD-000/002, ATC-GOV-001,
+Version/Status-Drift, Taxonomie-Spiegelung 43 Familien, State-Block==Ist, APPROVED≠IMPLEMENTED,
+Hartcode-Drift in Views mit STATUS-Audit-Trail-Ausnahme, Generator-Idempotenz) — **Exit 1 bei jeder
+Abweichung**, als CI-Job `cross-registry` in atc-standards/ci.yml verankert. Erstlauf vor Commit:
+ALL COMPLIANT; Validator ALL COMPLIANT, README 13/13 Gates, 27/27 Repos; CIs grün (Test Suite,
+Naming/Governance, CodeQL). ID-Klarstellung: **SSOT-Matrix-Standard = ATC-STD-003** (ATC-STD-022 =
+Security Patch Management; Verweis in der Übergabe war ein Versehen). Historische Zahlen nur in
+CHANGELOG/SCRs/Audits/STATUS-Audit-Trail. SCR-0091.md dokumentiert alles. Offen: Owner-Approve
+PR #6 (.github-Referenzpflicht), P1-Backlog F-117..F-120.
