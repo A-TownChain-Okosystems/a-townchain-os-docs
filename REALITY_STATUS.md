@@ -1018,3 +1018,17 @@ legitim EXEMPT (docs-only, F-133). F-110 RESOLVED. ATC-ORG-BASELINE-001 par.5-P0
 Sprach-/Workflow-Bestimmung an GitHub-main-Bäumen (API), nie an ggf. Wochen-alten
 Lokal-Klonen (atclang lokal 0 .rs vs. main mit atc-core; 9/9 PUTs scheiterten korrekt
 an „Datei existiert bereits").
+
+## 50. SCR-0106 — Devnet-Bootstrap Stufe 1: Chain-ID 658467 erstmals boot-fähig (11.09.2026)
+
+Die Devnet-Lücke (F-139, „Chain-ID existiert nur als Konstante") ist auf Stufe 1
+geschlossen: atc-node hat einen Devnet-Bootstrap — Genesis-Definition als erklaertes
+Artefakt (config/devnet/genesis.json, Chain-ID 658467, Devnet-Peers atc-node-1/2,
+State-Root-Platzhalter) plus Rust-Modul src/bootstrap.rs mit Validierung (Chain-ID-
+Bindung, Height 0, Mindest-2-Peers), deterministischem Boot-Hash (FNV-1a 64-bit,
+ehrlich dokumentiert als nicht-kryptographischer MVP-Platzhalter) und devnet_boot
+(Peer-Join + Verifizierung ueber die bestehende PeerTable). 6 Unit-Tests inklusive
+Kerninvariante „zwei Nodes mit gleicher Genesis erzeugen denselben Boot-Hash".
+CI-verifiziert: atc-node Test Suite GRUEN (ec675e89). Ehrlich offen (Stufe 2): kein
+echtes Netzwerk-Socket, keine Genesis-File-Bindung via serde, kein RPC (F-140), keine
+Blockproduktion. Der Mainnet-Termin-NO-GO (F-069) bleibt davon unberuehrt bestehen.
