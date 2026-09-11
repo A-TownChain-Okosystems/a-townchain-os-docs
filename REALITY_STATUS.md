@@ -910,3 +910,11 @@ Implementierungs-Drift = FAIL, Waiskind-Dateien ohne Registry-Eintrag = FAIL.
 ci.yml regeneriert Metadaten je Lauf. Damit ist die Bibliothek laut Owner-Zielarchitektur
 maschinenlesbar: Registry → Generator → Metadaten → Validator → CI. Phase 2 (Profiles +
 .atc/standards.yaml je Repo, F-128) als naechster Schritt nach F-124.
+
+**§44-Nachtrag (15:50):** Erste CI-Runde nach SCR-0100 zeigte 2 rote Jobs — Ursache war
+NICHT Phase 1, sondern eine Badge-Muster-Dualitaet aus SCR-0096: das Repo-Audit-Tool
+(V-14) verlangt literal „ATC COMPLIANCE" (Leerzeichen), der Org-Scan „ATC-COMPLIANCE"
+(Bindestrich). Fix: Badge-Alt-Text mit Leerzeichen, Badge-URL mit Bindestrich — beide
+Konventionen gleichzeitig erfüllt. Lokal verifiziert: Audit R3 + Checker R1-R13 +
+Validator ALL COMPLIANT; Lesson für die Musterbibliothek: ein Claim, zwei kanonische
+Notationen — Generator muss beide bedienen.
