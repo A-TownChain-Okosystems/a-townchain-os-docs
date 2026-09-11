@@ -790,3 +790,19 @@ Naming/Governance, CodeQL). ID-Klarstellung: **SSOT-Matrix-Standard = ATC-STD-00
 Security Patch Management; Verweis in der Übergabe war ein Versehen). Historische Zahlen nur in
 CHANGELOG/SCRs/Audits/STATUS-Audit-Trail. SCR-0091.md dokumentiert alles. Offen: Owner-Approve
 PR #6 (.github-Referenzpflicht), P1-Backlog F-117..F-120.
+
+## 37. SCR-0093 — Owner-Audit-Response 8,2/10 (11.09.2026)
+
+Externer Organisations-Audit (Score 8,2/10) in SCR-Welle übersetzt. Bereits CI-erzwungen aus SCR-0091
+(audit P0-1 SSOT-Determinismus, P0-3 Compliance-Gate 25/25 grün): Registry→Generatoren→Views→
+Cross-Registry-Test R1-R10 als CI-Job. NEU in SCR-0093: **R11 ATC-STD-000-Bootstrap-Sunset
+maschinell erzwungen** (Audit P0-2): Sunset v1.3.0 maschinenlesbar aus ATC-STD-003 §6 geparst;
+Checker failt bei (a) Version jenseits des Sunset ohne OWNER-APPROVED, (b) Drift zwischen
+Verfassungs-Datei und Registry, (c) fehlendem Sunset; Erstlauf ALL COMPLIANT (Datei v1.3.0/candidate
+== Registry, ehrlich). **CODEOWNERS** (Audit P0-6) in 7 Critical-Repos (atc-shivacore, atclang,
+a-townchain, atc-vm, atc-zkp, atc-contracts, atc-standards): Human-Reviewer @A-TownChain,
+Agenten ausdrücklich nie Approver; Enforcement via Branch-Protection = Owner-Aktion (F-122).
+Findings-Register F-121..F-126 (ehrlich inkl. Verifikations-Fehlschlag: repositories.yaml hat
+KEINE criticality-/repository_type-Felder — P1-7 offen, F-124). PR #7 (Scanner-Härtung) wartet
+weiter auf Owner-Approve. Score-Akzeptanz: 8,2/10 nachvollziehbar; Weg zu 9,0-9,5 dokumentiert
+in Audit-Prioritätenliste.
