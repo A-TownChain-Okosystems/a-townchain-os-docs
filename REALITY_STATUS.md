@@ -918,3 +918,23 @@ NICHT Phase 1, sondern eine Badge-Muster-Dualitaet aus SCR-0096: das Repo-Audit-
 Konventionen gleichzeitig erfüllt. Lokal verifiziert: Audit R3 + Checker R1-R13 +
 Validator ALL COMPLIANT; Lesson für die Musterbibliothek: ein Claim, zwei kanonische
 Notationen — Generator muss beide bedienen.
+
+## 45. SCR-0101 — Standards-Library Phase 2: Profiles & Repository-Compliance (11.09.2026)
+
+ATC-STD-LIB-001 Phase 2 umgesetzt: **27 verbindliche Standards-Profile** in
+atc-standards/profiles/<repo>.yaml (Kern v1.0 mit 9 verifizierten APPROVED-Standards:
+000 Verfassung, 003 SSOT, 012 Incident Governance, 016 Artifact Inventory, 017 Obsolete
+Mgmt, 018 Technology Currency, 019 Supply Chain, 201/202 Repository-Standards; fachliche
+Domain-Erweiterungen ehrlich als "pending via SCR" markiert). **standards_profile-Feld**
+je repositories.yaml-Eintrag (27/27; Substring-Kollision a-townchain/a-townchain-os/
+os-docs beim Flow-Style-Fix erkannt und behoben). **Prüfregel R14** im Cross-Registry-Test
+erzwingt: Profil je Repo, Registry-Drift-Freiheit, APPROVED-only-Bindung, keine Waiskinder.
+**Rollout: .atc/standards.yaml** in 26 Repos auf main (Hub via PR, da PR-gated) —
+Standards Profile = verbindlicher Compliance-Vertrag je Repository. **F-124 RESOLVED**
+(stale SCR-0093-Verifikung korrigiert: criticality/maturity/domain/layer existierten
+bereits; standards_profile jetzt ergänzt). Zwischenfälle ehrlich: Generator-Token-Fix
+maskiert gescheitert (NameError yaml erst nach sichtbarem Lauf entdeckt — Output-Masking
+ab sofort bei Generatoren verboten), ATC-STD-020-Nachhall aus der FAM-02-Kollision
+aufgeklärt (Incident-Standard lebt kanonisch als ATC-STD-012). Checker R1-R14 +
+Validator + Repo-Registry-Check ALL COMPLIANT, alles gepusht. F-128 bleibt OPEN bis
+Org-Scan-Profile-Check (Hub-PR) die Vertragserfüllung je Repo laufend verifiziert.
