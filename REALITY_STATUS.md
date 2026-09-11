@@ -896,3 +896,17 @@ Compliance-Vertrag je Repo, Zielstruktur inkl. Ordner-je-Standard, 5-Phasen-Migr
 (Phase 3 = MAJOR per COMPAT-001 mit Owner-Gate). F-127/F-128/F-129 registriert. Viel vom
 Modell existiert bereits (Registry-SSOT, REQ-IDs, Evidence-Gate, CI-R1–R12, §9-Human-Gate);
 echte Lücken: STABLE-Status, metadata.yaml je Standard, Profiles, SPEC/TEST-Hierarchien.
+
+## 44. SCR-0100 — Standards-Library Phase 1 live: Per-Standard-Metadaten (11.09.2026)
+
+ATC-STD-LIB-001 Phase 1 umgesetzt: 474 maschinenlesbare <ID>.metadata.yaml je Standard
+(governance/ und standards/), vollstaendig GENERIERT aus der Registry durch
+tools/gen_views/gen_metadata.py — Projektion, keine zweite Handpflegequelle (Ein-Zahl-Regel).
+Inhalt: id/title/version/status/category/authority/owner/normative/source_file/dependencies
+(aus dependencies.yaml)/implementation.status+evidence (aus Implementierungs-Matrix)/
+conformance.required. Neue Pruefregel R13 im Cross-Registry-Test (CI-Job) erzwingt:
+Metadaten-Vollstaendigkeit je Registry-Eintrag, Version/Status/Titel-Drift = FAIL,
+Implementierungs-Drift = FAIL, Waiskind-Dateien ohne Registry-Eintrag = FAIL.
+ci.yml regeneriert Metadaten je Lauf. Damit ist die Bibliothek laut Owner-Zielarchitektur
+maschinenlesbar: Registry → Generator → Metadaten → Validator → CI. Phase 2 (Profiles +
+.atc/standards.yaml je Repo, F-128) als naechster Schritt nach F-124.
