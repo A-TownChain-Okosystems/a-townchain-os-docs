@@ -747,3 +747,25 @@ Implementation-Backlog bewusst getrennt: Inventar-Collector, TCS-Berechnung, Sec
 Stufe 2 erst nach Stabilisierung + Owner-Freigabe (gleiche Phasen-Logik wie ATC-STD-017 §8).
 Vorheriger Stand (SCR-0087): 016/017 live; Issues abgebaut (offen: nur noch a-townchain-os#80
 AIP-001 mit SPEC-DRAFT); CodeQL 26/27; F-114-PR-Promotion-Pilot in atc-standards.
+
+## 35. SCR-0090 — Governance-Determinismus (11.09.2026 10:15 UTC+2)
+
+Owner-Governance-Audit: »Die Governance erzeugt selbst neue Konsistenzprobleme« — README enthielt
+parallel 473/449/444-443/470-51 (vier Zeitzustände), .github behauptete 433 (09.09.), Registry-IST
+war 474/476. Live: **ATC-STD-003 v1.0.0 APPROVED** (Governance Determinism & Source-of-Truth
+Matrix): SSOT-Matrix je Informationsklasse, Ein-Zahl-Regel mit **State-ID** (ATC-STATE-<Datum>-
+<Registry-SHA8>, maschinenlesbarer State-Block: registry_sha256 + counts + generated_at),
+README-Regel CURRENT-STATE-only (Vollregeneration aus Template, Patch-Regime beendet — historische
+Zahlen nur STATUS.md/CHANGELOG/audits/), .github-Referenzpflicht (keine eigenen Zahlen),
+**Autoritätskaskade: Registry (normativ) > Evidence/REALITY_STATUS (verifizierte Realität,
+append-only Historie) > sonstige Doku** — REALITY_STATUS ist damit ausdrücklich KEINE konkurrierende
+normative Quelle (diese Abschnittszahlen sind historische Snapshots je Zeitstempel; bindend ist
+der State-Block), ATC-STD-000-Bootstrap mit Sunset v1.3.0 (EXEMPT befristet, nur Verfassung),
+Slot-Prinzip »No standard because a slot exists«, APPROVED ≠ IMPLEMENTED, Agent-Autoritätsgrenzen
+(Aurora = Executor/Auditor/Maintainer, nie Approver; 2-of-N für kritische Standards).
+Validator ALL COMPLIANT, README 13/13 Gates, INDEX 474 Standards/51 Familien, repo_registry_check
+27/27. SCR-0089 nachgetragen: atc-vm Endlos-Loop-RCA (loop_countdown + swap_und_eq), CodeQL-
+Sprachkorrekturen (a-townchain-os ohne scannbaren Code → ehrlich entfernt; genesis-engine →
+python), Stale-CI-Diagnose (24 »rote« Suiten waren Bug-Phase-Artefakte; Neuverifikation 25/25).
+Offen: .github-README-Zahlenfix via PR (Owner-Approve), P1-Backlog (Layer-Zuständigkeiten
+a-townchain/atc-node/atc-vm, Repository-Taxonomie, Dependency-DAG).
