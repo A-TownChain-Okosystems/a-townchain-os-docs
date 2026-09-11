@@ -806,3 +806,21 @@ Findings-Register F-121..F-126 (ehrlich inkl. Verifikations-Fehlschlag: reposito
 KEINE criticality-/repository_type-Felder — P1-7 offen, F-124). PR #7 (Scanner-Härtung) wartet
 weiter auf Owner-Approve. Score-Akzeptanz: 8,2/10 nachvollziehbar; Weg zu 9,0-9,5 dokumentiert
 in Audit-Prioritätenliste.
+
+## 38. SCR-0094 — Drei-Stufen-Compliance-State (Owner-Audit P1-01, 11.09.2026)
+
+Zweites Live-Audit des Owners (8,5/10) umgesetzt: Der flache »ATC COMPLIANCE: YES«-Claim im
+atc-standards-README ist durch drei GETRENNTE Zustände ersetzt — **FORMALE COMPLIANCE: PASS**
+(Repository-Audit R3 + Cross-Registry-Test R1-R12) · **IMPLEMENTATION: PARTIAL** (41 % code-backed:
+65 enforced + 129 implemented von 474 Matrix-Eintraegen) · **PRODUCTION READINESS: NOT_READY**
+(Release-/Mainnet-Gates). SSOT: registry/compliance_state.yaml; README generiert daraus.
+**R12** (Cross-Registry-Test, CI-Job) erzwingt jeden Wert: formal nur PASS behauptbar, wenn der
+Test selbst gruen ist; implementation aus registry/standard-implementation.yaml abgeleitet
+(Drift = CI-Fail); production NOT_READY, solange kein ACCEPTED Mainnet-/Release-Meilenstein in
+milestones/releases existiert — von Agenten nicht frei setzbar. Echter Fund dabei: Die
+Implementierungs-Matrix deckte nur 473/474 Standards ab — ATC-STD-003 (Governance Determinism)
+fehlte und ist jetzt ehrlich als **enforced** mit CI-Evidence nachgetragen. Owner-P1-02
+(Sunset technisch erzwingen) war bereits durch R11 aus SCR-0093 erledigt. Vorfaelle im Zug
+ehrlich dokumentiert: zwei Skript-Abbrueche (Variablenverwechslung kk/kpi, Statements im
+Dict-Literal, yaml-Import-Scope) — jedes sofort diagnostiziert und behoben, kein rotes
+Ergebnis committet. P1-04 (Evidence-L3) bleibt Roadmap-Punkt, P2-Profile laeuft ueber F-124.
