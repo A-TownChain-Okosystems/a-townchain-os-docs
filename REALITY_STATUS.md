@@ -966,3 +966,22 @@ Rebuild per YAML-Library (Git-Restore + strukturgetreue Modifikation) — jetzt 
 über alle 26 Registry-Dateien. Korrektur einer eigenen Fehlaussage: ATC-STD-020 EXISTIERT
 im Registry (CANDIDATE v1.1.0, nicht „verschwunden") — jetzt APPROVED. Endzustand:
 Checker R1-R14 + Validator + Repo-Registry-Check ALL COMPLIANT, alles auf main gepusht.
+
+## 47. SCR-0103 — ATC-ORG-BASELINE-001 + erste P0-Quick-Wins (11.09.2026)
+
+Owner-Direktive „Sicherheit, Geschwindigkeit und Stabilität als EIN Engineering-Governance-
+System" (17:30) + Freigabe (17:33) umgesetzt: **ATC-ORG-BASELINE-001 v1.0.0 APPROVED**
+(Standard-Nr. 475, Registry 463 APPROVED/12 DRAFT/0 CANDIDATE). Inhalt: 5 Schutzschichten
+(Security/Performance/Stability/Quality/Governance), Repo-Tiers T0-T4 mit maschineller
+Ableitungsregel (T0={.github,atc-standards}; T1=Owner-Liste+C1+S4 ⇒ 12 Kern-Repos; T2
+Infrastruktur 6; T3 Applikationen 7; T4 leer), einheitliches MERGE_ALLOWED-Gate je Tier
+(Agenten nie Approver), P0-P3-Roadmap mit ehrlichem IST-Stand der SOLL/IST-Analyse.
+Enforcement: **R15** im Cross-Registry-Test (Tier-Gültigkeit, T0/T1-Verdrahtung, C1+S4-Regel,
+Baseline-Existenz); `tier`-Feld 27/27 in repositories.yaml; Implementierungs-Matrix ehrlich
+partial. Quick-Wins live: **Dependabot 26/26** (10 fehlende Konfigs via API, F-043 RESOLVED),
+**Dependency-Review-Gate 26/26** (blockt vulnerable PR-Dependencies, ATC-ORG-BASELINE-001
+§5 P0). Neue Findings: F-134 P1 (Actions-SHA-Pinning 0/130), F-135 P1 (Release-Security:
+SBOM/Signing/Reproducible/Tag-Protection 0/26), F-136 P0 (google_api_key-Alert a-townchain-os:
+aus main entfernt, Validität unknown — Owner-Verifikation/Widerruf nötig). Offene Owner-
+Aktionen unverändert: F-122 Branch-Protection (25/26 ungeschützt), F-128 Hub-PR, demo-
+repository-Löschung. Alles geprüft: Checker R1-R15 + Validator + RepoCheck ALL COMPLIANT.
