@@ -1032,3 +1032,18 @@ Kerninvariante „zwei Nodes mit gleicher Genesis erzeugen denselben Boot-Hash".
 CI-verifiziert: atc-node Test Suite GRUEN (ec675e89). Ehrlich offen (Stufe 2): kein
 echtes Netzwerk-Socket, keine Genesis-File-Bindung via serde, kein RPC (F-140), keine
 Blockproduktion. Der Mainnet-Termin-NO-GO (F-069) bleibt davon unberuehrt bestehen.
+
+## 51. SCR-0108 — Devnet-RPC Stufe 2: erster Chain-Access ueber echtes TCP (11.09.2026)
+
+Die Access-Luecke (F-140, „niemand kann die Kette erreichen") ist auf Stufe 2
+geschlossen: atc-node hat src/rpc.rs — DevnetRpc als read-only-Schnappschuss des
+Devnet-Zustands (Chain-ID 658467, deterministischer Boot-Hash aus SCR-0106,
+Peer-Count) mit einem Zeilenprotokoll ueber echtes TCP: Befehle CHAIN_ID, BOOT_HASH,
+PEERS, PING (ein Request pro Verbindung), serve()-Dauerdienst plus handle().
+Verifizierung: 2 Unit-Tests inkl. echtem Socket-Roundtrip (127.0.0.1, Thread-Server,
+TcpStream-Client, CHAIN_ID -> 658467) — Test Suite GRUEN (09500f79). Ehrlich
+dokumentiert: KEIN JSON-RPC, KEINE Authentisierung, KEIN TLS (Devnet-only),
+Gossip/Blockproduktion bleiben Stufe 3; Wallet/Explorer/SDK-Anbindung und die
+IFC-0009/0010-Consumer folgen darauf. F-140 PARTIALLY_RESOLVED. Damit ist die
+Devnet-Kaskade Genesis (SCR-0106) -> Peer-Join -> RPC-Erreichbarkeit zweistufig
+CI-verifiziert.
