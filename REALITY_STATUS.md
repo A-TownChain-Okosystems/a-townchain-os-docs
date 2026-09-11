@@ -824,3 +824,18 @@ fehlte und ist jetzt ehrlich als **enforced** mit CI-Evidence nachgetragen. Owne
 ehrlich dokumentiert: zwei Skript-Abbrueche (Variablenverwechslung kk/kpi, Statements im
 Dict-Literal, yaml-Import-Scope) — jedes sofort diagnostiziert und behoben, kein rotes
 Ergebnis committet. P1-04 (Evidence-L3) bleibt Roadmap-Punkt, P2-Profile laeuft ueber F-124.
+
+## 39. SCR-0095 — Fehlende Repository-Dateien ergänzt (11.09.2026)
+
+API-Tree-Scan über alle 28 Repos (Audit-Kriterium "einheitliches Repository-Gate"):
+**Ergänzt:** CONTRIBUTING.md in 9 Repos (a-townchain-os-docs, atc-compute, atc-contracts,
+atc-explorer, atc-marketplace, atc-node, atc-sdk, genesis-chronicles, globus-os) — ATC-Governance-
+Referenz (SCR-/Evidence-Pflicht, Apache-2.0, Agenten-Regeln, Private Vulnerability Reporting).
+Hub (.github) fehlten SECURITY.md, CONTRIBUTING.md, CODEOWNERS, STATUS.md → als PR #8 bereit
+(Hub ist PR-gated, Owner-Approve erforderlich). **Bewusst NICHT ergänzt:** VERSION-Dateien —
+Versionspflicht erfüllt .atc/repository.yaml als SSOT (Ein-Zahl-Regel, ATC-STD-003; eine
+Paralleldatei wäre ein neuer SSOT-Verstoß, gleiche Logik wie REALITY_STATUS/Readme); ROADMAP.md
+im Hub (Org-Roadmap lebt in os-docs/atc-standards). demo-repository bewusst ausgespart
+(ungoverned, F-059 Owner-Entscheidung Archiv/Löschen ausstehend). Nachlauf: Org-Compliance-Scan
+25/25 COMPLIANT verifiziert. SECURITY.md, CODEOWNERS, CHANGELOG.md, STATUS.md waren bereits
+flächendeckend vorhanden (Vorwellen SCR-0069–0093).
