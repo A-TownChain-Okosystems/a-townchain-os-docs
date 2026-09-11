@@ -851,3 +851,16 @@ alle 27 governed Repos flächendeckend mit README/LICENSE/SECURITY/CONTRIBUTING/
 CHANGELOG/STATUS/.atc-Artefakten, Hub selbst jetzt ebenso. Nachlauf-Sweep mit gehärtetem
 Scanner verifiziert. Offene Owner-Themen: F-059 (demo-repository Archiv/Lösch-Entscheidung),
 Branch-Protection required-review für Critical-Repos (F-122), ATC-STD-000 v1.3.0 §9-Freigabe.
+
+## 41. SCR-0096 — Badge-Fund des gehärteten Scanners behoben (11.09.2026)
+
+Der erste Lauf des gehärteten Org-Compliance-Scanners (nach PR-#7-Merge) meldete 24/25:
+atc-standards Badge=False. RCA: SCR-0094 hatte mit dem flachen "ATC COMPLIANCE: YES"-Text-
+Claim auch das einzige Vorkommen des Badge-Suchmusters (ATC[\s-]*COMPLIANCE) aus dem
+generierten README entfernt. Fix (SCR-0096): ATC-COMPLIANCE-Badge (Scan-Konvention) als
+Template-Element nach der H1 eingefuegt, generiert und gepusht; formal-PASS bleibt separat
+durch R12 erzwungen — Badge ist Scan-Konvention, keine inhaltliche Rueckkehr zum flachen
+Claim. Cross-Registry-Test und Validator ALL COMPLIANT; Nachlauf-Sweep 25/25 COMPLIANT.
+Damit ist die Kette nach Owner-Merges von PR #7 + #8 vollstaendig: Alle 27 Repos
+flaechendeckend mit Pflichtartefakten, Hub-Artefakte komplett, Scanner haertungs- und
+Symlink-tolerant, Repository-Gate der Audits geschlossen.
