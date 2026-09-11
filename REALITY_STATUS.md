@@ -1004,3 +1004,17 @@ atc-contracts (Quelle+Assembler), atc-vm (Ausführung+Receipt), atc-vm-Gate (CI-
 Gas-Modell + Vollcompiler folgen (F-084 Restoffen). Fehlende Komponenten als Findings:
 F-137 ZKVM (ATC-STD-ZKP-009 approved, 0 Implementierung), F-138 EVM-Compat (ATC-STD-245
 approved, kein Repo — Owner-Portfolio-Entscheidung).
+
+## 49. SCR-0105 — CodeQL-Schutzlücke der T1-Kern-Repos geschlossen (11.09.2026)
+
+Die Lückenanalyse von 18:01 (CodeQL fehlt in 9 von 12 T1-Kern-Repos) war beim
+Aktionszeitpunkt bereits von einer Parallel-Session überholt: codeql.yml (rust,
+autobuild bzw. Multi-Manifest-Build für verschachtelte Cargo-Projekte) wurde um
+17:39-17:41 auf atclang, atc-shivacore, atc-zkp, atc-wallet, atc-algorithm, atc-node,
+atc-interop, atc-oracle und globus-os ausgerollt — alle Erstläufe GRÜN (API-verifiziert).
+Vollständigkeit: CodeQL jetzt org-weit auf allen Code-Repos, a-townchain-os bleibt
+legitim EXEMPT (docs-only, F-133). F-110 RESOLVED. ATC-ORG-BASELINE-001 par.5-P0-Ziel
+„CodeQL org-weit" damit erreicht. Ehrliche Lehre für künftige Lückenanalysen:
+Sprach-/Workflow-Bestimmung an GitHub-main-Bäumen (API), nie an ggf. Wochen-alten
+Lokal-Klonen (atclang lokal 0 .rs vs. main mit atc-core; 9/9 PUTs scheiterten korrekt
+an „Datei existiert bereits").
