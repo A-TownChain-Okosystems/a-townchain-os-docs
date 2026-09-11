@@ -1077,3 +1077,18 @@ die echte Node-Anbindung als Cross-Repo-Integrationstest sowie Explorer/Wallet
 (IFC-0009/0010-Consumer), Gossip und Blockproduktion folgen. Damit hat die
 IFC-Kette erstmals zwei Seiten: Node-Dienst (atc-node) und SDK-Client (atc-sdk),
 beide CI-verifiziert gegen dasselbe Protokoll.
+
+## 54. SCR-0111 — Cross-Repo-Integrationstest: SDK gegen echten Node (11.09.2026)
+
+Der letzte Mock faellt: atc-sdk hat in modules/atc-cli/tests/devnet_integration.rs
+einen echten Cross-Repo-Integrationstest — der rpc_client (SCR-0110) spricht ueber
+TCP mit dem ECHTEN atc-node-Code, der als rev-gepinnte git-Dependency direkt aus
+dem atc-node-Repository gebaut wird: devnet_boot (Genesis, Peer-Join) und
+DevnetRpc::serve laufen im Test-Thread als echter Node-Dienst, der SDK-Client
+verifiziert chain_id=658467, peers=2 und die Kerninvariante Boot-Hash-Identitaet
+(zwischen Genesis-Objekt und dem, was der Client per RPC erhaelt). CI-verifiziert:
+atc-sdk Test Suite GRUEN (6f4db211). Ehrlich: Devnet-only, localhost, kein TLS; die
+rev-Pin schuetzt vor Floating auf main (Neu-Pinning bei Node-Aenderungen noetig).
+Damit ist die Access-Kette erstmals END-TO-END ueber zwei Repositories
+CI-erzwungen: Genesis -> Peer-Join -> RPC -> SDK-Client. Restoffen (F-140):
+Auth/TLS, Explorer/Wallet-Consumer (IFC-0009/0010), Gossip, Blockproduktion.
