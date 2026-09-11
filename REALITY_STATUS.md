@@ -874,3 +874,25 @@ Löschungen erfordern den separaten delete_repo-Scope (gewollte Gewaltenteilung)
 als Owner-Ein-Klick-Aktion: GitHub → A-TownChain-Okosystems/demo-repository → Settings →
 Danger Zone → "Delete this repository". Nach Ausführung: Org 27 Repos, 27/27 governed,
 0 ungoverned — F-059 auf RESOLVED zu setzen (Agent erledigt Nachdokumentation).
+
+## 43. SCR-0098/0099 — Verfassung §9-freigegeben + Standards Library Architecture v1.0 (11.09.2026)
+
+**SCR-0098:** Owner-Freigabe »Freigabe« auf die Pending-Liste = §9-FREIGEGEBEN für ATC-STD-000
+v1.3.0 (Verfassung). APPROVED, §30-Immutabilität, Bootstrap-EXEMPT planmäßig mit Sunset
+v1.3.0 beendet (ATC-STD-003 §6) — die Verfassung durchläuft jetzt die normale Review-Chain,
+R11 bleibt als Dauerwächter. Registry (437 APPROVED/25 CANDIDATE), versions.yaml
+(1.3.0-Approval), Frontmatter, Titel-Statuszeile und APPROVAL-DECISION-2026-09-11-000-v1.3.0.md
+synchron. Ehrlicher Zwischenfall im Zug: Erster Commit ging trotz rot gemeldetem R11-Drift
+durchs Pipe-Exit-Masking auf main (Datei-Status klemmte hinter Registry her) — per Nachtrag
+behoben; ab jetzt Exit-Code-Prüfung vor jedem Push (Guard blockte den zweiten Fehlversuch
+korrekt). Kein rotes Ergebnis dauerhaft stehen geblieben.
+
+**SCR-0099:** Owner-Zielarchitektur »ATC Standards Library« als verbindliches Dokument
+festgeschrieben: docs/architecture/ATC-STANDARDS-LIBRARY-ARCHITECTURE.md (ATC-STD-LIB-001
+v1.0.0, normativ, Owner-Direktive). Kern: 6-Ebenen-Modell, strikte Trennung
+STD/REQ/SPEC/TEST/Doku, ID-Range-Modell (000–1999) mit Grandfathering der 474 Bestands-IDs,
+Lifecycle +STABLE (APPROVED ≠ STABLE, GATE-001..009), Profiles + .atc/standards.yaml als
+Compliance-Vertrag je Repo, Zielstruktur inkl. Ordner-je-Standard, 5-Phasen-Migrationsplan
+(Phase 3 = MAJOR per COMPAT-001 mit Owner-Gate). F-127/F-128/F-129 registriert. Viel vom
+Modell existiert bereits (Registry-SSOT, REQ-IDs, Evidence-Gate, CI-R1–R12, §9-Human-Gate);
+echte Lücken: STABLE-Status, metadata.yaml je Standard, Profiles, SPEC/TEST-Hierarchien.
