@@ -985,3 +985,22 @@ SBOM/Signing/Reproducible/Tag-Protection 0/26), F-136 P0 (google_api_key-Alert a
 aus main entfernt, Validität unknown — Owner-Verifikation/Widerruf nötig). Offene Owner-
 Aktionen unverändert: F-122 Branch-Protection (25/26 ungeschützt), F-128 Hub-PR, demo-
 repository-Löschung. Alles geprüft: Checker R1-R15 + Validator + RepoCheck ALL COMPLIANT.
+
+## 48. SCR-0104 — EXEC-Chain-MVP: .atc → Bytecode → ATVM → Receipt erstmals geschlossen (11.09.2026)
+
+Die Kette aus ATC-CONTRACT-EXEC-001 (F-084) läuft jetzt CI-erzwungen: (1) atc-contracts
+`exec_chain/assemble.py` kompiliert `e2e_adder.atc` (ehrlich als EXEC-GATE-Subset: let/return +
+u64-Arithmetik) mit fail-fast Simulationsprüfung in ATVM-Ops; (2) atc-vm
+`examples/exec_receipt.rs` lädt die Ops, führt sie auf der ATVM-Stackmaschine aus,
+verifiziert das erwartete Ergebnis (7+3=10, ×2=20) und schreibt einen deterministischen
+Receipt (Chain-ID 658467, source_sha256, Ops-Zahl, Result, PASS/FAIL); (3) CI-Gate
+`contract-exec-gate.yml` (Cross-Repo-Checkout atc-contracts) läuft GRÜN (a47373e5) —
+Receipt als Artifact + best-effort Evidence-Commit. Ehrliche Zwischenfälle im Zuge:
+E0382-Move-Fehler im Runner (gefixt), Evidence-Write-Back-Rennen mit der Test-Suite
+desselben Pushs (Write-Back jetzt unkritisch, Artifact ist die Sicherung — strukturell
+das F-114-Thema Evidence-Promotion). Damit laufen erstmals REAL 4 Repos auf der ATVM:
+atc-contracts (Quelle+Assembler), atc-vm (Ausführung+Receipt), atc-vm-Gate (CI-Orchestrierung)
++ atc-standards (Governance-Nachweis). Status ATVM bleibt ehrlich development (MVP-Sicht);
+Gas-Modell + Vollcompiler folgen (F-084 Restoffen). Fehlende Komponenten als Findings:
+F-137 ZKVM (ATC-STD-ZKP-009 approved, 0 Implementierung), F-138 EVM-Compat (ATC-STD-245
+approved, kein Repo — Owner-Portfolio-Entscheidung).
