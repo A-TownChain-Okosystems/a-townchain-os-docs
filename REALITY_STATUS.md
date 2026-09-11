@@ -839,3 +839,15 @@ im Hub (Org-Roadmap lebt in os-docs/atc-standards). demo-repository bewusst ausg
 (ungoverned, F-059 Owner-Entscheidung Archiv/Löschen ausstehend). Nachlauf: Org-Compliance-Scan
 25/25 COMPLIANT verifiziert. SECURITY.md, CODEOWNERS, CHANGELOG.md, STATUS.md waren bereits
 flächendeckend vorhanden (Vorwellen SCR-0069–0093).
+
+## 40. PR #7 + #8 vom Owner gemergt — Sweep-Infrastruktur komplett (11.09.2026)
+
+Owner hat beide Hub-PRs freigegeben: **PR #7** (SCR-0092, 623c73a) — Org-Compliance-Scan
+mit symlink-toleranter Tarball-Extraktion (tarfile.AbsoluteLinkError dauerhaft behoben,
+unsichere Tarball-Mitglieder werden protokolliert übersprungen statt den Scan abzubrechen);
+**PR #8** (SCR-0095, caefa8c7) — Hub-Artefakte SECURITY.md, CONTRIBUTING.md, CODEOWNERS,
+STATUS.md ergänzt. Damit ist das Repository-Gate der Owner-Audits vollständig geschlossen:
+alle 27 governed Repos flächendeckend mit README/LICENSE/SECURITY/CONTRIBUTING/CODEOWNERS/
+CHANGELOG/STATUS/.atc-Artefakten, Hub selbst jetzt ebenso. Nachlauf-Sweep mit gehärtetem
+Scanner verifiziert. Offene Owner-Themen: F-059 (demo-repository Archiv/Lösch-Entscheidung),
+Branch-Protection required-review für Critical-Repos (F-122), ATC-STD-000 v1.3.0 §9-Freigabe.
