@@ -1092,3 +1092,17 @@ rev-Pin schuetzt vor Floating auf main (Neu-Pinning bei Node-Aenderungen noetig)
 Damit ist die Access-Kette erstmals END-TO-END ueber zwei Repositories
 CI-erzwungen: Genesis -> Peer-Join -> RPC -> SDK-Client. Restoffen (F-140):
 Auth/TLS, Explorer/Wallet-Consumer (IFC-0009/0010), Gossip, Blockproduktion.
+
+## 55. SCR-0112 — Der Node ist startbar: Devnet als Prozess (11.09.2026)
+
+atc-node hat ein Executable: src/main.rs startet den Devnet-Bootstrap (Genesis,
+Peer-Join, deterministischer Boot-Hash), loggt Chain-ID/Boot-Hash/Peers nach
+stderr und dient danach den Chain-Access als Dauerdienst auf TCP — Standard-
+Adresse 127.0.0.1:39471, per Argument ueberschreibbar; beide Protokolle
+(Zeile aus SCR-0108, JSON-RPC aus SCR-0109) aktiv. CI-verifiziert: Test Suite
+GRUEN (eaa7f938), das Binary baut im Standard-Job. Ehrlich: Devnet-only, kein TLS,
+keine Authentisierung, kein Node-zu-Node-Gossip, keine Blockproduktion — der
+Prozess ist der Baustein fuer Docker-Compose-Devnets und echte Mehr-Prozess-
+Setups (Stufe offen). Damit ist die Devnet-Kette vom Genesis-Objekt bis zur
+laufenden Prozess-Instanz geschlossen: Genesis -> Boot -> Peer-Tabelle ->
+RPC-Dienst -> startbarer Node.
