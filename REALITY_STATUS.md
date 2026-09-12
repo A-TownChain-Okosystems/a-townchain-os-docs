@@ -1182,3 +1182,28 @@ Ehrlich dokumentierter Folgepunkt: Die Evidence-Push-Schritte der Test-Suiten
 haben kein pull --rebase — bei eng versetzten Merges kann es zu diesem
 Race kommen (Selbstheilung durch den naechsten gruenen Lauf; Haertung als
 mögliche spaetere Welle). Offene PRs org-weit danach: 0.
+
+## 60. SCR-0117 — Die Kette bekommt Bloecke: Blockmodell live (12.09.2026)
+
+Bis heute hatte der Node Genesis, Peers und RPC — aber keine Bloecke. Ein
+Blockchain-Grundbaustein fehlte: das Datenmodell der Kette selbst. SCR-0117
+schliesst das: src/chain.rs in atc-node definiert Block (height, prev_hash,
+payload, hash) und Chain mit deterministischer Devnet-Blockproduktion
+(produce, ehrliches Devnet-Cap 64 inklusive Genesis-Block), Vollverifikation
+(Hash-Recompute, Hoehen-Monotonie, Verkettungs-Pruefung, Genesis-Bindung: der
+Genesis-Block haengt am Boot-Hash aus SCR-0106/0114 — Genesis-Drift aendert
+die gesamte Kette, CI-testbar). Sechs Unit-Tests decken Wachstum,
+Manipulationserkennung (Payload- und Verkettungs-Faelschung), Zwei-Instanz-
+Determinismus, Genesis-Drift-Nachweis und das Cap; two_node_devnet.rs
+erzwingt zusaetzlich identische Ketten ueber zwei Node-Instanzen; main.rs
+loggt Hoehe und Best-Hash beim Start. CI-verifiziert: atc-node Test Suite
+GRUEN (0c3a2ec2).
+
+Ehrlichkeit: KEIN Konsens — Konsens bleibt kanonisch ueber atc-algorithm
+(F-067 offen), dieses Modul definiert keine Finalitaet und keinen
+Blockbildungs-Algorithmus; keine Transaktionssemantik; FNV-1a 64-bit ist ein
+dokumentierter nicht-kryptographischer Platzhalter; kein Merkle-Baum.
+Zwischenfall ehrlich dokumentiert: Der erste Lauf rot (70efed2b, 21 passed /
+1 failed) — Off-by-one im Cap-Test (Cap gilt inklusive Genesis-Block), fix
+nachgezogen, zweiter Lauf gruen. Der naechste fehlende Code ist Gossip
+(Node-zu-Node) und danach Konsens (atc-algorithm, F-067).
