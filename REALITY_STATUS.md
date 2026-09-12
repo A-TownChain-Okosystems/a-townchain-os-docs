@@ -1258,3 +1258,29 @@ Mainnet-Einsatz erfordert zwingend eine externe cryptographische Pruefung
 des Hashes im atc-node Devnet-Pfad (chain/gossip) als rev-gepinnte git-
 Dependency — danach verschwinden die FNV-1a-Platzhalter aus der Kette.
 Danach: Konsens-Design ATC-CONSENSUS-301..307 auf diesem Primitiv.
+
+## 63. SCR-0120 — Adoption: Die Kette hasht mit dem eigenen Algorithmus (12.09.2026)
+
+Mit SCR-0119 existierte ATC-HASH-001 — jetzt wird er BENUTZT: atc-node
+hat FNV-1a vollstaendig entfernt. Boot-Hash und Block-Hashes rechnen
+seit dieser Welle ueber den eigenen Algorithmus aus atc-algorithm, als
+rev-gepinnte git-Dependency (Voll-SHA a9f81887, oeffentliches Repo, keine
+CI-Auth noetig). Ein Traversal-Adapter (townhash_u64) nimmt die ersten
+8 Bytes des 32-Byte-Digests als u64 — die Devnet-Feldbreite ist 64 Bit,
+die Block- und Wire-Strukturen bleiben dadurch stabil; alle bestehenden
+Invarianten (Genesis-Bindung, Manipulationserkennung, Zwei-Instanz-
+Determinismus, Gossip-Adoptions-Verifikation) laufen unveraendert weiter
+und wurden von der CI erneut erzwungen. genesis.json ist unberuehrt —
+die serde-Bindung vergleicht ueber dieselbe Funktion, das File enthaelt
+keinen Hash. CI-verifiziert: atc-node Test Suite GRUEN (5d7c697f),
+inklusive Build der transiven Dependency atc-algorithm.
+
+Ehrlichkeit: Die 64-Bit-Traversal verkuerzt den Digest — sie ist eine
+Devnet-Feldbreiten-Entscheidung, KEINE Krypto-Aussage. ATC-HASH-001 ist
+nicht kryptoanalysiert; das Mainnet-Gate F-067 verlangt weiterhin eine
+externe kryptographische Pruefung. Offene Folge-Wellen: (1) 32-Byte-
+Feldbreite in Block/RPC/Wire (breaking), (2) Konsens-Design
+ATC-CONSENSUS-301..307 auf diesem Primitiv, (3) externe Krypto-Analyse.
+Zwischenfall klein und behoben: erster Push lief auf non-fast-forward
+(Evidence-Commit der Vorgaenger-Welle war remote schon da) — pull --rebase
+hat ihn sauber integriert.
