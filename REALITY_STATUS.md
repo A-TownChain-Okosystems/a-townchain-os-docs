@@ -1164,3 +1164,21 @@ SUCCESS auf 99203909 (derselbe SHA, der vorher rot war). Ehrlich: Der Fix
 liegt im Audit-Tool (atc-standards, direkt pushbar), nicht im PR-gated
 .github-Hub; alle 27 Repos mit Governance-CI ziehen das Tool je Lauf frisch
 aus atc-standards main und profitieren sofort.
+
+## 59. SCR-0116 — Dependabot-Warteschlange 11/11 gemergt, Organisation aktuell (12.09.2026)
+
+Die offene Warteschlange ist leer: 11 Dependabot-PRs (actions/checkout v4->v7
+und actions/dependency-review-action v4->v5) ueber 6 Repos (atc-algorithm,
+atc-compute, atc-mining, atc-node, atc-oracle, atc-storage) wurden squash-
+gemergt — Fortsetzung der Owner-Freigabe aus SCR-0076 fuer die Wartungs-Queue.
+Nachlauf-Verifikation per API: alle betroffenen Repos gruen auf aktuellem main
+(Test Suite + Governance je SUCCESS). Der scheinbar rote ATC-Test-Suite-Lauf
+in atc-mining (bc1286fd, 10:51:06Z) ist kein Testbruch: Cargo-Tests liefen
+GRUEN (2 passed, 0 failed), der Lauf starb erst am Evidence-Push-Rennen —
+zwei Merges 2 Sekunden versetzt, der erste Evidence-Push lief auf non-fast-
+forward ("fetch first"). Der 2 Sekunden spaetere Lauf auf dem zweiten Merge-
+Commit (997bc91f) ist gruen, sein Evidence-Push sitzt als a791006e auf main.
+Ehrlich dokumentierter Folgepunkt: Die Evidence-Push-Schritte der Test-Suiten
+haben kein pull --rebase — bei eng versetzten Merges kann es zu diesem
+Race kommen (Selbstheilung durch den naechsten gruenen Lauf; Haertung als
+mögliche spaetere Welle). Offene PRs org-weit danach: 0.
