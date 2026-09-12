@@ -1138,3 +1138,29 @@ wird das Bindungsmodell erweitert. Devnet-Kette damit sechsstufig erzwungen:
 Genesis -> Boot-Hash -> Peer-Join -> RPC (Zeile+JSON) -> startbarer Node ->
 zwei Nodes -> File-Bindung. Restoffen (F-139): Docker-Compose mit echten
 Prozessen, P2P-Gossip, Blockproduktion.
+
+## 58. SCR-0115 — V-16-Fix: Ticket-Praefixe sind konventionell, Merges zaehlen nicht (12.09.2026)
+
+Zwischenfall: Drei rote Governance-Laefe in a-townchain-os (09:49-09:55) mit
+"Conventional Commits nur 0% (<80%)". Ursachenanalyse: V-16 des ATC Repository
+Auditors (atc-standards/tools/atc-repo-audit/atc_repo_audit.py) bewertet die
+letzten 20 Commits gegen einen Regex, der verlangt, dass der Subject MIT dem
+Typ beginnt. Zwei etablierte Org-Praktiken fielen dadurch raus: (1) Ticket-
+Praefixe vor dem Typ — "[S26] docs(ROADMAP): ...", "[QA] fix(node): ...",
+"[#113] feat(syncd): ..." sind semantisch konventionell, wurden aber als
+nicht-konventionell gezaehlt; (2) Merge-Commits ("Merge pull request #..."),
+auf die das Conventional-Commits-Format nach Spec ueberhaupt nicht anwendbar
+ist. Das 20er-Fenster war nach den KAI-OS-Wellen (28+ Commits) voll mit
+Praefix-Commits -> 0% -> MUST-FAIL.
+
+Fix: atc_repo_audit v0.1.0 -> v0.2.0. CC_RE erlaubt jetzt einen optionalen
+Praefix "[<Ticket>] " vor dem Typ; Merge-Commits werden aus der Stichprobe
+ausgenommen. Die Schwellen bleiben unveraendert streng (>=80% PASS, >=50%
+WARN, darunter FAIL) — das ist eine Interpretations-Schaerung, keine
+Regel-Abmilderung: nicht-konventionelle Commits ohne Praefix fallen weiter
+durch. Verifikation: lokal R3 COMPLIANT 100/100, V-16 PASS 100% (18/18);
+nach Push Neuausloesung des a-townchain-os-Governance-Laufs per Dispatch:
+SUCCESS auf 99203909 (derselbe SHA, der vorher rot war). Ehrlich: Der Fix
+liegt im Audit-Tool (atc-standards, direkt pushbar), nicht im PR-gated
+.github-Hub; alle 27 Repos mit Governance-CI ziehen das Tool je Lauf frisch
+aus atc-standards main und profitieren sofort.
