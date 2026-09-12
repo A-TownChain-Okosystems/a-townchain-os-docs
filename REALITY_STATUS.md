@@ -1233,3 +1233,28 @@ eingesetzt werden; sofort gefixt. Devnet-Kette damit achtstufig: Genesis ->
 Boot-Hash -> Peer-Join -> RPC (Zeile+JSON) -> startbarer Node -> zwei Nodes ->
 Bloecke -> GOSSIP-SYNC. Restoffen (F-139/F-067): Konsens (atc-algorithm),
 Push-Gossip, Signaturen, Docker, Transaktionssemantik, echte Kryptographie.
+
+## 62. SCR-0119 — Der eigene Algorithmus: ATC-HASH-001 live (12.09.2026)
+
+Owner-Direktive vom 12.09.2026: "atc-algorithm soll ein eigenstaendiger
+Algorithmus wie SHA-256 sein." SCR-0119 setzt sie um: ATC-HASH-001
+("TownHash-256") ist eine komplette Eigenkonstruktion in atc-algorithm —
+Merkle-Damgard-Konstruktion mit 512-Bit-Bloecken, 8x32-Bit-Zustand, 24
+Runden, Little-Endian-Wire (bewusste Abweichung von SHA-2: LE statt BE),
+eigene Rotations-Sets, eigener Padding-Bitlaengen-Code. ALLE Konstanten
+werden ganzzahlig aus splitmix32 (Seed 0xA7C0DE01) als const fn abgeleitet
+— keine Bibliothek, keine Floats, keine Tabellen. Die Spezifikation
+(docs/SPEC-ATC-HASH-001.md) friert 6 Testvektoren ein, die von einer
+unabhaengigen Python-Referenz erzeugt und gegen die Rust-Implementierung
+differenzialgeprueft wurden — beide Implementierungen sind auf der Vektor-
+menge identisch. Rust-Tests zusaetzlich: Determinismus/Laengenband 0-130,
+Bitflip-Erkennung, Padding-Kanten 55/56/57/119/120/121.
+CI-verifiziert: atc-algorithm Test Suite GRUEN (2ff887aa).
+
+Ehrlichkeit: ATC-HASH-001 ist NICHT kryptoanalysiert. Es gibt keine
+Widerstandsbehauptung gegen Kollisionen, Preimage oder Length-Extension —
+Mainnet-Einsatz erfordert zwingend eine externe cryptographische Pruefung
+(bleibt Teil des F-067-Gates). Devnet-Grade: Ja. Naechste Welle: Adoption
+des Hashes im atc-node Devnet-Pfad (chain/gossip) als rev-gepinnte git-
+Dependency — danach verschwinden die FNV-1a-Platzhalter aus der Kette.
+Danach: Konsens-Design ATC-CONSENSUS-301..307 auf diesem Primitiv.
