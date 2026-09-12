@@ -1207,3 +1207,29 @@ Zwischenfall ehrlich dokumentiert: Der erste Lauf rot (70efed2b, 21 passed /
 1 failed) — Off-by-one im Cap-Test (Cap gilt inklusive Genesis-Block), fix
 nachgezogen, zweiter Lauf gruen. Der naechste fehlende Code ist Gossip
 (Node-zu-Node) und danach Konsens (atc-algorithm, F-067).
+
+## 61. SCR-0118 — Gossip: Zwei Nodes synchronisieren ihre Ketten (12.09.2026)
+
+Bisher rechneten zwei Node-Instanzen dieselbe Kette nur UNABHAENGIG aus
+(Determinismus-Test). SCR-0118 macht aus Parallel-Rechnung echte Synchronisation:
+src/gossip.rs in atc-node implementiert ein pull-basiertes Gossip ueber TCP —
+Wire-Protokoll: "STATUS" liefert Hoehe und Best-Hash des Peers, "BLOCKS <from>"
+liefert die Blockfolge. sync_pull adoptiert eine Peer-Kette AUSSCHLIESSLICH nach
+voller Verifikation (Hash-Recompute, Hoehen-Monotonie, Verkettung) und Pruefung der
+Genesis-Bindung: Die Genesis-Bloecke muessen identisch sein. Sicherheits-Tests mit
+echtem boesem Server: kaputte Hashes werden abgelehnt, abweichende Genesis wird
+abgelehnt, ein kuerzerer Peer fuehrt zu keiner Adoption, die eigene Kette bleibt in
+jedem Fall unangetastet und valide. End-to-End: zwei_node_devnet.rs belegt, dass
+ein Node die 4-Block-Kette eines anderen ueber echte Sockets uebernimmt und
+identische Kettenspitze haelt. main.rs dient Gossip als zweiten Dauerdienst
+(Standard 127.0.0.1:39472, Argument 2 ueberschreibbar). CI-verifiziert:
+atc-node Test Suite GRUEN (e8f5c7a7).
+
+Ehrlichkeit: NUR Pull (kein Push an Peers), keine Periodik, keine Block-
+Signaturen, kein TLS, FNV-1a-Platzhalter, Payload-Restriktion ('|' und ';'
+verboten, Wire-Format). Zwischenfall ehrlich dokumentiert: erster Kompillat
+rot (9fe234e2) — writeln! verlangt String-Literal, join-Ergebnis muss ueber {}
+eingesetzt werden; sofort gefixt. Devnet-Kette damit achtstufig: Genesis ->
+Boot-Hash -> Peer-Join -> RPC (Zeile+JSON) -> startbarer Node -> zwei Nodes ->
+Bloecke -> GOSSIP-SYNC. Restoffen (F-139/F-067): Konsens (atc-algorithm),
+Push-Gossip, Signaturen, Docker, Transaktionssemantik, echte Kryptographie.
