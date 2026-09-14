@@ -25,7 +25,7 @@
     "@types/canvas-confetti": "^1.9.0",
     "@types/dompurify": "^3.0.5",
     "@uiw/react-codemirror": "^4.25.10",
-    "@vitejs/plugin-react": "^5.0.4",
+    "@vitejs/plugin-react": "^6.1.1",
     "canvas-confetti": "^1.9.4",
     "d3": "^7.9.0",
     "dompurify": "^3.4.10",
