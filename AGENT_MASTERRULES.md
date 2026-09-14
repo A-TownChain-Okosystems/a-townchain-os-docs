@@ -3,10 +3,10 @@
 > **Dokument-Typ:** Verbindliche Betriebsregeln
 > **Gilt für:** Alle KI-Agenten die am A-TownChain Ökosystem arbeiten
 > **Verwaltet von:** Aurora (MasterBrain) · Base44 Superagent
-> **Stand:** 2026-09-14 | **Version:** 2.1
+> **Stand:** 2026-09-14 | **Version:** 2.2
 > **Autoritative Basis:** `atc-standards/governance/authority/authority-matrix.yaml` + `docs/DECISIONS_REGISTER.md` + `atc-standards` (kanonische Standards-Heimat)
 >
-> **Authority-Regel:** Die aktuelle personelle Owner-/Approver-Zuordnung wird ausschließlich aus der Authority-SSOT und dem jeweils gültigen §9-Approval-Record abgeleitet. Historische Approval-Records behalten ihre damalige Identität und dürfen nicht rückwirkend umgeschrieben werden.
+> **Authority-Regel:** Die aktuelle personelle Owner-, Reviewer- und Approver-Zuordnung wird ausschließlich aus der Authority-SSOT abgeleitet. Historische Approval-Records behalten ihre damalige Identität und dürfen nicht rückwirkend umgeschrieben werden.
 
 ---
 
@@ -130,34 +130,34 @@ Diese Themen löst kein Agent automatisch. Die Rollen und personellen Zuständig
 
 **Normative Quelle:** `atc-standards/governance/authority/authority-matrix.yaml`
 
-**Aktueller Owner-/Approver-Referenzstand:** Alexander Wroblewski ist im aktuellen §9-Approval-Record vom 11.09.2026 als Owner/Entscheider dokumentiert. Diese Zuordnung wird nicht aus älteren Dokumenten abgeleitet.
+**Aktueller Owner:** Michael Wroblewski ist der normative Owner. Die Owner-Autorität bleibt bei Michael und darf nicht aus einer Review-Rolle umgedeutet werden.
 
-**Historische Identität:** Michael Wroblewski / ShivaCoreDev bleibt in historischen Approval-, Security-, Copyright- und Audit-Artefakten unverändert erhalten. Das Auftreten dieser Identität in einem historischen Record begründet keine aktuelle Approver-Zuordnung.
+**Aktueller Reviewer:** Alexander Wroblewski ist für Review zuständig. Die Review-Rolle begründet keine Owner- oder Approver-Autorität außerhalb der explizit zugewiesenen Decision Rights.
 
-**Wichtig:** Owner, Approver, Reviewer, Executor und Auditor sind getrennte Rollen. Agenten sind niemals Approver. Die konkrete Entscheidungsmatrix bleibt `authority-matrix.yaml` vorbehalten.
+**Historische Records:** Historische Approval-, Security-, Copyright- und Audit-Artefakte bleiben unverändert. Ihre damaligen Identitäten werden nicht rückwirkend geändert.
+
+**Wichtig:** Owner, Reviewer, Approver, Executor und Auditor sind getrennte Rollen. Agenten sind niemals Approver. Die konkrete Entscheidungsmatrix bleibt `authority-matrix.yaml` vorbehalten.
 
 ### Aktuelle Governance-Aussagen
 
 | Thema | Aktueller Zustand | Quelle |
 |---|---|---|
 | ATC-STD-000 | v1.3.0 APPROVED | Standards Registry SSOT |
-| Owner/Approver | aus Authority-SSOT + gültigem §9-Record | `governance/authority/authority-matrix.yaml` |
+| Owner | Michael Wroblewski | Authority-SSOT |
+| Reviewer | Alexander Wroblewski | Authority-SSOT |
 | Mainnet-Termin | kein genehmigtes Datum | `docs/DECISIONS_REGISTER.md` |
 | P0-Readiness | technische Evidence erforderlich | jeweilige P0-Gates |
-
-### Historische Records
-
-Historische Approval-Records werden nicht nachträglich geändert. Wenn ein historischer Record eine frühere Version oder frühere Personenzuordnung enthält, muss diese als historische Information interpretiert werden.
 
 ### Grundsatz
 
 ```
-Standard-Approval / SCR-Decision       → DECISION (Owner)
-Kryptografie-/Konsensus-Wechsel       → DECISION + technische Evidence
-Chain-ID / Netzwerk-Identität         → DECISION (Chain-ID 658467)
-Token-Ökonomie                         → VALIDATE → DECISION
-Neue Namespaces / ID-Bereiche          → SCR
-Notfall-Sicherheitsfix                 → Emergency-Prozess + nachgeholtes SCR
+Owner / Standard-Decision              → Michael Wroblewski
+Review                                 → Alexander Wroblewski
+Kryptografie-/Konsensus-Review         → Alexander Wroblewski + technische Evidence
+Kryptografie-/Konsensus-Entscheidung   → Owner / zuständige Authority
+Chain-ID / Netzwerk-Identität          → Owner / zuständige Authority
+Neue Namespaces / ID-Bereiche          → SCR + Review
+Notfall-Sicherheitsfix                 → Emergency-Prozess + nachgeholtes Review/SCR
 ```
 
 ---
