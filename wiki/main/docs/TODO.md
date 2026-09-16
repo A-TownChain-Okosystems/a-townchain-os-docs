@@ -1,83 +1,70 @@
 # A-TownChain OS — Master TODO
 
-> Stand: 10. Juni 2026 | **100% ABGESCHLOSSEN ✅**
+> **Status:** AUDIT-DRIVEN / NOT COMPLETE
+> **Last verified:** 2026-09-16
+> **Source of truth:** active repositories + current CI evidence. Historical wiki claims are not implementation evidence.
 
-## ✅ ALLES ERLEDIGT (43/43 Issues)
+## 🔴 P0/P1 — Active blockers
 
-### Blockchain-Kern ✅
-- [x] ATCoin (ATC-8300), Genesis Token, Chain-ID 9000
-- [x] ECDSA Wallet (secp256k1, ATC-Prefix, BIP39) [#6]
-- [x] MultiSig Wallet M-of-N [#24]
-- [x] Smart Contracts: ATC-8300 / ATC-9000 / ATC-9900 [#1]
-- [x] Solidity Contracts (Hardhat, 22 Tests) [#12]
-- [x] Cross-Chain Bridge ETH+POL+BSC [#10]
-- [x] Solana Bridge (SPL-Token, Wormhole) [#34] ← NEU
-- [x] DEX / AMM (x*y=k, Swap-Router, LP-Token) [#37] ← NEU
-- [x] Gas-Fee Engine EIP-1559 (50% Burn) [#33]
-- [x] DAO-Governance Live (FFT+ATC, Timelock) [#39] ← NEU
-- [x] Mainnet Launch Config (Chain-ID 9000, Tokenomics) [#36] ← NEU
+### P1 — GlobusOS / ShivaCore LKM
+- [ ] Replace `DependencyGraph::dependencies()` placeholder in `globus-os/modules/atc-shivacore/kernel/src/lkm.rs`.
+- [ ] Preserve deterministic dependency ordering.
+- [ ] Add/retain regression coverage for dependency lookup.
+- [ ] Run formatting, compile, unit tests and clippy before marking resolved.
 
-### ATCLang ✅
-- [x] v0.2.0: Lexer, Parser, Compiler, VM, REPL, Stdlib
-- [x] v0.2.0: Security Analyzer (15 Regeln, ATC-SEC-0001)
-- [x] v0.3.0: async/await, Generics, Closures [#35] ← NEU
-- [x] v0.3.0: Module-System, Type Inference, String-Interpolation ← NEU
-- [x] v0.3.0: Error-Reporter (Zeile+Spalte+Kontext) ← NEU
+**Classification:** P1 / Correctness / Completeness / Kernel-LKM-Dependency-Resolution
+**Tags:** `P1`, `stub`, `kernel`, `lkm`, `dependency-graph`, `correctness`, `completeness`
 
-### ShivaOS ✅
-- [x] Kernel (ProcessManager, MemoryManager, IPC, EventBus)
-- [x] ATCFS + Syscall-Interface (20 Syscalls) [#23/#32]
-- [x] ATCNet P2P (Kademlia, Rate-Limit, ECDSA)
-- [x] ShivaConsensus (PoH+PoS+PoW)
-- [x] ShivaOS TUI Renderer [#28]
+### CI evidence integrity
+- [ ] Verify the latest GlobusOS test-suite run after the evidence-gating fix.
+- [ ] Do not mark PASS unless every required test job succeeds.
+- [ ] Document any GitHub Actions log-access limitation separately from actual test failures.
 
-### Infrastruktur ✅
-- [x] 5-Node Testnet Docker Compose [#8/#18]
-- [x] Node-Monitoring Prometheus [#19]
-- [x] API Gateway v1.0.0 (alle Middlewares) [#25]
-- [x] Integration Tests 9/9 ✅ [#26]
-- [x] Build System (Docker/AppImage/EXE/.deb) [#7]
+## 🟠 Organization-wide audit backlog
 
-### Gaming ✅
-- [x] Shivamon NFT (DNA, 8 Elemente, 5 Raritäten)
-- [x] Battle-System (Typ-Effizienz) [#3]
-- [x] Breeding Engine [#11]
-- [x] Marketplace v2 (Auktion+Festpreis, Royalty) [#13]
+For every active repository:
 
-### Mobile & AI ✅
-- [x] Mobile Wallet (React Native, BIP39, QR, Biometric) [#38] ← NEU
-- [x] Gemini AI Orchestrator (BYOK) [#2]
-- [x] Federated Learning FedAvg [#29]
-- [x] atcpkg Package Manager + Registry API [#27/#30]
+- [ ] Syntax and formatting audit
+- [ ] Logic and functional audit
+- [ ] Security/static-analysis audit
+- [ ] Dependency and supply-chain audit
+- [ ] Stub / TODO / FIXME / HACK / placeholder audit
+- [ ] Duplicate and dead-code audit
+- [ ] Architecture/interface consistency audit
+- [ ] Cross-repository integration audit
+- [ ] README / STATUS / CHANGELOG consistency
+- [ ] Roadmap / TODO / Sprint consistency
+- [ ] Wiki consistency and historical-content classification
+- [ ] Error taxonomy: class → category → family → tag
+- [ ] Contradiction detection and resolution
+- [ ] Regression verification after every fix
 
-### Franchise ✅
-- [x] FranchiseRegistry, RevenueShare, FFT Token
+## 🟡 Documentation synchronization
 
-### Dokumentation ✅
-- [x] 24 Repos, 70+ Wiki-Seiten, Whitepaper 123KB
-- [x] SYNTAX.md, ARCHITECTURE.md, DEPENDENCIES.md [#43]
-- [x] MATH_PROOF.md (7 formale Beweise) [#41]
-- [x] ERRORS.md, ERROR_SOLUTIONS.md, BOTTLENECKS.md [#42]
-- [x] DECENTRALIZED_PROOF.md, ISSUES_TRACKER.md [#43]
-- [x] Google Sheets Dashboard (4 Tabs, 144 Zeilen)
-- [x] Google Slides Präsentation (11 Folien, Neon Dark Theme)
+Historical documentation may contain completed claims that no longer describe the active architecture. Such material must remain explicitly archived/historical or be synchronized with current repository evidence.
 
----
+### Required rule
+**No documentation may claim production-ready, complete, green, or 100% status solely from an old snapshot.**
 
-## ⏳ Verbleibend für Mainnet-Launch (#36)
-- [ ] Externes Security-Audit (unabhängiger Auditor)
-- [ ] 10+ Mainnet-Validator-Nodes bestätigen
-- [ ] Genesis Block final signieren
-- [ ] ATC Token Distribution ausführen
-- [ ] Mainnet-Kommunikation (Blog, Social Media)
+## 🧭 Resolution policy
 
----
+Every finding follows:
 
-## 📊 Statistik
-| Metrik | Wert |
-|--------|------|
-| Issues abgeschlossen | **43/43 ✅** |
-| Fortschritt | **100%** |
-| Neue Dateien (heute) | 8 |
-| Test-Suite | 11+ Tests |
-| Stand | 10.06.2026 13:00 |
+`DISCOVER → CLASSIFY → DOCUMENT → FIX → TEST → RE-AUDIT → VERIFY → DOCUMENT STATE`
+
+A finding is only **RESOLVED** when the implementation and its verification evidence agree.
+
+## 📊 Current status
+
+| Area | Status |
+|---|---|
+| Organization audit | IN PROGRESS |
+| GlobusOS LKM stub | OPEN / P1 |
+| CI evidence integrity fix | IMPLEMENTED; verification pending |
+| Historical wiki cleanup | IN PROGRESS |
+| Cross-repository consistency | IN PROGRESS |
+| Security audit | IN PROGRESS |
+| Functional audit | IN PROGRESS |
+| Architecture audit | IN PROGRESS |
+
+**Important:** This page intentionally replaces the previous `100% ABGESCHLOSSEN` claim because current repository evidence demonstrates open implementation work.
