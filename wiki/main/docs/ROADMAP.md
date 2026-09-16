@@ -1,80 +1,101 @@
 # A-TownChain OS — Roadmap
 
-> Stand: 10. Juni 2026 | Monorepo v3.0.0 | **43/43 Issues abgearbeitet ✅**
+> **Status:** AUDIT-DRIVEN / NOT COMPLETE
+> **Last verified:** 2026-09-16
+> **Current architecture:** separate active repositories with `globus-os` owning the canonical ShivaCore kernel source and CI.
+
+Historical feature milestones remain useful as history, but they are not evidence that the current repository fleet is production-ready or audit-complete.
 
 ---
 
-## v2.1.0 — ABGESCHLOSSEN ✅
-*09. Juni 2026*
+## Phase A — Architecture and repository boundaries
 
-| # | Feature | Status |
-|---|---------|--------|
-| 1 | Smart Contracts (ATC-8300/9000/9900) | ✅ |
-| 2 | Gemini AI Integration (BYOK) | ✅ |
-| 3 | Battle UI | ✅ |
-| 4 | Persistenz / Datenbank | ✅ |
-| 5 | Block Explorer | ✅ |
-| 6 | ECDSA Wallet + KeyGen | ✅ |
-| 9 | Governance DAO (ATC-9900) | ✅ |
-| 12 | Solidity Contracts (Hardhat, 22 Tests) | ✅ |
-| 14 | Bootstrap Node | ✅ |
-| — | Security Audit (10 Fixes) | ✅ |
-| — | ATCLang Security Analyzer v1.0 | ✅ |
+- [x] Establish active repository fleet and integration graph
+- [x] Establish `atc-standards` as standards source of truth
+- [x] Establish `atc-engineering` as organization engineering/audit control plane
+- [x] Move canonical ShivaCore kernel under `globus-os/modules/atc-shivacore/kernel/`
+- [x] Make GlobusOS CI responsible for canonical kernel verification
+- [ ] Complete repository-by-repository architecture/interface audit
+- [ ] Complete duplicate/legacy source classification
+
+## Phase B — Current P0/P1 implementation gates
+
+### P1 — ShivaCore LKM dependency API
+- [ ] Replace `DependencyGraph::dependencies()` placeholder with a lifetime-safe deterministic API.
+- [ ] Keep `get_dependencies()` compatibility only where required; avoid duplicate semantic APIs.
+- [ ] Add regression tests.
+- [ ] Run format/build/test/clippy and re-audit.
+
+### P1 — LKM symbol export/import semantics
+- [ ] Stop `with_export()` from adding exports to `imports`.
+- [ ] Stop `ModuleBuilder::export()` from adding exports to `imports`.
+- [ ] Keep imports explicit through `import_symbol()`.
+- [ ] Add export-only and import/refcount regression tests.
+- [ ] Re-audit symbol registration, resolution and unload ordering.
+
+Tracking: GlobusOS #18 and #19.
+
+## Phase C — CI and evidence integrity
+
+- [x] Separate GlobusOS test jobs from evidence publication.
+- [x] Publish PASS evidence only after all required test jobs succeed.
+- [ ] Verify the newest post-fix workflow run with usable job evidence.
+- [ ] Complete organization fleet CI audit.
+- [ ] Classify GitHub Actions access/logging limitations separately from code findings.
+
+## Phase D — Organization-wide engineering audit
+
+For every active repository:
+
+- [ ] Syntax / formatting
+- [ ] Type/build correctness
+- [ ] Logic and functional behavior
+- [ ] Security and unsafe-boundary review
+- [ ] Dependency/supply-chain review
+- [ ] Error handling and failure modes
+- [ ] Stub / placeholder / TODO / FIXME / HACK review
+- [ ] Duplicate/dead-code review
+- [ ] Architecture and interface consistency
+- [ ] Cross-repository connectivity
+- [ ] README / STATUS / SECURITY / CHANGELOG consistency
+- [ ] Roadmap / TODO / Sprint consistency
+- [ ] Wiki/current-vs-historical classification
+- [ ] Error classification: class / category / family / tag
+- [ ] Contradiction detection
+- [ ] Fix and regression verification
+
+## Phase E — Release readiness
+
+- [ ] All P0/P1 implementation findings resolved and verified
+- [ ] Security audit evidence current
+- [ ] Integration evidence current
+- [ ] Reproducible builds/tests verified
+- [ ] Release documentation synchronized
+- [ ] Mainnet/testnet readiness independently reviewed
 
 ---
 
-## v2.2.0 — ABGESCHLOSSEN ✅
-*10. Juni 2026*
+## Audit completion rule
 
-| # | Feature | Status |
-|---|---------|--------|
-| 7 | Build System (Docker/AppImage/EXE/.deb) | ✅ |
-| 8/#18 | 5-Node Testnet + Docker Compose | ✅ |
-| 10 | Cross-Chain Bridge ETH+POLYGON+BSC | ✅ |
-| 11 | Shivamon Breeding Engine | ✅ |
-| 13 | Marketplace v2 (Auktion+Festpreis) | ✅ |
-| 19 | Node-Monitoring (Prometheus) | ✅ |
-| 23 | ATCFS Syscall-Interface | ✅ |
-| 24 | MultiSig Wallet M-of-N | ✅ |
-| 25 | API Gateway v1.0.0 | ✅ |
-| 26 | Integration Tests 9/9 | ✅ |
-| 27 | atcpkg Package Manager | ✅ |
-| 28 | ShivaOS UI Renderer (TUI) | ✅ |
-| 29 | Federated Learning FedAvg | ✅ |
-| 30 | atcpkg Registry API | ✅ |
-| 32 | Syscall-Tabelle (20 Syscalls) | ✅ |
-| 33 | Gas-Fee Engine EIP-1559 | ✅ |
-| — | Monorepo v3.0.0 Restrukturierung | ✅ |
+A milestone is **not complete** merely because an old issue list is closed. It is complete only when the current implementation, documentation, architecture and verification evidence agree.
 
----
+Required lifecycle:
 
-## v3.0.0 — ABGESCHLOSSEN ✅
-*10. Juni 2026*
+`DISCOVER → CLASSIFY → DOCUMENT → FIX → TEST → RE-AUDIT → VERIFY → SYNCHRONIZE`
 
-| # | Feature | Status |
-|---|---------|--------|
-| 34 | Solana Bridge (SPL-Token, Wormhole, Relayer M-of-N) | ✅ |
-| 35 | ATCLang v0.3.0 (async/await, Generics, Closures, Module) | ✅ |
-| 36 | Mainnet Launch Config (Chain-ID 9000, Genesis, Tokenomics) | ✅ |
-| 37 | DEX / AMM (x*y=k, Swap-Router, LP-Token, 0.3% Fee) | ✅ |
-| 38 | Mobile Wallet (React Native, BIP39, QR, Biometric) | ✅ |
-| 39 | DAO-Governance Live (FFT+ATC, Quorum, Timelock, Execute) | ✅ |
-| 40 | Syntax-Referenz ATCLang (Docs) | ✅ |
-| 41 | Mathematische Beweise 7× (Docs) | ✅ |
-| 42 | Fehlerdefinitionen + Bottlenecks (Docs) | ✅ |
-| 43 | Dezentraler Nachweis + Architektur (Docs) | ✅ |
+### Finding taxonomy
 
----
+`Class (P0–P3) → Category → Family → Tags → Evidence → Status`
 
-## Gesamt-Fortschritt
+### Current status
 
-```
-v2.1.0  ████████████████████ 100% ✅  (11 Issues)
-v2.2.0  ████████████████████ 100% ✅  (17 Issues)
-v3.0.0  ████████████████████ 100% ✅  (10 Issues)
-Docs    ████████████████████ 100% ✅  ( 4 Issues)
-────────────────────────────────────────────────
-GESAMT  ████████████████████ 100% ✅  (43/43)
-```
-
-**🎉 Alle 43 Issues abgeschlossen. Nächster Schritt: Mainnet-Launch (externes Audit + Validator-Set)**
+| Area | Status |
+|---|---|
+| Historical v2/v3 feature milestones | Historical record |
+| Current repository architecture | Active |
+| Canonical ShivaCore source | GlobusOS |
+| LKM dependency stub | **OPEN / P1** |
+| LKM export/import semantic bug | **OPEN / P1** |
+| CI evidence verification | **PENDING** |
+| Organization-wide audit | **IN PROGRESS** |
+| Release readiness | **NOT ESTABLISHED** |
