@@ -31,12 +31,12 @@ A-TownChain
    ├── atc-wallet
    └── atc-algorithm / atc-mining
 
-ShivaCore
-   │ kernel / capability boundary
-   ▼
 GlobusOS
    │ OS userspace / platform
-   └── Aurora AI
+   │
+   └── modules/atc-shivacore/kernel
+       │ kernel / capability boundary / TCB
+       └── Aurora AI
 
 Genesis Engine
    └── Genesis Chronicles / Genesis Franchise Factory
@@ -59,14 +59,17 @@ a-townchain-os
 
 ## Current audit findings — 2026-09-16
 
-- `atc-shivacore`: `modules/atc-shivacore/kernel/src/lkm.rs` still contains the active `DependencyGraph::dependencies()` `unimplemented!()` placeholder. This is tracked as blocking implementation work in issue #19. The existing `get_dependencies()` API already provides a deterministic owned `Vec<String>`; the public placeholder API must be removed or redesigned without borrowing temporary storage.
-- `atc-algorithm`: PoH slot overflow handling and missing-genesis error handling were implemented and regression-tested; documentation was updated accordingly.
-- `globus-os`: unsafe `unwrap()`-based parsing/lookup paths identified during the audit were hardened and re-read after modification.
-- Organization-wide searches are also performed for executable stubs, unsafe workflow patterns, credential indicators, stale architecture references and documentation drift.
+- **ShivaCore relocation:** canonical kernel source is now `globus-os/modules/atc-shivacore/kernel`, a member of the GlobusOS Cargo workspace and explicitly covered by GlobusOS Rust CI.
+- **Old `atc-shivacore` stub:** the standalone repository's historical tree still contains the old `DependencyGraph::dependencies()` `unimplemented!()` source, but this is no longer the canonical kernel source. The canonical GlobusOS tree was searched for both `unimplemented` and `DependencyGraph::dependencies` and returned no matches.
+- **GlobusOS test evidence defect:** run `35088731639` failed in cargo tests while npm tests passed, but the old workflow recorded a PASS evidence record. The workflow was corrected in `231a6efe13e4d3ba21fa4e444efbfd572f08b858`; evidence is now writable only by a dedicated job requiring both test jobs to succeed.
+- **GlobusOS governance CI:** run `35088731594` failed in the repository audit step. Root cause remains unverified until job output is available.
+- `atc-algorithm`: PoH slot overflow and missing-genesis error handling were implemented and regression-tested.
+- `globus-os`: unsafe VFS/GPT unwrap paths were hardened and re-read.
+- Organization-wide searches for `pull_request_target` and mutable `actions/checkout@main/master` returned no indexed matches. Private-key search hits were scanner definitions/audit patterns rather than confirmed exposed secrets.
 
 ## TODO / roadmap / wiki synchronization rule
 
-The repository contains historical TODO, roadmap and wiki material from earlier repository layouts and dates. Those documents are not silently treated as current implementation truth. Current work must be derived from the live repository inventory, repository-local implementation, `atc-standards`, and `atc-engineering` evidence. Historical TODO/roadmap pages should be updated or explicitly marked archival when their claims conflict with current topology or implementation.
+Every repository audit reconciles current implementation with README, ARCHITECTURE, STATUS, CHANGELOG, ROADMAP, TODO, sprint records and wiki/navigation pages. Historical material may remain archival, but current claims must match implementation or explicitly state archival status. Relevant open implementation points must be classified and tracked rather than silently ignored.
 
 ## Historical-document rule
 
