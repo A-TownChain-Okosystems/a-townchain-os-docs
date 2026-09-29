@@ -48,6 +48,7 @@ Dies ist der **kanonische Dokumentations-Hub** des A-TownChain-Ökosystems.
 ## Quick Links
 
 - [Roadmap](docs/ROADMAP.md) | [Status](STATUS.md) | [TODO](TODO.md) | [Changelog](CHANGELOG.md)
+- [Globus Software Wiki — Master Index](docs/software-wiki/README.md) | [Globus Master Registry](docs/software-wiki/MASTER_REGISTRY.md)
 - [Standards Registry](docs/standards/STANDARDS_REGISTRY.md) | [KAI-OS Wiki](docs/kai-os-wiki.md)
 - [Launch-Checkliste & Roadmap](docs/project/) | [Whitepaper](docs/whitepaper/)
 - [Compliance (BaFin)](docs/compliance/) | [Lizenz-Übersicht](docs/LICENSING_OVERVIEW.md)
@@ -57,6 +58,7 @@ Dies ist der **kanonische Dokumentations-Hub** des A-TownChain-Ökosystems.
 
 ```
 docs/
+├── software-wiki/   # aktueller Software Wiki Master Index + Master Registry
 ├── standards/       # ATC-01…35 + ATC-LIC/ATS-LIC (kanonisch)
 ├── wiki/            # KI-OS Wiki-Struktur (Kapitel je Modul)
 ├── whitepaper/      # Whitepaper + Einzelkapitel
