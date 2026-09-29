@@ -787,6 +787,10 @@ GLOBUS MASTER REGISTRY
 
 ## 31. Software Object Model
 Every registered technical object follows:
+
+> **Identity rule:** `GOS-*` is the canonical global namespace. Domain/scope is represented by `scope` (for example `SHV`, `AUR`, `ATC`). Domain-local IDs may exist only as aliases.
+>
+> **Boundary rule:** ShivaCore is the kernel/TCB and capability/security boundary. Aurora is the AI/control-plane platform above that boundary. They must not be modeled as the same runtime component.
 ```text
 Identity
 ├── ID
@@ -826,12 +830,48 @@ Testing
 └── Security
 Lifecycle
 ├── DRAFT
-├── IMPLEMENTED
-├── VERIFIED
-├── RELEASED
+├── PROPOSED
+├── DESIGN
+├── PROTOTYPE
+├── ALPHA
+├── BETA
+├── RELEASE_CANDIDATE
+├── STABLE
+├── LTS
 ├── DEPRECATED
 └── ARCHIVED
 ```
+
+### Canonical example — ShivaCore
+
+```text
+GOS-COMP-001
+├── Scope: SHV
+├── Type: Kernel / TCB Component
+├── Project: Globus OS
+├── Repository: atc-shivacore
+├── Layer: Kernel / TCB
+├── Components
+│   ├── Scheduler
+│   ├── Memory Management
+│   ├── IPC
+│   ├── Syscall Boundary
+│   ├── Capability Enforcement
+│   └── HAL / Driver Boundary
+├── Interfaces
+│   ├── Kernel API
+│   ├── Syscall ABI
+│   └── Capability Interface
+└── Security
+    ├── Isolation
+    ├── Least Privilege
+    ├── Secure Boot Boundary
+    └── Audit / Evidence
+```
+
+Aurora AI objects belong to the AI/control-plane domain and reference ShivaCore through explicit capability and policy interfaces; they do not inherit kernel privileges implicitly.
+
+Implementation/evidence status is separate from lifecycle and must never be inferred from `STABLE` or `LTS`.
 
 ## 32. Documentation Object Model
 Document classes:
@@ -917,3 +957,78 @@ Repository ownership and implementation location must be verified against the cu
 8. Every published technical object has a stable ID.
 9. Changes to canonical architecture require the applicable ADR/decision process.
 10. No documentation claim may upgrade implementation or release status by implication.
+
+## 35. Dependency Graph
+
+The Master Registry is the authoritative node set for the dependency graph. Edges are typed and directional.
+
+```text
+Globus OS
+├── Aurora
+│   ├── UI / Apps / Shell
+│   └── AI Control Plane
+│       ├── Models / Agents / Tools / Workflows
+├── ShivaCore
+│   ├── Kernel / Scheduler / Memory / IPC
+│   └── Capabilities / HAL / Driver Boundary
+└── Platform Services
+    ├── APIs / Runtime / Storage / Plugins
+
+A-TownChain
+├── Node / Wallet
+├── Consensus / Mining / Mempool
+├── VM / State / Storage / Indexer
+└── SDK / API
+```
+
+### Dependency edge types
+
+- `runtime` — required during execution
+- `build` — required to compile/package
+- `test` — required for verification
+- `api` — consumes or provides an interface
+- `plugin` — dynamically extends another object
+- `data` — reads/writes a defined data contract
+- `security` — establishes a trust/capability relationship
+- `optional` — supported but not required
+
+Every edge identifies source ID, target ID, type, version constraint where applicable, and evidence. Cycles require explicit review.
+
+## 36. Master Registry Synchronization Contract
+
+The registry is the machine-readable inventory; the Wiki is the human-readable projection.
+
+```text
+GitHub → Repository Discovery → Manifest/API/Test Scanner
+       → Existing-First ID Resolution → Master Registry
+       → Dependency/API/Repository Graphs
+       → CI/Security/Release Evidence
+       → Wiki projections
+```
+
+### Synchronization invariants
+
+1. Scanner output is proposed factual data until validated.
+2. File presence alone never creates `IMPLEMENTED` or `VERIFIED`.
+3. Existing IDs are reused; duplicates require explicit reconciliation.
+4. Repository ownership is resolved before publication.
+5. Exact commit SHA anchors implementation and CI evidence.
+6. New source SHA requires new verification evidence.
+7. Security, test and release states remain independent.
+8. Human-authored architecture/governance decisions are never overwritten by scanners.
+9. Deprecated/archived objects remain queryable and are never silently reused.
+10. Registry changes are reviewable and auditable.
+
+### Registry-derived projections
+
+- Component Registry
+- Repository Index
+- API Catalog
+- SDK Catalog
+- Plugin Catalog
+- AI Model/Agent/Tool Registry
+- Dependency Graph
+- Test/Evidence Matrix
+- Security Status
+- Release Status
+- Changelog
