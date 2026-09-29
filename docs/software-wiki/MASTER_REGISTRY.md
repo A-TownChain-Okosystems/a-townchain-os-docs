@@ -124,3 +124,73 @@ Source presence alone is never implementation evidence.
 ## Ownership
 
 The registry indexes technical objects; it does not replace repository ownership, architecture SSOTs, standards SSOTs or release gates.
+
+
+## Canonical Object Identity
+
+`GOS-*` is the canonical global namespace. The registry must not create parallel primary-ID systems for the same object.
+
+```yaml
+id: GOS-COMP-001
+scope: SHV
+name: ShivaCore
+type: component
+aliases:
+  - COMP-SHV-001
+```
+
+Domain-local identifiers are aliases only and cannot replace the global ID.
+
+## Relationship Model
+
+```yaml
+relationships:
+  - target: GOS-COMP-002
+    type: runtime
+    version: ">=1.0"
+    evidence: []
+```
+
+Allowed relationship types: `runtime`, `build`, `test`, `api`, `plugin`, `data`, `security`, `optional`.
+
+## Independent Status Dimensions
+
+Do not overload one `status` field with lifecycle, implementation, verification and release meaning. At minimum:
+
+```yaml
+lifecycle: STABLE
+implementation_status: IMPLEMENTED
+verification_status: VERIFIED
+security_status: UNKNOWN
+release_status: NOT_RELEASED
+```
+
+A lifecycle value such as `STABLE` or `LTS` does not prove implementation or verification.
+
+## People and Ownership
+
+The registry may reference responsible roles or teams. Personal identity data is not required for the technical inventory.
+
+```yaml
+ownership:
+  project: Globus OS
+  repository: A-TownChain-Okosystems/atc-shivacore
+  maintainer_role: SHV-MAINTAINERS
+  license: UNKNOWN
+```
+
+## Discovery and Synchronization
+
+Automated scanners may discover repositories, manifests, packages, APIs, tests and release metadata. They must emit proposed changes rather than silently promoting technical status.
+
+```text
+Discover → Normalize → Existing-First Resolve → Review
+→ Registry Update → Graph Rebuild → Evidence Reconciliation
+→ Wiki Projection
+```
+
+The scanner must preserve exact commit SHA references for implementation facts and exact-SHA workflow evidence for verification claims.
+
+## Release Gate Rule
+
+`RELEASED` / `release_status: RELEASED` is never derived from documentation completeness. Release status requires the applicable repository release gate and evidence chain.
