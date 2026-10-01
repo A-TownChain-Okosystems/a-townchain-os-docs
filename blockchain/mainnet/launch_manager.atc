@@ -5,9 +5,9 @@
 // Sprint 4.0 — Migrated from Python stub to ATCLang
 // ════════════════════════════════════════════════════════════════
 
-const CHAIN_ID: u64 = 9000
-const GENESIS_SUPPLY: u128 = 21000000000000000000000000  // 21M * 10^18
-const GENESIS_TIMESTAMP: u64 = 1735689600  // 2025-01-01T00:00:00Z
+const CHAIN_ID: u64 = 658467
+const GENESIS_SUPPLY: u128 = 0  // Canonical genesis supply; L1 monetary policy governs issuance
+const GENESIS_TIMESTAMP: u64 = 0 // Set by governed genesis procedure  // 2025-01-01T00:00:00Z
 
 struct GenesisConfig {
     chain_id:           u64,

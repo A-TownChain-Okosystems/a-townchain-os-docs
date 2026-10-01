@@ -1,7 +1,7 @@
 // Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.
 // ─────────────────────────────────────────────────────────────
 // ATC-24 — Backend Wallet Service
-// Sprint 3.0 | Backend Layer | Chain-ID 9000
+// Sprint 3.0 | Backend Layer | Chain-ID 658467
 // Migrated from: backend/wallet/wallet.py (117 lines)
 // Multi-standard wallet with BIP39 key generation, ATC addresses
 // ─────────────────────────────────────────────────────────────
@@ -32,7 +32,7 @@ contract ATCWalletService {
         self.accounts = {}
         self.nfts = {}
         self.account_count = 0
-        self.total_supply = 21000000000000000000000000  // 21M ATC
+        self.total_supply = 0  // Genesis supply is zero; L1 monetary policy governs issuance up to 360M ATC
         self.owner = msg_sender()
     }
 
