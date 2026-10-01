@@ -84,8 +84,8 @@ class ATCoin(ATC8300Token):
     NAME         = "A-TownCoin"
     SYMBOL       = "ATC"
     DECIMALS     = 18
-    MAX_SUPPLY   = 21_000_000 * (10 ** 18)  # 21 Mio ATC in Wei
-    CHAIN_ID     = 9000
+    MAX_SUPPLY   = 360_000_000 * (10 ** 18)  # 360 Mio ATC in Wei; canonical L1 cap
+    CHAIN_ID     = 658467
 ```
 
 ---
