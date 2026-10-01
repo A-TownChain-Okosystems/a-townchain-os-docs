@@ -4,9 +4,9 @@
 // Chain-ID 9000 | SHA-256 | Non-EVM
 // ════════════════════════════════════════════════════════════════
 
-const CHAIN_ID: u64 = 9000
+const CHAIN_ID: u64 = 658467
 const CHAIN_NAME: String = "A-TownChain"
-const BLOCK_TIME: u64 = 10          // 10 seconds
+const BLOCK_TIME: u64 = 360          // 10 seconds
 const MAX_BLOCK_SIZE: u32 = 1048576 // 1 MB
 const MAX_TX_PER_BLOCK: u32 = 500
 const MIN_STAKE: u128 = 1000000000000000000000  // 1000 ATC
