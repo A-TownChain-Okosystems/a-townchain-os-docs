@@ -68,7 +68,7 @@ contract Node {
         self.node_info = NodeInfo {
             node_id:      node_id,
             version:      "1.0.0",
-            chain_id:     9000,
+            chain_id:     658467,
             status:       "BOOTING",
             best_block:   0,
             peer_count:   0,
