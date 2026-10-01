@@ -50,7 +50,7 @@ GET /api/wallet/balance/{ATC-Adresse}
 ```bash
 POST /api/contracts/call
 { "address": "ATC_CONTRACT_...", "method": "total_supply" }
-→ { "result": "21000000000000000000000000" }
+→ { "result": "0" }\n\n> Canonical L1 genesis supply is zero. Issuance is governed by the monetary-policy component up to the 360,000,000 ATC cap.
 ```
 → **Deterministisch:** Alle Nodes berechnen denselben Wert.
 
