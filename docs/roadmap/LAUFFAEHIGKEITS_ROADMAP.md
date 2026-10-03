@@ -29,6 +29,8 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 ## M2 — Kernel läuft (L1 atc-shivacore)
 
+> **Update 03.10. (Freigabe-Zug 2):** SC-DEC-A…J komplett freigegeben (Owner-Vorab-Regel; ab SC-003 keine blockierenden SC-DEC mehr, nur Defaults mit SC-ARCH-Review). SC-002 Scheduler & Scheduling-Domains FROZEN v0.1.0 (G=Bounded PI, H=tickless, I=250µs/1ms/10ms, J=HARDCUT für HARDRT). SC-003 IPC & Endpoints als DRAFT_REVIEW begonnen. Dependency-Review-Incident geheilt (PR #87/#88, Gate grün auf main 3faa92e).
+
 > **Update 03.10. (AD-026-G1-Check):** G1 verifiziert PASS (atclang specs/VERSION.toml: G1-PASSED 2026-09-07, G2 accepted; ABI bleibt 0.1.0-DRAFT). SC-001 (Boot & Speicher) als v0.1.0 DRAFT_REVIEW im Kernel-Repo committet (docs/specs/SC-001-BOOT_MEMORY.md, 15e8d55): echte Bootchain B0-B5, Speichermodell, Initial-Caps, SC-DEC-A…F-Entscheidungen offen. L0–L10 bleibt In-Kernel-Testsequenz, kein echtes Booten.
 
 - **Vault-Restauration:** docs/archive/monorepo-full/src/modules/atc-shivacore
