@@ -29,6 +29,8 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 ## M2 — Kernel läuft (L1 atc-shivacore)
 
+> **Update 04.10. (Freigabe-Zug 7):** SC-007 AddressSpace & Memory v0.1.0-FROZEN mit drei nachgezogenen Owner-Anmerkungen (REQ-SC007-13a Terminal-Suspend, W^X als Kernel-Politik-Default ohne Service-Space-Pfad, REQ-SC007-09a Rechte-Reduktion-Propagation via mint+revoke). SC-008 Prozess- & Service-Erzeugung als DRAFT_REVIEW begonnen: explizite Erzeugung ohne fork/exec, erzwungene Supervisor-Reserve-Thread-Cap (löst 13a strukturell), Exit-Notification ohne waitpid, vollständiger Untyped-Rückfluss. Nächste: SC-009.
+
 > **Update 04.10. (Freigabe-Zug 6):** SC-006 Driver/Interrupt/Time v0.1.0-FROZEN (Owner-Überflug bestanden; Snapshot-Verdrahtung REQ-SC005-09a bestätigt; SC-005-Ableitung §3 ohne SC-DEC-O akzeptiert, Nachprotokollierung nur falls G7 separaten Audit-Trail erzwingt). SC-007 AddressSpace & Memory Objects als DRAFT_REVIEW begonnen (VA-Seite, W^X, Fault-Endpoint-Delivery, INV-09-Abgrenzung, HugePages-Pfad). Nächste: SC-008.
 
 > **Update 04.10. (Freigabe-Zug 5):** SC-005 Capability-System v0.1.0-FROZEN nach 4-Punkte-Verifikation am Volltext (Badge-Immunität INV-05, Limit-Semantik REQ-SC005-07a/C-E03, Snapshot-Revocation REQ-SC005-09a/INV-09 aus SC-004 INV-06/07 abgeleitet, keine Initial-Allmacht REQ-SC005-11). SC-006 Driver/Interrupt/Time als DRAFT_REVIEW begonnen (IRQ/Timer/Device-Caps, Treiber im Service Space). Nächste: SC-007.
