@@ -29,6 +29,8 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 ## M2 — Kernel läuft (L1 atc-shivacore)
 
+> **Update 04.10. (Freigabe-Zug 8):** SC-008 Prozess- & Service-Erzeugung v0.1.0-FROZEN (nach Nachzug: REQ-SC008-07 Spawn als atomare OP-Sequenz mit Supervisor-Aufräum-Pflicht, REQ-SC008-10a empfängerunabhängiger Service-End, Loader-Frame-Grant-Wiring, Domain-Bindung=Erzeugungszeit). SC-009 Kernel-Diagnostics & Event-Bridge als DRAFT_REVIEW begonnen (Pflicht-Ereigniskatalog, IRQ-Deferral, Bridge im Service Space, Aurora NUR-LESEN). G7-Audit-Trail-VORLAGE committet (A: abgeleitete Aussagen / B: Nicht-Bindungs-Defaults / C: bereits wirksam) — Owner merged sie bei G7-Terminierung.
+
 > **Update 04.10. (Freigabe-Zug 7):** SC-007 AddressSpace & Memory v0.1.0-FROZEN mit drei nachgezogenen Owner-Anmerkungen (REQ-SC007-13a Terminal-Suspend, W^X als Kernel-Politik-Default ohne Service-Space-Pfad, REQ-SC007-09a Rechte-Reduktion-Propagation via mint+revoke). SC-008 Prozess- & Service-Erzeugung als DRAFT_REVIEW begonnen: explizite Erzeugung ohne fork/exec, erzwungene Supervisor-Reserve-Thread-Cap (löst 13a strukturell), Exit-Notification ohne waitpid, vollständiger Untyped-Rückfluss. Nächste: SC-009.
 
 > **Update 04.10. (Freigabe-Zug 6):** SC-006 Driver/Interrupt/Time v0.1.0-FROZEN (Owner-Überflug bestanden; Snapshot-Verdrahtung REQ-SC005-09a bestätigt; SC-005-Ableitung §3 ohne SC-DEC-O akzeptiert, Nachprotokollierung nur falls G7 separaten Audit-Trail erzwingt). SC-007 AddressSpace & Memory Objects als DRAFT_REVIEW begonnen (VA-Seite, W^X, Fault-Endpoint-Delivery, INV-09-Abgrenzung, HugePages-Pfad). Nächste: SC-008.
