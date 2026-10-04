@@ -29,6 +29,8 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 ## M2 — Kernel läuft (L1 atc-shivacore)
 
+> **Update 04.10. (Freigabe-Zug 9):** SC-009 Kernel-Diagnostics & Event-Bridge v0.1.0-FROZEN (Zwei-Klassen-Verdrängung SECURITY/DIAGNOSTIC nachgezogen, Grant-Pflicht für SUBSCRIBE + automatische Katalog-Fortschreibung als nicht-bindende G7-relevante Notizen eingefroren). Kern-Spez-Stapel SC-001…SC-009 komplett FROZEN. Offen: SC-010…SC-013 (Themenfestlegung durch Owner), danach SC-ARCH-001…010-Freeze; G7-Audit-Trail-Merge durch Owner bei G7-Terminierung (Vorlage liegt vor).
+
 > **Update 04.10. (Freigabe-Zug 8):** SC-008 Prozess- & Service-Erzeugung v0.1.0-FROZEN (nach Nachzug: REQ-SC008-07 Spawn als atomare OP-Sequenz mit Supervisor-Aufräum-Pflicht, REQ-SC008-10a empfängerunabhängiger Service-End, Loader-Frame-Grant-Wiring, Domain-Bindung=Erzeugungszeit). SC-009 Kernel-Diagnostics & Event-Bridge als DRAFT_REVIEW begonnen (Pflicht-Ereigniskatalog, IRQ-Deferral, Bridge im Service Space, Aurora NUR-LESEN). G7-Audit-Trail-VORLAGE committet (A: abgeleitete Aussagen / B: Nicht-Bindungs-Defaults / C: bereits wirksam) — Owner merged sie bei G7-Terminierung.
 
 > **Update 04.10. (Freigabe-Zug 7):** SC-007 AddressSpace & Memory v0.1.0-FROZEN mit drei nachgezogenen Owner-Anmerkungen (REQ-SC007-13a Terminal-Suspend, W^X als Kernel-Politik-Default ohne Service-Space-Pfad, REQ-SC007-09a Rechte-Reduktion-Propagation via mint+revoke). SC-008 Prozess- & Service-Erzeugung als DRAFT_REVIEW begonnen: explizite Erzeugung ohne fork/exec, erzwungene Supervisor-Reserve-Thread-Cap (löst 13a strukturell), Exit-Notification ohne waitpid, vollständiger Untyped-Rückfluss. Nächste: SC-009.
