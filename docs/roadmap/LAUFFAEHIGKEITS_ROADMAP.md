@@ -29,6 +29,8 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 ## M2 — Kernel läuft (L1 atc-shivacore)
 
+> **Update 04.10. (Freigabe-Zug 4):** SC-003 IPC & Endpoints + SC-004 Syscall-ABI gemeinsam v0.1.0-FROZEN (Default-only-Check SC-003 bestanden: keine versteckten ABI-Bindungen; SC-DEC-K/L/M freigegeben, N als Default ab SC-003 wirksam; K/L/M reversibel nur bis G7-Bindung, danach ABI-Freeze). SC-005 Capability-System-Vertiefung als DRAFT_REVIEW begonnen. Nächste: SC-006 Driver/Interrupt/Time.
+
 > **Update 03.10. (Freigabe-Zug 3):** SC-003 IPC & Endpoints als DRAFT_REVIEW gestellt (nur Defaults, keine blockierenden SC-DEC). SC-004 Syscall-Interface/ABI v0.1.0-DRAFT_REVIEW committet — vier Owner-Kandidaten SC-DEC-K…N vorgelegt (ABI-Nummernraum, Register-Konvention, Cap-Uebergabe, Fehler-/Restart-Semantik). Reihenfolge danach: SC-005 Capability → SC-006 Driver/Interrupt/Time → … → SC-013 ATCLang-ABI-Bindung → SC-ARCH-001…010-Freeze.
 
 > **Update 03.10. (Freigabe-Zug 2):** SC-DEC-A…J komplett freigegeben (Owner-Vorab-Regel; ab SC-003 keine blockierenden SC-DEC mehr, nur Defaults mit SC-ARCH-Review). SC-002 Scheduler & Scheduling-Domains FROZEN v0.1.0 (G=Bounded PI, H=tickless, I=250µs/1ms/10ms, J=HARDCUT für HARDRT). SC-003 IPC & Endpoints als DRAFT_REVIEW begonnen. Dependency-Review-Incident geheilt (PR #87/#88, Gate grün auf main 3faa92e).
