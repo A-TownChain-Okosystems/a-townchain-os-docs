@@ -23,6 +23,7 @@
 | AD-025 | Spiel umbenannt: Shivamon → Genesis Chronicles | ✅ RESOLVED (06.09.2026, 21:40) | — | Michael |
 | AD-047 | Legacy-Löschung: 416 nichtgebrauchte Dateien (Müll, 14 verwaiste Module, supersede Reports) | ✅ RESOLVED (07.09.2026) | Löschungs-Manifest + Git-Historie | Michael |
 | AD-048 | Standards Governance Core normativ: Registry 81→121, Meta-Governance TAXONOMY-001 + STDDEV/REGISTRY/CHANGE, verbindliche Change-Pipeline SCR→VERSION→UPDATE→COMPAT→AUDIT→REGISTRY | ✅ RESOLVED (08.09.2026, 00:36) | atc-standards Registry/SCR-0016..0025 + AUD-2026-0003 | Michael |
+| AD-049 | ATC-Toolchain als eigenstaendiges Repo (atc-toolchain, R1-Skelett, ATC-REPO-TOOL-001) | ✅ RESOLVED (08.09.2026, 00:36) | atc-standards Registry/SCR-0016..0025 + AUD-2026-0003 | Michael |
 
 ---
 
@@ -1122,3 +1123,10 @@ Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
 - **Begruendung:** Folgt AD-024/AD-013-Intention („atc-node aus a-townchain/Protocol-Core, P0"); Industriemuster Protokoll vs. Node; unterstuetzt K1-K8-Build-Ziel; Option B (Merge) haette AD-024-Vertikalarchitektur umgekehrt.
 - **Umsetzung:** ATC-STD-202 v1.1.0 §3a (REQ-STD-2021/2022), atc-node S3→S4 (Netzwerk-Angriffsflaeche), Rollen in REPOSITORY_MAP, Finding F-011 RESOLVED.
 - **Gueltig seit:** 2026-09-07
+
+## AD-049: ATC-Toolchain als eigenstaendiges Repo (atc-toolchain) ✅
+
+- **Owner-Order 05.10.2026:** Neues Repository "ATC-Toolchain" (GitHub normalisiert zu `atc-toolchain`; erfuellt AD-036-Naming `atc-<domain>-<component>`).
+- **Umsetzung (R1-Skelett):** README (ATC-STD-README-001), LICENSE (Apache-2.0), `.atc/repository.yaml` (SUPPORT, developer_tools, R1), ehrliches `.atc/evidence/evidence.yaml` (skeleton/not_run, SCR-0080), CODEOWNERS (SCR-0003), `docs/REPOSITORY_STANDARD.md`, `governance-ci.yml` ab erster Stunde (AD-039-Sweep-Lektion).
+- **Registry:** `ATC-REPO-TOOL-001` (T3, developer_tools, L6, C3, S2, maturity_class C, canonical true) — 33 Eintraege.
+- **Rolle:** Kanonische Werkzeugkette (Build-/Dev-/Governance-Tools); Implementierung folgt den Gates der Lauffaehigkeits-Roadmap. Status: ✅ RESOLVED.
