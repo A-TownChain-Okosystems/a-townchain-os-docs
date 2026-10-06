@@ -111,6 +111,7 @@ RESEARCH-Eintrag führen — nicht implizit voraussetzen.
 - `globus-os/README.md`, `globus-os/modules/atc-shivacore/` (aktiver Kernel-SSOT)
 - `atc-shivacore/README.md` (Demotion-Erklärung)
 - KAI-OS-Produktbezeichnung: „A-TownChain OS (technical) / KAI-OS (product name)"
+- `ATC_VM_ARCHITECTURE_REFERENCE_MODEL.md` (VM-Referenzmodell; ShivaVM = K19-Kernel-Modul ist Contract-VM, keine System-VM)
 - Roadmap: Notion Master Roadmap (KAI-OS Phasen 1-4, Kernel Sprints)
 
 ## 10. Versionierung
