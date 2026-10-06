@@ -1,12 +1,12 @@
-# ATC_ARCHITECTURE_REFERENCE_MODEL — Referenzmodell des ATC-Stacks (v0.1.0, Draft)
+# ATC_ARCHITECTURE_REFERENCE_MODEL — Referenzmodell des ATC-Stacks (v0.2.0, Proposed)
 
 <!-- document_id: ATC-DOC-ARCHREF-001 -->
-<!-- status: draft -->
+<!-- status: proposed -->
 <!-- standard: ATC-STD-MD-001 -->
 <!-- date: 2026-10-06 -->
 
 > **Zweck:** Einheitliches Architektur-Referenzmodell über den gesamten ATC-Stack
-> (26 Repos, Schichten L1-L7). Referenz für Layer-Zuordnung, Roadmap-Debatte und
+> (33 Repositories — verifizierter Flottenstand via GitHub-API, Stand 2026-10-06). Referenz für Layer-Zuordnung, Roadmap-Debatte und
 > Doku-Abgleich. `a-townchain-os` ist darin **L7 Integration/Orchestrierung**
 > (keine Core-Implementierung) — Layer-Aussagen zielen immer auf den Gesamt-Stack,
 > nie auf ein einzelnes Repo.
@@ -31,12 +31,25 @@ gleich VERIFIED.
 
 | Layer | ATC-Zuordnung (Stack gesamt) | Klassifikation | Anmerkung |
 |---|---|---|---|
-| **Data Layer** | `a-townchain` (L3): Blocks, Transactions, State, Merkle/Storage | IMPLEMENTED | SQLite-Persistenz seit v2.1.0 |
-| **Network Layer** | `a-townchain` / zuständiger Network-Stack | IMPLEMENTED | P2P, Signaturvalidierung vor Weiterleitung (ECDSA secp256k1/RFC 6979) |
-| **Consensus Layer** | `atc-algorithm` (kanonische Implementierung, vgl. a-townchain/components/algorithm) | ⚠️ **RESEARCH/DEVELOPMENT — NICHT FINAL** | Hybrid PoH+PoS+PoW ist **Entwicklungs-/Spezifikationsziel**, kein eingefrorener Konsens. „Freeze normative consensus specification" steht ausdrücklich als nächster Schritt aus (components/algorithm/README.md:137). KEINE Formulierung „finaler Hybrid-Konsens definiert/frozen". |
+| **Data Layer** | `a-townchain` (L3): Blocks, Transactions, State, Merkle/Storage | **UNVERIFIED** | Behauptet: SQLite-Persistenz seit v2.1.0 — Exact-SHA-Evidence fehlt |
+| **Network Layer** | `a-townchain` / zuständiger Network-Stack | **UNVERIFIED** | Behauptet: P2P, ECDSA secp256k1/RFC 6979 — Exact-SHA-Evidence fehlt |
+| **Consensus Layer** | `atc-algorithm` (kanonische Implementierung, vgl. a-townchain/components/algorithm) | ⚠️ **RESEARCH** (maturity: DEVELOPMENT — NICHT FINAL) | Hybrid PoH+PoS+PoW ist **Entwicklungs-/Spezifikationsziel**, kein eingefrorener Konsens. „Freeze normative consensus specification" steht ausdrücklich als nächster Schritt aus (components/algorithm/README.md:137). KEINE Formulierung „finaler Hybrid-Konsens definiert/frozen". |
 | **Contract Layer** | ATC-001/ATC-8300/ATC-9900, SC-Gates SC-G0..G13 | IMPLEMENTED (Prototypen) + NORMATIVE (Gates seit 07.09.2026) | Registry: ATC-SC-TOKEN-001..003, SC-G0 offen |
-| **Application Layer** | `atc-explorer`, `atc-wallet`, `atc-sdk` | IMPLEMENTED | Explorer-API seit v2.1.0 |
+| **Application Layer** | `atc-explorer`, `atc-wallet`, `atc-sdk` | **UNVERIFIED** | Behauptet: Explorer-API seit v2.1.0 — Exact-SHA-Evidence fehlt |
 | **Security Layer** | `atc-standards` + ZKP-/Security-Familien (ATC-STD-100/300, ZKP-001..010) | NORMATIVE | Querschneidend über alle Layer |
+
+
+### 2.1 Statusblock (Review-Fassung v0.2.0)
+
+| Bereich | Status | Evidence / Bemerkung |
+|---|---|---|
+| Data | UNVERIFIED | Exact-SHA-Evidence fehlt |
+| Network | UNVERIFIED | Exact-SHA-Evidence fehlt |
+| Application | UNVERIFIED | Exact-SHA-Evidence fehlt |
+| Consensus | RESEARCH | maturity: DEVELOPMENT |
+| ATC-07 | LEGACY/UNVERIFIED | CLOSED ≠ IMPLEMENTED; Re-Verifikation offen |
+
+Hebung auf IMPLEMENTED erst nach Exact-SHA-Evidence (Tests + Commit-SHA je Layer).
 
 ## 3. Konsens — Präzisierung
 
@@ -53,9 +66,12 @@ Der proprietäre Hybrid-Konsens (PoH+PoS+PoW, Chain-ID 658467) wird als
   **CLOSED seit 2026-07-05T12:45:37Z** (verifiziert via GitHub-API, 06.10.2026).
 - **Konflikt:** Alte Roadmap-/Sprint-Doku behauptet teils ✅ implementiert; ein
   Datenbestand führte #84 als OPEN. Beides ist mit dem GitHub-Status unvereinbar.
-- **Klassifikation: LEGACY/UNVERIFIED.** Aussagen wie „Sharding ist implementiert"
-  sind bis zur Re-Verifikation gegen atc-algorithm/atc-node/ATCLang-Interfaces
-  nicht zulässig. Offener Punkt → Task-DB (Statusdrift bereinigen).
+- **Klassifikation: LEGACY/UNVERIFIED.**
+- **Klarstellung: ATC-07 ist CLOSED, aber nicht IMPLEMENTED.**
+  Der alte ✅-Claim bleibt bis zur Re-Verifikation LEGACY/UNVERIFIED.
+  Aussagen wie „Sharding ist implementiert" sind bis zur Re-Verifikation gegen
+  atc-algorithm/atc-node/ATCLang-Interfaces nicht zulässig.
+  Offener Punkt → Task-DB (Statusdrift bereinigen).
 
 ## 5. Stateless Validation — Forschungskandidat (v3.x)
 
@@ -76,6 +92,7 @@ Merkle-/Witness-Format, Node-Synchronisation. Keine Roadmap-Tatsache.
 | Freeze normative consensus specification (components/algorithm/README.md:137) | atc-algorithm | OFFEN — Todo Task-DB |
 | ATC-07 Statusdrift: Re-Verifikation + Altdoku-Bereinigung | a-townchain / Doku | OFFEN — Todo Task-DB |
 | Research-Registratur v3.x-Kandidaten (Stateless Validation) | Doku | IN DIESER DATEI geführt |
+| Exact-SHA-Evidence für Data/Network/Application sammeln (Hebung auf IMPLEMENTED) | Agents | OFFEN — Todo Task-DB |
 
 ## 7. Querverweise
 
@@ -90,5 +107,6 @@ Merkle-/Witness-Format, Node-Synchronisation. Keine Roadmap-Tatsache.
 | Version | Datum | Änderung |
 |---|---|---|
 | v0.1.0 | 2026-10-06 | Initiale Fassung (Draft): Schichtenmodell, Klassifikationsmodell, ATC-07-Statusdrift dokumentiert, Stateless Validation als RESEARCH |
+| v0.2.0 | 2026-10-06 | Review-Korrekturen (CONDITIONAL PASS): Repo-Zahl 26→33 (GitHub-API-verifiziert), Data/Network/Application auf UNVERIFIED zurückgestuft (Exact-SHA-Evidence fehlt), Consensus vierte Klasse entfernt (RESEARCH, maturity: DEVELOPMENT), ATC-07-Klarstellung (CLOSED ≠ IMPLEMENTED); Status draft→proposed |
 
-Status-Änderungen (draft → proposed → active) erfolgen per Owner-Review gemäß ATC-STD-MD-001.
+Status-Änderungen erfolgen per Owner-Review gemäß ATC-STD-MD-001. Aktueller Status: proposed (Review-Korrekturen v0.2.0 eingearbeitet).
