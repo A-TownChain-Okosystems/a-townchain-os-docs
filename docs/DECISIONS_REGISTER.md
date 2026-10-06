@@ -10,20 +10,21 @@
 | ID | Titel | Status | Sprint | Zuständig |
 |----|-------|--------|--------|-----------|
 | AD-001 | Hash-Algorithmus | ✅ RESOLVED | — | Aurora |
-| AD-002 | EventBus vs IPCBus | ⏳ VALIDATE | 2.4 | **Michael** |
+| AD-002 | EventBus vs IPCBus | ✅ VALIDATED (Owner 06.10.): BEIDE Busse — IPCBus = gerichtete Kommunikation, Capability-/Authority-Kontext, Request/Response; EventBus = Ereignisverteilung, Pub/Sub, lose Kopplung, Beobachtung. Kein dritter Bus. | 2.4 | **Michael** |
 | AD-003 | Flash-Loan Voting Snapshot | ✅ RESOLVED | 2.6 | Aurora |
 | AD-004 | Chain-ID 658467 | ✅ RESOLVED (03.09.2026) | 658467 | Michael |
-| AD-005 | ATC-97 Agent Protocol Spec | 📐 DRAFT_REVIEW | 3.0 | **Aurora** (Spec drafted — pending Michael review) |
+| AD-005 | ATC-97 Agent Protocol Spec (AIP) | ✅ APPROVED (Owner 06.10., konditional): Review ausgeführt — Registry-Konsistenz ✓ (v3.0 kanonisch), Draft-Echo v0.1.0 zu Alias konsolidiert (AD-009), keine Duplikation in Paralle-Standards; §10 offene Punkte (Quorum, Custom Caps, Rate Limiting, Cross-Chain, Payload-Encryption) bleiben als Owner-Parameterfragen dokumentiert | 3.0 | **Michael / Aurora (Review-Ausführung)** |
 | AD-006 | Python vs Substrate | ✅ RESOLVED | — | Aurora (ATCLang First) |
 | AD-007 | EVM Registry | ✅ RESOLVED | — | Aurora (Non-EVM) |
-| AD-008 | Reality-Check: 44 Issues re-auditieren/re-open? | ⏳ DECISION | — | **Michael** |
-| AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ (kanonisch: atclang/ATCLANG_SPEC.md) / Bridge-Standards-Dedup (ATC-09/38/69/91) ⏳ | 🟡 TEIL-GELOEST | 08.07.2026 | **Michael** (nur noch Bridge-Dedup) |
+| AD-008 | Reality-Check: 44 Issues Re-Audit | 🔁 RE-AUDIT_REQUIRED (Owner 06.10.): jedes relevante Issue bekommt aktuellen Zustand (OPEN/FIXED/VERIFIED/RESIDUAL/BLOCKED/CLOSED) — kein „exists = PASS", Findings nur mit Exact-SHA-Evidence geschlossen | — | **Michael** |
+| AD-009 | ATCLANG_SPEC.md-Konsolidierung ✅ / Bridge-Standards-Dedup (ATC-09/38/69/91) → CONSOLIDATE_EXISTING (Owner 06.10.): bestehende normative Quelle + Mapping/Alias/Evidence statt paralleler Standards; erste Anwendung: ATC-97 Draft-Echo konsolidiert | 🟢 CONSOLIDATE | 08.07 | **Michael** |
 | AD-023 | Mainnet-Launch aufgehoben (kein Launch-Ziel/Deadline mehr) | ✅ RESOLVED (06.09.2026) | — | Michael |
 | AD-024 | Zielarchitektur Repository-Landkarte — ALLE Repositories erstellen (P0+P1+P2) | ✅ RESOLVED (06.09.2026, 21:30) | — | Michael |
 | AD-025 | Spiel umbenannt: Shivamon → Genesis Chronicles | ✅ RESOLVED (06.09.2026, 21:40) | — | Michael |
 | AD-047 | Legacy-Löschung: 416 nichtgebrauchte Dateien (Müll, 14 verwaiste Module, supersede Reports) | ✅ RESOLVED (07.09.2026) | Löschungs-Manifest + Git-Historie | Michael |
 | AD-048 | Standards Governance Core normativ: Registry 81→121, Meta-Governance TAXONOMY-001 + STDDEV/REGISTRY/CHANGE, verbindliche Change-Pipeline SCR→VERSION→UPDATE→COMPAT→AUDIT→REGISTRY | ✅ RESOLVED (08.09.2026, 00:36) | atc-standards Registry/SCR-0016..0025 + AUD-2026-0003 | Michael |
 | AD-049 | ATC-Toolchain als eigenstaendiges Repo (atc-toolchain, R1-Skelett, ATC-REPO-TOOL-001) | ✅ RESOLVED (08.09.2026, 00:36) | atc-standards Registry/SCR-0016..0025 + AUD-2026-0003 | Michael |
+| AD-050 | Owner-Entscheidungspaket Benennungs-Audit (06.10.2026): Capability-Taxonomie (verification_tooling→atc-toolchain, developer_tooling→atc-ide, vm_specification→atc-vm, consensus_algorithm→atc-algorithm, zero_knowledge_proofs→atc-zkp, ecosystem_integration→a-townchain-ecosystem, genesis_content_factory→genesis-franchise-factory); Layer-Tags für 6 Repos; ATC-STD-000 §9 APPROVED bestätigt (SCR-0098, Bedingung erfüllt); SCR-0129 bleibt PENDING — bytecode_format als vorgezogene normative Registry-Änderung zurückgezogen, Umsetzungsequenz Registry → Standard → Validator/CI; c80d895a/PR #102 = DISCARD/SUPERSEDED (Bedingung bestätigt: org-weit nicht existent, durch SCR-0129 + RV-001 + Freeze ee265313 ersetzt); Rollen Gate-0-Executor + Mirror-Klassifikator ROLE_DEFINED/HUMAN_OWNER_UNASSIGNED; #78/#82 implementiert+geschlossen, #79 wartet auf Org-Actions-Freigabe, #70 Exact-Pin-Governance; atc-algorithm #3 + atc-engineering #2 = P0 OWNER ACTION; demo-repository Zweckentscheidung VOR Layer/Capability | ✅ BESCHLOSSEN | — | **Michael (06.10.2026)** |
 
 ---
 
