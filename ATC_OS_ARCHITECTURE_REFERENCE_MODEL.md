@@ -42,7 +42,7 @@ Existenz einer Spezifikation, Datei oder alter Doku-Status ist nicht gleich VERI
 
 | Bereich | Status | Evidence / Bemerkung |
 |---|---|---|
-| Kernel (globus-os/modules/atc-shivacore) | **UNVERIFIED** | Struktur-Evidence: globus-os Repo-Scan 06.10.2026 (211 .rs-Dateien, 2283 Test-Funktionen repo-weit); fehlender Evidence-Run: `cargo test` grün + Commit-SHA |
+| Kernel (globus-os/modules/atc-shivacore) | **UNVERIFIED — CONFIRMED** | Repo-Scan 06.10.2026 (211 .rs-Dateien, 2283 Test-Funktionen); **Zusatzbefund:** main kompiliert nicht am Head e28a055 (Rust-CI Check failure, 33 Fehler — Issue globus-os#44) → Kernel-Tests laufen aktuell gar nicht |
 | HAL/Treiber (globus-os/modules/atc-drivers) | **UNVERIFIED** | Existenz verifiziert (Repo-Scan); Funktions-Evidence fehlt |
 | Syscall-Interface | **UNVERIFIED** | K-Sprint-Doku behauptet Implementierung; keine SHA-Evidence im aktiven SSOT |
 | Userspace/Services | **UNVERIFIED** | dito |

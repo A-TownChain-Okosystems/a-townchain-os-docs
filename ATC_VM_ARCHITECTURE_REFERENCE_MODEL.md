@@ -34,7 +34,7 @@ Verifier-Garantie, kein CPU-Ring-Wechsel, keine Hardware-Virtualisierung.
 | Bereich | Status | Evidence / Bemerkung |
 |---|---|---|
 | ATVM Runtime (atc-vm) | **IMPLEMENTED** (Evidence-Grade) | CI `cargo-tests`: success @ SHA 21132a4 (2026-09-25) + 32 Test-Funktionen (Repo-Scan 06.10.2026). Evidence deckt die existierende Testsuite ab, NICHT die Feature-Vollständigkeit (Repo-Status: development) |
-| ShivaVM (globus-os/modules/atc-shivacore/kernel/src/vm.rs, K19) | **UNVERIFIED** | Existenz + Opcode-Satz verifiziert (Push/Pop/Arith/Compare); kein modulbezogener Test-Run-Evidence |
+| ShivaVM (globus-os/modules/atc-shivacore/kernel/src/vm.rs, K19) | **UNVERIFIED — BLOCKIERT** | Existenz + Opcode-Satz verifiziert; Test-Run blockiert: globus-os/main kompiliert nicht am Head e28a055 (Rust-CI Check-Step failure, 33 Fehler in 10 Kernel-/System-Dateien, Kernel-Tests skipped — Issue globus-os#44) |
 | Architekturwahl „Bytecode-VM" | **RESEARCH** (maturity: DEVELOPMENT) | Beide Instanzen führen ATCLang-/Contract-Bytecode aus; keine Freeze-Dokumentation der Architekturentscheidung |
 | System-VM / Hypervisor | — (keine Position) | Keine dokumentierte ATC-Entscheidung; bei Bedarf als RESEARCH-Eintrag führen |
 | ATVM ↔ ShivaVM: Verhältnis | **OFFEN (Governance)** | Zwei Contract-VM-Instanzen im Stack: kanonische Instanz, Abgrenzung oder Integration ungeklärt → Owner-Entscheidung |
@@ -69,7 +69,8 @@ bleibt maßgeblich: keine implizite Annahme.
 | Punkt | Zuständigkeit | Status |
 |---|---|---|
 | ATVM ↔ ShivaVM: kanonische Contract-VM festlegen (Redundanz auflösen) | Owner | OFFEN — Todo Task-DB |
-| ShivaVM: modulbezogener Test-Run als Evidence | Agent | OFFEN |
+| ShivaVM: modulbezogener Test-Run als Evidence | Agent | **BLOCKIERT** — globus-os/main nicht bauend (Issue #44); zuerst Compile-Fix |
+| Entscheidungssequenz ATVM↔ShivaVM (Owner-Review 06.10.2026): (1) ShivaVM-Evidence, (2) ATVM-Semantik gegen ATCLang-SoT abgleichen, (3) ADR erstellen, (4) Rollenentscheidung (Backend / interne System-VM / Adapter / obsolet), (5) VM-Architecture-Freeze vorbereiten | Owner + Agent | LAUFEND |
 | Bytecode-VM-Architektur-Freeze (analog Consensus-Freeze) | Owner | OFFEN — Vorschlag |
 
 ## 8. Querverweise
@@ -85,5 +86,6 @@ bleibt maßgeblich: keine implizite Annahme.
 | Version | Datum | Änderung |
 |---|---|---|
 | v0.1.0 | 2026-10-06 | Initiale Fassung (Draft): Zwei-Bedeutungs-Trennung, ATVM mit CI-Evidence IMPLEMENTED (Testsuite), ShivaVM UNVERIFIED, System-VM als negativer Befund, ATVM↔ShivaVM-Governancefrage dokumentiert |
+| v0.1.1 | 2026-10-06 | Owner-Review-Ergebnis: ATVM IMPLEMENTED*-Qualifikation bestätigt (Testsuite ≠ Feature-Vollständigkeit); Entscheidungssequenz (Evidence → Rollenklärung → ADR → Entscheidung → Freeze) festgezurrt; ShivaVM-Evidence-Run BLOCKIERT dokumentiert (globus-os#44: main nicht bauend, 33 Fehler); Rollenoptionen A/B/C aufgenommen (B: ShivaVM als konforme Kernel-Runtime, C: getrennte Domänen — B/C plausibler als zwei gleichberechtigte Contract-VMs; TCB-Grenze: Contract-Engine nicht ohne Capability-/Policy-Grenze in den Kernel) |
 
 Status-Änderungen (draft → proposed → active) erfolgen per Owner-Review gemäß ATC-STD-MD-001.
