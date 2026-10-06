@@ -101,6 +101,7 @@ Merkle-/Witness-Format, Node-Synchronisation. Keine Roadmap-Tatsache.
 - `a-townchain-os/ARCHITECTURE.md` (L7 Integration/Orchestrierung, keine Core-Implementierung)
 - `atc-standards/standards/sc/` (SC-Gates SC-G0..G13, Contract Registry)
 - Roadmap: ATC-07 (Sharding → Task-DB, LEGACY/UNVERIFIED), v3.x Research (Abschnitt 5)
+- `ATC_OS_ARCHITECTURE_REFERENCE_MODEL.md` (OS-Stack-Referenzmodell, gleiche Klassifikation; Kernel-SSOT: globus-os)
 
 ## 8. Versionierung
 
