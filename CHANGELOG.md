@@ -4,7 +4,7 @@
 
 ---
 
-## [v1.0.0] — 2026-08-04 — ShivaCore Kernel 712/712 Tests + Parser-Fixes
+## [1.0.0] — 2026-08-04 — ShivaCore Kernel 712/712 Tests + Parser-Fixes
 
 ### ShivaCore Kernel (Sprint 2.4 → 90%)
 - ✅ **712/712 Tests GRÜN** (Rust, no_std, 0 warnings, 0 errors)
@@ -21,7 +21,7 @@
 ### Sprint-Status (aktualisiert)
 - 2.1: 98% | 2.2: 100% ✅ | 2.3: 95% | 2.4: 90% | 2.5: 100% ✅ | 2.6: 85% | 3.0: 20%
 
-## [v1.0.0] — 2026-07-05 — ATCLang Migration Complete + Sprint Updates
+## [1.0.0] — 2026-07-05 — ATCLang Migration Complete + Sprint Updates
 
 ### ATCLang Migration
 - ✅ **92 .atc Dateien, 15.936 Zeilen ATCLang** (0 Python-Stubs in Production)
@@ -56,7 +56,7 @@
 
 ---
 
-## [v1.0-rc2] — 2026-06-14 — Non-EVM + Cleanup
+## [1.0.0-rc2] — 2026-06-14 — Non-EVM + Cleanup
 
 - ATCLang v0.3.0: async/await, Generics, Closures, Modul-System, Stdlib
 - ShivaOS Kernel v1.0: Syscalls, IPC Bus, ATCFS, AI Kernel
@@ -67,7 +67,7 @@
 
 ---
 
-## [v1.0-rc1] — 2026-06-10
+## [1.0.0-rc1] — 2026-06-10
 
 - Solana Bridge, DEX/AMM, DAO Governance
 - Mobile Wallet, Block Explorer
@@ -75,14 +75,14 @@
 
 ---
 
-## [v1.0-beta] — 2026-06-09
+## [1.0.0-beta] — 2026-06-09
 
 - Smart Contracts Python Stubs, ECDSA Wallet, P2P Bootstrap
 - 11 Issues geschlossen
 
 ---
 
-## [v0.9-alpha] — 2026-01 bis 2026-05
+## [0.9.0-alpha] — 2026-01 bis 2026-05
 
 - Whitepaper v0.9, 13-Layer-Architektur, ATCLang v0.2
 - Hybrid Consensus Konzept, Projektstruktur
