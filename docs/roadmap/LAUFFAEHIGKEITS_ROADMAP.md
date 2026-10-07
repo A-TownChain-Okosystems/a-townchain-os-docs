@@ -29,6 +29,24 @@ Test-/Boot-/Run-Nachweis, nie nur Behauptung).
 
 ## M2 — Kernel läuft (L1 atc-shivacore)
 
+> **Update 04.10. (Freigabe-Zug 9):** SC-009 Kernel-Diagnostics & Event-Bridge v0.1.0-FROZEN (Zwei-Klassen-Verdrängung SECURITY/DIAGNOSTIC nachgezogen, Grant-Pflicht für SUBSCRIBE + automatische Katalog-Fortschreibung als nicht-bindende G7-relevante Notizen eingefroren). Kern-Spez-Stapel SC-001…SC-009 komplett FROZEN. Offen: SC-010…SC-013 (Themenfestlegung durch Owner), danach SC-ARCH-001…010-Freeze; G7-Audit-Trail-Merge durch Owner bei G7-Terminierung (Vorlage liegt vor).
+
+> **Update 04.10. (Freigabe-Zug 8):** SC-008 Prozess- & Service-Erzeugung v0.1.0-FROZEN (nach Nachzug: REQ-SC008-07 Spawn als atomare OP-Sequenz mit Supervisor-Aufräum-Pflicht, REQ-SC008-10a empfängerunabhängiger Service-End, Loader-Frame-Grant-Wiring, Domain-Bindung=Erzeugungszeit). SC-009 Kernel-Diagnostics & Event-Bridge als DRAFT_REVIEW begonnen (Pflicht-Ereigniskatalog, IRQ-Deferral, Bridge im Service Space, Aurora NUR-LESEN). G7-Audit-Trail-VORLAGE committet (A: abgeleitete Aussagen / B: Nicht-Bindungs-Defaults / C: bereits wirksam) — Owner merged sie bei G7-Terminierung.
+
+> **Update 04.10. (Freigabe-Zug 7):** SC-007 AddressSpace & Memory v0.1.0-FROZEN mit drei nachgezogenen Owner-Anmerkungen (REQ-SC007-13a Terminal-Suspend, W^X als Kernel-Politik-Default ohne Service-Space-Pfad, REQ-SC007-09a Rechte-Reduktion-Propagation via mint+revoke). SC-008 Prozess- & Service-Erzeugung als DRAFT_REVIEW begonnen: explizite Erzeugung ohne fork/exec, erzwungene Supervisor-Reserve-Thread-Cap (löst 13a strukturell), Exit-Notification ohne waitpid, vollständiger Untyped-Rückfluss. Nächste: SC-009.
+
+> **Update 04.10. (Freigabe-Zug 6):** SC-006 Driver/Interrupt/Time v0.1.0-FROZEN (Owner-Überflug bestanden; Snapshot-Verdrahtung REQ-SC005-09a bestätigt; SC-005-Ableitung §3 ohne SC-DEC-O akzeptiert, Nachprotokollierung nur falls G7 separaten Audit-Trail erzwingt). SC-007 AddressSpace & Memory Objects als DRAFT_REVIEW begonnen (VA-Seite, W^X, Fault-Endpoint-Delivery, INV-09-Abgrenzung, HugePages-Pfad). Nächste: SC-008.
+
+> **Update 04.10. (Freigabe-Zug 5):** SC-005 Capability-System v0.1.0-FROZEN nach 4-Punkte-Verifikation am Volltext (Badge-Immunität INV-05, Limit-Semantik REQ-SC005-07a/C-E03, Snapshot-Revocation REQ-SC005-09a/INV-09 aus SC-004 INV-06/07 abgeleitet, keine Initial-Allmacht REQ-SC005-11). SC-006 Driver/Interrupt/Time als DRAFT_REVIEW begonnen (IRQ/Timer/Device-Caps, Treiber im Service Space). Nächste: SC-007.
+
+> **Update 04.10. (Freigabe-Zug 4):** SC-003 IPC & Endpoints + SC-004 Syscall-ABI gemeinsam v0.1.0-FROZEN (Default-only-Check SC-003 bestanden: keine versteckten ABI-Bindungen; SC-DEC-K/L/M freigegeben, N als Default ab SC-003 wirksam; K/L/M reversibel nur bis G7-Bindung, danach ABI-Freeze). SC-005 Capability-System-Vertiefung als DRAFT_REVIEW begonnen. Nächste: SC-006 Driver/Interrupt/Time.
+
+> **Update 03.10. (Freigabe-Zug 3):** SC-003 IPC & Endpoints als DRAFT_REVIEW gestellt (nur Defaults, keine blockierenden SC-DEC). SC-004 Syscall-Interface/ABI v0.1.0-DRAFT_REVIEW committet — vier Owner-Kandidaten SC-DEC-K…N vorgelegt (ABI-Nummernraum, Register-Konvention, Cap-Uebergabe, Fehler-/Restart-Semantik). Reihenfolge danach: SC-005 Capability → SC-006 Driver/Interrupt/Time → … → SC-013 ATCLang-ABI-Bindung → SC-ARCH-001…010-Freeze.
+
+> **Update 03.10. (Freigabe-Zug 2):** SC-DEC-A…J komplett freigegeben (Owner-Vorab-Regel; ab SC-003 keine blockierenden SC-DEC mehr, nur Defaults mit SC-ARCH-Review). SC-002 Scheduler & Scheduling-Domains FROZEN v0.1.0 (G=Bounded PI, H=tickless, I=250µs/1ms/10ms, J=HARDCUT für HARDRT). SC-003 IPC & Endpoints als DRAFT_REVIEW begonnen. Dependency-Review-Incident geheilt (PR #87/#88, Gate grün auf main 3faa92e).
+
+> **Update 03.10. (AD-026-G1-Check):** G1 verifiziert PASS (atclang specs/VERSION.toml: G1-PASSED 2026-09-07, G2 accepted; ABI bleibt 0.1.0-DRAFT). SC-001 (Boot & Speicher) als v0.1.0 DRAFT_REVIEW im Kernel-Repo committet (docs/specs/SC-001-BOOT_MEMORY.md, 15e8d55): echte Bootchain B0-B5, Speichermodell, Initial-Caps, SC-DEC-A…F-Entscheidungen offen. L0–L10 bleibt In-Kernel-Testsequenz, kein echtes Booten.
+
 - **Vault-Restauration:** docs/archive/monorepo-full/src/modules/atc-shivacore
   (60 .rs-Dateien, K29-Stand) → atc-shivacore-Repo. Byte-exakt im Vault
   gesichert (AD-020) — Restauration statt Neubau.
