@@ -26,6 +26,7 @@ Deployment-Zentrale, inkl. Unified Cargo Workspace und Kernel-Build).
 Kern-Stack (`src/`: gateway, blockchain, core, contracts, franchise, game, frontend),
 Plattform-Module (atc-backend, atc-gateway, atc-frontend, atc-ui, atc-cli, atc-sdk,
 atc-ide, atc-devtools, atc-ci, atc-deploy, atc-monitoring, atc-security, atc-social,
+atc-toolchain, atc-devtools, atc-ci, atc-deploy, atc-monitoring, atc-security, atc-social,
 atc-analytics, atc-atcpkg, atc-franchise, atc-standards, atc-whitepaper),
 Unified Cargo Workspace, Docker-Stack, Tests.
 
