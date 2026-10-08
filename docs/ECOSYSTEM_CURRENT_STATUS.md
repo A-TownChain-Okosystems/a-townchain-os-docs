@@ -79,12 +79,12 @@ The observations below are tied to the listed PR head SHAs and workflow runs ret
 
 | Repository / PR | PR head SHA | Observed result |
 |---|---|---|
-| [a-townchain-os-docs #40](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/pull/40) | `029904360248c4f8c26471d54d4296baf9bfeb3c` | Governance, Docs Gate, CodeQL and Dependency Review queued. |
+| [a-townchain-os-docs #40](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/pull/40) | `2006ee28dde121f3eb34d90163ab1d784d4a3f62` | Governance and Dependency Review queued; Docs Gate in progress; CodeQL in progress. |
 | [a-townchain #65](https://github.com/A-TownChain-Okosystems/a-townchain/pull/65) | `6a98d7fdd0eaca3d87e366c0f1731410f2e8df2f` | Tests, SDK Build, Governance, Dependency Review passed; Determinism and Code Quality failed; CodeQL in progress. |
 | [atc-launchpad #8](https://github.com/A-TownChain-Okosystems/atc-launchpad/pull/8) | `034bb5dfdbf3888dc9f8f3946604d835dc44b244` | Governance, Dependency Review, RustSec and CodeQL passed. |
-| [atc-vm #16](https://github.com/A-TownChain-Okosystems/atc-vm/pull/16) | `8e1c28b5b735ece2230a48f86c82f2bd5ff7916f` | Test Suite, Governance, Dependency Review, RustSec and CodeQL passed; this is not VM production verification. |
+| [atc-vm #16](https://github.com/A-TownChain-Okosystems/atc-vm/pull/16) | `6693286f3ccd0c7fd3db4865937e3ae8ea0c7b57` | Test Suite, Governance and RustSec passed; Dependency Review queued and CodeQL in progress; this is not VM production verification. |
 | [atc-zkp #7](https://github.com/A-TownChain-Okosystems/atc-zkp/pull/7) | `5807d4426f27f58b0348068d62e4ad52384125cd` | Test Suite, Governance, Dependency Review, RustSec, CodeQL and ZKP Quality Gates passed; Determinism failed. |
-| [atc-algorithm #13](https://github.com/A-TownChain-Okosystems/atc-algorithm/pull/13) | `42b169c30712ca64255f8f5b808b1f349c95ede6` | Governance, Dependency Review, RustSec and CodeQL passed; Test Suite and Determinism failed. |
+| [atc-algorithm #13](https://github.com/A-TownChain-Okosystems/atc-algorithm/pull/13) | `b13d66d324da6056238919489d2d5ca20922f591` | No PR-triggered workflow run returned for this latest head in the current query; prior head `42b169c30712ca64255f8f5b808b1f349c95ede6` had Test Suite and Determinism failures. |
 | [a-townchain-ecosystem #105](https://github.com/A-TownChain-Okosystems/a-townchain-ecosystem/pull/105) | `05a247f1b7052a8aa3626d922f3338767e550cd1` | Workflows queued at observation time. |
 | [globus-os #46](https://github.com/A-TownChain-Okosystems/globus-os/pull/46) | `d6f168ec4fb4af80230716c62dc5e3e44b18360d` | Governance, Dependency Review, RustSec, CodeQL and SDK Build passed; GlobusOS System CI, ATC Test Suite and Rust CI failed. |
 | [atc-toolchain #2](https://github.com/A-TownChain-Okosystems/atc-toolchain/pull/2) | `42bc760872de76cf1df36cfca05738d20ea7a4ff` | Governance, Toolchain Validation and Smoke Tests passed. |
