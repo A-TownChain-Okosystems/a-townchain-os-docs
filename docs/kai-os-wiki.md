@@ -1,5 +1,5 @@
 # 🧠⛓️ A-TownChain OS / KAI-OS — Offizielle Dokumentation v1.0
-> ⚠️ **Historisches Dokument (Snapshot 06.07.2026):** Beschreibt den Repository-Stand VOR der 128→2-Konsolidierung (03.09.2026). Alle Pfade entsprechen der damals gültigen Struktur und sind bewusst nicht umgeschrieben — aktuelle Struktur: Monorepo `src/modules/` (siehe `ARCHITECTURE.md`).
+> ⚠️ **Historisches Dokument (Snapshot 06.07.2026; nicht normativ):** Dieses Wiki enthält alte Architektur-, Repository-, Standards-, Sprint-, Test- und Betriebsangaben. Der frühere Verweis auf ein Monorepo `src/modules/` ist kein aktueller Source-of-Truth-Pfad. Aktuelle Zuständigkeiten und Sicherheitsgrenzen: [ARCHITECTURE_CURRENT.md](ARCHITECTURE_CURRENT.md) und [ECOSYSTEM_CURRENT_STATUS.md](ECOSYSTEM_CURRENT_STATUS.md). Normative Standards: [atc-standards](https://github.com/A-TownChain-Okosystems/atc-standards). Vor Implementierungs-, Produktions- oder Mainnet-Aussagen sind aktuelle kanonische Quellen und Exact-SHA-Evidence zu prüfen.
 
 
 
@@ -9,7 +9,7 @@
 **Version:** 1.0 — RELEASE | **Stand:** 2026-06-14 | **Lizenz:** Apache 2.0
 **Autor:** Michael Wroblewski | **Agent:** Aurora (MasterBrain · Base44)
 
-> ⚠️ **Architektur-Policy v1.0 (verbindlich)**
+> ⚠️ **Historische Architektur-Policy v1.0 (nicht normativ; ersetzt durch aktuelle SSOT-Regeln)**
 > - 🔴 **ATCLang First** — Einzige Programmiersprache. Kein Python, kein Solidity, kein Rust im Produktivcode.
 > - 🔴 **Non-EVM Chain** — A-TownChain ist keine EVM-Chain. Keine Ethereum-Kompatibilität (kein MetaMask, kein ERC-20).
 > - 🔴 **SHA-256** — TX-Hashing mit SHA-256 (AD-001 RESOLVED). Keine Migration zu Keccak-256.
