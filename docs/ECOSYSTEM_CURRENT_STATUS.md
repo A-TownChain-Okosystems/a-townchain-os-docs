@@ -73,6 +73,41 @@ Archive status is taken from the repository inventory response on the snapshot d
 - The previous `REALITY_STATUS.md` contained dated historical observations and claimed to be authoritative. It is now a deprecation notice; its previous contents remain in Git history. Use this snapshot only for the limited inventory and README-declared labels stated above.
 - Repository-specific implementation state must be refreshed from each repository's canonical status/evidence files and exact-SHA CI records before any claim is upgraded.
 
+## Default-branch exact-SHA CI snapshot
+
+**Snapshot date:** 2026-10-09. Each SHA below is the repository's `main` commit fetched from GitHub. The check-run summary is from the API query for that exact SHA. “No checks returned” means no check runs were returned by that query; it does **not** prove the repository has no CI or that its code passed. A passing subset does not imply complete verification.
+
+| Repository | `main` SHA | Observed check-run summary |
+|---|---|---|
+| `.github` | `eeacedf33fd4b81046a3ee56eb1c815836bd9833` | Two visible checks passed: analysis and quality. |
+| `a-townchain` | `b9f13056fb62cc2cbfc5747c8467ccb157fdc5f4` | Two visible language-analysis checks passed; no build/test/determinism check was returned for this SHA. |
+| `a-townchain-ecosystem` | `7ba6584961ca922f080441e7aba526263298fd2f` | Three visible checks passed: audit and JavaScript/Python analysis; no end-to-end integration gate was returned for this SHA. |
+| `a-townchain-os` | `8f5df13dba2918ea3f53f6edb24d00ca9748013a` | Latest visible audit failed ([run](https://github.com/A-TownChain-Okosystems/a-townchain-os/actions/runs/37859839310/job/113592671905)); quality and integration passed. |
+| `a-townchain-os-docs` | `be6271ebe8b20510f2dcf87a1dfbccbcbf0386da` | Seven visible checks passed, including docs, audit and docs-smoke. This is main, not the open PR #40 head. |
+| `atc-algorithm` | `69eeed5eb837d067d8c15791d5178b94a8d8724c` | Cargo tests and determinism failed ([tests](https://github.com/A-TownChain-Okosystems/atc-algorithm/actions/runs/37594109230/job/112702405880), [determinism](https://github.com/A-TownChain-Okosystems/atc-algorithm/actions/runs/37594108991/job/112702404270)); audit, security and analysis checks passed. |
+| `atc-compute` | `8283afc3697e9c193e05c8ea3deb78a9133bf4e4` | No check runs returned for this SHA; current CI state is UNKNOWN from this query. |
+| `atc-contracts` | `a7c8b417f482665ef30e94fcacae6469c28b1125` | ATCLang conformance and determinism failed ([conformance](https://github.com/A-TownChain-Okosystems/atc-contracts/actions/runs/37430837176/job/112161055391), [determinism](https://github.com/A-TownChain-Okosystems/atc-contracts/actions/runs/37430837162/job/112161054945)); several other visible checks passed. |
+| `atc-engineering` | `470e6a9f500fdade0ea33065d30dd76b58d6492b` | Fleet audit failed ([run](https://github.com/A-TownChain-Okosystems/atc-engineering/actions/runs/37479559720/job/112323983273)); Markdown lint, verification and self-test passed. |
+| `atc-ide` | `18ea7e8cd855c8404c9e291c931713e073146021` | JavaScript analysis and Markdown lint passed; no application test suite is declared. |
+| `atc-launchpad` | `9bd5aeaf2dd90966c92c9451e7da7166964c829f` | No check runs returned for this SHA; current CI state is UNKNOWN from this query. |
+| `atc-marketplace` | `4ebd6f8dd9e1d4bc49c455d25e184b9b6bd48e79` | One visible JavaScript/TypeScript analysis check passed. |
+| `atc-node` | `1ee3a3aee6d66681debca7934cd9aaa9e1051ee2` | Nine visible checks passed, including Cargo tests, determinism, conformance, audit and CodeQL. |
+| `atc-sdk` | `3ff63fe3a8232a3bcab52087d054634fe3dfd8e8` | Thirteen visible checks passed across Rust, TypeScript, Python, audit and test jobs. |
+| `atc-shivacore` | `7f93d3ff25738e6888ecf6fb40cbe8614a8cab56` | One visible Python analysis check passed; its evidence registry still declares tests `not_run`, security `not_audited`, conformance `not_verified`, and `latest_verified: null`. |
+| `atc-standards` | `65d43b6b3ac2e82723bfd9bc2a10d001e3cc0fc9` | Registry, conformance, quality and most checks passed, but the generated-view `regenerate` job failed ([run](https://github.com/A-TownChain-Okosystems/atc-standards/actions/runs/37852488615/job/113568631862)). Do not hand-edit generated files; investigate the generator/source drift. |
+| `atc-toolchain` | `090af476a5fb38e8b219754646991532e8b8fcda` | Six visible checks passed, including smoke and audit. |
+| `atc-vm` | `21132a49355eb5fd6ea4b8a7b4e4deb5d9be60f0` | Sixteen visible checks passed across audit, tests, execution and CodeQL. This does not change canonical ownership: the VM source remains under `a-townchain/components/vm`. |
+| `atc-zkp` | `52ce48442f42b65db1bd602a480971bc2ba9e9c7` | Determinism failed ([run](https://github.com/A-TownChain-Okosystems/atc-zkp/actions/runs/37808654557/job/113419478727)); visible audit, Cargo, Rust and CodeQL checks passed. |
+| `atclang` | `4d07524b06d01d3633f97192aa0d19c97d678990` | One visible Python analysis check passed; complete test/security evidence was not returned for this main SHA. |
+| `aurora-ai` | `74074f6b4a4ae992b14f5af79e1faa8a96ef3b00` | Python and JavaScript/TypeScript analysis passed; current main check query did not return the full build/test suite. |
+| `demo-repository` | `d9b0da9c966dea02586b6be64139e6b3cd669dfd` | Two visible build checks passed; this is a GitHub demo/template, not an ecosystem product-readiness claim. |
+| `genesis-chronicles` | `685e2053d3f9f9439a02f6208e4c7072e7c39493` | Four visible dependency/analysis checks passed; the checked-in evidence registry's test pass is bound to an older SHA, not this current main SHA. |
+| `genesis-engine` | `f01c5169862702c1377b3c631ad329fda119f262` | Five visible audit, Cargo and analysis checks passed. |
+| `genesis-franchise-factory` | `b393fde3630d2f4bc4d422442642af19e90bd9d6` | Twenty visible checks were returned; quality gates, audit and analysis checks passed. |
+| `globus-os` | `aad164fb21f82025043ade4e1dad8740fcc65b69` | One visible JavaScript/TypeScript analysis check passed; the current-main query did not return the full Rust/System/Test gate set. PR #46's separate documentation head had failed System CI, ATC Test Suite and Rust CI. |
+
+This table is a snapshot of **available check-run records**, not a guarantee that every repository has the same set of required checks. Empty/incomplete results remain UNKNOWN, not PASS. The open documentation PR heads are summarized separately below because their checks can differ from main.
+
 ## PR-head CI evidence sampled during this refresh
 
 The observations below are tied to the listed PR head SHAs and workflow runs returned by GitHub on 2026-10-09. A pass applies only to that workflow on that SHA; it does not independently verify the whole repository or product.
