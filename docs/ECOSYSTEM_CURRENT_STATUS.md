@@ -68,7 +68,7 @@ Archive status is taken from the repository inventory response on the snapshot d
 
 - The README previously stated **128 repositories, 2 active and 126 archived** and carried a 2026-09-03 update date. Those numbers do not match the organization inventory fetched on 2026-10-09.
 - `STATUS.md` contains an auto-generated 2026-08-04 snapshot with obsolete metrics and superseded issue references; it must not be used as current live status.
-- `REALITY_STATUS.md` contains many dated historical observations and self-declares itself authoritative. Its historical entries are not a current organization-wide status source; use this dated snapshot only for the limited inventory and README-declared labels stated above.
+- The previous `REALITY_STATUS.md` contained dated historical observations and claimed to be authoritative. It is now a deprecation notice; its previous contents remain in Git history. Use this snapshot only for the limited inventory and README-declared labels stated above.
 - Repository-specific implementation state must be refreshed from each repository's canonical status/evidence files and exact-SHA CI records before any claim is upgraded.
 
 ## Refresh procedure
