@@ -21,7 +21,7 @@ The organization inventory returned **33 repositories: 26 not archived and 7 arc
 | `atc-compute` | Development/rebuild-era description in README; production readiness not established here. |
 | `atc-contracts` | README labels M6 as CLAIMED, not VERIFIED. |
 | `atc-engineering` | README reports partial implementation; not a production platform. |
-| `atc-ide` | Experimental; README says no production build, test suite, or CI gates. |
+| `atc-ide` | Experimental; README says no production build or application test suite. Markdown Lint workflow exists; PR [#2](https://github.com/A-TownChain-Okosystems/atc-ide/pull/2) corrects the inaccurate “no CI gates” statement. |
 | `atc-launchpad` | Development; README describes initial skeleton. |
 | `atc-marketplace` | README is a short restored/legacy description; current maturity is not established by this inventory. |
 | `atc-node` | Development; no production readiness implied by documented commands or tests. |
