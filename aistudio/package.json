@@ -70,6 +70,11 @@
     "vitest": "^5.0.1"
   },
   "overrides": {
-    "proxy-addr": "2.0.8"
+    "proxy-addr": "2.0.8",
+    "undici": "7.29.1",
+    "@fastify/busboy": "3.2.2",
+    "@grpc/grpc-js": "1.14.5",
+    "brace-expansion": "2.1.7",
+    "source-map-js": "1.2.2"
   }
 }
