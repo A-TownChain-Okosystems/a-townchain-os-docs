@@ -28,7 +28,7 @@ The organization inventory returned **33 repositories: 26 not archived and 7 arc
 | `atc-sdk` | Development; protocol and VM semantics remain owned by canonical components. |
 | `atc-shivacore` | Development / NOT_READY; supporting specifications and governance only. Canonical kernel source is in `globus-os/modules/atc-shivacore/kernel/`. |
 | `atc-standards` | Canonical normative standards source. Read its generated state block and registry at the checked-out revision; do not copy mutable metrics into this hub. |
-| `atc-toolchain` | Not independently assessed in this snapshot; consult its current status and exact-SHA evidence. |
+| `atc-toolchain` | Development / R1 skeleton per README; exact-SHA verification not established in this snapshot. A license-description wording correction is proposed in PR [#2](https://github.com/A-TownChain-Okosystems/atc-toolchain/pull/2). |
 | `atc-vm` | Development; README describes an R1 skeleton. Canonical production VM implementation is `a-townchain/components/vm`; this repo must not be treated as a competing implementation. |
 | `atc-zkp` | Development / R1 skeleton according to README. |
 | `atclang` | Development; README explicitly says not production-ready. |
