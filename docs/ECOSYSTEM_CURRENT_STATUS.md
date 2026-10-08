@@ -71,10 +71,33 @@ Archive status is taken from the repository inventory response on the snapshot d
 - The previous `REALITY_STATUS.md` contained dated historical observations and claimed to be authoritative. It is now a deprecation notice; its previous contents remain in Git history. Use this snapshot only for the limited inventory and README-declared labels stated above.
 - Repository-specific implementation state must be refreshed from each repository's canonical status/evidence files and exact-SHA CI records before any claim is upgraded.
 
+## PR-head CI evidence sampled during this refresh
+
+The observations below are tied to the listed PR head SHAs and workflow runs returned by GitHub on 2026-10-09. A pass applies only to that workflow on that SHA; it does not independently verify the whole repository or product.
+
+| Repository / PR | PR head SHA | Observed result |
+|---|---|---|
+| [a-townchain-os-docs #40](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/pull/40) | `029904360248c4f8c26471d54d4296baf9bfeb3c` | Governance, Docs Gate, CodeQL and Dependency Review queued. |
+| [a-townchain #65](https://github.com/A-TownChain-Okosystems/a-townchain/pull/65) | `6a98d7fdd0eaca3d87e366c0f1731410f2e8df2f` | Tests, SDK Build, Governance, Dependency Review passed; Determinism and Code Quality failed; CodeQL in progress. |
+| [atc-launchpad #8](https://github.com/A-TownChain-Okosystems/atc-launchpad/pull/8) | `034bb5dfdbf3888dc9f8f3946604d835dc44b244` | Governance, Dependency Review, RustSec and CodeQL passed. |
+| [atc-vm #16](https://github.com/A-TownChain-Okosystems/atc-vm/pull/16) | `8e1c28b5b735ece2230a48f86c82f2bd5ff7916f` | Test Suite, Governance, Dependency Review, RustSec and CodeQL passed; this is not VM production verification. |
+| [atc-zkp #7](https://github.com/A-TownChain-Okosystems/atc-zkp/pull/7) | `5807d4426f27f58b0348068d62e4ad52384125cd` | Test Suite, Governance, Dependency Review, RustSec, CodeQL and ZKP Quality Gates passed; Determinism failed. |
+| [atc-algorithm #13](https://github.com/A-TownChain-Okosystems/atc-algorithm/pull/13) | `42b169c30712ca64255f8f5b808b1f349c95ede6` | Governance, Dependency Review, RustSec and CodeQL passed; Test Suite and Determinism failed. |
+| [a-townchain-ecosystem #105](https://github.com/A-TownChain-Okosystems/a-townchain-ecosystem/pull/105) | `05a247f1b7052a8aa3626d922f3338767e550cd1` | Workflows queued at observation time. |
+| [globus-os #46](https://github.com/A-TownChain-Okosystems/globus-os/pull/46) | `d6f168ec4fb4af80230716c62dc5e3e44b18360d` | Governance, Dependency Review, RustSec, CodeQL and SDK Build passed; GlobusOS System CI, ATC Test Suite and Rust CI failed. |
+| [atc-toolchain #2](https://github.com/A-TownChain-Okosystems/atc-toolchain/pull/2) | `42bc760872de76cf1df36cfca05738d20ea7a4ff` | Governance, Toolchain Validation and Smoke Tests passed. |
+| [atclang #21](https://github.com/A-TownChain-Okosystems/atclang/pull/21) | `329b3723989f1e5586f6b172683e34c3e48caaa3` | Dependency Review, RustSec, Governance, CodeQL, Determinism, Code Quality, Test Suite and independent audit passed. |
+| [atc-node #13](https://github.com/A-TownChain-Okosystems/atc-node/pull/13) | `41f88d77a0893e5d1f58031a96ed943d3e3f1d7d` | Governance, Dependency Review, RustSec and ATC-STD-600 Conformance passed; Determinism failed; CodeQL in progress. |
+| [atc-contracts #12](https://github.com/A-TownChain-Okosystems/atc-contracts/pull/12) | `2c5777a4e7ee6b11f50754ba048d72ee1dc6c495` | Governance, Dependency Review, CodeQL and Determinism passed; Test Suite failed. |
+| [atc-marketplace #12](https://github.com/A-TownChain-Okosystems/atc-marketplace/pull/12) | `b644aea4a3736c3423db6f3b26e81bd2eb11dd72` | Governance, Dependency Review and CodeQL passed; no test workflow was returned in this query. |
+
+**Coverage limit:** This is a targeted CI snapshot for PR heads touched during this refresh, not a complete CI audit of all 26 non-archived repositories. No CI state is inferred for repositories absent from this table.
+
 ## Refresh procedure
 
 1. Fetch the current repository inventory and exclude archived repositories from the active refresh queue.
-2. For each active repository, inspect `README.md`, `STATUS.md`, `ARCHITECTURE.md`, `ROADMAP.md`, the canonical registry entries and exact-SHA evidence.
+2. For every non-archived repository, inspect `README.md`, `STATUS.md`, `ARCHITECTURE.md`, `ROADMAP.md`, canonical registry entries and exact-SHA evidence.
 3. Resolve ownership against the SSOT boundaries above before changing claims.
 4. Commit documentation changes on a dedicated branch and submit a PR; do not edit generated registry views manually.
-5. Keep claims conservative where evidence is missing, inaccessible, stale, or not tied to the current source SHA.
+5. Re-run required workflows after a documentation commit; a previous SHA's result is not evidence for the new head.
+6. Keep claims conservative where evidence is missing, inaccessible, stale, or not tied to the current source SHA.
