@@ -136,6 +136,7 @@ The observations below are tied to the listed PR head SHAs and workflow runs ret
 | [genesis-chronicles #15](https://github.com/A-TownChain-Okosystems/genesis-chronicles/pull/15) | `4983e1c97d1ed4c371fc639dddb0822665311028` | Governance, Dependency Review and Code Quality passed; CodeQL in progress. |
 | [atc-ide #2](https://github.com/A-TownChain-Okosystems/atc-ide/pull/2) | `8320f1faeee91e66d29038a7f45d623778f764e5` | Markdown Lint in progress; this is not application test or production-build evidence. |
 | [genesis-franchise-factory #7](https://github.com/A-TownChain-Okosystems/genesis-franchise-factory/pull/7) | `d6edb8943c11429678b529dccca0a5d6d1f2af00` | Governance, Dependency Review, CodeQL, Test Suite and Code Quality queued. |
+| [atc-engineering #9](https://github.com/A-TownChain-Okosystems/atc-engineering/pull/9) | `53aa01646ec185a27d727740d488106ad15149cd` | Markdown Lint, verify and Python analysis queued; current main fleet-audit failure remains documented separately. |
 
 **Coverage limit:** This is a targeted CI snapshot for PR heads touched during this refresh, not a complete CI audit of all 26 non-archived repositories. No CI state is inferred for repositories absent from this table.
 
