@@ -10,7 +10,8 @@
 2. [Agent Coordination](docs/AGENT_COORDINATION.md) — Koordination; Zeitstempel und Aktualität prüfen.
 3. [Decision Register](docs/DECISIONS_REGISTER.md) — Entscheidungen im Kontext späterer Beschlüsse und kanonischer Quellen lesen.
 4. [Current Ecosystem Status](docs/ECOSYSTEM_CURRENT_STATUS.md) — begrenzte Inventur und SSOT-Grenzen vom 2026-10-09.
-5. [Roadmap](docs/ROADMAP.md) · [Status](STATUS.md) · [Changelog](CHANGELOG.md).
+5. [Current Architecture Reference](docs/ARCHITECTURE_CURRENT.md) — konsolidiertes Ownership-, Security- und Evidence-Modell.
+6. [Roadmap](docs/ROADMAP.md) · [Status](STATUS.md) · [Changelog](CHANGELOG.md).
 
 ## Inventur und Reifegrad
 
