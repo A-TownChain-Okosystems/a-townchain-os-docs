@@ -1,6 +1,16 @@
 # Changelog — A-TownChain OS / KAI-OS
 
-> **Version:** 1.0.0 | **Stand:** 05.07.2026 | **Lizenz:** Apache 2.0
+> **Version:** 1.0.0 | **Dokumentations-Refresh:** 2026-10-09 | **Lizenz:** Apache-2.0
+
+## [Unreleased] — 2026-10-09 — Ecosystem documentation reality refresh
+
+- Replaced stale repository-count and auto-generated status claims with a dated 33 / 26 / 7 inventory snapshot and explicit evidence limits.
+- Added a consolidated architecture/SSOT reference for standards, ATCLang, canonical ATC-VM, algorithm/consensus, ShivaCore, GlobusOS, Aurora AI, integration and orchestration.
+- Reclassified old AI, consensus, compiler, kernel and cluster pages as historical where they contained unsupported current implementation or production claims.
+- Added exact-PR-head CI observations and coverage limits; red and pending gates remain visible.
+- Updated component documentation proposals for canonical VM/algorithm ownership, historical audit labels, stale test/status metrics and development readiness.
+- No implementation, normative standard, CI gate, branch protection or release policy was changed by this documentation refresh.
+
 
 ---
 
