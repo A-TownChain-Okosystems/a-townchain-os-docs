@@ -1,7 +1,9 @@
 # A-TownChain Ecosystem — Decisions Register
 
-> **Stand:** 08.09.2026 01:05 | **Autor:** Aurora (MasterBrain)
-> **Agenten-Rolle:** GovernanceAgent (via MasterBrain)
+> **Zuletzt gegen aktuelle Quellen geprüft:** 2026-10-09 (Header/Statuskontext; keine vollständige Revalidierung aller Entscheidungen) | **Historischer Registerbestand:** ab 08.09.2026 fortgeschrieben
+> **Governance-Hinweis:** Ein beschlossener AD-Eintrag ist keine Implementierungs- oder Verifikations-Evidence. Prüfe spätere Beschlüsse, kanonische Repositories und SHA-gebundene Nachweise.
+
+> Aktuelle Inventur und SSOT-Grenzen: [ECOSYSTEM_CURRENT_STATUS.md](ECOSYSTEM_CURRENT_STATUS.md) · [ARCHITECTURE_CURRENT.md](ARCHITECTURE_CURRENT.md)
 
 ---
 
