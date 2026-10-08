@@ -1,7 +1,4 @@
-| Repositories | 33 insgesamt: 26 nicht archiviert, 7 archiviert (GitHub-Inventur vom 09.10.2026) |
-| Statussemantik | Repository-README-Angaben sind keine unabhängige Verifikation |
-| Standards | Normative SSOT: `atc-standards`; lokale Standards sind Archiv-/Referenzmaterial |
-| Mainnet | Kein freigegebener Mainnet-Termin; Status muss aus kanonischer Release-Evidence hervorgehen |# 🧠⛓️ A-TownChain OS / KAI-OS — Offizielle Dokumentation
+# 🧠⛓️ A-TownChain OS / KAI-OS — Offizielle Dokumentation
 
 > ## 🤖 Für KI-Agenten — Pflichtlektüre vor jeder Änderung
 > 1. [`docs/AGENT_POLICY.md`](docs/AGENT_POLICY.md) — verbindliche Regeln, Reality-Check, Konsolidierungsziel
