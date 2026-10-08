@@ -1,122 +1,50 @@
-# 🧠⛓️ A-TownChain OS / KAI-OS — Offizielle Dokumentation
+# A-TownChain OS / KAI-OS — Ecosystem Documentation Hub
 
-> ## 🤖 Für KI-Agenten — Pflichtlektüre vor jeder Änderung
-> 1. [`docs/AGENT_POLICY.md`](docs/AGENT_POLICY.md) — verbindliche Regeln, Reality-Check, Konsolidierungsziel
-> 2. [`docs/AGENT_COORDINATION.md`](docs/AGENT_COORDINATION.md) — wer arbeitet gerade woran, Agent-IDs
-> 3. [`docs/DECISIONS_REGISTER.md`](docs/DECISIONS_REGISTER.md) — verbindliche Architektur-Entscheidungen
+This repository is the documentation hub for the A-TownChain ecosystem. It contains system-level documentation, architecture references, roadmaps, whitepapers and historical archives. It is **not** the canonical source for every component implementation or for normative standards.
 
-> Dezentrales, KI-gesteuertes Blockchain-Betriebssystem
-> **A-TownChain OS** (technisch) · **KAI-OS** (Produktname)
+**Documentation refresh:** 2026-10-09  
+**License:** Apache-2.0
 
-Dies ist der **kanonische Dokumentations-Hub** des A-TownChain-Ökosystems.
+## Start here
 
-**Version:** 1.0.0 | **Stand:** 03.09.2026 | **Lizenz:** Apache-2.0
-**Autor:** Michael Wroblewski | **Agent:** Aurora (Base44 Superagent)
+- [Current ecosystem status snapshot](docs/ECOSYSTEM_CURRENT_STATUS.md) — dated repository inventory, declared status labels, SSOT boundaries and evidence rules.
+- [Agent policy](docs/AGENT_POLICY.md) — required change and evidence discipline.
+- [Agent coordination](docs/AGENT_COORDINATION.md) — coordination notes; check freshness before relying on them.
+- [Decision register](docs/DECISIONS_REGISTER.md) — architecture decisions, subject to current canonical sources and subsequent decisions.
+- [Roadmap](docs/ROADMAP.md) · [Status](STATUS.md) · [Changelog](CHANGELOG.md)
 
----
+## Current inventory
 
-## Architektur-Policy v1.0
+The GitHub inventory fetched on 2026-10-09 returned **33 repositories total: 26 not archived and 7 archived**. This is an inventory count, not a maintenance, implementation, audit or production-readiness assertion. See the [snapshot](docs/ECOSYSTEM_CURRENT_STATUS.md) for the list and evidence limitations.
 
-- 🔴 **ATCLang First** — Kern-Logik in ATCLang (ATC-99)
-- 🔴 **SHA-256** — TX-Hashing (AD-001 RESOLVED)
-- 🔴 **Chain-ID 658467** — Apache-2.0e Non-EVM Chain-ID, ASCII 'ATC' (AD-004 RESOLVED)
-- 🔴 **Dual-Repo-Modell** — Code in `a-townchain-os`, Doku hier (Mandat AGENT_POLICY/AD-89)
+Older statements in this repository that describe **128 repositories, 2 active and 126 archived** are stale and must not be used as current inventory. Historical sprint reports and test counts retain their original dates and do not establish current behavior.
 
-## Metriken (Stand 03.09.2026)
+## Architecture and source-of-truth rules
 
-| Metrik | Wert |
-|--------|------|
-| Repositories | 128 total — **2 aktiv, 126 archiviert** (Konsolidierung Sept 2026) |
-| Hub-Dateien | 1.700+ (kanonische Doku + Archive) |
-| ATC-Standards | ATC-01…35 (5 Tiers, Tier 5 aktiv) + ATC-97 (AIP-Entwurf) + ATC-99 (ATCLang First) |
-| ShivaCore Rust-Kernel | K29 abgeschlossen — 30 Module, 367/367 Tests grün |
-| Monorepo | 2.237 Dateien, 60 Module, VERSION 1.0.0, 0 Audit-Fehler |
-| Interne Links | 873 geprüft, 0 kaputt |
-| Mainnet-Launch | per AD-023 kein Termin (qualitaetsgetrieben) |
+- **Normative standards:** [`atc-standards`](https://github.com/A-TownChain-Okosystems/atc-standards) owns the canonical standards registry. The local `docs/standards/` tree is a historical/reference snapshot only.
+- **Blockchain core:** [`a-townchain`](https://github.com/A-TownChain-Okosystems/a-townchain).
+- **ATC-VM:** canonical implementation at `a-townchain/components/vm`; do not create a competing production implementation.
+- **Algorithm/consensus:** canonical implementation at `a-townchain/components/algorithm`.
+- **ShivaCore kernel:** canonical source at `globus-os/modules/atc-shivacore/kernel/`; `atc-shivacore` is for supporting specifications, tooling and governance.
+- **System integration/orchestration:** `a-townchain-os` and `a-townchain-ecosystem` coordinate integration, compliance and evidence; they do not replace component owners.
+- **Aurora AI:** AI/service layer, not the ShivaCore trusted computing base, consensus authority, ATC-VM or canonical chain authority.
 
-## K-Sprint-Status
+Treat repository-specific status files and exact-SHA CI evidence as authoritative for the component they cover. A system-level document cannot upgrade a component's implementation or verification state.
 
-| Phase | Status |
-|-------|--------|
-| K3–K29 — ShivaCore Rust-Kernel | ✅ ABGESCHLOSSEN (367 Tests) |
-| Konsolidierung 128→2 | ✅ ABGESCHLOSSEN (Migration, Datenverlust-Check, Archivierung) |
-| K30 — Validator-Nodes (#70) | 🔵 AUSSTEHEND |
-| K31 — Genesis Block (#71) | 🔵 AUSSTEHEND |
-| #69 — Security (Dependabot 70 Vulns) | 🔴 OFFEN — vor K30 priorisiert |
-| K32 — Pre-Launch Verify · K33 — External Audit | 🟡 GEPLANT |
+## Evidence and maturity language
 
-## Quick Links
+- **SPECIFIED** means requirements or a design are documented.
+- **IMPLEMENTED** means an implementation exists; correctness is not implied.
+- **VERIFIED** requires relevant evidence tied to the exact source SHA, with the workflow run, job, step, exit status and logs.
+- **AUDITED** and **PRODUCTION_READY** require their own applicable gates and evidence. They must not be inferred from a passing test, a compliance badge, a PR merge, or an older report.
+- Preserve blocked and residual findings. Never weaken CI or branch-protection gates to make status appear green.
 
-- [Roadmap](docs/ROADMAP.md) | [Status](STATUS.md) | [TODO](TODO.md) | [Changelog](CHANGELOG.md)
-- [Standards Registry](docs/standards/STANDARDS_REGISTRY.md) | [KAI-OS Wiki](docs/kai-os-wiki.md)
-- [Launch-Checkliste & Roadmap](docs/project/) | [Whitepaper](docs/whitepaper/)
-- [Compliance (BaFin)](docs/compliance/) | [Lizenz-Übersicht](docs/LICENSING_OVERVIEW.md)
-- [Agent Master Rules](AGENT_MASTERRULES.md) | [ATCLang First Policy](ATCLANG_FIRST.md)
+## Historical material
 
-## Hub-Struktur
+Files such as `REALITY_STATUS.md`, `STATUS.md`, archived wiki chapters and older sprint reports contain time-bound claims. Their dates and methods must be read in context. The previous `STATUS.md` snapshot is explicitly marked as stale; the current limited inventory is in [ECOSYSTEM_CURRENT_STATUS.md](docs/ECOSYSTEM_CURRENT_STATUS.md). Neither document substitutes for repository-specific exact-SHA evidence.
 
-```
-docs/
-├── standards/       # ATC-01…35 + ATC-LIC/ATS-LIC (kanonisch)
-├── wiki/            # KI-OS Wiki-Struktur (Kapitel je Modul)
-├── whitepaper/      # Whitepaper + Einzelkapitel
-├── compliance/      # BaFin-Konformität, Richtlinien
-├── project/         # Master-Component-Plan, Launch-Checkliste
-├── issues/ sprints/ # Issue- und Sprint-Dokumentation
-├── archive/
-│   ├── wiki/        # 65 Modul-Wikis ( verschmolzen, mit Index)
-│   └── kai-os-legacy/
-└── monorepo-legacy/ # Historische Monorepo-Docs (eingefroren)
-```
+## Contributing
 
-## Repository-Struktur (Dual-Repo-Modell)
+Make documentation changes on a dedicated branch and submit them through a pull request. Respect canonical source repositories, generated-file ownership, existing required checks and review policy. Do not copy mutable standards counts into this hub; link to the current generated state in `atc-standards` instead.
 
-```
-a-townchain-os/        # Code-Monorepo: 60 Module, ShivaCore K29, VERSION 1.0.0
-a-townchain-os-docs/  # Doku-Hub (dieses Repo): Standards, Wiki, Whitepaper, Archive
-```
-
----
-
-*A-TownChain OS / KAI-OS · v1.0.0 · Non-EVM · SHA-256 · Chain-ID 658467 · ATCLang First*
-
-## Lizenzmodell
-
-A-TownChain etabliert ein **monetarisiertes, autonomes Open-Source-Ökosystem**.
-
-**"Code is Law" auf Lizenzebene:** Unlizenzierter Code wird von der ATVM physisch gar nicht erst ausgeführt.
-
-- **ATC-LIC** — Smart Contract Lizenzen mit automatischer Royalty-Durchsetzung
-- **ATS-LIC** — System & Hardware Lizenzen mit TPM-Verifikation
-- **Compliance-Handbuch** — BaFin-konforme Dokumentation
-
-→ [Lizenz-Übersicht](docs/LICENSING_OVERVIEW.md) | [ATC-LIC](docs/standards/ATC-LIC-SMART_CONTRACT_LICENSE.md) | [ATS-LIC](docs/standards/ATS-LIC-SYSTEM_HARDWARE_LICENSE.md) | [Compliance-Handbuch](docs/compliance/COMPLIANCE_HANDBUCH.md)
-
-Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. Apache-2.0.
-
-## Verwandte Vision-Projekte
-
-- [`atc-genesis-engine`](https://github.com/A-TownChain-Okosystems/a-townchain-os/tree/main/src/modules/atc-genesis-engine) — Vision-/Konzept-Modul für eine potenzielle zukünftige Game-Engine (Genesis Engine) und deren Ausbaustufen. Reines Konzeptmaterial, kein aktueller Teil der A-TownChain-Kernentwicklung.
-
----
-
-**Last Updated:** 2026-09-03 by Aurora (Base44 Superagent)
-
----
-
-## ATC Compliance & Governance (ATC-STD-201 / 202 / 203)
-
-**ATC COMPLIANCE: R3** — auditiert am 2026-09-07 (atc-repo-audit; R-Level aus `.atc/repository.yaml`).
-Architekturentscheidungen: zentral im [DECISIONS_REGISTER](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/blob/main/docs/DECISIONS_REGISTER.md) (AD-Nummern verbindlich; lokale Entscheidungen in `docs/decisions/`).
-
-- **Purpose:** Dokumentations-Hub des Oekosystems (parallel zu L0-L7).
-- **Scope:** Layer parallel, Domain documentation — a-townchain-os-docs als SPEC in der 23-Repo-Landschaft (AD-024/026).
-- **Architecture:** DECISIONS_REGISTER (AD-001…), Roadmaps (M1-M8, AD-027), Audits, Projekt-Doku; Standards: kanonisch im atc-standards-Repo (AD-030), Hub docs/standards = Archiv-Snapshot.
-- **Features:** Wiki, Whitepaper, Compliance-Handbuch, BaFin-Bericht, REPOSITORY_MAP.
-- **Installation:** Modul-Build je Sprache (markdown); Integration via Monorepo-Workspace (a-townchain-os, sync_modules.py).
-- **Development:** Conventional Commits; Governance-Regeln aus atc-standards; Naming gemaess ATC-STD-000 §7.
-- **Testing:** Interne Link-Audits (873+94 Links geprueft, 0 kaputt); Governance-CI.
-- **Security:** SECURITY.md; S-Klasse S3; ATC-STD-203 Release-Gates; Emergency-Prozess ATC-STD-000 §32.
-- **Roadmap:** Einordnung in die Lauffaehigkeits-Roadmap M1-M8 (AD-027) und Bauhierarchie L0-L7 (AD-026).
-- **Version:** CHANGELOG.md; SemVer; Releases als ATC-REL-X.Y.Z.
-- **License:** Apache-2.0 — Apache-2.0, Michael Wroblewski / ShivaCore / A-TownChain-Okosystems (ATC-LIC/ATS-LIC).
+Copyright (c) 2026 A-TownChain-Okosystems. Licensed under Apache-2.0.
