@@ -79,7 +79,7 @@ The observations below are tied to the listed PR head SHAs and workflow runs ret
 
 | Repository / PR | PR head SHA | Observed result |
 |---|---|---|
-| [a-townchain-os-docs #40](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/pull/40) | `2006ee28dde121f3eb34d90163ab1d784d4a3f62` | Governance and Dependency Review queued; Docs Gate in progress; CodeQL in progress. |
+| [a-townchain-os-docs #40](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/pull/40) | See current PR head | Self-referential status: check the linked PR's required checks for its latest head; each documentation commit restarts the applicable checks. |
 | [a-townchain #65](https://github.com/A-TownChain-Okosystems/a-townchain/pull/65) | `6a98d7fdd0eaca3d87e366c0f1731410f2e8df2f` | Tests, SDK Build, Governance, Dependency Review passed; Determinism and Code Quality failed; CodeQL in progress. |
 | [atc-launchpad #8](https://github.com/A-TownChain-Okosystems/atc-launchpad/pull/8) | `034bb5dfdbf3888dc9f8f3946604d835dc44b244` | Governance, Dependency Review, RustSec and CodeQL passed. |
 | [atc-vm #16](https://github.com/A-TownChain-Okosystems/atc-vm/pull/16) | `6693286f3ccd0c7fd3db4865937e3ae8ea0c7b57` | Test Suite, Governance and RustSec passed; Dependency Review queued and CodeQL in progress; this is not VM production verification. |
@@ -92,13 +92,13 @@ The observations below are tied to the listed PR head SHAs and workflow runs ret
 | [atc-node #13](https://github.com/A-TownChain-Okosystems/atc-node/pull/13) | `41f88d77a0893e5d1f58031a96ed943d3e3f1d7d` | Governance, Dependency Review, RustSec and ATC-STD-600 Conformance passed; Determinism failed; CodeQL in progress. |
 | [atc-contracts #12](https://github.com/A-TownChain-Okosystems/atc-contracts/pull/12) | `2c5777a4e7ee6b11f50754ba048d72ee1dc6c495` | Governance, Dependency Review, CodeQL and Determinism passed; Test Suite failed. |
 | [atc-marketplace #12](https://github.com/A-TownChain-Okosystems/atc-marketplace/pull/12) | `b644aea4a3736c3423db6f3b26e81bd2eb11dd72` | Governance, Dependency Review and CodeQL passed; no test workflow was returned in this query. |
-| [aurora-ai #31](https://github.com/A-TownChain-Okosystems/aurora-ai/pull/31) | `5b68ba32cd59a795197bf5a93dce5f4084c4048f` | SDK Build, Dependency Review and CodeQL passed; Governance in progress. |
-| [atc-compute #8](https://github.com/A-TownChain-Okosystems/atc-compute/pull/8) | `3cfed16018252c3700a6acaba1234fe6ba45e821` | Code Quality, Governance and Dependency Review passed; RustSec and CodeQL queued. |
-| [atc-sdk #14](https://github.com/A-TownChain-Okosystems/atc-sdk/pull/14) | `63806a1b8d50bd010a771e912f1ccbd13f057942` | Test Suite, Governance, Dependency Review and RustSec passed; SDK Build queued; CodeQL in progress. |
-| [genesis-engine #30](https://github.com/A-TownChain-Okosystems/genesis-engine/pull/30) | `0bd0ce268c84b97001785fcd65ed8e400d05889c` | SDK Build, Determinism, Governance and Dependency Review passed; Enterprise CI and CodeQL in progress. |
-| [atc-shivacore #24](https://github.com/A-TownChain-Okosystems/atc-shivacore/pull/24) | `17762d8fa00055e6d10894f0cc50cf66d238ceb8` | Dependency Review passed; CodeQL, SDK Build, Governance, Determinism and RustSec queued. |
-| [a-townchain-os #130](https://github.com/A-TownChain-Okosystems/a-townchain-os/pull/130) | `44188fffb63fc5518bead9fe31afaa881550051c` | Release Pipeline, PR Validation, Integration Gate and Dependency Review queued; Governance in progress. |
-| [genesis-chronicles #15](https://github.com/A-TownChain-Okosystems/genesis-chronicles/pull/15) | `4983e1c97d1ed4c371fc639dddb0822665311028` | Governance, Dependency Review, CodeQL and Code Quality queued. |
+| [aurora-ai #31](https://github.com/A-TownChain-Okosystems/aurora-ai/pull/31) | `5b68ba32cd59a795197bf5a93dce5f4084c4048f` | SDK Build, Governance, Dependency Review and CodeQL passed. |
+| [atc-compute #8](https://github.com/A-TownChain-Okosystems/atc-compute/pull/8) | `3cfed16018252c3700a6acaba1234fe6ba45e821` | Code Quality, Governance, Dependency Review, RustSec and CodeQL passed. |
+| [atc-sdk #14](https://github.com/A-TownChain-Okosystems/atc-sdk/pull/14) | `63806a1b8d50bd010a771e912f1ccbd13f057942` | Test Suite, SDK Build, Governance, Dependency Review and RustSec passed; CodeQL in progress. |
+| [genesis-engine #30](https://github.com/A-TownChain-Okosystems/genesis-engine/pull/30) | `0bd0ce268c84b97001785fcd65ed8e400d05889c` | SDK Build, Determinism, Governance, Dependency Review and CodeQL passed; Enterprise CI in progress. |
+| [atc-shivacore #24](https://github.com/A-TownChain-Okosystems/atc-shivacore/pull/24) | `17762d8fa00055e6d10894f0cc50cf66d238ceb8` | SDK Build, Governance, Dependency Review and RustSec passed; Determinism failed; CodeQL in progress. |
+| [a-townchain-os #130](https://github.com/A-TownChain-Okosystems/a-townchain-os/pull/130) | `44188fffb63fc5518bead9fe31afaa881550051c` | Release Pipeline, Integration Gate and Dependency Review passed; Governance and PR Validation failed. |
+| [genesis-chronicles #15](https://github.com/A-TownChain-Okosystems/genesis-chronicles/pull/15) | `4983e1c97d1ed4c371fc639dddb0822665311028` | Governance, Dependency Review and Code Quality passed; CodeQL in progress. |
 
 **Coverage limit:** This is a targeted CI snapshot for PR heads touched during this refresh, not a complete CI audit of all 26 non-archived repositories. No CI state is inferred for repositories absent from this table.
 
