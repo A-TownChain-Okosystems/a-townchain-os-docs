@@ -99,6 +99,8 @@ The observations below are tied to the listed PR head SHAs and workflow runs ret
 | [atc-shivacore #24](https://github.com/A-TownChain-Okosystems/atc-shivacore/pull/24) | `17762d8fa00055e6d10894f0cc50cf66d238ceb8` | SDK Build, Governance, Dependency Review and RustSec passed; Determinism failed; CodeQL in progress. |
 | [a-townchain-os #130](https://github.com/A-TownChain-Okosystems/a-townchain-os/pull/130) | `44188fffb63fc5518bead9fe31afaa881550051c` | Release Pipeline, Integration Gate and Dependency Review passed; Governance and PR Validation failed. |
 | [genesis-chronicles #15](https://github.com/A-TownChain-Okosystems/genesis-chronicles/pull/15) | `4983e1c97d1ed4c371fc639dddb0822665311028` | Governance, Dependency Review and Code Quality passed; CodeQL in progress. |
+| [atc-ide #2](https://github.com/A-TownChain-Okosystems/atc-ide/pull/2) | `8320f1faeee91e66d29038a7f45d623778f764e5` | Markdown Lint in progress; this is not application test or production-build evidence. |
+| [genesis-franchise-factory #7](https://github.com/A-TownChain-Okosystems/genesis-franchise-factory/pull/7) | `d6edb8943c11429678b529dccca0a5d6d1f2af00` | Governance, Dependency Review, CodeQL, Test Suite and Code Quality queued. |
 
 **Coverage limit:** This is a targeted CI snapshot for PR heads touched during this refresh, not a complete CI audit of all 26 non-archived repositories. No CI state is inferred for repositories absent from this table.
 
