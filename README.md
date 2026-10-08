@@ -32,13 +32,13 @@ Dies ist der **kanonische Dokumentations-Hub** des A-TownChain-Ökosystems.
 
 | Metrik | Wert |
 |--------|------|
-| Repositories | 128 total — **2 aktiv, 126 archiviert** (Konsolidierung Sept 2026) |
-| Hub-Dateien | 1.700+ (kanonische Doku + Archive) |
-| ATC-Standards | ATC-01…35 (5 Tiers, Tier 5 aktiv) + ATC-97 (AIP-Entwurf) + ATC-99 (ATCLang First) |
-| ShivaCore Rust-Kernel | K29 abgeschlossen — 30 Module, 367/367 Tests grün |
-| Monorepo | 2.237 Dateien, 60 Module, VERSION 1.0.0, 0 Audit-Fehler |
-| Interne Links | 873 geprüft, 0 kaputt |
-| Mainnet-Launch | per AD-023 kein Termin (qualitaetsgetrieben) |
+| Repositories | 33 total — **26 nicht archiviert, 7 archiviert** (GitHub-Inventur 09.10.2026) |
+| Status-Evidence | Repository-README-Angaben sind deklarierte Zustände, keine unabhängige Verifikation |
+| Normative Standards | Kanonische Registry: `atc-standards`; `docs/standards/` ist Archiv-/Referenzmaterial |
+| ShivaCore Kernel | Kanonische Quelle: `globus-os/modules/atc-shivacore/kernel/`; keine aktuelle Produktionsfreigabe abgeleitet |
+| Systemorchestrierung | `a-townchain-os` koordiniert Integration; Komponentenimplementierungen bleiben in ihren kanonischen Repositories |
+| Interne Links | Frühere Link-Audits sind historische Evidence; aktueller Zustand muss neu geprüft werden |
+| Mainnet | Kein freigegebener Mainnet-Termin; Release-Readiness nur anhand aktueller Gates/Evidence |
 
 ## Aktueller Status — Einordnung
 
@@ -80,13 +80,13 @@ docs/
 ## Repository-Struktur (Dual-Repo-Modell)
 
 ```
-a-townchain-os/        # Code-Monorepo: 60 Module, ShivaCore K29, VERSION 1.0.0
+a-townchain-os/        # Systemorchestrierung und Integrationsvalidierung
 a-townchain-os-docs/  # Doku-Hub (dieses Repo): Standards, Wiki, Whitepaper, Archive
 ```
 
 ---
 
-*A-TownChain OS / KAI-OS · v1.0.0 · Non-EVM · SHA-256 · Chain-ID 658467 · ATCLang First*
+*A-TownChain OS / KAI-OS · Dokumentations-Hub · Snapshot 09.10.2026 · Status stets gegen kanonische Quellen prüfen*
 
 ## Lizenzmodell
 
@@ -118,7 +118,7 @@ Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. Apac
 Architekturentscheidungen: zentral im [DECISIONS_REGISTER](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs/blob/main/docs/DECISIONS_REGISTER.md) (AD-Nummern verbindlich; lokale Entscheidungen in `docs/decisions/`).
 
 - **Purpose:** Dokumentations-Hub des Oekosystems (parallel zu L0-L7).
-- ****Scope:** Dokumentations-Hub für die aktuell gelisteten 33 Repositories (26 nicht archiviert, 7 archiviert; Snapshot 09.10.2026).
+- **Scope:** Dokumentations-Hub für die aktuell gelisteten 33 Repositories (26 nicht archiviert, 7 archiviert; Snapshot 09.10.2026).
 - **Architecture:** DECISIONS_REGISTER (AD-001…), Roadmaps (M1-M8, AD-027), Audits, Projekt-Doku; Standards: kanonisch im atc-standards-Repo (AD-030), Hub docs/standards = Archiv-Snapshot.
 - **Features:** Wiki, Whitepaper, Compliance-Handbuch, BaFin-Bericht, REPOSITORY_MAP.
 - **Installation:** Modul-Build je Sprache (markdown); Integration via Monorepo-Workspace (a-townchain-os, sync_modules.py).
