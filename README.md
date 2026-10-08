@@ -58,4 +58,52 @@ Historische Wiki-Kapitel, Sprintberichte, Roadmaps und Compliance-Dokumente müs
 
 Dokumentationsänderungen werden auf einem dedizierten Branch committed und per Pull Request eingereicht. Generated views, Registry-Zahlen und normative Standards dürfen nicht manuell in diesem Hub überschrieben werden. Vor Merge sind die geforderten Checks und die Review-Policy zu erfüllen.
 
+## Purpose
+
+This repository is the documentation hub for the A-TownChain ecosystem; it does not own canonical component implementations.
+
+## Scope
+
+It maintains system-level architecture, the wiki, roadmap, historical documentation, and a dated status/evidence snapshot. The active repository inventory is 33 total, 26 not archived and 7 archived as of 2026-10-09.
+
+## Architecture
+
+Use [the current architecture reference](docs/ARCHITECTURE_CURRENT.md) and [the ecosystem status snapshot](docs/ECOSYSTEM_CURRENT_STATUS.md). Component source-of-truth ownership stays in the canonical repositories.
+
+## Features
+
+Documentation navigation, architecture/SSOT references, roadmap and evidence links. The hub does not claim end-to-end integration is verified unless exact-SHA evidence demonstrates it.
+
+## Installation
+
+No software installation is required to read these Markdown documents. Build/runtime installation instructions belong to the respective component repositories.
+
+## Development
+
+Make documentation changes on a dedicated branch and submit a pull request. Preserve generated-file ownership and existing governance checks.
+
+## Testing
+
+The Docs Gate validates YAML and Markdown inventory; the repository audit validates documentation and governance structure. Passing documentation checks does not verify the software described by these pages.
+
+## Security
+
+Do not publish secrets or credentials. ShivaCore TCB, Aurora AI, chain authority and canonical VM boundaries are defined in the architecture reference. Security audit and production readiness remain separate evidence-backed states.
+
+## Roadmap
+
+See [the evidence-driven roadmap](docs/ROADMAP.md). Dates, percentages and test counts from older sprint reports are historical unless revalidated.
+
+## Version
+
+Documentation snapshot reviewed on 2026-10-09. This is not a product release version or production-readiness claim.
+
+## License
+
+Apache-2.0; see the repository LICENSE file.
+
+![ATC COMPLIANCE](https://img.shields.io/badge/ATC%20COMPLIANCE-R3%20DECLARED-lightgrey)
+
+The badge reflects repository governance classification only. It is not an audit pass, current release approval, or production-readiness certification.
+
 Copyright © 2026 A-TownChain-Okosystems. Apache-2.0.
