@@ -75,6 +75,18 @@
     "@fastify/busboy": "3.2.2",
     "@grpc/grpc-js": "1.14.5",
     "brace-expansion": "2.1.7",
-    "source-map-js": "1.2.2"
+    "source-map-js": "1.2.2",
+    "qs": "6.16.0",
+    "browserslist": "4.28.7",
+    "nanoid": "3.3.18",
+    "postcss": "8.5.23",
+    "protobufjs": "7.6.5",
+    "baseline-browser-mapping": "2.11.0",
+    "fast-xml-parser": "5.10.1",
+    "body-parser": "1.20.6",
+    "uuid": "^11.1.1",
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.0"
+    }
   }
 }
