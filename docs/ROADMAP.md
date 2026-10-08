@@ -21,7 +21,9 @@ These are the CI outcomes observed on documentation PR heads during the 2026-10-
 | ZKP | PR #7: Determinism failed while several other gates passed. | Resolve determinism variance and rerun; retain security and trusted-setup gates. |
 | Node runtime | PR #13: Determinism failed; CodeQL was in progress at last check. | Inspect exact run logs, fix findings, and rerun all required gates. |
 | Contracts | PR #12: Test Suite failed while Determinism and other listed gates passed. | Fix tests or implementation; do not change the gate to obtain a pass. |
-| GlobusOS / ShivaCore | PR #46: System CI, ATC Test Suite and Rust CI failed; security/governance-related checks passed. | Fix current failures and continue TCB/VMM/hardware evidence work. |
+| GlobusOS / ShivaCore | PR #46: System CI, ATC Test Suite and Rust CI failed; PR #24 in the supporting ShivaCore repo has a failed Determinism Gate. | Fix current failures and continue TCB/VMM/hardware evidence work; supporting-repo green checks do not substitute for canonical GlobusOS validation. |
+| System orchestrator | PR #130: Governance and KAI-OS PR Validation failed; Release Pipeline, Integration Gate and Dependency Review passed. | Inspect governance/PR-validation logs and rerun on the corrected head; do not infer release readiness from the Windows pipeline pass. |
+| ATC IDE | PR #2 corrects the documentation claim: Markdown Lint exists, while the README still declares no production build or application test suite. | Keep the product experimental until application build/test/security gates are implemented and evidenced. |
 | Central documentation | PR #40: Docs Gate and CodeQL were in progress; Governance and Dependency Review were queued at last observation. | Wait for the current head's required checks and fix any failures before merge. |
 
 Full SHAs, run IDs and observed results are in the [current status snapshot](ECOSYSTEM_CURRENT_STATUS.md). Refresh that table after any head change; a previous SHA's run is not evidence for a later SHA.
