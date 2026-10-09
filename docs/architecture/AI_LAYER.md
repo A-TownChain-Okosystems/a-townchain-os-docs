@@ -1,53 +1,42 @@
-# AI Layer — Architektur
+# AI Layer — aktuelle Architekturgrenze
 
-> **Stand:** 05.07.2026 | **Sprint:** 3.2 | **Standards:** ATC-44–50, 97
+> **Aktualisiert:** 2026-10-09  
+> **Status:** Architektur-Referenz; keine Implementierungs- oder Produktionsfreigabe.
 
-## Übersicht
+## Einordnung
 
-Die AI-Schicht umfasst AI-Kernel, Federated Learning, Franchise-Systeme, Biometric Auth und HuggingFace Pipeline — implementiert in ATCLang.
+Diese Datei ersetzt die früheren Sprint-3.2-Aussagen vom 2026-07-05 als aktuelle Statusquelle. Die früheren Modulnamen, Zeilenzahlen, „55 %“-Angabe und die Behauptung, die gesamte AI-Schicht sei in ATCLang implementiert, sind historische Angaben und müssen gegen die aktuellen Quell-Repositories geprüft werden.
 
-## Module (8 .atc Dateien)
+Die kanonische AI-/Agenten-Schicht liegt in [`aurora-ai`](https://github.com/A-TownChain-Okosystems/aurora-ai). `atclang` ist die Sprache/Compiler-Schicht und keine Quelle für die gesamte Aurora-AI-Runtime. KI-, Federated-Learning-, Biometrie- oder „Consciousness“-Features gelten nicht als implementiert, nur weil sie in einem alten Architekturentwurf beschrieben sind.
 
-| Modul | Datei | Zeilen | Beschreibung |
-|-------|-------|--------|--------------|
-| AI Kernel | modules/kernel/ai_kernel/ai_kernel.atc | 227 | LLM Router, decisions, audit trail |
-| Federated Learning | core/ai/federated_learning.atc | 177 | On-chain FL coordinator, FedAvg |
-| Franchise Factory | modules/franchise/factory.atc | 164 | Decentralized business mini-DAOs |
-| Franchise Routes | modules/franchise/routes.atc | 89 | REST endpoints for franchise |
-| HF Review Pipeline | tools/hf_review_pipeline.atc | 156 | HuggingFace PR code review |
-| Biometric Auth | mobile/wallet/biometric_auth.atc | 178 | Fingerprint/face ID, session mgmt |
-| Mobile Wallet | mobile/wallet_api.atc | 170 | Mobile wallet: QR, faucet, biometric |
-| Renderer | shivaos/ui/renderer.atc | 185 | Terminal UI: panels, text boxes, dashboard |
+## Sicherheits- und Autoritätsgrenzen
 
-## AI Kernel Features
+```text
+Benutzerintention / Systemereignis
+             ↓
+Aurora AI — Vorschlag / Planung / Inferenz
+             ↓
+Policy-Prüfung
+             ↓
+Capability-Check + erforderliche Freigabe
+             ↓
+Tool-/Service-Aufruf mit begrenzten Rechten
+             ↓
+Autoritativer Service / Runtime
+```
 
-- LLM Router: Model selection based on task type
-- Decision Audit Trail: All AI decisions logged on-chain
-- Multi-Model Support: Local + Remote inference
-- Fallback Chain: Primary → Secondary → Fallback model
+- Aurora AI ist **nicht Teil des ShivaCore TCB**.
+- Aurora darf keine Kernel-Rechte, Chain-Regeln, Konsensentscheidungen oder VM-Semantik eigenmächtig überschreiben.
+- Autoritative Aktionen müssen durch Policy, Capability-Prüfung und die zuständige Runtime-/Service-Grenze laufen.
+- On-chain Audit, Federated Learning, biometrische Authentifizierung und Modell-Fallbacks sind nur dann als implementiert zu deklarieren, wenn die aktuelle Implementierung und passende Tests/Evidence das für einen exakten SHA belegen.
 
-## Federated Learning
+## Source of truth
 
-- FedAvg Algorithm: Weighted average of model updates
-- On-chain Coordinator: Round management, participant selection
-- Privacy: Gradient sharing, no raw data exchange
+- Aurora AI: [Repository](https://github.com/A-TownChain-Okosystems/aurora-ai)
+- OS-/Service-Grenze: [GlobusOS](https://github.com/A-TownChain-Okosystems/globus-os)
+- ShivaCore TCB: `globus-os/modules/atc-shivacore/kernel/`
+- Normative Anforderungen: [`atc-standards`](https://github.com/A-TownChain-Okosystems/atc-standards)
 
-## Offene Tasks (Sprint 3.2 → 55%)
+## Verifikation
 
-- ATC-41: Multi-Agent Orchestration — pending
-- ATC-44: Hardware-Accelerated ZKP — groth16.atc v0.1 (pending v0.3)
-- ATC-46: Quantum-Resistant Crypto Layer — pending
-- ATC-47: AI Intent Settlement — pending
-- ATC-48: Neural Network Mesh — pending
-- ATC-49: Neural Synapse Knowledge Transfer — pending
-- ATC-50: AI Consciousness & Self-Reflection — pending
-
-## AD-005: ATC-97 Agent Interaction Protocol
-
-- **Status:** DECISION — Aurora arbeitet Spezifikation aus
-- **Sprint:** 3.0
-- **Implementierung:** kai_routes.atc (228L) — teilweise
-
----
-
-*AI Layer Architecture · Sprint 3.2 · 05.07.2026 · Aurora*
+`IMPLEMENTED` bedeutet nicht `VERIFIED`. Verifikation erfordert relevante Evidenz auf dem exakt beanspruchten Commit-SHA (Run → Job → Step → Exit-Status/Logs). Alte Sprintzahlen und historische Testresultate sind keine aktuelle Freigabe.

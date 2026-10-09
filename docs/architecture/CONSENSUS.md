@@ -1,121 +1,27 @@
-# 🔐 Hybrid Consensus — Technische Dokumentation
+# Konsens — kanonische Zuständigkeit und aktueller Evidenzstatus
 
-> **Algorithmus:** SHA-256 PoW + PoS + PoH
-> **Datei:** `blockchain/consensus/hybrid_consensus.py`
+> **Aktualisiert:** 2026-10-09  
+> **Status:** Architekturhinweis; diese Datei ist keine normative Konsens-Spezifikation.
 
----
+## Kanonische Quelle
 
-## Überblick
+Die kanonische Algorithmus-/Konsensimplementierung liegt in `a-townchain/components/algorithm` innerhalb des [`a-townchain`](https://github.com/A-TownChain-Okosystems/a-townchain)-Repositories. Das separate [`atc-algorithm`](https://github.com/A-TownChain-Okosystems/atc-algorithm)-Repository ist unterstützendes Spezifikations-/Governance-/Entwicklungsmaterial und darf nicht als konkurrierende Produktionsimplementierung dargestellt werden.
 
-A-TownChain verwendet einen **dreistufigen hybriden Konsens-Mechanismus**:
+## Historische Angaben, nicht als aktuelle Protokollparameter verwenden
 
-```
-Schritt 1: PoH   → Kryptographischer Zeitbeweis (Proof of History)
-Schritt 2: PoW   → Miner sucht SHA-256 Hash mit N führenden Nullen
-Schritt 3: PoS   → Validator bestätigt Block (gewichtet nach Stake)
-```
+Die frühere Fassung behauptete eine finalisierte Kombination aus PoH + PoW + PoS und nannte unter anderem 10-Sekunden-Blöcke, Halving alle 210.000 Blöcke und 50 ATC Start-Reward. Diese Angaben stammen aus einem älteren Python-Beispiel und sind **nicht** als aktuelle, kanonische Protokollparameter zu behandeln.
 
-Alle drei Schritte müssen erfüllt sein, damit ein Block gültig ist.
+Diese Datei entscheidet nicht, ob PoH, PoW, PoS, PoI oder eine Kombination davon finalisiert ist. Die tatsächlich geltenden Regeln müssen aus dem kanonischen Algorithmus-/Chain-Code und den genehmigten normativen Standards abgeleitet werden. Wo diese Quellen keinen eindeutig genehmigten Stand belegen, ist die Konsensauswahl als **nicht abschließend verifiziert** zu kennzeichnen.
 
----
+## Implementierungs- und Verifikationsstatus
 
-## SHA-256 Proof of Work
+- Ein Python-Pseudocodebeispiel oder ein deterministisch wirkender lokaler Algorithmus belegt keine sichere, verteilte Konsensimplementierung.
+- Determinismus, Fork-Choice, Validator-Auswahl, Sybil-/Grinding-Schutz, Slashing, Finalität, Reorg-Verhalten, Netzwerkpartitionen und Recovery benötigen jeweils geeignete Tests und Evidenz.
+- `IMPLEMENTED` und `VERIFIED` sind getrennte Zustände.
+- Eine grüne Einzelprüfung oder ein früherer Audit-Score belegt keine Produktionsreife oder Mainnet-Freigabe.
 
-| Parameter | Wert |
-|-----------|------|
-| Algorithmus | SHA-256 (doppelt) |
-| Difficulty | Anfangswert: 3 führende Nullen |
-| Ziel-Blockzeit | 10 Sekunden |
-| Difficulty-Anpassung | Nach jedem Block |
-| Halving-Intervall | 210.000 Blöcke |
-| Start-Reward | 50 ATC |
+## Nachweisregel
 
-### Difficulty-Anpassung
+Für einen Verifikationsclaim müssen Quell-SHA, Workflow-Run, Job, Step, Exit-Status und relevante Logs zusammenpassen. Fehlgeschlagene Determinism-Gates bleiben offen, bis die Ursache korrigiert und auf dem neuen SHA erneut geprüft wurde.
 
-```python
-def adjust_difficulty(self, avg_block_time: float, target: float = 10.0) -> int:
-    if avg_block_time < target * 0.9:   # zu schnell → schwerer
-        self.difficulty += 1
-    elif avg_block_time > target * 1.1: # zu langsam → leichter
-        if self.difficulty > 1:
-            self.difficulty -= 1
-    self.target = "0" * self.difficulty
-    return self.difficulty
-```
-
----
-
-## Proof of Stake
-
-| Parameter | Wert |
-|-----------|------|
-| Min. Stake | 10.000 ATC |
-| Auswahl | Weighted Random (proportional zum Stake) |
-| Slashing | 50% Verlust bei double-sign |
-| Unstaking | Sofort möglich |
-
-### Validator-Auswahl (deterministisch)
-
-```python
-def select_validator(self, seed: str) -> str:
-    # Seed = Block-Hash → deterministisch, nicht manipulierbar
-    rng = random.Random(int(hashlib.sha256(seed.encode()).hexdigest(), 16))
-    total = sum(self.validators.values())
-    r, cumulative = rng.uniform(0, total), 0
-    for addr, stake in self.validators.items():
-        cumulative += stake
-        if r <= cumulative:
-            return addr
-```
-
----
-
-## Proof of History
-
-| Parameter | Wert |
-|-----------|------|
-| Algorithmus | Rekursives SHA-256 |
-| Sequenz | Unbegrenzt (monoton steigend) |
-| Verifikation | Unabhängig von Netzwerk möglich |
-| Inspiration | Solana PoH |
-
-```python
-def tick(self, data: bytes = None) -> dict:
-    combined = (self.current_hash + (data.hex() if data else "")).encode()
-    self.current_hash = hashlib.sha256(combined).hexdigest()
-    self.sequence += 1
-    return {"sequence": self.sequence, "hash": self.current_hash}
-```
-
----
-
-## Block-Erstellung (Hybrid)
-
-```
-Input: transactions[], miner_address
-
-1. poh_entry = poh.tick(json(transactions))
-   → Zeitstempel-Beweis für diesen Block
-
-2. block_data = {
-     height, prev_hash,
-     poh_hash, poh_sequence,
-     transactions, miner, timestamp
-   }
-
-3. pow_result = pow.mine_block(block_data)
-   → Nonce + gültiger Hash
-
-4. validator = pos.select_validator(pow_result.hash)
-   → Deterministisch aus Stake-Gewichten
-
-5. block_data += { hash, nonce, validator, reward }
-
-6. blocks.append(block_data)
-   → Block final
-```
-
----
-
-> **Dokument:** `docs/architecture/CONSENSUS.md`
-> **Datum:** 2026-05-19 · **Autor:** A-TownChain-Okosystems × Aurora AI
+Normative SSOT: [`atc-standards`](https://github.com/A-TownChain-Okosystems/atc-standards).

@@ -1,12 +1,22 @@
 # 🤖 Agent Policy — Sync- und Entwicklungs-Protokoll
 
 > **Verbindlich für:** Aurora (A-Town Ecosystem Brain)
-> **Version:** 1.0.0 | **Stand:** 2026-06-12
+> **Version:** 1.0.0 | **Ursprünglicher Stand:** 2026-06-12 | **Evidence-Refresh:** 2026-10-09
 > **Gilt für:** Alle Sync-Läufe, Code-Änderungen, Wiki-Updates, Issue-Erstellungen
 
 > 🧭 **Live-Arbeitsstatus:** Siehe [`AGENT_COORDINATION.md`](AGENT_COORDINATION.md) — wer gerade woran arbeitet, aktuelle Sprints/Plaene, Architektur-Snapshot. Vor Arbeitsbeginn immer zuerst dort pruefen.
 
 ---
+
+## Verbindlicher Zusatz — SSOT und Exact-SHA-Evidence (2026-10-09)
+
+- Kanonische Quell-Repositories und die normative `atc-standards`-Registry haben Vorrang vor kopierten Wiki-, Vault-, Subtree- und README-Behauptungen.
+- Vor Statusänderungen sind aktueller Quell-SHA, Repository-Status/Evidence-Datei und passende Actions-Run-/Job-/Step-/Exit-Logs zu prüfen.
+- `IMPLEMENTED` bedeutet nicht `VERIFIED`; `VERIFIED` bedeutet nicht automatisch `AUDITED`, `CONFORMANT` oder `PRODUCTION_READY`.
+- Ein Merge-Ref, Badge, historischer Audit-Score oder älterer grüner Lauf ist keine aktuelle Verifikation des neuen Heads.
+- Fehlgeschlagene, blockierte und residuale Findings bleiben offen, bis die Korrektur auf dem neuen SHA erneut geprüft wurde.
+- Generierte Standards-/Registry-Views werden nur über ihren kanonischen Generator aktualisiert; keine manuelle Zahlenpflege.
+- CI, Branch Protection, Security-, Conformance- oder Release-Gates dürfen nicht abgeschwächt werden.
 
 ## OBERSTE REGEL: REALITY-CHECK
 

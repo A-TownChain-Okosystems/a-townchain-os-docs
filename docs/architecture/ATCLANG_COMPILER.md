@@ -1,64 +1,38 @@
-# ATCLang Compiler & VM — Architektur
+# ATCLang Compiler — aktuelle Source-of-Truth-Grenze
 
-> **Stand:** 05.07.2026 | **Sprint:** 2.1 | **Standards:** ATC-92, 93, 94
+> **Aktualisiert:** 2026-10-09  
+> **Status:** Architektur-Referenz; keine aktuelle Modul- oder Testinventur.
 
-## Übersicht
+## Kanonische Implementierung
 
-Der ATCLang-Compiler ist eine vollständige Toolchain bestehend aus Lexer, Parser, TypeChecker, Codegenerator, Optimizer und Virtual Machine.
+Das aktive [`atclang`](https://github.com/A-TownChain-Okosystems/atclang)-Repository beschreibt die Rust-only Implementierungslinie. Die frühere Fassung dieser Datei listete Python-Dateien, Zeilenzahlen, 92 Produktionsdateien, 60 grüne Tests und eine 100%-Parse-Rate aus einem Sprintbericht vom 2026-07-05. Diese Zahlen sind **historisch** und dürfen nicht als aktueller Bestand oder als aktuelle Verifikation verwendet werden.
 
-## Compiler-Pipeline
+Der Compiler, Verifier, die Artefaktvalidierung und die Security-Gates müssen anhand des aktuellen Rust-Quellbaums, der kanonischen Standards und der zugehörigen SHA-gebundenen CI-Evidence beschrieben werden. Python-Referenzmaterial, das aus dem aktiven Tree entfernt wurde, ist keine aktive Runtime-Komponente.
 
+## Pipeline als konzeptioneller Vertrag
+
+```text
+ATCLang source (.atc)
+       ↓
+Lexer / Parser / AST / Type checking
+       ↓
+Compiler + artifact validation
+       ↓
+ATCB bytecode
+       ↓
+Canonical ATC-VM: a-townchain/components/vm
+       ↓
+A-TownChain chain runtime
 ```
-Source Code (.atc) → Lexer → Parser → AST → TypeChecker → CodeGen → Optimizer → Bytecode → VM
-```
 
-## Module (19 Python-Dateien)
+Dieses Diagramm beschreibt die Verantwortungsgrenzen, nicht den Nachweis, dass jeder Schritt auf dem aktuellen Head vollständig implementiert oder verifiziert ist.
 
-| Modul | Datei | Zeilen | Beschreibung |
-|-------|-------|--------|--------------|
-| Lexer | atclang/lexer/lexer.py | 571 | Tokenizer für ATCLang v0.3 |
-| Parser | atclang/parser/parser.py | 889 | Recursive Descent Parser |
-| AST | atclang/parser/ast_nodes.py | 330 | Abstract Syntax Tree Nodes |
-| TypeChecker | atclang/compiler/type_checker.py | 506 | Statische Typ-Analyse |
-| CodeGen | atclang/compiler/compiler.py | 560 | Bytecode-Generator |
-| Optimizer | atclang/compiler/optimizer.py | 557 | Peephole + Dead Code Elimination |
-| VM | atclang/vm/atcvm.py | 977 | Stack-based Virtual Machine |
-| REPL | atclang/repl/repl.py | 183 | Interactive Read-Eval-Print Loop |
-| v03 Features | atclang/v03/atclang_v03_features.py | 300 | async/await, Generics, Closures |
+## Bytecode- und Runtime-Grenze
 
-## Stdlib (10 Module)
+Die Bytecode-Formate und Laufzeitregeln müssen aus den aktuellen kanonischen Specs und der Implementierung abgeleitet werden. Diese Dokumentation darf keine widersprüchlichen Magic-Werte, Versionen, Limits oder Compilerfeatures als final deklarieren, solange die normative Quelle dies nicht festlegt.
 
-| Modul | Datei | Zeilen | Beschreibung |
-|-------|-------|--------|--------------|
-| Crypto | atclang/stdlib/crypto.py | 154 | SHA-256, ECDSA, secp256k1 |
-| Collections | atclang/stdlib/collections.py | 218 | List, Map, Set, Queue |
-| IO | atclang/stdlib/io.py | 106 | File I/O, Print, Input |
-| Math | atclang/stdlib/math.py | 137 | Arithmetik, Power, Sqrt |
-| Encoding | atclang/stdlib/encoding.py | 209 | Base58, Hex, UTF-8 |
-| Primitives | atclang/stdlib/primitives.py | 243 | u8–u128, i8–i64, bool, String |
-| String | atclang/stdlib/string.py | 39 | String-Manipulation |
-| Wallet | atclang/stdlib/wallet.py | 77 | BIP39, Address, Keys |
-| Chain | atclang/stdlib/chain.py | 40 | Block, TX, Hash |
-| Stdlib | atclang/stdlib/atc_stdlib.py | 68 | Registry für alle Module |
+## Verifikation
 
-## ATCLang v0.3 Features
+Statusangaben müssen den exakten Commit-SHA und relevante Workflow-Evidenz nennen. Alte Testzahlen, Modulzählungen oder Parse-Raten werden nicht auf den aktuellen Stand übertragen. Sie sind keine Aussage über Security-Audit, Conformance, Produktionsreife oder Mainnet-Readiness.
 
-- `async`/`await` für asynchrone Operationen
-- Generics (`List<T>`, `Map<K,V>`)
-- Closures und Higher-Order Functions
-- Modul-System (`import`, `export`)
-- `contract` und `struct` Keywords
-- `enum` Typen
-- `event` Deklarationen
-- Explizite Integer-Typen (u8, u16, u32, u64, u128, i8, i16, i32, i64)
-
-## Statistik
-
-- **19 Python-Module** (~5.800 Zeilen Compiler-Infrastruktur)
-- **92 .atc Produktionsdateien** (15.936 Zeilen)
-- **60 Tests** — alle GRÜN
-- **92/92 Parse-Rate** (100%)
-
----
-
-*ATCLang Compiler Architecture · Sprint 2.1 · 05.07.2026 · Aurora*
+Normative SSOT: [`atc-standards`](https://github.com/A-TownChain-Okosystems/atc-standards).

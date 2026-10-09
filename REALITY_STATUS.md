@@ -1,3 +1,7 @@
+> **HISTORICAL ARCHIVE — NOT CURRENT STATUS (reviewed 2026-10-09).** The detailed observations below are retained for audit history and traceability. Their repository counts, source claims, tests, audit scores and maturity labels are time-bound historical material, not current evidence. For the limited current inventory and SSOT map, use [docs/ECOSYSTEM_CURRENT_STATUS.md](docs/ECOSYSTEM_CURRENT_STATUS.md) and [docs/ARCHITECTURE_CURRENT.md](docs/ARCHITECTURE_CURRENT.md). A current `VERIFIED` claim requires exact-SHA Run → Job → Step → exit-status/log evidence from the canonical source repository. Do not weaken the Docs Gate or delete historical evidence to make the check pass.
+
+---
+
 # 🔍 REALITY STATUS — Verifizierter Ist-Zustand
 
 > **WICHTIG FÜR ALLE KI-AGENTEN:** Diese Datei ist die einzige Quelle, deren Zahlen
