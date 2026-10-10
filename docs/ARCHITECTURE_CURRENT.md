@@ -12,7 +12,7 @@
 | Blockchain core | [a-townchain](https://github.com/A-TownChain-Okosystems/a-townchain) | Chain state, protocol integration and canonical component tree |
 | ATC-VM | `a-townchain/components/vm` | Canonical VM implementation |
 | Algorithm / consensus | `a-townchain/components/algorithm` | Canonical algorithm and consensus implementation; consensus choices must follow approved specs |
-| Node runtime | [atc-node](https://github.com/A-TownChain-Okosystems/atc-node) | Node runtime/distribution layer; not a second protocol/VM authority |
+| Node runtime | `a-townchain/components/node` | Canonical node implementation after SCR-0127 migration. `atc-node` is a migrated source repository and must not be described as an equal, competing runtime; keep it frozen/archive-pending until its owner completes the repository lifecycle action. |
 | ShivaCore kernel / TCB | [globus-os/modules/atc-shivacore/kernel/](https://github.com/A-TownChain-Okosystems/globus-os/tree/main/modules/atc-shivacore/kernel) | Capability enforcement, memory/address-space primitives, scheduling, IPC and interrupt/timer boundaries |
 | GlobusOS | [globus-os](https://github.com/A-TownChain-Okosystems/globus-os) | Userspace, system services and hardware integration above the TCB |
 | Aurora AI | [aurora-ai](https://github.com/A-TownChain-Okosystems/aurora-ai) | AI services and agents; no kernel, consensus or chain authority |
@@ -20,6 +20,25 @@
 | Integration control plane | [a-townchain-ecosystem](https://github.com/A-TownChain-Okosystems/a-townchain-ecosystem) | Integration, compliance and evidence aggregation, not duplicate implementations |
 | System orchestrator | [a-townchain-os](https://github.com/A-TownChain-Okosystems/a-townchain-os) | Cross-repository integration and validation |
 | Documentation hub | This repository | Architecture references, wiki, historical material and system-level status snapshot |
+
+## Component ownership and alternative-selection rules
+
+| Component | Canonical implementation / authority | Separate repository role | Boundary |
+|---|---|---|---|
+| ATC-VM | `a-townchain/components/vm` | `atc-vm` may own VM specifications, governance and support only where explicitly defined; it must not become a second production runtime. | Bytecode, ABI, verifier and conformance vectors must be versioned and tested together. |
+| Algorithm / consensus | `a-townchain/components/algorithm` | `atc-algorithm` is not a competing production implementation; any retained role must be explicitly specification/governance-only. | No consensus choice is final without an approved normative specification and exact-SHA evidence. |
+| Node runtime | `a-townchain/components/node` | `atc-node` is a migrated source repository; lifecycle status must agree with the standards registry. | Network, mempool, block production/validation and consensus interfaces must have explicit contracts. |
+| Contracts | `a-townchain/components/contracts` | `atc-contracts` is a migrated source repository; open residual work must not be confused with canonical ownership. | Contract semantics and token economics must conform to normative standards. |
+| ShivaCore kernel | `globus-os/modules/atc-shivacore/kernel/` | `atc-shivacore` owns supporting specifications/governance only. | Capability enforcement and isolation remain inside the TCB; AI and services cannot bypass it. |
+| Aurora AI | `aurora-ai` | AI services, models and agent tooling. | Proposal/planning only; no direct kernel, consensus, VM or canonical chain authority. |
+| Ecosystem control plane | `a-townchain-ecosystem` | Integration, compliance, architecture control and evidence aggregation. | No duplicate VM, algorithm, wallet, node or other canonical component implementation. |
+| System orchestrator | `a-townchain-os` | Cross-repository integration and validation. | Orchestrates validation; does not become the source of truth for each component's implementation. |
+
+The normative registry in `atc-standards` remains the single source for repository roles and approved layer taxonomy. Until the applicable layer standard is approved, a taxonomy marked DRAFT must not be presented as a normative, finalized architecture decision. Documentation updates must reconcile with the registry rather than silently redefine it.
+
+## Alternative technology evaluation
+
+External libraries or frameworks are candidates for evaluation, not automatic replacements. For each proposed alternative, record: requirement and scope; security and maturity evidence; license and dependency impact; target-platform and `no_std` compatibility where applicable; deterministic/reproducible behavior; performance measurements; migration/rollback plan; and an explicit owner decision. Do not change canonical transaction encoding, signed bytes, consensus serialization, ATC bytecode or kernel security boundaries without approved compatibility requirements and conformance tests.
 
 ## Runtime/security boundary
 
