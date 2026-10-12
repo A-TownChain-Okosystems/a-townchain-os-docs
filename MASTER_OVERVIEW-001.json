@@ -1,8 +1,8 @@
 {
   "schema_id": "ATC-MASTER-OVERVIEW-001",
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "document_status": "active",
-  "generated": "2026-10-12T15:32:00+02:00",
+  "generated": "2026-10-12T15:34:00+02:00",
   "generator": {
     "agent_id": "aurora-base44-superagent-6a1d37209d7f46ac065d39c5",
     "ai_role": "documentation-agent"
@@ -1173,6 +1173,349 @@
       "atc-standards/registry/standards.yaml (SSOT, 533 standards, 103 APPROVED)",
       "MILESTONES.md / REALITY_STATUS.md / FILE_REGISTER.md (a-townchain-os-docs)",
       "a-townchain-os/ROADMAP.md (M1-M8 AD-027, KAI-OS S01-S26)"
+    ]
+  },
+  "artifacts": {
+    "policy": "Alle organisatorischen JSON-Artefakte sind in MASTER_OVERVIEW-001.json registriert und kreuzverlinkt. Änderungen an einem Artefakt erfordern eine Aktualisierung dieses Index.",
+    "records": [
+      {
+        "artifact_id": "ATC-ORG-REPOSITORY-MANIFEST-001",
+        "schema_id": "ATC-ORG-REPOSITORY-MANIFEST-001",
+        "path": "docs/audit/ATC-ORG-REPOSITORY-MANIFEST-001.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "PR #115 draft, head 8a4708794, not yet on main",
+        "records": 33,
+        "links_to": [
+          "organization",
+          "repository_coverage"
+        ],
+        "link_role": "SSOT fuer Repo-Inventar und Census-Grundlage"
+      },
+      {
+        "artifact_id": "ATC-ORG-REPOSITORY-INTEGRATION-001",
+        "schema_id": "ATC-ORG-REPOSITORY-INTEGRATION-001",
+        "path": "docs/integration/ATC-ORG-REPOSITORY-INTEGRATION-001.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "PR #115 draft, head 8a4708794, not yet on main",
+        "records": 4,
+        "links_to": [
+          "organization.layers",
+          "roadmap.technical_checkpoints"
+        ],
+        "link_role": "Integrations- und Boundary-Registry (33 Repos, Cross-Layer-Grenzen)"
+      },
+      {
+        "artifact_id": "ATC-COMPONENT-FUNCTION-CATALOG-001",
+        "schema_id": "ATC-COMPONENT-FUNCTION-CATALOG-001",
+        "path": "docs/architecture/ATC-COMPONENT-FUNCTION-CATALOG-001.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "PR #115 draft, head 8a4708794, not yet on main",
+        "records": {
+          "components": 30,
+          "functions": 98
+        },
+        "links_to": [
+          "catalog",
+          "sources.repository_heads"
+        ],
+        "link_role": "Komponenten- und Funktionsverzeichnis mit Source-Bindings (66/12/15/5)"
+      },
+      {
+        "artifact_id": "ATC-COMPONENT-FUNCTION-SPECIFICATION-001",
+        "schema_id": "ATC-COMPONENT-FUNCTION-SPECIFICATION-001",
+        "path": "docs/architecture/ATC-COMPONENT-FUNCTION-SPECIFICATION-001.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "PR #115 draft, head 8a4708794, not yet on main",
+        "records": {
+          "function_contract_fields": 18,
+          "component_contract_fields": 17
+        },
+        "links_to": [
+          "catalog"
+        ],
+        "link_role": "Normative Contract-Pflichtfelder fuer Katalog-Eintraege"
+      },
+      {
+        "artifact_id": "ATC-DELIVERY-REGISTRY-001",
+        "schema_id": "ATC-DELIVERY-SSOT",
+        "path": "control-plane/DELIVERY_REGISTRY.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "main 5a66f276a",
+        "records": {
+          "documentation_index": 3
+        },
+        "links_to": [
+          "sprints_active",
+          "todos.owner_actions"
+        ],
+        "link_role": "Control-Plane-Liefer- und Nachweis-Registry (fail-closed Status-Enum)"
+      },
+      {
+        "artifact_id": "AURORA-DECENTRALIZED-MEMORY-FUNCTION-CATALOG",
+        "schema_id": "ATC-CATALOG-AURORA-DECENTRALIZED-MEMORY-001",
+        "path": "docs/AURORA_DECENTRALIZED_MEMORY_FUNCTION_CATALOG.json",
+        "repo": "aurora-ai",
+        "state": "main 1b5ff1824",
+        "records": {
+          "functions": 16,
+          "memory_types": 8
+        },
+        "links_to": [
+          "catalog"
+        ],
+        "link_role": "Spezialkatalog Aurora Memory (Baseline-Commit-verankert, Teilmenge des Org-Katalogs)"
+      },
+      {
+        "artifact_id": "ATCLANG-LANGUAGE-REGISTRY",
+        "schema_id": "atclang-language-registry",
+        "path": "specs/language/registry.json",
+        "repo": "atclang",
+        "state": "main 21c595dc3",
+        "records": {
+          "tokens": 63
+        },
+        "links_to": [
+          "catalog (COMP-LANG FN-LANG-001..010)"
+        ],
+        "link_role": "Normative ATCLang-Token-Registry (SSOT der Sprache)"
+      },
+      {
+        "artifact_id": "ATCLANG-SEMANTICS-REGISTRY",
+        "schema_id": "atclang-semantics-registry",
+        "path": "specs/semantics/registry.json",
+        "repo": "atclang",
+        "state": "main 21c595dc3",
+        "records": {
+          "rules": 12
+        },
+        "links_to": [
+          "ATCLANG-LANGUAGE-REGISTRY"
+        ],
+        "link_role": "Semantik-Registry der Sprache"
+      },
+      {
+        "artifact_id": "ORG-GOV-SCAN-2026-09-11",
+        "schema_id": "org-governance-scan",
+        "path": "docs/ORG-GOV-SCAN-2026-09-11.json",
+        "repo": ".github",
+        "state": "main af5d803da",
+        "records": {
+          "repos": 0
+        },
+        "links_to": [
+          "roadmap.governance_checkpoints"
+        ],
+        "link_role": "Governance-Scan-Snapshot (Agenten-Manifeste/Standards je Repo)"
+      },
+      {
+        "artifact_id": "ORG-COMPLIANCE-SCAN-2026-09-10",
+        "schema_id": "org-compliance-scan",
+        "path": "docs/compliance/ORG-COMPLIANCE-SCAN-2026-09-10.json",
+        "repo": ".github",
+        "state": "main af5d803da",
+        "records": "snapshot",
+        "links_to": [
+          "roadmap.governance_checkpoints"
+        ],
+        "link_role": "Compliance-Scan-Snapshot (Standards-Konformitaet je Repo)"
+      },
+      {
+        "artifact_id": "GOVERNANCE-SOURCES-SCHEMA",
+        "schema_id": "atc://schemas/governance-sources.schema.json",
+        "path": "ai/schemas/governance-sources.schema.json",
+        "repo": ".github",
+        "state": "main af5d803da",
+        "records": "schema",
+        "links_to": [
+          "ORG-GOV-SCAN-2026-09-11",
+          "ORG-COMPLIANCE-SCAN-2026-09-10"
+        ],
+        "link_role": "JSON-Schema-Definition fuer Governance-Quelldaten"
+      }
+    ],
+    "related_yaml": [
+      {
+        "artifact_id": "SYSTEM-READINESS",
+        "path": "docs/system-readiness/system-readiness.yaml",
+        "repo": "a-townchain-ecosystem",
+        "state": "main 5a66f276a",
+        "links_to": [
+          "roadmap.technical_checkpoints"
+        ],
+        "link_role": "End-to-End-Runtime-Readiness-Gates (PR #117 gemergt)"
+      },
+      {
+        "artifact_id": "MIGRATION-MANIFEST",
+        "path": "MIGRATION_MANIFEST.yaml",
+        "repo": "a-townchain-ecosystem",
+        "state": "main",
+        "links_to": [
+          "artifacts.records[MANIFEST]"
+        ],
+        "link_role": "Repo-Eigentums- und Abhaigkeits-Mapping"
+      }
+    ]
+  },
+  "cross_references": {
+    "policy": "Verbindungen zwischen den Artefakten. Komponenten-Katalog-Funktionen verweisen auf Repos im MANIFEST; MASTER_OVERVIEW agregiert Milestones, Checkpoints, Todos und Quellen aus allen Artefakten.",
+    "component_to_repository": [
+      {
+        "component": "COMP-ATC-ENG",
+        "repository": "A-TownChain-Okosystems/atc-engineering",
+        "functions": 2
+      },
+      {
+        "component": "COMP-STANDARDS",
+        "repository": "A-TownChain-Okosystems/atc-standards",
+        "functions": 2
+      },
+      {
+        "component": "COMP-LANG",
+        "repository": "A-TownChain-Okosystems/atclang",
+        "functions": 10
+      },
+      {
+        "component": "COMP-SHIVA",
+        "repository": "A-TownChain-Okosystems/globus-os/modules/atc-shivacore/kernel/",
+        "functions": 3
+      },
+      {
+        "component": "COMP-CHAIN",
+        "repository": "A-TownChain-Okosystems/a-townchain",
+        "functions": 3
+      },
+      {
+        "component": "COMP-ALGO",
+        "repository": "A-TownChain-Okosystems/a-townchain/components/algorithm",
+        "functions": 2
+      },
+      {
+        "component": "COMP-VM",
+        "repository": "A-TownChain-Okosystems/a-townchain/components/vm",
+        "functions": 29
+      },
+      {
+        "component": "COMP-GLOBUS",
+        "repository": "A-TownChain-Okosystems/globus-os",
+        "functions": 2
+      },
+      {
+        "component": "COMP-AURORA",
+        "repository": "A-TownChain-Okosystems/aurora-ai",
+        "functions": 3
+      },
+      {
+        "component": "COMP-TOOLCHAIN",
+        "repository": "A-TownChain-Okosystems/atc-toolchain",
+        "functions": 2
+      },
+      {
+        "component": "COMP-GENESIS",
+        "repository": "A-TownChain-Okosystems/genesis-engine",
+        "functions": 2
+      },
+      {
+        "component": "COMP-ECOSYSTEM",
+        "repository": "A-TownChain-Okosystems/a-townchain-ecosystem",
+        "functions": 2
+      },
+      {
+        "component": "COMP-SDK",
+        "repository": "A-TownChain-Okosystems/atc-sdk",
+        "functions": 2
+      },
+      {
+        "component": "COMP-NODE",
+        "repository": "A-TownChain-Okosystems/atc-node",
+        "functions": 2
+      },
+      {
+        "component": "COMP-CONTRACTS",
+        "repository": "A-TownChain-Okosystems/atc-contracts",
+        "functions": 2
+      },
+      {
+        "component": "COMP-ZKP",
+        "repository": "A-TownChain-Okosystems/atc-zkp",
+        "functions": 2
+      },
+      {
+        "component": "COMP-STORAGE",
+        "repository": "A-TownChain-Okosystems/atc-storage",
+        "functions": 2
+      },
+      {
+        "component": "COMP-COMPUTE",
+        "repository": "A-TownChain-Okosystems/atc-compute",
+        "functions": 2
+      },
+      {
+        "component": "COMP-LAUNCHPAD",
+        "repository": "A-TownChain-Okosystems/atc-launchpad",
+        "functions": 2
+      },
+      {
+        "component": "COMP-MARKET",
+        "repository": "A-TownChain-Okosystems/atc-marketplace",
+        "functions": 2
+      },
+      {
+        "component": "COMP-IDE",
+        "repository": "A-TownChain-Okosystems/atc-ide",
+        "functions": 2
+      },
+      {
+        "component": "COMP-CHRONICLES",
+        "repository": "A-TownChain-Okosystems/genesis-chronicles",
+        "functions": 2
+      },
+      {
+        "component": "COMP-GFF",
+        "repository": "A-TownChain-Okosystems/genesis-franchise-factory",
+        "functions": 2
+      },
+      {
+        "component": "COMP-OS-INTEGRATION",
+        "repository": "A-TownChain-Okosystems/a-townchain-os",
+        "functions": 2
+      },
+      {
+        "component": "COMP-SHIVA-SPEC",
+        "repository": "A-TownChain-Okosystems/atc-shivacore",
+        "functions": 2
+      },
+      {
+        "component": "COMP-VM-SPEC",
+        "repository": "A-TownChain-Okosystems/atc-vm",
+        "functions": 2
+      },
+      {
+        "component": "COMP-ALGO-SPEC",
+        "repository": "A-TownChain-Okosystems/atc-algorithm",
+        "functions": 2
+      },
+      {
+        "component": "COMP-DOCS",
+        "repository": "A-TownChain-Okosystems/a-townchain-os-docs",
+        "functions": 2
+      },
+      {
+        "component": "COMP-ORG-GOV",
+        "repository": "A-TownChain-Okosystems/.github",
+        "functions": 2
+      },
+      {
+        "component": "COMP-DEMO",
+        "repository": "A-TownChain-Okosystems/demo-repository",
+        "functions": 2
+      }
+    ],
+    "aggregation_role": "MASTER_OVERVIEW-001.json ist der verbindende Index: organization aus MANIFEST/INTEGRATION, roadmap aus Task DB + MILESTONES/ROADMAP, todos aus GitHub Live-Scan, catalog aus COMPONENT-FUNCTION-CATALOG, sources je Repo-HEAD-SHA",
+    "sync_dependencies": [
+      "ATC-ORG-REPOSITORY-MANIFEST-001.json (Census-Grundlage)",
+      "ATC-COMPONENT-FUNCTION-CATALOG-001.json (Funktionsverzeichnis)",
+      "GitHub Issues API (Todos)",
+      "Task DB (Meilensteine/Status)"
     ]
   }
 }

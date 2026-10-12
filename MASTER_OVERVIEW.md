@@ -3,7 +3,7 @@
 > **ATC-DOC: MASTER-OVERVIEW-001** · Status: ACTIVE · Stand: 2026-10-12 (Europe/Berlin)
 > Konsolidiert: Wiki · Roadmap · Sprints · Todos · Komponenten- und Funktionskatalog · Quellen.
 > Generator: Aurora (aurora-base44-superagent-6a1d37209d7f46ac065d39c5). Evidence-basiert nach vierstufiger Klassifikation (NORMATIVE → IMPLEMENTED → RESEARCH → LEGACY/UNVERIFIED).
-> Maschinenlesbares Gegenstück: `MASTER_OVERVIEW-001.json` (Schema ATC-MASTER-OVERVIEW-001 v0.1.0) — beide Dateien werden gemeinsam aktualisiert.
+> Maschinenlesbares Gegenstück: `MASTER_OVERVIEW-001.json` (Schema ATC-MASTER-OVERVIEW-001 v0.2.0) — verbindet alle Org-JSON-Artefakte (Katalog, Manifest, Integration, Delivery-Registry, Registries) als Cross-Link-Index; beide Dateien werden gemeinsam aktualisiert.
 
 ## 1. Organisation
 
@@ -283,3 +283,21 @@ Ort: `a-townchain-ecosystem/docs/architecture/ATC-COMPONENT-FUNCTION-CATALOG-001
 ## Pflege
 
 Dieses Dokument wird bei Sync-Laeufen aktualisiert (GitHub → Task DB → Notion Automation). Aenderungen nur mit Evidence; Statusaussagen strikt nach vierstufiger Evidence-Klassifikation. Neue Todos aus Issues/Findungen fließen automatisch in Abschnitt 5 ein.
+
+## 8. Maschinenlesbare Artefakt-Verbindungen
+
+`MASTER_OVERVIEW-001.json` (v0.2.0) verbindet alle organisatorischen JSON-Artefakte:
+
+| Artefakt | Repo | Zustand | Rolle |
+|---|---|---|---|
+| ATC-ORG-REPOSITORY-MANIFEST-001.json | a-townchain-ecosystem | PR #115 | SSOT Repo-Inventar (33 Repos), Census-Grundlage |
+| ATC-ORG-REPOSITORY-INTEGRATION-001.json | a-townchain-ecosystem | PR #115 | Integrations-/Boundary-Registry |
+| ATC-COMPONENT-FUNCTION-CATALOG-001.json | a-townchain-ecosystem | PR #115 | Komponenten-/Funktionsverzeichnis (30/98) |
+| ATC-COMPONENT-FUNCTION-SPECIFICATION-001.json | a-townchain-ecosystem | PR #115 | Normative Contract-Pflichtfelder |
+| DELIVERY_REGISTRY.json | a-townchain-ecosystem | main | Control-Plane-Liefer-/Nachweis-Registry |
+| AURORA_DECENTRALIZED_MEMORY_FUNCTION_CATALOG.json | aurora-ai | main | Spezialkatalog Aurora Memory |
+| specs/language + semantics/registry.json | atclang | main | Normative ATCLang-Token-/Semantik-Registry |
+| ORG-GOV-SCAN + ORG-COMPLIANCE-SCAN-*.json | .github | main | Governance-/Compliance-Snapshots |
+| governance-sources.schema.json | .github | main | JSON-Schema der Governance-Quelldaten |
+
+Dazu `cross_references.component_to_repository`: alle 30 Katalog-Komponenten auf ihre Kanonischen Repos verlinkt. YAML-Verwandte: system-readiness.yaml (PR #117), MIGRATION_MANIFEST.yaml. Änderungen an einem Artefakt erfordern einen Update dieses Index (Sync-Abhängigkeiten im JSON dokumentiert).
