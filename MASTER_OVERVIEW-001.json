@@ -1,6 +1,6 @@
 {
   "schema_id": "ATC-MASTER-OVERVIEW-001",
-  "schema_version": "0.2.0",
+  "schema_version": "0.3.0",
   "document_status": "active",
   "generated": "2026-10-12T15:34:00+02:00",
   "generator": {
@@ -1331,6 +1331,40 @@
           "ORG-COMPLIANCE-SCAN-2026-09-10"
         ],
         "link_role": "JSON-Schema-Definition fuer Governance-Quelldaten"
+      },
+      {
+        "artifact_id": "ATC-DEPENDENCY-GRAPH-001",
+        "schema_id": "ATC-DEPENDENCY-GRAPH-001",
+        "path": "docs/architecture/ATC-DEPENDENCY-GRAPH-001.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "draft PR, stacked on PR #115",
+        "records": {
+          "nodes": 26,
+          "edges": 22
+        },
+        "links_to": [
+          "roadmap.governance_checkpoints (F-001)",
+          "sources.repository_heads"
+        ],
+        "link_role": "F-001: maschinenlesbarer Build-Dependency-Graph (abgeleitet aus atc-standards registry/dependencies.yaml SSOT, topologische Ordnung, Zyklen-/Deckungspruefung fail-closed)"
+      },
+      {
+        "artifact_id": "ATC-BUILD-MANIFEST-001",
+        "schema_id": "ATC-BUILD-MANIFEST-001",
+        "path": "docs/build/ATC-BUILD-MANIFEST-001.json",
+        "repo": "a-townchain-ecosystem",
+        "state": "draft PR, stacked on PR #115",
+        "records": {
+          "repos": 26,
+          "build_entry_evidenced": 16,
+          "canonical_elsewhere": 6,
+          "blocked": 2,
+          "exempt": 2
+        },
+        "links_to": [
+          "ATC-DEPENDENCY-GRAPH-001"
+        ],
+        "link_role": "kanonische Build-/Testbefehle, Workspace-Roots, Toolchains und SSOT-Produktionspfade je Repo; FREEZE-Repos (SCR-0127) mit kanonischem Monorepo-Pfad"
       }
     ],
     "related_yaml": [

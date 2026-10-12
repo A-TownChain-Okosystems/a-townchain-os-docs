@@ -300,4 +300,6 @@ Dieses Dokument wird bei Sync-Laeufen aktualisiert (GitHub → Task DB → Notio
 | ORG-GOV-SCAN + ORG-COMPLIANCE-SCAN-*.json | .github | main | Governance-/Compliance-Snapshots |
 | governance-sources.schema.json | .github | main | JSON-Schema der Governance-Quelldaten |
 
-Dazu `cross_references.component_to_repository`: alle 30 Katalog-Komponenten auf ihre Kanonischen Repos verlinkt. YAML-Verwandte: system-readiness.yaml (PR #117), MIGRATION_MANIFEST.yaml. Änderungen an einem Artefakt erfordern einen Update dieses Index (Sync-Abhängigkeiten im JSON dokumentiert).
+Dazu `cross_references.component_to_repository`: alle 30 Katalog-Komponenten auf ihre Kanonischen Repos verlinkt.
+
+**Neu (F-001-Build-Grundlage):** `ATC-DEPENDENCY-GRAPH-001.json` (26 Knoten, 22 Interface-gekapselte Kanten, topologische Build-Ordnung, Zyklenprüfung fail-closed) und `ATC-BUILD-MANIFEST-001.json` (26 Repos: kanonische Build-/Testbefehle, 6 FREEZE-Repos mit Monorepo-Pfad, 2 BLOCKED explizit) — beide als Draft-PR auf a-townchain-ecosystem, abgeleitet aus der atc-standards-Registry-SSOT, keine zweite Wahrheitsquelle. YAML-Verwandte: system-readiness.yaml (PR #117), MIGRATION_MANIFEST.yaml. Änderungen an einem Artefakt erfordern einen Update dieses Index (Sync-Abhängigkeiten im JSON dokumentiert).
