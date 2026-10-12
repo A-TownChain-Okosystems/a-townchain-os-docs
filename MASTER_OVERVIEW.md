@@ -25,34 +25,99 @@ Zentrale Wiki- und Dokumentationsflächen im Repo `a-townchain-os-docs` (HEAD `6
 - Governance-Wiki: Standards-Registry in atc-standards (533 Standards inkl. ATC-AAS, ATC-ENT, SC-001..020, ZKP; Verfassung ATC-STD-000 v1.2.0)
 - Integrations-/Audit-Layer: a-townchain-ecosystem (Komponenten-/Funktionskatalog, Census, Readiness-Gates; Katalog aktuell auf PR #115)
 
-## 3. Roadmap
+## 3. Roadmap — Meilensteine & Checkpoints
 
-### A-TownChain OS Meilensteine (v4.0, s. MILESTONES.md)
+### 3.1 A-TownChain OS Meilensteine (v4.0, s. MILESTONES.md)
 
-| MK | Name | Status |
+| MK | Name | Status | Datum | Checkpoint (Bedingung fuer "Erfuellt") |
+|----|------|--------|-------|--------------------|
+| MK1 | Core OS Foundation | Erfuellt | Q2 2026 | — |
+| MK2 | ATCLang Language Core | Erfuellt | 05.07.2026 | Code parst fehlerfrei mit aktuellem Parser |
+| MK3 | Blockchain & Consensus | Erfuellt | 05.07.2026 | — |
+| MK4 | GCL v2.0 Communication | In Arbeit | Q3 2026 | Kernel-Busse als .atc muessen fehlerfrei parsen |
+| MK5 | Smart Contract Engine | Erfuellt | 05.07.2026 | — |
+| MK6 | Network & Sharding | Erfuellt | 05.07.2026 | — |
+| MK7 | AI Agent Protocol | In Arbeit | Q3 2026 | AIP-001-Spezifikation (a-townchain-os #80) |
+| MK8 | Security Audit | In Arbeit | Q3 2026 | Externe Code-Review abgeschlossen |
+| MK9 | Mainnet Launch | Geplant | Q4 2026 | Genesis Block signiert (Chain-ID 9000), 10+ Validator bestatigt |
+| MK10 | Genesis Engine v1.0 | In Arbeit | Q3 2026 | Code vorhanden, Laufzeit nicht verifiziert |
+| MK11 | Multi-Chain Support | Geplant | Q2 2027 | — |
+| MK12 | AAA Engine Runtime | In Arbeit | Q3 2026 | Asset-Module sind aktuell Python-Pseudocode, kein ATCLang |
+| MK13 | Franchise Factory v2.0 | In Arbeit | Q3 2026 | 28 .atc-Dateien, 0 parsen (v1.0-Dialekt-Problem) |
+| MK14 | MetaFactory v3.0 | In Arbeit | Q3 2026 | 8 .atc-Dateien, 0 parsen (v1.0-Dialekt-Problem) |
+| MK15 | Civilization Platform v4.0 | In Arbeit | Q3 2026 | 11 .atc-Dateien, 0 parsen (v1.0-Dialekt-Problem) |
+
+Bilanz: 5/15 vollstaendig erfuellt (33,3%), 8/15 in Arbeit, 2/15 geplant (Stand MILESTONES.md 06.07.2026, Status-Definition: "Erfuellt" = Code existiert UND parst fehlerfrei).
+
+### 3.2 Lauffaehigkeits-Roadmap M1–M8 (AD-027, a-townchain-os/ROADMAP.md)
+
+| M | Meilenstein | Status | Checkpoint |
+|---|---|---|---|
+| M1 | Sprachanpassungen & ATCLang | G1 erfuellt, G2 offen | AD-019 Phase 1 abgeschlossen |
+| M2 | Kernel Boot & Core Integration | Erfuellt | atc-shivacore 674/674 Tests gruen |
+| M3 | KI-Layer Integration | In Arbeit | aurora-ai / AAS-001..025 |
+| M4 | Blockchain Infrastructure | In Arbeit | 2 Nodes, Chain-ID 658467, Contract-Execution auf ATVM |
+| M5 | OS-Schicht & Kernel-Services | Offen | — |
+| M6 | 13 Blockchain Services Integration | Offen | — |
+| M7 | Genesis Engine & Chronicles Integration | Offen | Spiele/NFT auf Chain |
+| M8 | Full Monorepo Release Candidate | Offen | Audit-Finalisierung |
+
+### 3.3 KAI-OS Core Runtime Track (S01–S26) — ABGESCHLOSSEN 12.09.2026
+
+10 Crates, 80/80 Tests gruen (Issues #102–#111, GATE-Review #109). Sprints S01–S26 wie spezifiziert umgesetzt (S19–S20 abweichend belegt, S21–S22 am 12.09. nachgeholt).
+
+**GATE-Iteration-2-Checkpoints:**
+
+| Checkpoint | Status |
+|---|---|
+| G2-A Model Registry + Verified Cache | Erfuellt 12.09. |
+| G2-C Echter TCP-Transport | Erfuellt 12.09. |
+| G2-D Upgrade/Rollback (Marker-Protokoll + Versionierung) | Erfuellt 12.09. |
+| Multi-Node-DR (syncd-Crate, 5 E2E-Tests mit echten Prozessen) | Erfuellt 12.09. (#113) |
+| G2-B Persistente Storage-Layer | OFFEN |
+| G2-E Externes Security-Audit (Checkliste vorbereitet, Auditer-Entscheidung beim Owner) | OFFEN |
+| Code closure (GATE-Iteration 2) | Verifiziert, externe Produktions-Gates offen (a-townchain-os #112) |
+
+### 3.4 Kernel-Sprints K0–K50 (atc-shivacore / a-townchain-os)
+
+Abgeschlossen: 60 Kernel-Module, ~2146 Rust-Tests, 30 ATCLang-Interfaces, v1.0.0-Release (K4-Konsolidierung MK-K1–K4 Done). Einzel-Sprints (K1–K50) vollstaendig in der Task DB als Done verzeichnet (K9–K13 als in andere Sprints aufgegangen dokumentiert).
+
+### 3.5 Versions- und Release-Meilensteine
+
+| Release | Status | Checkpoint |
 |---|---|---|
-| MK1–MK3, MK5, MK6 | Core OS, ATCLang, Blockchain/Konsens, Contract Engine, Network/Sharding | Erfüllt |
-| MK4 | GCL v2.0 Communication | In Arbeit |
-| MK7 | AI Agent Protocol (Sprint 3.0) | In Arbeit |
-| MK8 | Security Audit | In Arbeit |
-| MK9 | Mainnet Launch | Geplant Q4 2026 |
-| MK10–MK15 | Genesis Engine, Multi-Chain, AAA, Franchise, MetaFactory, Civilization | In Arbeit / Geplant |
+| v1.0.0 (a-townchain-os) | Veroeffentlicht 04.08.2026 | Tag + GitHub Release |
+| v3.2.1 — Test Coverage & Integration | Done (Task DB) | Alle Issues geschlossen |
+| v2.1.0 / v2.2.0 / v3.0.0-Vorarbeiten | Done | — |
+| Konsens-Spezifikation v3.0.0 (Freeze Hybrid PoH+PoS+PoW) | OFFEN | atc-algorithm, Governance-Entscheidung |
+| Mainnet v1.0 (MK9) | Geplant Q4 2026 | SC-Gates G0–G13 bestanden ("kein Gate, kein Mainnet"), Genesis-Block, 10+ Validator |
 
-Bilanz lt. MILESTONES.md: 5/15 vollständig erfüllt. Wichtig: Hybrid-Konsens PoH+PoS+PoW ist RESEARCH-/Spezifikationsziel (Freeze offen), NICHT final/frozen. ATC-07 (Sharding) hat Governance-Drift (Issue #84 closed, Implementierung UNVERIFIED) — Bereinigung offen.
+### 3.6 Governance-Roadmap & Checkpoints (Stand 2026-10-12)
 
-### Governance-Roadmap (Task DB, Stand 2026-10-12)
+Abgeschlossen: 103 Standards APPROVED (Verfassung ATC-STD-000 v1.2.0, AAS-001..025, ENT-001..015, SC-001..020, README-001, MD-001, ZKP-001..010, AI-DEV-001..012, 201–204), F-160 RESOLVED, Governance-Freeze per §30, ATC-AURORA-SWARM-001 v0.1.0-DRAFT erstellt (47 REQ-ASW, SCR-0138).
 
-- Phase 1 weitgehend abgeschlossen: 103 Standards APPROVED (u.a. Verfassung v1.2.0, AAS-001..025, ENT-001..015, SC-001..020, README/MD), F-160 RESOLVED
-- In Arbeit: README-/MD-Konformitäts-Rollout auf 26 Repos (#116/#117), Agent-Manifeste #111, F-001 Dependency Graph, F-002 Interface Registry, SC-Gate-Rollout #118
-- ATC-AURORA-SWARM-001 (ASN, 47 REQ-ASW): CANDIDATE, §9-Freigabe ASW-G0 offen
+| Checkpoint | Status | Naechster Schritt |
+|---|---|---|
+| README-/MD-Konformitaet 26 Repos (#116/#117) | In Arbeit (Frist 07.10.2026 ueberschritten) | Rollout abschliessen, CI-Integration erst nach Owner workflow-Scope |
+| Agent-Manifeste + AGENTS.md (#111) | In Arbeit | Restliche Repos |
+| SCR-0007 REQ-ID-Rollout 52 Standards | OFFEN | Owner-Entscheidung |
+| SC-Gate-Rollout Contract-Repos + Registry-Befuellung SC-G0 (#118) | In Arbeit | je Contract |
+| ASW-G0 §9-Freigabe ATC-AURORA-SWARM-001 | OFFEN | Owner-Freigabe |
+| IF-002 Interface-Review / IF-001 Dependency Graph | In Arbeit / Blocked (Dependency-Graph-UI) | s. Owner-Aktionen |
 
-### KAI-OS / GlobusOS
+### 3.7 Technische Evidence-Checkpoints
 
-- KAI-OS Phase 2 (Prototyp): Kernel-Evidence, ShivaVM-Modultests offen
-- GlobusOS: Boot laeuft auf Intel/AMD UEFI (PR #58/#59 verifiziert); Secure Boot, ACPI, Bare-Metal = RESIDUAL_NOT_ASSERTED; Boot-Evidence-Provenance PR #73 in Arbeit
-- Offen: ATVM vs. ShivaVM kanonische Contract-VM (Governance-Entscheidung, v3.x)
+| Checkpoint | Status |
+|---|---|
+| GlobusOS UEFI-Boot Intel (Skylake) + AMD (EPYC) | VERIFIZIERT (PR #58/#59) |
+| GlobusOS Secure Boot / ACPI / Bare-Metal | RESIDUAL_NOT_ASSERTED (PR #73 Boot-Evidence-Provenance als Draft) |
+| Census-Baseline Organisation | 2026-10-12, RESIDUAL, 25 gescannt + 1 privat ausgeschlossen; a-townchain a70b16f2d (VM-Fixes PR #71) |
+| Katalog-Reconcile (98 Funktionen) | RESIDUAL, 0 blockierende Findings; Merge PR #115 ausstehend |
+| scanner-tests CI-Gruen | BLOCKED auf Owner-Edit der Workflow-Assertion (Vorlage liegt vor) |
+| ATVM vs. ShivaVM kanonische Contract-VM | OFFEN (Governance-Entscheidung, v3.x) |
+| ATC-07 Sharding-Doku-Drift | OFFEN (#84 closed, Implementierung UNVERIFIED) |
 
-### Notion
+### 3.8 Notion
 
 Master Roadmap (A-TownChain OS + KAI-OS, konsolidiert): Notion-Seite 373b826d-b85c-8125-ba83-f04995191bf0, Auto-Sync GitHub → Task DB → Notion aktiv.
 
