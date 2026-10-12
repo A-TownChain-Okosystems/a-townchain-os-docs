@@ -3,6 +3,7 @@
 > **ATC-DOC: MASTER-OVERVIEW-001** · Status: ACTIVE · Stand: 2026-10-12 (Europe/Berlin)
 > Konsolidiert: Wiki · Roadmap · Sprints · Todos · Komponenten- und Funktionskatalog · Quellen.
 > Generator: Aurora (aurora-base44-superagent-6a1d37209d7f46ac065d39c5). Evidence-basiert nach vierstufiger Klassifikation (NORMATIVE → IMPLEMENTED → RESEARCH → LEGACY/UNVERIFIED).
+> Maschinenlesbares Gegenstück: `MASTER_OVERVIEW-001.json` (Schema ATC-MASTER-OVERVIEW-001 v0.1.0) — beide Dateien werden gemeinsam aktualisiert.
 
 ## 1. Organisation
 
