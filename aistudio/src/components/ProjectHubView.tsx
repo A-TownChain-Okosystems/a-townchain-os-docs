@@ -177,7 +177,7 @@ export function ProjectHubView() {
                      <p className="text-xs text-slate-400 mt-3">{progressPercent}% Overall Completion</p>
                   </div>
 
-                  {/* Todo Card */}
+                  {/* Card: todo list */}
                   <div className="bg-[#090b14] border border-atc-border/50 rounded-2xl p-6">
                      <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><CheckSquare className="w-4 h-4 text-emerald-400"/> Task Completion</h3>
                      <div className="text-3xl font-bold text-white mb-2">{completedTodos} <span className="text-sm text-slate-500 font-normal">/ {totalTodos} Tasks</span></div>
