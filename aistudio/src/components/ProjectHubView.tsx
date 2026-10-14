@@ -16,7 +16,7 @@ export function ProjectHubView() {
   const [activeTab, setActiveTab] = useState<'hub' | 'wiki' | 'roadmap' | 'todos'>('hub');
   const [activeNetwork, setActiveNetwork] = useState<'mainnet' | 'testnet' | 'devnet'>('mainnet');
   
-  // ToDo State
+  // State der Todo-Verwaltung
   const [todos, setTodos] = useState<Todo[]>(() => {
     try {
       const saved = localStorage.getItem('app_todos_v8_enterprise');
