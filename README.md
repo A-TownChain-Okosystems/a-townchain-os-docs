@@ -1,5 +1,7 @@
 # A-TownChain OS / KAI-OS — Dokumentations-Hub
 
+> Repository: [`a-townchain-os-docs`](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) — Teil der A-TownChain-Okosystems-Organisation.
+
 > Dokumentations-, Architektur- und Governance-Einstieg für das A-TownChain-Ökosystem.
 
 **Dokumentationssnapshot:** 2026-10-09 · **Lizenz:** Apache-2.0
