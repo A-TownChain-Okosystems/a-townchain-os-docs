@@ -9,7 +9,7 @@
 const DEFAULT_NODES: u8 = 3
 const BASE_PORT: u16 = 9000
 const BASE_RPC_PORT: u16 = 9100
-const GENESIS_CHAIN_ID: u32 = 9000
+const GENESIS_CHAIN_ID: u32 = 658467
 
 enum NodeStatus { Stopped, Starting, Running, Error }
 

@@ -510,7 +510,7 @@ Transaction:
   gas_price:   u64
   gas_limit:   u64
   nonce:       u64        # Replay-Schutz
-  chain_id:    u64        # 9000
+  chain_id:    u64        # 658467
   data:        bytes      # Contract-Aufruf-Daten
   signature:   bytes      # ECDSA secp256k1
 ```

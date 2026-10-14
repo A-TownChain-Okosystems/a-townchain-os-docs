@@ -80,8 +80,8 @@ contract ATC8300Token {
 
 // ATC-Coin — nativer Token
 contract ATCoin : ATC8300Token {
-    state CHAIN_ID:  u64  = 9000
-    state MAX_SUPPLY: u128 = 21_000_000_000_000_000_000_000_000  // 21 Mio ATC
+    state CHAIN_ID:  u64  = 658467
+    state MAX_SUPPLY: u128 = 360_000_000_000_000_000_000_000_000  // 360M ATC; canonical L1 cap
 
     fn init_atcoin(owner_addr: Address) {
         self.init("A-TownCoin", "ATC", owner_addr)

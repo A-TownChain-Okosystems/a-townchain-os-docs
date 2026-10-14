@@ -1,12 +1,12 @@
 // Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.
 // ─────────────────────────────────────────────────────────────
 // ATC-89 — Genesis Token (ATC-001 Origin Token)
-// Sprint 2.5 | Contract Layer | Chain-ID 9000
+// Sprint 2.5 | Contract Layer | Chain-ID 658467
 // Upgraded to v0.3 ATCLang syntax
-// One-time origin token: 21M ATC, non-mintable, non-burnable
+// Legacy compatibility example: genesis supply is zero; native L1 monetary policy owns issuance
 // ─────────────────────────────────────────────────────────────
 
-const TOTAL_SUPPLY: u128 = 21000000000000000000000000  // 21M ATC (18 decimals)
+const TOTAL_SUPPLY: u128 = 0  // Canonical genesis supply; issuance is governed by L1 monetary policy
 
 struct TransferRecord {
     from: Address,

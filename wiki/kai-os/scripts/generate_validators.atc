@@ -1,13 +1,13 @@
 // Copyright (c) 2026 Michael Wroblewski / ShivaCore / A-TownChain-Okosystems. All Rights Reserved.
 // ─────────────────────────────────────────────────────────────
 // ATC-01 — Genesis Validator Generator
-// Sprint 2.3 | Infrastructure Layer | Chain-ID 9000
+// Sprint 2.3 | Infrastructure Layer | Chain-ID 658467
 // Migrated from: scripts/generate_validators.py (395 lines)
 // Generates genesis wallet, validator keys, mainnet config
 // ─────────────────────────────────────────────────────────────
 
 const DEFAULT_VALIDATOR_COUNT: u8 = 5
-const CHAIN_ID: u32 = 9000
+const CHAIN_ID: u32 = 658467
 
 struct ValidatorKey {
     validator_id: u8,
@@ -68,7 +68,7 @@ contract ValidatorGenerator {
         let genesis_pub = Hash::sha256(genesis_priv)
         let genesis_addr = Address::from_hash(Hash::sha256(genesis_pub))
         self.genesis_wallet = genesis_addr
-        self.genesis_supply = 21000000000000000000000000  // 21M ATC
+        self.genesis_supply = 0  // Canonical genesis supply; L1 issuance follows monetary policy
         emit GenesisCreated(genesis_addr, self.genesis_supply)
 
         // Generate validators
@@ -88,7 +88,7 @@ contract ValidatorGenerator {
             genesis_supply: self.genesis_supply,
             validators: self.validators.keys(),
             created_at: Time::now(),
-            block_time: 12,
+            block_time: 360,
             epoch_length: 1000,
         }
         self.config = config

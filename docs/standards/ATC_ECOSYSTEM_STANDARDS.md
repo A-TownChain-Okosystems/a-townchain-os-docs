@@ -660,7 +660,7 @@ X-ATC-Nonce: <uuid4> (verhindert Replay)
 **Konzept:** A-TownChain-Aequivalent zum ERC-20 mit KAI-OS-Erweiterungen
 
 **Kernkonzepte:**
-1. **Einheitlichkeit** — Beliebig teilbar, untereinander austauschbar (ATCoin: 21M, 18 Dec)
+1. **Einheitlichkeit** — Beliebig teilbar, untereinander austauschbar (ATCoin: 360M, 18 Dec)
 2. **Standard-Methoden** — balanceOf, transfer, approve, totalSupply (ATC-8300)
 3. **OS-Integration** — KI-Agenten (Tier 4) nutzen ATC-11 nativ fuer Auto-Payment
 

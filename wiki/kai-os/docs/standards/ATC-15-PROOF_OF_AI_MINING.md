@@ -71,7 +71,7 @@ Miner. Die Belohnung ist dynamisch und korreliert direkt mit der Menge an
 verifizierter Inferenz-Leistung, die ein Node in das Netzwerk einbringt.
 
 **Aktueller Stand:** PoW-Mining belohnt Miner mit Block-Reward (ATCoin).
-Die Reward-Logik ist in `atcoin.py` implementiert (Max Supply: 21M ATC).
+Die Reward-Logik ist in `atcoin.py` implementiert (Max Supply: 360M ATC).
 Proof-of-Ai wuerde den Reward an Inferenz-Leistung koppeln, nicht an Hash-Rate.
 
 ---
