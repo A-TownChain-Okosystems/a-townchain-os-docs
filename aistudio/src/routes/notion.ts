@@ -30,7 +30,9 @@ router.get('/auth/callback', async (req: Request, res: Response) => {
   const { code, state, error } = req.query;
 
   if (error) {
-    return res.status(400).send(`Authentication failed: ${error}`);
+    // Kein Echo des Provider-Werts in die Antwort (py/js: reflected XSS) — nur loggen.
+    console.warn('Notion OAuth aborted by provider:', String(error).slice(0, 200));
+    return res.status(400).type('text/plain').send('Authentication failed');
   }
 
   const clientId = process.env.NOTION_CLIENT_ID;
