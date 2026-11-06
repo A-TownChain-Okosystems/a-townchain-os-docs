@@ -8,11 +8,60 @@ import { AtcBlockchainEngine } from "./src/backend/blockchain/engine.js";
 import { P2PNetwork } from "./src/backend/p2p/network.js";
 import notionRouter from "./src/routes/notion.ts";
 
+
+/**
+ * Dependency-freies Rate-Limiting (In-Memory, pro Client-IP).
+ * Begrenzt die Express-API-Routen und deckt js/missing-rate-limiting ab.
+ */
+interface RateLimitOptions {
+  windowMs: number;
+  max: number;
+  message?: string;
+}
+
+const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>();
+
+function rateLimit(options: RateLimitOptions) {
+  const { windowMs, max, message = "Too many requests" } = options;
+  return (req: any, res: any, next: any) => {
+    const now = Date.now();
+    if (rateLimitBuckets.size > 5000) {
+      for (const [key, bucket] of rateLimitBuckets) {
+        if (bucket.resetAt <= now) rateLimitBuckets.delete(key);
+      }
+    }
+    const key = `${req.ip || "unknown"}:${req.baseUrl || ""}`;
+    const bucket = rateLimitBuckets.get(key);
+    if (!bucket || bucket.resetAt <= now) {
+      rateLimitBuckets.set(key, { count: 1, resetAt: now + windowMs });
+      res.setHeader("X-RateLimit-Limit", String(max));
+      res.setHeader("X-RateLimit-Remaining", String(max - 1));
+      return next();
+    }
+    bucket.count += 1;
+    const remaining = Math.max(0, max - bucket.count);
+    res.setHeader("X-RateLimit-Limit", String(max));
+    res.setHeader("X-RateLimit-Remaining", String(remaining));
+    if (bucket.count > max) {
+      res.setHeader("Retry-After", String(Math.ceil((bucket.resetAt - now) / 1000)));
+      return res.status(429).json({ error: message });
+    }
+    return next();
+  };
+}
+
 async function startServer() {
   const app = express();
   const PORT = 3000;
   
   app.use(express.json());
+
+  // Rate-Limiting: global fuer /api, strenger fuer generative Endpunkte
+  app.set("trust proxy", 1);
+  app.use("/api", rateLimit({ windowMs: 60_000, max: 120 }));
+  const generationLimit = rateLimit({ windowMs: 60_000, max: 8, message: "Generation rate limit exceeded" });
+  app.use("/api/franchise-factory", generationLimit);
+  app.use("/api/gemini", generationLimit);
 
   const engine = new AtcBlockchainEngine();
   const p2p = new P2PNetwork(engine);
