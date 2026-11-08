@@ -120,8 +120,8 @@ lokal. Der DAG sorgt fuer globale Konsistenz.
 | Dokument | Inhalt |
 |---------|--------|
 | [Smart-Contract-Richtlinie](SMART_CONTRACT_RICHTLINIE.md) | BaFin-Policy: Provisionsabwicklung, Urheberschutz, Audit-Checkliste |
-| [ATVM License Gate Spec](ATVM_LICENSE_GATE_SPEC.md) | Technische Spezifikation: State Machine, API, Security Model |
-| [IP & License Dashboard](IP_LICENSE_DASHBOARD_SPEC.md) | GlobusOS: Module, API-Endpoints, Datenmodell |
+| [ATVM License Gate Spec](../../../../docs/compliance/ATVM_LICENSE_GATE_SPEC.md) | Technische Spezifikation: State Machine, API, Security Model |
+| [IP & License Dashboard](../../../../docs/compliance/IP_LICENSE_DASHBOARD_SPEC.md) | GlobusOS: Module, API-Endpoints, Datenmodell |
 | [BaFin-Konformitaetsbericht](BAFIN_KONFORMITAETSBERICHT.md) | Formeller Konformitaetsbericht zur Einreichung bei der BaFin |
 
 ---
