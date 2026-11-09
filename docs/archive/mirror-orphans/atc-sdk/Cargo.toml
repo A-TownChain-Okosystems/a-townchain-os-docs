@@ -1,0 +1,12 @@
+[package]
+name = "atc-sdk"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Canonical Rust SDK transaction builder for A-TownChain"
+[dependencies]
+atc-blockchain = { path = "../a-townchain/modules/atc-blockchain/kernel" }
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+
+[dev-dependencies]
+atc-indexer = { path = "../atc-indexer" }

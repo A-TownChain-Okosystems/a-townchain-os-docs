@@ -1,0 +1,9 @@
+[package]
+name = "globus-task"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+[dependencies]
+globus-process={path="../process"}
+[lints]
+workspace = true

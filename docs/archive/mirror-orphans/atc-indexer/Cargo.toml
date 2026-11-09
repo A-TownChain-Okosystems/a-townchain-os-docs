@@ -1,0 +1,8 @@
+[package]
+name = "atc-indexer"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Finality-gated A-TownChain block indexer adapter"
+[dependencies]
+atc-blockchain = { path = "../a-townchain/modules/atc-blockchain/kernel" }

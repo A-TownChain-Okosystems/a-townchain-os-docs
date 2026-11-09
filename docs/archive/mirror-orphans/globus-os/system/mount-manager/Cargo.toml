@@ -1,0 +1,12 @@
+[package]
+name = "globus-mount-manager"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Deterministic GlobusOS mount lifecycle policy."
+
+[dependencies]
+globus-vfs = { path = "../vfs" }
+
+[lints]
+workspace = true

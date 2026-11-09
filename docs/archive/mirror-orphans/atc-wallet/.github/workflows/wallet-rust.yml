@@ -1,0 +1,34 @@
+name: ATC Wallet Rust
+
+on:
+  pull_request:
+    paths:
+      - "components/atc-wallet/**"
+      - "components/a-townchain/modules/atc-blockchain/kernel/src/crypto.rs"
+  push:
+    branches:
+      - main
+      - "feat/**"
+    paths:
+      - "components/atc-wallet/**"
+      - "components/a-townchain/modules/atc-blockchain/kernel/src/crypto.rs"
+
+permissions:
+  contents: read
+
+jobs:
+  wallet-rust:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: components/atc-wallet
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: cargo fmt
+        run: cargo fmt --all -- --check
+      - name: cargo check
+        run: cargo check --all-targets
+      - name: cargo test
+        run: cargo test --all-targets

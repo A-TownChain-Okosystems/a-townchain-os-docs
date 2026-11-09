@@ -1,0 +1,9 @@
+[package]
+name = "globus-recovery-manager"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+[lints]
+workspace = true
+[dependencies]
+globus-system-manager = { path = "../system-manager" }

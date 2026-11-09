@@ -1,0 +1,13 @@
+[package]
+name = "globus-watchdog"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Bounded GlobusOS health supervision and crash-recovery policy."
+
+[dependencies]
+globus-event-bus = { path = "../event-bus" }
+globus-service-manager = { path = "../service-manager" }
+
+[lints]
+workspace = true

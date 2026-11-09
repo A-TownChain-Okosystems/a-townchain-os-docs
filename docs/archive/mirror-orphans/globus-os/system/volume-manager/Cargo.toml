@@ -1,0 +1,9 @@
+[package]
+name = "globus-volume-manager"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Deterministic GlobusOS volume and storage policy."
+
+[lints]
+workspace = true
