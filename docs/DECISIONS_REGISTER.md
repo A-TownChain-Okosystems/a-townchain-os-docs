@@ -28,6 +28,7 @@
 | AD-049 | ATC-Toolchain als eigenstaendiges Repo (atc-toolchain, R1-Skelett, ATC-REPO-TOOL-001) | ✅ RESOLVED (08.09.2026, 00:36) | atc-standards Registry/SCR-0016..0025 + AUD-2026-0003 | Michael |
 | AD-050 | Owner-Entscheidungspaket Benennungs-Audit (06.10.2026): Capability-Taxonomie (verification_tooling→atc-toolchain, developer_tooling→atc-ide, vm_specification→atc-vm, consensus_algorithm→atc-algorithm, zero_knowledge_proofs→atc-zkp, ecosystem_integration→a-townchain-ecosystem, genesis_content_factory→genesis-franchise-factory); Layer-Tags für 6 Repos; ATC-STD-000 §9 APPROVED bestätigt (SCR-0098, Bedingung erfüllt); SCR-0129 bleibt PENDING — bytecode_format als vorgezogene normative Registry-Änderung zurückgezogen, Umsetzungsequenz Registry → Standard → Validator/CI; c80d895a/PR #102 = DISCARD/SUPERSEDED (Bedingung bestätigt: org-weit nicht existent, durch SCR-0129 + RV-001 + Freeze ee265313 ersetzt); Rollen Gate-0-Executor + Mirror-Klassifikator ROLE_DEFINED/HUMAN_OWNER_UNASSIGNED; #78/#82 implementiert+geschlossen, #79 wartet auf Org-Actions-Freigabe, #70 Exact-Pin-Governance; atc-algorithm #3 + atc-engineering #2 = P0 OWNER ACTION; demo-repository Zweckentscheidung VOR Layer/Capability | ✅ BESCHLOSSEN | — | **Michael (06.10.2026)** |
 | AD-051 | Owner-Entscheidung Fleet-Gate-Semantik (06.10.2026): Fleet-Audit ist globales Main/Schedule-Health-Gate, KEIN PR-Merge-Gate — Scope-Korrektur ohne fail-closed-Aufweichung (PR-Gates verify/Markdown-Lint/Self-Test bleiben fail-closed auf PR-Ebene; Fleet fail-closed auf main + woechentlichem Schedule, markiert Flotten-Trust-Status); Taxonomie PASS/FINDING/UNAVAILABLE/RESIDUAL verbindlich; 19 Fleet-Findings Run 153 als F-141..F-159 mit Owner+Status VOR Gate-Verschiebung registriert (atc-standards 96d5f12); SEC-AUDIT-001 atc-ide als FALSE POSITIVE triagiert (16f034a); FLEET_PARTIAL_VERIFIED 32/33 unter GITHUB_TOKEN (demo-repository UNAVAILABLE, F-059 zugeordnet); volle Abdeckung nur via least-privilege Read-PAT (Owner-Aktion), kein Token-Broadening; Anti-Retrofitting-Ordnung eingehalten: Policy auf main dokumentiert vor Neubewertung PR 7 (Head 7fd11b3) | ✅ BESCHLOSSEN | atc-engineering FLEET_GATE_POLICY v1.0.0 + fleet-audit.yml + Run 153 (37473775619) | **Michael (06.10.2026)** |
+| AD-052 | Aurora AI: nativer, frameworkfreier Produktivpfad (Erweiterung von AD-021) | ✅ BESCHLOSSEN (11.11.2026) | — | **Michael (11.11.2026)** |
 
 ---
 
@@ -405,6 +406,11 @@ erzeugen — Differential Testing wird zum verbindlichen Conformance-Kriterium.
 **Aurora AI:** Rust Core (Model Manager, Scheduler, HAL, Security, IPC,
 Plugin-Runtime) + Python AI-Layer (PyTorch/ONNX/LLM auf ROCm).
 Kurzform: ATCLang -> Rust-first. Aurora -> Rust-Core + Python-AI-Layer.
+
+**Erweitert durch AD-052 (11.11.2026):** Der Aurora-AI-Pfad ist praezisiert.
+Rust Core bleibt, der Produktivpfad fuer Training und Inferenz ist frameworkfrei
+und nativ; der Python-AI-Layer bleibt Forschungs- und Werkzeugebene, nicht
+Produktionsvoraussetzung.
 
 **Begruendung:** Compiler != Runtime, beides Rust. ATCLang ist keine
 Skriptsprache: Smart Contracts erfordern Memory Safety, Determinismus,
@@ -1134,3 +1140,96 @@ Verifikation: 16/16 Standards COMPLIANT, S-17 PASS, Repo-Gate PASS.
 - **Umsetzung (R1-Skelett):** README (ATC-STD-README-001), LICENSE (Apache-2.0), `.atc/repository.yaml` (SUPPORT, developer_tools, R1), ehrliches `.atc/evidence/evidence.yaml` (skeleton/not_run, SCR-0080), CODEOWNERS (SCR-0003), `docs/REPOSITORY_STANDARD.md`, `governance-ci.yml` ab erster Stunde (AD-039-Sweep-Lektion).
 - **Registry:** `ATC-REPO-TOOL-001` (T3, developer_tools, L6, C3, S2, maturity_class C, canonical true) — 33 Eintraege.
 - **Rolle:** Kanonische Werkzeugkette (Build-/Dev-/Governance-Tools); Implementierung folgt den Gates der Lauffaehigkeits-Roadmap. Status: ✅ RESOLVED.
+
+## AD-052: Aurora AI — nativer, frameworkfreier Produktivpfad (Erweiterung von AD-021)
+
+**Datum:** 11.11.2026 · **Status:** ✅ BESCHLOSSEN/VERBINDLICH · **Entscheider:** Michael Wroblewski (Owner) · **Umsetzung:** Agent Aurora
+**Verhaeltnis zu AD-021:** ausdrueckliche ERWEITERUNG, keine stillschweigende Ersetzung. AD-021 bleibt fuer ATCLang und fuer die Aufteilung Rust Core / Python AI-Layer in Kraft.
+
+### Beschluss
+
+Aurora AI erhaelt einen verbindlichen nativen Produktivpfad. Er ist die einzige
+Voraussetzung fuer Training und Inferenz im Betrieb. Externe KI-Technologien
+duerfen nicht zur Bedingung fuer den nativen Betrieb werden.
+
+| Bereich | Verbindliche Festlegung |
+|---|---|
+| Aurora Runtime | Native Implementierung |
+| Produktiver Trainingspfad | Frameworkfrei (kein PyTorch, TensorFlow, ONNX Runtime, candle, burn, tch, llama.cpp, tokenizers, safetensors) |
+| Tensoroperationen | Eigene native Implementierung |
+| Python | Forschung und Entwicklungswerkzeuge |
+| PyTorch | Optionaler Forschungsadapter, nicht im Produktivpfad |
+| ONNX | Optionaler Modellimportadapter, nicht im Produktivpfad |
+| ROCm | Hardware-Backend ohne Architekturautoritaet |
+| ATC Model ABI | Eigener verbindlicher Schnittstellenstandard (siehe D5 / AD-021-Ergaenzung) |
+
+### Was unveraendert bleibt
+
+- Rust Core: Model Manager, Scheduler, HAL, Security, IPC, Plugin-Runtime.
+- Python AI-Layer bleibt bestehen als Forschung, Experiment, Validierung, SDK und
+  Werkzeug. Er verliert nur den Status einer Produktionsvoraussetzung.
+- ATCLang-Strategie aus AD-021 (Rust-first, Python-Referenz, Dual-Stack-
+  Differential) ist von diesem Beschluss nicht beruehrt.
+- Die Autoritaetsgrenzen bleiben: Modell und Modelloutput tragen keine
+  Ausfuehrungsautoritaet; Aurora bleibt ohne Kernel- und ohne Konsensautoritaet.
+
+### Abgrenzung der drei externen Punkte
+
+- **ONNX** importiert fremde Gewichte. Ein Import ist keine native Entwicklung und
+  begruendet keinen Modellstatus. Ein importiertes Modell ist als solches zu
+  kennzeichnen.
+- **ROCm** ist eine Backend-Auswahl hinter dem Compute-Backend-Vertrag
+  (ATC-DOC-AI-HW-001), keine Architekturentscheidung und keine Abhaengigkeit.
+- **PyTorch** dient der Forschung und dem Abgleich von Ergebnissen. Ein Ergebnis,
+  das nur in PyTorch existiert, ist kein Nachweis fuer den Produktivpfad.
+
+### Begruendung
+
+Grundsatz Standalone First, Native Implementation, Ecosystem Second: Die
+Eigenstaendigkeit der Aurora-KI ist nur nachweisbar, wenn Training und Inferenz
+ohne fremde Frameworks, ohne fremde Gewichte und ohne externe Inferenz-Engine
+laufen. Ein Nachweis, der auf einem Drittframework beruht, belegt das Framework,
+nicht Aurora.
+
+### Umsetzung und Nachweis
+
+- Massgebliche Spezifikation: ATC-AI-LLM-001 v1.1.0 (Status accepted) mit Anhang
+  ATC-AI-LLM-001-A (Implementierungsgrenzen Ref-1), Repository aurora-ai.
+- Erster verbindlicher Referenzmassstab: Ref-1, 5.771.776 Parameter, f32, CPU,
+  zufaellige Initialisierung, nachweisbarer Verlustrueckgang, reproduzierbare
+  Laeufe.
+- Skalierung auf 0,5B, 3B und 7B erst nach reproduzierbarem Ref-1-Nachweis.
+- Die Erweiterung ist wirksam mit diesem Registereintrag. Ein Spezifikations- oder
+  Plandokument allein begruendet keine Wirksamkeit.
+
+### Abgrenzung gegen eine zweite Architektur
+
+- Neue Modell-Crates entstehen ausschliesslich im Produkt-Repository aurora-ai
+  (AD-017). Der Integrations-Mirror a-townchain-ecosystem erhaelt sie ueber
+  scripts/sync_modules.py.
+- Die Zweitkopie a-townchain/ai/aurora-ai ist keine zweite Quelle. Ihre
+  Bereinigung ist eingeleitet; siehe Abschnitt Bereinigung der Zweitkopie.
+
+### Bereinigung der Zweitkopie (Stand 11.11.2026)
+
+Pruefung vor Entfernung, Ergebnis:
+
+- Beide abweichenden Dateien sind in der Kopie **aelter**, nicht neuer:
+  modules/atc-aistudio/server.ts (34.128 statt 35.945 Byte, ohne das
+  In-Memory-Rate-Limiting) und modules/atc-aistudio/src/routes/notion.ts (4.739
+  statt 4.922 Byte, mit Rueckgabe des Provider-Fehlers in die Antwort, also mit
+  reflektiertem XSS). Es ist nichts zu retten: die kanonische Fassung enthaelt
+  beide Korrekturen.
+- Die Entfernung ist kein reines Loeschen. Betroffen sind:
+  1. Cargo.toml (fuenf Workspace-Member aus ai/aurora-ai),
+  2. FILE_REGISTER.md und FILE_REGISTER_INDEX.md (474 Eintraege),
+  3. standards/contracts/registry/canonical_sources.yaml und copy_audit.yaml
+     (fuehren ai/aurora-ai/modules/atc-aistudio/federated_learning.atc als
+     abweichende Alternativquelle, deren Zuordnung laut Register noch eine offene
+     Owner-Entscheidung ist),
+  4. tools/consolidate_monorepo.py (Abbildung aurora-ai auf ai/aurora-ai).
+- Reihenfolge fuer die Ausfuehrung: erst Referenzen und Manifest anpassen, dann
+  den Baum in einem Commit entfernen. Umgekehrt entstuende ein Zustand, in dem
+  der Workspace auf fehlende Member zeigt.
+
+**Gueltig seit:** 2026-11-11
