@@ -1288,3 +1288,66 @@ ATC-CONSENSUS-301..307 auf diesem Primitiv, (3) externe Krypto-Analyse.
 Zwischenfall klein und behoben: erster Push lief auf non-fast-forward
 (Evidence-Commit der Vorgaenger-Welle war remote schon da) — pull --rebase
 hat ihn sauber integriert.
+
+## 64. E4 vollzogen, Branch-Hygiene und E3-Korrektur: kein Reifegrad ohne Gate am HEAD (14.11.2026)
+
+Ausgangspunkt ist main-HEAD fc81fc37 von a-townchain-ecosystem, Endstand
+3e6e988. Alle Zahlen unten sind am veroeffentlichten Baum geprueft, nicht aus
+dem Workspace abgeleitet.
+
+E4 ist vollzogen. `components/globus-os` ist entfernt, 504 Dateien und 4,2 MB
+in einem einzigen Commit 3759d78a. Die Kopie war ein Snapshot von
+globus-os@4fccb82 (11.11.2026) und lag 59 Commits hinter dem kanonischen HEAD
+9472b4c. Sie enthielt keinen eigenen Code: 504 vendorte gegen 526 kanonische
+Dateien, 0 nur in der Kopie; 14 Dateien trugen den Stand vor den P0-Fixes, in
+userspace.rs fehlten NO_EXECUTE/page_flags/data_flags/stack_flags vollstaendig,
+und cap_authority.rs, ipc_lifecycle.rs, keccak.rs sowie reclaim.rs fehlten als
+Module. Nachpruefung am Commit: Blobs 14166 -> 13662, 0 hinzugefuegt, 0
+geaendert, alle entfernten Pfade unter components/globus-os/; am Pfad liefert
+die Contents-API jetzt 404, die 26 anderen Komponenten sind unberuehrt.
+README (77f5715) und CHANGELOG (3e6e988) sind nachgezogen. Kanonische
+Kernel-SSOT bleibt allein globus-os@9472b4c.
+
+Die CI-Kopplung an die Kopie ist damit ebenfalls weg. `ecosystem-release-
+readiness.yml` schliesst components/globus-os aus der Cargo.toml-Iteration aus
+und verliert den Sonderblock fuer boot/excl/features (effc2e93, 151 statt 161
+Zeilen); der Job globus-browser in `test-suite.yml` zeigte auf ein Crate, das
+in beiden Repos 404 ist, und ist entfernt (fc81fc37, 79 statt 92 Zeilen).
+Beide Dateien zusammen: +1/-24.
+
+Branch-Hygiene, verlustfrei: 303 Branches ohne eigenen Commit sind org-weit
+geloescht (1399 -> 1096). Nachgeprueft: alle Default-Branches vorhanden, alle
+main-SHAs unveraendert. 7 weitere bleiben, weil ihre Repos archiviert und
+damit read-only sind (atc-wallet 1, atc-mining 2, atc-interop 1, atc-oracle 2,
+atc-storage 1). Die verbleibenden 1056 Branches mit eigenen Commits tragen
+24713 Commits ausserhalb von main, davon 15107 aus der chore/evidence-run-
+Automatik; echte Arbeit sind 469 Branches mit 9578 Commits, Spitze
+genesis-engine (72 Branches, 4171 Commits).
+
+Zum Zugangsstand, damit spaetere Leser die Commits richtig einordnen: git
+push, POST /git/blobs und POST /pulls antworten weiterhin mit 403 (Konto-
+E-Mail nicht verifiziert). Tree-API, Commit-API, PATCH und DELETE auf
+/git/refs funktionieren. Die Aenderungen oben liefen deshalb als
+Fast-Forward auf main, ohne PR und ohne Review — eine bewusste
+Owner-Entscheidung, kein normaler Merge. PR-Anlage bleibt unmoeglich.
+
+CI-Evidenz fuer all das: null. Auf 3759d78a sind zwei Laeufe gestartet, beide
+startup_failure mit 0 Jobs; auf 3e6e988 ist kein Lauf gestartet. Ein
+startup_failure ist ein Startproblem, kein Testfehler, und belegt nichts ueber
+den Code.
+
+E3-Korrektur: Reifegrad folgt der Evidenz, nicht der Selbsterklaerung. Diese
+Repos fuehren R3, haben am HEAD aber kein gruenes Gate:
+
+- globus-os, HEAD 9472b4c
+- atc-shivacore, HEAD d817de2
+- a-townchain-os, HEAD 8dbbb5d
+- aurora-ai, HEAD 8ff18a2
+- a-townchain-os-docs, HEAD bc39809
+
+Sie gelten bis auf Weiteres als R2. Ausgenommen bleiben atc-contracts (876c03b,
+CodeQL am HEAD gruen) und atc-standards (f540835, Allocation-Gate am HEAD
+gruen). Die Herabstufung ist ohne CI zulaessig, weil sie nichts behauptet, was
+nicht belegt ist; eine Hochstufung bleibt ausgeschlossen, solange kein Lauf am
+exakten HEAD existiert. aurora-ai behaelt seine 185 lokal belegten Tests vom
+13.11. als TESTED-Evidenz, nicht als CI_VERIFIED.
