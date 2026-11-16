@@ -22,8 +22,10 @@ Dieser Bestand ist genau diese Referenz. Er ist kein Bestandteil der Ausfuehrung
    kein `setup.py`, keine Tests, kein README im Verzeichnis.
 2. **Keine Einbindung.** Keine Importstelle ausserhalb dieses Verzeichnisses, kein Aufruf aus
    `atclang` (Rust) oder `atc-vm` (Rust), keine Containerbindung.
-3. **Zwei Rust-Autoritaten existieren bereits:** `atclang` (Compiler und Toolchain) und `atc-vm`
-   (Bytecode-Ausfuehrung, 32 Tests). Eine dritte, Python-basierte VM-Autoritaet ist ausgeschlossen.
+3. **Zwei Rust-Autoritaeten existieren bereits und sind hier benannt:**
+   `atclang/crates/atc-core/src/` (`lexer.rs`, `ast.rs`, `ir.rs`, `lower.rs`, `bytecode.rs`, `artifact.rs`)
+   fuer Compiler und Toolchain, `atc-vm/src/vm.rs` fuer die Bytecode-Ausfuehrung. Eine dritte,
+   Python-basierte VM-Autoritaet ist ausgeschlossen.
 
 ## Konsequenz
 
